@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker — 2026-07-07</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .editorial {
+    background: #fff; border-left: 4px solid #2563eb; padding: 16px 20px;
+    margin-bottom: 32px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .editorial h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #2563eb; }
+  .editorial p { font-size: 14px; color: #333; margin-bottom: 6px; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+  .footer { margin-top: 32px; font-size: 11px; color: #bbb; text-align: center; }
+</style>
+</head>
+<body>
+
+<h1>Daily Paper Tracker</h1>
+<div class="date">2026-07-07</div>
+
+<div class="editorial">
+  <h2>Editorial Note</h2>
+  <p>Today's haul is dominated by LLM memory architecture — 6 of 10 papers from arXiv cs.CL/cs.AI address how transformers store, forget, retrieve, and manage memory. Two convergent themes stand out: (1) the <em>proxy-behavior gap</em> in memory evaluation, where perplexity improvements mask zero behavioral recall (Song et al.) and where deletion audits reveal that residual knowledge lives in the retrieval graph, not the parameters (Raeesi &amp; Roed); and (2) <em>memory as a learnable cognitive skill</em> rather than a fixed architectural component, with AutoMem and Procedural Memory Distillation independently converging on training-time memory optimization. On the biological side, Julian et al. provide rare causal evidence — using optogenetic engram reactivation with simultaneous large-scale mPFC recordings — that hippocampal memory traces reconfigure prefrontal task representations in real time. Zeraati et al.'s Nature Neuroscience review on neural timescales offers a bridging framework: the &tau;<sub>fit</sub> vs &tau;<sub>param</sub> distinction is directly applicable to comparing hippocampal replay timescales with transformer attention windows. Notably absent: no dedicated encoding-retrieval papers today, and no new KV/serial-position computational models.</p>
+</div>
+
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.00368" target="_blank">Beyond Perplexity: A Behavioral Evaluation Framework for Deployment-Memory Claims in LLM Test-Time Training</a>
+    </div>
+    <div class="paper-meta">
+      Song, Chen, Kong, Xie, Dong, Chen &amp; Zhang (Kun Zhang) &middot; arXiv cs.CL, 1 Jul 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Introduces a behavioral evaluation framework that calibrates TTT memory claims to evidence strength. Two components: a claim-calibrated evidence ladder separating stream adaptation, bridge internalization, and deployment-time behavioral learning; and a diagnostic protocol with matched explicit-memory baselines. Validated by auditing recent TTT work and instantiating a controlled sparse nonce-fact experiment with one-step LoRA updates across three Qwen3 scales.</p>
+      <p><strong>Finding:</strong> One-step LoRA updates successfully lower support and answer loss, but generated free-form recall stays at <em>zero</em> — exposing a measurable gap between proxy improvement and deployment behavior. This is the cleanest demonstration yet that perplexity and token-loss improvements do not constitute memory. The framework provides a concrete standard for authors to align claims with evidence, directly relevant to the lingering memory project's emphasis on behavioral memory metrics over engineering proxies.</p>
+    </div>
+    <div class="flag">arxiv preprint — not yet peer-reviewed</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.01002" target="_blank">Logit-Contribution Scoring Identifies Non-Literal Retrieval Heads</a>
+    </div>
+    <div class="paper-meta">
+      Gema, Alex &amp; Minervini &middot; arXiv cs.CL, 1 Jul 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Proposes LOCOS (Logit-Contribution Scoring), a write-aware detector that scores attention heads by projecting OV-circuit output onto the answer-token unembedding direction, contrasting needle and off-needle source positions in a single forward pass. Evaluated on the NoLiMa non-literal retrieval benchmark across Qwen3, Gemma-3, and OLMo-3.1 families.</p>
+      <p><strong>Finding:</strong> Existing attention-based detectors miss non-literal retrieval heads because they reward literal copy (where attended token = generated token), ignoring what the head writes through its OV circuit. LOCOS captures write-path contributions: ablating 50 top LOCOS heads on Qwen3-8B drops ROUGE-L from 0.401 to 0.000, while the strongest baseline still retains 0.292. The selected heads are retrieval-specific — parametric recall and arithmetic stay at baseline. Critically, this demonstrates that non-literal retrieval depends on a sparse set of heads whose removal produces catastrophic failure, echoing the sparse-coding logic in KV memory networks.</p>
+    </div>
+    <div class="flag">arxiv preprint — not yet peer-reviewed</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.00605" target="_blank">Auditing Forgetting in Limited Memory Language Models</a>
+    </div>
+    <div class="paper-meta">
+      Raeesi &amp; Roed &middot; arXiv cs.CL, 1 Jul 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Proposes a causal auditing framework for LMLMs that holds the model fixed and varies the database state at inference time across three interventions (FULL, DEL-ON, DEL-OFF), decomposing post-deletion behavior into parametric leakage L(f), retrieval-mediated correctness R(f), and retrieval artifact rate. Applied to 12,228 alias-closure deletions across 13 databases with four adversarial topologies (Base, Alias, Noise, Collision) and six prompt formulations.</p>
+      <p><strong>Finding:</strong> Parametric leakage is near zero in every variant and prompt style — the model rarely returns the deleted answer without retrieval. Residual correctness (0.7% on released LMLM database, up to 13.6% on most adversarial variant) is predominantly reconstituted from near-neighbor retrieval. Prompt formulation does not independently control how much of a deleted fact survives. The unlearning boundary is drawn by the database administrator, not the model — a clean separation that complicates claims about "memory" in retrieval-augmented systems.</p>
+    </div>
+    <div class="flag">arxiv preprint — not yet peer-reviewed</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.01224" target="_blank">AutoMem: Automated Learning of Memory as a Cognitive Skill</a>
+    </div>
+    <div class="paper-meta">
+      Wu, Zhu, Zhang, Wang &amp; Yeung-Levy &middot; arXiv cs.AI, 1 Jul 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Treats memory management as a trainable cognitive skill (metamemory) rather than a fixed architectural component. Two-loop optimization: a strong LLM reviews complete agent trajectories and iteratively revises the memory structure (prompts, file schemas, action vocabulary), while the agent's own good memory decisions are identified from many episodes as training signal to sharpen memory proficiency directly. Evaluated on Crafter, MiniHack, and NetHack.</p>
+      <p><strong>Finding:</strong> Optimizing memory alone — without modifying task-action behavior — improved base agent performance ~2–4&times;, bringing a 32B open-weight model competitive with Claude Opus 4.5 and Gemini 3.1 Pro Thinking. Memory management is an independently learnable skill separable from task performance. This aligns with the cognitive science metamemory literature — knowing <em>what</em> to encode and <em>when</em> to retrieve — and suggests a path toward learned rather than engineered attention-gating in lingering memory architectures.</p>
+    </div>
+    <div class="flag">arxiv preprint — not yet peer-reviewed</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.00760" target="_blank">MosaicKV: Serving Long-Context LLM with Dynamic Two-D KV Cache Compression</a>
+    </div>
+    <div class="paper-meta">
+      Qiang, Chen, Wu, Gu, Hua, Xia, Zang &amp; Chen (Haibo Chen) &middot; arXiv cs.LG, 1 Jul 2026
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Dynamic two-dimensional KV cache compression exploiting non-uniform importance distribution within KV vectors. Instead of one global compression pattern, MosaicKV identifies important elements per KV vector and selects compression strategies at KV cache segment granularity. Introduces compressed KV cache management using underutilized GPU/CPU resources.</p>
+      <p><strong>Finding:</strong> On H800 GPUs: up to 16&times; attention speedup, 4.8&times; lower decode latency, 7.3&times; higher throughput, 3&times; memory reduction, with only 1.76% average accuracy loss on LongBench and RULER. The key mechanistic insight: importance is non-uniform in both sequence and channel dimensions, so two-D compression outperforms either axis alone. Relevant to KV memory networks: suggests that not all key-value pairs in attention memory are equally informative — a sparse-coding principle that parallels hippocampal pattern separation.</p>
+    </div>
+    <div class="flag">arxiv preprint — not yet peer-reviewed</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://www.biorxiv.org/content/10.64898/2026.07.06.732916v1" target="_blank">Hippocampal Engrams Configure Prefrontal Context Representations to Guide Flexible Decisions</a>
+    </div>
+    <div class="paper-meta">
+      Julian, Kaminsky, Tank &amp; Brody &middot; bioRxiv, 6 Jul 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Combines tagging and optogenetic reactivation of hippocampal engrams with simultaneous large-scale recordings in medial prefrontal cortex (mPFC) during a context-dependent task-switching paradigm in mice. Tests whether HPC engrams can drive retrieval of a set of stimulus-response mappings (decision rules) rather than a specific motor response.</p>
+      <p><strong>Finding:</strong> HPC engram reactivation caused mice to apply engram-consistent decision rules rather than a specific motor output — ruling out a simple stimulus-response account. Simultaneous mPFC recordings revealed that reactivating the HPC engram reinstated the context representation in mPFC within hundreds of milliseconds, mediated by rapid network effects. Other aspects of endogenous mPFC dynamics were left intact. This provides direct causal evidence that hippocampal memory traces can reconfigure cortical task representations in real time — a mechanism directly relevant to the Schema-Guided Episodic Memory RNN's core claim that schema-binding attention gates hippocampal-cortical interaction.</p>
+    </div>
+    <div class="flag">bioRxiv preprint — not yet peer-reviewed</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+  <div class="empty-section">No dedicated encoding-retrieval papers today. The Zeraati et al. review (see Cross-cutting) covers timescale mechanisms relevant to encoding and retrieval dynamics.</div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://www.nature.com/articles/s41593-026-02343-8" target="_blank">Neural Timescales from a Computational Perspective</a>
+    </div>
+    <div class="paper-meta">
+      Zeraati, Levina, Macke &amp; Gao &middot; Nature Neuroscience, 2 Jul 2026
+      <span class="tag tag-cross">Cross-cutting</span>
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Nature Neuroscience review synthesizing three computational directions: (1) how different data analysis methods quantify timescales across behavioral states and recording modalities; (2) how biophysical models — synaptic filtering, adaptation, recurrent connectivity, clustered connections, neuromodulation, criticality — mechanistically generate diverse timescales; and (3) how task-performing networks and ML models reveal the functional relevance of neural timescales. Introduces the &tau;<sub>fit</sub> (data-estimated AC time constant) vs &tau;<sub>param</sub> (model internal parameter) distinction as a key comparative framework.</p>
+      <p><strong>Finding:</strong> The review establishes &tau;<sub>fit</sub> as a comparable fingerprint across biological and artificial systems — linking hippocampal time constants, cortical hierarchies, and RNN/transformer memory windows into a unified framework. Attractor dynamics represent the extreme of long timescales supporting working memory; task-optimized RNNs spontaneously develop timescale hierarchies mirroring biology. Directly applicable to all three pillars: provides a principled language for comparing hippocampal replay timescales (Pillar 2), KV cache decay rates (Pillar 3), and attention window effective memory spans (Pillar 1).</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.00397" target="_blank">NeuroCogMap Reveals Cognitive Organization of Large Language Models</a>
+    </div>
+    <div class="paper-meta">
+      Sun, Lu, Ma, Li, Wang, Pang, Liu, Li, Sun, Wang, Zeng, Xu, Li &amp; Wen &middot; arXiv q-bio.NC, 1 Jul 2026
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Cognitive neuroscience-inspired framework that organizes LLM internal features into functional parcels linked to interpretable functions, cognitive capabilities, and a cognitive hierarchy. Maps LLM failures (hallucination, bias, refusal failure, sycophancy) onto distinct disruptions in representational and behavioral-control systems. Also tests whether LLM functional organization predicts human cortical responses during naturalistic language comprehension.</p>
+      <p><strong>Finding:</strong> LLM functional parcels form a stable, semantically coherent organization partly conserved across models and functionally linked to outputs. Major LLM failures correspond to distinct representational disruptions with internal signatures for mechanism-guided detection. Improves prediction of human cortical responses, with strongest correspondence in higher-order association cortex. The brain-to-LLM mapping framework could inform how hippocampal-like organizational principles in transformers relate to biological memory systems — an underexplored direction for the cross-cutting pillar.</p>
+    </div>
+    <div class="flag">arxiv preprint — not yet peer-reviewed</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.01480" target="_blank">Procedural Memory Distillation: Online Reflection for Self-Improving Language Models</a>
+    </div>
+    <div class="paper-meta">
+      Liu, Bansal, Pang, Li, Liu, Ming, Ke, Joty &amp; Yavuz &middot; arXiv cs.AI, 1 Jul 2026
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Converts cross-episode signals from RLVR rollouts into reusable procedural memory organized at three levels: raw trajectories, self-reflected strategies/lessons, and higher-level behavioral patterns. A memory-conditioned self-teacher draws on accumulated experience to supervise the student, enabling progressive internalization of procedural knowledge. Key design: co-evolution — policy generates rollouts that update memory, and memory shapes supervision that updates policy.</p>
+      <p><strong>Finding:</strong> PMD improves over SDPO by 3.8–5.5% on SCIKNOWEVAL and 7.9–13.6% on LIVECODEBENCH across Qwen3-8B and OLMo3-Instruct-7B. Co-evolution is essential: freezing either memory or policy trails PMD by &gt;10%. The three-level memory hierarchy (trajectories → strategies → patterns) mirrors the abstraction ladder in schema-guided episodic memory — raw episodes, schema-extracted rules, and meta-cognitive patterns — suggesting convergence between LLM procedural memory and biological systems consolidation.</p>
+    </div>
+    <div class="flag">arxiv preprint — not yet peer-reviewed</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-peri">Peripheral</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.00233" target="_blank">From Signals to Structure: How Memory Architecture Drives Language Emergence in LLM Agents</a>
+    </div>
+    <div class="paper-meta">
+      Talebirad, Redman, Parsaee &amp; Zaiane &middot; arXiv cs.AI, 30 Jun 2026
+      <span class="tag tag-peri">Peripheral</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Lewis signaling game with two LLM agents inventing a shared language from scratch. Compares five memory architectures (stateless, rolling window, persistent private notebook, etc.) across varying channel capacities. Uses information bottleneck-inspired arguments to predict optimal capacity.</p>
+      <p><strong>Finding:</strong> Memory architecture matters more than channel capacity for coordination success. Agents with persistent private notebooks achieve best coordination (0.867 &plusmn; 0.023 at capacity = 25), while stateless agents peak at moderate capacity then degrade — the notebook externalizes learned conventions. Channel capacity alone cannot predict coordination success. Adjacent to the lingering memory question: externalized memory stabilizes conventions across extended interactions, a form of schema-guided coordination.</p>
+    </div>
+    <div class="flag">arxiv preprint — not yet peer-reviewed</div>
+  </div>
+</div>
+
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>Dual-Confidence Contrastive Decoding for RAG</strong> (Li et al., arXiv 2607.00570) — primarily a QA decoding method for conflicting multi-document retrieval; no mechanistic memory insight.</li>
+    <li><strong>Dynamic Bidirectional Pattern Memory</strong> (Lazem &amp; Teahan, arXiv 2607.00870) — clinical NLP application of pattern memory gating; narrow domain, no general memory mechanism.</li>
+    <li><strong>What Survives Into Context: Budget-Constrained Multi-Hop RAG</strong> (Bala, arXiv 2607.00725) — IR optimization for evidence packing; not about memory representation or mechanism.</li>
+    <li><strong>StateFlow: Dual-State Recurrent Modeling for Time Series</strong> (Gharwi et al., arXiv 2607.00197) — time series forecasting with recurrent states; engineering application, no memory theory.</li>
+    <li><strong>Ghost in the Kernel: ICL with Efficient Transformers via Domain Generalization</strong> (Liu &amp; Zhou, arXiv 2607.00479) — theoretical analysis of ICL generalization bounds; narrow scope.</li>
+    <li><strong>DRIADA: Python Toolkit for Single-Neuron Selectivity</strong> (Pospelov et al., arXiv 2607.00851) — software tool; not a research finding.</li>
+    <li><strong>Modeling Visual Brand Language on Memory Retrieval</strong> (Heaton &amp; Hummel, arXiv 2607.02929) — uses LISA/JIM models but applied to marketing; no new memory theory.</li>
+    <li><strong>K-Inverse-RFM</strong> (Pasternak, arXiv 2607.00329) — mathematical learning theory; not memory-related.</li>
+  </ul>
+</div>
+
+<div class="footer">
+  Generated by WorkBuddy Daily Paper Tracker &middot; 2026-07-07
+</div>
+
+</body>
+</html>

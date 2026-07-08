@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker — 2026-07-06</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .editorial {
+    background: #fff; border-left: 4px solid #2563eb; padding: 16px 20px;
+    margin-bottom: 32px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .editorial h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #2563eb; }
+  .editorial p { font-size: 14px; color: #333; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+  .footer { margin-top: 32px; font-size: 11px; color: #bbb; text-align: center; }
+</style>
+</head>
+<body>
+
+<h1>🧠 Daily Paper Tracker</h1>
+<div class="date">2026-07-06</div>
+
+<div class="editorial">
+  <h2>Editorial Note</h2>
+  <p>Three themes dominate today's harvest. First, a cluster of LLM architecture papers addressing memory retention — Li et al.'s multi-head recurrent memory is the standout, diagnosing that retention, not capture, is the bottleneck and proposing a clean architectural fix (73.96% retention at 896K tokens vs. &lt;30% baseline). Second, the Chetverikov &amp; Hansmann-Roth eLife paper on competing representations introduces a strikingly simple principle — relative noise determines bias direction — that echoes the signal-disentanglement logic in KV memory networks. Third, Dulaney et al.'s time-cell paper from human MTL recordings directly validates the temporal-context-recovery hypothesis central to behavioral memory models, a rare bridge between single-unit physiology and cognitive theory. The convergence of neural reinstatement work (Dulaney, Woodry) with representational geometry approaches (Masoomi) suggests the field is increasingly comfortable analyzing memory as a trajectory-shaping problem.</p>
+</div>
+
+<!-- ──────────── LLM-Memory ──────────── -->
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.01523" target="_blank">Multi-Head Recurrent Memory Agents</a>
+    </div>
+    <div class="paper-meta">
+      Jiatong Li, Samuel Yeh, Sharon Li (UW–Madison) &middot; arXiv cs.LG, Jul 1, 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Diagnoses why recurrent memory agents — which iteratively consolidate input into fixed-size memory windows for long-context LLMs — degrade with context length. Decomposes performance into <em>memory capture</em> and <em>memory retention</em>, then proposes Multi-Head Recurrent Memory (MHM), a training-free framework that partitions memory into independent heads with a stage-wise select-then-update strategy. Only one head is updated per step; the rest are shielded from overwriting. Evaluated on long-context benchmarks (RULER, LongBench) across 100K–1M token range with multiple model families.</p>
+      <p><strong>Finding:</strong> Retention is the dominant bottleneck — existing monolithic memory designs force every update to risk overwriting prior content. MHM-LRU (Least-Recently-Updated instantiation) improves retention rate from &lt;30% to 73.96% on RULER-HQA at 896K tokens, with zero additional token overhead. Gains generalize across model families and task types. The key insight — shifting retention burden from model behavior to architectural design via independent, shielded memory heads — is mechanically elegant and connects conceptually to how hippocampal subfields might maintain segregated memory traces during consolidation.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.01480" target="_blank">Procedural Memory Distillation: Online Reflection for Self-Improving Language Models</a>
+    </div>
+    <div class="paper-meta">
+      Ye Liu, Srijan Bansal, Bo Pang, Yang Li, Zeyu Leo Liu, Yifei Ming, Zixuan Ke, Shafiq Joty, Semih Yavuz (Salesforce Research) &middot; arXiv cs.AI, Jul 1, 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Proposes Procedural Memory Distillation (PMD), which converts cross-episode signals from RLVR (reinforcement learning with verifiable rewards) rollouts into reusable procedural memory distilled into policy weights. Memory is organized at three abstraction levels — raw trajectories, self-reflected strategies, and higher-level behavioral patterns — all extracted online. A memory-conditioned self-teacher supervises the student on its own rollouts, enabling co-evolution between policy and memory.</p>
+      <p><strong>Finding:</strong> PMD improves over the SDPO baseline by 3.8–5.5% on SCIKNOWEVAL and 7.9–13.6% on LIVECODEBENCH (Qwen3-8B and OLMo3-Instruct-7B). Critically, co-evolution drives these gains: freezing either memory or policy drops performance by &gt;10%. The memory scaffold is absorbed entirely into weights at inference — the model becomes "memory-free" — which is an interesting design choice that contrasts with explicit external memory approaches. Conceptually adjacent to complementary learning systems: the memory scaffold acts as a temporary hippocampal buffer that trains the cortical (weight) representation.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.01520" target="_blank">The Risk of KV Cache Compression</a>
+    </div>
+    <div class="paper-meta">
+      Lukas Haverbeck, Carmen Amo Alonso, Andres Felipe Posada-Moreno, Sebastian Trimpe, Marco Pavone (RWTH Aachen &amp; Stanford) &middot; arXiv cs.LG, Jul 1, 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Provides the first theoretical characterization of minimax risk for KV cache compression, deriving bounds in terms of the intrinsic compressibility of a cache. Translates these bounds into principled design rules for compression under causal masking that map efficiently to prefill and autoregressive decoding. Instantiates the principles in a practical algorithm and tests on LongBench.</p>
+      <p><strong>Finding:</strong> Prior theoretical results showed KV cache compression can be impossible in worst case; this paper identifies regimes where accurate compression <em>is</em> possible and provides systematic design guidance (rather than the heuristic-driven approaches that dominate the literature). Promising LongBench results suggest the theory translates to practice. Relevant for Pillars 1 and 3: KV cache compression determines what information survives in long-context memory, analogous to selecting which experiences enter consolidation. The worst-case impossibility result also parallels known limits of pattern separation under high overlap.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ──────────── Schema-Episodic ──────────── -->
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://www.biorxiv.org/content/10.64898/2026.06.28.734674v1" target="_blank">Time Cells Lead Neural Reinstatement of Episodic Memory</a>
+    </div>
+    <div class="paper-meta">
+      Aidan S. Dulaney, Sarah Seger, Oscar A. Carranza, Ruchita MaheshKumar, Joshua Jacobs, Bradley C. Lega (UT Southwestern &amp; Columbia) &middot; bioRxiv, Jun 28, 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Microelectrode recordings from human medial temporal cortex during free recall and serial reconstruction tasks. Identifies time-sensitive neurons and tests whether they participate in temporal context recovery at retrieval — the central prediction of behavioral models like TCM. Analyzes neuronal assembly dynamics on gamma (assemblies) and theta (sequences) timescales, plus phase coding across complementary populations. Also examines context-sensitive neurons in a naturalistic viewing dataset without predictable temporal structure.</p>
+      <p><strong>Finding:</strong> Time cell firing <em>precedes</em> the broader assembly population and initiates sequential activation during retrieval — consistent with temporal context recovery driving recall. Phase coding by complementary populations shows convergent mechanisms with task-dependent recruitment. Time cell properties predict contextually mediated recall behavior. The naturalistic viewing data show context-sensitive neurons emerge even without a predictable temporal scaffold, suggesting these mechanisms generalize beyond classical paradigms. This is a significant empirical validation of the TCM/context-recovery framework at the single-neuron level — rare and valuable data.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.7554/eLife.111430.1" target="_blank">NPAS4 Refines Spatial and Temporal Firing in CA1 Pyramidal Neurons</a>
+    </div>
+    <div class="paper-meta">
+      Anja Payne, Daniel A. Heinz, Chiaki Santiago et al., Brenda L. Bloodgood (UC San Diego &amp; Janelia/HHMI) &middot; eLife Reviewed Preprint, Jul 3, 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Generated sparse, CA1-specific NPAS4 knockout in mice and used optogenetic tagging to identify KO vs. WT neurons <em>in vivo</em> during awake behavior on a linear track. NPAS4 is an activity-dependent transcription factor that regulates inhibitory synapses onto active pyramidal neurons — a mechanism that lets past activity shape future encoding. Recorded from intermingled WT and KO neurons to directly compare spatial and temporal coding properties.</p>
+      <p><strong>Finding:</strong> NPAS4 deletion degrades spatial representations and temporal precision: KO neurons have larger place fields (50 vs. 39 cm, p &lt; 0.05), reduced in-field firing, increased out-of-field firing, less stable fields across epochs, weaker theta coupling, and diminished phase precession. Place field size was the only significant predictor of phase precession slope (β = 0.92, p ≈ 10⁻¹²). The mechanism: NPAS4 reorganizes CCK+ inhibitory synapses — reduced somatic inhibition permits spurious out-of-field spiking, while increased dendritic inhibition suppresses burst firing and plasticity. Demonstrates a direct molecular-to-circuit-to-coding link: transcription → inhibitory synapse redistribution → place field refinement.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1523/JNEUROSCI.1459-25.2026" target="_blank">The Precision of Hippocampal Representations Predicts Incremental Value-Learning Across the Adult Lifespan</a>
+    </div>
+    <div class="paper-meta">
+      Camilla van Geen, Karolina M. Lempert, Michael S. Cohen, Kameron A. MacNear, Frances M. Reckers, Laura Zaneski, David A. Wolk, Joseph W. Kable (UPenn) &middot; J. Neuroscience, Jun 26, 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> 251 younger and older adults (158F/93M, 76 with fMRI) completed a trial-and-error reinforcement learning task learning values of four perceptually similar houses. Used representational similarity analysis (RSA) to measure the precision of hippocampal stimulus representations during choice, and tested whether these representations support credit assignment in RL. Examined age-related changes in representation precision vs. hippocampus-mPFC connectivity.</p>
+      <p><strong>Finding:</strong> Posterior hippocampal representational precision during choice predicts RL accuracy across age groups. Contrary to predictions from neural de-differentiation accounts, older adults showed <em>no</em> blurring of hippocampal stimulus representations. Instead, age-related RL impairments were driven by reduced hippocampal-mPFC connectivity, which correlated with accuracy. This is a conceptually important dissociation: the hippocampus still forms precise representations in aging, but the readout pathway to prefrontal decision circuits degrades. Challenges the simple "hippocampal degradation → memory decline" narrative and implicates circuit-level disconnection.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ──────────── Encoding-Retrieval ──────────── -->
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.7554/eLife.111380.1" target="_blank">Noise in Competing Representations Determines the Direction of Memory Biases</a>
+    </div>
+    <div class="paper-meta">
+      Andrey Chetverikov, Sabrina Hansmann-Roth (U. Bergen &amp; U. Iceland) &middot; eLife Reviewed Preprint, Jul 6, 2026
+      <span class="tag tag-er">Encoding-Retrieval</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Four color-memory experiments using novel stimuli with independently varied noise levels. Tests the prediction that memory bias direction (attraction vs. repulsion between items) depends on <em>relative</em> noise between competing representations, not just absolute noise. Fits a Demixing Model to human data and compares against confusion/integration and interference-reduction accounts.</p>
+      <p><strong>Finding:</strong> Under unequal noise, the less-noisy item is attracted toward the noisier one, while the noisier item is repelled away — simultaneous opposing biases that dominant theories cannot explain. Changing only the non-target noise level (holding target noise constant) reverses bias direction. The Demixing Model, with noise levels as the only free parameters, fits nonlinear bias patterns with mean r = 0.91. The core principle — relative signal fidelity governs how representations interact — directly connects to KV memory dynamics: the precision of a key-value pair relative to its neighbors determines whether retrieval attracts or repels, paralleling how temporal context models predict recency and contiguity effects through differential trace strengths.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.7554/eLife.111250.1" target="_blank">Early Visual Cortex Supports One-Shot Episodic Memory via Spatially Tuned Reactivation</a>
+    </div>
+    <div class="paper-meta">
+      Robert Woodry, Jonathan Winawer, Serra E. Favila (NYU &amp; Brown) &middot; eLife Reviewed Preprint, Jul 3, 2026
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> fMRI study (n=20) testing whether cortical reinstatement in early visual cortex (V1–V3) occurs after a <em>single</em> encoding event, without repeated practice or explicit recall instructions. Participants viewed objects at one of four parafoveal locations, then completed object recognition (old/new) and location recall tasks. Used polar-angle population receptive field analysis to quantify spatially tuned reactivation during memory retrieval.</p>
+      <p><strong>Finding:</strong> Both recognition and recall evoke spatially tuned responses in V1–V3 centered at the original encoded location, even when location is not probed (recognition task). Memory responses are ~25× smaller than perceptual encoding responses — substantially lower than the ~4× difference in prior studies using highly trained associations. Fidelity tracks subsequent memory: 0.35 for remembered vs. 0.24 for forgotten items during recognition; 0.35 vs. −0.03 during recall. The incidental, automatic nature of spatial reinstatement (present even in block 1 before the recall task was known) is the key result — it suggests reactivation is a default consequence of episodic retrieval, not a strategic process. Clean demonstration that single-shot episodic memory engages the same sensory reinstatement mechanisms previously shown only for overlearned associations.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ──────────── KV-Networks ──────────── -->
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+  <div class="empty-section">No standalone papers today. Papers with KV-Networks relevance are cross-tagged in LLM-Memory (Li et al.) and Encoding-Retrieval (Chetverikov &amp; Hansmann-Roth).</div>
+</div>
+
+<!-- ──────────── Cross-cutting ──────────── -->
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s41593-026-02343-8" target="_blank">Neural Timescales from a Computational Perspective</a>
+    </div>
+    <div class="paper-meta">
+      Roxana Zeraati, Anna Levina, Jakob H. Macke, Richard Gao et al. (Tübingen, MPI-IS) &middot; Nature Neuroscience, Jul 2, 2026
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Review synthesizing three computational approaches to neural timescales: (1) data analysis methods for quantifying timescales across recording modalities, (2) biophysical mechanistic models explaining how diverse timescales emerge (recurrence, adaptation, E-I balance, criticality), and (3) task-performing networks and ML models revealing why specific timescales are necessary for computation (working memory, evidence accumulation, temporal integration).</p>
+      <p><strong>Finding:</strong> Integrates literature showing that diverse neural timescales — from millisecond spike precision to multi-second fMRI autocorrelation — are not epiphenomena but are mechanistically generated and functionally necessary for temporal computation. Directly relevant for modeling how different memory systems operate at different timescales: the rapid dynamics of hippocampal theta sequences vs. the slower cortical timescales supporting consolidation, and how these map onto attention time windows in LLMs.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.01571" target="_blank">Geometric Signatures of Reasoning: A Spectral Perspective on Task Hardness</a>
+    </div>
+    <div class="paper-meta">
+      Aria Masoomi, Mahsa Bazzaz, Adel Javanmard, Vahab Mirrokni (Google Research) &middot; arXiv cs.LG, Jul 2, 2026
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Formalizes chain-of-thought (CoT) reasoning trajectories as discrete curves in the transformer hidden state space ℝ<sup>d</sup>. Introduces effective dimension d<sub>ρ</sub> as a measure of trajectory complexity derived from eigenvalue spectra. Analyzes kinematic features (mean position, velocity, speed dispersion) to predict solution correctness before generation completes. Tested on MATH500.</p>
+      <p><strong>Finding:</strong> Trajectories with flatter eigenvalue spectra (higher d<sub>ρ</sub>) correspond to harder problems — harder tasks explore more hidden dimensions. d<sub>ρ</sub> achieves 0.93 AUC in distinguishing easy from hard problems. Kinematic features can predict solution correctness from only the first 20% of generated tokens. Methodologically adjacent to how one might analyze attention time-contingent trajectories in LLM episodic memory: if reasoning traces have geometric signatures, perhaps memory retrieval trajectories in attention space do too. The trajectory-as-curve formalism could be productively applied to study how attention drifts across a long context during memory-guided generation — essentially a "memory trajectory geometry" extension of the KV-Networks framework.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ──────────── Peripheral ──────────── -->
+<div class="section">
+  <div class="section-header tag-peri">Peripheral</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.7554/eLife.111058.1" target="_blank">If Grid Cells are the Answer, What is the Question? A Review of Normative Grid Cell Theory</a>
+    </div>
+    <div class="paper-meta">
+      William Dorrell, James Whittington (Gatsby Unit, UCL &amp; Oxford) &middot; eLife Reviewed Preprint, Jul 3, 2026
+      <span class="tag tag-peri">Peripheral</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Reviews 20 years of normative grid cell theory, synthesizing bottom-up mechanistic models (path-integration, continuous attractor networks, eigenvector-based models) and top-down normative accounts (efficient coding, predictive coding, task-optimized networks). Argues that the literature largely converges on grid cells as (1) biologically plausible, (2) high-fidelity, nonlinearly decodable position codes that (3) subserve path-integration.</p>
+      <p><strong>Finding:</strong> The field has achieved a rare maturity where mechanistic and normative theories converge. The review distills methodological lessons for normative neural modeling more broadly — particularly on the risks and rewards of integrating task-optimized networks. Not directly about episodic memory, but the theoretical framework (normative accounts of neural representations, path-integration as the core computation) parallels how one might build normative theories of temporal context representations in episodic memory — and by extension, temporal context encoding in transformers.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ──────────── Excluded ──────────── -->
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>Gollapudi et al. (2607.01538): "Can Language Models Actually Retrieve In-Context? Drowning in Documents at Million Token Scale"</strong> — already covered in July 4 and July 5 reports (attention dilution effect at million-token scale).</li>
+    <li><strong>Han &amp; Wu (2607.01237): "Kara: Efficient Reasoning LLM Serving via Sliding-Window KV Cache Compression"</strong> — engineering-focused KV cache optimization for CoT decoding; incremental improvement without mechanistic insight relevant to memory research pillars.</li>
+    <li><strong>Schmidt, Gagliardi &amp; Redish: "Just how goal-directed are hippocampal theta sweeps, anyway?"</strong> — News &amp; Views commentary on the Tang et al. and Yu et al. theta sweep papers (already covered July 4). No new data.</li>
+    <li><strong>Tang et al. and Yu/Ji/Burgess et al.: hippocampal theta sweep papers</strong> — Nature Neuroscience July 1 issue. Already covered in detail in July 4 report.</li>
+    <li><strong>Zhao (2607.01311): "From Approximation to Emergence: A Theory of Deep Learning"</strong> — broad theoretical framework touching on transformers and ICL, but too general and speculative to extract specific mechanistic claims about memory.</li>
+    <li><strong>Widjaja et al. (2607.01792): "PARTREP: Learning What to Repeat for Decoder-only LLMs"</strong> — primarily about asymmetric information flow in causal attention and prompt compression; limited mechanistic insight for memory research.</li>
+    <li><strong>Fogel &amp; Ujfalussy (eLife, Jul 3): "Analysis of dendritic input currents during place field dynamics"</strong> — computational analysis of dendritic currents in place cells; methodologically elegant but focused on biophysical mechanisms of place field formation rather than memory encoding per se.</li>
+  </ul>
+</div>
+
+<div class="footer">
+  Generated by WorkBuddy Daily Paper Tracker &middot; 2026-07-06 &middot; 11 papers, ~30 searches across arxiv, bioRxiv, PubMed, Nature Neuroscience, eLife, J. Neuroscience, and ML venues
+</div>
+
+</body>
+</html>

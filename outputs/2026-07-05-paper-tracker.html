@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker — 2026-07-05</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .editorial {
+    background: #fff; border-left: 4px solid #2563eb; padding: 16px 20px;
+    margin-bottom: 32px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .editorial h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #2563eb; }
+  .editorial p { font-size: 14px; color: #333; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+  .footer { margin-top: 32px; font-size: 11px; color: #bbb; text-align: center; }
+</style>
+</head>
+<body>
+
+<h1>🧠 Daily Paper Tracker</h1>
+<div class="date">2026-07-05 (Sunday)</div>
+
+<div class="editorial">
+  <h2>Editorial Note</h2>
+  <p>The dominant theme this cycle is the convergence of hippocampal memory theory and transformer architecture. Cui's HOLA is the standout — a direct instantiation of Complementary Learning Systems (CLS) theory in linear attention, giving the model a bounded exact KV cache alongside its compressive recurrent state. This is not metaphor; it's an architectural translation of the Marr-level insight that the brain solves memory with dual systems. A second convergence pattern: three papers independently identify forms of <em>memory-induced interference</em> — Gollapudi et al.'s "attention dilution effect" at million-token scale, Fang et al.'s memory-induced reasoning drift, and Chen et al.'s hidden evidence-use forgetting. These point to a unified challenge: as memory capacity grows in LLM systems, retrieval fidelity degrades in structured, measurable ways that echo classical interference phenomena in human episodic memory.</p>
+</div>
+
+<!-- ==================== LLM-Memory ==================== -->
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.02303" target="_blank">HOLA: A Hippocampus for Linear Attention — An Exact Memory for What the Recurrent State Forgets</a>
+    </div>
+    <div class="paper-meta">
+      Wanyun Cui &middot; arXiv cs.AI, 2 Jul 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Directly inspired by Complementary Learning Systems (CLS) theory, HOLA augments linear-attention language models with a bounded exact KV cache — a "hippocampal complement" to the compressive delta-rule recurrent state. The cache writes tokens with large prediction residuals (β·||e||) without a learned eviction policy, and uses a decoupled RMSNorm-gamma read for sharp retrieval rather than soft averaging. Trained at 340M parameters on 15B SlimPajama tokens.</p>
+      <p><strong>Finding:</strong> HOLA reduces Wikitext perplexity from 27.32 to 22.92 (−16.1%), beating a full-attention Transformer++ baseline (26.88). On RULER needle-in-a-haystack recall, it remains robust out to 32k tokens (16× training length), substantially outperforming GDN and recency-cache baselines. The architecture demonstrates that a small, bounded exact memory — analogous to hippocampal rapid encoding — can dramatically improve a compressive cortical-like system. This is the most direct computational instantiation of Marr-level CLS theory in modern LLM architectures to date.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.01538" target="_blank">Can Language Models Actually Retrieve In-Context? Drowning in Documents at Million Token Scale</a>
+    </div>
+    <div class="paper-meta">
+      Siddharth Gollapudi, Nilesh Gupta, Prasann Singhal, Sewon Min &middot; arXiv cs.CL, 1 Jul 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> First systematic study of in-context retrieval at million-token corpus scale, using a 0.6B LM retriever (BlockSearch) with length-generalization architectural modifications. The key analytic contribution is identifying the <em>attention dilution effect</em>: as corpus size grows, irrelevant documents dominate the softmax denominator, reducing normalized mass on the correct document even when its pre-softmax score remains high.</p>
+      <p><strong>Finding:</strong> Without length-aware attention adjustments, retrieval collapses under extreme extrapolation. With length-aware softmax adjustments and document-level sparse attention, the model matches dense retrieval on MS MARCO and NQ, and achieves 3× higher scores on tasks requiring different similarity notions (LIMIT). The attention dilution effect is a formal analog of interference in human episodic memory — as the retrieval set grows, the probability of correctly retrieving a target item degrades in a structured way. Directly relevant to LLM lingering memory (Pillar 1).</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.02374" target="_blank">DRIFTLENS: Measuring Memory-Induced Reasoning Drift in Personalized Language Models</a>
+    </div>
+    <div class="paper-meta">
+      Xi Fang, Weijie Xu, Yingqiang Ge, Yuhui Xu, Stephanie Eckman, Chandan K. Reddy &middot; arXiv cs.AI, 2 Jul 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Studies whether injecting user-attribute memory (age, occupation, disability, etc.) into LLM prompts reshapes <em>reasoning trajectories</em>, not just final answers. Introduces DRIFTLENS, a ground-truth-free framework that maps reasoning steps to value categories and measures divergence between no-memory and memory-injected trajectories. Tested across 4 LLMs and 10 user-attribute categories, with GRPO- and DPO-based post-training mitigation evaluated.</p>
+      <p><strong>Finding:</strong> User-attribute memory induces medium-to-large reasoning drift above each model's pragmatic-noise floor, even when final answers remain fluent, on-topic, and plausible. Both GRPO and DPO reduce drift, but neither uniformly dominates; effects on downstream capability are model- and reward-dependent. This is a memory side-effect phenomenon — injecting episodic-like user context changes <em>how</em> models reason, not just <em>what</em> they say. The parallels to encoding specificity and transfer-appropriate processing in human memory are worth exploring.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.02010" target="_blank">InduceKV: Fixed-Footprint Continual Adaptation of Multimodal LLMs via Inducing KV Memories</a>
+    </div>
+    <div class="paper-meta">
+      Qianyu Chen, Ziteng Feng, Canran Xiao, Runxuan Tang &middot; arXiv cs.AI, 2 Jul 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Proposes storing selected training prefixes as attention-ready KV memory entries that can be appended to the self-attention cache, enabling continual adaptation of multimodal LLMs under a fixed memory budget without modifying backbone parameters. Uses bilevel selection: a lightweight calibration for retrieval fitness, with memory balancing current-task likelihood, anchor-based retention, and coverage in frozen retrieval space.</p>
+      <p><strong>Finding:</strong> Consistently improves over PEFT, MoE, replay, and prompt-retrieval baselines under matched memory budgets across task-incremental instruction tuning, continual VQA, domain-incremental adaptation, and lifelong multimodal instruction tuning. The KV cache as an explicit, addressable memory store — rather than merely an inference optimization — is a conceptual shift with implications for how we think about memory in transformer architectures.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== Schema-Episodic ==================== -->
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://www.biorxiv.org/content/10.64898/2026.06.30.735500v1" target="_blank">Local Inhibitory Topology Dictates the Spatial Compartmentalization of Hippocampal Sharp-Wave Ripples</a>
+    </div>
+    <div class="paper-meta">
+      Alexandra Tzilivaki, Daniel Parthier, Annu Kala, Roberto De Filippo, Dietmar Schmitz &middot; bioRxiv, 30 Jun 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Combined in vivo Neuropixels recordings with an experimentally constrained 3D biophysical model to dissect how inhibitory activity and inhibitory topology differentially govern hippocampal sharp-wave ripples (SWRs). The key question: why do SWRs — among the most synchronous events in the brain — frequently remain confined to discrete hippocampal domains rather than spreading globally?</p>
+      <p><strong>Finding:</strong> Perisomatic inhibition gates SWR generation, dendritic inhibition regulates ripple strength and spectral properties, but it is the <em>spatial organization of inhibitory connectivity</em> that establishes local computational domains enabling autonomous ripple generators to coexist. This uncovers a spatial dimension of inhibition — inhibitory topology as an architectural organizer of memory replay compartments. Relevant to schema-guided episodic memory models that require structured replay organization across hippocampal subfields.</p>
+    </div>
+    <div class="flag">⚠ Preprint, not yet peer-reviewed</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.01988" target="_blank">Episodic-to-Semantic Consolidation Without Identity Drift</a>
+    </div>
+    <div class="paper-meta">
+      Xue Qin, Simin Luan, Cong Yang, Zhijun Li &middot; arXiv cs.AI, 2 Jul 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Formalizes memory consolidation in autonomous AI agents as a deterministic function f: M^ep → M^sem that converts episodic memory traces into a separately addressable semantic knowledge layer, without modifying the agent's certified identity. Proves identity invariance through a structural lemma on the manifest's hash-input set, and specifies a deterministic aggregation algorithm with explicit confidence and supporting-event provenance.</p>
+      <p><strong>Finding:</strong> The construction achieves byte-equal identity across consolidation passes, with a mean 79.82% reduction in unproductive planner attempts (95% BCa CI [78.02%, 81.49%] across 10 seeds) against a Bayesian-shrunk baseline. This is a formal treatment of the episodic-to-semantic consolidation problem that mirrors the CLS framework: episodic traces are preserved intact while a separate semantic store is derived from them. The identity-invariance constraint is a novel angle — in biological terms, consolidation shouldn't change who you are.</p>
+    </div>
+    <div class="flag">⚠ Preprint, synthetic experiments only — no real-world agent deployment yet</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2606.27783" target="_blank">CANNs: A Toolkit for Research on Continuous Attractor Neural Networks</a>
+    </div>
+    <div class="paper-meta">
+      Sichao He, Aiersi Tuerhong, Shangjun She, Tianhao Chu, Yuling Wu, Junfeng Zuo, Si Wu &middot; arXiv q-bio.NC, 26 Jun 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Comprehensive open-source toolkit unifying the full CANN research workflow: a Python library (BrainPy/JAX) providing standardized 1D/2D CANNs, grid cell networks, hierarchical path-integration models, and brain-inspired attractor architectures; a Rust acceleration backend for spatial-navigation workloads; and ASA (Attractor Structure Analyzer), a pipeline applying persistent homology/cohomology to detect ring-like and toroidal attractor signatures in experimental neural recordings.</p>
+      <p><strong>Finding:</strong> The toolkit reproduces recent results including SFA-driven anticipative tracking, theta sweeps in head-direction/place/grid systems, and hierarchical path integration. Ships with full-detail reproducible pipelines. This is infrastructure rather than a new finding, but highly valuable for researchers working on continuous attractor models of hippocampal memory — it standardizes what has been a fragmented landscape of lab-specific implementations. From Si Wu's group at Peking University, one of the leading CANN labs.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== KV-Networks ==================== -->
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.02255" target="_blank">AgenticSTS: A Bounded-Memory Testbed for Long-Horizon LLM Agents</a>
+    </div>
+    <div class="paper-meta">
+      Xiangchen Cheng, Yunwei Jiang, Jianwen Sun, Zizhen Li, Chuanhao Li, Xiangcheng Cao, Yihao Liu, Fanrui Zhang, Li Jin, Kaipeng Zhang &middot; arXiv cs.AI, 2 Jul 2026
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Introduces a bounded memory contract for long-horizon LLM agents: every decision is made from a fresh user message assembled by typed retrieval, with no raw cross-decision transcript appended. This keeps the prompt bounded regardless of run length and enables isolated ablation of any single memory layer. Instantiated in Slay the Spire 2, a stochastic deck-building game requiring hundreds of tactical decisions. Released 298 completed trajectories with condition tags, frozen memory/skill snapshots, and analysis scripts.</p>
+      <p><strong>Finding:</strong> A fixed-ablation study shows the largest observed difference when triggered strategic skills are enabled: the no-store baseline wins 3/10 games vs. 6/10 with the skill layer (Fisher exact p ≈ 0.37 — directional but not decisive at this sample size). The bounded-memory contract is methodologically interesting: it forces explicit decisions about what the agent remembers, making memory a designed architectural choice rather than an emergent property of context accumulation. This connects to key-value memory models where retrieval is explicit and bounded.</p>
+    </div>
+    <div class="flag">⚠ Small N (10 runs per condition), Fisher's exact test not significant</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.01940" target="_blank">Conditional Co-Ablation: Recovering Self-Repair Backups in Transformer Circuits</a>
+    </div>
+    <div class="paper-meta">
+      Zhiren Gong, Zihao Zeng, Chau Yuen, Wei Yang Bryan Lim &middot; arXiv cs.LG, 2 Jul 2026
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Addresses a failure mode in mechanistic interpretability: standard first-order ablation scores miss "self-repair" — dormant backup components that take over when a primary component is removed. Introduces Conditional Co-Ablation (CoAx), a label-free score measuring how much each remaining unit's ablation effect grows after the primary set is removed. Applied to GPT-2-small IOI circuit and induction heads across 8 models, with pruning scaling from 124M to 7B.</p>
+      <p><strong>Finding:</strong> CoAx raises backup-head recovery from 0.33 to 0.91 ROC-AUC on the IOI circuit, outperforming all baselines including self-repair-aware gradient scores (best: 0.82). Counterfactual patching verifies the recovered heads causally carry the repair. The finding that transformer attention circuits contain redundant backup pathways — only visible under specific interventions — has a striking parallel to pattern completion in hippocampal circuits: information can be recovered through alternative pathways when the primary route is disrupted.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== Encoding-Retrieval ==================== -->
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://www.nature.com/articles/s41593-026-02333-w" target="_blank">Learning Shapes Neural Geometry in the Primate Prefrontal Cortex</a>
+    </div>
+    <div class="paper-meta">
+      Michał J. Wójcik, Jake P. Stroud, Dante Wasmuht, Makoto Kusunoki, Mikiko Kadohisa, Mark J. Buckley, Rui Ponte Costa, Nicholas E. Myers, Laurence T. Hunt, John Duncan, Mark G. Stokes &middot; Nature Neuroscience, 25 Jun 2026
+      <span class="tag tag-er">Encoding-Retrieval</span>
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Recorded neural activity from macaque PFC while learning a novel XOR rule from scratch, then generalizing to new stimulus sets. Tested the hypothesis that PFC representations transition from high-dimensional, randomly mixed selectivity (supporting exploration) to low-dimensional, rule-selective geometry (supporting generalization). Used dimensionality analyses, decoding, and cross-stimulus-set alignment measures.</p>
+      <p><strong>Finding:</strong> PFC representations progress through distinct phases: early learning shows high-dimensional, nonlinear, randomly mixed selectivity; late learning converges to low-dimensional, rule-selective coding; generalization produces abstract, stimulus-invariant geometry. Different task variables generalize at different timescales — XOR generalizes early (shared shape features), while context and shape require weeks. This reconciles competing theories of PFC function and provides a neural mechanism for how abstract task representations emerge from experience. Relevant to schema formation: structured knowledge (the XOR rule) emerges through progressive dimensionality reduction.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1162/JOCN.a.2627" target="_blank">Retrieval-related Eye Movements Are Predictive of Memory Precision</a>
+    </div>
+    <div class="paper-meta">
+      Mingzhu Hou, Luke R. Pezanko, Sabina Srokova, Paul F. Hill, Arne D. Ekstrom &middot; Journal of Cognitive Neuroscience, 2 Jul 2026
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Investigated whether eye movement patterns during memory retrieval carry information about memory precision — not just whether retrieval succeeds, but how precisely the retrieved content matches the encoded experience. From the Ekstrom lab (University of Arizona), known for combining virtual navigation with hippocampal memory research.</p>
+      <p><strong>Finding:</strong> Retrieval-related eye movements predict memory precision above and beyond binary success/failure measures. This extends the scanpath theory of memory — the idea that eye movements during retrieval recapitulate encoding patterns — by showing that the fidelity of this recapitulation carries graded information about memory quality, not just a binary recall signal. Connects to encoding-retrieval overlap and cortical reinstatement frameworks.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1162/JOCN.a.2628" target="_blank">Working Memory Facilitates Event Segmentation Via Boundary-triggered Reactivation and Partial Accumulation during Events</a>
+    </div>
+    <div class="paper-meta">
+      Berna Güler, Sümeyye Karahamza, Yağmur D. Şentürk, Oded Bein, David Clewett &middot; Journal of Cognitive Neuroscience, 27 May 2026
+      <span class="tag tag-er">Encoding-Retrieval</span>
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Examines how working memory contributes to event segmentation — the parsing of continuous experience into discrete episodes. Tests the hypothesis that event boundaries trigger reactivation of prior event content, with working memory maintaining partial accumulations during ongoing events. From the Clewett lab (UCLA), known for work on episodic memory and temporal structure.</p>
+      <p><strong>Finding:</strong> Working memory actively facilitates event segmentation through boundary-triggered reactivation, with partial accumulation of event content maintained within events. This provides a mechanistic bridge between working memory maintenance and episodic encoding — the reactivation at boundaries may serve as a hippocampal encoding signal, marking event transitions for subsequent consolidation. Directly relevant to how temporal context models represent event boundaries in episodic memory.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== Cross-cutting ==================== -->
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.00397" target="_blank">NeuroCogMap Reveals Cognitive Organization of Large Language Models</a>
+    </div>
+    <div class="paper-meta">
+      Zhongxiang Sun, Haolang Lu, Qiang Ma, Qi Li, Qipeng Wang, Liang Pang, Chenyu Liu, Qiankun Li, Hao Sun, Kun Wang, Yi Zeng, Guoqi Li, Ji-Rong Wen &middot; arXiv q-bio.NC, 1 Jul 2026
+      <span class="tag tag-cross">Cross-cutting</span>
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A cognitive neuroscience-inspired framework that organizes LLM internal features into functional parcels — analogous to brain parcellation in human neuroimaging — and links them to interpretable functions, cognitive capabilities, and a cognitive hierarchy. Tests whether these parcels are stable, semantically coherent, and conserved across models. Also evaluates whether parcel organization predicts human cortical responses during naturalistic language comprehension.</p>
+      <p><strong>Finding:</strong> LLM functional parcels form a stable, semantically coherent organization partly conserved across models. Major LLM failures — hallucination, bias, refusal failure, sycophancy — correspond to distinct disruptions in representational and behavioral-control systems, yielding internal signatures for mechanism-guided detection. NeuroCogMap also improves prediction of human cortical responses, with strongest correspondence in higher-order association cortex. This is a system-level framework for mapping functional organization in artificial systems and relating it to human cognition — a methodological contribution with implications for all three research pillars.</p>
+    </div>
+    <div class="flag">⚠ 79 pages — substantial but not yet peer-reviewed; cross-species claims (LLM → human cortex) need independent validation</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.02020" target="_blank">Hidden Forgetting in Continual Multimodal Learning: When Accuracy Survives but Grounding Fails</a>
+    </div>
+    <div class="paper-meta">
+      Qianyu Chen, Canran Xiao, Runxuan Tang &middot; arXiv cs.AI, 2 Jul 2026
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Identifies a novel failure mode in continual multimodal learning: <em>hidden evidence-use forgetting</em>, where answer accuracy is retained while the model silently shifts toward different or less grounded evidence channels. Proposes RCL (Replay-free Reliance-Constrained Continual Learning), which freezes a previous checkpoint as behavioral reference, estimates evidence-reliance profiles through counterfactual channel interventions, and jointly optimizes task learning, prediction preservation, and reliance preservation.</p>
+      <p><strong>Finding:</strong> Across CoIN, COAST, MCITlib, and an evidence-sensitive multimodal stream, RCL consistently reduces modality reliance drift, dominant evidence flips, and hidden forgetting rates compared to replay-free, PEFT, routing, and memory-assisted baselines. The concept of "hidden forgetting" — preserved surface performance with degraded underlying mechanisms — has strong parallels to the distinction between familiarity and recollection in human memory: you can get the answer right for the wrong reasons. Methodologically relevant to evaluating whether LLM memory mechanisms are truly retrieving vs. pattern-matching.</p>
+    </div>
+    <div class="flag">⚠ Preprint, not yet peer-reviewed</div>
+  </div>
+</div>
+
+<!-- ==================== Peripheral ==================== -->
+<div class="section">
+  <div class="section-header tag-peri">Peripheral</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2606.27831" target="_blank">Hippocampus-DETR: An Explicit Memory Object Detection Framework Based on Hippocampus Modeling</a>
+    </div>
+    <div class="paper-meta">
+      Zhaoning Shi, Bo Ma, Hao Xu, Zepeng Yang, Bo Liang &middot; arXiv cs.CV, 26 Jun 2026
+      <span class="tag tag-peri">Peripheral</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Integrates a hippocampal memory network module (HipNet) into the DETR object detection architecture, systematically simulating entorhinal cortex, dentate gyrus, CA3, CA1, and subiculum subregions. Implements pattern separation, pattern completion, importance filtering, and information integration of visual features, with layer-wise training.</p>
+      <p><strong>Finding:</strong> Higher detection accuracy than mainstream models, with improved generalization and data efficiency in few-shot classification, multimodal feature construction, and image restoration. Ablation validates functional necessity of each memory submodule. While primarily an applied CV paper, the systematic instantiation of hippocampal subregion computations in a working vision architecture provides a testbed for evaluating whether neurocognitive memory principles transfer to artificial systems. The pattern separation/completion distinction is particularly well-operationalized.</p>
+    </div>
+    <div class="flag">⚠ Applied focus — mechanistic insights about biological memory are secondary</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1162/JOCN.a.2625" target="_blank">Memory Reactivation Levels Remain Unaffected by Anticipated Interference</a>
+    </div>
+    <div class="paper-meta">
+      Nursena Ataseven, İ. Efsane Algın, Duygu Yücel, Berna Güler, Lara Todorova &middot; Journal of Cognitive Neuroscience, 27 May 2026
+      <span class="tag tag-peri">Peripheral</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Tests whether anticipated interference — knowing that upcoming trials will involve similar, potentially confusing items — modulates the degree of memory reactivation during retrieval. A direct test of proactive control over memory reinstatement.</p>
+      <p><strong>Finding:</strong> Memory reactivation levels are unaffected by anticipated interference — a null result that is theoretically informative. It suggests that reactivation during retrieval is an automatic consequence of cue-triggered pattern completion rather than a strategically modulated process. This constrains models that posit top-down control over reinstatement strength and has implications for how interference operates in both biological and artificial memory systems.</p>
+    </div>
+    <div class="flag">⚠ Null result — interpret with caution; still awaiting full methodology details</div>
+  </div>
+</div>
+
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>ReContext: Recursive Evidence Replay as LLM Harness for Long-Context Reasoning</strong> (2607.02509) — primarily an evidence aggregation method, not a memory mechanism per se</li>
+    <li><strong>A-TMA: Decoupling State-Aware Memory Failures in Long-Term Agent Memory</strong> (2607.01935) — diagnostic framework for agent memory; interesting but overlaps heavily with papers included</li>
+    <li><strong>ElephantAgent: Contextual State Continuity in Agentic Systems</strong> (2607.01919) — engineering-focused agent architecture with limited mechanistic insight</li>
+    <li><strong>Evidence-State Rewards for Long-Context Reasoning</strong> (2607.02073) — RL training method rather than memory mechanism</li>
+    <li><strong>DRIADA: Python Toolkit for Cross-Scale Analysis of Single-Neuron Selectivity</strong> (2607.00851) — neural data analysis toolkit; tool rather than finding</li>
+    <li><strong>Mean-field theory of rich oscillatory dynamics in low-rank recurrent networks</strong> (2606.30366) — Zheng, Miller, Fiete; dynamical systems theory, not directly memory-focused</li>
+    <li><strong>Modelling chronic stress as E-I perturbation in recurrent working-memory networks</strong> (2606.27529) — Diaz et al.; stress modulation of WM rather than core memory mechanism</li>
+    <li><strong>Memory in the Palm of Your Hand: Smartphone-based Methods for Measuring Memory</strong> — Goldfarb, Davachi, Barense; JOCN; methodological tool rather than mechanistic finding</li>
+    <li><strong>Self-Gating Attention for Time Series Forecasting</strong> (2607.02344) — applied forecasting, limited memory relevance</li>
+    <li><strong>Dynamic shifts between pattern separation and reinstatement in CA3/DG</strong> (bioRxiv Apr 2026) — strong paper but from April; slightly outside the 2-week window</li>
+  </ul>
+</div>
+
+<div class="footer">
+  Generated by WorkBuddy Daily Paper Tracker &middot; 2026-07-05 &middot; 15 papers across 6 categories &middot; Sources: arXiv (cs.AI, cs.CL, cs.LG, cs.CV, q-bio.NC), Nature Neuroscience, bioRxiv, Journal of Cognitive Neuroscience
+</div>
+
+</body>
+</html>
