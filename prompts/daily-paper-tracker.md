@@ -98,12 +98,28 @@ The HTML must be a complete, standalone document. Use the following template str
   }
   h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
   .date { color: #666; font-size: 14px; margin-bottom: 24px; }
-  .editorial {
-    background: #fff; border-left: 4px solid #2563eb; padding: 16px 20px;
-    margin-bottom: 32px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-  }
-  .editorial h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #2563eb; }
-  .editorial p { font-size: 14px; color: #333; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .summary-table .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
   .section { margin-bottom: 32px; }
   .section-header {
     font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
@@ -142,9 +158,26 @@ The HTML must be a complete, standalone document. Use the following template str
 <h1>🧠 Daily Paper Tracker</h1>
 <div class="date">YYYY-MM-DD</div>
 
-<div class="editorial">
-  <h2>Editorial Note</h2>
-  <p>[2–3 sentences: the most interesting or surprising finding today, and why it matters. Is there a pattern across papers? A tension between findings? A methodological trend worth noting?]</p>
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="URL" target="_blank">Paper Title</a></td>
+        <td class="col-authors">First Author et al. (Last Author)</td>
+        <td class="col-finding">One-sentence summary of the key result.</td>
+      </tr>
+      <!-- Repeat for each paper, sorted by tag priority then importance -->
+    </tbody>
+  </table>
 </div>
 
 <!-- Repeat for each section -->
@@ -211,14 +244,15 @@ The HTML must be a complete, standalone document. Use the following template str
 
 ### Rules for generating the HTML
 
-1. **Fill in ALL template sections.** Replace every `[...]` placeholder with actual content. Use real DOIs/URLs for every paper.
-2. **Every paper title is a hyperlink.** Use the actual DOI (preferred), arxiv URL, or PubMed link. No paper appears without a link.
-3. **Color-code tags correctly.** Use the CSS classes exactly as defined: `tag-llm`, `tag-schema`, `tag-kv`, `tag-er`, `tag-cross`, `tag-peri`.
-4. **Within each section, order by estimated importance** (high → low).
-5. **If a section has no papers**, write `<div class="empty-section">No papers today.</div>`.
-6. **Remove the flag div entirely** for papers with no methodological concerns.
-7. **If no papers found at all across all sources**, still generate the HTML with an editorial note explaining that nothing matched, and list what was searched.
-8. **Target 5–15 papers** in the final report. If too few, broaden keywords. If too many, apply stricter relevance filtering.
+1. **Summary table first.** The table at the top of the body must include EVERY paper in the report. Each row has: tag (with colored dot), linked title, authors, and a one-sentence key finding. Sort rows by tag priority (LLM-Memory → Schema-Episodic → KV-Networks → Encoding-Retrieval → Cross-cutting → Peripheral), then by importance within each tag.
+2. **Fill in ALL template sections.** Replace every `[...]` placeholder with actual content. Use real DOIs/URLs for every paper.
+3. **Every paper title is a hyperlink** — in both the summary table AND the detailed paper cards below.
+4. **Color-code tags correctly.** Use the CSS classes exactly as defined. For the summary table, use dot colors: `dot-llm`, `dot-schema`, `dot-kv`, `dot-er`, `dot-cross`, `dot-peri`. For section headers and paper card tags, use: `tag-llm`, `tag-schema`, `tag-kv`, `tag-er`, `tag-cross`, `tag-peri`.
+5. **Within each detailed section, order by estimated importance** (high → low).
+6. **If a section has no papers**, write `<div class="empty-section">No papers today.</div>`.
+7. **Remove the flag div entirely** for papers with no methodological concerns.
+8. **If no papers found at all across all sources**, still generate the HTML with a message in the summary table row: "No new papers matching criteria were found today" and a brief note on what was searched.
+9. **Target 5–15 papers** in the final report. If too few, broaden keywords. If too many, apply stricter relevance filtering.
 
 ---
 
