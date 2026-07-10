@@ -11,8 +11,9 @@ Use every available search tool — WebSearch, WebFetch, and MCP tools (academic
 - **arxiv:** cs.CL, cs.AI, cs.LG, q-bio.NC, stat.ML
 - **bioRxiv:** neuroscience section
 - **PubMed / MEDLINE**
-- **High-impact journals:** Nature, Nature Neuroscience, Nature Machine Intelligence, Nature Human Behaviour, Science, Neuron, eLife, Current Biology, Journal of Neuroscience, Cognition, PNAS, Psychological Review, Cognitive Psychology, Journal of Experimental Psychology: General, Memory & Cognition, Hippocampus, NeuroImage, PLOS Computational Biology, Journal of Cognitive Neuroscience
+- **High-impact journals:** Nature, Nature Neuroscience, Nature Machine Intelligence, Nature Human Behaviour, Science, Neuron, eLife, Current Biology, Journal of Neuroscience, Cognition, PNAS, Psychological Review, Cognitive Psychology, Journal of Experimental Psychology: General, Memory & Cognition, Hippocampus, NeuroImage, PLOS Computational Biology, Journal of Cognitive Neuroscience, Cerebral Cortex, eNeuro, Network Neuroscience
 - **ML conferences (for computational work):** NeurIPS, ICLR, ICML, COSYNE (check recent proceedings)
+- **Naturalistic neuroimaging datasets (supplemental):** OpenNeuro (especially ds005658 and related naturalistic-story datasets), PIEMAN, Sherlock, Tunnel — monitor for new publications using these datasets
 
 ---
 
@@ -45,7 +46,7 @@ Check this identifier against `data/seen_papers.json`. If the identifier exists,
 Run multiple searches using combinations from these categories. Cross-category pairings (e.g., "episodic memory" AND "large language model") are especially valuable.
 
 ### A — Human/Animal Episodic Memory
-episodic memory, hippocampus, hippocampal, entorhinal cortex, medial temporal lobe, place cells, time cells, grid cells, memory consolidation, systems consolidation, pattern separation, pattern completion, memory replay, sharp-wave ripples, spatial navigation, cognitive map, relational memory, source memory, autobiographical memory, free recall, serial recall, context-dependent memory, temporal context, spacing effect, lag effect, memory interference, retrieval practice, testing effect, encoding variability, subsequent memory effect, recognition memory, familiarity vs recollection, episodic future thinking, mental time travel, schema memory, statistical learning memory
+episodic memory, hippocampus, hippocampal, entorhinal cortex, medial temporal lobe, place cells, time cells, grid cells, memory consolidation, systems consolidation, pattern separation, pattern completion, memory replay, sharp-wave ripples, spatial navigation, cognitive map, relational memory, source memory, autobiographical memory, free recall, serial recall, context-dependent memory, temporal context, spacing effect, lag effect, memory interference, retrieval practice, testing effect, encoding variability, subsequent memory effect, recognition memory, familiarity vs recollection, episodic future thinking, mental time travel, schema memory, statistical learning memory, event segmentation, narrative memory, event model, event boundary, temporal integration memory
 
 ### B — Computational Models of Memory
 temporal context model, TCM, CMR (context maintenance and retrieval), complementary learning systems, CLS, successor representation, REM model, retrieving effectively from memory, global matching models, SAM model, MINERVA, TODAM, Hopfield network memory, attractor network memory, neural network episodic memory, RNN memory model, key-value memory model, memory retrieval model, computational model of free recall, Bayesian model of memory, rational analysis of memory, predictive coding memory, reinforcement learning memory, normative model memory
@@ -56,6 +57,9 @@ large language model memory, transformer memory, in-context learning memory, att
 ### D — Encoding and Retrieval Mechanisms
 memory encoding, memory retrieval, encoding specificity, transfer-appropriate processing, levels of processing, retrieval mode, retrieval orientation, ecphory, encoding-retrieval overlap, cortical reinstatement, pattern reinstatement, fMRI multivariate pattern analysis memory, EEG oscillations memory, theta oscillations memory, gamma oscillations memory, phase-amplitude coupling memory, cross-frequency coupling memory
 
+### E — Naturalistic Paradigms & Neuroimaging
+naturalistic paradigm, naturalistic fMRI, audiobook listening, movie viewing, story listening, narrative comprehension, narrative memory, film viewing, inter-person conversation, conversation memory, game playing fMRI, event segmentation, event boundaries, event model, temporal receptive windows, narrative event memory, inter-subject correlation, ISC, intersubject synchronization, shared response model, neural alignment, representational similarity analysis naturalistic, ecological validity memory, real-world memory, naturalistic encoding, naturalistic retrieval, naturalistic replay, Sherlock dataset, PIEMAN dataset, Tunnel dataset, openneuro memory, ds005658, continuous narrative, narrative recall, multi-speaker conversation memory, social interaction memory, joint action memory
+
 ---
 
 ## For Each Relevant Paper, Provide
@@ -63,7 +67,7 @@ memory encoding, memory retrieval, encoding specificity, transfer-appropriate pr
 1. **Title** — MUST be a clickable hyperlink to the paper (DOI, arxiv URL, or PubMed link). Every paper gets a link.
 2. **Authors** — first author et al. (last author), affiliation shorthand
 3. **Source** — journal / conference / preprint server, date
-4. **Approach** — 2–3 sentences. What did they actually do? (behavioral experiment? fMRI? single-unit recording? computational model? what paradigm, what manipulation, what comparison?) Be specific enough that the reader understands the design without opening the paper.
+4. **Approach** — 2–3 sentences. What did they actually do? (behavioral experiment? fMRI with naturalistic paradigm? single-unit recording? computational model? what paradigm, what manipulation, what comparison?) Be specific enough that the reader understands the design without opening the paper. For neuroimaging studies, note whether the paradigm is naturalistic (movie, story, conversation) or controlled (trial-based).
 5. **Main Finding** — 2–3 sentences. The key result. Include effect size if reported (Cohen's d, Bayes factor, accuracy difference, etc.). What does it mean mechanistically? Resist the urge to overclaim — report what the data actually support.
 6. **Relevance Tag** — assign one or more:
    - `[LLM-Memory]` — connects to Pillar 1: LLM lingering memory, attention-based episodic memory in transformers
@@ -294,4 +298,5 @@ Use the `present_files` tool to show the HTML file to the researcher. Include a 
 - This researcher cares about mechanism, not metaphor. Favor papers with specific experimental manipulations over vague modeling claims.
 - arxiv preprints appear before peer review — note this when relevant (e.g., a bold claim on arxiv that hasn't been vetted).
 - If you find papers from the researcher's own lab or close collaborators, flag them prominently — they'll want to see those first.
+- **Naturalistic paradigm studies are a priority.** The researcher has active fMRI replication projects using naturalistic datasets (Sherlock, PIEMAN, Tunnel, OpenNeuro ds005658). Papers using these specific datasets, or employing naturalistic paradigms (audiobook listening, movie viewing, conversation, game playing) to study memory encoding/retrieval/replay, should be given extra attention. Flag any ISC, shared response model, or neural alignment findings as potentially actionable for the researcher's ongoing replication analyses.
 - After completing the report, use `present_files` to deliver the HTML to the researcher. This is the primary deliverable.
