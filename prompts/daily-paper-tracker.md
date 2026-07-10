@@ -253,6 +253,7 @@ The HTML must be a complete, standalone document. Use the following template str
 7. **Remove the flag div entirely** for papers with no methodological concerns.
 8. **If no papers found at all across all sources**, still generate the HTML with a message in the summary table row: "No new papers matching criteria were found today" and a brief note on what was searched.
 9. **Target 5–15 papers** in the final report. If too few, broaden keywords. If too many, apply stricter relevance filtering.
+10. **Each paper appears in exactly ONE detailed section.** When a paper spans multiple relevance tags, choose the primary tag (highest priority: LLM-Memory > Schema-Episodic > KV-Networks > Encoding-Retrieval > Cross-cutting > Peripheral) and place the full paper card there only. In the summary table, the paper gets one row with its primary tag dot. Secondary tags should be shown as additional `<span class="tag tag-xxx">` badges within the paper card's `.paper-meta` div (alongside the primary tag), but never as a duplicate paper card in another section. No paper should appear twice in the detailed view.
 
 ---
 

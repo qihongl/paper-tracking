@@ -237,20 +237,6 @@
 <div class="section">
   <div class="section-header tag-kv">KV-Networks</div>
 
-  <div class="paper">
-    <div class="paper-title">
-      <a href="https://arxiv.org/abs/2607.07386" target="_blank">Sparse Delta Memory: Scaling the State of Linear RNNs through Sparsity</a>
-    </div>
-    <div class="paper-meta">
-      Cabannes et al. (Meta FAIR) &middot; arXiv, 2026-07-08
-      <span class="tag tag-kv">KV-Networks</span>
-      <span class="tag tag-llm">LLM-Memory</span>
-    </div>
-    <div class="paper-body">
-      <p><strong>Approach:</strong> (Also listed in LLM-Memory above.) Replaces the dense key-value outer product in Gated DeltaNet with sparse reads and writes to a large explicit memory. The sparse addressing scheme allows orders-of-magnitude higher memory capacity under isoFLOP constraints.</p>
-      <p><strong>Finding:</strong> Demonstrates that sparse KV addressing is a viable and effective strategy for scaling linear RNN memory capacity without increasing compute. The learned parametric initialization of the memory state provides a bridge between static knowledge (parametric) and dynamic memory (episodic). Relevant to Pillar 3&rsquo;s work on key-to-position mappings and memory capacity limits in KV architectures.</p>
-    </div>
-  </div>
 
   <div class="paper">
     <div class="paper-title">
@@ -291,34 +277,7 @@
 <!-- ===== Cross-cutting Section ===== -->
 <div class="section">
   <div class="section-header tag-cross">Cross-cutting</div>
-
-  <div class="paper">
-    <div class="paper-title">
-      <a href="https://arxiv.org/abs/2607.06720" target="_blank">When Does In-Context Search Help? A Sampling-Complexity Theory of Reflection-Driven Reasoning</a>
-    </div>
-    <div class="paper-meta">
-      Wolf, Wies, Shashua (Hebrew University) &middot; arXiv, 2026-07-07
-      <span class="tag tag-cross">Cross-cutting</span>
-      <span class="tag tag-llm">LLM-Memory</span>
-    </div>
-    <div class="paper-body">
-      <p>(Full details in LLM-Memory section above.) Links three pillars: provides a formal framework for iterative memory retrieval (Pillar 1), connects to the temporal dynamics of retrieval success vs. failure (Pillar 3), and bridges to normative theories of inference and learning (Pillar 2). The finding that reflection quality — specifically the ability to localize errors — is the critical determinant of retrieval success has implications for designing attention mechanisms that support effective memory search.</p>
-    </div>
-  </div>
-
-  <div class="paper">
-    <div class="paper-title">
-      <a href="https://royalsocietypublishing.org/rstb/article/381/1954/20250247/482493/The-hippocampus-as-a-generative-model" target="_blank">The Hippocampus as a Generative Model</a>
-    </div>
-    <div class="paper-meta">
-      Nour, Gregorio, Peng, Messina, Barron (Oxford/MRC) &middot; Phil. Trans. R. Soc. B, 2026-07-09
-      <span class="tag tag-cross">Cross-cutting</span>
-      <span class="tag tag-schema">Schema-Episodic</span>
-    </div>
-    <div class="paper-body">
-      <p>(Full details in Schema-Episodic section above.) Cross-cutting relevance: the generative modeling framework provides a computational language that bridges Pillar 2 (schema-guided episodic memory) with Pillar 1 and Pillar 3 — the latent cause inference mechanism maps onto attention-based memory retrieval, and the SWR replay as credit assignment maps onto temporal-difference-like learning in KV memory architectures.</p>
-    </div>
-  </div>
+  <div class="empty-section">No papers today. (Both cross-tagged papers appear in their primary sections above: In-Context Search Theory in LLM-Memory, Hippocampus as Generative Model in Schema-Episodic.)</div>
 </div>
 
 <!-- ===== Peripheral Section ===== -->
