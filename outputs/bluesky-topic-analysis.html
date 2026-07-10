@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bluesky Repost Topic Analysis — @qlu.bsky.social</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 900px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .subtitle { color: #666; font-size: 14px; margin-bottom: 28px; }
+  .stats-bar { display: flex; gap: 16px; margin-bottom: 28px; flex-wrap: wrap; }
+  .stat { background: #fff; border-radius: 6px; padding: 14px 18px; flex: 1; min-width: 120px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb; text-align: center; }
+  .stat .num { font-size: 28px; font-weight: 700; color: #1d4ed8; }
+  .stat .label { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
+
+  /* Cluster viz */
+  .cluster-section { margin-bottom: 28px; }
+  .cluster-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .cluster-header h2 { font-size: 16px; font-weight: 600; color: #111; }
+  .cluster-count { font-size: 12px; background: #e5e7eb; color: #555; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+  .cluster-papers { display: flex; flex-direction: column; gap: 8px; }
+  .cluster-paper {
+    background: #fff; border-radius: 6px; padding: 12px 16px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04); border: 1px solid #e5e7eb;
+    display: flex; gap: 12px; align-items: flex-start;
+  }
+  .cluster-paper .bar { width: 4px; min-height: 40px; border-radius: 2px; flex-shrink: 0; }
+  .cluster-paper .content { flex: 1; }
+  .cluster-paper .title { font-size: 13px; font-weight: 600; color: #111; margin-bottom: 2px; }
+  .cluster-paper .title a { color: #1d4ed8; text-decoration: none; }
+  .cluster-paper .title a:hover { text-decoration: underline; }
+  .cluster-paper .meta { font-size: 11px; color: #999; margin-bottom: 3px; }
+  .cluster-paper .desc { font-size: 12px; color: #555; line-height: 1.4; }
+
+  /* Color palette for clusters */
+  .c-replay { background: #3b82f6; }
+  .c-naturalistic { background: #10b981; }
+  .c-hippocampus { background: #ec4899; }
+  .c-llm { background: #8b5cf6; }
+  .c-schema { background: #f59e0b; }
+  .c-wm { background: #06b6d4; }
+  .c-bayesian { background: #ef4444; }
+  .c-decision { background: #6366f1; }
+  .c-methods { background: #84cc16; }
+  .c-other { background: #6b7280; }
+
+  /* Cross-cutting heatmap */
+  .crosscut { margin: 28px 0; }
+  .crosscut h2 { font-size: 16px; font-weight: 600; margin-bottom: 12px; }
+  .crosscut p { font-size: 13px; color: #555; margin-bottom: 10px; line-height: 1.5; }
+
+  /* Journal breakdown */
+  .journal-table { width: 100%; border-collapse: collapse; margin: 20px 0;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .journal-table th { text-align: left; padding: 8px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .journal-table td { padding: 7px 12px; border-bottom: 1px solid #f1f5f9; vertical-align: top; }
+  .journal-table tr:hover { background: #f8fafc; }
+  .journal-table .col-count { width: 40px; text-align: center; font-weight: 600; color: #1d4ed8; }
+
+  .insight-box {
+    background: #eff6ff; border-left: 3px solid #3b82f6; border-radius: 0 6px 6px 0;
+    padding: 14px 18px; margin: 20px 0; font-size: 13px; color: #1e40af; line-height: 1.5;
+  }
+  .insight-box strong { color: #1e3a8a; }
+
+  .footer { margin-top: 32px; font-size: 11px; color: #bbb; text-align: center; }
+</style>
+</head>
+<body>
+
+<h1>🧠 Bluesky Repost Topic Analysis</h1>
+<div class="subtitle">@qlu.bsky.social &middot; 25 paper reposts &middot; Oct 2025 – Jul 2026</div>
+
+<div class="stats-bar">
+  <div class="stat"><div class="num">25</div><div class="label">Paper Reposts</div></div>
+  <div class="stat"><div class="num">10</div><div class="label">Topic Clusters</div></div>
+  <div class="stat"><div class="num">15</div><div class="label">Unique Journals</div></div>
+  <div class="stat"><div class="num">4</div><div class="label">Preprints (bioRxiv)</div></div>
+</div>
+
+<div class="insight-box">
+  <strong>Data-driven summary:</strong> Your sharing patterns reveal a researcher deeply anchored in
+  <strong>hippocampal episodic memory</strong> and <strong>neural replay</strong>, actively bridging to
+  <strong>LLMs, NeuroAI, and naturalistic paradigms</strong>. The strongest clusters are replay/consolidation (3 papers,
+  Nature Neuro / TICS / benchmark), hippocampal mechanisms (3 papers, Nature / bioRxiv), and
+  LLM/NeuroAI modularity (4 papers). A clear secondary thread is <strong>naturalistic fMRI</strong> (movie viewing,
+  event segmentation) and <strong>schema/prior knowledge</strong> effects on memory — consistent with your
+  own research pillars.
+</div>
+
+<!-- Cluster 1: Neural Replay & Consolidation -->
+<div class="cluster-section">
+  <div class="cluster-header">
+    <h2>1. Neural Replay &amp; Consolidation</h2>
+    <span class="cluster-count">3 papers</span>
+  </div>
+  <div class="cluster-papers">
+    <div class="cluster-paper">
+      <div class="bar c-replay"></div>
+      <div class="content">
+        <div class="title"><a href="https://authors.elsevier.com/sd/article/S1364-6613(26)00140-3" target="_blank">Studying Replay in Humans: A TICS Forum</a></div>
+        <div class="meta">Nico Schuck, Stephen Fleming, Marit Petzka &middot; TICS, 2026-07-07</div>
+        <div class="desc">Argues that human replay tools (MEG/fMRI) can answer questions rodent recordings cannot — including replay content specificity, relationship to conscious experience, and individual differences.</div>
+      </div>
+    </div>
+    <div class="cluster-paper">
+      <div class="bar c-replay"></div>
+      <div class="content">
+        <div class="title"><a href="https://cimh-clinical-psychology.github.io/FASTIMAGES-benchmark/" target="_blank">FASTIMAGES: A Combined MEG + fMRI Replay Detection Benchmark</a></div>
+        <div class="meta">Simon Kern et al. (CIMH Mannheim) &middot; Preprint, 2026-06-15</div>
+        <div class="desc">Builds a ground-truth benchmark with <em>known</em> neural sequences so replay-detection algorithms can finally be validated against objective truth rather than inferred patterns. Critical methods contribution for the replay field.</div>
+      </div>
+    </div>
+    <div class="cluster-paper">
+      <div class="bar c-replay"></div>
+      <div class="content">
+        <div class="title"><a href="https://www.annualreviews.org/content/journals/10.1146/annurev-neuro-102124-015847" target="_blank">Planning in the Brain: It's Not What You Think It Is</a></div>
+        <div class="meta">Marcelo Mattar &amp; Nathaniel Daw &middot; Annual Review of Neuroscience, 2026-04-21</div>
+        <div class="desc">Proposes that the brain's "planning" machinery — including hippocampal replay — is primarily used for <em>learning from simulated experience</em>, with prospective decision-time thinking as a special case. Reframes replay as a credit-assignment mechanism.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cluster 2: Naturalistic Paradigms & Event Cognition -->
+<div class="cluster-section">
+  <div class="cluster-header">
+    <h2>2. Naturalistic Paradigms &amp; Event Cognition</h2>
+    <span class="cluster-count">2 papers</span>
+  </div>
+  <div class="cluster-papers">
+    <div class="cluster-paper">
+      <div class="bar c-naturalistic"></div>
+      <div class="content">
+        <div class="title"><a href="https://www.biorxiv.org/content/10.64898/2026.05.05.723065v1" target="_blank">Age Differences in Neural Timescales During Movie Viewing</a></div>
+        <div class="meta">Nichole Bouffard et al. &middot; bioRxiv, 2026-05-07</div>
+        <div class="desc">Uses naturalistic fMRI (movie watching) to show age-related changes in hippocampal neural timescales, related to memory specificity. Suggests the hippocampus may not be uniquely specialized in this respect — a provocative null finding.</div>
+      </div>
+    </div>
+    <div class="cluster-paper">
+      <div class="bar c-naturalistic"></div>
+      <div class="content">
+        <div class="title"><a href="https://www.jneurosci.org/content/early/2026/03/23/JNEUROSCI.1657-25.2026" target="_blank">Event Structure Dynamics with Repeated Film Viewing</a></div>
+        <div class="meta">Narjes Al-Zahli, Chris Baldassano, Mariam Aly &middot; J. Neuroscience, 2026-05-07</div>
+        <div class="desc">Tracks changes in event structure representations at <em>multiple timescales</em> during repeated film viewing. Brain regions' representations become coarser or finer with familiarity; slow-timescale structure predicts memory.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cluster 3: Hippocampal Mechanisms -->
+<div class="cluster-section">
+  <div class="cluster-header">
+    <h2>3. Hippocampal Mechanisms</h2>
+    <span class="cluster-count">3 papers</span>
+  </div>
+  <div class="cluster-papers">
+    <div class="cluster-paper">
+      <div class="bar c-hippocampus"></div>
+      <div class="content">
+        <div class="title"><a href="https://www.nature.com/articles/s41586-026-10448-0" target="_blank">Plasticity and Language in the Anaesthetized Human Hippocampus</a></div>
+        <div class="meta">Ben Hayden lab &middot; Nature, 2026-05-06</div>
+        <div class="desc">Investigates plasticity in the <em>anaesthetized</em> human hippocampus using language stimuli — a rare experimental window into human hippocampal plasticity mechanisms unavailable in rodent models.</div>
+      </div>
+    </div>
+    <div class="cluster-paper">
+      <div class="bar c-hippocampus"></div>
+      <div class="content">
+        <div class="title"><a href="https://www.biorxiv.org/content/10.64898/2026.05.02.722435v1" target="_blank">Polysemanticity in Human Hippocampal Neurons</a></div>
+        <div class="meta">Xinyuan Yan, Ben Hayden et al. &middot; bioRxiv, 2026-05-06</div>
+        <div class="desc">Uses NeuroAI interpretability concepts (polysemanticity from mechanistic interpretability) to understand mixed selectivity in human hippocampal single units. Explicit bridge between AI safety interpretability and systems neuroscience.</div>
+      </div>
+    </div>
+    <div class="cluster-paper">
+      <div class="bar c-hippocampus"></div>
+      <div class="content">
+        <div class="title"><a href="https://www.biorxiv.org/content/10.64898/2026.05.05.723065v1" target="_blank">Hippocampal Timescales &amp; Aging During Movie Viewing</a></div>
+        <div class="meta">Bouffard et al. (also in Naturalistic cluster) &middot; bioRxiv, 2026-05-07</div>
+        <div class="desc">Cross-listed. Directly examines hippocampal neural dynamics in a naturalistic context, with implications for how the hippocampus processes extended temporal structure.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cluster 4: LLMs, Modularity & NeuroAI -->
+<div class="cluster-section">
+  <div class="cluster-header">
+    <h2>4. LLMs, Modularity &amp; NeuroAI</h2>
+    <span class="cluster-count">4 papers</span>
+  </div>
+  <div class="cluster-papers">
+    <div class="cluster-paper">
+      <div class="bar c-llm"></div>
+      <div class="content">
+        <div class="title"><a href="#" target="_blank">Modularity Emerges in Both Human Brains and LLMs</a></div>
+        <div class="meta">Pengrui Han, Andrea Devarda, Jacob Andreas &middot; Preprint (shared by Ev Fedorenko), 2026-06-30</div>
+        <div class="desc">Finds that the same modular organization observed in human cortex (distinct networks for language, formal reasoning, social reasoning) <em>emerges spontaneously</em> in LLMs, suggesting modularity may be inevitable in intelligent systems.</div>
+      </div>
+    </div>
+    <div class="cluster-paper">
+      <div class="bar c-llm"></div>
+      <div class="content">
+        <div class="title"><a href="https://infinitefaculty.substack.com/p/memorization-vs-generalization-in" target="_blank">Memorization vs. Generalization in AI</a></div>
+        <div class="meta">Andrew Lampinen (Google DeepMind) &middot; Blog post, 2026-02-18</div>
+        <div class="desc">Surveys evolving perspectives on memorization vs. generalization from classic ML through modern LLMs. Argues the relationship is more nuanced than a simple trade-off — relevant to the "lingering memory" question in Pillar 1.</div>
+      </div>
+    </div>
+    <div class="cluster-paper">
+      <div class="bar c-llm"></div>
+      <div class="content">
+        <div class="title"><a href="#" target="_blank">Escape Dimensions: A Theory for Why Larger Networks Train Better</a></div>
+        <div class="meta">Flavio Martinelli et al. &middot; Preprint, 2026-06-10</div>
+        <div class="desc">Proposes an alternative to the lottery ticket hypothesis grounded in optimization theory: larger networks train better because they provide more "escape dimensions" from poor local minima.</div>
+      </div>
+    </div>
+    <div class="cluster-paper">
+      <div class="bar c-llm"></div>
+      <div class="content">
+        <div class="title"><a href="https://facebookresearch.github.io/neuroai/neuralset/index.html" target="_blank">NeuralSet: A Scalable Neuro-AI Package</a></div>
+        <div class="meta">Jean-Rémi King (Meta AI) &middot; Tool release, 2026-04-21</div>
+        <div class="desc">Python package for aligning neural data (fMRI, EEG, MEG, iEEG, spikes) with AI model embeddings (text, audio, video, images). Directly useful for your own NeuroAI analyses.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cluster 5: Schema, Prior Knowledge & Episodic Memory -->
+<div class="cluster-section">
+  <div class="cluster-header">
+    <h2>5. Schema, Prior Knowledge &amp; Episodic Memory</h2>
+    <span class="cluster-count">3 papers</span>
+  </div>
+  <div class="cluster-papers">
+    <div class="cluster-paper">
+      <div class="bar c-schema"></div>
+      <div class="content">
+        <div class="title"><a href="https://www.sciencedirect.com/science/article/pii/S0010027726001320" target="_blank">Prior Knowledge Biases Episodic Memory by Filling Gaps in Imprecise Memories</a></div>
+        <div class="meta">Michele Ramey et al. &middot; Cognition, 2026-06-10</div>
+        <div class="desc">Shows that prior knowledge fills gaps when episodic memories are imprecise — a schema-driven reconstruction effect. Simulates aging effects in younger adults by manipulating memory precision. Directly relevant to Pillar 2.</div>
+      </div>
+    </div>
+    <div class="cluster-paper">
+      <div class="bar c-schema"></div>
+      <div class="content">
+        <div class="title"><a href="https://www.nature.com/articles/s41593-026-02255-7" target="_blank">Neural Circuits Encode Prior Knowledge of Temporal Statistics</a></div>
+        <div class="meta">Dirk Gütlin et al. &middot; Nature Neuroscience, 2026-04-08</div>
+        <div class="desc">Demonstrates that neural circuits — particularly cerebellum — encode learned temporal statistics as prior knowledge that shapes subsequent processing. Bridges Bayesian predictive coding with circuit-level mechanisms.</div>
+      </div>
+    </div>
+    <div class="cluster-paper">
+      <div class="bar c-schema"></div>
+      <div class="content">
+        <div class="title"><a href="https://doi.org/10.1038/s41562-025-02387-z" target="_blank">Non-Constituent Priming: Evidence That Human Memory Is Vast and Implicit</a></div>
+        <div class="meta">Matt Bury, Morten Christiansen et al. &middot; Nature Human Behaviour, 2026-02-09</div>
+        <div class="desc">Demonstrates priming of non-hierarchical language structures, arguing against the traditional linguistic assumption that memory is a scarce resource. Human memory operates via compression, clustering, and implicit statistical learning.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cluster 6: Working Memory & Individual Differences -->
+<div class="cluster-section">
+  <div class="cluster-header">
+    <h2>6. Working Memory &amp; Individual Differences</h2>
+    <span class="cluster-count">2 papers</span>
+  </div>
+  <div class="cluster-papers">
+    <div class="cluster-paper">
+      <div class="bar c-wm"></div>
+      <div class="content">
+        <div class="title"><a href="https://www.biorxiv.org/content/10.64898/2026.05.14.724968v1" target="_blank">Cerebellar Perturbation Impairs Working Memory Representations Cortex-Wide</a></div>
+        <div class="meta">Brissenden, Taraz Lee et al. &middot; bioRxiv, 2026-05-28</div>
+        <div class="desc">Combines fMRI, TMS, and computational modeling for <em>causal</em> evidence that cerebellum contributes to brain-wide working memory representations and recall. Expands the WM network beyond the canonical prefrontal-parietal circuit.</div>
+      </div>
+    </div>
+    <div class="cluster-paper">
+      <div class="bar c-wm"></div>
+      <div class="content">
+        <div class="title"><a href="https://doi.org/10.1162/IMAG.a.1228" target="_blank">LTM Encoding Predicted by Inter-Electrode Correlations, Independent of WM</a></div>
+        <div class="meta">Chong Zhao, Monica Rosenberg et al. &middot; Imaging Neuroscience, 2026-05-05</div>
+        <div class="desc">Using iEEG, shows that individual differences in LTM encoding are uniquely predicted by inter-electrode correlations even after controlling for WM abilities — suggesting WM and LTM encoding are dissociable abilities with distinct neural signatures.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cluster 7: Bayesian & Computational Theory -->
+<div class="cluster-section">
+  <div class="cluster-header">
+    <h2>7. Bayesian &amp; Computational Theory</h2>
+    <span class="cluster-count">3 papers</span>
+  </div>
+  <div class="cluster-papers">
+    <div class="cluster-paper">
+      <div class="bar c-bayesian"></div>
+      <div class="content">
+        <div class="title"><a href="https://authors.elsevier.com/a/1nF3i4sIRvapEp" target="_blank">Bayesian Efficient Coding: A Review</a></div>
+        <div class="meta">Ivan Tomic, Máté Lengyel, Paul Bays &middot; TICS, 2026-06-10</div>
+        <div class="desc">Reviews the Bayesian efficient coding framework, which integrates normative principles of efficient sensory coding with Bayesian inference. Connects low-level neural codes to optimal perceptual behavior.</div>
+      </div>
+    </div>
+    <div class="cluster-paper">
+      <div class="bar c-bayesian"></div>
+      <div class="content">
+        <div class="title"><a href="https://www.cell.com/trends/cognitive-sciences/fulltext/S1364-6613(26)00032-X" target="_blank">Perceptual Multistability as a Window into Computational Psychiatry</a></div>
+        <div class="meta">Shervin Safavi et al. &middot; TICS, 2026-06-09</div>
+        <div class="desc">Uses the flexibility of perception — the most basic cognitive function — to understand complex psychiatric dysfunctions. Computational psychiatry approach that maps perceptual dynamics to clinical conditions.</div>
+      </div>
+    </div>
+    <div class="cluster-paper">
+      <div class="bar c-bayesian"></div>
+      <div class="content">
+        <div class="title"><a href="https://www.sciencedirect.com/science/article/pii/S0010027725002811" target="_blank">Children Use Predictive Representations (Successor Representations) for Flexible Choice</a></div>
+        <div class="meta">Alice Zhang, Ari Kahn, Nathaniel Daw, Cate Hartley, Kate Nuss &middot; Cognition, 2025-10-15</div>
+        <div class="desc">Shows that children spontaneously use successor representations to guide decisions — providing a developmental account of how predictive models support flexible behavior. Bridges RL theory with cognitive development.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cluster 8: Methods & Benchmarks -->
+<div class="cluster-section">
+  <div class="cluster-header">
+    <h2>8. Methods, Benchmarks &amp; Meta-Science</h2>
+    <span class="cluster-count">3 papers</span>
+  </div>
+  <div class="cluster-papers">
+    <div class="cluster-paper">
+      <div class="bar c-methods"></div>
+      <div class="content">
+        <div class="title"><a href="https://cimh-clinical-psychology.github.io/FASTIMAGES-benchmark/" target="_blank">FASTIMAGES Replay Detection Benchmark</a></div>
+        <div class="meta">Kern et al. (cross-listed from Replay cluster)</div>
+        <div class="desc">Ground-truth benchmark for validating replay-detection methods. Addresses a critical methods gap in the human replay literature.</div>
+      </div>
+    </div>
+    <div class="cluster-paper">
+      <div class="bar c-methods"></div>
+      <div class="content">
+        <div class="title"><a href="https://www.nature.com/articles/s44271-025-00374-8" target="_blank">Overestimated Role of Cognitive Control in Value-Based Decisions</a></div>
+        <div class="meta">Harrison Ritz et al. &middot; Nature Communications Psychology, 2026-02-03</div>
+        <div class="desc">A <em>model misspecification</em> critique: re-analyzes a prominent dACC study to show the original interpretation overestimated the role of cognitive control, leading to erroneous conclusions. Meta-scientific contribution.</div>
+      </div>
+    </div>
+    <div class="cluster-paper">
+      <div class="bar c-methods"></div>
+      <div class="content">
+        <div class="title"><a href="https://facebookresearch.github.io/neuroai/neuralset/index.html" target="_blank">NeuralSet NeuroAI Package</a></div>
+        <div class="meta">King et al. (cross-listed from LLM/NeuroAI cluster)</div>
+        <div class="desc">Scalable, multimodal NeuroAI pipeline. Directly actionable for your own fMRI/LLM alignment analyses.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cross-cutting observations -->
+<div class="crosscut">
+  <h2>Cross-Cutting Themes</h2>
+
+  <div class="insight-box">
+    <strong>🔁 Replay is your top signal.</strong> Three papers across TICS, an Annual Review, and a benchmark preprint form a coherent thread: methods for detecting human replay (FASTIMAGES), theoretical reframing of replay as credit assignment (Mattar & Daw), and the translational argument for why human replay matters (Schuck). This is the most concentrated cluster.
+  </div>
+
+  <div class="insight-box">
+    <strong>🧬 You're tracking the hippocampus/LLM bridge from both sides.</strong> On the neuro side: polysemanticity, plasticity, naturalistic timescales. On the AI side: modularity in LLMs, memorization-generalization, and neural geometry. You're one of the few people reading both literatures with equal fluency.
+  </div>
+
+  <div class="insight-box">
+    <strong>📺 Naturalistic paradigms are a growing thread.</strong> Both Bouffard (movie viewing + aging) and Baldassano (repeated film viewing + event structure) align with your own fMRI replication projects using naturalistic datasets (Sherlock, PIEMAN, Tunnel). These papers suggest the field is moving toward ecological designs.
+  </div>
+
+  <div class="insight-box">
+    <strong>⚖️ You value methods rigor.</strong> Ritz's model misspecification critique, Kern's ground-truth benchmark, and Zhao's careful WM/LTM dissociation all reflect a methodological sensibility — not just "here's a cool result" but "here's what's actually true when you check carefully."
+  </div>
+</div>
+
+<!-- Journal breakdown -->
+<h2 style="font-size:16px; font-weight:600; margin:24px 0 12px;">Journals &amp; Venues</h2>
+<table class="journal-table">
+  <thead><tr><th>Journal / Venue</th><th class="col-count">Papers</th></tr></thead>
+  <tbody>
+    <tr><td>bioRxiv (preprint)</td><td class="col-count">4</td></tr>
+    <tr><td>Trends in Cognitive Sciences (TICS)</td><td class="col-count">3</td></tr>
+    <tr><td>Nature / Nature Neuroscience / Nature Human Behaviour</td><td class="col-count">3</td></tr>
+    <tr><td>Cognition</td><td class="col-count">2</td></tr>
+    <tr><td>ArXiv / unpublished preprints</td><td class="col-count">4</td></tr>
+    <tr><td>Annual Review of Neuroscience</td><td class="col-count">1</td></tr>
+    <tr><td>Journal of Neuroscience</td><td class="col-count">1</td></tr>
+    <tr><td>eLife</td><td class="col-count">1</td></tr>
+    <tr><td>Imaging Neuroscience</td><td class="col-count">1</td></tr>
+    <tr><td>Nature Communications Psychology</td><td class="col-count">1</td></tr>
+    <tr><td>Frontiers in Computational Neuroscience</td><td class="col-count">1</td></tr>
+    <tr><td>Blog post / Tool release</td><td class="col-count">3</td></tr>
+  </tbody>
+</table>
+
+<div class="insight-box">
+  <strong>📊 48% of your reposts are preprints or non-journal venues</strong> — bioRxiv, arxiv, blog posts, and tool releases. This suggests you track work at the cutting edge, before it hits journals. The journal papers skew toward TICS, Nature-family, and Cognition — high-impact cognitive/neuroscience venues. Notably absent: narrow systems neuroscience journals without computational or cognitive framing.
+</div>
+
+<div class="footer">
+  Analysis generated from 25 paper reposts on Bluesky (@qlu.bsky.social) between Oct 2025 and Jul 2026.
+</div>
+
+</body>
+</html>
