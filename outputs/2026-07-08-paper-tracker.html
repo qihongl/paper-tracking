@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker — 2026-07-08</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .stats { font-size: 13px; color: #888; margin-bottom: 20px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .summary-table .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+  .footer { margin-top: 32px; font-size: 11px; color: #bbb; text-align: center; }
+</style>
+</head>
+<body>
+
+<h1>Daily Paper Tracker</h1>
+<div class="date">2026-07-08 &middot; Wednesday</div>
+<div class="stats">9 papers: 5 LLM-Memory, 1 KV-Networks, 1 Encoding-Retrieval, 1 Cross-cutting, 1 Peripheral &middot; Sources: arXiv (8), bioRxiv (1)</div>
+
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.05690" target="_blank">Memory in the Loop: In-Process Retrieval as Extended Working Memory for Language Agents</a></td>
+        <td class="col-authors">Khan &amp; Lipizzi (Stevens)</td>
+        <td class="col-finding">In-process store at ~100µs enables per-step memory access; recall improves from 0/5 to 3.6–4.8/5; redundant actions rise monotonically with latency (0.0 vs 7.2 of 12 at 110ms, p=0.0079).</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.05969" target="_blank">MemDefrag: Latent Memory Defragmentation for Large Language Models</a></td>
+        <td class="col-authors">Yan, Mao &amp; Guo</td>
+        <td class="col-finding">Middle-layer attention density traces target memory fragments; defragmentation via rank/reorder/filter yields 43.0% knowledge retention after 50 updates vs. 17.4%/17.6% for MemoryLLM/M+.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.05794" target="_blank">NapMem: Learning to Use Memory as a Structured Action Space</a></td>
+        <td class="col-authors">Xu, Sun, Liu et al.</td>
+        <td class="col-finding">Multi-granularity memory pyramid with RL-trained navigation policy; competitive on PersonaMem-v2, LongMemEval, LoCoMo while preserving general reasoning.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.05708" target="_blank">Akashic: A Low-Overhead LLM Inference Service with MemAttention</a></td>
+        <td class="col-authors">Liu, Luo, Jin et al.</td>
+        <td class="col-finding">MemAttention organizes context into bounded semantic chunks; +10.2 accuracy points, 1.88× sustainable request rate over prior memory baselines.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.06160" target="_blank">LongCrafter: Evidence-Graph-Guided Instruction Synthesis for Long-Context LLMs</a></td>
+        <td class="col-authors">Yuan, Xu, Xu et al. (Zhao &amp; Liu, CAS)</td>
+        <td class="col-finding">32-task taxonomy with evidence-graph-grounded SFT data; outperforms all baselines and official post-trained models on LongBench v1/v2 and LooGLE; mitigates lost-in-the-middle.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.06519" target="_blank">FreqDepthKV: Frequency-Guided Depth Sharing for Robust KV Cache Compression</a></td>
+        <td class="col-authors">Córdoba, Tercero, Hijo et al.</td>
+        <td class="col-finding">Frequency-guided factorization into shared low-frequency + sparse high-frequency residuals; 3.9× compression, 70.4 tok/s, near-full-cache accuracy.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://www.biorxiv.org/content/10.64898/2026.07.07.737020v1" target="_blank">The Neural Signature of Simple Overlearned Temporal Expectations Resembles Episodic Retrieval</a></td>
+        <td class="col-authors">Sempf, Vavra &amp; Noesselt (Otto-von-Guericke)</td>
+        <td class="col-finding">fMRI: overlearned temporal expectations engage left inferior parietal, retrosplenial, and prefrontal cortex — regions implicated in episodic retrieval/simulation.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.05577" target="_blank">Narrative World Model: Narratology-Grounded Writer Memory for Long-Form Fiction</a></td>
+        <td class="col-authors">Saifullah, Kornmaier, Kazi et al.</td>
+        <td class="col-finding">Typed temporal-state graph with query-conditioned hybrid retrieval substantially outperforms Graphiti/Zep on multi-hop narratological QA.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-peri"></span>Peripheral</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.05541" target="_blank">Self-Review RL with Cross-Episode Memory and Policy Distillation</a></td>
+        <td class="col-authors">Amin &amp; Yildirim</td>
+        <td class="col-finding">Cross-episode memory buffer retains successful self-reviews for reuse; outperforms RLVR baseline on GSM8K across Qwen 3-4B and OLMo-3-7B.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.05690" target="_blank">Memory in the Loop: In-Process Retrieval as Extended Working Memory for Language Agents</a>
+    </div>
+    <div class="paper-meta">
+      Yusuf Khan, Carlo Lipizzi (Stevens Institute of Technology) &middot; arXiv:2607.05690, 6 Jul 2026 &middot; Preprint
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Moves memory inside the LLM agent's observe-reason-act loop, reading and writing on every step. Replaces networked stores (~110ms latency) with an in-process store (~100µs). Invokes the extended-mind thesis: a store fast enough to be constantly and directly available becomes extended working memory, not a tool the agent merely consults. Tests across four GPT-5-class models under a bounded window recall task.</p>
+      <p><strong>Finding:</strong> In-loop memory improves recall from 0/5 to 3.6–4.8/5. Redundant actions rise monotonically with latency: 0.0 of 12 at in-process speed vs. 7.2 of 12 at 110ms cloud round trip (exact permutation p=0.0079). Store never lost a fact (244/244 writes kept); every miss traces to the agent's read policy, not the store. The dominant per-step cost is embedding (~200–400ms); pairing with a small local embedder drops the complete operation to ~40µs. Mechanistically, this is a direct demonstration that memory access latency causally determines effective working memory capacity in LLM agents.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.05969" target="_blank">MemDefrag: Latent Memory Defragmentation for Large Language Models</a>
+    </div>
+    <div class="paper-meta">
+      Ruiyi Yan, Zhuoyuan Mao, Yiwen Guo &middot; arXiv:2607.05969, 7 Jul 2026 &middot; Preprint
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Diagnoses performance degradation in latent memory LLMs (MemoryLLM, M+) during memory updates. Probes layer-wise attention density to discover that middle transformer layers concentrate the highest attention on target memory fragments — an inherent tracing signal. Proposes MemDefrag, a training-free framework using this signal to rank, reorder, and filter stored latent memories, plus an informativeness-guided proportional forgetting mechanism.</p>
+      <p><strong>Finding:</strong> MemDefrag achieves 43.0% knowledge retention after 50 memory updates vs. 17.4% (MemoryLLM) and 17.6% (M+). Generalizes across LLM architectures and latent-memory variants. The key mechanistic insight: positional encoding misalignment degrades memory update quality, and a middle-layer attention-density tracing signal can correct this without retraining — a lightweight fix for a fundamental architectural problem in latent-memory LLMs.</p>
+    </div>
+    <div class="flag">Preprint; no ablation on whether the tracing signal degrades with model scale.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.05794" target="_blank">NapMem: From Passive Retrieval to Active Memory Navigation — Learning to Use Memory as a Structured Action Space</a>
+    </div>
+    <div class="paper-meta">
+      Yue Xu, Yutao Sun, Yihao Liu, Mengyu Zhou et al. &middot; arXiv:2607.05794, 7 Jul 2026 &middot; Preprint
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Frames long-term user memory as a structured action space rather than passive retrieval. Builds a linked multi-granularity memory pyramid: raw conversations → typed memory records → topic tracks → user profiles, connected through provenance relations. The agent is trained via memory-tool reinforcement learning to navigate these granularity levels, selecting the appropriate memory resolution for each query.</p>
+      <p><strong>Finding:</strong> NapMem is competitive on PersonaMem-v2, LongMemEval, and LoCoMo while largely preserving general reasoning and tool-use abilities. Ablations show that both structured storage and the learned navigation policy contribute independently. The key architectural claim: treating memory granularity as an action-space decision — not a fixed retrieval parameter — improves the quality of memory use in personalized agents.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.05708" target="_blank">Akashic: A Low-Overhead LLM Inference Service with MemAttention</a>
+    </div>
+    <div class="paper-meta">
+      Yang Liu, Zhaokai Luo, Huayi Jin, Ruozhou He et al. (Junhao Hu) &middot; arXiv:2607.05708, 7 Jul 2026 &middot; Preprint
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Proposes MemAttention, which organizes accumulated agent context into bounded chunks and models cross-chunk semantic relationships. Combines this with hardware-software co-designed memory placement that co-locates likely co-retrieved chunks, reducing retrieval fragmentation and I/O overhead. Contrasts with replay-the-full-history baselines.</p>
+      <p><strong>Finding:</strong> Across four workloads and three model sizes, Akashic improves task accuracy by up to 10.2 points, throughput by up to 1.21×, and sustainable request rate by up to 1.88× over prior memory baselines. The cross-chunk semantic modeling is the key innovation — it preserves evidence that would otherwise be lost when chunking the context.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.06160" target="_blank">LongCrafter: Towards Diverse Long-Context Understanding via Evidence-Graph-Guided Instruction Synthesis</a>
+    </div>
+    <div class="paper-meta">
+      Chenhao Yuan, Yinhao Xu, Shuwen Xu et al. (Pengfei Cao, Jun Zhao, Kang Liu, CAS) &middot; arXiv:2607.06160, 7 Jul 2026 &middot; Preprint
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Builds a hierarchical task taxonomy with 32 fine-grained long-context task types spanning local/shallow to global/deep understanding. Constructs task-aligned long contexts, decomposes them into explicit evidence graphs modeling cross-paragraph dependencies, and generates instruction-response pairs grounded in located evidence spans.</p>
+      <p><strong>Finding:</strong> Models fine-tuned on LongCrafter data outperform all SFT baselines and even the official post-trained models on LongBench, LongBench v2, and LooGLE (Qwen2.5-7B and LLaMA-3.1-8B). Largest gains on high-difficulty tasks. Trained models locate evidence robustly regardless of position, effectively mitigating the "lost in the middle" problem. Mechanistically interesting because the evidence-graph grounding enforces faithful, traceable reasoning about long-context dependencies.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.06519" target="_blank">FreqDepthKV: Frequency-Guided Depth Sharing for Robust KV Cache Compression in Long-Context LLM Inference</a>
+    </div>
+    <div class="paper-meta">
+      Anna Córdoba, Adam Puente Tercero, Nerea Angulo Hijo et al. &middot; arXiv:2607.06519, 7 Jul 2026 &middot; Preprint
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Factorizes adjacent-layer KV states into shared low-frequency depth components and sparse high-frequency residuals. A lightweight online probe assigns each attention head to shared-depth, residual-depth, or exact cache mode based on its contribution to reconstruction-sensitive attention logits, adapting compression policy to prompt structure without retraining.</p>
+      <p><strong>Finding:</strong> At 32K-token prefill: 58.3 Exact Match, 63.0 F1, 32.5 ROUGE-L, 48.1 pass@1 — closely matching full KV cache. Achieves 70.4 tokens/s decoding throughput, 2.06s TTFT, 6.2 GB peak KV memory, for a 3.9× effective compression ratio. The frequency-guided factorization is the key insight: low-frequency components are shared across layers (highly compressible), while high-frequency residuals capture the layer-specific evidence needed for retrieval and reasoning.</p>
+    </div>
+    <div class="flag">Preprint; companion paper DepthWeave-KV (2607.06523) by same group achieves 8.3× compression with token-adaptive routing — included in excluded section.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://www.biorxiv.org/content/10.64898/2026.07.07.737020v1" target="_blank">The Neural Signature of Simple Overlearned Temporal Expectations Resembles Episodic Retrieval</a>
+    </div>
+    <div class="paper-meta">
+      Linda Sempf, Peter Vavra, Toemme Noesselt (Otto-von-Guericke University Magdeburg) &middot; bioRxiv, 7 Jul 2026 &middot; Preprint
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> fMRI study using a multi-day detection paradigm with auditory cues preceding visual targets at likely vs. unlikely time points. Compares trained participants against untrained controls to isolate overlearned temporal expectations while controlling for parallel learning processes. Uses Neurosynth association tests to characterize the functional profiles of activated regions.</p>
+      <p><strong>Finding:</strong> After training, left inferior parietal cortex, retrosplenial cortex, and prefrontal cortex were engaged in processing overlearned temporal expectations. Critically, the trained group showed inverted brain responses as a function of stimulus likelihood compared to controls. Neurosynth meta-analysis revealed that these regions have been previously implicated in episodic retrieval and simulation. The authors propose that frequently used temporal expectations may, over time, recruit episodic memory routines to simulate likely future events. Mechanistically, this suggests a convergence of temporal prediction and episodic retrieval circuitry — temporal context becomes so overlearned that it triggers retrieval-like neural states.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.05577" target="_blank">Narrative World Model: Narratology-Grounded Writer Memory for Long-Form Fiction</a>
+    </div>
+    <div class="paper-meta">
+      Mohammad Saifullah, Thomas Kornmaier, Taaha Kazi, Vasu Sharma et al. &middot; arXiv:2607.05577, 6 Jul 2026 &middot; Preprint
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Builds a writer-memory system pairing a typed temporal-state graph grounded in narratology (who knows what, when they learned it, whether events precede narration, how relationships shift) with query-conditioned hybrid retrieval. Evaluates via a held-constant Opus 4.8 reader over only chapter-safe evidence, comparing against Graphiti/Zep (Rasmussen et al., 2025) and GraphRAG on a validated multi-hop narratological QA benchmark.</p>
+      <p><strong>Finding:</strong> NWM substantially and significantly outperforms Graphiti/Zep on multi-hop narratological QA. The advantage is representational, not an artifact of extraction quality: it survives rebuilding the baseline with NWM's own extractor. The typed temporal-state graph structure — which tracks entities, events, and their temporal/doxastic relations — is what drives the gain. Relevant to Pillar 3 (KV-Networks) because the temporal-state graph is effectively a key-value memory for narrative state, and to Pillar 1 (LLM-Memory) because it demonstrates how structured temporal representations dramatically improve memory retrieval over flat approaches.</p>
+    </div>
+    <div class="flag">Application domain (fiction writing) is far from the researcher's focus; included for the temporal-state graph mechanism.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-peri">Peripheral</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.05541" target="_blank">Self-Review Reinforcement Learning with Cross-Episode Memory and Policy Distillation</a>
+    </div>
+    <div class="paper-meta">
+      Muhammad Zain Amin, Kibele Sebnem Yildirim &middot; arXiv:2607.05541, 6 Jul 2026 &middot; Preprint
+      <span class="tag tag-peri">Peripheral</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Introduces SRRL, a training framework that embeds explicit self-review into each RL episode. When a first-pass LLM response fails, the model generates a self-review identifying what went wrong, conditions an improved second attempt, and internalizes improvements into the base policy via selective distillation. A cross-episode memory buffer retains successful self-reviews for reuse in future episodes.</p>
+      <p><strong>Finding:</strong> SRRL consistently outperforms the RLVR baseline (GRPO optimizer) on GSM8K across Qwen 3-4B and OLMo-3-7B, with greater learning efficiency. The cross-episode memory mechanism — retaining and reusing successful self-reviews — is what makes this relevant: it's a simple but effective episodic memory for RL-trained LLMs that explicitly addresses the credit-assignment problem in sparse-reward environments.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>DepthWeave-KV: Token-Adaptive Cross-Layer Residual Factorization for Long-Context KV Cache Compression</strong> (arXiv:2607.06523, Córdoba et al.) — companion paper to FreqDepthKV by same group; 8.3× KV memory reduction, 72.8 tok/s at 64K context; excluded to avoid redundancy. Noted for the token-adaptive depth router that allocates higher reconstruction rank to retrieval-critical tokens.</li>
+    <li><strong>Benchmarking KV-Cache Optimizations across Task Quality and System Performance</strong> (arXiv:2607.05399, Agrawal &amp; Mayer) — submitted May 2026, outside the 48-hour window. Useful survey of KIVI, TurboQuant, SnapKV, CaM but not new.</li>
+    <li><strong>StateFuse: Deterministic Conflict-Preserving Memory for Multi-Agent Systems</strong> (arXiv:2607.05844, Volkov et al.) — CRDT-based memory for multi-agent conflict tracking; engineering focus, no mechanistic insight into memory representation.</li>
+    <li><strong>Danus: Orchestrating Mathematical Reasoning Agents with Fact-Graph Memory</strong> (arXiv:2607.06447, Liu et al.) — fact-graph memory for math reasoning; application-specific, limited mechanistic novelty.</li>
+    <li><strong>CurateEvo: Data-Curation Evolving for Agentic Post-Training</strong> (arXiv:2607.06140, Wang et al.) — dynamic data curation with memory bank; memory is a minor component of a data-pipeline framework.</li>
+    <li><strong>HBSL: Hierarchical Bayesian Statistical Learning for Modeling Individual Learning</strong> (arXiv:2607.05822, Ringer &amp; Daikoku) — EEG + Bayesian model of statistical learning in dyslexia; preclinical, no group difference found.</li>
+    <li><strong>ResonatorLM: Causal Resonant Field Mixing for Efficient Long-Context Language Modeling</strong> (arXiv:2607.05583, Chaudhury) — replaces attention with resonant field mixing; architecture novelty but no memory-specific mechanism.</li>
+    <li><strong>PatchOptic for Shared-State LLM Workflows</strong> (arXiv:2607.05483, Bai &amp; Cai) — optics-based state management for LLMs; context-window discussion but primarily a PL/formal-methods contribution.</li>
+    <li><strong>Microglial TDP-43 mediates myelin refinement</strong> (Nature Neuroscience, 8 Jul 2026, Compagnion et al.) — microglial biology in mice; not memory-related.</li>
+  </ul>
+</div>
+
+<div class="footer">
+  Generated by WorkBuddy Daily Paper Tracker &middot; 2026-07-08 &middot; Searched arXiv (cs.CL, cs.AI, cs.LG, q-bio.NC), bioRxiv (neuroscience), Nature Neuroscience, eLife, Neuron, Current Biology, J. Neuroscience, PNAS, Science &middot; ~18 WebSearch queries, ~14 WebFetch calls
+</div>
+
+</body>
+</html>

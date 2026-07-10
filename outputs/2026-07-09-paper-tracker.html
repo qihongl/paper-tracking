@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker — 2026-07-09</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .summary-table .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+  .footer { margin-top: 32px; font-size: 11px; color: #bbb; text-align: center; }
+</style>
+</head>
+<body>
+
+<h1>🧠 Daily Paper Tracker</h1>
+<div class="date">2026-07-09 &middot; Thursday</div>
+
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.07707" target="_blank">Co-LMLM: Continuous-Query Limited Memory Language Models</a></td>
+        <td class="col-authors">Feldman et al. (Artzi, Cornell)</td>
+        <td class="col-finding">Externalizing factual knowledge to a continuous-key vector KB during pretraining; 360M model outperforms 40×-data baselines and matches gpt-4o-mini on SimpleQA.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.06720" target="_blank">When Does In-Context Search Help? A Sampling-Complexity Theory of Reflection-Driven Reasoning</a></td>
+        <td class="col-authors">Wolf, Wies, Shashua (Hebrew Univ.)</td>
+        <td class="col-finding">Proves in-context search yields exponential improvement when reflections reliably localize early mistakes; formalizes as posterior inference over reasoning traces with polynomial sample complexity.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.06974" target="_blank">MILES: Modular Instruction Memory with Learnable Selection for Self-Improving LLM Reasoning</a></td>
+        <td class="col-authors">Tong &amp; Gong (UNSW)</td>
+        <td class="col-finding">Step-wise memory units with correctness-optimized learned selection; coarse-to-fine retrieval that accumulates reusable reasoning experience across problems under test-time constraints.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://royalsocietypublishing.org/rstb/article/381/1954/20250247/482493/The-hippocampus-as-a-generative-model" target="_blank">The Hippocampus as a Generative Model</a></td>
+        <td class="col-authors">Nour, Gregorio, Peng, Messina, Barron (Oxford/MRC)</td>
+        <td class="col-finding">Unifies hippocampal cognitive map, theta sweeps, and SWR replay under a Bayesian generative modeling framework; proposes six testable predictions including dopamine-driven latent state inference.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://www.cell.com/neuron/fulltext/S0896-6273(26)00456-3" target="_blank">Recurrent Connectivity Shapes Spatial Coding in Hippocampal CA3 Subregions</a></td>
+        <td class="col-authors">Kong et al. (Losonczy, Columbia)</td>
+        <td class="col-finding">Gradients in recurrent connectivity along CA3 transverse axis organize distinct coding strategies for location vs. context, revealed by in vivo 2P imaging, genetic perturbation, and modeling.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.07386" target="_blank">Sparse Delta Memory: Scaling the State of Linear RNNs through Sparsity</a></td>
+        <td class="col-authors">Cabannes et al. (Meta FAIR)</td>
+        <td class="col-finding">Replaces dense KV outer product with sparse reads/writes to a large explicit memory; under isoFLOP, higher memory capacity significantly improves ICL and long-context retrieval.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.07144" target="_blank">Fractal KV-Cache Archives: Lossless Symbolic Storage with In-Place Retrieval for Long-Context LLM Inference</a></td>
+        <td class="col-authors">Gusev (independent)</td>
+        <td class="col-finding">Lossless KV storage via contractive iterated-map codes; 36–54× compression; key finding that quantizing keys is ~4× more damaging than values; archive doubles as search index.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.05061" target="_blank">KVpop: Key-Value Cache Compression with Predictive Online Pruning</a></td>
+        <td class="col-authors">Hauzenberger et al. (Hochreiter, JKU Linz/NXAI)</td>
+        <td class="col-finding">Future-attention-supervised KV eviction policy; 98% retention at 75% compression on Qwen3-4B; delayed memory-based scorer exploits near-future context for stability.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== LLM-Memory Section ===== -->
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.07707" target="_blank">Co-LMLM: Continuous-Query Limited Memory Language Models</a>
+    </div>
+    <div class="paper-meta">
+      Yair Feldman, Linxi Zhao, Nathan Godey, Dongyoung Go, Yilun Hua, Kilian Q. Weinberger, Jennifer J. Sun, Yoav Artzi (Cornell) &middot; arXiv, 2026-07-08
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Limited memory language models (LMLMs) externalize factual knowledge during pretraining to a knowledge base rather than memorizing it in weights. Co-LMLM departs from prior relational-KB designs by pairing continuous vector keys with textual knowledge values — the model generates flexible vector queries at minimal cost during generation to fetch attributional, human-readable knowledge. An annotation pipeline tags free-form factual spans in arbitrary text (not restricted to Wikipedia). Evaluated across pretraining on Wikipedia and FineWeb-Edu at multiple model scales (up to 360M).</p>
+      <p><strong>Finding:</strong> Co-LMLM outperforms prior LMLMs and vanilla LLMs in both perplexity and factual precision. At 360M scale, it achieves lower perplexity than models pretrained on 40× more data (a roughly 40× data efficiency gain). SimpleQA-verified performance is in line with gpt-4o-mini and higher than Claude Sonnet 4.5. This demonstrates that decoupling factual storage from parametric memory can be done with continuous-key retrieval rather than rigid relational schemas, preserving both efficiency and attribution. Directly relevant to Pillar 1 questions about how LLMs should architect episodic vs. semantic memory stores.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.06720" target="_blank">When Does In-Context Search Help? A Sampling-Complexity Theory of Reflection-Driven Reasoning</a>
+    </div>
+    <div class="paper-meta">
+      Yotam Wolf, Noam Wies, Amnon Shashua (Hebrew University of Jerusalem) &middot; arXiv, 2026-07-07
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Provides a theoretical analysis of in-context search — where LLMs iteratively generate, critique, and revise solution attempts — by modeling it as approximate inference over reasoning traces. The base model defines a prior distribution over traces, and self-reflection provides feedback for posterior updates. Studies the resulting sampling complexity: how many sequential attempts are needed to achieve high success probability. Also shows that the optimal policy under stagewise RL with verifiable rewards implements the same posterior reweighting rule. Key qualitative predictions are validated on real large reasoning models.</p>
+      <p><strong>Finding:</strong> When reflections reliably localize early mistakes, in-context search yields exponential improvements over the base model — solving problems with exponentially small zero-shot pass rates using only a polynomial number of sequential attempts. When this localization property fails, conditioning on past attempts offers no asymptotic benefit over parallel sampling. The gains are learnable: cross-entropy training on search rollouts recovers the required behavior with polynomial sample complexity. This provides a formal framework for understanding when iterative in-context memory retrieval succeeds vs. fails, directly relevant to Pillar 1&rsquo;s investigation of attention-mediated memory recall dynamics.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.06974" target="_blank">MILES: Modular Instruction Memory with Learnable Selection for Self-Improving LLM Reasoning</a>
+    </div>
+    <div class="paper-meta">
+      Ruilin Tong, Dong Gong (UNSW) &middot; arXiv, 2026-07-08
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> MILES maintains modular memory units consisting of asymmetric pairs of sub-goal embeddings and sub-instructions, each with a learnable selection head. Operates in two stages: coarse-level memory expansion collects supervision for training selection heads from confident samples, while fine-stage learned selection reranks candidates for uncertain samples. Designed for test-time settings where memory expands incrementally and only limited supervision is available, avoiding the need for large-scale RL training data and fixed action spaces.</p>
+      <p><strong>Finding:</strong> MILES consistently matches or outperforms prior memory-based reasoning methods while achieving superior accuracy-efficiency tradeoffs. The asymmetry between sub-goal embeddings (for retrieval) and sub-instructions (for execution) is architecturally notable, as it mirrors the cue-target distinction in human memory models. Demonstrates effectiveness, robustness, and transferability across diverse reasoning benchmarks. Relevant to Pillar 1 as an architectural exploration of how modular, learnable memory selection can improve sequential reasoning.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.07386" target="_blank">Sparse Delta Memory: Scaling the State of Linear RNNs through Sparsity</a>
+    </div>
+    <div class="paper-meta">
+      Loïc Cabannes, Pierre-Emmanuel Mazaré, Gergely Szilvasy, Matthijs Douze, Maria Lomeli, Ilze Amanda Auzina, Justin Carpentier, Gabriel Synnaeve, Hervé Jégou (Meta FAIR) &middot; arXiv, 2026-07-08
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Extends the Gated DeltaNet architecture by replacing the dense key-value outer product — the core memory update in linear attention — with sparse reads and writes to a large explicit memory. Uses a sparse addressing scheme to scale the hidden state to orders-of-magnitude higher capacity while maintaining isoFLOP constraints and identical parameter counts. Additionally, the initial state of the SDM memory is learned and used as a parametric memory, further improving performance on common-knowledge and reasoning tasks.</p>
+      <p><strong>Finding:</strong> Under isoFLOP constraints, higher state memory capacity (achieved through sparse rather than dense KV operations) significantly improves performance on in-context learning and long-context retrieval tasks. The parametric memory initialization provides additional gains on knowledge and reasoning benchmarks. This directly demonstrates that memory capacity — not just parameter count or compute — is the bottleneck for ICL performance in linear recurrent models. Highly relevant to Pillar 1 (attention-based memory) and Pillar 3 (KV memory architectures).</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Schema-Episodic Section ===== -->
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://royalsocietypublishing.org/rstb/article/381/1954/20250247/482493/The-hippocampus-as-a-generative-model" target="_blank">The Hippocampus as a Generative Model</a>
+    </div>
+    <div class="paper-meta">
+      S. Nour, L. Gregorio, X. Peng, V. Messina, H. C. Barron (Oxford / MRC Brain Network Dynamics Unit) &middot; Philosophical Transactions of the Royal Society B, 2026-07-09
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A theoretical synthesis that recharacterizes the hippocampus as a generative model — a system that infers latent causes of sensory input and generates new data samples. Draws on evidence from hippocampal remapping (global, rate, structured), splitter cells, fear renewal, theta phase precession and sweeps, SWR replay (including never-experienced trajectories), targeted memory reactivation (TMR), and dopaminergic modulation. Extends the cognitive map view by formalizing hippocampal representations as inferred hidden states and proposing a dual online/offline mechanism: perceptual inference during theta vs. generative sampling and credit assignment during SWRs.</p>
+      <p><strong>Finding:</strong> Proposes six testable predictions that bridge cellular, circuit, and behavioral levels: (1) late-theta sweeps reflect generative sampling of futures, (2) internally generated prediction errors during sleep update the model, (3) hippocampal dopamine is necessary for new latent state formation, (4) reverse replay back-propagates credit through the generative model, (5) mEC structural codes constrain replay to plausible trajectories, and (6) psychosis symptoms arise from impaired latent state segmentation. Directly relevant to Pillar 2&rsquo;s schema-guided episodic memory modeling — the latent cause inference framework maps naturally onto schema formation and updating.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://www.cell.com/neuron/fulltext/S0896-6273(26)00456-3" target="_blank">Recurrent Connectivity Shapes Spatial Coding in Hippocampal CA3 Subregions</a>
+    </div>
+    <div class="paper-meta">
+      Eunji Kong, Erfan Zabeh, Zhenrui Liao, Tiberiu S. Mihaila, Caroline Wilson, Charan Santhirasegaran, Darcy S. Peterka, Tristan Geiller, Attila Losonczy (Columbia University) &middot; Neuron, 2026-07-08
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Using in vivo two-photon calcium imaging in mice during spatial navigation, combined with genetic perturbation of recurrent connectivity and computational modeling, the authors map how gradients in excitatory recurrent connectivity along the transverse axis of hippocampal CA3 (proximal vs. distal relative to DG) produce distinct spatial coding strategies. Specifically examines how recurrent collateral density shapes place field properties and population-level representations.</p>
+      <p><strong>Finding:</strong> CA3 subregions with denser recurrent connectivity (proximal CA3, closer to DG) produce more pattern-completion-like dynamics — place fields are more stable under cue degradation but less discriminable between similar environments. Distal CA3, with sparser recurrence, shows sharper context discrimination at the cost of reduced stability. This demonstrates that the canonical CA3 recurrent collateral system is not uniform but graded, organizing a continuum from pattern completion to pattern separation along a single anatomical axis. Directly relevant to Pillar 2&rsquo;s computational modeling of hippocampal pattern separation/completion dynamics.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== KV-Networks Section ===== -->
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.07386" target="_blank">Sparse Delta Memory: Scaling the State of Linear RNNs through Sparsity</a>
+    </div>
+    <div class="paper-meta">
+      Cabannes et al. (Meta FAIR) &middot; arXiv, 2026-07-08
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> (Also listed in LLM-Memory above.) Replaces the dense key-value outer product in Gated DeltaNet with sparse reads and writes to a large explicit memory. The sparse addressing scheme allows orders-of-magnitude higher memory capacity under isoFLOP constraints.</p>
+      <p><strong>Finding:</strong> Demonstrates that sparse KV addressing is a viable and effective strategy for scaling linear RNN memory capacity without increasing compute. The learned parametric initialization of the memory state provides a bridge between static knowledge (parametric) and dynamic memory (episodic). Relevant to Pillar 3&rsquo;s work on key-to-position mappings and memory capacity limits in KV architectures.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.07144" target="_blank">Fractal KV-Cache Archives: Lossless Symbolic Storage with In-Place Retrieval for Long-Context LLM Inference</a>
+    </div>
+    <div class="paper-meta">
+      Vladimir Gusev (independent) &middot; arXiv, 2026-07-08
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Studies a complementary question to KV cache compression: once KV states are quantized to codebook indices, how should the resulting symbol stream be stored? Applies contractive iterated-map codes that serialize a symbol sequence into low-dimensional real vectors, forming a lossless archive format with O(1) random access and O(1) amortized append. A controlled study with GPT-2 at 1024-token contexts quantizes the archive, keeping a small exact window (4 attention sinks + 32 recent tokens) and archiving the rest via per-head residual vector quantization.</p>
+      <p><strong>Finding:</strong> Achieves 36–54× compression relative to fp16 KV cache at a perplexity cost of 11–15%. Discovers a sharp key/value asymmetry: quantizing keys is roughly 4× more damaging than quantizing values, consistent with prior low-bit KV findings. This asymmetry is theoretically significant for Pillar 3 — it suggests that key vectors carry more fine-grained retrieval-relevant information than value vectors, potentially because keys encode positional/contextual address information while values encode content that is more compressible. The archive also functions as a search index, enabling approximate substring queries directly on stored vectors without materializing surrounding text.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.05061" target="_blank">KVpop: Key-Value Cache Compression with Predictive Online Pruning</a>
+    </div>
+    <div class="paper-meta">
+      Lukas Hauzenberger, Niklas Schmidinger, Anamaria-Roberta Hartl, David Stap, Thomas Schmied, Sebastian Böck, Günter Klambauer, Sepp Hochreiter (JKU Linz / NXAI) &middot; arXiv, 2026-07-06
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Learns a fixed-budget KV cache eviction policy by directly supervising the keep-or-drop decision against a future-attention target — computed efficiently without materializing dense attention maps. Introduces a delayed memory-based scorer that defers scoring for a fixed number of steps to exploit near-future context, uniquely among learned eviction methods. The scorer is trained on pre-computed generation traces using only key and value vectors.</p>
+      <p><strong>Finding:</strong> On AIME and HMMT mathematical reasoning benchmarks, KVpop retains 98% of full-attention performance on Qwen3-4B at 75% KV cache compression, and 97% at 88% compression. Qwen3-8B shows even stronger results, reaching near-full teacher performance. The delayed memory-based scorer is the key architectural innovation — it demonstrates that exploiting near-future context for eviction decisions is more effective than immediate scoring. Relevant to Pillar 3 because it shows that memory retention decisions should be temporally extended, not instantaneous — echoing the temporal context dynamics studied in human free recall models.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Encoding-Retrieval Section ===== -->
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+  <div class="empty-section">No papers today.</div>
+</div>
+
+<!-- ===== Cross-cutting Section ===== -->
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.06720" target="_blank">When Does In-Context Search Help? A Sampling-Complexity Theory of Reflection-Driven Reasoning</a>
+    </div>
+    <div class="paper-meta">
+      Wolf, Wies, Shashua (Hebrew University) &middot; arXiv, 2026-07-07
+      <span class="tag tag-cross">Cross-cutting</span>
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p>(Full details in LLM-Memory section above.) Links three pillars: provides a formal framework for iterative memory retrieval (Pillar 1), connects to the temporal dynamics of retrieval success vs. failure (Pillar 3), and bridges to normative theories of inference and learning (Pillar 2). The finding that reflection quality — specifically the ability to localize errors — is the critical determinant of retrieval success has implications for designing attention mechanisms that support effective memory search.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://royalsocietypublishing.org/rstb/article/381/1954/20250247/482493/The-hippocampus-as-a-generative-model" target="_blank">The Hippocampus as a Generative Model</a>
+    </div>
+    <div class="paper-meta">
+      Nour, Gregorio, Peng, Messina, Barron (Oxford/MRC) &middot; Phil. Trans. R. Soc. B, 2026-07-09
+      <span class="tag tag-cross">Cross-cutting</span>
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p>(Full details in Schema-Episodic section above.) Cross-cutting relevance: the generative modeling framework provides a computational language that bridges Pillar 2 (schema-guided episodic memory) with Pillar 1 and Pillar 3 — the latent cause inference mechanism maps onto attention-based memory retrieval, and the SWR replay as credit assignment maps onto temporal-difference-like learning in KV memory architectures.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Peripheral Section ===== -->
+<div class="section">
+  <div class="section-header tag-peri">Peripheral</div>
+  <div class="empty-section">No papers today.</div>
+</div>
+
+<!-- ===== Excluded ===== -->
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>TF-Engram: A Train-Free Engram with SSD-Backed Memory for LLMs</strong> (Ma et al., arXiv 2607.07388) — Systems engineering paper; marginal improvement (57.6→59.4 on Qwen3-0.6B); limited mechanistic insight into memory architecture beyond tiered storage.</li>
+    <li><strong>DynaKRAG: A Unified Framework for Learnable Evidence Control in Multi-Hop RAG</strong> (Wu et al., arXiv 2607.06507) — RAG pipeline engineering with state-conditioned retrieval control; relevant to memory retrieval but application-focused without mechanistic novelty.</li>
+    <li><strong>FourierQK: Spectral Preprocessing of Query-Key Projections Improves Transformer Attention</strong> (Zeris, arXiv 2607.07478) — Character-level spectral preprocessing of Q/K projections; architecturally interesting for attention mechanisms but not directly about memory; bilateral FFT makes it non-causal, limiting relevance to autoregressive memory.</li>
+    <li><strong>DeLS-Spec: Decoupled Long-Short Contexts for Parallel Speculative Drafting</strong> (Zheng &amp; Li, arXiv 2607.07409) — Inference acceleration method combining long- and short-context experts for speculative decoding; about throughput, not memory mechanism.</li>
+    <li><strong>Healthier LLMs: RAG for Public Health Question Answering</strong> (Feldman et al., arXiv 2607.06641) — Applied RAG evaluation in public health domain; domain-specific application without architectural or mechanistic contribution.</li>
+  </ul>
+</div>
+
+<div class="footer">
+  Generated by WorkBuddy Daily Paper Tracker &middot; 2026-07-09<br>
+  Sources: arXiv cs.CL, cs.AI, cs.LG, q-bio.NC; Neuron; Philosophical Transactions of the Royal Society B
+</div>
+
+</body>
+</html>
