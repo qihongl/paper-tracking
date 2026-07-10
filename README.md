@@ -6,11 +6,22 @@ Automated daily literature surveillance for computational cognitive neuroscience
 
 A WorkBuddy automation (`automation-1783133189790`) reads `prompts/daily-paper-tracker.md` and executes it daily. The agent:
 
-1. **Searches** arxiv, bioRxiv, PubMed, and high-impact journals across a keyword matrix spanning episodic memory, computational models, LLM memory, and encoding/retrieval mechanisms.
+1. **Searches** arxiv, bioRxiv, PubMed, and high-impact journals across a 219-keyword matrix spanning six categories.
 2. **Deduplicates** against `data/seen_papers.json` — papers are matched by DOI, arxiv ID, or title slug and never reported twice.
 3. **Filters** for mechanistic relevance, not just keyword matches. Papers that are purely engineering, clinical case studies without computational relevance, or opinion pieces are excluded.
-4. **Generates** a self-contained HTML report at `outputs/YYYY-MM-DD-paper-tracker.html` with papers grouped into six relevance categories.
+4. **Generates** a self-contained HTML report at `outputs/YYYY-MM-DD-paper-tracker.html` with papers grouped into six relevance categories, each appearing in exactly one detailed section.
 5. **Presents** the HTML via WorkBuddy's `present_files`.
+
+## Keyword Matrix (219 keywords, 6 sections)
+
+| Section | Focus | Example keywords |
+|---|---|---|
+| A — Episodic Memory | Hippocampus, replay, place/time/grid cells, consolidation, pattern separation, polysemanticity, mixed selectivity | 54 |
+| B — Computational Models | TCM, CLS, successor representation, Bayesian efficient coding, planning as inference, simulated experience | 33 |
+| C — LLMs & Machine Memory | In-context learning, KV cache, transformer memory, neural modularity, neural geometry, neuroAI alignment | 34 |
+| D — Encoding & Retrieval | Reinstatement, oscillations, WM/LTM dissociation, iEEG, schema filling, prior knowledge, individual differences | 33 |
+| E — Naturalistic Paradigms | Movie viewing, audiobook listening, conversation, ISC, event segmentation, naturalistic timescales, Sherlock/PIEMAN/Tunnel datasets | 48 |
+| F — Methods & Meta-Science | Benchmarks, model validation, reproducibility, neuroAI toolkits, representational geometry, ground truth | 17 |
 
 ## Relevance Categories
 
@@ -23,18 +34,24 @@ A WorkBuddy automation (`automation-1783133189790`) reads `prompts/daily-paper-t
 | `Cross-cutting` | Spans multiple pillars or provides theoretical scaffolding |
 | `Peripheral` | Adjacent but interesting |
 
+## Bluesky Topic Analysis
+
+The keyword matrix is periodically calibrated against the researcher's actual sharing patterns on Bluesky (`@qlu.bsky.social`). See `outputs/bluesky-topic-analysis.html` for a data-driven clustering of reposted papers into topic clusters (replay, naturalistic paradigms, hippocampal mechanisms, LLM/NeuroAI, schema/prior knowledge, working memory, Bayesian theory, and methods/meta-science).
+
 ## Project Structure
 
 ```
 paper-tracking/
 ├── prompts/
-│   └── daily-paper-tracker.md    # The prompt that drives the agent
+│   └── daily-paper-tracker.md       # The prompt that drives the agent
 ├── data/
-│   └── seen_papers.json          # Deduplication store (DOI → date first seen)
+│   └── seen_papers.json             # Deduplication store (DOI → date first seen)
 ├── outputs/
-│   └── YYYY-MM-DD-paper-tracker.html  # Daily reports
+│   ├── YYYY-MM-DD-paper-tracker.html # Daily reports
+│   └── bluesky-topic-analysis.html   # Bluesky repost topic clustering
 └── .workbuddy/
-    └── memory/                   # Workspace memory (not tracked in git)
+    ├── automations/                  # Automation config (not tracked in git)
+    └── memory/                       # Workspace memory (not tracked in git)
 ```
 
 ## Modifying
