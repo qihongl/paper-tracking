@@ -256,9 +256,25 @@ The HTML must be a complete, standalone document. Use the following template str
 
 ---
 
-## Final Step: Present the HTML
+## Final Steps: Push to GitHub, Then Present
 
-After writing the HTML file to `outputs/YYYY-MM-DD-paper-tracker.html`, use the `present_files` tool to show it to the researcher. Include a brief 1–2 sentence summary in your response (e.g., "7 papers today: 3 LLM-Memory, 2 Schema-Episodic, 1 KV-Networks, 1 Encoding-Retrieval. Notable: Ji-An et al. on ICL–episodic memory convergence.").
+After writing the HTML file and updating `data/seen_papers.json`, commit and push both files to the GitHub repository. Then present the HTML to the researcher.
+
+### Step 1: Git commit and push
+
+Run these exact commands from the project root:
+
+```bash
+git add outputs/YYYY-MM-DD-paper-tracker.html data/seen_papers.json
+git commit -m "Daily report: YYYY-MM-DD"
+git push
+```
+
+If the push fails (e.g., network issue, merge conflict from overlapping runs), log a brief warning but do NOT fail the run. The HTML file is already saved locally.
+
+### Step 2: Present the HTML
+
+Use the `present_files` tool to show the HTML file to the researcher. Include a brief 1–2 sentence summary in your response (e.g., "7 papers today: 3 LLM-Memory, 2 Schema-Episodic, 1 KV-Networks, 1 Encoding-Retrieval. Pushed to GitHub.").
 
 ---
 
