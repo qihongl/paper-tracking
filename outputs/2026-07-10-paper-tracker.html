@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker — 2026-07-10</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .summary-table .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+  .footer { margin-top: 32px; font-size: 11px; color: #bbb; text-align: center; }
+</style>
+</head>
+<body>
+
+<h1>🧠 Daily Paper Tracker</h1>
+<div class="date">2026-07-10</div>
+
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.08393" target="_blank">Knowing-Using Gap: Why Memorized Knowledge Fails to Generalize in LLM Finetuning</a></td>
+        <td class="col-authors">Dai et al. (Xiong)</td>
+        <td class="col-finding">Memorized facts exist in activations but are not routed to computation-effective layers; a self-patching heuristic recovers 58–75% of oracle headroom.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.01218" target="_blank">The State-Prediction Separation Hypothesis</a></td>
+        <td class="col-authors">Monea et al. (Artzi) &middot; Cornell/Harvard</td>
+        <td class="col-finding">Disentangling transformer hidden states into separate memory-storage and prediction streams yields 2–3 pp downstream improvement, with fundamentally different gradient structure.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.08399" target="_blank">Prompt Compression via Activation Aggregation</a></td>
+        <td class="col-authors">Ardoin et al. (Wunder)</td>
+        <td class="col-finding">A full instruction prompt compresses to a single activation vector at &lt;2% accuracy drop, demonstrating cross-layer compatibility in how LLMs encode semantic information.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.07719" target="_blank">ReCoLoRA: Spectrum-Aware Recursive Consolidation for Continual LLM Fine-Tuning</a></td>
+        <td class="col-authors">Lu</td>
+        <td class="col-finding">Recursive weight re-decomposition before each task absorbs prior knowledge into a frozen residual, besting rank-swept LoRA, PiSSA, AdaLoRA, and DoRA on 3 of 4 backbones.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s41467-026-74822-2" target="_blank">A Likelihood-Based Method for Identifying Replay from Spike Sequences</a></td>
+        <td class="col-authors">Huh, Yun et al. (Jung) &middot; IBS/KAIST</td>
+        <td class="col-finding">Replay detection via pairwise firing-order likelihood uncovers structured replay in both hippocampus and visual cortex during naturalistic movie viewing.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.07953" target="_blank">Linear Attention Architectures: Mechanisms, Trade-offs, and Cross-Layer Routing</a></td>
+        <td class="col-authors">Cerruti et al. (Schlag)</td>
+        <td class="col-finding">Kimi Delta Attention + Muon achieves lowest validation loss among four recurrent linear-attention variants at 350M scale; Cross-Layer Value Routing modestly improves DeltaNet variants.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.07724" target="_blank">Uncertainty-Gated Selection for Block-Sparse Attention</a></td>
+        <td class="col-authors">Rossi</td>
+        <td class="col-finding">A value-of-information router that doubles the kept KV set for uncertain queries lifts paired recall from 0.47 to 0.75 on LongBench-v2, reproducing across four models and three architectures.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.08032" target="_blank">What to Keep, What to Forget: A Rate-Distortion View of Memory Compaction in LLMs and Agents</a></td>
+        <td class="col-authors">Colaco &amp; Lahjouji</td>
+        <td class="col-finding">Unifies KV eviction, prompt pruning, architectural state bounding, and agent memory under one rate-distortion objective; identifies attention magnitude/recency as the universal—and universally failing—retention signal.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.08561" target="_blank">Contravariance Theory: Strong Alignment for Minimal Solutions to Hard Tasks</a></td>
+        <td class="col-authors">Yamins &amp; Nayebi &middot; Stanford/MIT</td>
+        <td class="col-finding">Formal proof that weak affine alignment guarantees strong privileged-axis alignment for hard tasks, and that convergent evolution between DNNs and brains is likely inevitable.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.08393" target="_blank">Towards Mechanistically Understanding Why Memorized Knowledge Fails to Generalize in Large Language Model Finetuning</a>
+    </div>
+    <div class="paper-meta">
+      Lu Dai, Ziyang Rao, Yili Wang, Hanqing Wang, Hao Liu, Hui Xiong &middot; arXiv, 2026-07-09
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> The authors formalize the "Knowing-Using Gap" — the finding that LLMs rapidly memorize new facts during fine-tuning yet fail to apply them in downstream reasoning. Using a novel causal intervention technique called <em>self-patching</em>, they monitor how newly acquired knowledge representations spread through the model's layers. Self-patching identifies specific activation locations where relocating representations substantially rescues failed generalization cases.</p>
+      <p><strong>Finding:</strong> Results support a <em>knowledge-circuit misalignment hypothesis</em>: memorized representations exist within the model's activations but are not routed to computation-effective layers. A simple heuristic strategy based on this diagnostic recovers 58–75% of the oracle headroom in generalization failure cases, with cross-domain replication confirming robustness. This provides the first mechanistic account of why fine-tuned knowledge fails to generalize — a finding with direct implications for Pillar 1's investigation of attention-based episodic memory in LLMs.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.01218" target="_blank">The State-Prediction Separation Hypothesis</a>
+    </div>
+    <div class="paper-meta">
+      Giovanni Monea, Nathan Godey, Kianté Brantley, Yoav Artzi &middot; Cornell University, Harvard University &middot; arXiv, 2026-07-01
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> The authors observe that transformer hidden states serve dual roles: predicting the next token immediately, <em>and</em> storing state in the KV cache for future predictions. They propose the <em>state-prediction separation hypothesis</em>: disentangling these two functions yields better language modeling. They design a transformer variant with two separate computation streams — one for state/memory storage, one for token prediction — and run controlled pretraining experiments across scales.</p>
+      <p><strong>Finding:</strong> State-prediction separation consistently improves both data and compute efficiency, outperforming standard transformers by 2–3 percentage points on average across downstream tasks. Extensive ablation rules out confounds (parameter count, architecture depth) and demonstrates a fundamental difference in gradient structure between the two streams. This directly informs Pillar 1's central question about how attention states encode episodic context vs. driving predictions, and connects to Pillar 3's investigation of KV memory as a separate computational resource.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.08399" target="_blank">Prompt Compression via Activation Aggregation</a>
+    </div>
+    <div class="paper-meta">
+      Thibaud Ardoin, Semira Einsele, Evis Bregu, Gerhard Wunder &middot; arXiv, 2026-07-09
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> The authors ask whether task-relevant information in an instruction prompt can be compressed into a single activation vector and re-injected into the model, replacing the original token sequence. They extract activations at an intermediate layer, compute a learned weighted sum, and inject the result at an early layer. The method is evaluated on instruction-following tasks against full prompt processing baselines.</p>
+      <p><strong>Finding:</strong> The compressed vector preserves task-relevant information with an accuracy drop of under 2% relative to full prompt processing. Analysis reveals three structural properties of LLM activation spaces: (i) mid-layer representations transfer meaningfully to early layers (cross-layer compatibility), (ii) a single activation vector encodes quantifiable semantic information, and (iii) weighted-sum aggregation is a robust compression strategy. This suggests that context memory in transformers can be represented far more compactly than the token-by-token KV cache — a finding relevant to Pillar 1's investigation of how episodic context is encoded in attention states.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s41467-026-74822-2" target="_blank">A Likelihood-Based Method for Identifying Replay from Spike Sequences</a>
+    </div>
+    <div class="paper-meta">
+      Namjung Huh, Injae Yun, Jong Won Lee, Min Whan Jung &middot; Institute for Basic Science / KAIST, Korea &middot; Nature Communications, 2026-07-04
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Traditional replay detection methods rely on spatial tuning curves and exclude non-place cells, limiting their applicability beyond classical hippocampal spatial paradigms. The authors develop a likelihood-based method that estimates the probability of spike sequences using pairwise firing-order probabilities observed during active behavior, <em>without</em> requiring spatial tuning or behavioral correlates. They validate against simulations, rat single-unit recordings, and mouse calcium imaging, then apply the method to head-fixed mice passively viewing naturalistic movie stimuli.</p>
+      <p><strong>Finding:</strong> The method shows strong agreement with conventional replay metrics while being broadly applicable to non-spatial cells and paradigms. Critically, when applied to mice viewing naturalistic movies, the method detected significant replay in both the hippocampus <em>and visual cortex</em> — demonstrating structured replay across brain regions and sensory domains. This directly addresses Pillar 2's interest in hippocampal replay mechanisms and provides a methodological bridge to the naturalistic paradigm studies prioritized in the researcher's active replication projects (Sherlock, PIEMAN, Tunnel).</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.07719" target="_blank">ReCoLoRA: Spectrum-Aware Recursive Consolidation for Continual LLM Fine-Tuning</a>
+    </div>
+    <div class="paper-meta">
+      Wentao Lu &middot; arXiv, 2026-07-04
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Standard LoRA-based continual fine-tuning stacks low-rank updates on frozen weights, causing each new task to progressively overwrite prior knowledge. ReCoLoRA addresses this via <em>recursive consolidation</em>: before each new task, it re-decomposes the <em>current effective weight</em> (not the original pretrained weight) into a frozen residual, a slowly updated principal component, and a fresh adapter. Adapters are initialized from randomized SVD of the pretrained weight, with per-layer effective ranks selected by an elbow criterion.</p>
+      <p><strong>Finding:</strong> On a six-task continual GLUE sequence across four 7–8B backbones (Llama, Mistral, Qwen families), ReCoLoRA achieves the best final average score on three of four backbones against rank-swept LoRA, PiSSA, AdaLoRA, and DoRA — while training fewer parameters. The recursive consolidation mechanism directly instantiates the complementary learning systems principle: fast hippocampal-like adaptation (fresh adapter) gradually consolidated into slow neocortical-like storage (frozen residual). This provides an engineering analogue to Pillar 2's schema-guided episodic memory consolidation framework.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.07953" target="_blank">Linear Attention Architectures: Mechanisms, Trade-offs, and Cross-Layer Routing</a>
+    </div>
+    <div class="paper-meta">
+      Tommaso Cerruti, Tim Rieder, George Rowlands, Lingfeng Jin, Imanol Schlag &middot; arXiv, 2026-07-08
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> The authors conduct a systematic comparative study of softmax attention against four recurrent linear-attention architectures — DeltaNet, Gated DeltaNet, Kimi Delta Attention, and Gated DeltaNet-2 — all expressed in a common recurrent-memory notation that makes explicit how they differ in expressivity, memory decay, erase/write control, and throughput. Experiments center on 350M-parameter models trained for 15B tokens, with additional runs at 1.3B and 3B parameters. They also introduce Cross-Layer Value Routing (CLVR), which forwards write values between DeltaNet layers.</p>
+      <p><strong>Finding:</strong> Within the 350M-parameter, 15B-token sweep, Kimi Delta Attention with the Muon optimizer reaches the lowest final validation loss. Hybrid stacks (softmax + linear attention) generally improve loss at a throughput cost. CLVR — forwarding write values between layers — yields modest improvements for both DeltaNet and Gated DeltaNet, while the more natural formulation (forwarding delta-rule write errors) does not improve over baselines. This directly informs Pillar 3's investigation of key-value memory mechanisms: the finding that write-value routing helps but write-error routing doesn't suggests that value content, not prediction error, is the cross-layer signal worth preserving in recurrent memory architectures.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.07724" target="_blank">Uncertainty-Gated Selection for Block-Sparse Attention</a>
+    </div>
+    <div class="paper-meta">
+      Thomas Rossi &middot; arXiv, 2026-07-04
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Block-sparse attention scales to long contexts by selecting a top-<em>k</em> subset of key blocks per query. The problem: when the <em>k</em>-th and (<em>k</em>+1)-th blocks are nearly tied in attention score, the selector commits without extra budget, and a dropped block containing answer evidence becomes unrecoverable. The author proposes a value-of-information router that measures how decisively the top-<em>k</em> cut was made, and doubles the kept set for queries where that gap is smallest. The method stacks with existing block-scoring approaches and is backbone-agnostic.</p>
+      <p><strong>Finding:</strong> On LongBench-v2 medium (n=215), router-on-Quest reaches paired recall of 0.75 vs. top-<em>k</em> at 0.47 — a +28 pp improvement (McNemar p&lt;0.01) — and lands within 2 pp of dense attention on RULER needle-in-a-haystack. The lift reproduces across four models from three architectures (Qwen2.5, Mistral-Nemo, Qwen3.6). At 128K context on Qwen2.5-7B-1M, the router preserves 0.81 of dense accuracy vs. SSA-style top-<em>k</em> at 0.09. This informs Pillar 3's interest in how KV attention allocation decisions affect memory fidelity: uncertainty-gating provides a principled criterion for when to allocate additional memory budget.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.08032" target="_blank">What to Keep, What to Forget: A Rate-Distortion View of Memory Compaction in LLMs and Agents</a>
+    </div>
+    <div class="paper-meta">
+      Ashwin Gerard Colaco, Nada Lahjouji &middot; arXiv, 2026-07-09
+      <span class="tag tag-cross">Cross-cutting</span>
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> This position paper/survey argues that four largely separate research communities — KV cache eviction, prompt pruning, architectural state bounding, and agent memory consolidation — are all solving the same underlying problem: a rate-distortion decision about what context-derived information to retain vs. discard, at what fidelity, under a resource budget. The authors formalize this with a single compaction objective and a layer-agnostic lower bound, then build a seven-axis taxonomy that classifies methods across the entire stack uniformly.</p>
+      <p><strong>Finding:</strong> Two patterns hold across every compaction layer: (1) the signal that decides what to keep is always attention magnitude or recency, and (2) it fails identically everywhere — by discarding, before the query is known and with no way to undo it, information the query later needs. The paper identifies that while compression is measured carefully on single-turn long context, the <em>repeated</em> compaction that agents actually perform is almost never measured. This unified framework bridges all three research pillars: KV memory (Pillar 3), episodic/schema memory in agents (Pillar 2), and the attention-based context mechanisms underlying Pillar 1's lingering memory experiments.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.08561" target="_blank">Contravariance Theory: Strong Alignment for Minimal Solutions to Hard Tasks</a>
+    </div>
+    <div class="paper-meta">
+      Dan Yamins, Aran Nayebi &middot; Stanford University, MIT &middot; arXiv, 2026-07-09
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> The authors address a longstanding NeuroAI puzzle: how should we compare deep neural network models to brains, and how much convergent evolution should we expect between artificial and biological networks? They prove two formal results: (i) for any two minimal DNN solutions to a sufficiently hard task, weak alignment based on affine mappings guarantees strong alignment of privileged axes, and (ii) alignment "zippers" up the network hierarchy, causing privileged axes to emerge from end-to-end task optimization alone.</p>
+      <p><strong>Finding:</strong> The results formalize and extend the contravariance principle (Cao &amp; Yamins, 2024), establishing that with sufficiently strong tasks, the choice of metric for inter-network comparison is not highly sensitive, and that convergent evolution between DNNs and brains is probably inevitable rather than coincidental. This provides theoretical scaffolding for all three pillars: if task demands drive convergent representational structure, then memory mechanisms in LLMs (Pillar 1) may share deeper organizational principles with hippocampal memory systems (Pillar 2), and the key-value structure observed in transformers (Pillar 3) may reflect task-driven computational universals rather than architectural accidents.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+  <div class="empty-section">No standalone Encoding-Retrieval papers today. The Huh et al. replay detection paper (see Schema-Episodic section) carries a secondary Encoding-Retrieval tag for its relevance to retrieval mechanisms across sensory domains.</div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-peri">Peripheral</div>
+  <div class="empty-section">No peripheral papers today. All identified papers had direct relevance to at least one pillar.</div>
+</div>
+
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>Hidden Decoding at Scale (arXiv:2607.08186)</strong> — sequence-length scaling method expanding tokens into n-stream KV caches; interesting but primarily an inference-scaling contribution without mechanistic memory insight.</li>
+    <li><strong>XAlpha: Memory-Driven AI Quant Researcher (arXiv:2607.08332)</strong> — multi-source memory system for financial alpha discovery; applied domain-specific memory engineering without generalizable memory mechanism insights.</li>
+    <li><strong>Holographic Neural PCFG (arXiv:2607.08063)</strong> — uses circular correlation (associative memory operation) for grammar parsing; relevant in principle but the memory mechanism is a tool, not the object of study.</li>
+    <li><strong>PredicateLongBench (arXiv:2607.08284)</strong> — long-context reasoning benchmark; useful infrastructure but no new memory findings.</li>
+    <li><strong>When Does Continual Learning Require Learning? (arXiv:2607.07847)</strong> — frames CL as increasing competence along space/time axes; conceptually relevant but primarily an evaluation framework without new memory mechanism.</li>
+    <li><strong>Multimodal Unlearning Survey (arXiv:2607.07907)</strong> — survey on selective knowledge removal; tangentially related to forgetting but focused on privacy/safety rather than memory mechanisms.</li>
+    <li><strong>System-Aware KV Cache Optimization Survey (arXiv:2607.08057)</strong> — surveys KV infrastructure for LLM serving; primarily systems/engineering contribution, complementary to the Colaco &amp; Lahjouji rate-distortion framework.</li>
+    <li><strong>Temporal Graph Networks via Memory Backtracking (arXiv:2607.07716)</strong> — ICML 2026 Spotlight on explaining TGN predictions via memory backtracking trees; graph memory application without direct episodic/hippocampal relevance.</li>
+    <li><strong>Jet-Long: Dynamic Bifocal RoPE (arXiv:2607.07740)</strong> — long-context extension via dynamic RoPE rescaling; engineering contribution to context windows without new memory principles.</li>
+  </ul>
+</div>
+
+<div class="footer">
+  Generated by WorkBuddy Daily Paper Tracker &middot; 2026-07-10 &middot; 9 papers &middot; Sources: arXiv (cs.CL, cs.AI, cs.LG, q-bio.NC), Nature Communications
+</div>
+
+</body>
+</html>
