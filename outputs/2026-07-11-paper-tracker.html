@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker — 2026-07-11</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .summary-table .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+  .footer { margin-top: 32px; font-size: 11px; color: #bbb; text-align: center; }
+</style>
+</head>
+<body>
+
+<h1>Daily Paper Tracker</h1>
+<div class="date">2026-07-11</div>
+
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.08716" target="_blank">Remember When It Matters: Proactive Memory Agent for Long-Horizon Agents</a></td>
+        <td class="col-authors">Wu et al. (Peng)</td>
+        <td class="col-finding">A separate memory agent running alongside the action agent selectively injects reminders to counter "behavioral state decay," improving pass@1 by +8.3 pp on Terminal-Bench and +6.8 pp on τ2-Bench.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.01523" target="_blank">Multi-Head Recurrent Memory Agents</a></td>
+        <td class="col-authors">Li, Yeh, Li (Sharon Li)</td>
+        <td class="col-finding">Diagnoses memory retention (not capture) as the dominant bottleneck in recurrent memory agents; MHM-LRU partitions memory into shielded heads, improving retention from &lt;30% to 74% at 896K tokens on RULER-HQA.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.01763" target="_blank">Denser ≠ Better: Limits of On-Policy Self-Distillation for Continual Post-Training</a></td>
+        <td class="col-authors">Wang et al. (Zhu, Liu)</td>
+        <td class="col-finding">On-policy self-distillation (SDPO) accelerates catastrophic forgetting in continual LLM training; denser teacher signals amplify parameter drift and can cause collapse, while GRPO adapts more conservatively.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.04493" target="_blank">Beyond DSA: Conjugacy-based Comparison of Dynamical Systems</a></td>
+        <td class="col-authors">Godara, Tay, Mattar</td>
+        <td class="col-finding">Shows orthogonal alignment (DSA) is neither necessary nor sufficient for topological conjugacy; proposes CSA using candidate state-space bijections for comparing neural and artificial dynamical systems.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://www.biorxiv.org/content/10.64898/2026.06.26.734578v1" target="_blank">Arousal state modulates human hippocampal ripples</a></td>
+        <td class="col-authors">Siefert et al. (Foster, Schapiro)</td>
+        <td class="col-finding">Human hippocampal ripples consistently track low arousal (small pupil, slow heart rate, NREM sleep) across wake and sleep, unifying rodent and human findings under a continuous arousal framework.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://elifesciences.org/reviewed-preprints/111058" target="_blank">If Grid Cells are the Answer, What is the Question? A Review of Normative Grid Cell Theory</a></td>
+        <td class="col-authors">Dorrell, Whittington</td>
+        <td class="col-finding">Synthesizes normative grid cell theory arguing grid cells serve as biologically plausible, high-fidelity, nonlinearly decodable codes for path integration, with lessons for normative modeling in neuroscience.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.02303" target="_blank">A Hippocampus for Linear Attention: An Exact Memory for What the Recurrent State Forgets</a></td>
+        <td class="col-authors">Cui</td>
+        <td class="col-finding">Inspired by Complementary Learning Systems, HOLA pairs a compressive delta-rule state with a bounded exact KV cache; 340M model beats full-attention Transformer++ on perplexity (−16.1%) and excels at 32K needle recall.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.03055" target="_blank">SHiPPO: Recurrent Memory with Transported Polynomial Projections</a></td>
+        <td class="col-authors">Mizuguchi, Kim</td>
+        <td class="col-finding">Extends HiPPO memory by transporting projections into a moving channel frame; recovers order-sensitive changes to already-written memory that static HiPPO cannot capture, tested via associative-recall diagnostics.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://www.nature.com/articles/s41467-026-75129-y" target="_blank">Environment geometry alters sequential route learning and its integration into cognitive maps</a></td>
+        <td class="col-authors">Long, Herrera et al. (Brown)</td>
+        <td class="col-find">Grid-cell-model-predicted geometry effects and path-integration serial-order effects combine additively; worst spatial memory at route-end in irregular (trapezoid) geometry, with individual differences in navigation ability modulating sensitivity.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://www.nature.com/articles/s41593-026-02343-8" target="_blank">Neural timescales from a computational perspective</a></td>
+        <td class="col-authors">Zeraati, Levina, Macke, Gao</td>
+        <td class="col-finding">Nature Neuroscience review unifying measurement, mechanistic origins, and functional relevance of neural timescales; proposes τ_fit as a comparable "fingerprint" bridging biological and artificial systems (SSMs, LSTMs, RNNs).</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-peri"></span>Peripheral</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.03660" target="_blank">Sequential Correlations Change In-Context Learning: Effective Context Length and Architectural Mismatch</a></td>
+        <td class="col-authors">Letey, Lu, Pehlevan, Zavatone-Veth</td>
+        <td class="col-finding">Sequentially correlated prompts behave like shorter i.i.d. prompts in ICL (effective context length), but query-context correlation favors softmax over linear attention—formal theory via solvable linear-attention model.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== LLM-Memory Section ===== -->
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.08716" target="_blank">Remember When It Matters: Proactive Memory Agent for Long-Horizon Agents</a>
+    </div>
+    <div class="paper-meta">
+      Yifan Wu, Lizhu Zhang, Yuhang Zhou, Mingyi Wang, Bo Peng, Serena Li, Xiangjun Fan, Zhuokai Zhao &middot; arXiv, 2026-07-09
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Introduces "behavioral state decay" — the failure mode where decision-relevant information (task requirements, prior attempts, open subgoals) gets buried or pushed out of the context window in long-horizon LLM agents. A separate memory agent runs alongside an unmodified action agent, maintaining a structured memory bank and deciding <em>whether to inject a memory-grounded reminder or remain silent</em>. The module is plug-and-play with existing agent harnesses. Trains Qwen3.5-27B using SFT and GRPO on a custom SETA dataset for open-weight memory policies.</p>
+      <p><strong>Finding:</strong> Selective intervention outperforms passive bank exposure, always-on injection, advisor-only guidance, and general retrieval. Across Terminal-Bench 2.0 and τ2-Bench, pass@1 improves by +8.3 pp and +6.8 pp respectively for both weaker and stronger action agents. Ablations confirm that <em>active, selective</em> memory injection — not the mere presence of memory — drives the gain. This directly connects to the researcher's Pillar 1 question: when and how should contextual memory intervene to shape ongoing behavior, rather than simply being available for retrieval?</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.01523" target="_blank">Multi-Head Recurrent Memory Agents</a>
+    </div>
+    <div class="paper-meta">
+      Jiatong Li, Samuel Yeh, Sharon Li (UW-Madison) &middot; arXiv, 2026-07-01
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Recurrent memory agents compress input into a fixed-size window iteratively, but suffer from systematic degradation. The authors decompose performance into <em>memory capture</em> (encoding fidelity) and <em>memory retention</em> (preservation across updates), quantitatively showing retention is the dominant bottleneck. Proposes Multi-Head Recurrent Memory (MHM), a training-free framework partitioning memory into independent heads with a select-then-update strategy: at each step, exactly one head updates while others are structurally shielded from overwriting.</p>
+      <p><strong>Finding:</strong> On RULER-HQA at 896K tokens, MHM-LRU improves memory retention rate from &lt;30% to 73.96%. Gains generalize across model families (tested on multiple architectures), scales, and task types. The key insight — that architectural shielding, not better model behavior, is the path to reliable long-context memory — is directly relevant to the KV-memory mechanistic questions in Pillars 1 and 3 regarding interference and overwriting in fixed-capacity memory systems.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.01763" target="_blank">Denser ≠ Better: Limits of On-Policy Self-Distillation for Continual Post-Training</a>
+    </div>
+    <div class="paper-meta">
+      Meng Wang, Haohan Zhao, Wenzhuo Liu, Lu Yang, Geng Liu, Haiyang Guo, Guo-Sen Xie, Gaofeng Meng, Hongbin Liu, Fei Zhu (HKISI-CAS, CASIA, UCAS, NJUST) &middot; arXiv, 2026-07-02
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Compares Self-Distillation Policy Optimization (SDPO) against GRPO for continual post-training of LLMs across multiple skill domains (math, coding, science, tool use). Measures forgetting across sequential training stages, parameter-space drift, and response-space drift. Analyzes how denser token-level supervision signals interact with the teacher-student feedback loop.</p>
+      <p><strong>Finding:</strong> SDPO accelerates in-domain specialization when teacher signals are stable, but causes <em>stronger forgetting and can collapse entirely</em> in continual post-training. Denser self-distillation induces larger drift in both parameter and response space, amplifying high-frequency formatting artifacts through a self-reinforcing loop. GRPO adapts more conservatively and better preserves prior capabilities. This is a sobering result for the researcher's work on LLM memory: it shows that denser supervision signals can paradoxically <em>increase</em> forgetting, directly relevant to the interference dynamics studied in Pillar 1.</p>
+    </div>
+    <div class="flag">⚠ arxiv preprint, not yet peer-reviewed. Claims about "collapse" would benefit from broader model-scale validation.</div>
+  </div>
+</div>
+
+<!-- ===== Schema-Episodic Section ===== -->
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.04493" target="_blank">Beyond DSA: Conjugacy-based Comparison of Dynamical Systems</a>
+    </div>
+    <div class="paper-meta">
+      Prakhar Godara, Pang Shiang Tay, Marcelo G. Mattar (UC San Diego) &middot; arXiv (q-bio.NC), 2026-07-05
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Identifies a fundamental limitation of Dynamical Similarity Analysis (DSA; Ostrow et al. 2023): orthogonal alignment of Koopman operators is neither necessary nor sufficient for topological conjugacy between dynamical systems. Proposes Conjugacy-based Similarity Analysis (CSA), which restricts alignments to those induced by candidate state-space bijections. Proves that CSA's fitted alignment is the finite-data projection of the composition operator, and demonstrates with controlled examples why this distinction matters for observable dictionaries.</p>
+      <p><strong>Finding:</strong> CSA correctly distinguishes conjugate from non-conjugate systems where DSA fails (both false positives and false negatives). This is methodologically critical for the researcher's Pillar 2 work comparing RNN dynamics to hippocampal population dynamics: DSA-based similarity claims may be misleading, and CSA provides a principled, bijection-grounded alternative. From Mattar's lab, whose work on successor representations and planning has directly influenced the schema-guided episodic memory framework.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://www.biorxiv.org/content/10.64898/2026.06.26.734578v1" target="_blank">Arousal state modulates human hippocampal ripples</a>
+    </div>
+    <div class="paper-meta">
+      Elizabeth M. Siefert, Yvonne Y. Chen, Kathryn A. Davis, H. Isaac Chen, Anna C. Schapiro, Brett L. Foster (UPenn) &middot; bioRxiv, 2026-06-26
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Direct intracranial recordings from human hippocampus during sleep and wake, with simultaneous arousal measurements via sleep staging, pupillometry, and heart rate. Tests the hypothesis that low arousal — not behavioral state per se — is the common mechanism of ripple genesis across species, explaining why human ripples appear during both offline sleep and active wake tasks.</p>
+      <p><strong>Finding:</strong> Ripple occurrence consistently tracked low arousal across all measures: rates maximal in NREM sleep, elevated during small-pupil wake states and slow heart rate periods. Modulation was stronger in anterior than posterior hippocampus and was hippocampus-specific (ripple-like activity outside hippocampus showed the <em>opposite</em> modulation). This provides a unifying framework: "offline" consolidation occurs continuously, intermixed with cognition during transient arousal dips — directly relevant to Pillar 2's schema-guided episodic memory model and its consolidation dynamics.</p>
+    </div>
+    <div class="flag">⚠ bioRxiv preprint. Sample size and electrode coverage not fully detailed in abstract.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://elifesciences.org/reviewed-preprints/111058" target="_blank">If Grid Cells are the Answer, What is the Question? A Review of Normative Grid Cell Theory</a>
+    </div>
+    <div class="paper-meta">
+      William Dorrell, James C. R. Whittington (Gatsby Unit, UCL / Oxford) &middot; eLife Reviewed Preprint, 2026-07-03
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Comprehensive review synthesizing two decades of normative grid cell theory. Argues grid cells can be explained as (1) biologically plausible, (2) high-fidelity, nonlinearly decodable codes for position that (3) subserve path integration. Discusses why multimodal/combinatorial grid solutions require nonlinear encoding to be optimal, and draws lessons for normative theories of neural computation more broadly. Published as an eLife Reviewed Preprint with public peer reviews.</p>
+      <p><strong>Finding:</strong> The normative framework that grid cells elegantly combine the easy path-integration of place cells with the high coding capacity of multifield cells — a "goldilocks" solution. The review clarifies a key debate: whether grid cells <em>perform</em> path integration or whether the grid pattern is the <em>output</em> of a path integration process. Relevant to Pillar 2 as a case study in how normative (top-down) and mechanistic (bottom-up) modeling can converge, and as a template for theorizing about hippocampal representational geometry in schema-guided memory.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== KV-Networks Section ===== -->
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.02303" target="_blank">A Hippocampus for Linear Attention: An Exact Memory for What the Recurrent State Forgets</a>
+    </div>
+    <div class="paper-meta">
+      Wanyun Cui (Shanghai Univ. of Finance and Economics) &middot; arXiv (cs.AI), 2026-07-02
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Explicitly inspired by Complementary Learning Systems theory, HOLA (Hippocampal Linear Attention) pairs a compressive delta-rule state (neocortical analog) with a bounded exact KV cache (hippocampal analog). The cache writes without a learned eviction module — it retains tokens with large β·||e|| (the prediction residual actually committed to the state). Decoupled RMSNorm-gamma cache read turns stored KV pairs into sharp retrieval rather than soft averaging. Trained at 340M params on 15B SlimPajama tokens.</p>
+      <p><strong>Finding:</strong> HOLA lowers Wikitext perplexity from 27.32 to 22.92 (−16.1%), below a full-attention Transformer++ baseline (26.88). On RULER needle-in-a-haystack recall out to 32K tokens (16× training length), HOLA is substantially more robust than GDN or recency-cache baselines. This is the closest architectural instantiation of the CLS framework the researcher works with — a semiparametric test-time memory explicitly modeled on hippocampal-neocortical interaction. Highly actionable for Pillar 3.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.03055" target="_blank">SHiPPO: Recurrent Memory with Transported Polynomial Projections</a>
+    </div>
+    <div class="paper-meta">
+      Tomoya Mizuguchi, Bum Jun Kim &middot; arXiv (cs.LG), 2026-07-03
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> HiPPO gives recurrent states memory semantics as online polynomial projection coefficients, but in fixed channel coordinates. SHiPPO (Sylvester HiPPO) lifts HiPPO coefficient memories into a <em>moving channel frame</em> via right-transport — transporting both the approximation family and channel metric together. Derives restricted group-local realizations compatible with selective SSM controllers, exponential-adjusted updates, exact block-affine scan, and recurrent decoding.</p>
+      <p><strong>Finding:</strong> Controlled diagnostics reveal that larger current-token write rank improves ordinary prediction error but <em>cannot recover order-sensitive changes to already-written memory</em>; transported-memory variants recover this signal. This has direct mechanistic implications for Pillar 3: it formalizes the distinction between write-strength (how much you update) and write-selectivity (whether you preserve order-sensitive information already stored), which is central to the KV-memory framework's account of serial position effects.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Encoding-Retrieval Section ===== -->
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://www.nature.com/articles/s41467-026-75129-y" target="_blank">Environment geometry alters sequential route learning and its integration into cognitive maps</a>
+    </div>
+    <div class="paper-meta">
+      Jaida Long, Estibaliz Herrera, Y. Li, Felipe Oliveira, Rida Ahmed, Sana Hussain, Camille Rivera, Kristin Liquori, Thackery Brown (Georgia Tech) &middot; Nature Communications, 2026-07-07
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Virtual navigation task directly testing how environment geometry (trapezoid vs. square) and serial position in a route interact to influence spatial memory. Tests competing predictions: do geometric irregularities impair memory (grid cell distortion hypothesis) or aid it (orientation landmarks)? Controls for serial order effects predicted by path integration models.</p>
+      <p><strong>Finding:</strong> Geometry and serial-order effects combine additively: location memory is worst toward route-end in the most geometrically irregular (trapezoid) environment. Self-reported navigational ability correlates with increased sensitivity to geometric irregularities. The additive combination of grid-cell-predicted and path-integration-predicted effects suggests these two spatial coding systems operate as independent, composable constraints on memory — directly relevant to the KV-networks framework's account of how position information interacts with event memory.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Cross-cutting Section ===== -->
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://www.nature.com/articles/s41593-026-02343-8" target="_blank">Neural timescales from a computational perspective</a>
+    </div>
+    <div class="paper-meta">
+      Roxana Zeraati, Anna Levina, Jakob H. Macke, Richard Gao (MPI Biological Cybernetics / U Tübingen) &middot; Nature Neuroscience, 2026-07-02
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Nature Neuroscience review synthesizing three computational directions: (1) how data analysis methods capture timescales across modalities (spikes, LFPs, calcium imaging, fMRI BOLD — spanning ms to ~10⁴ ms), (2) how biophysical mechanistic models explain the emergence of diverse timescales (cellular, network, input-driven, neuromodulatory mechanisms), and (3) how task-optimized models (RNNs, SSMs, LSTMs) uncover functional relevance. Introduces the critical distinction between τ_fit (data-estimated autocorrelation time constant) and τ_param (model internal parameter).</p>
+      <p><strong>Finding:</strong> Proposes τ_fit as a comparable "fingerprint" bridging biological and artificial systems — directly enabling the kind of brain-DNN comparison the researcher's lab performs. Argues that "representational neural timescales" mirroring environmental fluctuation timescales may be necessary (not merely sufficient) for perception, memory, planning, and action. This framework provides theoretical scaffolding for all three pillars: timescale diversity in LLM attention (Pillar 1), hippocampal-cortical consolidation dynamics (Pillar 2), and temporal context in KV memory (Pillar 3).</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Peripheral Section ===== -->
+<div class="section">
+  <div class="section-header tag-peri">Peripheral</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.03660" target="_blank">Sequential Correlations Change In-Context Learning: Effective Context Length and Architectural Mismatch</a>
+    </div>
+    <div class="paper-meta">
+      Mary Letey, Yue M. Lu, Cengiz Pehlevan, Jacob Zavatone-Veth (Harvard) &middot; arXiv (stat.ML), 2026-07-04
+      <span class="tag tag-peri">Peripheral</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Extends ICL theory from i.i.d. prompts to sequentially correlated data (a basic feature of real sequences like language). Builds a solvable model based on linear attention and validates predictions on realistic transformer architectures. Identifies two distinct effects of within-context correlations on ICL performance.</p>
+      <p><strong>Finding:</strong> Within-context correlations induce an effective context length reduction (correlated prompts behave like shorter i.i.d. prompts), but query-context correlation reduces test error — and this benefit is larger for softmax attention than linear attention. This formalizes a temporal-context effect in ICL: the sequential structure of examples matters not just for what is learned but for <em>how efficiently</em> it is learned, with architectural implications for which attention mechanism is best matched to natural sequential data. Adjacent to the researcher's interest in temporal context effects in LLM memory.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Excluded Papers ===== -->
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>TF-Engram (Ma et al., arXiv:2607.07388)</strong> — train-free engram system for phrase-level semantic memory. Excluded: primarily a systems/engineering contribution (SSD-backed memory hierarchy, prefetching) with modest performance gain (+1.8 pp downstream score); limited mechanistic insight for memory research.</li>
+    <li><strong>What LLM Forecasters Know but Don't Say (Sarfati et al., arXiv:2607.08046)</strong> — probes internal representations for calibration and CoT faithfulness. Excluded: interesting for interpretability but focused on forecasting domain; insufficient direct connection to memory mechanisms.</li>
+    <li><strong>Early Visual Cortex Supports One-Shot Episodic Memory (Woodry et al., eLife RP, 2026-07-03)</strong> — fMRI study of spatial reinstatement in V1–V3 after single-exposure encoding. Excluded: peer-reviewed version of earlier bioRxiv (Jan 2026); solid finding but not new to the literature landscape — the core result has been circulating since the bioRxiv posting.</li>
+    <li><strong>The Key to Going Linear (Kuzina et al., arXiv:2607.07706)</strong> — analysis-driven transformer linearization at scale. Excluded: strong engineering contribution but primarily an optimization/implementation paper; KV cache management angle covered by prior-day reports.</li>
+    <li><strong>Hippocampo-neocortical interaction as compressive retrieval-augmented generation (Spens &amp; Burgess, Nat Commun, 2026-06-25)</strong> — intriguing CLS-RAG framework but published Jun 25, outside the 48-hour window.</li>
+    <li><strong>Multiple papers on agent safety, tool-making, citation verification, content protection</strong> — excluded for lack of direct connection to memory mechanisms.</li>
+  </ul>
+</div>
+
+<div class="footer">
+  Generated by WorkBuddy Daily Paper Tracker &middot; 2026-07-11
+</div>
+
+</body>
+</html>
