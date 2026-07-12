@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker — 2026-07-13</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .summary-table .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+  .footer { margin-top: 32px; font-size: 11px; color: #bbb; text-align: center; }
+</style>
+</head>
+<body>
+
+<h1>🧠 Daily Paper Tracker</h1>
+<div class="date">2026-07-13 (Monday) &mdash; Weekend window: papers from July 9&ndash;13</div>
+
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://aclanthology.org/2026.findings-acl.1108/" target="_blank">Synapse: Empowering LLM Agents with Episodic-Semantic Memory via Spreading Activation</a></td>
+        <td class="col-authors">Jiang et al. (Liu)</td>
+        <td class="col-finding">Spreading-activation memory graph with lateral inhibition and temporal decay outperforms static vector retrieval on multi-hop temporal reasoning, addressing the "Contextual Tunneling" problem.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.08057" target="_blank">Towards Efficient Large Language Model Serving: A Survey on System-Aware KV Cache Optimization</a></td>
+        <td class="col-authors">Jiang et al. (Liu)</td>
+        <td class="col-finding">Systematizes KV cache optimization into temporal (scheduling), spatial (placement), and structural (retention) dimensions, revealing cross-behavior co-design affinities.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.08284" target="_blank">Understanding Axes of Difficulty For Long Context Tasks Via PredicateLongBench</a></td>
+        <td class="col-authors">Jain &amp; Velingker</td>
+        <td class="col-finding">Systematic benchmark probing long-context reasoning along multiple difficulty axes; frontier models degrade sharply as predicate complexity scales, revealing structural limits of context memory.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.02689" target="_blank">S-EMBER: A Large-Scale Benchmark for Streaming Egocentric Memory Retrieval</a></td>
+        <td class="col-authors">Wang et al. (Yih)</td>
+        <td class="col-finding">Streaming episodic memory benchmark (388h wearable video) reveals a localization paradox: semantic reasoning improves with scale, but temporal grounding precision stalls regardless of model size.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s41467-026-74824-0" target="_blank">Learning regularities in noise engages both neural predictive activity and representational changes</a></td>
+        <td class="col-authors">Tirou et al. (Quentin)</td>
+        <td class="col-finding">MEG reveals two temporally dissociable learning mechanisms: rapid predictive activity precedes behavior, followed by slower representational change via pattern similarity buildup.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-peri"></span>Peripheral</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.07847" target="_blank">When Does Continual Learning Require Learning</a></td>
+        <td class="col-authors">Harrington et al. (Darrell, Malik, Bai)</td>
+        <td class="col-finding">Different environmental change patterns require fundamentally different memory/update behaviors; online RL adapts best to knowledge drift but struggles with noisy reward signals.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-peri"></span>Peripheral</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.08186" target="_blank">Hidden Decoding at Scale: Latent Computation Scaling for Large Language Models</a></td>
+        <td class="col-authors">Liu et al. (Fan)</td>
+        <td class="col-finding">Sequence-length expansion via multi-stream KV cache achieves first demonstrated fixed-backbone scaling at 100B+ MoE scale without adding transformer layers.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-peri"></span>Peripheral</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.08252" target="_blank">AutoPersonas: A Multi-Timescale Loop Engine for Open-Ended Persona Evolution</a></td>
+        <td class="col-authors">Li</td>
+        <td class="col-finding">Separating divergent future-facing material from evidence-governed memory absorption reduces persona-environment self-locking and roughly doubles cumulative theme count in 40-day agent simulations.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-peri"></span>Peripheral</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.08063" target="_blank">Holographic Neural PCFG for Unsupervised Parsing</a></td>
+        <td class="col-authors">Yamaki et al. (Taniguchi)</td>
+        <td class="col-finding">Associative memory via holographic embeddings (circular correlation) applied to PCFG rule scoring achieves SOTA parsing with 99.94% parameter reduction through algebraic relation modeling.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://aclanthology.org/2026.findings-acl.1108/" target="_blank">Synapse: Empowering LLM Agents with Episodic-Semantic Memory via Spreading Activation</a>
+    </div>
+    <div class="paper-meta">
+      Jiang et al. (Tianming Liu, University of Georgia) &middot; ACL 2026 Findings, July 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Introduces Synapse, a unified memory architecture that models agent memory as a dynamic graph where relevance emerges from spreading activation rather than static vector similarity. Integrates lateral inhibition and temporal decay to dynamically highlight relevant sub-graphs while suppressing interference. Uses a Triple Hybrid Retrieval strategy fusing geometric embeddings with activation-based graph traversal. Evaluated on the LoCoMo benchmark for complex temporal and multi-hop reasoning.</p>
+      <p><strong>Finding:</strong> Synapse significantly outperforms state-of-the-art retrieval methods on complex temporal and multi-hop reasoning tasks, specifically addressing the "Contextual Tunneling" problem where standard RAG fails to connect dispersed but related memories. The spreading-activation mechanism enables associative recall across disconnected memory fragments without requiring pre-computed similarity links, directly relevant to how episodic memory retrieval leverages temporal context and semantic associations.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.08057" target="_blank">Towards Efficient Large Language Model Serving: A Survey on System-Aware KV Cache Optimization</a>
+    </div>
+    <div class="paper-meta">
+      Jiang et al. (Feng Liu, University of Melbourne) &middot; ACL 2026 Findings, arXiv:2607.08057 (9 Jul 2026)
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Systematizes the rapidly growing literature on KV cache optimization for LLM serving from a system-behavior perspective. Organizes existing efforts into three dimensions: execution and scheduling (temporal), placement and migration (spatial), and representation and retention (structural). Analyzes cross-behavior co-design affinity and behavior-objective links.</p>
+      <p><strong>Finding:</strong> Provides the first unified taxonomy of KV cache optimization strategies, revealing that most work addresses only one dimension in isolation, leaving significant opportunities for cross-dimensional co-design. The structural dimension (how KV pairs are represented and which are retained) maps most directly to memory mechanisms &mdash; directly relevant to understanding how transformer memory systems can be made more efficient without sacrificing the ability to retain and retrieve associations across long contexts.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.08284" target="_blank">Understanding Axes of Difficulty For Long Context Tasks Via PredicateLongBench</a>
+    </div>
+    <div class="paper-meta">
+      Jain &amp; Velingker (Google DeepMind) &middot; arXiv:2607.08284 (9 Jul 2026)
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Proposes PredicateLongBench, a benchmark that stress-tests long-context reasoning by asking models to identify the longest contiguous subsequence satisfying given predicates (e.g., lexicographic ordering). Systematically explores multiple axes of difficulty including predicate complexity, sequence length, and distractor density. Provides both synthetic and real-world generation pipelines.</p>
+      <p><strong>Finding:</strong> Frontier models struggle significantly as predicate complexity scales, demonstrating that current long-context capabilities are brittle &mdash; models can handle simple needle-in-haystack tasks but fail when predicates require structured reasoning over the full context. The benchmark reveals that context-window capacity alone is insufficient; structured attention over long sequences remains a fundamental bottleneck in how transformer memory is accessed.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.02689" target="_blank">S-EMBER: A Large-Scale Benchmark for Streaming Egocentric Memory Retrieval</a>
+    </div>
+    <div class="paper-meta">
+      Wang et al. (Wen-Tau Yih, Meta AI) &middot; arXiv:2607.02689 (2 Jul 2026)
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Introduces S-EMBER, a large-scale benchmark for streaming episodic memory retrieval comprising 3,141 videos (388 hours) captured via Ray-Ban Meta smart glasses. Formalizes "grounded streaming episodic retrieval" &mdash; causal, active recall triggered by visual events in a continuous stream, with 9,448 QA pairs requiring precise temporal localization. Evaluates frontier VLMs and video-language models.</p>
+      <p><strong>Finding:</strong> Uncovers a "localization paradox": semantic reasoning about past events improves with model scale, but temporal grounding precision remains stagnant regardless of parameter count, resolution, or frame density. This suggests a fundamental architectural bottleneck in how current models perform episodic memory retrieval &mdash; they can reason about what happened but not when, a dissociation with direct implications for models of temporal context in episodic memory.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+  <div class="empty-section">No papers today. Narrow weekend window; arxiv Monday listings not yet posted at time of search.</div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+  <div class="empty-section">No standalone KV-Networks papers today. The KV cache survey (see LLM-Memory section) partially covers this pillar.</div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s41467-026-74824-0" target="_blank">Learning regularities in noise engages both neural predictive activity and representational changes</a>
+    </div>
+    <div class="paper-meta">
+      Tirou et al. (Romain Quentin, INSERM Lyon) &middot; Nature Communications, 7 Jul 2026
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> MEG study tracking neural dynamics as human participants learned non-adjacent temporal dependencies embedded in visual-motor noise. Used multivariate pattern analysis (MVPA) to dissociate stimulus-specific predictive activity from representational similarity changes. Examined network-level contributions across sensorimotor, dorsal attentional, and frontoparietal systems.</p>
+      <p><strong>Finding:</strong> Reveals two temporally dissociable learning mechanisms: (1) rapid neural predictive activity, with stimulus-specific patterns emerging before stimulus onset and preceding behavioral improvement; (2) slower representational change, characterized by gradually increasing neural pattern similarity between statistically dependent but non-adjacent elements. The temporal hierarchy &mdash; prediction first, then representational consolidation &mdash; maps onto the encoding-to-consolidation transition central to episodic memory formation. Sensorimotor and dorsal attention networks were the primary hubs for both processes.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+  <div class="empty-section">No papers today.</div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-peri">Peripheral</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.07847" target="_blank">When Does Continual Learning Require Learning</a>
+    </div>
+    <div class="paper-meta">
+      Harrington et al. (Trevor Darrell, Jitendra Malik, Yutong Bai &mdash; UC Berkeley / Meta) &middot; arXiv:2607.07847 (8 Jul 2026)
+      <span class="tag tag-peri">Peripheral</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Reframes LLM continual learning as a problem of adapting to environmental change along two axes: space (new domains) and time (data drift under a fixed task). Compares prompt-based methods (GEPA, ACE), supervised learning (SFT, SDFT), reinforcement learning (GRPO, SDPO), and context compression (Cartridges, In-place TTT) under a unified evaluation protocol using recast LLM benchmarks.</p>
+      <p><strong>Finding:</strong> No single method dominates: prompt-based methods adapt quickly but degrade on future tasks; distillation accumulates stably but struggles to update outdated facts; online RL handles knowledge drift best but is sensitive to noisy rewards. The core insight &mdash; that different patterns of environmental change require fundamentally different memory/update behaviors &mdash; echoes the complementary learning systems framework: fast hippocampal-like adaptation vs. slow cortical consolidation, with the optimal strategy depending on the statistics of change.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.08186" target="_blank">Hidden Decoding at Scale: Latent Computation Scaling for Large Language Models</a>
+    </div>
+    <div class="paper-meta">
+      Liu et al. (Miao Fan, WeLM / ByteDance) &middot; arXiv:2607.08186 (9 Jul 2026)
+      <span class="tag tag-peri">Peripheral</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Proposes Hidden Decoding, a sequence-length scaling method that expands each token into n streams with independent embedding tables during continued pretraining. Keeps intermediate streams' KV cache as context, allowing more internal computation per token without widening Transformer layers. Introduces Stream-Factorized Attention to keep costs roughly linear in n. Validated at two scales: WeLM-HD4-80B and WeLM-HD4-617B (both at n=4).</p>
+      <p><strong>Finding:</strong> Achieves first demonstrated sequence-length scaling at 100B+ MoE scale. Gains grow monotonically with expansion factor n, establishing that trading sequence length for per-token computation is a practical path for fixed-backbone scaling. The KV cache mechanism is central to the approach (intermediate streams' caches serve as extended context), making this a practical demonstration of how KV-based memory reuse enables more efficient computation at frontier scale.</p>
+    </div>
+    <div class="flag">⚠ Large team (48 authors), industrial-scale validation only (no academic-scale reproduction). Preprint; not yet peer-reviewed.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.08252" target="_blank">AutoPersonas: A Multi-Timescale Loop Engine for Open-Ended Persona Evolution</a>
+    </div>
+    <div class="paper-meta">
+      Mengchen Li &middot; arXiv:2607.08252 (9 Jul 2026)
+      <span class="tag tag-peri">Peripheral</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Identifies "self-locking" as a failure mode in long-running persona agents where locally plausible events drive convergence toward stale behavioral patterns. Proposes an OSO (Occurrences &rarr; Observations &rarr; State) loop engine that separates divergent future-facing material from evidence-governed memory absorption. Tests on 8 models across 40-day simulations (1,600 events) plus a 3-year compressed run.</p>
+      <p><strong>Finding:</strong> All direct-loop models crossed 90% action-category repetition by day 11; context-slice masking with per-sample divergence targeting reduced macro-theme repetition from 61.8% to 36.3% and roughly doubled cumulative theme count. The architecture's separation of memory consolidation from prediction-generation mirrors the complementary learning systems principle: evidence-governed absorption (hippocampus-like) vs. divergent state exploration (cortex-like), applied to agent identity maintenance.</p>
+    </div>
+    <div class="flag">⚠ Single-author preprint; simulation-based validation only, no real-world deployment.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.08063" target="_blank">Holographic Neural PCFG for Unsupervised Parsing</a>
+    </div>
+    <div class="paper-meta">
+      Yamaki et al. (Tadahiro Taniguchi, Ritsumeikan University) &middot; arXiv:2607.08063 (9 Jul 2026)
+      <span class="tag tag-peri">Peripheral</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Applies Holographic Embeddings (circular correlation-based associative memory from knowledge graph literature) to PCFG rule scoring, giving every grammar rule probability a closed algebraic form. Uses torus-constrained embeddings for left-child, right-child, and lexical-emission relations. Evaluated on unsupervised constituency parsing across six languages.</p>
+      <p><strong>Finding:</strong> Achieves state-of-the-art parsing performance while cutting rule-scoring parameters by 99.94% relative to neural baselines, demonstrating that algebraic associative memory structures can match or exceed black-box networks when the relational structure is well-matched to the task. The success of circular correlation as a binding mechanism for structured representations is noteworthy for models of compositional memory and relational binding.</p>
+    </div>
+  </div>
+</div>
+
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>arXiv:2607.08332 (XALPHA: Memory-Driven AI Quant Researcher)</strong> &mdash; finance-specific agent with multi-source memory system; too domain-specific, no mechanistic memory insight.</li>
+    <li><strong>arXiv:2607.07716 (Memory Backtracking for Temporal Graph Networks)</strong> &mdash; TGN explainability via memory backtracking; graph-network specific, not general memory mechanism.</li>
+    <li><strong>bioRxiv 2026.07.10.737794 (Attention reshapes thalamic/cortical prediction-error learning)</strong> &mdash; prediction-error learning in thalamocortical circuits; peripheral to memory mechanisms per se.</li>
+    <li><strong>bioRxiv 2026.07.06.736523 (Data-driven oscillatory network modeling for working memory)</strong> &mdash; working memory attention dynamics via oscillatory network modeling; controlled task, not episodic memory.</li>
+    <li><strong>Nature Communications 10.1038/s41467-026-75129-y (Environment geometry alters sequential route learning)</strong> &mdash; previously reported on 2026-07-11.</li>
+    <li><strong>Nature Communications (Astrocytic ankyrin-2 enables memory persistence)</strong> &mdash; previously reported on 2026-07-11.</li>
+    <li><strong>arXiv:2607.08032 (Rate-Distortion Memory Compaction)</strong> &mdash; previously reported on 2026-07-10.</li>
+    <li><strong>arXiv:2607.07953 (Linear Attention Architectures)</strong> &mdash; previously reported on 2026-07-10.</li>
+    <li><strong>arXiv:2607.07724 (Uncertainty-gated block-sparse attention)</strong> &mdash; previously reported on 2026-07-10.</li>
+    <li><strong>arXiv:2607.02303 (HOLA: Hippocampus for Linear Attention)</strong> &mdash; previously reported on 2026-07-11.</li>
+  </ul>
+</div>
+
+<div class="footer">
+  Generated by WorkBuddy Daily Paper Tracker &middot; 2026-07-13 &middot; Sources: arXiv (cs.CL, cs.AI, cs.LG, cs.CV, q-bio.NC), bioRxiv, Nature Communications, Nature Neuroscience, ACL 2026 &middot; 9 papers retained from ~30 candidates screened
+</div>
+
+</body>
+</html>
