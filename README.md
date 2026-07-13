@@ -1,6 +1,6 @@
 # Daily Paper Tracker
 
-A WorkBuddy automation that keeps me on top of new papers in computational cognitive neuroscience. Every morning it searches arxiv, bioRxiv, PubMed, and a handful of journals, filters out the noise, and puts together a clean HTML report grouped by research topic. 
+An AI agent that keeps me on top of new papers in computational cognitive neuroscience. Every morning it searches arxiv, bioRxiv, PubMed, and a handful of journals, filters out the noise, and puts together a clean HTML report grouped by research topic. 
 
 <p align="center">
   <img src="outputs/bsky-wordcloud.png" alt="Word cloud of paper-sharing topics from @qlu.bsky.social" width="700">
@@ -10,13 +10,13 @@ The keywords it searches for are loosely based on what I actually share on Blues
 
 ## How It Works
 
-A WorkBuddy automation reads `prompts/daily-paper-tracker.md` and runs it daily. The agent:
+An AI agent reads `prompts/daily-paper-tracker.md` and runs it daily. The agent:
 
 1. **Searches** arxiv, bioRxiv, PubMed, and high-impact journals across a keyword matrix.
 2. **Deduplicates** against `data/seen_papers.json` — matched by DOI, arxiv ID, or title slug, never reported twice.
 3. **Filters** for mechanistic relevance, not just keyword hits. Skips pure engineering, narrow clinical studies, and opinion pieces without new data.
 4. **Writes** a self-contained HTML report at `outputs/YYYY-MM-DD-paper-tracker.html`, with papers grouped by relevance category.
-5. **Pushes** the report to this repo and **shows** it in WorkBuddy.
+5. **Pushes** the report to this repo, making it viewable online.
 
 ## Keyword Matrix (219 keywords, 6 sections)
 
@@ -54,21 +54,15 @@ paper-tracking/
 │   └── seen_papers.json             # Deduplication store (DOI → date first seen)
 ├── outputs/
 │   ├── YYYY-MM-DD-paper-tracker.html # Daily reports
-│   └── bluesky-topic-analysis.html   # Bluesky repost topic clustering
-└── .workbuddy/
-    ├── automations/                  # Automation config (not tracked in git)
-    └── memory/                       # Workspace memory (not tracked in git)
+│   └── bsky-paper-posts.html         # Bluesky paper post archive
 ```
 
 ## Modifying
 
-Edit `prompts/daily-paper-tracker.md` to change keywords, sources, or output format. The automation picks it up on the next run — no need to touch the automation config.
+Edit `prompts/daily-paper-tracker.md` to change keywords, sources, or output format. The agent picks it up on the next run — no need to touch anything else.
 
 To reset the deduplication store (say, after a bad run), delete `data/seen_papers.json`. A fresh one gets created on the next run.
 
 ## Dependencies
 
-- WorkBuddy with automations turned on
-- Web search and web fetch (built into WorkBuddy)
-- `gh` CLI authenticated for auto-push
-- Optional: academic search MCP connectors (PubMed, Semantic Scholar)
+Any AI agent with web search and code execution can run this prompt. The auto-push to GitHub uses the `gh` CLI, so make sure it's authenticated. Optionally, academic search APIs (PubMed, Semantic Scholar) improve coverage.
