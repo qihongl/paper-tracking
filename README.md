@@ -1,22 +1,22 @@
 # Daily Paper Tracker
 
-Automated daily literature surveillance for computational cognitive neuroscience research on episodic memory. Runs as a WorkBuddy automation, searches multiple sources, filters by relevance, and produces a self-contained HTML briefing.
+A WorkBuddy automation that keeps me on top of new papers in computational cognitive neuroscience. Every morning it searches arxiv, bioRxiv, PubMed, and a handful of journals, filters out the noise, and puts together a clean HTML report grouped by research topic. 
 
 <p align="center">
   <img src="outputs/bsky-wordcloud.png" alt="Word cloud of paper-sharing topics from @qlu.bsky.social" width="700">
 </p>
 
-The tracker's keyword matrix is calibrated against the researcher's actual paper-sharing activity on Bluesky ([@qlu.bsky.social](https://bsky.app/profile/qlu.bsky.social)). The word cloud above — generated from 212 paper-related posts — surfaces the dominant themes: **memory**, **neural** mechanisms, **learning**, the **hippocampus**, **episodic** encoding, **cognitive** models, and **working memory**. These map directly onto the tracker's six relevance categories.
+The keywords it searches for are loosely based on what I actually share on Bluesky ([@qlu.bsky.social](https://bsky.app/profile/qlu.bsky.social)). The word cloud above — made from 212 paper-related posts — gives a pretty honest picture: **memory**, **neural** mechanisms, **learning**, the **hippocampus**, **episodic** encoding, **cognitive** models, **working memory**. That's what the tracker looks for.
 
 ## How It Works
 
-A WorkBuddy automation (`automation-1783133189790`) reads `prompts/daily-paper-tracker.md` and executes it daily. The agent:
+A WorkBuddy automation reads `prompts/daily-paper-tracker.md` and runs it daily. The agent:
 
-1. **Searches** arxiv, bioRxiv, PubMed, and high-impact journals across a 219-keyword matrix spanning six categories.
-2. **Deduplicates** against `data/seen_papers.json` — papers are matched by DOI, arxiv ID, or title slug and never reported twice.
-3. **Filters** for mechanistic relevance, not just keyword matches. Papers that are purely engineering, clinical case studies without computational relevance, or opinion pieces are excluded.
-4. **Generates** a self-contained HTML report at `outputs/YYYY-MM-DD-paper-tracker.html` with papers grouped into six relevance categories, each appearing in exactly one detailed section.
-5. **Presents** the HTML via WorkBuddy's `present_files`.
+1. **Searches** arxiv, bioRxiv, PubMed, and high-impact journals across a keyword matrix.
+2. **Deduplicates** against `data/seen_papers.json` — matched by DOI, arxiv ID, or title slug, never reported twice.
+3. **Filters** for mechanistic relevance, not just keyword hits. Skips pure engineering, narrow clinical studies, and opinion pieces without new data.
+4. **Writes** a self-contained HTML report at `outputs/YYYY-MM-DD-paper-tracker.html`, with papers grouped by relevance category.
+5. **Pushes** the report to this repo and **shows** it in WorkBuddy.
 
 ## Keyword Matrix (219 keywords, 6 sections)
 
@@ -42,7 +42,7 @@ A WorkBuddy automation (`automation-1783133189790`) reads `prompts/daily-paper-t
 
 ## Bluesky Topic Analysis
 
-The keyword matrix is periodically calibrated against the researcher's actual sharing patterns on Bluesky (`@qlu.bsky.social`). The word cloud and bar chart in `outputs/` — generated from 212 paper-related posts across 30 months — provide a data-driven view of research interests: memory, hippocampus, neural representations, encoding, computational models, and NeuroAI alignment. See `outputs/bsky-paper-posts.html` for the full archive of paper-related posts.
+I occasionally update the keyword matrix based on what I've been posting about on Bluesky. The word cloud and bar chart in `outputs/` are built from 212 paper-related posts over about 2.5 years. See `outputs/bsky-paper-posts.html` for the full archive.
 
 ## Project Structure
 
@@ -62,12 +62,13 @@ paper-tracking/
 
 ## Modifying
 
-To change search keywords, sources, output format, or quality standards, edit `prompts/daily-paper-tracker.md`. The automation reads this file fresh on each run — no need to update the automation itself.
+Edit `prompts/daily-paper-tracker.md` to change keywords, sources, or output format. The automation picks it up on the next run — no need to touch the automation config.
 
-To reset the deduplication store (e.g., after a bad run), delete `data/seen_papers.json`. It will be recreated on the next run.
+To reset the deduplication store (say, after a bad run), delete `data/seen_papers.json`. A fresh one gets created on the next run.
 
 ## Dependencies
 
-- WorkBuddy with automation support
-- Web search and web fetch tools (built into WorkBuddy)
-- Optional: MCP connectors for academic search (PubMed, Semantic Scholar)
+- WorkBuddy with automations turned on
+- Web search and web fetch (built into WorkBuddy)
+- `gh` CLI authenticated for auto-push
+- Optional: academic search MCP connectors (PubMed, Semantic Scholar)
