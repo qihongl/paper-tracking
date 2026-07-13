@@ -2,6 +2,12 @@
 
 Automated daily literature surveillance for computational cognitive neuroscience research on episodic memory. Runs as a WorkBuddy automation, searches multiple sources, filters by relevance, and produces a self-contained HTML briefing.
 
+<p align="center">
+  <img src="outputs/bsky-wordcloud.png" alt="Word cloud of paper-sharing topics from @qlu.bsky.social" width="700">
+</p>
+
+The tracker's keyword matrix is calibrated against the researcher's actual paper-sharing activity on Bluesky ([@qlu.bsky.social](https://bsky.app/profile/qlu.bsky.social)). The word cloud above — generated from 212 paper-related posts — surfaces the dominant themes: **memory**, **neural** mechanisms, **learning**, the **hippocampus**, **episodic** encoding, **cognitive** models, and **working memory**. These map directly onto the tracker's six relevance categories.
+
 ## How It Works
 
 A WorkBuddy automation (`automation-1783133189790`) reads `prompts/daily-paper-tracker.md` and executes it daily. The agent:
@@ -36,7 +42,7 @@ A WorkBuddy automation (`automation-1783133189790`) reads `prompts/daily-paper-t
 
 ## Bluesky Topic Analysis
 
-The keyword matrix is periodically calibrated against the researcher's actual sharing patterns on Bluesky (`@qlu.bsky.social`). See `outputs/bluesky-topic-analysis.html` for a data-driven clustering of reposted papers into topic clusters (replay, naturalistic paradigms, hippocampal mechanisms, LLM/NeuroAI, schema/prior knowledge, working memory, Bayesian theory, and methods/meta-science).
+The keyword matrix is periodically calibrated against the researcher's actual sharing patterns on Bluesky (`@qlu.bsky.social`). The word cloud and bar chart in `outputs/` — generated from 212 paper-related posts across 30 months — provide a data-driven view of research interests: memory, hippocampus, neural representations, encoding, computational models, and NeuroAI alignment. See `outputs/bsky-paper-posts.html` for the full archive of paper-related posts.
 
 ## Project Structure
 
