@@ -6,7 +6,15 @@ An AI agent that keeps me on top of new papers in computational cognitive neuros
   <img src="outputs/bsky-wordcloud.png" alt="Word cloud of paper-sharing topics from @qlu.bsky.social" width="700">
 </p>
 
-The keywords it searches for are loosely based on what I actually share on Bluesky ([@qlu.bsky.social](https://bsky.app/profile/qlu.bsky.social)). The word cloud above — made from 212 paper-related posts — gives a pretty honest picture: **memory**, **neural** mechanisms, **learning**, the **hippocampus**, **episodic** encoding, **cognitive** models, **working memory**. That's what the tracker looks for.
+## How It Works
+
+An AI agent reads `prompts/daily-paper-tracker.md` and runs it daily. The agent:
+
+1. **Searches** all sources listed above using a six-section keyword matrix.
+2. **Deduplicates** against `data/seen_papers.json` — matched by DOI, arxiv ID, or title slug, never reported twice.
+3. **Filters** for mechanistic relevance, not just keyword hits. Skips pure engineering, narrow clinical studies, and opinion pieces without new data.
+4. **Writes** a self-contained HTML report at `outputs/YYYY-MM-DD-paper-tracker.html`, with papers grouped by relevance category.
+5. **Pushes** the report to this repo, making it viewable online.
 
 ## Sources
 
@@ -17,16 +25,6 @@ The keywords it searches for are loosely based on what I actually share on Blues
 - **Journals (39):** Nature, Nature Neuroscience, Nature Machine Intelligence, Nature Human Behaviour, Nature Communications, Science, Neuron, eLife, Current Biology, Journal of Neuroscience, Cognition, PNAS, Psychological Review, Psychological Science, Cognitive Psychology, Cognitive Science, JEP: General, Memory & Cognition, Hippocampus, NeuroImage, PLOS Computational Biology, Journal of Cognitive Neuroscience, Cerebral Cortex, eNeuro, Network Neuroscience, Trends in Cognitive Sciences, Communications Psychology, Learning & Memory, Neurobiology of Learning and Memory, Psychonomic Bulletin & Review, Neural Computation, Current Opinion in Neurobiology, Current Opinion in Behavioral Sciences, Neuroscience & Biobehavioral Reviews, Journal of Memory and Language, Annual Review of Neuroscience, Annual Review of Psychology, Behavioral and Brain Sciences
 - **ML conferences:** NeurIPS, ICLR, ICML, COSYNE
 - **Naturalistic neuroimaging datasets:** OpenNeuro, PIEMAN, Sherlock, Tunnel (monitored for new publications)
-
-## How It Works
-
-An AI agent reads `prompts/daily-paper-tracker.md` and runs it daily. The agent:
-
-1. **Searches** all sources listed above using a six-section keyword matrix.
-2. **Deduplicates** against `data/seen_papers.json` — matched by DOI, arxiv ID, or title slug, never reported twice.
-3. **Filters** for mechanistic relevance, not just keyword hits. Skips pure engineering, narrow clinical studies, and opinion pieces without new data.
-4. **Writes** a self-contained HTML report at `outputs/YYYY-MM-DD-paper-tracker.html`, with papers grouped by relevance category.
-5. **Pushes** the report to this repo, making it viewable online.
 
 ## Keyword Matrix (~300 keywords, 6 sections)
 
@@ -52,7 +50,7 @@ An AI agent reads `prompts/daily-paper-tracker.md` and runs it daily. The agent:
 
 ## Bluesky Topic Analysis
 
-I occasionally update the keyword matrix based on what I've been posting about on Bluesky. The word cloud and bar chart in `outputs/` are built from 212 paper-related posts over about 2.5 years. See `outputs/bsky-paper-posts.html` for the full archive.
+The keyword matrix is based on what I actually share on Bluesky ([@qlu.bsky.social](https://bsky.app/profile/qlu.bsky.social)). The word cloud at the top — made from 212 paper-related posts over about 2.5 years — gives a pretty honest picture: **memory**, **neural** mechanisms, **learning**, the **hippocampus**, **episodic** encoding, **cognitive** models, **working memory**. I occasionally update the matrix as my posting patterns evolve. See `outputs/bsky-paper-posts.html` for the full archive.
 
 ## Project Structure
 
