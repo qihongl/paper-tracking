@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker — 2026-07-14</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .summary-table .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+  .footer { margin-top: 32px; font-size: 11px; color: #bbb; text-align: center; }
+</style>
+</head>
+<body>
+
+<h1>🧠 Daily Paper Tracker</h1>
+<div class="date">2026-07-14 — Tuesday</div>
+
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.11020" target="_blank">Can a Language Model Learn Facts Continually in Its Weights?</a></td>
+        <td class="col-authors">O'Neill</td>
+        <td class="col-finding">Facts can be behaviourally forgotten without erasure; later writes redirect question access, and the recitation-to-use gap shrinks from 27.4 to 5.4 pp with diverse restatements.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.10034" target="_blank">MLPs are Hebbians: Constructing Efficient Fact-Storing MLPs for Transformers</a></td>
+        <td class="col-authors">Garcia et al. (Ré)</td>
+        <td class="col-finding">First closed-form Transformer-compatible MLP construction achieving info-theoretically optimal fact storage; 10–104× parameter reduction with modular fact editing via MLP swapping.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.10248" target="_blank">One Mechanism for Many Mental Spaces: A Shared Router over a Value Slot in Language Models</a></td>
+        <td class="col-authors">Steele et al.</td>
+        <td class="col-finding">Transformers use a shared low-rank router over a reusable value slot for memory, counterfactual, belief, and fictional spaces — a mechanistic version of Fauconnier's mental space unification.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.10386" target="_blank">Structured Thoughts for Improved Reasoning and Context Pruning</a></td>
+        <td class="col-authors">Sarwar et al.</td>
+        <td class="col-finding">Structured &lt;try&gt;/&lt;outcome&gt; blocks enable 85% memory/context savings through pruning of exploratory scratch work, with up to 8.08% reasoning gain over standard SFT.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.10430" target="_blank">Emergent Generalization by Representation Learning in Artificial Neural Networks</a></td>
+        <td class="col-authors">Rajpal &amp; Goodman</td>
+        <td class="col-finding">CA1 hippocampal activity shows non-monotonic emergence dynamics tracking behavior in a maze task, mirroring an information-bottleneck-driven memorisation-to-generalisation transition in RNNs.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.09889" target="_blank">Remembering Distinct Items, Not Tokens: A Learnable Dirichlet-Process Cache</a></td>
+        <td class="col-authors">Pal &amp; Rojkova</td>
+        <td class="col-finding">DP-means sparse cache opens slots only for novel items, scaling with distinct information rather than token count, matching full-attention recall while storing only unique items.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.10441" target="_blank">Context by Distinct Information: An Auditable Dirichlet-Process Working Memory</a></td>
+        <td class="col-authors">Pal &amp; Rojkova</td>
+        <td class="col-finding">Tripartite context architecture (novelty cache + recurrent state + recency window) organizes model memory by task dependency rather than token count; retained memory is an inspectable table.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.10677" target="_blank">From Self-Attention to Connection Laplacian: A Unified Operator View</a></td>
+        <td class="col-authors">Lin et al.</td>
+        <td class="col-finding">Self-attention is exactly a connection walk over a token-position graph; learned transports self-organize into scaled isometries, strengthening with model scale (124M–8B).</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.10923" target="_blank">Infrared Organization and Critical Cognitive Field Formation in Transformer Dynamics</a></td>
+        <td class="col-authors">Chae</td>
+        <td class="col-finding">Transformer Jacobian spectra reveal scale-free memory kernels K(t)~t⁻¹ and infrared slow-mode accumulation; memory self-energy peaks transiently before settling into a near-critical regime.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.09714" target="_blank">Feedback-Coupled Memory Systems in Continuous Time</a></td>
+        <td class="col-authors">Grassi</td>
+        <td class="col-finding">Lyapunov global dissipativity threshold 4β²&lt;2ημγ² generalizes the principle that memory dissipation must outpace feedback gain — a universal organizing principle for attractor memory systems.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.11020" target="_blank">Can a Language Model Learn Facts Continually in Its Weights?</a>
+    </div>
+    <div class="paper-meta">
+      Charles O'Neill &middot; arXiv, 13 Jul 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Follows invented facts written into Qwen3 model weights from creation through sequences of up to 100 later writes, using held-out questions of five types. Compares bare-statement training against diverse-restatement training, and systematically measures retention, interference, and the recitation-to-use gap across sequential writes.</p>
+      <p><strong>Finding:</strong> Facts can be <em>behaviourally forgotten without being erased</em> — forgotten facts retain most of the log-probability added by their write, and 70% of wrong answers about them contain the most recently written fact. Diverse restatements reduce the recitation-to-use gap from 27.4 to 5.4 percentage points. After 20 sequential writes, bare-statement facts retain 1% accuracy while broad-study facts retain 46%. Later writes cause interference regardless of how the earlier fact was stored. When facts must survive later writes, context (not weights) is the reliable channel. Mechanistically, this demonstrates that LLM weight storage behaves like a question-keyed associative memory where later writes redirect the retrieval pathway.</p>
+      <p><strong>Relevance:</strong> Directly speaks to Pillar 1 (LLM lingering memory) — the question-keyed overwriting mechanism is a transformer analogue of proactive interference in episodic memory. The finding that context is more reliable than weights for composed facts parallels the hippocampal-cortical distinction in CLS theory.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.10034" target="_blank">MLPs are Hebbians: Constructing Efficient Fact-Storing MLPs for Transformers</a>
+    </div>
+    <div class="paper-meta">
+      Roberto Garcia, Jerry Liu, Ronny Junkins, Sabri Eyuboglu, Atri Rudra, Christopher Ré (Stanford) &middot; arXiv, 10 Jul 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Develops a closed-form Hebbian construction for Transformer MLP layers that stores facts at information-theoretically optimal rates. The construction analyses the <em>decoding margin</em> of MLPs — how cleanly a stored fact's output separates from noise — rather than just storage capacity. Validated against prior constructive models (Meng et al. ROME, Geva et al.) and mechanistic interpretability results.</p>
+      <p><strong>Finding:</strong> First Transformer-compatible construction achieving all three empirically observed properties: (i) optimal fact storage scaling under isotropic embeddings, (ii) handling of arbitrary input/output geometries, and (iii) functioning inside full Transformer blocks for factual recall. Uses 10–104× fewer parameters than prior constructions at matched fact count. Enables modular fact editing by directly swapping an MLP layer — a clean demonstration that fact storage in LLMs follows associative memory principles with Hebbian-like weight updates.</p>
+      <p><strong>Relevance:</strong> Bridges Pillar 1 and Pillar 3 — the Hebbian construction provides a normative account of how LLMs implement associative (key-value) memory in their MLP layers. The modular editing capability is a proof-of-concept for targeted memory modification without full retraining.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.10248" target="_blank">One Mechanism for Many Mental Spaces: A Shared Router over a Value Slot in Language Models</a>
+    </div>
+    <div class="paper-meta">
+      Oliver Steele, Jiangtao Wen, Yuxing Han &middot; arXiv, 11 Jul 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Tests whether transformers implement Fauconnier's mental-space theory (a unified space-building operation) or formal semantics (separate logics for modal, temporal, doxastic spaces). Uses Distributed Alignment Search to train subspaces that control one space type (counterfactual, belief, fictional, temporal, or <em>memory</em>) and tests cross-type generalisation across three model families. Mechanistically localises the router to a low-rank subspace acting through a few late-layer attention heads.</p>
+      <p><strong>Finding:</strong> The model uses <em>one</em> router/slot format across the entire inventory: a reusable value slot stores attributed content, and a causally manipulable router (the space index) selects which space is read. A subspace trained on one space type also controls others well above random. The router is low-rank, composes additively with entity identity, and drives inference. Composing space-builders mints a fresh router over the shared slot — a mechanistic implementation of mental space nesting. Memory is one of the spaces in this unified inventory.</p>
+      <p><strong>Relevance:</strong> Cross-cutting for Pillar 1 — provides a mechanistic account of how LLMs represent the distinction between actual and remembered content, with direct implications for how episodic memory could be implemented as a space-building operation in transformer architectures.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.10386" target="_blank">Structured Thoughts for Improved Reasoning and Context Pruning</a>
+    </div>
+    <div class="paper-meta">
+      Zain Sarwar, Supriyo Chakraborty, Berkcan Kapusuzoglu, Chia-Hsuan Lee, Anirban Das, Stephen Rawls, Kartik Balasubramaniam, Sambit Sahu (JPMorgan Chase) &middot; arXiv, 11 Jul 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Introduces a framework that organises LLM chain-of-thought reasoning into alternating &lt;try&gt; (exploratory scratch work) and &lt;outcome&gt; (distilled conclusion) blocks. Constructs a dataset by segmenting reasoning traces and prompting an LLM to summarise each step. Fine-tunes pretrained models on this reformatted data, then implements context pruning by discarding &lt;try&gt; blocks after each step.</p>
+      <p><strong>Finding:</strong> Fine-tuning on structured thoughts yields up to 8.08% improvement on reasoning benchmarks compared to standard SFT. The pruning mechanism achieves ~85% memory/context savings with an 8.67% performance drop on mathematical tasks. This is a form of gist-based memory consolidation: exploratory computation is jettisoned, but its conclusions are retained.</p>
+      <p><strong>Relevance:</strong> The try/outcome pruning paradigm maps onto the distinction between encoding (detailed processing) and consolidation (gist extraction) in episodic memory. For Pillar 1, this suggests a concrete mechanism for implementing selective forgetting of intermediate representations while preserving conclusions.</p>
+    </div>
+    <div class="flag">⚠ Preprint; pruning performance measured only on mathematical tasks — generalisability to open-ended reasoning unclear.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.10430" target="_blank">Emergent Generalization by Representation Learning in Artificial Neural Networks</a>
+    </div>
+    <div class="paper-meta">
+      Hardik Rajpal, Dan Goodman (Imperial College London) &middot; arXiv q-bio.NC, 11 Jul 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Trains RNNs with an explicit information bottleneck on a time-series prediction task and tracks causal emergence (an information-theoretic measure of macroscale structure) across the memorisation-to-generalisation transition. Then analyses CA1 hippocampal population activity from mice learning an alternating maze task, applying the same causal emergence metric to neural data.</p>
+      <p><strong>Finding:</strong> The information bottleneck is <em>necessary</em> for rotational and out-of-distribution generalisation in RNNs. Causal emergence follows a non-monotonic trajectory — initial decrease, minimum, then rise to maximum — even as prediction loss falls monotonically. This trajectory scales with task complexity and predicts generalisation performance. Strikingly, CA1 hippocampal activity in maze-learning mice shows <em>analogous non-monotonic emergence dynamics</em> that track behavioural performance. Low-dimensional, emergent representations confer a functional advantage for generalisation, supporting a causal role for learned neural manifolds in cognition.</p>
+      <p><strong>Relevance:</strong> Directly bridges Pillar 2 (hippocampal mechanisms) and computational modelling. The non-monotonic emergence dynamics provide a quantitative signature that could be used to track schema formation. For the Schema-Guided Episodic Memory RNN project, the causal emergence metric offers a principled way to measure when representations transition from memorised to generalised.</p>
+    </div>
+    <div class="flag">⚠ Preprint; CA1 analysis is on a single maze task — replication across paradigms needed to establish generality of the non-monotonic signature.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.09889" target="_blank">Remembering Distinct Items, Not Tokens: A Learnable Dirichlet-Process Cache Between State-Space Models and Attention</a>
+    </div>
+    <div class="paper-meta">
+      Siddharth Pal, Viktoria Rojkova &middot; arXiv cs.LG, 10 Jul 2026
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Proposes a sparse KV cache that allocates a slot only when an input is <em>novel</em>, using the DP-means clustering rule (small-variance limit of a Dirichlet-process mixture) as the key-value memory operator. Implements two variants: static cache with fixed concentration, and surprise-adaptive with concentration following the recent novelty rate. Tests on synthetic associative-recall benchmarks with controlled redundancy, plus four real-world event streams (recommendation, systems logs, clinical events, insurance claims).</p>
+      <p><strong>Finding:</strong> The DP cache matches full-attention recall while storing only distinct items, dominating every fixed-budget eviction cache on the recall-versus-size frontier. On a state-space backbone, it answers both recall and long-range aggregate queries at the lowest memory of any tested model. Critically, a two-parameter novelty-threshold gate trained end-to-end on task loss <em>recovers the DP-means rule exactly</em>, while an over-parameterised gate fails — the inductive bias of the DP prior, not capacity, drives the result. Memory scales with distinct information, not token count.</p>
+      <p><strong>Relevance:</strong> Core Pillar 3: directly implements a key-value memory where the write policy is governed by a Dirichlet-process prior — a Bayesian nonparametric model of how distinct events are accumulated. This is a formal bridge between nonparametric Bayesian models of human memory (e.g., Anderson's rational analysis) and transformer KV caching. Companion paper (2607.10441) extends this to a full tripartite working-memory architecture.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.10441" target="_blank">Context by Distinct Information: An Auditable Dirichlet-Process Working Memory for Long, Redundant Context Streams</a>
+    </div>
+    <div class="paper-meta">
+      Siddharth Pal, Viktoria Rojkova &middot; arXiv cs.LG, 11 Jul 2026
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Companion study to 2607.09889. Develops the allocate-on-novelty DP cache as a working-memory component within a tripartite architecture: recall-carried information goes to a content-addressed novelty cache, summary-carried information to a recurrent state, and locality-carried information to a recency window. Tests on character-level control tasks and next-code prediction over synthetic Medicare claims at thousand-event horizons.</p>
+      <p><strong>Finding:</strong> Novelty-gated attention reaches full-attention performance while attending to ~50% of tokens. The coupled DP cache + state-space summary matches full-attention coupling at reduced cost, with advantage growing as context lengthens. On thousand-event horizons, the coupled component leads full attention and every fixed-budget eviction policy. The retained memory is an <em>inspectable table</em> of templates, codes, drugs, or places — not an opaque state vector. This demonstrates that context can scale with distinct information rather than tokens, in a working memory that is content-addressable and auditable.</p>
+      <p><strong>Relevance:</strong> Pillar 3: the tripartite architecture (novelty cache / summary state / recency window) maps directly onto the dissociation between item-specific (episodic), gist-based (semantic), and recent (working memory buffer) components in human memory. The auditable memory table is especially interesting as a testbed for the KV memory network framework.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.10677" target="_blank">From Self-Attention to Connection Laplacian: A Unified Operator View of Transformers</a>
+    </div>
+    <div class="paper-meta">
+      Binbin Lin, Wei Chen, Yalun Li, Wenxiao Wang, Jieping Ye, Xiaofei He (Zhejiang University) &middot; arXiv cs.LG, 12 Jul 2026
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Reformulates self-attention as a <em>connection walk</em> over a token-position graph: messages are aggregated by a nonnegative walk matrix while being transported along each edge by a learned linear map. Proves that single-head attention is exactly a connection propagation step with constant transport, and multi-head attention is a single edge-dependent connection walk. Analyses trained transformers from 124M to 8B parameters for geometric structure in their attention operators.</p>
+      <p><strong>Finding:</strong> Effective attention graphs converge to stable geometric operators in deeper layers. Learned transports self-organise into approximate scaled isometries, and both phenomena strengthen consistently with model scale. The framework clarifies when the generator reduces to a random-walk connection Laplacian (stochastic, reversible, metric-compatible transports). Provides operator-level tools for analysing transformer attention as a geometric diffusion process.</p>
+      <p><strong>Relevance:</strong> Pillar 3: provides a rigorous geometric foundation for understanding KV attention as a diffusion process on a structured graph. The connection-Laplacian formulation may offer new ways to analyse interference patterns in KV memory networks — interference corresponds to distortions in the transport operator.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+  <div class="empty-section">No papers today.</div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.10923" target="_blank">Infrared Organization and Critical Cognitive Field Formation in Transformer Dynamics</a>
+    </div>
+    <div class="paper-meta">
+      Byung Gyu Chae &middot; arXiv cs.LG, 12 Jul 2026
+      <span class="tag tag-cross">Cross-cutting</span>
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Extracts relaxation spectra directly from Transformer layer Jacobians across training, network depth, and model scale using public Pythia checkpoints. Measures the time-scale density of states (TDOS), memory self-energy, cognitive forgetting gap, memory kernel, and infrared critical exponent — concepts from Cognitive Field Theory applied to neural network dynamics.</p>
+      <p><strong>Finding:</strong> Training produces progressive infrared accumulation of slow relaxation modes, yielding an approximately flat TDOS with ρ(λ)~λ⁻⁰·¹ and scale-free memory kernels K(t)~t⁻¹. The memory self-energy exhibits a pronounced transient maximum during early optimisation before relaxing toward a metastable near-critical regime. This near-critical state corresponds to the smallest cognitive forgetting gap and largest collective susceptibility. The same dynamical behaviour reproduces across training, depth, and scale — suggesting infrared slow-mode organisation as a <em>universal collective principle</em> of Transformer dynamics.</p>
+      <p><strong>Relevance:</strong> Cross-cutting: the concept of a "forgetting gap" and scale-free memory kernel provides a formal bridge between transformer dynamics and power-law forgetting in human episodic memory (cf. Wixted & Carpenter, 2007). The infrared critical exponent may serve as a quantitative signature of memory regime — relevant to both Pillar 1 (LLM lingering memory) and Pillar 2 (hippocampal consolidation dynamics).</p>
+    </div>
+    <div class="flag">⚠ Preprint; single author, Cognitive Field Theory is a novel framework not yet widely validated. Measurements on Pythia only; broader model coverage needed.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.09714" target="_blank">Feedback-Coupled Memory Systems in Continuous Time</a>
+    </div>
+    <div class="paper-meta">
+      Stefano Grassi &middot; arXiv cs.AI, 24 Jun 2026
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Formalises the Feedback-Coupled Memory Systems (FCMS) architecture in continuous time by defining the agent update operator through Mechanism-Based Intelligence (decentralised price mechanism) and the environmental update operator through a Coupled Memory Graph Process (non-Markovian substrate that records trajectory history). Analyses Lyapunov global dissipativity conditions and validates with numerical simulation (N=2) and mean-field (N=10⁶).</p>
+      <p><strong>Finding:</strong> Derives a computable Lyapunov global dissipativity threshold: 4β²&lt;2ημγ², generalising both the discrete FCMS stability condition (4ηβ²&lt;γ) and the CMGP physical bifurcation threshold (α_c=1/K). The universal organising principle: <em>memory dissipation must outpace feedback gain</em>. When the threshold is violated, a self-reinforcing coordination cascade emerges. This provides a formal stability criterion for attractor-based memory systems with feedback.</p>
+      <p><strong>Relevance:</strong> Cross-cutting: the dissipation-vs-gain tradeoff is a formal analogue of the stability-plasticity dilemma in neural memory systems (cf. Grossberg, 1980). The Lyapunov analysis provides a rigorous theoretical framework for understanding when attractor memory networks transition from stable storage to runaway interference — relevant to both hippocampal attractor models and transformer KV cache dynamics.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-peri">Peripheral</div>
+  <div class="empty-section">No papers today.</div>
+</div>
+
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>S-EMBER: Streaming Egocentric Memory Benchmark (2607.02689)</strong> — wearable-device episodic memory benchmark with 3,141 videos; interesting concept but applied engineering focus without mechanistic insight for current pillars.</li>
+    <li><strong>MosaicKV: Dynamic Two-D KV Cache Compression (2607.00760)</strong> — KV cache compression for serving systems; engineering contribution, not mechanistic memory research.</li>
+    <li><strong>ToolAtlas: Learning Once, Reusing Everywhere with Tool-Side Memory (2607.11126)</strong> — agent tool memory framework; narrow applied focus.</li>
+    <li><strong>Dynamic Agent Skills: A Lifecycle Survey (2607.10113)</strong> — survey of skill library management; agent-engineering rather than memory mechanism.</li>
+    <li><strong>UNIT: Graph Continual Learning (2607.10159)</strong> — graph-domain continual learning; tangentially relevant to catastrophic forgetting but domain-specific.</li>
+    <li><strong>DepthWeave-KV / FreqDepthKV (2607.06523 / 2607.06519)</strong> — both previously reported in July 11 run.</li>
+  </ul>
+</div>
+
+<div class="footer">
+  Generated by WorkBuddy Daily Paper Tracker &middot; 2026-07-14 &middot; arXiv cs.CL, cs.AI, cs.LG, q-bio.NC new listings; bioRxiv; Nature Communications
+</div>
+
+</body>
+</html>
