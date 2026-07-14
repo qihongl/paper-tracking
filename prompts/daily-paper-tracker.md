@@ -10,6 +10,7 @@ Use every available search tool — WebSearch, WebFetch, and MCP tools (academic
 
 - **arxiv:** cs.CL, cs.AI, cs.LG, q-bio.NC, stat.ML
 - **bioRxiv:** neuroscience section
+- **PsyArXiv:** psychology, cognitive science, neuroscience preprints
 - **PubMed / MEDLINE**
 - **High-impact journals:** Nature, Nature Neuroscience, Nature Machine Intelligence, Nature Human Behaviour, Nature Communications, Science, Neuron, eLife, Current Biology, Journal of Neuroscience, Cognition, PNAS, Psychological Review, Psychological Science, Cognitive Psychology, Cognitive Science, Journal of Experimental Psychology: General, Memory & Cognition, Hippocampus, NeuroImage, PLOS Computational Biology, Journal of Cognitive Neuroscience, Cerebral Cortex, eNeuro, Network Neuroscience, Trends in Cognitive Sciences, Communications Psychology, Learning & Memory, Neurobiology of Learning and Memory, Psychonomic Bulletin & Review, Neural Computation, Current Opinion in Neurobiology, Current Opinion in Behavioral Sciences, Neuroscience & Biobehavioral Reviews, Journal of Memory and Language, Annual Review of Neuroscience, Annual Review of Psychology, Behavioral and Brain Sciences
 - **ML conferences (for computational work):** NeurIPS, ICLR, ICML, COSYNE (check recent proceedings)
