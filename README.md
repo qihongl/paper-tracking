@@ -28,14 +28,14 @@ An AI agent reads `prompts/daily-paper-tracker.md` and runs it daily. The agent:
 4. **Writes** a self-contained HTML report at `outputs/YYYY-MM-DD-paper-tracker.html`, with papers grouped by relevance category.
 5. **Pushes** the report to this repo, making it viewable online.
 
-## Keyword Matrix (219 keywords, 6 sections)
+## Keyword Matrix (~300 keywords, 6 sections)
 
 | Section | Focus | Example keywords |
 |---|---|---|
-| A — Episodic Memory | Hippocampus, replay, place/time/grid cells, consolidation, pattern separation, polysemanticity, mixed selectivity | 54 |
-| B — Computational Models | TCM, CLS, successor representation, Bayesian efficient coding, planning as inference, simulated experience | 33 |
-| C — LLMs & Machine Memory | In-context learning, KV cache, transformer memory, neural modularity, neural geometry, neuroAI alignment | 34 |
-| D — Encoding & Retrieval | Reinstatement, oscillations, WM/LTM dissociation, iEEG, schema filling, prior knowledge, individual differences | 33 |
+| A — Episodic Memory | Hippocampus, replay (forward/reverse/sleep/awake), place/time/grid cells, consolidation, pattern separation, polysemanticity, mixed selectivity, schema binding | ~70 |
+| B — Computational Models | TCM, CLS, successor representation, predictive processing, Bayesian efficient coding, planning as inference, neural manifold, population coding | ~45 |
+| C — LLMs & Machine Memory | In-context learning, KV cache, transformer memory, semantic memory in LLMs, narrative understanding, neural modularity, neural geometry, mechanistic interpretability, neuroAI alignment | ~50 |
+| D — Encoding, WM & Retrieval | Reinstatement, oscillations, working memory (capacity/gating/binding), visual/object/scene memory, WM/LTM dissociation, iEEG, schema filling, prior knowledge, individual differences | ~68 |
 | E — Naturalistic Paradigms | Movie viewing, audiobook listening, conversation, ISC, event segmentation, naturalistic timescales, Sherlock/PIEMAN/Tunnel datasets | 48 |
 | F — Methods & Meta-Science | Benchmarks, model validation, reproducibility, neuroAI toolkits, representational geometry, ground truth | 17 |
 
