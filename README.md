@@ -1,6 +1,6 @@
 # Daily Paper Tracker
 
-An AI agent that keeps me on top of new papers in computational cognitive neuroscience. Every morning it searches arxiv, bioRxiv, PubMed, and a handful of journals, filters out the noise, and puts together a clean HTML report grouped by research topic. 
+An AI agent that keeps me on top of new papers in computational cognitive neuroscience. Every morning it searches across a broad range of sources — arxiv, bioRxiv, PubMed, 20+ journals, and major ML conferences — filters out the noise, and puts together a clean HTML report grouped by research topic. 
 
 <p align="center">
   <img src="outputs/bsky-wordcloud.png" alt="Word cloud of paper-sharing topics from @qlu.bsky.social" width="700">
@@ -8,11 +8,20 @@ An AI agent that keeps me on top of new papers in computational cognitive neuros
 
 The keywords it searches for are loosely based on what I actually share on Bluesky ([@qlu.bsky.social](https://bsky.app/profile/qlu.bsky.social)). The word cloud above — made from 212 paper-related posts — gives a pretty honest picture: **memory**, **neural** mechanisms, **learning**, the **hippocampus**, **episodic** encoding, **cognitive** models, **working memory**. That's what the tracker looks for.
 
+## Sources
+
+- **arxiv:** cs.CL, cs.AI, cs.LG, q-bio.NC, stat.ML
+- **bioRxiv:** neuroscience section
+- **PubMed / MEDLINE**
+- **Journals:** Nature, Nature Neuroscience, Nature Machine Intelligence, Nature Human Behaviour, Science, Neuron, eLife, Current Biology, Journal of Neuroscience, Cognition, PNAS, Psychological Review, Cognitive Psychology, Journal of Experimental Psychology: General, Memory & Cognition, Hippocampus, NeuroImage, PLOS Computational Biology, Journal of Cognitive Neuroscience, Cerebral Cortex, eNeuro, Network Neuroscience
+- **ML conferences:** NeurIPS, ICLR, ICML, COSYNE
+- **Naturalistic neuroimaging datasets:** OpenNeuro, PIEMAN, Sherlock, Tunnel (monitored for new publications)
+
 ## How It Works
 
 An AI agent reads `prompts/daily-paper-tracker.md` and runs it daily. The agent:
 
-1. **Searches** arxiv, bioRxiv, PubMed, and high-impact journals across a keyword matrix.
+1. **Searches** all sources listed above using a six-section keyword matrix.
 2. **Deduplicates** against `data/seen_papers.json` — matched by DOI, arxiv ID, or title slug, never reported twice.
 3. **Filters** for mechanistic relevance, not just keyword hits. Skips pure engineering, narrow clinical studies, and opinion pieces without new data.
 4. **Writes** a self-contained HTML report at `outputs/YYYY-MM-DD-paper-tracker.html`, with papers grouped by relevance category.
