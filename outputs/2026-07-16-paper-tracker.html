@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker — 2026-07-16</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .summary-table .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+  .footer { margin-top: 32px; font-size: 11px; color: #bbb; text-align: center; }
+</style>
+</head>
+<body>
+
+<h1>🧠 Daily Paper Tracker</h1>
+<div class="date">2026-07-16 &middot; Thursday &middot; 11 papers</div>
+
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.11614" target="_blank">Extending LLM Context via Associative Recurrent Memory</a></td>
+        <td class="col-authors">Kuzmin et al. (Tsodyks, Burtsev, Shelmanov)</td>
+        <td class="col-finding">ARMT-augmented LLMs process inputs beyond original context limits with constant memory scaling and 30% fewer FLOPs; Misha Tsodyks co-author.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.12267" target="_blank">Track, Rank, Crack: Epistemic Working Memory Scales Multi-Hop Reasoning</a></td>
+        <td class="col-authors">Ning Liu</td>
+        <td class="col-finding">Structured epistemic working memory (Confirmed Facts, Active Hypotheses, Open Questions) gives +11 points on 4-hop chains; organized epistemic state is the active ingredient.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.12236" target="_blank">Speculate with Memory: Lossless Acceleration for LLM Agents</a></td>
+        <td class="col-authors">Li et al. (Wu)</td>
+        <td class="col-finding">Three online memory systems (contrastive transition table, episodic memory, confusion tracker) yield 19–39% relative accuracy improvement on agent speculation.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.12831" target="_blank">Knowledgeless Language Models: Suppressing Parametric Recall</a></td>
+        <td class="col-authors">Cohen et al. (de Melo, Buys)</td>
+        <td class="col-finding">Anonymizing entities during pretraining suppresses parametric fact recall while improving evidence-grounded reasoning by 20–25% relative in retrieval settings.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.12382" target="_blank">gradCSCG: Differentiable Clone-Structured Causal Graphs for Cognitive Map Learning</a></td>
+        <td class="col-authors">Nikzad et al. (Stöber)</td>
+        <td class="col-finding">First fully differentiable formulation of CSCG hippocampus model, enabling end-to-end cognitive map learning directly from raw image sequences via VQ-VAE front-end.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.11942" target="_blank">How Query Visibility Changes KV-Cache Compression Rankings</a></td>
+        <td class="col-authors">Luo, Liang, Xuan</td>
+        <td class="col-finding">Query-agnostic deployment flips KV compression rankings; SnapKV loses to "keep start + recent window" on average (Δ = −0.066), only KeyDiff beats trivial baselines consistently.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.12204" target="_blank">Forgetful Attention: A Trainable Support-Vector Memory with Certified Unlearning</a></td>
+        <td class="col-authors">Vishwajith Ramesh</td>
+        <td class="col-finding">SVM-based attention certifies output-preserving token eviction and exact unlearning; 8.6% BPC improvement over sliding-window Transformer on enwik8 (p=0.001).</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.12550" target="_blank">A JoLT for the KV Cache: Near-Lossless Compression via Tucker + JL-Residual</a></td>
+        <td class="col-authors">Krishnan, Schulz</td>
+        <td class="col-finding">Tensor-view Tucker decomposition achieves 2–3× near-lossless KV compression; Frobenius error ~0.009 (K), ~0.006 (V), an order of magnitude below SVD/quantization baselines.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.12195" target="_blank">Comparing Semantic Navigation in Humans and LLMs using NLP</a></td>
+        <td class="col-authors">Paris-Colombo, Cabral-Carvalho, Toro-Hernández</td>
+        <td class="col-finding">Humans show higher entropy, larger semantic steps, and broader dispersion than all LLMs; no temperature setting reproduces the full human retrieval profile.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.11958" target="_blank">Constructed Reality, Contested Priors: Cognitive Relapse Under the FEP</a></td>
+        <td class="col-authors">MD Ibrahim Hossain Ridoy</td>
+        <td class="col-finding">Predictive systems exhibit "cognitive relapse" — representational accuracy stays at ceiling (0.97–0.998) while default behavior partially reverts toward baseline despite continued training.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-peri"></span>Peripheral</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.11990" target="_blank">Sparse Inter-Layer Dependencies of Transformer FFN Neurons</a></td>
+        <td class="col-authors">Knittel, Pfister (Harvard)</td>
+        <td class="col-finding">Small subsets of preceding activations preserve FFN neuron outputs with high fidelity; neuron-specific masks leave perplexity unchanged at moderate sparsity.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.11614" target="_blank">Extending LLM Context via Associative Recurrent Memory</a>
+    </div>
+    <div class="paper-meta">
+      Gleb Kuzmin, Ivan Rodkin, Aydar Bulatov, Yuri Kuratov, Lyudmila Rvanova, Mikhail Katkov, Ilia Sochenkov, <strong>Misha Tsodyks</strong>, Timothy Baldwin, Mikhail Burtsev, Artem Shelmanov &middot; arXiv, 2026-07-13
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> The authors investigate the Associative Recurrent Memory Transformer (ARMT) as a practical long-context solution for LLMs. They construct two domain-specific long-context datasets and propose a comprehensive training recipe combining continued pre-training, synthetic long-context data generation, curriculum learning, and selective associative memory integration into chosen model layers. The ARMT replaces standard quadratic self-attention with constant-memory recurrent associative memory, evaluated against in-limit transformer baselines.</p>
+      <p><strong>Finding:</strong> ARMT-augmented models process inputs well beyond original context limits without degrading performance, generalize better to out-of-distribution context lengths, and require 30% fewer FLOPs while preserving baseline performance within the original context window. <strong>Note:</strong> Misha Tsodyks (Weizmann Institute) is a co-author — known for the mathematical theory of synaptic plasticity and working memory. This is a rare case of a computational neuroscientist contributing directly to LLM memory architecture, making this paper especially relevant to the researcher's bridge between computational memory models and transformer memory mechanisms.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.12267" target="_blank">Track, Rank, Crack: Epistemic Working Memory Scales Multi-Hop Reasoning in Language Agents</a>
+    </div>
+    <div class="paper-meta">
+      Ning Liu &middot; arXiv, 2026-07-14
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> The author introduces SLEUTH, a framework that gives LLM agents an explicit structured epistemic working memory with three components: Confirmed Facts (source-grounded), Active Hypotheses (evidence-ranked), and Open Questions (action-driving). The agent maintains this state across multi-hop reasoning chains, rather than relying on implicit context-window memory. Tested across five multi-hop benchmarks against five established baselines (including Reflexion).</p>
+      <p><strong>Finding:</strong> SLEUTH's advantage grows with difficulty: +5 points on HotpotQA, +11 on 4-hop chains, surpassing Reflexion without multiple episodes. A lightweight commitment trigger only works when the agent already maintains structured epistemic state — isolating organized state as the necessary condition. Enforcing protocol adherence on a weaker model recovers up to +19 points on the hardest problems, demonstrating that reasoning organization, not raw model capability, is the active ingredient for scaling multi-hop reasoning.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.12236" target="_blank">Speculate with Memory: Lossless Acceleration for LLM Agents</a>
+    </div>
+    <div class="paper-meta">
+      Yu Li, Qinyuan Ye, Prafulla Kumar Choubey, Jiaxin Zhang, Chien-Sheng Wu (Salesforce AI) &middot; arXiv, 2026-07-14
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Existing speculators for LLM agents are stateless — they discard all information between tasks, preventing prediction quality from improving with experience. The authors equip the speculator with three online memory systems that learn from past agent trajectories: (1) a contrastive transition table tracking action-sequence statistics, (2) an episodic memory retrieving contextually similar segments, and (3) a confusion tracker suppressing recurring errors. Evaluated on six benchmarks spanning action, observation, and chained prediction.</p>
+      <p><strong>Finding:</strong> Memory-augmented speculation yields 19–39% relative accuracy improvement on action prediction and up to 2.5× increase on observation prediction tasks with repetitive action spaces. Gains grow continuously as memory accumulates and generalize across speculator models of varying cost. All speculation is lossless — it runs during idle time at zero added wall-clock cost.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.12831" target="_blank">Knowledgeless Language Models: Suppressing Parametric Recall for Evidence-Grounded Language Modeling</a>
+    </div>
+    <div class="paper-meta">
+      Roi Cohen, Yvan Carré, Nick Lechtenbörger, Hendrik Droste, Lucas Kerschke, Russa Biswas, Gerard de Melo, Jan Buys (HPI / U. Cape Town) &middot; arXiv, 2026-07-14
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> The authors introduce Knowledge-"Less" Language Models (KLLMs), pretrained on corpora where named entities are anonymized to remove entity-linked factual supervision. This epistemic intervention is tested across multiple model scales on contextual QA, fact verification, hallucination detection, and retrieval-grounded benchmarks with imperfect evidence.</p>
+      <p><strong>Finding:</strong> KLLMs substantially reduce closed-book factual recall while improving contextual task performance. In retrieval-grounded settings with imperfect evidence, KLLMs achieve 20–25% relative gains over standard LMs. They also exhibit better calibration (improved ECE, Brier score, AUROC) and more reliable abstention behavior. The key insight: suppressing entity-linked supervision during pretraining induces a shift from parametric recall toward evidence-grounded reasoning — a demonstration that pretraining-time control over knowledge acquisition directly shapes epistemic behavior.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.12382" target="_blank">Differentiable Clone-Structured Causal Graphs for End-to-End Cognitive Map Learning from Image Sequences</a>
+    </div>
+    <div class="paper-meta">
+      Arash Nikzad, Sasan Sarbishegi, Ali Dasmeh, Muhammad Asif, Parsa Gharavi, Erik Husom, Sagar Sen, Andrew B. Lehr, Olivier Penacchio, Ana Clemente, Tristan M. Stöber &middot; arXiv, 2026-07-14
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> The Clone-Structured Causal Graph (CSCG) is a normative hippocampus model that learns interpretable cognitive maps from aliased observations, but it requires predefined discrete alphabets and cannot be combined with neural network modules. The authors reformulate CSCG as a fully differentiable module (gradCSCG) and couple it to a VQ-VAE perceptual front-end. A soft emission forward pass allows the map-learning objective to flow back into perception, with loss-balancing mechanisms to prevent module collapse during joint training. Tested on symbolic grid worlds and MNIST image sequences across four heavily aliased environments.</p>
+      <p><strong>Finding:</strong> Gradient-trained gradCSCG reproduces original CSCG results on symbolic grid worlds. On MNIST image sequences — where each visit to a location yields a randomly sampled digit image — the end-to-end pipeline successfully uncovers the underlying adjacency graph with high edge precision and recall. This provides proof-of-principle that a hippocampus-inspired cognitive map model can serve as a composable building block in deep learning architectures, bridging the gap between normative models of hippocampal computation and modern representation learning.</p>
+    </div>
+    <div class="flag">⚠ Preprint; no biological validation against neural data — purely a computational proof-of-concept. The VQ-VAE front-end is a simplification of real sensory processing.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.11942" target="_blank">How Query Visibility Changes KV-Cache Compression Rankings: A Matched-Budget Audit</a>
+    </div>
+    <div class="paper-meta">
+      Daming Luo, Christy Liang, Junyu Xuan &middot; arXiv, 2026-07-11
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Most KV-cache compression methods are evaluated with the query appended before compression (query-aware protocol). But the economic case for compressed KV cache is reuse: compress once, answer many queries. The authors conduct a matched-budget audit of six published compression methods against three trivial baselines on three open 7–9B models, with 144,300 paired evaluations on RULER-8192 and 40,800 on LongBench — all under both query-aware and query-agnostic protocols. Everything is held fixed except the scoring rule.</p>
+      <p><strong>Finding:</strong> Query visibility changes the rankings dramatically. Under the agnostic protocol, only KeyDiff beats a best-of-3 trivial baseline consistently (31 of 36 cells). SnapKV — the most widely deployed method — loses to "keep the start and the recent window" on average (Δ = −0.066). The per-method drop between protocols is ordered consistently with how visible the query is to each method's scoring signal, legible in source code: SnapKV drops Δ = +0.198 (query sits in its 64-token observation window) while KeyDiff drops only Δ = +0.011 (its score contains no query term). This is a sobering audit that every KV-cache paper should be required to pass.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.12204" target="_blank">Forgetful Attention: A Trainable Support-Vector Memory with Certified Selection and Exact Unlearning</a>
+    </div>
+    <div class="paper-meta">
+      Vishwajith Ramesh &middot; arXiv, 2026-07-13
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Attention is reframed as an online learner over context, with weights derived from a one-class SVM with fixed box parameter C. The active-set partition gives reserve tokens exactly zero weight, certifying output-preserving eviction. A reversible incremental solver deletes a token to recover the state produced by retraining without it. Tested on MIMIC-IV medical streams for rare-item recall and deterioration tracking, enwik8 language modeling, and TinyStories.</p>
+      <p><strong>Finding:</strong> Certified selection achieves 0.86 vs. 0.32 rare-item recall and retains 0.80 vs. 0.05 deterioration hours on MIMIC-IV streams. On enwik8, the SV-Attention hybrid obtains 2.178 BPC vs. 2.383 for a matched-state sliding-window Transformer across seven seeds (8.6% paired improvement, p = 0.001). A reversible solver recovers identical partitions under unique optima with median decision-function deviation ~10⁻⁹. Surgical forgetting, exact editing, and patient-record deletion are demonstrated as immediate applications.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.12550" target="_blank">A JoLT for the KV Cache: Near-Lossless KV Cache Compression via Joint Tucker and JL-Residual Allocation for LLMs</a>
+    </div>
+    <div class="paper-meta">
+      Rahul Krishnan, Volker Schulz &middot; arXiv, 2026-07-14
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> The authors observe that the KV cache is naturally a third-order tensor (heads × tokens × features), with very different redundancy across axes. JoLT applies a partial Tucker decomposition that compresses only the token and feature axes while leaving head and layer axes intact, then restores discarded energy with a Johnson-Lindenstrauss rotated low-bit residual. A single Lagrangian dual allocates Tucker ranks and residual bit-widths jointly across layer groups and separately for keys and values under a one-byte budget.</p>
+      <p><strong>Finding:</strong> Near-lossless 2–3× compression: perplexity, GSM8K accuracy, and RULER needle-in-a-haystack retrieval all stay within statistical noise of the uncompressed baseline on Mistral-7B (GQA) and LLaMA-2-13B (MHA). At 2×, JoLT reconstructs the cache to relative Frobenius error 0.009 (K) and 0.006 (V) — roughly an order of magnitude below cross-layer SVD and 4-bit quantization. A randomized-SVD variant (FlashJoLT) delivers 5–13× compression-time speedup at matched quality.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.12195" target="_blank">Comparing Semantic Navigation in Humans and Large Language Models using Natural Language Processing</a>
+    </div>
+    <div class="paper-meta">
+      Gabriel Paris-Colombo, Rodrigo M. Cabral-Carvalho, Felipe D. Toro-Hernández &middot; arXiv, 2026-07-13 (CogSci 2026)
+      <span class="tag tag-er">Encoding-Retrieval</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Semantic memory retrieval is conceptualized as navigation through conceptual space. The authors compare retrieval dynamics between 82 human participants and three LLMs (GPT-4o, Gemini-2.5-Pro, Claude-Sonnet-4.5) across eight temperature settings using verbal fluency data. Three trajectory-based NLP metrics quantify complementary dimensions: entropy (step-size predictability), distance to next (successive semantic steps), and distance to centroid (global dispersion).</p>
+      <p><strong>Finding:</strong> Humans exhibited higher entropy, larger semantic steps, and broader dispersion than all LLMs — indicating more variable and exploratory search. Temperature tuning produced only partial alignments: individual metrics matched at specific settings, but no configuration reproduced the complete human retrieval profile across all three dimensions. This suggests that human semantic search implements a distinctive balance between local exploitation and global exploration that current transformer architectures fail to reproduce — a finding relevant to the researcher's work on memory retrieval mechanisms and the gap between human and LLM episodic/semantic dynamics.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.11958" target="_blank">Constructed Reality, Contested Priors: Decoupling and the Architecture of Cognitive Relapse Under the Free Energy Principle</a>
+    </div>
+    <div class="paper-meta">
+      MD Ibrahim Hossain Ridoy &middot; arXiv, 2026-07-12 (q-bio.NC cross-list)
+      <span class="tag tag-cross">Cross-cutting</span>
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Under the free energy principle, a predictive system does not observe reality directly but maintains a generative model whose best hypothesis constitutes experience. The author asks: can a system undergo "ontological inversion" — permanently adopting a synthetic environment as its default? Studied via a convolutional VAE with recurrent latent predictor (ELBO ≡ variational free energy), trained first on a baseline domain, then on a mixed stream with a swept rehearsal ratio r controlling how much baseline content persists during transition to a target domain. Representational capacity (discrimination) is tracked separately from default behavior (unconstrained generation) across 90 runs.</p>
+      <p><strong>Finding:</strong> Representational accuracy stays near ceiling (0.97–0.998) regardless of r, while default behavior spans nearly the system's entire range — a sharp decoupling of learning from acceptance. At intermediate r, the system's default output rises toward the target domain, then partially reverts toward baseline while training continues unchanged — a structural failure termed "cognitive relapse." This has provocative implications for understanding memory consolidation, schema updating, and why systems (biological and artificial) resist incorporating new priors even when they demonstrably "know" the new information.</p>
+    </div>
+    <div class="flag">⚠ Single-author preprint; the VAE-as-FEP mapping is a modeling choice, not an empirical demonstration. The term "cognitive relapse" is the author's coinage and has not been validated against biological data.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-peri">Peripheral</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.11990" target="_blank">Sparse Inter-Layer Dependencies of Transformer FFN Neurons</a>
+    </div>
+    <div class="paper-meta">
+      Johannes Knittel, Hanspeter Pfister (Harvard) &middot; arXiv, 2026-07-13
+      <span class="tag tag-peri">Peripheral</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> The authors introduce a training-free attribution method that estimates the relative influence of upstream FFN neurons and attention outputs on a target neuron's activation. They examine whether FFN neuron activations can be explained by a sparse set of preceding activations, using neuron-specific masking and propagation through the full network.</p>
+      <p><strong>Finding:</strong> Small subsets of preceding activations suffice to preserve neuron outputs with high fidelity. When neuron-specific masks are applied simultaneously across all layers — such that induced deviations propagate through the network — model perplexity remains largely unchanged at moderate sparsity levels. This demonstrates that despite dense parameterization, FFNs exhibit sparse and structured inter-layer dependencies at the neuron level, with implications for circuit-level interpretability and efficient inference.</p>
+    </div>
+  </div>
+</div>
+
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>MAGE: Multi-component Prompt Optimization with Episodic Memory</strong> (2607.11944) — primarily a prompt optimization method; episodic memory component is auxiliary, not mechanistically analyzed.</li>
+    <li><strong>Semidirect Fourier Delta Attention</strong> (2607.11897) — theoretical contribution with no empirical LM results; fused kernels and large-scale comparisons left to future work.</li>
+    <li><strong>Entropy in Semantic Memory Navigation in Blind and Sighted Individuals</strong> (2607.12185) — interesting sensory-experience effect on semantic navigation but less directly relevant than the human-LLM comparison paper (2607.12195) which covers overlapping ground with broader implications.</li>
+    <li><strong>Scale-Aware Attention for Scarce Neural Data: RG-Flow Transformer on Sleep-EDF EEG</strong> (2607.11950) — sleep EEG staging; no memory content, purely a classification benchmark.</li>
+    <li><strong>From Geometric Recovery to Causal Validation: Auditing SAE Features</strong> (2607.12166) — mechanistic interpretability methods paper; finds up to 77% of SAE features are causally inert, important finding but not memory-specific.</li>
+  </ul>
+</div>
+
+<div class="footer">
+  Generated by WorkBuddy Daily Paper Tracker &middot; 2026-07-16 &middot; Searched: arXiv cs.CL, cs.AI, cs.LG, q-bio.NC, stat.ML (Jul 13–15 listings); bioRxiv neuroscience; Nature Neuroscience; Neuron; Nature Communications; Current Biology; PNAS; eLife
+</div>
+
+</body>
+</html>
