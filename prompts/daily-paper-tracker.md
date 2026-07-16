@@ -265,25 +265,56 @@ The HTML must be a complete, standalone document. Use the following template str
 
 ---
 
-## Final Steps: Push to GitHub, Then Present
+## Final Steps: Update index.html, Push to GitHub, Then Present
 
-After writing the HTML file and updating `data/seen_papers.json`, commit and push both files to the GitHub repository. Then present the HTML to the researcher.
+After writing the HTML file and updating `data/seen_papers.json`:
 
-### Step 1: Git commit and push
+### Step 1: Regenerate index.html
+
+Regenerate `index.html` to include the new report. Scan all `outputs/*-paper-tracker.html` files and rebuild the index page with the same HTML template (the page lists reports chronologically, newest first, with date, paper count, and link). Use this Python approach:
+
+```python
+import os, re
+from pathlib import Path
+from datetime import datetime
+
+outputs_dir = Path('outputs')
+report_files = sorted(outputs_dir.glob('*-paper-tracker.html'), reverse=True)
+
+rows = ''
+total_papers = 0
+for f in report_files:
+    date_str = f.stem.replace('-paper-tracker', '')
+    date_obj = datetime.strptime(date_str, '%Y-%m-%d')
+    display_date = date_obj.strftime('%B %d, %Y')
+    content = f.read_text()
+    paper_count = len(re.findall(r'class="paper"', content))
+    total_papers += paper_count
+    rows += f'      <tr>\n        <td class="date-cell">{display_date}</td>\n        <td class="count-cell">{paper_count}</td>\n        <td class="link-cell"><a href="outputs/{f.name}">View report →</a></td>\n      </tr>\n'
+
+# Read existing index.html and replace the <tbody> contents
+# Or rewrite the entire index.html from a known template
+```
+
+**Important:** Regenerate the FULL `index.html` — do not just append a row. This ensures the paper counts (which may have changed from deduplication updates) and the total count at the top are always accurate.
+
+After regenerating, verify the new row is present and the total count matches.
+
+### Step 2: Git commit and push
 
 Run these exact commands from the project root:
 
 ```bash
-git add outputs/YYYY-MM-DD-paper-tracker.html data/seen_papers.json
+git add outputs/YYYY-MM-DD-paper-tracker.html data/seen_papers.json index.html
 git commit -m "Daily report: YYYY-MM-DD"
 git push
 ```
 
 If the push fails (e.g., network issue, merge conflict from overlapping runs), log a brief warning but do NOT fail the run. The HTML file is already saved locally.
 
-### Step 2: Present the HTML
+### Step 3: Present the HTML
 
-Use the `present_files` tool to show the HTML file to the researcher. Include a brief 1–2 sentence summary in your response (e.g., "7 papers today: 3 LLM-Memory, 2 Schema-Episodic, 1 KV-Networks, 1 Encoding-Retrieval. Pushed to GitHub.").
+Use the `present_files` tool to show the HTML file to the researcher. Include a brief 1–2 sentence summary in your response (e.g., "7 papers today: 3 LLM-Memory, 2 Schema-Episodic, 1 KV-Networks, 1 Encoding-Retrieval. Pushed to GitHub. Live at https://qihongl.github.io/paper-tracking/outputs/YYYY-MM-DD-paper-tracker.html").
 
 ---
 
