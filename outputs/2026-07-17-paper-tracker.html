@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker — 2026-07-17</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .summary-table .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+</style>
+</head>
+<body>
+
+<h1>🧠 Daily Paper Tracker</h1>
+<div class="date">2026-07-17 &middot; 9 papers &middot; arXiv (cs.CL / cs.LG / cs.AI / q-bio.NC / stat.ML) new listings; bioRxiv &amp; high-impact journals scanned</div>
+
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.14250" target="_blank">The Severance Problem: LLMs are Unaware of the Person Beyond the Prompt</a></td>
+        <td class="col-authors">Litvak et al. (Leqi)</td>
+        <td class="col-finding">Injecting a structured &ldquo;ignorance&rdquo; schema about the user cuts sycophancy/hallucination and triggers clarifying questions across 5 model families.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.15277" target="_blank">Partition, Prompt, Aggregate: Statistical Self-Consistency in Language Models</a></td>
+        <td class="col-authors">Wolf et al. (Mendler-D&uuml;nner)</td>
+        <td class="col-finding">LLMs violate the law of total probability in ICL; finer subpopulation aggregation aligns better with humans (&ldquo;macro fallacy&rdquo;).</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.13591" target="_blank">Memory as a Controlled Process: Learned Adaptive Memory Management for LLM Agents</a></td>
+        <td class="col-authors">Jiang et al. (Y. N. Wu)</td>
+        <td class="col-finding">Modeling memory access as an MDP and learning an adaptive retrieval/consolidation policy beats fixed heuristics by up to 15.2 pts, &minus;5&ndash;20% tokens.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.14327" target="_blank">PReM: Learning What to Preserve and When to Refresh for Context Compression</a></td>
+        <td class="col-authors">Yu et al. (Zheng)</td>
+        <td class="col-finding">Layer-wise KV memory with a refresh token beats compression baselines at 16&times;&ndash;32&times; on 32K contexts.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.14431" target="_blank">Smarter and Cheaper at Once: Byte-Exact KV-Cache Grafting Turns a Frozen Small Model into a Verified-Knowledge Flywheel</a></td>
+        <td class="col-authors">Schelpe</td>
+        <td class="col-finding">Byte-exact grafted KV states lift a frozen 12B model 80&rarr;93% on AIME and extend context 32K&rarr;2.85M at zero extra memory.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.14371" target="_blank">Supervised Fine-Tuning vs. In-Context Learning: An Equilibrium Analysis of LLM Personalization under Congestion</a></td>
+        <td class="col-authors">Zhang et al. (Bergemann)</td>
+        <td class="col-finding">Game-theoretic equilibrium shows congestion flips ICL-vs-SFT superiority; both-method offerings rose 9.5%&rarr;71.4% (2021&ndash;25).</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.14571" target="_blank">Gate-Zero Growth: A Geometric Framework for Function-Preserving Continual Learning</a></td>
+        <td class="col-authors">Lok</td>
+        <td class="col-finding">Zero-init gate growth gives near-zero forgetting (&Delta;A&lt;0.1) in continual learning via a rank-separated Jacobian.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.14530" target="_blank">xHC: Expanded Hyper-Connections</a></td>
+        <td class="col-authors">Zhang et al. (Yan)</td>
+        <td class="col-finding">Expanding the residual stream to 16 streams as &ldquo;memory scaling&rdquo; gives +4.0 pts on 18B MoE at lower compute.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-peri"></span>Peripheral</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.14833" target="_blank">Thoughtseeds as Latent Causes: A Dual-Process Computational Phenomenology of Focused-Attention Meditation</a></td>
+        <td class="col-authors">Kavi et al. (Patow)</td>
+        <td class="col-finding">Active-inference model frames meditation as 4 attractor states with a Global Neuronal Workspace-gated metacognitive monitor.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.14250" target="_blank">The Severance Problem: LLMs are Unaware of the Person Beyond the Prompt</a>
+    </div>
+    <div class="paper-meta">
+      Dor Litvak, Liu Leqi &middot; arXiv cs.CL, 2026-07-15
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Argues that current personal assistants fail (sycophancy, overconfidence, hallucination) because they lack an explicit representation of what remains unknown about the user. Proposes the &ldquo;Severance Schema&rdquo; &mdash; a structured list of dimensions along which the model lacks user knowledge (physicality, temporality, consequences, continuity, multiplicity, interiority) &mdash; injected into the context. Evaluated across five model families.</p>
+      <p><strong>Finding:</strong> With the Severance Schema, assistants consistently reduce sycophancy, harmful advice, and hallucination, and switch from confidently extrapolating from incomplete user info to asking clarifying questions when something is missing. The mechanism &mdash; representing structured ignorance about the user &mdash; is directly relevant to how LLMs encode a &ldquo;user memory&rdquo; beyond the literal prompt, a close analogue of the lingering-user-state problem in attention-based memory.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.15277" target="_blank">Partition, Prompt, Aggregate: Statistical Self-Consistency in Language Models</a>
+    </div>
+    <div class="paper-meta">
+      Patrik Wolf, Thomas Kleine Buening, Andreas Krause, Celestine Mendler-D&uuml;nner &middot; arXiv cs.CL, 2026-07-16
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Treats in-context learning as conditional inference and tests whether LLM estimates satisfy the law of total probability: prior-weighted subpopulation conditionals should aggregate to the population marginal over any valid partition. Uses recursive binary-tree partitions of a population, verbalized subpopulation prompts, and compares aggregated estimates across partition granularities.</p>
+      <p><strong>Finding:</strong> Across domains and frontier models, LLM estimates show widespread violations of basic probabilistic consistency. A &ldquo;macro fallacy&rdquo; emerges: estimates reconstructed from finer subpopulation responses align better with human reference data than direct population-level estimates, and the effect persists across tree structure and task. The authors argue models hold the relevant subpopulation knowledge but fail to propagate it into aggregates &mdash; establishing statistical self-consistency as a reference-free diagnostic of ICL reliability.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.13591" target="_blank">Memory as a Controlled Process: Learned Adaptive Memory Management for LLM Agents</a>
+    </div>
+    <div class="paper-meta">
+      Eric Hanchen Jiang, Zhi Zhang, &hellip;, Kai-Wei Chang, Ying Nian Wu &middot; arXiv cs.CL, 2026-07-15
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Frames memory operations for LLM agents as a Markov Decision Process and learns an online policy (a lightweight tabular contextual bandit with UCB exploration) that adaptively decides when/what/how much to retrieve, when to inject a distilled plan, and when to consolidate or forget. Backend-agnostic, learns from task-by-task binary feedback with no pretraining and no extra LLM calls; converges within tens of tasks.</p>
+      <p><strong>Finding:</strong> Across 6 benchmarks, 3 agent frameworks, and 3 LLM backbones, the policy (&ldquo;MemCon&rdquo;) beats multiple memory baselines by up to 15.2 points in task success while cutting token use 5&ndash;20%. Core claim: optimal memory access is context-dependent (sparse early retrieval, plan reuse for recurring goals, re-retrieval when stuck) &mdash; a direct argument against fixed hand-designed retrieval heuristics, with clear bearing on gated/controlled attention-based memory access.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.14327" target="_blank">PReM: Learning What to Preserve and When to Refresh for Context Compression</a>
+    </div>
+    <div class="paper-meta">
+      Bohan Yu, Lei Shen, Chenxi Zhou, &hellip;, Yu Cheng, Bo Zheng &middot; arXiv cs.CL, 2026-07-15
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A context-compression framework that maintains the long context as the model&rsquo;s internal layer-wise KV memory. A dedicated memory layer selects what to preserve, and a special <code>&lt;m&gt;</code> memory token triggers refreshes during generation. Trained with Phase-Separated Refresh Training, which aligns memory selection with memory-conditioned generation while preserving continuity across refreshes.</p>
+      <p><strong>Finding:</strong> On 32K-token contexts, PReM outperforms strong compression baselines under both 16&times; and 32&times; compression while balancing answer quality and inference efficiency. The mechanism &mdash; keeping the compressed context <em>adaptively refreshable</em> as generation proceeds &mdash; speaks directly to KV memory networks and to how much contextual evidence stays accessible downstream, paralleling the position-preference/format confound studied in the lingering-memory experiments.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.14431" target="_blank">Smarter and Cheaper at Once: Byte-Exact KV-Cache Grafting Turns a Frozen Small Model into a Verified-Knowledge Flywheel</a>
+    </div>
+    <div class="paper-meta">
+      Sietse Schelpe &middot; arXiv cs.CL / cs.LG, 2026-07-15
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Deposits verified knowledge once as a byte-exact key-value (KV) state artifact and restores it by &ldquo;graft&rdquo; into a fresh inference context (no weight changes). The restore is bit-exact under a pinned deterministic configuration (SHA-256 equality, zero KL divergence, 100% argmax agreement over 50 samples); own-position graft is proven the unique numerically exact operating point on a model with floating-point rotary encoding.</p>
+      <p><strong>Finding:</strong> On AIME 2025, a frozen Gemma-4-12B moves 80.0%&rarr;93.3% after grafting a verified solution library (above its 31B sibling&rsquo;s 89.2% published anchor); the same byte-exact store widens usable context from 32,768 to 2,854,766 tokens at zero extra accelerator memory and moves bit-identically between machines. Frames KV states as addressable, transferable memory &mdash; a clean instantiation of KV memory networks as verified-knowledge stores.</p>
+    </div>
+    <div class="flag">⚠ Single-author; the engine is proprietary and every reported number is backed only by committed input/output hashes (one pre-registered replay claimed). Results are not independently reproducible from the paper alone.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+  <div class="empty-section">No papers today. (The one strong computational-memory-model candidate — Khanjanianpak &amp; Valiadeh on transient synaptic memory, 2607.14000 — was already reported on 2026-07-16 and excluded as a duplicate. High-impact journal memory papers this week, e.g. Nature Neuroscience hippocampal theta-sweep studies, fell outside the 48h window.)</div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.14371" target="_blank">Supervised Fine-Tuning vs. In-Context Learning: An Equilibrium Analysis of LLM Personalization under Congestion</a>
+    </div>
+    <div class="paper-meta">
+      Fengzhuo Zhang, Zhuoran Yang, Dirk Bergemann &middot; arXiv stat.ML, 2026-07-15
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A tractable framework for LLM serving that captures the statistical-economic trade-off between expensive supervised fine-tuning (SFT) and lightweight in-context learning (ICL) for personalization, under shared computational resources. Derives equilibrium resource consumption and validates predictions with GPT-2 on linear-regression tasks; cross-checks against a review of 21 major AI platforms.</p>
+      <p><strong>Finding:</strong> ICL and SFT dominate in different regimes set by an interplay of pretraining coverage and data signal-to-noise ratio, but congestion from other users can flip the ranking. Equilibrium resource consumption is non-monotonic (better pretraining precision reduces congestion; broader coverage and harder tasks can increase it). The share of platforms offering both SFT and ICL rose from 9.5% (2021) to 71.4% (2025). Useful theoretical scaffolding for when in-context memory beats weight-based personalization.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.14571" target="_blank">Gate-Zero Growth: A Geometric Framework for Function-Preserving Continual Learning</a>
+    </div>
+    <div class="paper-meta">
+      Dante Lok &middot; arXiv cs.LG, 2026-07-16
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A function-preserving operator that adds new residual blocks through a zero-initialized gate. Under a transversality condition it induces &ldquo;rank separation&rdquo; in the functional Jacobian: old directions are unchanged, new-weight directions are exactly flat at the growth point, and new gate directions are the only first-order source of new functional variation. Analyzes function drift O(&alpha;&sup2;) and Jacobian leakage O(&alpha;&infin;).</p>
+      <p><strong>Finding:</strong> On a 300M&rarr;857M Transformer adapted from WikiText-103 to BookCorpus, gate-zero growth reaches near-zero old-domain forgetting (&Delta;A&lt;0.1) under both Isolation and Freeze-Nothing operating points, while a non-function-preserving control (Gstack) suffers roughly an order-of-magnitude larger forgetting under the same recipe. The same geometric analysis covers LoRA, ReZero, and zero-init adapters &mdash; establishing a canonical local geometry for safe capacity activation in continual learning (i.e., catastrophic forgetting).</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.14530" target="_blank">xHC: Expanded Hyper-Connections</a>
+    </div>
+    <div class="paper-meta">
+      Xiangdong Zhang, Xiaohan Qin, &hellip;, Junchi Yan &middot; arXiv cs.LG / cs.CL, 2026-07-16
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Extends Hyper-Connections &mdash; which expand the transformer residual stream into N parallel streams, framed as &ldquo;memory scaling beyond width and depth.&rdquo; xHC adds temporal feature augmentation for richer write-back and a sparse residual-stream update (activates k=4 of N=16 streams while retaining dense access to the full residual state), scaling meaningfully beyond N=4 for the first time; xHC-Flash cuts per-sublayer memory traffic from 73.5C to 40C.</p>
+      <p><strong>Finding:</strong> On 18B and 28B MoE models, xHC improves the average downstream score by +4.0 points over the prior mHC at only modest extra FLOPs; scaling-law experiments show vanilla and mHC require 1.50&times; and 1.19&times; the compute, respectively, to reach xHC&rsquo;s loss. Frames residual-stream expansion as a memory-capacity scaling axis for transformers &mdash; an architectural lens on how much intermediate state a model can hold.</p>
+    </div>
+    <div class="flag">⚠ Technical report; reported gains are benchmark-average deltas, not direct memory-mechanism probes.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-peri">Peripheral</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.14833" target="_blank">Thoughtseeds as Latent Causes: A Dual-Process Computational Phenomenology of Focused-Attention Meditation</a>
+    </div>
+    <div class="paper-meta">
+      Prakash Chandra Kavi, Daniel Ari Friedman, Gustavo Patow &middot; arXiv q-bio.NC, 2026-07-16
+      <span class="tag tag-peri">Peripheral</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A computational phenomenology of focused-attention meditation traversing four attractor states (breath focus, mind-wandering, meta-awareness, redirect attention). A dual-process active-inference model: L1 a stochastic Ornstein&ndash;Uhlenbeck process over attentional Yeo networks; L2 a generative model encoding latent &ldquo;thoughtseeds&rdquo; and autonomic action tendencies; L3 a metacognitive monitor implementing a Global Neuronal Workspace (GNW) capacity bottleneck that gates those tendencies.</p>
+      <p><strong>Finding:</strong> Meta-awareness functions as the GNW ignition signal, derived from policy-prior divergence and competition between orchestrator and distractor thoughtseeds; policy selection minimizes expected free energy, and L2 actions furnish descending predictions that close the enactive perception&ndash;action cycle. Trained via variational EM on expert/novice phenotypes, simulations reproduce behavior &ldquo;consistent with&rdquo; contemplative-neuroscience findings &mdash; a tractable bridge between first-person phenomenology and neurophysiology, of peripheral interest as a computational cognitive model.</p>
+    </div>
+    <div class="flag">⚠ Simulation-only; &ldquo;consistent with&rdquo; empirical findings rather than a direct experimental test, and no new data.</div>
+  </div>
+</div>
+
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>Khanjanianpak &amp; Valiadeh, &ldquo;Activity Regeneration from Silent States in Neuronal Networks with Transient Synaptic Memory&rdquo; (arXiv:2607.14000)</strong> &mdash; <em>previously reported on 2026-07-16</em>; excluded as a duplicate (caught by the dedup store).</li>
+    <li><strong>Nature Neuroscience &mdash; Tang et al., &ldquo;Goal-directed hippocampal theta sweeps during memory-guided navigation&rdquo;</strong> (and Yu et al., &ldquo;Hippocampal theta sweeps indicate goal direction during navigation&rdquo;), both 2026-07-01. High-impact hippocampal replay / offline-planning papers &mdash; <em>outside the 48h window</em> (≈2 weeks old); flagged in case they were missed by earlier runs.</li>
+    <li><strong>Neuron &mdash; &ldquo;Recurrent connectivity shapes spatial coding in hippocampal CA3 subregions&rdquo;</strong> (2026-07-08). CA3 recurrent-circuitry / place-cell stability study &mdash; outside the 48h window.</li>
+    <li><strong>Nature Communications &mdash; long-term inflammation suppresses hippocampal neurogenesis via TNF&alpha; / type-I interferon</strong> (2026-07-07). Mechanistic but clinical-cell-biology focus &mdash; outside the 48h window.</li>
+    <li><strong>bioRxiv &mdash; &ldquo;Episodic memory ERPs reflect preclinical Alzheimer&rsquo;s disease progression&rdquo;</strong> (2026.07.11.737503). Clinical ERP study &mdash; outside the 48h window and clinically narrow.</li>
+    <li><strong>Applied / engineering papers caught by keyword match but excluded for lack of mechanistic memory insight:</strong> MemPoison &amp; Bad Memory (agent-memory prompt-injection security), SmartRAG / MEMORA / VTM-Nav / RetroAgent (embodied or domain agent memory), CatalogAgent, SearchOS, and several RAG/benchmark papers.</li>
+    <li><strong>Listing-page mis-map caught and excluded:</strong> the arxiv <code>new</code> listing attributed titles to wrong IDs (e.g., 2607.14109 is actually &ldquo;Simplicity Paradox,&rdquo; not &ldquo;Polestar&rdquo;; 2607.14112 &ldquo;Information-Theoretic Limits&rdquo; is a May 2026 paper, not new). All candidates were re-verified against the authoritative arXiv API before inclusion.</li>
+  </ul>
+</div>
+
+</body>
+</html>
