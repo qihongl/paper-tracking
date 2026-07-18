@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker — 2026-07-18</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .summary-table .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+</style>
+</head>
+<body>
+
+<h1>🧠 Daily Paper Tracker</h1>
+<div class="date">2026-07-18 &middot; 11 papers &middot; 2 LLM-Memory, 4 Schema-Episodic, 3 KV-Networks, 0 Encoding-Retrieval, 0 Cross-cutting, 2 Peripheral</div>
+
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+            <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.14651" target="_blank">MemPoison: Uncovering Persistent Memory Threats and Structural Blind Spots in LLM Agents</a></td>
+        <td class="col-authors">Jifeng Gao, Kang Xia, Yi Zhang, Xiaobin Hong et al.</td>
+        <td class="col-finding">Persistent external memory — the very capability that gives LLM agents continuity across turns — is a durable attack surface: adversarial content injected through ordinary interaction channels is reta</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.15253" target="_blank">Bridge Evidence: Static Retrieval Utility Does Not Predict Causal Utility in Multi-Step Agentic Search</a></td>
+        <td class="col-authors">Debayan Mukhopadhyay, Utshab Kumar Ghosh, Shubham Chatterjee et al.</td>
+        <td class="col-finding">Static retrieval metrics systematically fail to predict a document's causal contribution in multi-step agentic search — a direct methodological caution for evaluating LLM memory/retrieval systems: off</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s41593-026-02364-3" target="_blank">Goal-directed hippocampal theta sweeps during memory-guided navigation</a></td>
+        <td class="col-authors">Wenbo Tang, Xiyu Mei, Ryan E. Harvey, Estrella Carbajal-Leon, Talia Netzer, Hongyu Chang, Azahara Oliva, Antonio Fernandez-Ruiz et al.</td>
+        <td class="col-finding">Hippocampal activity sweeps toward remembered goals on internal cognitive maps, independent of immediate sensory input; goal-directed sweeps coordinate with prefrontal cortex and are preferentially re</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s41593-026-02365-2" target="_blank">Hippocampal theta sweeps indicate goal direction during navigation</a></td>
+        <td class="col-authors">Changmin Yu, Zilong Ji, Jake Ormond, John O'Keefe, Neil Burgess et al.</td>
+        <td class="col-finding">Theta sweeps show a robust goal-oriented directional bias independent of movement or head direction (p = 0.0004 vs. movement direction); replay during sharp-wave ripples is also goal-directed. Demonst</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s41593-026-02345-6" target="_blank">Human hippocampal ripples tune cortical responses based on predicted uncertainty</a></td>
+        <td class="col-authors">Darya Frank, Stephan Moratti, ... Bryan A. Strange (with K. Friston) et al.</td>
+        <td class="col-finding">Hippocampal ripples increase ahead of unpredictable events and tune visual cortex to respond faster and stronger to surprising stimuli; pre-stimulus ripples shift fusiform E/I balance toward controlle</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1016/j.neuron.2026.05.004" target="_blank">A learning-evoked slow-oscillatory architecture paces population activity for offline reactivation across the human medial temporal lobe</a></td>
+        <td class="col-authors">Adrien A. Causse, Julie Curot, Vitor Lopes-Dos-Santos, ... David Dupret, Helen C. Barron et al.</td>
+        <td class="col-finding">Mnemonic engagement elicits on-demand slow-oscillatory bursts in the hippocampus that synchronize gamma across MTL regions; these learning-evoked motifs are selectively reactivated during hippocampal </td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.15105" target="_blank">Long-Context Fine-Tuning with Limited VRAM</a></td>
+        <td class="col-authors">Vladimir Fedosov, Aleksandr Sazhin, Artemiy Grinenko, Frank Woernle et al.</td>
+        <td class="col-finding">On a 16 GB Quadro RTX 5000, dense training fits 2,048 tokens but fails at 4,096; HGA reaches 16,384 tokens at 15.28 GB peak VRAM and runs the same adapter through 131,072 tokens. A concrete KV-memory </td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.14952" target="_blank">LongStraw: Long-Context RL Beyond 2M Tokens under a Fixed GPU Budget</a></td>
+        <td class="col-authors">Changhai Zhou, Kieran Liu, Yuhua Zhou, Qian Qiao et al.</td>
+        <td class="col-finding">Enables long-context RL post-training beyond 2M tokens within a fixed budget by decoupling prompt recomputation from response gradients — directly attacking the memory-scaling bottleneck for long-hori</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.14514" target="_blank">VTM-Nav: Hierarchical Visual-Topological Memory for Cross-Episode Object-Goal Navigation</a></td>
+        <td class="col-authors">Xiaoran Xu, Yupeng Wu, Tianyu Xue, Yifan Xu et al.</td>
+        <td class="col-finding">A persistent, structured memory that accumulates and reuses experience across episodes improves object-goal navigation without fine-tuning — a concrete instantiation of experience replay / memory cons</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-peri"></span>Peripheral</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.14593" target="_blank">Memory-Driven Self-Disclosure and Relational Turning Points: A Longitudinal Multimodal Study of Human-AI Interaction</a></td>
+        <td class="col-authors">Ryuichi Sumida, Mao Saeki, Masaki Eguchi, Sadahiro Yoshikawa et al.</td>
+        <td class="col-finding">Perceived memory is relationally conditioned — predicted by prior relational state rather than reflecting content — and is a key driver of long-term relationship formation. An HCI angle on memory-augm</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-peri"></span>Peripheral</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.15271" target="_blank">Online Neural Space Time Memory for Dynamic Novel View Synthesis</a></td>
+        <td class="col-authors">Baback Elmieh, Lynn Tsai, Zeman Li, Srinivas Kaza et al.</td>
+        <td class="col-finding">Infrequent, decoupled memory updates preserve long-horizon reconstruction of temporarily occluded regions while meeting real-time constraints — a gated persistent-state memory idea with a loose analog</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.14651" target="_blank">MemPoison: Uncovering Persistent Memory Threats and Structural Blind Spots in LLM Agents</a>
+    </div>
+    <div class="paper-meta">
+      Jifeng Gao, Kang Xia, Yi Zhang, Xiaobin Hong et al. &middot; arXiv:2607.14651 — 16 July 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Proposes a benchmark and analysis framework (1,227 hand-validated cases across four attack types, three injection channels, three memory substrates) evaluated on seven open-weight and three closed-weight model families. Defines a three-tier taxonomy: L1 direct single-record corruption, L2 compositional multi-record corruption, L3 context-triggered dormant corruption.</p>
+      <p><strong>Finding:</strong> Persistent external memory — the very capability that gives LLM agents continuity across turns — is a durable attack surface: adversarial content injected through ordinary interaction channels is retained and later distorts downstream behavior. Quantifies how memory persistence (a Pillar-1 capability) creates new, persistent safety failure modes that static safety filters miss.</p>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.15253" target="_blank">Bridge Evidence: Static Retrieval Utility Does Not Predict Causal Utility in Multi-Step Agentic Search</a>
+    </div>
+    <div class="paper-meta">
+      Debayan Mukhopadhyay, Utshab Kumar Ghosh, Shubham Chatterjee &middot; arXiv:2607.15253 — 16 July 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Measures the gap between static retrieval utility (does a document, read in isolation, improve the answer?) and causal utility (does it matter for what the agent does next?) using a ReAct-style agent over HotpotQA. Replays 1,000 development questions, deleting each read document and re-running the remainder of the trajectory.</p>
+      <p><strong>Finding:</strong> Static retrieval metrics systematically fail to predict a document's causal contribution in multi-step agentic search — a direct methodological caution for evaluating LLM memory/retrieval systems: offline retrieval scores can mislead about what an agent actually uses.</p>
+    </div>
+  </div>
+  </div>
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s41593-026-02364-3" target="_blank">Goal-directed hippocampal theta sweeps during memory-guided navigation</a>
+    </div>
+    <div class="paper-meta">
+      Wenbo Tang, Xiyu Mei, Ryan E. Harvey, Estrella Carbajal-Leon, Talia Netzer, Hongyu Chang, Azahara Oliva, Antonio Fernandez-Ruiz &middot; Nature Neuroscience — 1 July 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Recorded hippocampal population activity as rodents navigated tasks in which the hidden-goal configuration changed; used internal-map switching and Bayesian decoding of single theta-cycle sweeps to test whether sweeps target remembered goals rather than mere sensory/motor sampling.</p>
+      <p><strong>Finding:</strong> Hippocampal activity sweeps toward remembered goals on internal cognitive maps, independent of immediate sensory input; goal-directed sweeps coordinate with prefrontal cortex and are preferentially replayed offline. Provides a substrate for both online and offline memory-guided planning. (Back-to-back with Yu et al., same issue.)</p>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s41593-026-02365-2" target="_blank">Hippocampal theta sweeps indicate goal direction during navigation</a>
+    </div>
+    <div class="paper-meta">
+      Changmin Yu, Zilong Ji, Jake Ormond, John O'Keefe, Neil Burgess &middot; Nature Neuroscience — 1 July 2026 (Open Access)
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Used a 'Honeycomb' maze that dissociates head-, movement-, and goal-direction, recorded CA1 place-cell ensembles, fit a theta-sweep model with an added goal-directed input, and tested its prediction of goal-phase precession empirically.</p>
+      <p><strong>Finding:</strong> Theta sweeps show a robust goal-oriented directional bias independent of movement or head direction (p = 0.0004 vs. movement direction); replay during sharp-wave ripples is also goal-directed. Demonstrates theta sweeps are a neural substrate for online goal-directed planning, not motor sampling. (Companion to Tang et al.)</p>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s41593-026-02345-6" target="_blank">Human hippocampal ripples tune cortical responses based on predicted uncertainty</a>
+    </div>
+    <div class="paper-meta">
+      Darya Frank, Stephan Moratti, ... Bryan A. Strange (with K. Friston) &middot; Nature Neuroscience — 25 June 2026 (Open Access)
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Direct human intracranial recordings (hippocampus + visual cortex) during a visual task with varying predictive uncertainty; analyzed pre-stimulus ripples, fusiform gamma, the aperiodic exponent (E/I balance), and Granger causality.</p>
+      <p><strong>Finding:</strong> Hippocampal ripples increase ahead of unpredictable events and tune visual cortex to respond faster and stronger to surprising stimuli; pre-stimulus ripples shift fusiform E/I balance toward controlled inhibition (precision-weighting), and post-stimulus gamma drives bottom-up error flow back to hippocampus. First direct human evidence that ripples implement predictive-coding precision-weighting in waking perception, not only sleep consolidation.</p>
+    </div>
+    <div class="flag">⚠ ⚠ Human iEEG — small participant N (typical for intracranial studies); ripple-timing/causal claims rest on correlational analyses.</div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1016/j.neuron.2026.05.004" target="_blank">A learning-evoked slow-oscillatory architecture paces population activity for offline reactivation across the human medial temporal lobe</a>
+    </div>
+    <div class="paper-meta">
+      Adrien A. Causse, Julie Curot, Vitor Lopes-Dos-Santos, ... David Dupret, Helen C. Barron &middot; Neuron — 2026 (ePub ahead of print)
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Human intracranial recordings combining single-neuron spiking and local field potentials across the medial temporal lobe during learning and post-learning rest; quantified slow-oscillatory bursts, cross-regional gamma coordination, and ripple-reactivation of learning-evoked motifs.</p>
+      <p><strong>Finding:</strong> Mnemonic engagement elicits on-demand slow-oscillatory bursts in the hippocampus that synchronize gamma across MTL regions; these learning-evoked motifs are selectively reactivated during hippocampal ripples at rest, and the strength of their reactivation predicts subsequent recall accuracy. Identifies a multi-scale coordination mechanism linking learning, consolidation, and recall in humans.</p>
+    </div>
+    <div class="flag">⚠ ⚠ Human iEEG — limited participant count; reactivation–recall link is correlational.</div>
+  </div>
+  </div>
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.15105" target="_blank">Long-Context Fine-Tuning with Limited VRAM</a>
+    </div>
+    <div class="paper-meta">
+      Vladimir Fedosov, Aleksandr Sazhin, Artemiy Grinenko, Frank Woernle &middot; arXiv:2607.15105 — 16 July 2026
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Combines Hierarchical Global Attention (HGA) with segment-wise backpropagation and tiered KV storage: only the active segment stays differentiable in VRAM, older KV is detached to RAM/NVMe, and HGA loads a bounded set of exact historical tokens per query block. Evaluated on Qwen3-8B with 4-bit QLoRA on PG19.</p>
+      <p><strong>Finding:</strong> On a 16 GB Quadro RTX 5000, dense training fits 2,048 tokens but fails at 4,096; HGA reaches 16,384 tokens at 15.28 GB peak VRAM and runs the same adapter through 131,072 tokens. A concrete KV-memory tiering scheme — a bounded, hierarchical key-value store — directly relevant to Pillar 3.</p>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.14952" target="_blank">LongStraw: Long-Context RL Beyond 2M Tokens under a Fixed GPU Budget</a>
+    </div>
+    <div class="paper-meta">
+      Changhai Zhou, Kieran Liu, Yuhua Zhou, Qian Qiao et al. &middot; arXiv:2607.14952 — 16 July 2026
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> An architecture-aware execution stack for million-token RL post-training (GRPO) under a fixed GPU budget: evaluates the shared prompt without autograd, retains only model-specific state needed by later tokens, and replays short response segments. Targets agent trajectories where observations, tool outputs, and prior decisions accumulate.</p>
+      <p><strong>Finding:</strong> Enables long-context RL post-training beyond 2M tokens within a fixed budget by decoupling prompt recomputation from response gradients — directly attacking the memory-scaling bottleneck for long-horizon agent memory (Pillar 3: key-value state that must persist and be queried across a long trajectory).</p>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.14514" target="_blank">VTM-Nav: Hierarchical Visual-Topological Memory for Cross-Episode Object-Goal Navigation</a>
+    </div>
+    <div class="paper-meta">
+      Xiaoran Xu, Yupeng Wu, Tianyu Xue, Yifan Xu et al. &middot; arXiv:2607.14514 — 16 July 2026
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Introduces Cross-Episode Object-Goal Navigation (an agent repeatedly operates in the same scene, parameters fixed, retaining only self-acquired experience) and VTM-Nav, a training-free VLM framework with a persistent hierarchical Visual-Topological Memory (VTM).</p>
+      <p><strong>Finding:</strong> A persistent, structured memory that accumulates and reuses experience across episodes improves object-goal navigation without fine-tuning — a concrete instantiation of experience replay / memory consolidation in embodied agents (Pillar 3: memory that persists and is queried across episodes, with hierarchical structure).</p>
+    </div>
+  </div>
+  </div>
+<div class="section">
+  <div class="section-header tag-peri">Peripheral</div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.14593" target="_blank">Memory-Driven Self-Disclosure and Relational Turning Points: A Longitudinal Multimodal Study of Human-AI Interaction</a>
+    </div>
+    <div class="paper-meta">
+      Ryuichi Sumida, Mao Saeki, Masaki Eguchi, Sadahiro Yoshikawa et al. &middot; arXiv:2607.14593 — 16 July 2026
+      <span class="tag tag-peri">Peripheral</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Longitudinal study of a memory-augmented conversational agent (24 participants × 10 sessions); after each session participants rated familiarity, self-disclosure, perceived memory, conversational quality, and enjoyment.</p>
+      <p><strong>Finding:</strong> Perceived memory is relationally conditioned — predicted by prior relational state rather than reflecting content — and is a key driver of long-term relationship formation. An HCI angle on memory-augmented LLMs, relevant to Pillar 1's user-memory framing (how a persistent memory changes the relational dynamic).</p>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.15271" target="_blank">Online Neural Space Time Memory for Dynamic Novel View Synthesis</a>
+    </div>
+    <div class="paper-meta">
+      Baback Elmieh, Lynn Tsai, Zeman Li, Srinivas Kaza et al. &middot; arXiv:2607.15271 — 16 July 2026
+      <span class="tag tag-peri">Peripheral</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Proposes decoupling memory-update frequency from memory-application frequency in Test-Time-Training for online novel-view synthesis from streaming video, maintaining a persistent long-horizon memory under strict real-time constraints.</p>
+      <p><strong>Finding:</strong> Infrequent, decoupled memory updates preserve long-horizon reconstruction of temporarily occluded regions while meeting real-time constraints — a gated persistent-state memory idea with a loose analogy to hippocampal gating. Peripheral to the three pillars but a clean mechanism sketch.</p>
+    </div>
+  </div>
+  </div>
+
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>Bad Memory: Evaluating Prompt Injection Risks from Memory in Agentic Systems</strong> (arXiv:2607.14611) — complementary to MemPoison (2607.14651); empirical study of Claude Code / Codex prompt-injection via persistent memory files. Overlapping scope, lower priority this run.</li>
+    <li><strong>Step-Level Preference Learning for Generative Agents in Social Simulations</strong> (arXiv:2607.14485) — 57K step-level human-preference annotations for agent decision trajectories; memory retrieval/reflection mentioned but not the central mechanism. Peripheral.</li>
+    <li><strong>Numerous agent/RAG/VLM benchmarks</strong> (arXiv:2607.15095, 14499, 15082, 14658, 14512, 14494, 14989, 14561, 14711, 14661, 15257, 15202, 15123, 14898, 14582, 15265, 14777, 15275, 15094, 15047, 14937, 14739, 14880, 14622, 14466, 14672, 15247) — matched memory/retrieval/attention keywords but are applied engineering or agent-tooling work without a mechanistic memory claim; excluded per quality standard.</li>
+    <li><strong>q-bio.NC feed</strong> — no new neuro-memory preprints in the window; all recent hits were 2606.x / 2605.x submissions (sleep, place cells, engrams) already outside the recent window.</li>
+  </ul>
+</div>
+
+</body>
+</html>
