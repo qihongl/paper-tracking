@@ -1,5 +1,7 @@
 # Daily Paper Tracker
 
+[https://qihongl.github.io/paper-tracking/](https://qihongl.github.io/paper-tracking/)
+
 This is an agent skill to keep me on top of new papers in computational cognitive neuroscience of learning and memory. I'm experimenting with it to see if it can provide a better coverage than blusky/X.
 
 Every morning an AI agent searches across a broad range of sources — arxiv, bioRxiv, PubMed, 20+ journals, and major ML conferences — filters out the noise, and puts together a clean HTML report grouped by research topic. 
