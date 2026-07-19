@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker — 2026-07-19</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .summary-table .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+</style>
+</head>
+<body>
+
+<h1>🧠 Daily Paper Tracker</h1>
+<div class="date">2026-07-19</div>
+
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.64898/2026.07.06.732916" target="_blank">Hippocampal engrams configure prefrontal context representations to guide flexible decisions</a></td>
+        <td class="col-authors">Julian et al. (Tank)</td>
+        <td class="col-finding">HPC engram reactivation reconfigured mPFC task representations to produce engram-consistent, flexible behavior—i.e., the engram specified which mapping set to use, not a single motor output. Direct ev</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.64898/2026.07.02.736055" target="_blank">The emergence of a novel CA1 spatial map requires direct entorhinal input</a></td>
+        <td class="col-authors">Chadney et al. (Dörr)</td>
+        <td class="col-finding">Silencing direct entorhinal input left spatial firing in the familiar environment intact but impaired remapping in the novel environment, producing a stable “hybrid” map blending both. Shows the direc</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1523/JNEUROSCI.2001-25.2026" target="_blank">Dynamics of Dentate Gyrus Place Cells and Dentate Spikes During Spatial and Nonspatial Changes in Environments</a></td>
+        <td class="col-authors">Demetrovich et al. (Colgin)</td>
+        <td class="col-finding">DG place cells and dentate spikes are modulated by both spatial and nonspatial environmental changes, not solely spatial ones—extending the classical view of the DG as a pure pattern-separator for spa</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1002/advs.76661" target="_blank">Experience-Dependent Reorganization of Hippocampal CA3 Neuronal Ensembles Associates With Memory Generalization</a></td>
+        <td class="col-authors">Song et al. (Deng)</td>
+        <td class="col-finding">CA3 single-unit and population trajectories distinguished easy task configurations on day 1 but not hard ones; as performance improved on day 2, representational separation sharpened selectively for t</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1126/sciadv.aec3961" target="_blank">Linking functional and structural dendritic spine remodeling during fear learning and extinction in vivo</a></td>
+        <td class="col-authors">Li et al. (Wong)</td>
+        <td class="col-finding">Fear learning induced responsive spines that were more synchronous and clustered; these consolidated over following days but were attenuated by extinction. The model shows learning-era calcium signals</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1371/journal.pbio.3003908" target="_blank">Retrosplenial cortical reorganization during late adolescence introduces instability of contextual memory circuits</a></td>
+        <td class="col-authors">Zhang et al. (Wood)</td>
+        <td class="col-finding">RSP PNN/PV established at p30 declined by late adolescence, coinciding with impaired expression of early-adolescence-acquired contextual memories; both cellular and memory deficits were rescued by PNN</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1093/braincomms/fcag255" target="_blank">Impaired consolidation of spatial memory during sleep in patients with LGI1-associated limbic encephalitis</a></td>
+        <td class="col-authors">Rave et al. (Tabi)</td>
+        <td class="col-finding">Patients showed impaired sleep-associated consolidation of hippocampus-dependent spatial memory, consistent with DG/CA3 dysfunction disrupting pattern separation/completion during offline reprocessing</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.64898/2026.07.06.736892" target="_blank">Individual differences in post-encoding sleep continuity predict context memory accuracy and supporting ERPs in younger and older adults</a></td>
+        <td class="col-authors">Nyan et al. (Mirjalili)</td>
+        <td class="col-finding">Greater post-encoding sleep continuity predicted better delayed context-memory performance for mismatching pairs and modulated the supporting ERP signatures, in both age groups. Extends sleep–memory w</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.3758/s13414-026-03307-7" target="_blank">Visual recognition memory does not benefit from preserved temporal order from encoding to test</a></td>
+        <td class="col-authors">Zhao et al. (Woodman)</td>
+        <td class="col-finding">Maintaining the original temporal order from encoding to test did not improve overall recognition accuracy, and temporal grouping from study order was unmodulated by test order. Challenges the assumpt</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.1016/j.nedt.2026.107285" target="_blank">Effects of spaced learning on knowledge acquisition, retention, and learning-related anxiety: a systematic review and meta-analysis of RCTs</a></td>
+        <td class="col-authors">Sezgin et al. (Bektas)</td>
+        <td class="col-finding">Spaced learning improved knowledge acquisition and long-term retention and reduced learning-related anxiety relative to massed schedules. A high-quality synthesis confirming the spacing/lag effect at </td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://doi.org/10.1007/s11571-026-10508-1" target="_blank">The write-cost bottleneck: energy constraints on continual learning in brains and machines</a></td>
+        <td class="col-authors">Xu et al. (Yu)</td>
+        <td class="col-finding">Write costs, though a smaller time-averaged share of the mature brain's budget, form a peak-throughput bottleneck for any system that must learn continuously under fixed energy. Provides a normative e</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s42003-026-10704-z" target="_blank">Auditory network persistence of stimulus representation in awake and naturally sleeping mice</a></td>
+        <td class="col-authors">Hadad et al. (Kimchy)</td>
+        <td class="col-finding">Persistent population activity enabled decoding of past auditory stimuli after physical offset during both wake and natural sleep. In wake, representation decayed uniformly across sensory and associat</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+  <div class="empty-section">No papers today.</div>
+</div>
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.64898/2026.07.06.732916" target="_blank">Hippocampal engrams configure prefrontal context representations to guide flexible decisions</a>
+    </div>
+    <div class="paper-meta">
+      Julian et al. (Tank) &middot; bioRxiv, 2026-07-06
+      <span class="tag tag-schema">Schema-Episodic</span> <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Combined activity tagging and optogenetic reactivation of hippocampal (HPC) engrams with simultaneous large-scale recordings of medial prefrontal cortex (mPFC) in mice performing a context-dependent task-switching paradigm. This lets them test whether engram reactivation drives retrieval of an entire set of stimulus–response mappings rather than a single fixed response.</p>
+      <p><strong>Finding:</strong> HPC engram reactivation reconfigured mPFC task representations to produce engram-consistent, flexible behavior—i.e., the engram specified which mapping set to use, not a single motor output. Direct evidence that hippocampal memory representations gate cortical computation online, squarely relevant to schema-guided episodic control of neocortical states.</p>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.64898/2026.07.02.736055" target="_blank">The emergence of a novel CA1 spatial map requires direct entorhinal input</a>
+    </div>
+    <div class="paper-meta">
+      Chadney et al. (Dörr) &middot; bioRxiv, 2026-07-02
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Population recordings of CA1 neurons paired with optogenetic silencing of their direct lateral-entorhinal input in mice exposed to a familiar and then a novel environment. Tests the relative contributions of intra-hippocampal vs. direct entorhinal drive to CA1 spatial remapping.</p>
+      <p><strong>Finding:</strong> Silencing direct entorhinal input left spatial firing in the familiar environment intact but impaired remapping in the novel environment, producing a stable “hybrid” map blending both. Shows the direct entorhinal pathway is specifically recruited for CA1 novelty detection / new-map formation rather than maintenance of established maps.</p>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1523/JNEUROSCI.2001-25.2026" target="_blank">Dynamics of Dentate Gyrus Place Cells and Dentate Spikes During Spatial and Nonspatial Changes in Environments</a>
+    </div>
+    <div class="paper-meta">
+      Demetrovich et al. (Colgin) &middot; Journal of Neuroscience, 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Extracellular recordings of DG place cells and local field potentials in rats of both sexes exploring a familiar environment subjected to discrete spatial and nonspatial (ethologically relevant) alterations, measuring how place-cell firing and dentate-spike dynamics track each manipulation.</p>
+      <p><strong>Finding:</strong> DG place cells and dentate spikes are modulated by both spatial and nonspatial environmental changes, not solely spatial ones—extending the classical view of the DG as a pure pattern-separator for spatial context. Supports a broader role for dentate spikes in gating both spatial and nonspatial information into hippocampal codes.</p>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1002/advs.76661" target="_blank">Experience-Dependent Reorganization of Hippocampal CA3 Neuronal Ensembles Associates With Memory Generalization</a>
+    </div>
+    <div class="paper-meta">
+      Song et al. (Deng) &middot; Advanced Science, 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> 8-arm-maze tasks in mice requiring transfer of a learned rule to novel configurations of varying difficulty; in vivo single-unit and population recordings of CA3 across two testing days tracked how ensemble representations reorganized with behavioral generalization.</p>
+      <p><strong>Finding:</strong> CA3 single-unit and population trajectories distinguished easy task configurations on day 1 but not hard ones; as performance improved on day 2, representational separation sharpened selectively for the harder tasks. Generalization efficiency was inversely correlated with task difficulty, linking CA3 ensemble dynamics to memory generalization—directly germane to the generalization/defect questions in schema-bound RNN models.</p>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1126/sciadv.aec3961" target="_blank">Linking functional and structural dendritic spine remodeling during fear learning and extinction in vivo</a>
+    </div>
+    <div class="paper-meta">
+      Li et al. (Wong) &middot; Science Advances, 2026
+      <span class="tag tag-schema">Schema-Episodic</span> <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Longitudinal dual functional+structural in vivo imaging of frontal-association-cortex dendrites in mice across fear conditioning and extinction. A causal-inference model relates active spine calcium signals to spine elimination/consolidation.</p>
+      <p><strong>Finding:</strong> Fear learning induced responsive spines that were more synchronous and clustered; these consolidated over following days but were attenuated by extinction. The model shows learning-era calcium signals protect spines from elimination while promoting elimination of neighbors—a mechanistic account of how dendritic integration encodes and later updates emotional memory traces.</p>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1371/journal.pbio.3003908" target="_blank">Retrosplenial cortical reorganization during late adolescence introduces instability of contextual memory circuits</a>
+    </div>
+    <div class="paper-meta">
+      Zhang et al. (Wood) &middot; PLOS Biology, 2026
+      <span class="tag tag-schema">Schema-Episodic</span> <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Tracked perineuronal-net (PNN) density and parvalbumin expression in mouse retrosplenial cortex (RSP) from early (p30) to late (p60–p75) adolescence alongside context-fear conditioning, with PNN-stabilization and -disruption manipulations.</p>
+      <p><strong>Finding:</strong> RSP PNN/PV established at p30 declined by late adolescence, coinciding with impaired expression of early-adolescence-acquired contextual memories; both cellular and memory deficits were rescued by PNN stabilization and spontaneously recovered as PNNs rebuilt. Reveals a late-adolescent reorganization window that transiently destabilizes cortical memory circuits.</p>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1093/braincomms/fcag255" target="_blank">Impaired consolidation of spatial memory during sleep in patients with LGI1-associated limbic encephalitis</a>
+    </div>
+    <div class="paper-meta">
+      Rave et al. (Tabi) &middot; Brain Communications, 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> 15 LGI1-antibody limbic-encephalitis patients and matched controls learned a virtual Morris water maze before nocturnal sleep; next-day spatial retrieval (dwell time in target area) tested sleep-dependent systems consolidation. LGI1 selectively targets DG and CA3.</p>
+      <p><strong>Finding:</strong> Patients showed impaired sleep-associated consolidation of hippocampus-dependent spatial memory, consistent with DG/CA3 dysfunction disrupting pattern separation/completion during offline reprocessing. A human lesion-model corroboration that sleep consolidation of spatial memory depends on intact DG–CA3 circuitry.</p>
+    </div>  <div class="flag">⚠ Small clinical sample (n=15 patients); patient population limits causal generality, but theDG/CA3-selective pathology gives a clean natural experiment.</div>
+  </div>
+</div>
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+  <div class="empty-section">No papers today.</div>
+</div>
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.64898/2026.07.06.736892" target="_blank">Individual differences in post-encoding sleep continuity predict context memory accuracy and supporting ERPs in younger and older adults</a>
+    </div>
+    <div class="paper-meta">
+      Nyan et al. (Mirjalili) &middot; bioRxiv, 2026-07-06
+      <span class="tag tag-er">Encoding-Retrieval</span> <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Actigraphy + EEG of naturalistic post-encoding sleep after encoding object–scene pairs; tested after a 96-hour sleep-filled delay. Relates sleep continuity to context-memory accuracy and retrieval-related ERPs in younger and older adults.</p>
+      <p><strong>Finding:</strong> Greater post-encoding sleep continuity predicted better delayed context-memory performance for mismatching pairs and modulated the supporting ERP signatures, in both age groups. Extends sleep–memory work beyond deprivation labs to real-world sleep and ties consolidation to electrophysiological retrieval markers.</p>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.3758/s13414-026-03307-7" target="_blank">Visual recognition memory does not benefit from preserved temporal order from encoding to test</a>
+    </div>
+    <div class="paper-meta">
+      Zhao et al. (Woodman) &middot; Attention, Perception, &amp; Psychophysics, 2026
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Two experiments with a visual old/new recognition task; study items were re-presented at test either in the original study order or in a randomized order. Conditional-response-probability and two-alternative forced-choice analyses probed whether preserved temporal context aids retrieval.</p>
+      <p><strong>Finding:</strong> Maintaining the original temporal order from encoding to test did not improve overall recognition accuracy, and temporal grouping from study order was unmodulated by test order. Challenges the assumption that temporal-context contiguity automatically confers a retrieval benefit in visual recognition.</p>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1016/j.nedt.2026.107285" target="_blank">Effects of spaced learning on knowledge acquisition, retention, and learning-related anxiety: a systematic review and meta-analysis of RCTs</a>
+    </div>
+    <div class="paper-meta">
+      Sezgin et al. (Bektas) &middot; Nurse Education in Practice, 2026
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Systematic review and meta-analysis of randomized controlled trials examining spaced (distributed) vs. massed learning on knowledge acquisition, long-term retention, and anxiety in health-professions education.</p>
+      <p><strong>Finding:</strong> Spaced learning improved knowledge acquisition and long-term retention and reduced learning-related anxiety relative to massed schedules. A high-quality synthesis confirming the spacing/lag effect at the level of durable memory consolidation, relevant to the spacing-effect literature in the keyword matrix.</p>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1007/s11571-026-10508-1" target="_blank">The write-cost bottleneck: energy constraints on continual learning in brains and machines</a>
+    </div>
+    <div class="paper-meta">
+      Xu et al. (Yu) &middot; Cognitive Neurodynamics, 2026
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Theoretical analysis quantifying the metabolic “write” cost of learning (synaptic plasticity, receptor trafficking, protein synthesis, spine remodeling, consolidation) versus the better-studied “read” cost of signaling, estimating ~10^4–10^6 ATP per synapse per durable update.</p>
+      <p><strong>Finding:</strong> Write costs, though a smaller time-averaged share of the mature brain's budget, form a peak-throughput bottleneck for any system that must learn continuously under fixed energy. Provides a normative energy argument constraining continual-learning architectures in both biological and artificial systems (relevant to catastrophic-forgetting / lifelong-learning work).</p>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s42003-026-10704-z" target="_blank">Auditory network persistence of stimulus representation in awake and naturally sleeping mice</a>
+    </div>
+    <div class="paper-meta">
+      Hadad et al. (Kimchy) &middot; Communications Biology, 2026
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Chronic high-density electrophysiology in freely behaving mice; time-resolved decoding of population spiking in the auditory cortical hierarchy after stimulus offset, compared across wakefulness and natural sleep.</p>
+      <p><strong>Finding:</strong> Persistent population activity enabled decoding of past auditory stimuli after physical offset during both wake and natural sleep. In wake, representation decayed uniformly across sensory and association cortices; in sleep, association cortex sustained longer persistence. Documents a sleep-specific prolongation of stimulus representations relevant to predictive coding / working-memory-like persistence.</p>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <div class="section-header tag-peri">Peripheral</div>
+  <div class="empty-section">No papers today.</div>
+</div>
+
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>Auditory network persistence of stimulus representation in awake and naturally sleeping mice (Commun Biol)</strong> — included above as Cross-cutting</li>
+    <li><strong>Subcortical laterality predicts spontaneous brain dynamics (bioRxiv 2026-07-13)</strong> — weak memory relevance; subcortical dynamics, not memory mechanism</li>
+    <li><strong>Learned landmark associations support online visual control under degraded visibility (bioRxiv 2026-07-13)</strong> — spatial vision/control, not hippocampal memory</li>
+    <li><strong>Analysis of gene co-expression connectivity dynamics implicates aberrant neuron–oligodendroglia interactions in schizophrenia (Nat Commun)</strong> — omics/clinical, no memory mechanism</li>
+    <li><strong>Exploring the mediating role of functional connectivity in violence exposure and psychopathology (Brain Cogn)</strong> — clinical adolescent fMRI, not memory-focused</li>
+    <li><strong>Childhood socioeconomic status and episodic memory in later life (BMJ Public Health)</strong> — epidemiological, no mechanism</li>
+    <li><strong>Working memory strategies in children aged 7–10 years (Memory &amp; Cognition)</strong> — developmental/applied, no mechanism</li>
+    <li><strong>Visual working memory training enhances simulated mine monitoring (Cogn Res Princ Implic)</strong> — applied human-factors, no mechanism</li>
+    <li><strong>Working memory capacity and emotion regulation strategies predict cognitive control (Front Psychol)</strong> — peripheral WM/emotion</li>
+    <li><strong>General semantic, personal semantic and episodic details in TBI (Sci Rep)</strong> — clinical TBI case-comparison, no model</li>
+    <li><strong>arXiv cs.CL/cs.AI/cs.LG/q-bio.NC/stat.ML new listings</strong> — newest v1 submissions dated 2026-07-16; no new memory-relevant preprints in the 2026-07-17–2026-07-19 window (weekend; next announcement Mon 07-20)</li>
+  </ul>
+</div>
+
+</body>
+</html>
