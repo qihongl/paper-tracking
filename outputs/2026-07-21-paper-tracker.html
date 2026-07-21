@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker — 2026-07-21</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+</style>
+</head>
+<body>
+
+<h1>🧠 Daily Paper Tracker</h1>
+<div class="date">2026-07-21 &middot; 11 papers &middot; sources: arXiv (cs.CL/AI/LG/q-bio.NC/stat.ML), bioRxiv, PubMed, Nature Communications, J Neurosci, PLoS Comput Biol</div>
+
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.17879" target="_blank">Exploratory and Assimilating Reflection: Reflective Recall Cycle for Long-term Memory</a></td>
+        <td class="col-authors">Senrayan et al.</td>
+        <td class="col-finding">EAR combines exploratory retrieval-bootstrapping with assimilating compression of retrieved memories, giving high initial retrieval and sample-efficient adaptation for agent long-term memory.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.17944" target="_blank">The Art of Not Forgetting</a></td>
+        <td class="col-authors">Atmuri et al.</td>
+        <td class="col-finding">CMP — a local, gradient-free, two-tier competitive memory — resists catastrophic forgetting without replay, reframing it as a structural credit-assignment artifact.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.17545" target="_blank">Retain or Consolidate? Budget-Dependent Operator Selection for Language Agent Memory</a></td>
+        <td class="col-authors">Kang et al.</td>
+        <td class="col-finding">Frames the agent-memory trade-off explicitly: raw retention preserves exact detail, consolidation improves coverage per token; neither dominates — choice depends on the memory budget.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.17117" target="_blank">Persistent Sparse Autoencoders: Learning Feature Timescales in Language Models</a></td>
+        <td class="col-authors">Luo et al.</td>
+        <td class="col-finding">Adding a per-feature persistence coefficient to SAEs learns a spectrum of feature timescales, giving a mechanistic-interpretability lens on sequence-persistent (memory-like) representations.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://www.biorxiv.org/content/10.1101/2026.07.06.736898" target="_blank">Selective convergence and graded divergence of hippocampal and amygdala subregions using functional connectivity</a></td>
+        <td class="col-authors">Erig&uuml;c et al.</td>
+        <td class="col-finding">In n=722 HCP participants, hippocampal and amygdalar subregions show selective convergence and graded divergence into distributed cortical systems, bridging memory and affect along the MTL axis.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.17715" target="_blank">C&sup2;KV: Compressed and Composable KV Cache Reuse for Efficient LLM Inference</a></td>
+        <td class="col-authors">Du et al.</td>
+        <td class="col-finding">Marries KV compression with non-prefix (composable) KV reuse to cut both storage/access cost and prefill compute — directly targets the Pillar-3 long-context KV bottleneck.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.18141" target="_blank">HyMCache: A KV Cache Framework for Multi-Turn LLM Serving with CXL-Hybrid Memory</a></td>
+        <td class="col-authors">Jang et al.</td>
+        <td class="col-finding">Serves TB-scale reusable KV states over CXL DRAM+SSD; 3.0&times; over LMCache at matched DRAM and 16&times; less DRAM than distributed-DRAM Mooncake — a systems path to scaled KV memory.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.17019" target="_blank">Regularize or Localize: When Training-Time KV-Cache Geometry Pays Under Quantization</a></td>
+        <td class="col-authors">Sun et al.</td>
+        <td class="col-finding">Anti-collapse regularization cuts hidden-state anisotropy 38% but the gain does not propagate to the KV cache — quantization needs localized, not just regularized, geometry.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://www.nature.com/articles/s41467-026-75705-2" target="_blank">Redundant prefrontal hemispheres adapt storage strategy to working memory demands</a></td>
+        <td class="col-authors">Tschiersch et al. (Compte)</td>
+        <td class="col-finding">Bilateral PFC is redundant and weakly coupled: redundancy boosts precision below capacity, weak coupling raises capacity under high load via hemispheric specialization (macaque + human data).</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://journals.jneurosci.org/doi/10.1523/JNEUROSCI.0543-26.2026" target="_blank">Working memory deficits in hippocampal amnesia are associated with apathy</a></td>
+        <td class="col-authors">Attaallah et al. (Husain)</td>
+        <td class="col-finding">LGI1 encephalitis patients show elevated object-location misbinding errors; apathy tracks misbinding exclusively in patients — linking hippocampal pathology to WM binding via apathy.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1014535" target="_blank">Beyond memory capacity: A probabilistic, dual store model of visuospatial working memory</a></td>
+        <td class="col-authors">Aponte et al. (Chatham)</td>
+        <td class="col-finding">A dual-store VSWM model fit to 3 clinical trials + a prodromal-AD trial shows visual info is held in independent pools with perfect/imperfect retrieval rates.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- LLM-Memory -->
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.17879" target="_blank">Exploratory and Assimilating Reflection: Reflective Recall Cycle for Long-term Memory</a>
+    </div>
+    <div class="paper-meta">
+      Senrayan G, Yamada M, Jindal I, Purohit K et al. &middot; arXiv cs.AI, 2026-07-20 (preprint)
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> LLM-based autonomous agents are stateless with limited context windows, so they need external memory for long-term interaction and dynamic knowledge reasoning. The authors propose Exploratory-Assimilating Reflection (EAR), which pairs Exploratory Reflection (iterative search that bootstraps retrieval and collects candidate memories) with Assimilating Reflection (compressing and integrating retrieved items into a coherent working set). It is evaluated on long-horizon agent benchmarks requiring heterogeneous memory stores.</p>
+      <p><strong>Finding:</strong> EAR delivers high initial retrieval performance and sample-efficient adaptation relative to prior memory-retrieval methods, and handles mixed heterogeneous memory better. No effect sizes are reported in the abstract, but the architecture is directly relevant to Pillar 1 (controlled, attention-based episodic memory in transformers/agents).</p>
+    </div>
+    <div class="flag">⚠ Preprint; benchmark names and absolute gains not stated in the abstract — verify against the full paper before citing.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.17944" target="_blank">The Art of Not Forgetting</a>
+    </div>
+    <div class="paper-meta">
+      Atmuri A, Kumar A, Bhogarajula YR &middot; arXiv cs.AI, 2026-07-20 (preprint)
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Introduces CMP (Cognitive Memory Primitive), an architecture that represents inputs as sparse relational codes stored in a two-tier competitive memory and learns entirely through local, gradient-free updates — no backpropagation anywhere. It is used to test a specific hypothesis: that catastrophic forgetting, usually treated as a training-time defect patched with replay or regularization, is instead a structural consequence of how backpropagation assigns credit.</p>
+      <p><strong>Finding:</strong> A learning rule that is local and sparse by construction resists catastrophic forgetting without replay or regularization, reframing forgetting as an architectural rather than optimization failure. This dovetails with complementary-learning-systems thinking and is relevant to Pillars 1 and 3 (memory encoding and key-value-style storage).</p>
+    </div>
+    <div class="flag">⚠ Preprint; demonstration is computational/theoretical — no large-scale LM validation yet.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.17545" target="_blank">Retain or Consolidate? Budget-Dependent Operator Selection for Language Agent Memory</a>
+    </div>
+    <div class="paper-meta">
+      Kang Q, Liu M, Kai S, Liang K, Tang Z et al. &middot; arXiv cs.AI, 2026-07-20 (preprint)
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Language agents depend on memory across interactions, but limited context windows and inference cost cap how much can be used at once. The paper formalizes the trade-off between retention (keeping raw records — exact but budget-heavy) and consolidation (compressing/combining records — better coverage per token but risking loss of query-critical detail), and proposes budget-dependent operator selection between the two.</p>
+      <p><strong>Finding:</strong> Neither retention nor consolidation is universally preferable; the optimal strategy depends on the memory budget and the query. The work frames agent memory explicitly in consolidation terminology, which maps cleanly onto Pillar 1's lingering/episodic memory framing.</p>
+    </div>
+    <div class="flag">⚠ Preprint; the abstract reports the qualitative trade-off but no quantitative effect sizes.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.17117" target="_blank">Persistent Sparse Autoencoders: Learning Feature Timescales in Language Models</a>
+    </div>
+    <div class="paper-meta">
+      Luo H, Espinosa Zarlenga M, Jamnik M &middot; arXiv cs.CL, 2026-07-19 (preprint)
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Standard sparse autoencoders (SAEs) encode each token independently and discard information that persists across a sequence. The authors extend SAEs with a per-feature persistence coefficient that learns which features should persist and for how long, then evaluate on language-model activations.</p>
+      <p><strong>Finding:</strong> Persistent SAEs keep competitive reconstruction while learning a spectrum of feature timescales: fast features behave as locally interpretable detectors, slower features integrate across the sequence. This offers a mechanistic-interpretability window onto memory-like persistence in LLMs — a potentially useful probe for the lingering-memory project.</p>
+    </div>
+    <div class="flag">⚠ Preprint; persistence is learned post hoc on activations, not causal.</div>
+  </div>
+</div>
+
+<!-- Schema-Episodic -->
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://www.biorxiv.org/content/10.1101/2026.07.06.736898" target="_blank">Selective convergence and graded divergence of hippocampal and amygdala subregions using functional connectivity</a>
+    </div>
+    <div class="paper-meta">
+      Erig&uuml;c DY, Marsiglia M, John A, Bayrak S, Jakovcic A, DeKraker J et al. &middot; bioRxiv, posted 2026-07-18 (preprint; orig. sub. 2026-07-06)
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Using resting-state fMRI from 722 Human Connectome Project Young Adult participants, the authors mapped hippocampal and amygdalar subregions within a single cortex-wide functional-connectivity framework, quantifying how each MTL subregion is embedded into distributed isocortical systems.</p>
+      <p><strong>Finding:</strong> Hippocampal and amygdalar subregions show selective convergence (shared cortical targets) and graded divergence (subregion-specific embeddings), linking memory and affect systems along the medial-temporal axis. This is the only clearly Pillar-2-relevant item in the window and is a high-N (n=722) systems-mapping paper, though correlational.</p>
+    </div>
+    <div class="flag">⚠ Preprint; resting-state correlational design with no causal/manipulation — treat the convergence/divergence claims as descriptive.</div>
+  </div>
+</div>
+
+<!-- KV-Networks -->
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.17715" target="_blank">C&sup2;KV: Compressed and Composable KV Cache Reuse for Efficient LLM Inference</a>
+    </div>
+    <div class="paper-meta">
+      Du C, Chen J, Tang H, Liu K, Lan T et al. &middot; arXiv cs.CL, 2026-07-20 (preprint)
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Long-context LLM serving is bottlenecked by storing and accessing large KV caches. Existing KV-reuse methods cut prefill compute but ignore the storage/access cost; naive combination with compression often degrades. C&sup2;KV combines KV compression with non-prefix (composable) KV reuse so both costs fall together.</p>
+      <p><strong>Finding:</strong> The method enables compressed and composable KV-cache reuse, reducing the storage/access bottleneck while preserving the compute savings of reuse. This is squarely on Pillar 3 (KV memory networks) — it addresses how structured KV state is stored and reused under long contexts, alongside the position/event memory questions.</p>
+    </div>
+    <div class="flag">⚠ Preprint; engineering-focused with no mechanistic/behavioral claim — included for direct Pillar-3 relevance.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.18141" target="_blank">HyMCache: A KV Cache Framework for Multi-Turn LLM Serving with CXL-Hybrid Memory</a>
+    </div>
+    <div class="paper-meta">
+      Jang H, Song I, Noh SH, Kim J &middot; arXiv cs.DC/cs.LG, 2026-07-20 (preprint)
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Long-context, multi-turn, and agentic workloads increasingly reuse previously processed context, making KV-cache reuse essential. HyMCache integrates CXL-hybrid memory (small in-device DRAM + large SSD behind a CXL interface) to serve TB-scale reusable KV states, exploiting the read-dominant, predictable, append-only nature of multi-turn KV access. Evaluated on a real CXL-HM prototype in single-aggregator and PD-disaggregated serving.</p>
+      <p><strong>Finding:</strong> Under matched DRAM budget, HyMCache outperforms local LMCache by 3.0&times; (single-node) and 1.45&times; (PD-disaggregated); versus 1 TB distributed-DRAM Mooncake it incurs ~30% lower performance at 16&times; less DRAM. A systems-level contribution to scaling Pillar-3 KV memory to cluster scale.</p>
+    </div>
+    <div class="flag">⚠ Preprint; systems/engineering result, not a memory-mechanism claim.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.17019" target="_blank">Regularize or Localize: When Training-Time KV-Cache Geometry Pays Under Quantization</a>
+    </div>
+    <div class="paper-meta">
+      Sun L, Harn P-W, Zhang Z, He P, Qin X &middot; arXiv cs.LG, 2026-07-19 (preprint)
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Tests whether &sigma;<sub>reg</sub> — LeJEPA's anti-collapse objective — reshapes representations during standard autoregressive LM pretraining and whether the resulting geometry helps KV-cache quantization. They train 110M-parameter models on 10B FineWeb tokens.</p>
+      <p><strong>Finding:</strong> At &lambda;=0.01, &sigma;<sub>reg</sub> reduces hidden-state pairwise-cosine anisotropy by 38% with &lt;0.35% perplexity cost, but the change does not propagate from hidden states to the KV cache. Quantization gains require localized (per-head/layer) geometry, not just global regularization — a useful constraint for Pillar-3 KV-compression work.</p>
+    </div>
+    <div class="flag">⚠ Preprint; modest scale (110M) — check whether the anisotropy&rarr;KV gap persists at frontier scale.</div>
+  </div>
+</div>
+
+<!-- Encoding-Retrieval -->
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://www.nature.com/articles/s41467-026-75705-2" target="_blank">Redundant prefrontal hemispheres adapt storage strategy to working memory demands</a>
+    </div>
+    <div class="paper-meta">
+      Tschiersch M, Umakantha A, Williamson RC, Smith MA, Barbosa J, Compte A &middot; Nature Communications, 2026-07-20
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Simultaneous bilateral prefrontal cortex recordings from three male macaque monkeys performing a visuo-spatial working-memory task, combined with attractor-network simulations and validation in human and monkey data. Tests two opposing theories: a specialized contralateral architecture vs. a redundant fail-safe one.</p>
+      <p><strong>Finding:</strong> Both hemispheres predicted behavioral imprecision equally; decoding errors were only weakly correlated between hemispheres; and serial dependence stayed local within hemispheres — a redundant, weakly coupled organization. Attractor simulations showed redundancy improved precision when demands were below capacity, while weak interhemispheric coupling raised capacity under high demand via hemispheric specialization, reconciling the two theories.</p>
+    </div>
+    <div class="flag">⚠ n=3 monkeys; the human validation mitigates but does not replace the small N.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://journals.jneurosci.org/doi/10.1523/JNEUROSCI.0543-26.2026" target="_blank">Working memory deficits in hippocampal amnesia are associated with apathy</a>
+    </div>
+    <div class="paper-meta">
+      Attaallah B, Maio MR, Tabi YA, Nobis L, Husain M et al. &middot; Journal of Neuroscience, 2026-07-20 (online ahead of print)
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> 27 patients with LGI1-antibody limbic encephalitis (predominant hippocampal involvement) vs. 27 age- and gender-matched healthy controls, tested on an object-location continuous-report working-memory task analyzed with Bayesian mixture modeling.</p>
+      <p><strong>Finding:</strong> Patients showed predominantly elevated misbinding errors — incorrectly associating objects with non-target locations — with unaltered guessing and only marginally reduced precision. Critically, apathy was positively associated with misbinding exclusively in patients, independent of depression, suggesting hippocampal pathology degrades WM binding and that apathy mediates part of the deficit.</p>
+    </div>
+    <div class="flag">⚠ Clinical cross-sectional sample (n=27, 21M/6F); causal direction of the apathy link is correlational.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1014535" target="_blank">Beyond memory capacity: A probabilistic, dual store model of visuospatial working memory</a>
+    </div>
+    <div class="paper-meta">
+      Aponte EA, Perumal TM, Cormack F, Chatham CH &middot; PLoS Computational Biology, 2026-07-20
+      <span class="tag tag-er">Encoding-Retrieval</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A computational model of visuospatial working-memory dynamics that extends classical resource/stick ideas, fit to data from three clinical trials (neurotypicals and autistic participants on a smartphone-based sequential VSWM task) and a large prodromal-Alzheimer's trial.</p>
+      <p><strong>Finding:</strong> Visual information in the sequential task is stored in independent pools of contrasting resources with perfect and imperfect retrieval rates, capturing how items are stored, retained, and removed as new information arrives. The paper argues computational models plus remote cognitive testing are now mature for large-scale clinical WM research — a useful modeling scaffold for Pillar-2/3 memory dynamics.</p>
+    </div>
+    <div class="flag">⚠ Model is fit to a smartphone sequential task; generalizability to classic WM paradigms is untested.</div>
+  </div>
+</div>
+
+<!-- Cross-cutting (no standalone papers this run) -->
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+  <div class="empty-section">No standalone cross-cutting papers today — cross-cutting relevance is captured as secondary tags on the LLM-Memory, Schema-Episodic, and Encoding-Retrieval cards above.</div>
+</div>
+
+<!-- Peripheral (none) -->
+<div class="section">
+  <div class="section-header tag-peri">Peripheral</div>
+  <div class="empty-section">No peripheral papers today.</div>
+</div>
+
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>VarRate (arXiv 2607.15498, submitted 16 Jul)</strong> — training-free variable-rate KV compression. Strong and on-Pillar-3, but submitted 16 Jul, outside the since-last-run (07-19) window; carry to a future run if not yet reported.</li>
+    <li><strong>HOLA / Hippocampal Linear Attention (arXiv 2607.02303, submitted 2 Jul)</strong> — already reported by the 07-11 run (Cui, HOLA); excluded as duplicate.</li>
+    <li><strong>SeKV (arXiv 2606.31145), MosaicKV (2607.00760), FreqDepthKV (2607.06519)</strong> — KV-cache compression, all submitted before the 07-19 window.</li>
+    <li><strong>Stronger memories through smarter stimulation (PMC commentary)</strong> — opinion/meta-commentary on memory TMS, no new data/model; excluded per quality standards.</li>
+    <li><strong>Spatial and semantic memory reorganize a hippocampal long-axis gradient (PNAS, 14 Apr 2026)</strong> — strong hippocampal paper but outside the 48h window.</li>
+    <li><strong>Duan et al., Combined ABM + WM Training in methamphetamine use disorder (Subst Use Misuse, 07-19)</strong> — clinical RCT, narrow intervention focus without mechanistic memory insight; excluded.</li>
+    <li><strong>Numerous RAG / context-pruning arXiv hits (07-19/20)</strong> — e.g., SWE-Pruner Pro, Salience Induction against Multi-Hop RAG, SALT, Talaria, Vector Search as NN Matching — matched "retrieval-augmented"/"long-context" keywords but are engineering/IR papers without memory-mechanism relevance; excluded.</li>
+  </ul>
+</div>
+
+</body>
+</html>
