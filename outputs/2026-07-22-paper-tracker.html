@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker &mdash; 2026-07-22</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .summary-table .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+</style>
+</head>
+<body>
+
+<h1>🧠 Daily Paper Tracker</h1>
+<div class="date">2026-07-22</div>
+
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.19345" target="_blank">Copy Less, Ground More: Overcoming Repetitive Copying in Long-Context Reasoning via Evidence-Aware Reinforcement Learning</a></td>
+        <td class="col-authors">Lizhe Fang, Weizhou Shen, Tianyi Tang, Yisen Wang</td>
+        <td class="col-finding">Repetitive copying is pervasive and intensifies with context length; the root cause is insufficient grounding in distractor-rich contexts. The evidence-aware RL...</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.18639" target="_blank">Mark, Don&#x27;t Erase: Token Inoculation for Dual-Use Knowledge in LLMs</a></td>
+        <td class="col-authors">Seunghyun Lee, Dongyoon Han, Sangdoo Yun</td>
+        <td class="col-finding">Hazardous knowledge can be retained yet behaviorally gated by the privileged token, avoiding both the competence tax of erasure and the over-refusal of refusal ...</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42477457/" target="_blank">Adolescent exposure to the psychedelic 25C-NBOMe in rats induces lasting competitive avoidance through disrupted hippocampal-prefrontal synchrony</a></td>
+        <td class="col-authors">Yu, Zhang, Li, Hu et al.</td>
+        <td class="col-finding">Adolescent exposure produced lasting competitive avoidance and disrupted DMN synchrony, with reduced theta coherence between ventral hippocampus and PFC. Implic...</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42476972/" target="_blank">Hippocampal ripples initiate cortical dimensionality expansion for memory retrieval</a></td>
+        <td class="col-authors">Kerrén, Michelmann, Doeller</td>
+        <td class="col-finding">Cortical dimensionality increased following ripple events during correct (but not incorrect) retrieval; this expansion correlated with faster reaction times and...</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42474458/" target="_blank">Myosin IIB Maintains Long-Term Memory</a></td>
+        <td class="col-authors">Silva, Marcondes, Lunardi, Popik et al.</td>
+        <td class="col-finding">Inhibiting myosin IIB in the hippocampus impairs long-term fear-memory consolidation but spares short-term memory; pretest blockade hinders retrieval; blocking ...</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.19195" target="_blank">Free energy landscape of Dense Associative Memory</a></td>
+        <td class="col-authors">Sumedha, Abhishek Singh</td>
+        <td class="col-finding">The framework shows how memory retrieval depends on the initial state in higher-order dense networks and yields exact retrieval-phase boundaries. A principled a...</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42475046/" target="_blank">When deliberate errors boost learning: Semantic constraints on the derring effect</a></td>
+        <td class="col-authors">Thomas, Mera, Higham, Seabrooke</td>
+        <td class="col-finding">Deliberate-error generation benefited memory for complex information under specific semantic constraints (replicating and extending the derring effect), with th...</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42475045/" target="_blank">More memorable scenes and faces are learned better and forgotten more slowly</a></td>
+        <td class="col-authors">Ünal, Fiechter, Benjamin</td>
+        <td class="col-finding">High-memorability images (faces and scenes) are both learned better and forgotten more slowly than low-memorability ones; the effect is item-driven rather than ...</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42477561/" target="_blank">Cholinergic inhibition disrupts retrieval-specific phosphorylation of CaMKII-α and CaMKII-β alongside ERK hyperactivation in the hippocampus during novel object recognition memory</a></td>
+        <td class="col-authors">Farrokhi, Askari, SoukhakLari, Moosavi</td>
+        <td class="col-finding">Cholinergic inhibition disrupted retrieval-specific CaMKII phosphorylation while ERK was hyperactivated, linking cholinergic dysfunction to retrieval failure vi...</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42473279/" target="_blank">The Goal Bias Emerges During Motion Event Perception and Affects Language Production and Memory</a></td>
+        <td class="col-authors">Chen, Papafragou, Trueswell</td>
+        <td class="col-finding">An online attentional bias for Goals over Sources emerges during initial event encoding and predicts later memory (Goals are remembered more accurately). Connec...</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42475246/" target="_blank">Serial dependence predicts generalization in perceptual learning</a></td>
+        <td class="col-authors">Pinchuk-Yacobi, Sagi, Bonneh</td>
+        <td class="col-finding">Short-term memory traces (SDEs) reached further back in time than previously reported and persisted after eight days of practice; SDE magnitude predicted learni...</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.19345" target="_blank">Copy Less, Ground More: Overcoming Repetitive Copying in Long-Context Reasoning via Evidence-Aware Reinforcement Learning</a>
+    </div>
+    <div class="paper-meta">
+      Lizhe Fang, Weizhou Shen, Tianyi Tang, Yisen Wang &middot; arXiv cs.CL &middot; 2026-07-21
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> They identify a &#x27;repetitive copying&#x27; failure mode in long-context LLMs, where models copy input text verbatim into their reasoning traces instead of solving. They decompose each prompt into task-relevant key evidence versus irrelevant distractor context and train an evidence-aware RL objective that rewards grounding the answer in key evidence rather than wholesale copying; evaluated across several frontier long-context LLMs.</p>
+      <p><strong>Finding:</strong> Repetitive copying is pervasive and intensifies with context length; the root cause is insufficient grounding in distractor-rich contexts. The evidence-aware RL reduces copying and improves reasoning on long-context benchmarks. Directly relevant to Pillar 1 (how attention uses long context and what survives under distraction).</p>
+    </div>  <div class="flag">⚠ Mostly an RL/engineering result; the &#x27;grounding&#x27; claim is descriptive, not a causal attention-mechanism analysis. Preprint, not peer-reviewed.</div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.18639" target="_blank">Mark, Don&#x27;t Erase: Token Inoculation for Dual-Use Knowledge in LLMs</a>
+    </div>
+    <div class="paper-meta">
+      Seunghyun Lee, Dongyoon Han, Sangdoo Yun &middot; arXiv cs.CL &middot; 2026-07-21
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Rather than unlearning or erasing hazardous dual-use knowledge, they bind a special control token to hazardous content during continued pre-training, then behaviorally gate it at inference (conditioning, not reduction). They test retained adjacent-domain competence and over-refusal relative to erasure and refusal-training baselines.</p>
+      <p><strong>Finding:</strong> Hazardous knowledge can be retained yet behaviorally gated by the privileged token, avoiding both the competence tax of erasure and the over-refusal of refusal training. Relevant to Pillar 1 as a memory-editing/forgetting mechanism (gating vs. deletion of stored knowledge).</p>
+    </div>  <div class="flag">⚠ Safety-oriented; the &#x27;memory&#x27; framing is knowledge gating, not episodic memory. Preprint, not peer-reviewed.</div>
+  </div>
+</div>
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42477457/" target="_blank">Adolescent exposure to the psychedelic 25C-NBOMe in rats induces lasting competitive avoidance through disrupted hippocampal-prefrontal synchrony</a>
+    </div>
+    <div class="paper-meta">
+      Yu, Zhang, Li, Hu et al. &middot; Nature Neuroscience &middot; 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Repeated adolescent (but not adult) exposure to the serotonergic psychedelic 25C-NBOMe in male rats; multisite recordings probed default-mode-network (DMN) synchrony, specifically theta-band coherence between ventral hippocampus and prefrontal cortex during social behavior.</p>
+      <p><strong>Finding:</strong> Adolescent exposure produced lasting competitive avoidance and disrupted DMN synchrony, with reduced theta coherence between ventral hippocampus and PFC. Implicates hippocampus–PFC synchrony in an enduring, social-behavior change — relevant to Pillar 2 (hippocampal–cortical interactions and schema-level control).</p>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42476972/" target="_blank">Hippocampal ripples initiate cortical dimensionality expansion for memory retrieval</a>
+    </div>
+    <div class="paper-meta">
+      Kerrén, Michelmann, Doeller &middot; Nature Communications &middot; 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Intracranial EEG in patients with pharmacoresistant epilepsy during an episodic memory task; they analyzed cortical dimensionality around hippocampal ripple events during correct versus incorrect retrieval and measured hippocampal-theta / cortical-gamma phase-amplitude coupling.</p>
+      <p><strong>Finding:</strong> Cortical dimensionality increased following ripple events during correct (but not incorrect) retrieval; this expansion correlated with faster reaction times and reinstatement of the target association. Hippocampal ripples initiate the low-dimensional→high-dimensional cortical expansion thought to reconstruct past experiences — direct human evidence for the ripple-driven reinstatement model (Pillar 2).</p>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42474458/" target="_blank">Myosin IIB Maintains Long-Term Memory</a>
+    </div>
+    <div class="paper-meta">
+      Silva, Marcondes, Lunardi, Popik et al. &middot; Hippocampus &middot; 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Pharmacological inhibition of myosin IIB (blebbistatin / p-nitro-blebbistatin) in hippocampus, amygdala, and insular cortex of rodents; tested fear-memory consolidation (post-training) and retrieval (pretest) with short- versus long-term memory assays.</p>
+      <p><strong>Finding:</strong> Inhibiting myosin IIB in the hippocampus impairs long-term fear-memory consolidation but spares short-term memory; pretest blockade hinders retrieval; blocking 24 h after training impairs distinct memory phases. Positions myosin IIB — a dendritic-spine morphology protein — as necessary for both consolidation and retrieval (Pillar 2).</p>
+    </div>  <div class="flag">⚠ Rodent fear-conditioning; standard pharmacological-inhibition off-target caveats apply.</div>
+  </div>
+</div>
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.19195" target="_blank">Free energy landscape of Dense Associative Memory</a>
+    </div>
+    <div class="paper-meta">
+      Sumedha, Abhishek Singh &middot; arXiv cs.AI &middot; 2026-07-21
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Using large-deviations theory they derive a general free-energy functional for a broad class of associative memories (including dense associative memories), reproducing classical Hopfield results and deriving the temperature-dependent free energy for polynomial-interaction / Log-Sum-Exponential-activation dense networks; they evaluate the disorder-averaged ground-state energy in the extensive limit.</p>
+      <p><strong>Finding:</strong> The framework shows how memory retrieval depends on the initial state in higher-order dense networks and yields exact retrieval-phase boundaries. A principled analytical handle on associative-memory retrieval dynamics — directly relevant to Pillar 3 (KV / associative memory networks, capacity vs. retrieval).</p>
+    </div>  <div class="flag">⚠ Preprint, not peer-reviewed; analytical result, not a learning simulation.</div>
+  </div>
+</div>
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42475046/" target="_blank">When deliberate errors boost learning: Semantic constraints on the derring effect</a>
+    </div>
+    <div class="paper-meta">
+      Thomas, Mera, Higham, Seabrooke &middot; J. Exp. Psychol.: Learning, Memory, & Cognition &middot; 2026
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Four preregistered experiments; participants studied weakly related word pairs in errorful (generating deliberate errors) versus errorless conditions, then completed a cued-recall test; they tested semantic-relatedness constraints on the &#x27;derring effect&#x27; under controlled conditions.</p>
+      <p><strong>Finding:</strong> Deliberate-error generation benefited memory for complex information under specific semantic constraints (replicating and extending the derring effect), with theoretical resolution toward pretesting-like mechanisms. Relevant to retrieval practice / testing-effect and generation-based encoding (Pillar 1 / ER).</p>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42475045/" target="_blank">More memorable scenes and faces are learned better and forgotten more slowly</a>
+    </div>
+    <div class="paper-meta">
+      Ünal, Fiechter, Benjamin &middot; J. Exp. Psychol.: Learning, Memory, & Cognition &middot; 2026
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A continuous-recognition procedure (study events interleaved with test trials) plus a traditional study–test procedure; forgetting functions were estimated with a hierarchical Bayesian model accounting for subject, item, and retention-interval effects.</p>
+      <p><strong>Finding:</strong> High-memorability images (faces and scenes) are both learned better and forgotten more slowly than low-memorability ones; the effect is item-driven rather than purely an encoding- or retrieval-stage difference. Relevant to item-level memorability and forgetting functions (ER).</p>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42477561/" target="_blank">Cholinergic inhibition disrupts retrieval-specific phosphorylation of CaMKII-α and CaMKII-β alongside ERK hyperactivation in the hippocampus during novel object recognition memory</a>
+    </div>
+    <div class="paper-meta">
+      Farrokhi, Askari, SoukhakLari, Moosavi &middot; BMC Neuroscience &middot; 2026
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> In an Alzheimer&#x27;s-disease model they assessed retrieval-specific molecular signaling in the hippocampus during novel-object recognition, measuring CaMKII-α/β phosphorylation and ERK activation under cholinergic inhibition.</p>
+      <p><strong>Finding:</strong> Cholinergic inhibition disrupted retrieval-specific CaMKII phosphorylation while ERK was hyperactivated, linking cholinergic dysfunction to retrieval failure via divergent kinase signaling. Relevant to retrieval-specific molecular mechanisms (ER).</p>
+    </div>  <div class="flag">⚠ AD-pathology context; the mechanistic chain is correlational, not causal.</div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42473279/" target="_blank">The Goal Bias Emerges During Motion Event Perception and Affects Language Production and Memory</a>
+    </div>
+    <div class="paper-meta">
+      Chen, Papafragou, Trueswell &middot; Cognitive Science &middot; 2026
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Eye-tracking during motion-event viewing and description, with later memory tested for Goals versus Sources; compared free-inspection versus description conditions to localize the Goal/Source asymmetry to online encoding.</p>
+      <p><strong>Finding:</strong> An online attentional bias for Goals over Sources emerges during initial event encoding and predicts later memory (Goals are remembered more accurately). Connects event-encoding biases to subsequent memory (ER / event memory).</p>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42475246/" target="_blank">Serial dependence predicts generalization in perceptual learning</a>
+    </div>
+    <div class="paper-meta">
+      Pinchuk-Yacobi, Sagi, Bonneh &middot; eLife &middot; 2026
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Reanalysis of &gt;200,000 trials from a visual texture-discrimination task under three conditions that differentially modulate generalization; they quantified attractive serial-dependence effects (SDEs) and their temporal reach and persistence.</p>
+      <p><strong>Finding:</strong> Short-term memory traces (SDEs) reached further back in time than previously reported and persisted after eight days of practice; SDE magnitude predicted learning generalization in conditions known to support it. Implicates temporal/sequential context (prior-trial traces) in long-term learning — relevant to Pillar 3 (temporal context models) and cross-cutting learning theory.</p>
+    </div>
+  </div>
+</div>
+
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>Nat Commun &mdash; Redundant prefrontal hemispheres adapt storage strategy to working memory demands (Tschiersch et al.)</strong> &mdash; Duplicate of Run #17 (2026-07-21).</li>
+    <li><strong>J Neurosci &mdash; Working memory deficits in hippocampal amnesia are associated with apathy (Attaallah et al., n=27 LGI1)</strong> &mdash; Duplicate of Run #17 (2026-07-21).</li>
+    <li><strong>PLoS Comput Biol &mdash; Beyond memory capacity: probabilistic dual-store model of visuospatial WM (Aponte et al.)</strong> &mdash; Duplicate of Run #17 (2026-07-21).</li>
+    <li><strong>bioRxiv 2026-07-19 preprints (Drosophila neural drift; temporal-expectations~episodic retrieval; NHP planning; FC gradients; neuro-estrogen)</strong> &mdash; Posted 2026-07-19; already scanned by Run #16 (2026-07-19) and judged weak / non-actionable.</li>
+    <li><strong>arXiv 2607.19122 &mdash; Code Division Modulation Layers Against Forgetting (gait ID)</strong> &mdash; Narrow applied biometrics; catastrophic forgetting but no mechanistic insight.</li>
+    <li><strong>arXiv 2607.19060 &mdash; deep learning prediction of adhesive forces</strong> &mdash; 'short-term memory' false positive (sequence LSTM), not memory research.</li>
+    <li><strong>arXiv 2607.18975 &mdash; Mi-Memory lifecycle framework</strong> &mdash; Engineering architecture, no new data or model.</li>
+    <li><strong>arXiv 2607.19317 &mdash; CircuitKIT toolkit</strong> &mdash; Library/tooling paper, not a new scientific finding.</li>
+    <li><strong>arXiv 2607.18615 &mdash; Stochastic Meta-Unlearning (VLM)</strong> &mdash; Narrow vision-language unlearning; outside scope.</li>
+    <li><strong>arXiv 2607.18626 &mdash; PLAID-PRF retrieval</strong> &mdash; Information-retrieval engineering; not memory mechanism.</li>
+    <li><strong>PubMed &mdash; celastrol / seipin / CBD / naproxen / linarin AD-drug and clinical papers</strong> &mdash; Narrow clinical or pharmacological, no computational relevance.</li>
+    <li><strong>WebSearch &mdash; AAFLOW+ (2607.10987), SeKV (2606.31145), JoLT (2607.12550), FreqDepthKV (2607.06519)</strong> &mdash; KV-cache engineering preprints outside the 2026-07-21–07-22 window.</li>
+  </ul>
+</div>
+
+</body>
+</html>
