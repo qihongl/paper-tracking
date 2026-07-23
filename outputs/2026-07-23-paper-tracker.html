@@ -70,7 +70,7 @@
 <body>
 
 <h1>🧠 Daily Paper Tracker</h1>
-<div class="date">2026-07-23 &middot; Thursday &middot; 11 papers (5 Schema-Episodic, 2 KV-Networks, 3 Cross-cutting, 1 Peripheral) &middot; merged hourly re-run</div>
+<div class="date">2026-07-23 &middot; Thursday &middot; 12 papers (6 Schema-Episodic, 2 KV-Networks, 3 Cross-cutting, 1 Peripheral) &middot; merged hourly re-run (Run #21)</div>
 
 <div class="summary-table">
   <table>
@@ -88,6 +88,12 @@
         <td class="col-title"><a href="https://doi.org/10.1038/s42256-026-01274-0" target="_blank">A neural network model of free recall learns multiple memory strategies</a></td>
         <td class="col-authors">Li, Jensen, …, Lu, Mattar</td>
         <td class="col-finding">RNNs trained on free recall discover an index-based "memory palace" strategy beyond classical temporal-context chaining.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema</td>
+        <td class="col-title"><a href="https://doi.org/10.1126/science.aeh9302" target="_blank">Parallel independent voltage computing along dendrites of CA3 pyramidal neurons</a></td>
+        <td class="col-authors">Noguchi, Terada, …, Losonczy</td>
+        <td class="col-finding">CA3 dendrites act as independent voltage-computing units that conditionally couple to the soma: retaining prior reward maps when the goal changes, pre-activating novel-environment patterns (prediction), and replaying during rest — one neuron computes memory, perception, and prediction in parallel.</td>
       </tr>
       <tr>
         <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema</td>
@@ -174,6 +180,21 @@
       <p><strong>Approach:</strong> Recurrent neural networks were trained end-to-end on a canonical free-recall task and then analyzed to recover the strategies they discovered, without being hand-coded with a temporal-context model (TCM).</p>
       <p><strong>Finding:</strong> The best models do <em>not</em> rely on pure TCM-style temporal chaining. Instead they learn an index-based retrieval mechanism resembling the method of loci / "memory palace," plus several other human-like strategies — showing free recall is subserved by a family of strategies, not a single chaining rule. Directly relevant to Pillar 3 (list memory) and to your free-recall / TCM modeling: it challenges TCM as the sole computational account and offers an explicit key→item retrieval alternative.</p>
       <div class="flag">★ From your own group — Qihong Lu is a co-author (Nature Machine Intelligence version of the bioRxiv preprint 10.1101/2025.09.25.678592, already in the dedup store).</div>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1126/science.aeh9302" target="_blank">Parallel independent voltage computing along dendrites of CA3 pyramidal neurons</a>
+    </div>
+    <div class="paper-meta">
+      Asako Noguchi, Satoshi Terada, George N. Zakka, … Attila Losonczy (Columbia / UT Southwestern) &middot; Science, 16 Jul 2026 (Vol. 393, Issue 6808, pp. 306–312)
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> In vivo subthreshold voltage imaging across dendrites and somata of mouse CA3 pyramidal neurons during VR-guided navigation, using the JEDI3sub genetically encoded voltage indicator, a 3D acousto-optic microscope, and real-time motion correction. Two behavioral conditions probed local reward changes versus a global environment switch, and rest periods were recorded to assess reactivation.</p>
+      <p><strong>Finding:</strong> The CA3 dendritic arbor is composed of multiple independent computational subunits whose voltage activity conditionally couples to or dissociates from the somatic output depending on behavioral state. In a familiar environment dendrites and soma co-vary; when reward location changes, the soma rapidly re-maps while some distal dendrites retain the prior representation (a subcellular memory trace); when exploring a novel environment, dendritic activity <em>leads</em> the soma, pre-activating the pattern the soma later adopts (prediction); during rest, dendrites replay navigation activity. A single CA3 neuron thus carries past-memory, present-input, and future-prediction in parallel via compartmentalized computation — a mechanistic substrate that expands hippocampal place-cell representational capacity well beyond the point-neuron assumption, and a concrete biological target for the CA3 "key→position" mapping in KV memory networks (Pillar 3).</p>
     </div>
   </div>
 
@@ -354,7 +375,8 @@
     <li><strong>C²KV (2607.17715), HyMCache (2607.18141), SeKV (2606.31145), JoLT (2607.12550), DepthWeave-KV (2607.06523), FreqDepthKV (2607.06519), HiLS-Attention (2607.02980)</strong> — KV/LLM arXiv papers from Run #17 or earlier (or out-of-window July 20 engineering); excluded.</li>
     <li><strong>PubMed edat 2026/07/22→07/23 (43 PMIDs)</strong> — 38 keyword hits were weak matches: in-context-learning false positives in radiology-reporting letters, hippocampal toxicology/clinical, developmental-psychology working-memory, and old-DOI re-indexes (2003–2023); the 3 strong memory-mechanism papers (eLife.110499, arcr.v38.2.04, pneurobio.2026.102943) are Run #19 duplicates.</li>
     <li><strong>bioRxiv details API 2026-07-22→07-23 (202 preprints, 142 new)</strong> — 0 matched the keyword matrix after date filtering; the memory-relevant preprints in the window were posted 07-21 (already Run #19).</li>
-    <li><strong>Neuron (Jul 15 issue), Current Biology (Jul 20), Trends in Cognitive Sciences (Jul), Nature Human Behaviour (Jul), PNAS (Jul 22), Science (Jul 16)</strong> — scanned directly; no memory-mechanism papers in the 07-09→07-23 window.</li>
+    <li><strong>Neuron (Jul 15 issue), Current Biology (Jul 20), Trends in Cognitive Sciences (Jul), Nature Human Behaviour (Jul), PNAS (Jul 22), Science (Jul 16)</strong> — scanned directly; the CA3-dendrite voltage-computing paper (Noguchi, Terada, Losonczy, <a href="https://doi.org/10.1126/science.aeh9302" target="_blank">10.1126/science.aeh9302</a>) was published 16 Jul but missed by the 07-16 runs and is now included as the 6th Schema-Episodic entry (at the 7-day window edge, surfaced via 23 Jul science-news coverage). All other Science/Neuron/CB/TiCS/NatHumBeh/PNAS items in the window were out-of-scope, commentaries, or methods papers.</li>
+    <li><strong>Run #21 (2026-07-23 11:15) sources</strong> — bioRxiv details API (2026-07-23 same-day: "no posts found", nothing indexed in the 1 h since Run #20); PubMed esearch (edat ≥ 2026/07/23: 0 hits, indexing lag); arXiv API (HTTP 429 rate-limited on every retry, newest v1 still 2026-07-21); 3 WebSearches (LLM/KV, hippocampus/Nat Commun/eLife, Science/Neuron/Nat Neurosci). Only the Science CA3 paper was genuinely new-and-on-pillar; all other hits were Run #19/#20 duplicates, out-of-window (Nat Commun hippocampus pages Jan–Jul 11; Nat Neurosci dHPC–vHPC sleep paper s41593-026-02252-w = 01 Apr 2026), or out-of-scope (Neuron food-reward dopamine 10.1016/j.neuron.2026.07.002; Nat Neurosci PD-1 microglia vasculature 10.1038/s41593-026-02378-x).</li>
     <li><strong>"How do we evaluate and learn from others' memories?" (Trends Cog Sci, S1364-6613(25)00277-3)</strong> — 2025 review, no new data; excluded as commentary.</li>
     <li><strong>"A unifying framework from neural superposition to sparse interpretable codes" (Nat Mach Intell, s42256-026-01259-z)</strong> — Perspective on superposition/interpretability; no new data, excluded as commentary.</li>
     <li><strong>Nature Communications hippocampus / learning-memory subject pages (Huh et al. replay-detection 04 Jul; Koh et al. astrocytic ankyrin-2 09 Jul; Kipper et al. voltage imaging 01 Jul; etc.)</strong> — high-quality but published 01–11 Jul, outside the 7-day window; not included.</li>

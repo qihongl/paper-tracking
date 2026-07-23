@@ -6,34 +6,38 @@
 <title>Paper Tracker — Index</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background: #f8f9fa; color: #1a1a1a; line-height: 1.6; max-width: 760px; margin: 0 auto; padding: 32px 20px; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
   h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
   .sub { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .summary { font-size: 13px; color: #555; margin-bottom: 24px; }
   table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 6px; overflow: hidden;
     box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
   th { text-align: left; padding: 10px 12px; background: #f1f5f9; font-size: 11px; font-weight: 600;
     text-transform: uppercase; letter-spacing: 0.5px; color: #555; border-bottom: 2px solid #e5e7eb; }
-  td { padding: 10px 12px; border-bottom: 1px solid #f1f5f9; }
+  td { padding: 10px 12px; border-bottom: 1px solid #f1f5f9; font-size: 14px; }
   tr:hover { background: #f8fafc; }
-  .date-cell { font-weight: 500; white-space: nowrap; }
-  .count-cell { font-weight: 600; color: #1d4ed8; }
+  .date-cell { white-space: nowrap; font-weight: 500; }
+  .count-cell { width: 60px; text-align: center; color: #1d4ed8; font-weight: 600; }
   .link-cell a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
   .link-cell a:hover { text-decoration: underline; }
-  .total { margin-top: 16px; font-size: 13px; color: #666; }
 </style>
 </head>
 <body>
 <h1>🧠 Daily Paper Tracker</h1>
-<div class="sub">Computational cognitive neuroscience &amp; machine-memory reading list</div>
+<div class="sub">Computational cognitive neuroscience &amp; memory — arXiv, bioRxiv, PubMed, and high-impact journals</div>
+<div class="summary">197 papers tracked across 17 daily reports.</div>
 <table>
   <thead>
-    <tr><th>Date</th><th>Papers</th><th>Report</th></tr>
+    <tr><th>Date</th><th style="text-align:center">Papers</th><th>Report</th></tr>
   </thead>
   <tbody>
       <tr>
         <td class="date-cell">July 23, 2026</td>
-        <td class="count-cell">11</td>
+        <td class="count-cell">12</td>
         <td class="link-cell"><a href="outputs/2026-07-23-paper-tracker.html">View report &rarr;</a></td>
       </tr>
       <tr>
@@ -118,6 +122,5 @@
       </tr>
   </tbody>
 </table>
-<div class="total"><strong>196</strong> papers across 17 daily reports.</div>
 </body>
 </html>
