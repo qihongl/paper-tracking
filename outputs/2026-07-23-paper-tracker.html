@@ -70,7 +70,7 @@
 <body>
 
 <h1>🧠 Daily Paper Tracker</h1>
-<div class="date">2026-07-23 &middot; Thursday &middot; 9 papers (5 Schema-Episodic, 3 Cross-cutting, 1 Peripheral)</div>
+<div class="date">2026-07-23 &middot; Thursday &middot; 11 papers (5 Schema-Episodic, 2 KV-Networks, 3 Cross-cutting, 1 Peripheral) &middot; merged hourly re-run</div>
 
 <div class="summary-table">
   <table>
@@ -114,6 +114,18 @@
         <td class="col-finding">A brain-inspired generative model using cognitive maps + local synaptic plasticity performs planning and imagination without a world model.</td>
       </tr>
       <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV</td>
+        <td class="col-title"><a href="https://aclanthology.org/2026.acl-long.1250/" target="_blank">Question Tells You Where the Answer Is: Intention-aware Long-Context KV Cache Compression</a></td>
+        <td class="col-authors">Zhao, Feng, Qin et al.</td>
+        <td class="col-finding">Intention-token attention (reflecting the user's goal) drives block-wise KV eviction: 128K→2K cache, 6.3× decode speedup, 7.8× memory efficiency.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV</td>
+        <td class="col-title"><a href="https://aclanthology.org/2026.findings-acl.201/" target="_blank">HqeKV: Towards Hybrid Quantization and Eviction for KV Cache in Long-Context LLM Inference</a></td>
+        <td class="col-authors">Wang, Gu, Li et al.</td>
+        <td class="col-finding">Joint quantization+eviction with a learned per-element optimizer and a joint K–V importance metric improves quality under fixed memory budgets.</td>
+      </tr>
+      <tr>
         <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross</td>
         <td class="col-title"><a href="https://doi.org/10.7554/eLife.108223" target="_blank">Two time scales of adaptation in human learning rates</a></td>
         <td class="col-authors">Simoens, Braem, Verguts</td>
@@ -143,7 +155,7 @@
 
 <div class="section">
   <div class="section-header tag-llm">LLM-Memory</div>
-  <div class="empty-section">No new LLM/transformer-memory papers found. The arXiv API's newest v1 submissions are dated 2026-07-21 (the 07-22/07-23 announcement batches have not yet been posted to the API), and the PubMed/WebSearch LLM hits this window were clinical radiology letters or pre-window arXiv work (C²KV, HyMCache, SeKV, JoLT — all Run #17 or earlier). Pillar 1 will refresh once the next arXiv batch lands.</div>
+  <div class="empty-section">No new LLM/transformer-memory papers found in this cycle. The arXiv API remained rate-limited (HTTP 429) on every category query, and its newest v1 submissions are still dated 2026-07-21 (the 07-22/07-23 announcement batches have not yet been posted to the API). The PubMed/WebSearch LLM hits this window were clinical radiology letters about LLM reporting (in-context-learning keyword false positives) or pre-window arXiv work (C²KV, HyMCache, SeKV, JoLT — all Run #17 or earlier). Pillar 1 will refresh once the next arXiv batch lands.</div>
 </div>
 
 <div class="section">
@@ -226,7 +238,39 @@
 
 <div class="section">
   <div class="section-header tag-kv">KV-Networks</div>
-  <div class="empty-section">No new key-value / serial-position / temporal-context network papers this cycle. Same cause as the LLM-Memory gap: the arXiv KV-cache and associative-memory batches are on the ~1-day announcement lag and their newest v1s (e.g., C²KV 2607.17715, HyMCache 2607.18141) were already captured by Run #17. The free-recall RNN above (Li et al.) is listed under Schema-Episodic but is genuinely KV-relevant (index-based key→item retrieval) if you want a Pillar-3 anchor this week.</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://aclanthology.org/2026.acl-long.1250/" target="_blank">Question Tells You Where the Answer Is: Intention-aware Long-Context KV Cache Compression</a>
+    </div>
+    <div class="paper-meta">
+      Liang Zhao, Xiaocheng Feng, Bing Qin et al. (Harbin Institute of Technology) &middot; ACL 2026 (Long Papers), July 2026
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> IntentKV is a query-aware KV-cache eviction method that first separates "intention tokens" — context tokens whose attention distribution reflects the user's semantic goal — from ordinary context tokens, then selects cache blocks by block-wise cumulative attention aggregated over intention tokens, reducing a 128K context to a 2K cache.</p>
+      <p><strong>Finding:</strong> On diverse long-context benchmarks the method holds performance while cutting the KV cache from 128K→2K tokens, yielding 6.3× faster decoding and 7.8× better memory efficiency over the default setting. Directly on-pillar for KV memory networks (Pillar 3): it operationalizes which key–value entries survive as a function of the query/goal — the same query- and format-dependence question at the heart of your lingering-memory position/format confound (the 79% position-preference bias).</p>
+      <div class="flag">⚠ Applied compression-engineering (ACL 2026), no mechanistic-memory claim; included because it is the current KV-cache SOTA and bears directly on Pillar 3 key-retention.</div>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://aclanthology.org/2026.findings-acl.201/" target="_blank">HqeKV: Towards Hybrid Quantization and Eviction for KV Cache in Long-Context LLM Inference</a>
+    </div>
+    <div class="paper-meta">
+      He Wang, Yu Gu, Ge Yu et al. (Northeastern / CAS) &middot; Findings of ACL 2026, July 2026
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> HqeKV combines <em>both</em> quantization and eviction (previous methods used one or the other) via an integrated optimizer that picks the best compression action per cached KV element, guided by a joint K–V importance metric and flexible multi-precision conversion.</p>
+      <p><strong>Finding:</strong> Under identical memory constraints HqeKV improves generation quality over state-of-the-art compression alternatives, showing that treating keys and values with a single coarse importance score discards recoverable signal. A practical data point for Pillar 3: the key↔value asymmetry in importance (keys vs. values carry different memory-relevant information) is exactly the kind of structure a KV memory network should exploit when deciding what to retain across list/event/position memory.</p>
+      <div class="flag">⚠ Applied compression-engineering (Findings of ACL 2026), no mechanistic-memory claim; included as on-pillar Pillar 3 KV-cache work.</div>
+    </div>
+  </div>
+
 </div>
 
 <div class="section">
@@ -306,11 +350,15 @@
   <ul>
     <li><strong>Adolescent 25C-NBOMe → hippocampal-prefrontal synchrony (Nature Neuroscience, s41593-026-02369-y)</strong> — previously reported by Run #18 (2026-07-22).</li>
     <li><strong>Hippocampal ripples initiate cortical dimensionality expansion (Nature Communications, s41467-026-75345-6)</strong> — previously reported by Run #18 (2026-07-22).</li>
-    <li><strong>arXiv cs.CL/cs.AI/cs.LG/q-bio.NC/stat.ML (newest v1 = 2026-07-21)</strong> — no submissions newer than the 07-21 batch already captured by Runs #17/#18; the 07-22/07-23 announcement batches are not yet on the API.</li>
-    <li><strong>C²KV (2607.17715), HyMCache (2607.18141), SeKV (2606.31145), JoLT (2607.12550), DepthWeave-KV (2607.06523)</strong> — KV/LLM arXiv papers from Run #17 or earlier; out of window.</li>
+    <li><strong>arXiv cs.CL/cs.AI/cs.LG/q-bio.NC/stat.ML (all 5 categories, retried with backoff)</strong> — returned HTTP 429 (rate-limited) on every query this cycle; newest v1 still dated 2026-07-21. The 07-22/07-23 announcement batches are not yet on the API.</li>
+    <li><strong>C²KV (2607.17715), HyMCache (2607.18141), SeKV (2606.31145), JoLT (2607.12550), DepthWeave-KV (2607.06523), FreqDepthKV (2607.06519), HiLS-Attention (2607.02980)</strong> — KV/LLM arXiv papers from Run #17 or earlier (or out-of-window July 20 engineering); excluded.</li>
+    <li><strong>PubMed edat 2026/07/22→07/23 (43 PMIDs)</strong> — 38 keyword hits were weak matches: in-context-learning false positives in radiology-reporting letters, hippocampal toxicology/clinical, developmental-psychology working-memory, and old-DOI re-indexes (2003–2023); the 3 strong memory-mechanism papers (eLife.110499, arcr.v38.2.04, pneurobio.2026.102943) are Run #19 duplicates.</li>
+    <li><strong>bioRxiv details API 2026-07-22→07-23 (202 preprints, 142 new)</strong> — 0 matched the keyword matrix after date filtering; the memory-relevant preprints in the window were posted 07-21 (already Run #19).</li>
     <li><strong>Neuron (Jul 15 issue), Current Biology (Jul 20), Trends in Cognitive Sciences (Jul), Nature Human Behaviour (Jul), PNAS (Jul 22), Science (Jul 16)</strong> — scanned directly; no memory-mechanism papers in the 07-09→07-23 window.</li>
     <li><strong>"How do we evaluate and learn from others' memories?" (Trends Cog Sci, S1364-6613(25)00277-3)</strong> — 2025 review, no new data; excluded as commentary.</li>
     <li><strong>"A unifying framework from neural superposition to sparse interpretable codes" (Nat Mach Intell, s42256-026-01259-z)</strong> — Perspective on superposition/interpretability; no new data, excluded as commentary.</li>
+    <li><strong>Nature Communications hippocampus / learning-memory subject pages (Huh et al. replay-detection 04 Jul; Koh et al. astrocytic ankyrin-2 09 Jul; Kipper et al. voltage imaging 01 Jul; etc.)</strong> — high-quality but published 01–11 Jul, outside the 7-day window; not included.</li>
+    <li><strong>bioRxiv preprints (07.11.737503 episodic-memory ERPs/AD; 07.06.736523 oscillatory WM-attention modeling; 07.06.736892 post-encoding sleep; Shi et al. human SN cognitive boundaries)</strong> — posted 07-04→07-11, outside the 07-16→07-23 window; excluded.</li>
     <li><strong>~70 PubMed hits (working-memory-in-children, hippocampal-toxicology, exercise/AD clinical, old-DOI re-indexes from 2003–2019)</strong> — weak keyword matches, clinical/toxicology, or papers re-indexed into PubMed on 07/22 but published in prior years; outside scope.</li>
     <li><strong>SpatialJEPA (bioRxiv 2026.07.21.739810)</strong> — false positive (multiomics graph distillation), not memory.</li>
     <li><strong>~5 bioRxiv preprints posted 07-19</strong> — already evaluated and excluded by Run #18 (date range 07-19→07-22).</li>
