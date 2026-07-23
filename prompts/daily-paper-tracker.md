@@ -6,13 +6,35 @@ Apply the standards of a Nature Neuroscience editor: care about mechanism, effec
 
 ## Sources to Search
 
-Use every available search tool — WebSearch, WebFetch, and MCP tools (academic-search, nature-academic-search) — to cover these sources:
+Use every available search tool — WebSearch, WebFetch, and MCP tools (academic-search, nature-academic-search) — to cover these sources.
 
+### Primary search: keyword-based (WebSearch)
+Search using keywords from the matrix below. Run at least 8–12 searches covering different category pairings.
+
+### Direct journal scan (MANDATORY)
+**For these high-priority journals, directly fetch the latest issue / recent articles page.** Do not rely on WebSearch alone to find papers from these venues — go straight to the source.
+
+| Journal | URL to scan |
+|---|---|
+| Nature Machine Intelligence | `https://www.nature.com/natmachintell/` |
+| Nature Neuroscience | `https://www.nature.com/neuro/` |
+| Nature Human Behaviour | `https://www.nature.com/nathumbehav/` |
+| Nature Communications | `https://www.nature.com/ncomms/` |
+| Science | `https://www.science.org/journal/science` |
+| Neuron | `https://www.cell.com/neuron/current` |
+| eLife | `https://elifesciences.org/` |
+| Trends in Cognitive Sciences | `https://www.cell.com/trends/cognitive-sciences/current` |
+| PNAS | `https://www.pnas.org/latest` |
+| Current Biology | `https://www.cell.com/current-biology/current` |
+
+For each scan, extract titles and abstracts of recently published articles (last 14 days). Cross-reference against the keyword matrix and include any matches.
+
+### All sources
 - **arxiv:** cs.CL, cs.AI, cs.LG, q-bio.NC, stat.ML
 - **bioRxiv:** neuroscience section
 - **PsyArXiv:** psychology, cognitive science, neuroscience preprints
 - **PubMed / MEDLINE**
-- **High-impact journals:** Nature, Nature Neuroscience, Nature Machine Intelligence, Nature Human Behaviour, Nature Communications, Science, Neuron, eLife, Current Biology, Journal of Neuroscience, Cognition, PNAS, Psychological Review, Psychological Science, Cognitive Psychology, Cognitive Science, Journal of Experimental Psychology: General, Memory & Cognition, Hippocampus, NeuroImage, PLOS Computational Biology, Journal of Cognitive Neuroscience, Cerebral Cortex, eNeuro, Network Neuroscience, Trends in Cognitive Sciences, Communications Psychology, Learning & Memory, Neurobiology of Learning and Memory, Psychonomic Bulletin & Review, Neural Computation, Current Opinion in Neurobiology, Current Opinion in Behavioral Sciences, Neuroscience & Biobehavioral Reviews, Journal of Memory and Language, Annual Review of Neuroscience, Annual Review of Psychology, Behavioral and Brain Sciences
+- **High-impact journals (web search + direct scan for starred):** Nature, Nature Neuroscience★, Nature Machine Intelligence★, Nature Human Behaviour★, Nature Communications★, Science★, Neuron★, eLife★, Current Biology★, Journal of Neuroscience, Cognition, PNAS★, Psychological Review, Psychological Science, Cognitive Psychology, Cognitive Science, Journal of Experimental Psychology: General, Memory & Cognition, Hippocampus, NeuroImage, PLOS Computational Biology, Journal of Cognitive Neuroscience, Cerebral Cortex, eNeuro, Network Neuroscience, Trends in Cognitive Sciences★, Communications Psychology, Learning & Memory, Neurobiology of Learning and Memory, Psychonomic Bulletin & Review, Neural Computation, Current Opinion in Neurobiology, Current Opinion in Behavioral Sciences, Neuroscience & Biobehavioral Reviews, Journal of Memory and Language, Annual Review of Neuroscience, Annual Review of Psychology, Behavioral and Brain Sciences
 - **ML conferences (for computational work):** NeurIPS, ICLR, ICML, COSYNE (check recent proceedings)
 - **Naturalistic neuroimaging datasets (supplemental):** OpenNeuro (especially ds005658 and related naturalistic-story datasets), PIEMAN, Sherlock, Tunnel — monitor for new publications using these datasets
 
