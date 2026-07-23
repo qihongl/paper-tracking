@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker — 2026-07-23</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .summary-table .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+</style>
+</head>
+<body>
+
+<h1>🧠 Daily Paper Tracker</h1>
+<div class="date">2026-07-23 &middot; Thursday &middot; 9 papers (5 Schema-Episodic, 3 Cross-cutting, 1 Peripheral)</div>
+
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s42256-026-01274-0" target="_blank">A neural network model of free recall learns multiple memory strategies</a></td>
+        <td class="col-authors">Li, Jensen, …, Lu, Mattar</td>
+        <td class="col-finding">RNNs trained on free recall discover an index-based "memory palace" strategy beyond classical temporal-context chaining.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema</td>
+        <td class="col-title"><a href="https://doi.org/10.7554/eLife.110499" target="_blank">PKMζ-PKCι/λ double-knockout demonstrates atypical PKC is crucial for persistence of hippocampal LTP and spatial memory</a></td>
+        <td class="col-authors">Tsokas, Hsieh, Sacktor</td>
+        <td class="col-finding">When PKMζ is absent, PKCι/λ becomes persistently active and sustains late-LTP and long-term spatial memory — compensatory redundancy in memory maintenance.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s41467-026-75162-x" target="_blank">Dyscoordination of thalamic reticular spindles is associated with social memory deficits in mice and humans with ASD</a></td>
+        <td class="col-authors">Cui et al.</td>
+        <td class="col-finding">Thalamic spindle dyscoordination disrupts social-memory consolidation; restoration rescues mouse deficits and spindle features predict childhood ASD.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema</td>
+        <td class="col-title"><a href="https://doi.org/10.1016/j.pneurobio.2026.102943" target="_blank">Astrocytic α7 nicotinic receptors regulate glutamate dynamics and memory flexibility in the hippocampus</a></td>
+        <td class="col-authors">Tropea et al.</td>
+        <td class="col-finding">Astrocytic α7-nAChRs at CA1 synapses gate glutamate uptake; knockout impairs memory flexibility, rescued by astrocyte-specific re-expression.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s42256-026-01254-4" target="_blank">Neural sampling from cognitive maps enables goal-directed imagination and planning</a></td>
+        <td class="col-authors">Lin, Yang, Maass</td>
+        <td class="col-finding">A brain-inspired generative model using cognitive maps + local synaptic plasticity performs planning and imagination without a world model.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross</td>
+        <td class="col-title"><a href="https://doi.org/10.7554/eLife.108223" target="_blank">Two time scales of adaptation in human learning rates</a></td>
+        <td class="col-authors">Simoens, Braem, Verguts</td>
+        <td class="col-finding">Humans adapt learning rates on fast and slow timescales; orbitofrontal cortex represents the slow timescale.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s41597-026-07885-x" target="_blank">A 5.0 T Ultra-High-Field fMRI Dataset for Naturalistic Visual Scene Processing (NVD)</a></td>
+        <td class="col-authors">Ye, Wang, Li, Peng</td>
+        <td class="col-finding">Public 5.0 T fMRI dataset: 20 participants, shared + subject-specific natural images, 3 repeats — built for encoding/decoding under naturalistic viewing.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross</td>
+        <td class="col-title"><a href="https://doi.org/10.35946/arcr.v38.2.04" target="_blank">Consensus-based Sharp-Wave Ripple detection and its application in an alcohol administration model</a></td>
+        <td class="col-authors">Ruelas et al.</td>
+        <td class="col-finding">A consensus SWR detector (≥2 methods agree) improves ripple-detection reliability vs single detectors — a tool for Pillar-2 replay work.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-peri"></span>Periph</td>
+        <td class="col-title"><a href="https://www.biorxiv.org/content/10.1101/2026.07.21.739808v1" target="_blank">Linguistic structure and probability are jointly encoded in high gamma power</a></td>
+        <td class="col-authors">Slaats, Hervais-Adelman</td>
+        <td class="col-finding">Human iEEG shows high-gamma (70–150 Hz) jointly modulated by lexical probability and syntactic structure during speech comprehension.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+  <div class="empty-section">No new LLM/transformer-memory papers found. The arXiv API's newest v1 submissions are dated 2026-07-21 (the 07-22/07-23 announcement batches have not yet been posted to the API), and the PubMed/WebSearch LLM hits this window were clinical radiology letters or pre-window arXiv work (C²KV, HyMCache, SeKV, JoLT — all Run #17 or earlier). Pillar 1 will refresh once the next arXiv batch lands.</div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s42256-026-01274-0" target="_blank">A neural network model of free recall learns multiple memory strategies</a>
+    </div>
+    <div class="paper-meta">
+      Moufan Li, Kristopher T. Jensen, Qihong Lu, Marcelo G. Mattar (NYU / Columbia) &middot; Nature Machine Intelligence, 20 Jul 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Recurrent neural networks were trained end-to-end on a canonical free-recall task and then analyzed to recover the strategies they discovered, without being hand-coded with a temporal-context model (TCM).</p>
+      <p><strong>Finding:</strong> The best models do <em>not</em> rely on pure TCM-style temporal chaining. Instead they learn an index-based retrieval mechanism resembling the method of loci / "memory palace," plus several other human-like strategies — showing free recall is subserved by a family of strategies, not a single chaining rule. Directly relevant to Pillar 3 (list memory) and to your free-recall / TCM modeling: it challenges TCM as the sole computational account and offers an explicit key→item retrieval alternative.</p>
+      <div class="flag">★ From your own group — Qihong Lu is a co-author (Nature Machine Intelligence version of the bioRxiv preprint 10.1101/2025.09.25.678592, already in the dedup store).</div>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.7554/eLife.110499" target="_blank">PKMζ-PKCι/λ double-knockout demonstrates atypical PKC is crucial for the persistence of hippocampal LTP and spatial memory</a>
+    </div>
+    <div class="paper-meta">
+      Panayiotis Tsokas, Changchi Hsieh, … Todd C. Sacktor (SUNY Downstate) &middot; eLife, 22 Jul 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Double knockout of the two atypical PKCs — PKMζ and PKCι/λ — in the hippocampus, followed by electrophysiological measurement of late-phase LTP and behavioral assessment of long-term spatial memory.</p>
+      <p><strong>Finding:</strong> When PKMζ (the canonical maintenance molecule) is removed, PKCι/λ becomes persistently active and <em>still</em> sustains late-LTP and long-term spatial memory. The result reveals compensatory redundancy among atypical PKCs in memory persistence — a mechanistic correction to the long-standing "PKMζ is necessary and sufficient" claim, and a concrete molecular substrate for the maintenance phase your Schema-Episodic RNN must ultimately reduce to.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s41467-026-75162-x" target="_blank">Dyscoordination of thalamic reticular spindles is associated with social memory deficits in mice and humans with ASD</a>
+    </div>
+    <div class="paper-meta">
+      Dongqi Cui et al. (Chinese Academy of Sciences) &middot; Nature Communications, 23 Jul 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Combined thalamic reticular nucleus (TRN) spindle recordings in mice with social-memory assays, spindle rescue manipulations, and analysis of sleep-spindle features in children with autism spectrum disorder (ASD).</p>
+      <p><strong>Finding:</strong> TRN spindle dyscoordination disrupts social-memory consolidation; restoring spindle coordination rescues the mouse deficit, and spindle-feature deviations predict ASD diagnosis in children. Establishes a thalamic sleep-spindle → memory-consolidation circuit with direct clinical translatability — a clean consolidation-mechanism paper for Pillar 2, complementary to the hippocampal-ripple consolidation literature.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1016/j.pneurobio.2026.102943" target="_blank">Astrocytic α7 nicotinic acetylcholine receptors regulate glutamate dynamics and memory flexibility in the hippocampus</a>
+    </div>
+    <div class="paper-meta">
+      Tropea, Melone, Piacentini, Spiezio (Univ. of Naples) &middot; Progress in Neurobiology, 21 Jul 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> α7-nAChR knockout mice plus an AAV astrocyte-specific re-expression model, examined with electron microscopy, glutamate/calcium/sodium imaging, electrophysiology, and behavioral flexibility tasks.</p>
+      <p><strong>Finding:</strong> Astrocytic α7-nAChRs are abundant at CA1 excitatory synapses and gate glutamate uptake and synaptic plasticity; knockout impairs memory flexibility, and astrocyte-specific re-expression rescues it. Identifies a cholinergic–astrocyte–glutamate axis controlling hippocampal memory flexibility — a glial mechanism for the "schema-update / flexibility" defect your RNN is meant to capture.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s42256-026-01254-4" target="_blank">Neural sampling from cognitive maps enables goal-directed imagination and planning</a>
+    </div>
+    <div class="paper-meta">
+      Hui Lin, Yukun Yang, Wolfgang Maass (TU Graz / IST Austria) &middot; Nature Machine Intelligence, 21 Jul 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A brain-inspired generative model that represents a cognitive map, samples from it via stochastic computing and compositional coding, and learns using only local synaptic plasticity (no backprop through a world model).</p>
+      <p><strong>Finding:</strong> The model performs goal-directed imagination and planning — two hallmark intelligence features — emerging directly from cognitive-map sampling. A neurally plausible alternative to the predictive-coding / world-model frameworks, and a concrete computational instantiation of the hippocampal cognitive-map → planning link central to Pillar 2.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+  <div class="empty-section">No new key-value / serial-position / temporal-context network papers this cycle. Same cause as the LLM-Memory gap: the arXiv KV-cache and associative-memory batches are on the ~1-day announcement lag and their newest v1s (e.g., C²KV 2607.17715, HyMCache 2607.18141) were already captured by Run #17. The free-recall RNN above (Li et al.) is listed under Schema-Episodic but is genuinely KV-relevant (index-based key→item retrieval) if you want a Pillar-3 anchor this week.</div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+  <div class="empty-section">No dedicated encoding/retrieval-mechanism papers surfaced that weren't better placed in Schema-Episodic (the spindle, astrocyte, and PKMζ papers are all consolidation/maintenance mechanisms). The human learning-rate paper below is cross-listed under Cross-cutting.</div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.7554/eLife.108223" target="_blank">Two time scales of adaptation in human learning rates</a>
+    </div>
+    <div class="paper-meta">
+      Jonas Simoens, Senne Braem, Tom Verguts (Ghent) &middot; eLife, 22 Jul 2026
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Human behavioral task probing learning-rate adaptation, modeled with a fast and a slow adaptive timescale, combined with orbitofrontal cortex (OFC) measurement of the timescale representation.</p>
+      <p><strong>Finding:</strong> People adapt learning rates on two dissociable timescales, and the central OFC selectively represents the <em>slow</em> timescale. Speaks directly to the neural-timescales literature your group tracks (Zeraati et al., Nature Neuroscience review, Run #8): it localizes a slow adaptive timescale to OFC, relevant to how temporal context and learning rate interact in both biological and artificial memory.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s41597-026-07885-x" target="_blank">A 5.0 T Ultra-High-Field fMRI Dataset for Naturalistic Visual Scene Processing (Natural Vision Dataset, NVD)</a>
+    </div>
+    <div class="paper-meta">
+      Ye, Wang, Li, Peng &middot; Scientific Data, 20 Jul 2026
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> 5.0 T fMRI from 20 healthy participants viewing a shared set of 1,268 natural images plus 500 participant-specific images (≈10,000 subject-specific images total), each presented three times — a static-naturalistic viewing design with shared stimulus anchors and repeated measures.</p>
+      <p><strong>Finding:</strong> A public, naturalistic-viewing fMRI resource explicitly built for evaluating encoding and decoding models under stimulus diversity and repetition. Directly actionable for your ongoing naturalistic-replication projects (Sherlock / PIEMAN / Tunnel / OpenNeuro ds005658): the shared-image anchors and 3× repetition enable within- and between-subject alignment and reliability analyses out of the box.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.35946/arcr.v38.2.04" target="_blank">Consensus-based Sharp-Wave Ripple detection and its application in an alcohol administration model</a>
+    </div>
+    <div class="paper-meta">
+      Ruelas, Fuentes-Aguilar, Medina-Ceja, Morales-Vargas &middot; Alcohol (Alcohol Research), 2026
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A consensus detector that first identifies sharp waves, then ripples within those intervals, labeling an event as a true SWR only when at least two independent detectors agree.</p>
+      <p><strong>Finding:</strong> The consensus strategy improves SWR-detection reliability over either single detector alone (trading off recall vs. precision). A practical tool for the ripple-replay measurements at the heart of Pillar 2 — worth knowing about before your next iEEG/human-replay analysis, though validated here in an alcohol-administration context rather than a memory task.</p>
+      <div class="flag">⚠ Methods/benchmark paper, not a memory-mechanism finding; demonstrated in an alcohol model, so memory-relevance is indirect.</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section">
+  <div class="section-header tag-peri">Peripheral</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://www.biorxiv.org/content/10.1101/2026.07.21.739808v1" target="_blank">Linguistic structure and probability are jointly encoded in high gamma power</a>
+    </div>
+    <div class="paper-meta">
+      Slaats, Hervais-Adelman (Univ. of Zurich) &middot; bioRxiv preprint, 22 Jul 2026
+      <span class="tag tag-peri">Peripheral</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Intracranial EEG (70–150 Hz high-gamma) during speech comprehension, testing whether local cortical activity is modulated by lexical probability, syntactic structure, or both.</p>
+      <p><strong>Finding:</strong> High-gamma power is jointly modulated by lexical probability and hierarchical syntactic structure — arguing against a purely statistical (LLM-style) account of structure building. Adjacent to your position/format and structure-vs-probability interests in lingering memory; the "structure vs. probability" dissociation is the kind of representational question worth tracking, even though it is language rather than memory per se.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>Adolescent 25C-NBOMe → hippocampal-prefrontal synchrony (Nature Neuroscience, s41593-026-02369-y)</strong> — previously reported by Run #18 (2026-07-22).</li>
+    <li><strong>Hippocampal ripples initiate cortical dimensionality expansion (Nature Communications, s41467-026-75345-6)</strong> — previously reported by Run #18 (2026-07-22).</li>
+    <li><strong>arXiv cs.CL/cs.AI/cs.LG/q-bio.NC/stat.ML (newest v1 = 2026-07-21)</strong> — no submissions newer than the 07-21 batch already captured by Runs #17/#18; the 07-22/07-23 announcement batches are not yet on the API.</li>
+    <li><strong>C²KV (2607.17715), HyMCache (2607.18141), SeKV (2606.31145), JoLT (2607.12550), DepthWeave-KV (2607.06523)</strong> — KV/LLM arXiv papers from Run #17 or earlier; out of window.</li>
+    <li><strong>Neuron (Jul 15 issue), Current Biology (Jul 20), Trends in Cognitive Sciences (Jul), Nature Human Behaviour (Jul), PNAS (Jul 22), Science (Jul 16)</strong> — scanned directly; no memory-mechanism papers in the 07-09→07-23 window.</li>
+    <li><strong>"How do we evaluate and learn from others' memories?" (Trends Cog Sci, S1364-6613(25)00277-3)</strong> — 2025 review, no new data; excluded as commentary.</li>
+    <li><strong>"A unifying framework from neural superposition to sparse interpretable codes" (Nat Mach Intell, s42256-026-01259-z)</strong> — Perspective on superposition/interpretability; no new data, excluded as commentary.</li>
+    <li><strong>~70 PubMed hits (working-memory-in-children, hippocampal-toxicology, exercise/AD clinical, old-DOI re-indexes from 2003–2019)</strong> — weak keyword matches, clinical/toxicology, or papers re-indexed into PubMed on 07/22 but published in prior years; outside scope.</li>
+    <li><strong>SpatialJEPA (bioRxiv 2026.07.21.739810)</strong> — false positive (multiomics graph distillation), not memory.</li>
+    <li><strong>~5 bioRxiv preprints posted 07-19</strong> — already evaluated and excluded by Run #18 (date range 07-19→07-22).</li>
+  </ul>
+</div>
+
+</body>
+</html>
