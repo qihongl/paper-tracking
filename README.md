@@ -2,19 +2,19 @@
 
 [https://qihongl.github.io/paper-tracking/](https://qihongl.github.io/paper-tracking/)
 
-This is an agent skill to keep me on top of new papers in computational cognitive neuroscience of learning and memory. I'm experimenting with it to see if it can provide a better coverage than blusky/X.
+This is an agent skill to keep me on top of new papers in computational cognitive neuroscience of learning and memory. I'm experimenting with it to see if it can provide a better coverage than Bluesky/X.
 
-Every morning an AI agent searches across a broad range of sources — arxiv, bioRxiv, PubMed, 20+ journals, and major ML conferences — filters out the noise, and puts together a clean HTML report grouped by research topic. 
+Every morning an AI agent searches across a broad range of sources — arxiv, bioRxiv, PubMed, 39 journals, and major ML conferences — filters out the noise, and puts together a clean HTML report grouped by research topic. 
 
 <p align="center">
-  <img src="outputs/bsky-wordcloud.png" alt="Word cloud of paper-sharing topics from @qlu.bsky.social" width="700">
+  <img src="outputs/wordcloud-unified.png" alt="Word cloud of paper-sharing topics from @qlu.bsky.social (Bluesky) and @Qihong_Lu (X)" width="700">
 </p>
 
 ## How It Works
 
 An AI agent reads `prompts/daily-paper-tracker.md` and runs it daily. The agent:
 
-1. **Searches** all sources listed above using a six-section keyword matrix.
+1. **Searches** all sources listed above using a seven-section keyword matrix.
 2. **Deduplicates** against `data/seen_papers.json` — matched by DOI, arxiv ID, or title slug, never reported twice.
 3. **Filters** for mechanistic relevance, not just keyword hits. Skips pure engineering, narrow clinical studies, and opinion pieces without new data.
 4. **Writes** a self-contained HTML report at `outputs/YYYY-MM-DD-paper-tracker.html`, with papers grouped by relevance category.
@@ -26,20 +26,21 @@ An AI agent reads `prompts/daily-paper-tracker.md` and runs it daily. The agent:
 - **bioRxiv:** neuroscience section
 - **PsyArXiv:** psychology, cognitive science, neuroscience preprints
 - **PubMed / MEDLINE**
-- **Journals (39):** Nature, Nature Neuroscience, Nature Machine Intelligence, Nature Human Behaviour, Nature Communications, Science, Neuron, eLife, Current Biology, Journal of Neuroscience, Cognition, PNAS, Psychological Review, Psychological Science, Cognitive Psychology, Cognitive Science, JEP: General, Memory & Cognition, Hippocampus, NeuroImage, PLOS Computational Biology, Journal of Cognitive Neuroscience, Cerebral Cortex, eNeuro, Network Neuroscience, Trends in Cognitive Sciences, Communications Psychology, Learning & Memory, Neurobiology of Learning and Memory, Psychonomic Bulletin & Review, Neural Computation, Current Opinion in Neurobiology, Current Opinion in Behavioral Sciences, Neuroscience & Biobehavioral Reviews, Journal of Memory and Language, Annual Review of Neuroscience, Annual Review of Psychology, Behavioral and Brain Sciences
+- **Journals (47):** Nature, Nature Neuroscience, Nature Machine Intelligence, Nature Human Behaviour, Nature Communications, Science, Neuron, eLife, Current Biology, Journal of Neuroscience, Cognition, PNAS, Psychological Review, Psychological Science, Cognitive Psychology, Cognitive Science, JEP: General, Memory & Cognition, Hippocampus, NeuroImage, PLOS Computational Biology, Journal of Cognitive Neuroscience, Cerebral Cortex, eNeuro, Network Neuroscience, Trends in Cognitive Sciences, Communications Psychology, Learning & Memory, Neurobiology of Learning and Memory, Psychonomic Bulletin & Review, Neural Computation, Current Opinion in Neurobiology, Current Opinion in Behavioral Sciences, Neuroscience & Biobehavioral Reviews, Journal of Memory and Language, Annual Review of Neuroscience, Annual Review of Psychology, Behavioral and Brain Sciences, **Cell, Cortex, Cognitive Neuroscience, Trends in Neurosciences, Nature Reviews Neuroscience, Human Brain Mapping, Neuropsychologia, Behavior Research Methods, Psychophysiology**
 - **ML conferences:** NeurIPS, ICLR, ICML, COSYNE
 - **Naturalistic neuroimaging datasets:** OpenNeuro, PIEMAN, Sherlock, Tunnel (monitored for new publications)
 
-## Keyword Matrix (~300 keywords, 6 sections)
+## Keyword Matrix (390 keywords, 7 sections)
 
 | Section | Focus | Example keywords |
 |---|---|---|
-| A — Episodic Memory | Hippocampus, replay (forward/reverse/sleep/awake), place/time/grid cells, consolidation, pattern separation, polysemanticity, mixed selectivity, schema binding | ~70 |
-| B — Computational Models | TCM, CLS, successor representation, predictive processing, Bayesian efficient coding, planning as inference, neural manifold, population coding | ~45 |
-| C — LLMs & Machine Memory | In-context learning, KV cache, transformer memory, semantic memory in LLMs, narrative understanding, neural modularity, neural geometry, mechanistic interpretability, neuroAI alignment | ~50 |
-| D — Encoding, WM & Retrieval | Reinstatement, oscillations, working memory (capacity/gating/binding), visual/object/scene memory, WM/LTM dissociation, iEEG, schema filling, prior knowledge, individual differences | ~68 |
-| E — Naturalistic Paradigms | Movie viewing, audiobook listening, conversation, ISC, event segmentation, naturalistic timescales, Sherlock/PIEMAN/Tunnel datasets | 48 |
+| A — Human/Animal Systems & Cognitive Neuroscience | Hippocampus, replay (forward/reverse/sleep/awake), place/time/grid cells, consolidation, pattern separation, polysemanticity, mixed selectivity, schema binding, neural activity, neurons, cognitive map | 134 |
+| B — Computational Models of Memory | TCM, CLS, successor representation, predictive processing, Bayesian efficient coding, planning as inference, neural manifold, population coding, deep learning, simulations, generalization | 58 |
+| C — LLMs & Machine Memory | In-context learning, KV cache, transformer memory, semantic memory in LLMs, narrative understanding, neural modularity, neural geometry, mechanistic interpretability, neuroAI alignment | 47 |
+| D — Encoding, WM & Retrieval | Reinstatement, oscillations, working memory (capacity/gating/binding), visual/object/scene memory, WM/LTM dissociation, iEEG, schema filling, prior knowledge, individual differences | 63 |
+| E — Naturalistic Paradigms | Movie viewing, audiobook listening, conversation, ISC, event segmentation, naturalistic timescales, Sherlock/PIEMAN/Tunnel datasets | 43 |
 | F — Methods & Meta-Science | Benchmarks, model validation, reproducibility, neuroAI toolkits, representational geometry, ground truth | 17 |
+| G — RL, Decision-Making & Learning/Generalization | Reinforcement learning, reward, decision-making, choice, optimal control, cognitive biases, effort, prediction error, feedback, hierarchical memory, generalization, online learning, environment, policy | 28 |
 
 ## Relevance Categories
 
@@ -52,9 +53,9 @@ An AI agent reads `prompts/daily-paper-tracker.md` and runs it daily. The agent:
 | `Cross-cutting` | Spans multiple pillars or provides theoretical scaffolding |
 | `Peripheral` | Adjacent but interesting |
 
-## Bluesky Topic Analysis
+## Social Topic Analysis
 
-The keyword matrix is based on what I actually share on Bluesky ([@qlu.bsky.social](https://bsky.app/profile/qlu.bsky.social)). The word cloud at the top — made from 212 paper-related posts over about 2.5 years — gives a pretty honest picture: **memory**, **neural** mechanisms, **learning**, the **hippocampus**, **episodic** encoding, **cognitive** models, **working memory**. I occasionally update the matrix as my posting patterns evolve. See `outputs/bsky-paper-posts.html` for the full archive.
+The keyword matrix is derived from what I actually share on social media — using the **combined** archive of both **Twitter/X** ([@Qihong_Lu](https://x.com/Qihong_Lu)) and **Bluesky** ([@qlu.bsky.social](https://bsky.app/profile/qlu.bsky.social)), not Bluesky alone. The word cloud at the top is recomputed from this unified archive: **1,155 paper-related posts** (of 3,338 total across both platforms, ~92% of them retweets/reposts) spanning 2016–2026. It gives an honest picture of what I care about: **memory**, **events**, **neural** mechanisms, **deep** learning, **prediction**, **theory** and **modeling**, **sequences**, **online** learning, **maps** (cognitive), **training**, **psychology**, **recordings**, **reward**, **hierarchical** structure, **generalization**. The matrix is periodically updated as posting patterns evolve — Category G (RL / decision-making / learning-generalization) was added from this analysis. See `outputs/paper-posts-unified.html` for the full unified archive.
 
 ## Project Structure
 
@@ -66,7 +67,9 @@ paper-tracking/
 │   └── seen_papers.json             # Deduplication store (DOI → date first seen)
 ├── outputs/
 │   ├── YYYY-MM-DD-paper-tracker.html # Daily reports
-│   └── bsky-paper-posts.html         # Bluesky paper post archive
+│   ├── paper-posts-unified.html       # Unified X + Bluesky paper post archive
+│   ├── wordcloud-unified.png          # Word cloud of shared paper topics
+│   └── keyword-suggestions.md        # Candidate keywords for matrix updates
 ```
 
 ## Modifying

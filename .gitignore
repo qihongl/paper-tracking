@@ -2,3 +2,11 @@
 __pycache__/
 *.pyc
 .DS_Store
+
+# Private / derived social-archive data — NEVER push to the public repo.
+# x-archive/ holds the raw X (Twitter) export (full tweet + like history).
+x-archive/
+# Normalized / raw intermediate data (regenerable via scripts/social_unify.py).
+data/raw/
+data/posts_normalized.json
+
