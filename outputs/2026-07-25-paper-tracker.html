@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker — 2026-07-25</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .summary-table .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+</style>
+</head>
+<body>
+
+<h1>🧠 Daily Paper Tracker</h1>
+<div class="date">2026-07-25</div>
+
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.21000" target="_blank">Naju: A Native Discrete State-Space Model with Independent Retention and Writing for Long-Sequence Memory</a></td>
+        <td class="col-authors">Hyuk Lim, Seunghyun Yoon (ETRI)</td>
+        <td class="col-finding">Decoupling the forget gate from an independent write gain removes the single-gate retention–write tradeoff (‖r‖+w≤1); Naju is the only model strong on both retention and overwriting at 4× training length.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.21106" target="_blank">AttriMem: Attribution-Guided Process Feedback for Agent Memory Learning</a></td>
+        <td class="col-authors">Qinfeng Li et al. (X. Zhang)</td>
+        <td class="col-finding">Token-level attribution rewards for memory-construction RL beat retrieval, heuristic, and outcome-only RL baselines on long-horizon dialogue QA and stabilize training.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://www.nature.com/articles/s41593-026-02362-5" target="_blank">Replay of procedural memory is independent of the hippocampus</a></td>
+        <td class="col-authors">E. J. Thompson, … M. Stephenson-Jones</td>
+        <td class="col-finding">Striatal replay of a motor skill persists fully after bilateral hippocampal lesions (PERMANOVA P=0.922); replay content predicts next-day gains — replay is system-autonomous, not hippocampus-orchestrated.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11507755/" target="_blank">Epigenetic and 3D genome reprogramming during the aging of the human hippocampus</a></td>
+        <td class="col-authors">Zemke, Ren, Xu (UCLA/UC Irvine)</td>
+        <td class="col-finding">Single-nucleus multi-omics across 40 human hippocampi: microglia shift to a peripheral-monocyte-like primed-inflammatory state (ages 50–75), astrocyte loss, and genome-wide 3D-architecture erosion.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://www.biorxiv.org/content/10.64898/2026.07.22.740141v1" target="_blank">Causal network structure predicts memory organization and neural reinstatement across events</a></td>
+        <td class="col-authors">J. W. Antony, … C. Ranganath</td>
+        <td class="col-finding">Event-to-event causal/shared structure predicts how memories organize and how cortico-hippocampal patterns reinstate across events — extending the "narratives as networks" framework.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://www.biorxiv.org/content/10.64898/2026.07.23.740204v1" target="_blank">Large-scale functional coupling and computational modelling reveal frontotemporal hotspots in distributed network connectivity during working memory recognition, encoding, and retrieval</a></td>
+        <td class="col-authors">W. Zhang, Y. Xiao et al.</td>
+        <td class="col-finding">1,652-site iEEG in 36 patients: frontal/temporal recurrent hubs; frontal theta is an information source, alpha a sink; a time-delay HMM finds task-locked latent states coordinating flexible WM transitions.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.21000" target="_blank">Naju: A Native Discrete State-Space Model with Independent Retention and Writing for Long-Sequence Memory</a>
+    </div>
+    <div class="paper-meta">
+      Hyuk Lim, Seunghyun Yoon (ETRI) &middot; arXiv cs.AI, submitted 23 Jul 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Argue that continuous-time SSMs such as Mamba waste parameters discretizing a continuous system for memory tracking, and parameterize the discrete recurrence directly. Naju ("Native Adaptive Junction Unit") factors the update into an explicit learned sigmoid forget gate (pole <em>f<sub>n</sub></em>, 0&lt;<em>f<sub>n</sub></em>&lt;1), an independent input-dependent write gain <em>i<sub>n</sub></em>, and input-dependent write/read maps — decoupling retention from writing. They analytically derive the structural constraint binding coupled single-gate designs.</p>
+      <p><strong>Finding:</strong> Any non-expansive single-gate recurrence ties effective retention <em>r</em> and write gain <em>w</em> through ‖<em>r</em>‖+<em>w</em>≤1, so near-complete retention forces weak writing; decoupling <em>f<sub>n</sub></em> from <em>i<sub>n</sub></em> removes this. Empirically, Naju is the only evaluated model strong on both retention and overwriting at 4× the training length, and it beats Mamba baselines on WikiText-103, Long Range Arena, and multi-query associative recall while keeping linear-time, linear-memory scaling. Mechanistically, this is a clean model of the retention–overwriting (interference) tradeoff central to Pillar 1's lingering-memory work.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.21106" target="_blank">AttriMem: Attribution-Guided Process Feedback for Agent Memory Learning</a>
+    </div>
+    <div class="paper-meta">
+      Qinfeng Li, Yuntai Bao, Xinyan Yu, Hongze Chen, Wenqi Zhang, Xuhong Zhang &middot; arXiv cs.AI, submitted 23 Jul 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Frames memory construction as an RL policy deciding what to extract, store, update, compress, or discard as interactions accumulate. The bottleneck is fine-grained credit assignment — coarse outcome rewards cannot say which stored memory contents supported the answer. AttriMem augments the global outcome reward with local rewards derived from token-level attribution to the final answer, giving process-level feedback without a unique ground-truth target for intermediate memory decisions.</p>
+      <p><strong>Finding:</strong> On long-horizon dialogue question answering, AttriMem outperforms retrieval-based, heuristic, and outcome-only RL baselines, generalizes across benchmarks and answer models, and stabilizes RL optimization. This speaks directly to Pillar 1: process-level attribution feedback for <em>what to retain</em> vs. overwrite is exactly the lingering-memory question of which past events an LLM should preserve under interference. (No numeric effect size reported in the abstract.)</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://www.nature.com/articles/s41593-026-02362-5" target="_blank">Replay of procedural memory is independent of the hippocampus</a>
+    </div>
+    <div class="paper-meta">
+      Emmett J. Thompson, Lars B. Rollik, … Marcus Stephenson-Jones &middot; Nature Neuroscience, 23 Jul 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Recorded neural activity during offline sleep consolidation of a procedural (motor-skill) task in mice, then compared replay features — sequence ordering, time compression, neuron-level prioritization — before versus after complete bilateral hippocampal lesions. Replay rate and content were quantified across the lesioned and intact states.</p>
+      <p><strong>Finding:</strong> Striatal replay of the procedural memory occurred <em>independently</em> of the hippocampus: all replay features persisted under lesion (awake-vs-replay neuron positions, PERMANOVA group comparison <em>P</em>=0.922), and replay prioritized reward-linked over error-linked sequences in a way that predicted next-day skill improvement. The authors argue replay is a conserved, autonomous consolidation mechanism operating in parallel across distinct memory systems, not universally orchestrated by the hippocampus — a direct challenge to hippocampal-centrism relevant to Pillar 2's systems-consolidation framing. (Animal model; mice.)</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11507755/" target="_blank">Epigenetic and 3D genome reprogramming during the aging of the human hippocampus</a>
+    </div>
+    <div class="paper-meta">
+      Nathan R. Zemke, Bing Ren, Weiqing Xu (UCLA / UC Irvine / NY Genome Center) &middot; Science, 23 Jul 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Single-nucleus multi-omics — RNA expression, ATAC-seq, DNA methylation, and 3D genome (Hi-C) — profiled cell-type-resolved across 40 human hippocampi spanning the adult lifespan, to map age-related molecular reorganization of the brain's memory hub.</p>
+      <p><strong>Finding:</strong> Microglia switch from an embryonically-derived to a peripheral-monocyte-like primed-inflammatory state between ages 50–75; astrocytes show age-related loss; and there is genome-wide erosion of 3D chromatin architecture with age. Together these define a molecular substrate for age-related hippocampal memory decline — squarely relevant to Pillar 2's interest in the hippocampal memory substrate across the lifespan. (Nature Neuroscience editor's note: linked via the PMC author-manuscript mirror because the Science DOI was not exposed at fetch time.)</p>
+      <div class="flag">⚠ Human postmortem, cross-sectional design (n=40 hippocampi across lifespan) — correlational, not causal; age effects are confounded with birth-cohort.</div>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://www.biorxiv.org/content/10.64898/2026.07.22.740141v1" target="_blank">Causal network structure predicts memory organization and neural reinstatement across events</a>
+    </div>
+    <div class="paper-meta">
+      James W. Antony, Sara Abbas, Matthew S. Babb, Zachariah Reagh, Charan Ranganath &middot; bioRxiv, posted 24 Jul 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Represents naturalistic events as causal / shared-structure networks and tests whether that network structure predicts (a) how memories of the events become organized and (b) the pattern of neural reinstatement across events — extending the authors' "narratives as networks" program (cf. Antony/Ranganath on multi-event surprise and Reagh &amp; Ranganath's cortico-hippocampal event-component reinstatement, Nat Commun 2023).</p>
+      <p><strong>Finding:</strong> Causal network structure of events predicts memory organization and cross-event neural reinstatement, indicating that event-to-event relational structure — not just item-level features — drives hippocampal-cortical reinstatement. This is directly on-pillar for Pillar 2: schema/event structure guiding episodic reinstatement across distant events.</p>
+      <div class="flag">⚠ Preprint; the abstract was not directly retrievable at fetch time. Approach/Finding are inferred from the verified title, author list, and the authors' established line of work ("narratives as networks"; flexible reuse of cortico-hippocampal representations during encoding and recall, Reagh &amp; Ranganath 2023). Verify before citing.</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+  <div class="empty-section">No papers today.</div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://www.biorxiv.org/content/10.64898/2026.07.23.740204v1" target="_blank">Large-scale functional coupling and computational modelling reveal frontotemporal hotspots in distributed network connectivity during working memory recognition, encoding, and retrieval</a>
+    </div>
+    <div class="paper-meta">
+      Wuyang Zhang, Yuchen Xiao et al. (corr. Yuchen Xiao) &middot; bioRxiv, posted 24 Jul 2026
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Intracranial local field potentials from 1,652 sites in 36 epilepsy patients performing a naturalistic card-matching task. Used phase-amplitude and phase-phase coupling, directed phase transfer entropy (information flow), and a time-delay-embedded hidden Markov model (HMM) to extract task-locked latent coupling states. Paradigm is naturalistic (game-like), not trial-based.</p>
+      <p><strong>Finding:</strong> Widespread condition-dependent interactions, with frontal and temporal regions emerging as recurrent network hubs. Directed phase transfer entropy identified frequency-specific information flow — frontal regions act as a theta-band <em>source</em> and an alpha-band <em>sink</em>. The HMM recovered reproducible within-trial coupling dynamics and task-locked latent states in which frontotemporal hubs coordinate flexible transitions among distributed neural states during WM recognition, encoding, and retrieval. Relevant to Pillar 2 / Encoding-Retrieval (neural reinstatement, frontal-temporal WM control).</p>
+      <div class="flag">⚠ Clinical epilepsy population (n=36 patients) on a naturalistic task — caution generalizing to healthy working memory.</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+  <div class="empty-section">No papers today.</div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-peri">Peripheral</div>
+  <div class="empty-section">No papers today.</div>
+</div>
+
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>Science CA3 dendrite paper</strong> (Noguchi, Terada, … Losonczy, <em>Science</em> 393:306, DOI 10.1126/science.aeh9302) — already reported Run #21 (2026-07-23).</li>
+    <li><strong>Nature Machine Intelligence "Cognitive maps enable planning without a world model"</strong> (Lin, Yang, Maass, 10.1038/s42256-026-01254-4) — already reported Run #19.</li>
+    <li><strong>Nature Machine Intelligence free-recall RNN</strong> (Li, Jensen, **Lu**, Mattar, 10.1038/s42256-026-01274-0) — already reported Run #19 (lab paper).</li>
+    <li><strong>Nature Neuroscience 25C-NBOMe / ventral-HPC↔PFC theta</strong> (Yu, Zhang, 10.1038/s41593-026-02369-y) — already reported Run #22.</li>
+    <li><strong>ACL 2026 IntentKV / HqeKV</strong> (10.18653/v1/2026.acl-long.1250; 10.18653/v1/2026.findings-acl.201) — already reported Run #20 (KV-Networks).</li>
+    <li><strong>arXiv HOLA (2607.02303), JoLT (2607.12550)</strong> — already reported earlier runs; out-of-window.</li>
+    <li><strong>PNAS hippocampal-sclerosis / LTM-guided attention</strong> (10.1073/pnas.2503466123) — published 22 Jun 2026, outside the 48h window.</li>
+    <li><strong>eLife Ritter &amp; Chadwick rotational WM dynamics</strong> (10.7554/eLife.111445.1) — posted 07 Jul 2026, outside window.</li>
+    <li><strong>Current Biology sleep–memory / SWR noise papers</strong> (08 Jul, 15 Jul 2026) — outside window.</li>
+    <li><strong>Trends in Cognitive Sciences "What can we learn from studying replay in humans?" / "Is AI making us stupid?"</strong> (Jul 2026) — commentary/review, no new data/models.</li>
+    <li><strong>Neuron dopamine-network paper</strong> (22 Jul 2026) — not memory-relevant.</li>
+    <li><strong>Note on coverage:</strong> the arXiv API was rate-limited (HTTP 429) throughout the recent runs, so arXiv yield relied on direct listing pages + WebSearch; this window's arXiv picks (Naju, AttriMem) were confirmed against the authoritative arXiv abstract pages. bioRxiv and the 10 mandatory journal scans supplied the remaining in-window items.</li>
+  </ul>
+</div>
+
+</body>
+</html>
