@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker — 2026-07-27</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .summary-table .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+  .note { font-size: 12px; color: #777; background: #f1f5f9; border-left: 3px solid #94a3b8;
+    padding: 8px 12px; margin-bottom: 24px; border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<h1>🧠 Daily Paper Tracker</h1>
+<div class="date">2026-07-27 &middot; Run #27 (48h cycle; window 2026-07-25 → 2026-07-27)</div>
+
+<div class="note">
+  <strong>Scouting note.</strong> This 48h window is thin on high-impact journal output — the latest items on Nature Neuroscience, Nature Machine Intelligence, Nature Communications, eLife and the Cloudflare-gated venues (Science, Neuron, Trends in Cognitive Sciences, PNAS, Current Biology) are all dated ≤ 2026-07-24 and were covered by the prior run. arXiv's export API lagged ~3 days behind the live listing pages (which do show the 2026-07-27 batch), so the 2026-07-27 cs.LG/cs.CL listings were scanned directly; their only memory/KV-looking titles (HiKV, Windowed-MTP) are 2026-07-24 cross-lists, out of window. PubMed eUtils returned 37 in-window memory PMIDs but then rate-limited detailed retrieval (only 2 of 37 resolved, both narrow molecular/AD papers). The six papers below are bioRxiv preprints surfaced in the 2026-07-24→07-27 collections; two (#3, #4) are re-posted preprints newly re-indexed and are flagged as such.
+</div>
+
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://www.biorxiv.org/content/10.64898/2026.07.24.740539v1" target="_blank">Generative replay across hippocampal-neocortical circuits</a></td>
+        <td class="col-authors">Shearer et al. (Barron)</td>
+        <td class="col-finding">In mouse sleep, V1 shows generative replay of inferred cue relationships not experienced together, predicted by dCA1 activity — hippocampus coordinates generative replay across neocortex.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://www.biorxiv.org/content/10.64898/2026.07.24.740285v1" target="_blank">Global structure of new relational knowledge networks is represented in retrosplenial complex, and node-distance in hippocampus</a></td>
+        <td class="col-authors">Feld et al. (Spiers)</td>
+        <td class="col-finding">fMRI RSA: graph shortest-path distance encoded in posterior hippocampus + right RSC; global centrality (closeness/betweenness) in left RSC during relational-memory retrieval.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://www.biorxiv.org/content/10.1101/2025.08.17.670701v3" target="_blank">Cortical GABAergic dynamics around hippocampal sharp-wave ripples</a></td>
+        <td class="col-authors">Rezaei et al. (Mohajerani)</td>
+        <td class="col-finding">Wide-field GABA imaging: SWRs trigger a cortex-wide GABA dip then rebound, strongest in retrosplenial/medial cortex during NREM — a state-dependent inhibitory scaffold for hippocampal-neocortical dialogue.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://www.biorxiv.org/content/10.64898/2026.03.03.709421v2" target="_blank">No evidence for sleep-dependent memory generalization in a large online sample</a></td>
+        <td class="col-authors">Lu et al. (Schechtman)</td>
+        <td class="col-finding">N=137, Wake vs Sleep groups: generalization increased after the delay but was group-independent, with wake slightly > sleep; large online sample does not support a sleep benefit for memory generalization.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://www.biorxiv.org/content/10.64898/2026.07.24.740635v1" target="_blank">Developmental tuning of functional manifold dimensionality across the human brain</a></td>
+        <td class="col-authors">Busch et al. (Turk-Browne)</td>
+        <td class="col-finding">Across 5 naturalistic fMRI datasets (N=781, 3mo–53yr), functional specialization arises via selective dimensionality <em>compression</em> in task-irrelevant regions, not expansion in relevant ones.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-peri"></span>Peripheral</td>
+        <td class="col-title"><a href="https://www.biorxiv.org/content/10.64898/2026.07.24.740623v1" target="_blank">Distinct forms of dopamine transmission control locomotion and learning</a></td>
+        <td class="col-authors">McGregor et al. (Ford)</td>
+        <td class="col-finding">Striatal dopamine has two spatially distinct modes: diffuse release drives locomotion/excitability, point-to-point release sustains spines and associative learning — geometry determines output.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- LLM-Memory: empty -->
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+  <div class="empty-section">No papers today. The 2026-07-27 arXiv batch contains no in-window LLM/agent-memory paper beyond 2026-07-24 cross-lists (e.g., HiKV); journal memory papers this cycle are all neuroscience, not transformer-memory.</div>
+</div>
+
+<!-- Schema-Episodic -->
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://www.biorxiv.org/content/10.64898/2026.07.24.740539v1" target="_blank">Generative replay across hippocampal-neocortical circuits</a>
+    </div>
+    <div class="paper-meta">
+      Shearer, McDonald-Hill, Guillaumin, McGinnis, Lopes Dos Santos, Perestenko, Dupret, Barron &middot; bioRxiv, posted 2026-07-24
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Multi-unit electrophysiology and calcium imaging in freely moving mice across a multi-day inference task. The authors traced a putative dCA1 → primary visual cortex (V1) pathway via granular retrosplenial cortex (RSCg) and characterized neuronal activity along it during inference and in subsequent sleep, testing whether "generative replay" of unexperienced associations occurs outside the hippocampus.</p>
+      <p><strong>Finding:</strong> During inference, V1 mnemonic activity mirrors dCA1 to represent learned associations. In sleep, V1 shows generative replay in which cells coding inferred relationships between cues never experienced together co-activate — and this V1 activity is predicted by dCA1 activity. The result positions the hippocampus as orchestrating a cortex-wide generative replay that could underwrite a hierarchical generative model extending beyond direct experience. Directly on-pillar for Pillar 2 (hippocampal–neocortical replay, generative models of memory).</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://www.biorxiv.org/content/10.64898/2026.07.24.740285v1" target="_blank">Global structure of new relational knowledge networks is represented in retrosplenial complex, and node-distance in hippocampus</a>
+    </div>
+    <div class="paper-meta">
+      Feld, Fernandez Velasco, Gahnström, Bernard, Mian, Garvert, Dick, Gerchen, Spiers &middot; bioRxiv, posted 2026-07-25
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> fMRI with a novel learning paradigm in which participants learned transition structure between fictitious, partially connected "alien planets" (individual pairwise connections only), then the next day viewed each stimulus during a cover task. Representational-similarity analysis tested how the learned graph was encoded in the brain.</p>
+      <p><strong>Finding:</strong> Shortest-path distances within the learned graph were encoded in the posterior hippocampus and right retrosplenial complex, whereas global connectivity (closeness/betweenness centrality) was represented in the left retrosplenial complex. This extends the spatial-navigation system's principles to abstract relational knowledge — the hippocampus represents distance, RSC acts as a hub integrating newly acquired knowledge. Relevant to Pillar 2 (relational/schema memory, hippocampal–RSC computation) and to the researcher's naturalistic-RSA toolkit.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://www.biorxiv.org/content/10.1101/2025.08.17.670701v3" target="_blank">Cortical GABAergic dynamics around hippocampal sharp-wave ripples</a>
+    </div>
+    <div class="paper-meta">
+      Rezaei, Tohidi, Nazari, McNaughton, Mohajerani &middot; bioRxiv v3, re-indexed 2026-07-26 (originally posted 2025-08-17)
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Wide-field mesoscale imaging of extracellular GABA (iGABASnFR2) combined with simultaneous dorsal CA1 electrophysiology and sleep-state monitoring in mice, mapping GABA dynamics across 17 cortical regions during natural sleep and wakefulness; ripple-triggered activity mapping + SVD.</p>
+      <p><strong>Finding:</strong> Sharp-wave ripples were associated with a reduction in GABA signaling followed by widespread cortical activation, both enhanced during NREM sleep. In NREM, GABA responses emerged earliest and strongest in retrosplenial/medial cortex before propagating laterally; in wakefulness responses were faster and lateral-sensory-first. The authors propose that SWRs recruit a cortex-wide GABA response whose regional expression and propagation direction are reconfigured by brain state — a dynamic inhibitory framework for hippocampal–neocortical communication. On-pillar for Pillar 2 (ripple/replay mechanisms). <em>Note: re-posted preprint (v3), originally August 2025; newly surfaced in the 2026-07-26 collection.</em></p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://www.biorxiv.org/content/10.64898/2026.03.03.709421v2" target="_blank">No evidence for sleep-dependent memory generalization in a large online sample</a>
+    </div>
+    <div class="paper-meta">
+      Lu, Ji, Tompary, Schechtman &middot; bioRxiv v2, re-indexed 2026-07-26 (originally posted 2026-03-03)
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> N=137 participants (Prolific) completed an image-location memory task across two sessions 12h apart, randomized to a Wake group (learn in morning) or Sleep group (learn in evening). 160 images from 8 semantic categories were positioned to probe category-based memory generalization/distortion; retention tested after the delay.</p>
+      <p><strong>Finding:</strong> After the delay, retrieval was less accurate and more generalized, but these effects were largely independent of group assignment, with some evidence for <em>enhanced</em> generalization after wakefulness over sleep; generalization was also driven by time of day (more in the evening). The authors conclude a large online sample does not support a role for sleep in promoting memory generalization — a useful, well-powered counterweight to smaller-N sleep-generalization claims. <em>Note: re-posted preprint (v2), originally March 2026; newly surfaced 2026-07-26. Single-task online design with no neural measure.</em></p>
+      <div class="flag">⚠ Preprint; behavioral only (no electrophysiology/imaging), so the null on sleep-dependent generalization cannot speak to underlying replay/consolidation mechanisms.</div>
+    </div>
+  </div>
+</div>
+
+<!-- KV-Networks: empty -->
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+  <div class="empty-section">No papers today. The only KV-cache papers in the live 2026-07-27 cs.LG listing (HiKV 2607.22389; Windowed-MTP 2607.21535) are 2026-07-24 cross-lists — outside the window and pure serving-engineering without a memory-mechanism claim.</div>
+</div>
+
+<!-- Encoding-Retrieval: empty -->
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+  <div class="empty-section">No papers today. The sleep/retrieval papers this cycle (generative replay, GABA-around-SWRs, sleep-dependent generalization) are placed under Schema-Episodic; no standalone human encoding/retrieval or reinstatement study surfaced in-window.</div>
+</div>
+
+<!-- Cross-cutting -->
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://www.biorxiv.org/content/10.64898/2026.07.24.740635v1" target="_blank">Developmental tuning of functional manifold dimensionality across the human brain</a>
+    </div>
+    <div class="paper-meta">
+      Busch, Turk-Browne &middot; bioRxiv, posted 2026-07-25
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Intrinsic dimensionality was estimated in five naturalistic fMRI datasets (N=781 unique participants, aged 3 months to 53 years) using T-PHATE, a nonlinear manifold-learning method robust to noisy, autocorrelated signals. The authors compared task-relevant vs task-irrelevant regional dimensionality across auditory, visual, and audiovisual stimuli.</p>
+      <p><strong>Finding:</strong> In adults, task-relevant regions were higher-dimensional than task-irrelevant ones, but this modulation was absent in infants, emerged in early childhood, and strengthened logarithmically through adolescence. Crucially, it reflected a <em>selective collapse</em> of dimensionality in task-irrelevant regions (relative to a resting baseline) rather than expansion in relevant regions — a trajectory from global/nonselective (infants) to local/precise (adults). The study reframes functional specialization as developmental compression of representational geometry, a useful scaffold for the researcher's neural-geometry / representational-dimensionality interests.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Peripheral -->
+<div class="section">
+  <div class="section-header tag-peri">Peripheral</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://www.biorxiv.org/content/10.64898/2026.07.24.740623v1" target="_blank">Distinct forms of dopamine transmission control locomotion and learning</a>
+    </div>
+    <div class="paper-meta">
+      McGregor, Yee, Ekici, Power, Melani, Adler, Winborn, Kennedy, Tritsch, Ford &middot; bioRxiv, posted 2026-07-25
+      <span class="tag tag-peri">Peripheral</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Mouse striatal dopamine release was dissected into two spatially and functionally distinct modes and selectively manipulated. Eliminating the diffuse (bulk extracellular) mode revealed a spatially restricted mode that maintains phasic dopamine-receptor activation on striatal projection neurons; the two modes were then independently lesioned.</p>
+      <p><strong>Finding:</strong> Selective loss of diffuse dopamine impaired striatal circuit excitability and reduced locomotion, whereas point-to-point transmission was sufficient to maintain spine density and support both motor and associative learning. The authors argue that the <em>geometry</em> of dopamine release determines its behavioral output — a principle that may generalize to how neurons multiplex distinct information streams. Adjacent to the researcher's reward-learning / RL pillar (G); included as a mechanistic-clean systems paper that may inform reward-modulated memory accounts.</p>
+    </div>
+  </div>
+</div>
+
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>HiKV: Hierarchical Importance-Aware KV Cache with Hardware Acceleration (arXiv 2607.22389)</strong> — 2026-07-24 cs.LG/cs.AR cross-list; out of window and pure serving-engineering (algorithm–hardware co-design), no memory-mechanism claim.</li>
+    <li><strong>Windowed-MTP: Removing the Full-Context Draft-KV Tax at Million-Token Context (arXiv 2607.21535)</strong> — 2026-07-24 cross-list; out of window, KV-serving engineering.</li>
+    <li><strong>Interior interpretability with attention rollout (arXiv 2607.22367)</strong> — attention-rollout method; not memory-focused, weak pillar fit.</li>
+    <li><strong>Ground Truth First: A Longitudinal Evaluation Instrument for Agent Memory (arXiv 2607.21962)</strong> — 2026-07-24; out of window, and an evaluation instrument rather than a memory-mechanism contribution.</li>
+    <li><strong>miR-124 Ameliorates Spatial Memory Deficits in Rats Exposed to Single-Prolonged Stress (Mol Neurobiol, PMID 42503546)</strong> — narrow molecular/rat study; weak pillar fit.</li>
+    <li><strong>lncRNA SNHG3/miR-128-3p/UBR5 axis in Alzheimer's neuroinflammation (J Gerontol A, PMID 42502987)</strong> — clinical molecular; not a memory-mechanism paper.</li>
+    <li><strong>Concept-Level Semantic Representations Remain Decodable in Chronic Post-Stroke Aphasia (bioRxiv 740313)</strong> — clinical aphasia decoding; not a memory-mechanism study.</li>
+    <li><strong>Live-imaging of endogenous neurofascins (bioRxiv 740328)</strong> — molecular/developmental; not memory.</li>
+    <li><strong>High-impact journal memory papers</strong> — Nature Neuroscience, Nature Machine Intelligence, Nature Communications, Nature Human Behaviour, and eLife latest issues all show memory items dated ≤ 2026-07-24 (covered by Run #26). Science, Neuron, Trends in Cognitive Sciences, PNAS, and Current Biology pages were Cloudflare-gated; targeted WebSearches found no in-window memory article from these venues (e.g., PNAS hippocampal-sclerosis/LTM-guided-attention is June 22; Neuron hippocampal-neocortical interplay is June 15; Current Biology Alzheimer's replay is Jan 2026).</li>
+    <li><strong>Re-posted preprints included above with notes</strong> — Cortical GABAergic dynamics around SWRs (670701, v3, originally Aug 2025) and No evidence for sleep-dependent memory generalization (709421, v2, originally Mar 2026) were newly re-indexed on 2026-07-26 and are flagged in their cards.</li>
+  </ul>
+</div>
+
+</body>
+</html>
