@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker — 2026-07-31</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .summary-table .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+</style>
+</head>
+<body>
+
+<h1>🧠 Daily Paper Tracker</h1>
+<div class="date">2026-07-31 &middot; 7 papers &middot; capture window 2026-07-28 → 2026-07-31</div>
+
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.28263" target="_blank">Understanding Is Done Early: A Depth Division of Labor in LLMs and Its Use for Unbounded-Context Memory (CoMem)</a></td>
+        <td class="col-authors">Hanzuo Liu et al. (Gao)</td>
+        <td class="col-finding">Organizes long-context memory along the layer axis via cached intermediate residual states — 97.05 RULER, 7.83× prefill speedup at 128k vs KV-Direct.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.28156" target="_blank">RRM: Experience-Driven Reflective Retrieval Memory for Long-Horizon Multimodal Reasoning</a></td>
+        <td class="col-authors">Jingxiang Fan et al. (Zou)</td>
+        <td class="col-finding">Adds reflective experience memory distilling reusable retrieval strategies from past trajectories; beats SOTA on three long-horizon multimodal benchmarks.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.28292" target="_blank">CACHE-UK: A Stability-Aware Memory Editor for Sequentially Updated Quantized LLMs</a></td>
+        <td class="col-authors">Anubhav Lakra et al. (Feng)</td>
+        <td class="col-finding">Stability-aware editor cuts sequential knowledge degradation 11–17% in 4-bit LLMs via rank-1 LoRA edits and a degradation-debt controller.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1101/2024.10.30.620612" target="_blank">A hierarchical coordinate system for sequence memory in human entorhinal cortex</a></td>
+        <td class="col-authors">Shpektor et al. (Behrens)</td>
+        <td class="col-finding">Single-unit + fMRI evidence for an abstract hierarchical coordinate system for arbitrary non-spatial sequences in human entorhinal cortex.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://elifesciences.org/articles/109001" target="_blank">Excitatory cholecystokinin neurons in the CA3 area regulate navigation learning and neuroplasticity</a></td>
+        <td class="col-authors">Fengwen Huang et al. (Bello)</td>
+        <td class="col-finding">Excitatory CA3 Cck→CA1 neurons are necessary for spatial learning and LTP (MWM latency 24.2 vs 15.1 s under inhibition).</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.28495" target="_blank">Stage-Replay Divergence Follows the KV Cache: Fixed-Prefix Precision Controls and Bidirectional Cache Transplantation</a></td>
+        <td class="col-authors">Alexander Boesgaard Lorup</td>
+        <td class="col-finding">Bidirectional KV-cache transplantation shows boundary K/V states are a causally sufficient carrier of divergent reasoning trajectories.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.28627" target="_blank">ReToken: One Token to Improve Vision-Language Models for Visual Retrieval</a></td>
+        <td class="col-authors">Yao Xiao et al. (Hoiem)</td>
+        <td class="col-finding">A single learnable token retrieves sparse query-relevant visual tokens from a pre-filled KV cache, lifting visual retrieval +12–13 points.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.28263" target="_blank">Understanding Is Done Early: A Depth Division of Labor in Large Language Models and Its Use for Unbounded-Context Memory (CoMem)</a>
+    </div>
+    <div class="paper-meta">
+      Hanzuo Liu, Xuan Qi, Chunyu Liu, Haotian Zhong, Yulong Wang, Rayying Key, Alex Lamb, Mingyu Gao &middot; arXiv cs.CL, 2026-07-30
+      <span class="tag tag-llm">LLM-Memory</span><span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> The authors exploit a depth division of labor in transformers — lower/middle layers build semantic representations while upper layers specialize them for prediction — and turn it into a memory system (CoMem). Each context chunk is cached only through an intermediate layer as a residual state; at query time a fixed number of cached states are retrieved and the query-conditioned upper layers are recomputed over the resulting pack, on a frozen Qwen3-8B with a rank-32 self-distillation LoRA trained on PG19.</p>
+      <p><strong>Finding:</strong> CoMem reaches 97.05 on RULER and 38.27 on LoCoMo versus 34.59 for full-context KV-Direct, and at 128k context on an H20 uses 18.26 GB vs 89.36 GB with a 7.83× prefill speedup. The work shows long-context memory can be organized along the <em>layer</em> axis rather than only the token axis — a direct alternative to KV-cache retention for unbounded context, and a useful control for lingering-memory work that assumes token-axis KV retention is the mechanism of interference.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.28156" target="_blank">RRM: Experience-Driven Reflective Retrieval Memory for Long-Horizon Multimodal Reasoning</a>
+    </div>
+    <div class="paper-meta">
+      Jingxiang Fan, Junbao Zhuo, Bochao Zou &middot; arXiv cs.CL, 2026-07-30
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> RRM augments an entity-centric multimodal memory graph with a "reflective experience memory" that distills transferable procedural retrieval knowledge from historical task trajectories, converting retrieved experiences into query-level guidance for future search. A lifecycle manager regulates experience memory via usage frequency, reuse feedback, and temporal decay to curb redundancy and noise.</p>
+      <p><strong>Finding:</strong> RRM consistently outperforms prior state-of-the-art on M3-Bench-Robot, M3-Bench-Web, and Video-MME-Long for long-horizon multimodal reasoning. It cleanly separates reusable <em>search strategies</em> (across tasks) from the factual episodic/semantic evidence stored per video — a meta-memory layer on top of ordinary memory retrieval, conceptually adjacent to the lingering-memory question of what an agent should keep versus how it should search.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.28292" target="_blank">CACHE-UK: A Stability-Aware Memory Editor for Sequentially Updated Quantized LLMs in Finance</a>
+    </div>
+    <div class="paper-meta">
+      Anubhav Lakra, Yue Feng &middot; arXiv cs.CL, 2026-07-30
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Targeting the "quantization stability crisis" where 4-bit LLMs degrade under sequential memory edits, CACHE-UK confines edits to a rank-1 LoRA perturbation subspace, adds a financial-domain prioritization module for content-adaptive edit strength, and closes the loop with a Stability Controller that tracks "degradation debt" to prevent catastrophic forgetting across updates. Evaluated on a 4-bit quantized OpenLLaMA-3B over a curated 88,021-document UK financial corpus.</p>
+      <p><strong>Finding:</strong> CACHE-UK reduces sequential knowledge degradation by 11–17% relative to adapted baselines and reaches the highest test success rate in the setting (28%, a 6-percentage-point gain over the strongest baseline). Absolute generalization remains low (28%), so the effect is robust but modest in scale — relevant to safe sequential memory editing/updating in resource-constrained LLMs, i.e. the forgetting half of the lingering-memory/continual-update problem.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1101/2024.10.30.620612" target="_blank">A hierarchical coordinate system for sequence memory in human entorhinal cortex</a>
+    </div>
+    <div class="paper-meta">
+      Shpektor, Bakermans, Baram, Sarnthein, Ledergerber, Imbach, Barron, Behrens &middot; bioRxiv (2024) / eLife Reviewed Preprint, posted 2026-07-30
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> The authors test whether the rodent entorhinal grid-cell coordinate system generalizes beyond 2D space to arbitrary sequences. In human MTL single-unit recordings during a simple sequential memory task they looked for abstract coordinate-like coding; in an fMRI experiment with complex hierarchical sequences they tested for an abstract hierarchical entorhinal representation arranged on an anatomical gradient.</p>
+      <p><strong>Finding:</strong> They find abstract, coordinate-like coding of the sequential memory task in human MTL single units, and an abstract hierarchical representation in EC whose coordinate levels are arranged along the anterior–posterior axis — homologous to the rodent ventro-dorsal grid gradient. The result suggests memories are scaffolded on a hierarchical coordinate system using conserved neuronal coding principles across domains and species; directly actionable for schema/scaffold models of episodic memory and the Pillar-2 prior-knowledge binding question. (Originally a 2024 bioRxiv preprint, newly posted as an eLife Reviewed Preprint 30 Jul 2026.)</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://elifesciences.org/articles/109001" target="_blank">Excitatory cholecystokinin neurons in the CA3 area regulate navigation learning and neuroplasticity</a>
+    </div>
+    <div class="paper-meta">
+      Fengwen Huang, Abdul Baset, Stephen Temitayo Bello (City University of Hong Kong) &middot; eLife, Version of Record 2026-07-28
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> In adult mice the authors characterize excitatory cholecystokinin (Cck) neurons in CA3 that project to CA1, combining retrograde labeling, optogenetic/chemogenetic pathway perturbation, hippocampal-dependent behavioral tasks (novel-object location, Morris water maze), and in-vitro LTP. ~8.50% of CA1 neurons and 20.34% of CA3 neurons are Cck-positive; 90.15 ± 15% of CA1-projecting CA3 neurons are excitatory Cck+.</p>
+      <p><strong>Finding:</strong> CA3 Cck→CA1 projections are necessary for spatial learning and neuroplasticity: chemogenetic inhibition raised Morris water-maze day-5 escape latency (24.2 ± 4.4 vs 15.1 ± 2.1 s, p=0.003) and cut target-quadrant occupancy (27.9 ± 2.8 vs 42.3 ± 3.8%, p=0.02), and attenuated LTP (post-TBS slope 111.5 vs 125.2%, p=0.005). This is the first demonstration that <em>excitatory</em> (not inhibitory) hippocampal Cck neurons gate CA3→CA1-dependent memory and plasticity — a modulatory substrate for schema-guided hippocampal function. NIH/n-values are modest mouse cohorts; effects are consistent and replicated across inhibition and knockdown.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.28495" target="_blank">Stage-Replay Divergence Follows the KV Cache: Fixed-Prefix Precision Controls and Bidirectional Cache Transplantation</a>
+    </div>
+    <div class="paper-meta">
+      Alexander Boesgaard Lorup &middot; arXiv cs.LG/cs.CL, 2026-07-30
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> The author audits the stage-replay assumption — that fresh-prefill of identical tokens reconstructs the live-decoder state at a reasoning-stage boundary — in a Qwen2.5-derived system, using a matched 200-item experiment crossing retained live cache vs one-shot prefill, a fixed-prefix 2×2 holding all 200 token states constant while varying construction and precision, and bidirectional transplantation of all 48 K/V layers.</p>
+      <p><strong>Finding:</strong> In BF16, reconstructions disagree on 166/200 suffixes and 20 correctness labels but accuracy differs by only one point (paired 95% CI [−3.5, +5.5]); FP32 yields no decoded disagreement (Wilson 95% upper bound 1.88%). Transplanting all 48 K/V layers makes every divergent continuation follow its cache donor (24/24 at the primary checkpoint, 43/43 in a blind replication), establishing boundary K/V cache as a <em>causally sufficient</em> carrier of the divergent trajectory, with numerical precision moderating its behavioral expression. A crisp mechanistic probe relevant to Pillar 3's claim that KV states encode position/event memory.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.28627" target="_blank">ReToken: One Token to Improve Vision-Language Models for Visual Retrieval</a>
+    </div>
+    <div class="paper-meta">
+      Yao Xiao, Reuben Tan, Zhen Zhu, Yuqun Wu, Jianfeng Gao, Derek Hoiem &middot; arXiv cs.CV/cs.LG, 2026-07-30
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> ReToken trains a single learnable embedding as an explicit retrieval target that selects a sparse set of query-relevant visual tokens from a pre-filled visual KV cache, addressing distractor growth and GPU-memory limits in long visual context for VLMs. It is trained only on a small image-QA dataset and slots into existing VLMs without architectural change.</p>
+      <p><strong>Finding:</strong> On Visual Haystacks it improves Qwen3VL-8B by 13.4 points and InternVL3.5 by 12.4 points (>20% relative), and transfers zero-shot to long video on LVBench for an 8.0-point gain with Qwen3VL-8B. The result shows a one-token "retrieval head" over a pre-filled KV cache can recover in-window visual tokens efficiently — a concrete demonstration of query-conditioned KV selection that parallels the position/format-preference confound in lingering-memory experiments.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+  <div class="empty-section">No papers today.</div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+  <div class="empty-section">No papers today.</div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-peri">Peripheral</div>
+  <div class="empty-section">No papers today.</div>
+</div>
+
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>Science — Parallel independent voltage computing along CA3 pyramidal dendrites</strong> (Noguchi…Losonczy, 10.1126/science.aeh9302) — already reported Run #21.</li>
+    <li><strong>Nature Neuroscience — theta-sweep planning studies</strong> (10.1038/s41593-026-02364-3, -02365-2) — already reported Run #18.</li>
+    <li><strong>Nature Machine Intelligence — free-recall RNN</strong> (10.1038/s42256-026-01274-0) and <strong>cognitive-map sampling / Lin–Yang–Maass</strong> (10.1038/s42256-026-01254-4) — already reported Run #19.</li>
+    <li><strong>eLife — PKMζ/PKCι/λ double-KO</strong> (10.7554/eLife.110499) and <strong>two-timescale learning-rate adaptation</strong> (10.7554/eLife.108223) — already reported Run #23.</li>
+    <li><strong>bioRxiv non-memory preprints 2026-07-28→07-31</strong> (RAI1 neurodevelopment 10.64898/2026.06.11.731717; visual-cortex scene 10.64898/2026.07.27.740322) — not memory-relevant.</li>
+    <li><strong>ACL/Synapse</strong> (10.18653/v1/2026.findings-acl.1108, Run #13), <strong>JoLT</strong> (2607.12550, Run #16), <strong>C²KV</strong> (2607.17715, Run #21), <strong>FreqDepthKV</strong> (2607.06519, Run #8) — already in dedup store.</li>
+    <li><strong>Nature Human Behaviour — "Active Vision Is Linked to Category Selectivity"</strong> (10.1038/s41562-026-02494-5) — not memory-focused.</li>
+    <li><strong>Current Biology</strong> noise/SWR (Jul 8) and alcohol/sleep-memory (Jul 15); <strong>Trends in Cognitive Sciences</strong> reviews (Jul 1/Jul 7); <strong>PNAS</strong> sleep-rhythms cascade (10.1073/pnas.2517454123, Jun 30) — outside the 2026-07-28→07-31 capture window.</li>
+    <li><strong>PubMed molecular/AD memory hits</strong> — narrow preclinical/clinical and out-of-window; no new on-pillar human or computational memory paper surfaced.</li>
+  </ul>
+</div>
+
+</body>
+</html>
