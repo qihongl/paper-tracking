@@ -59,13 +59,13 @@ def main():
           f"({(recall_now - recall_base):+.1%})")
     print(f"baseline hits: {len(base_hits)} | current hits: {len(now_hits)} | lost: {len(lost)}")
 
-    # 2) golden set: reported papers must stay keyword-caught
-    reported = cl.parse_reported_papers(os.path.join(REPO, "outputs"))
+    # 2) golden set: reported papers must stay keyword-caught (title+finding)
+    reported = cl.parse_reported_papers(os.path.join(REPO, "outputs"), with_findings=True)
     not_caught = []
-    for t in reported:
-        tn = cl.normalize(t)
-        if not any(k in tn for kws in kw_norm.values() for k in kws):
-            not_caught.append(t)
+    for r in reported:
+        blob = cl.normalize(f"{r['title']} {r['finding']}")
+        if not any(k in blob for kws in kw_norm.values() for k in kws):
+            not_caught.append(r["title"])
     print(f"reported golden set: {len(reported) - len(not_caught)}/{len(reported)} keyword-caught")
 
     # 3) venue gate on pinned corpus (uses current sources + cached enrichment)
