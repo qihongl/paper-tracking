@@ -1,0 +1,2902 @@
+{
+ "matrix_hash": "b67ecb0e3cbf0bc8",
+ "window": [
+  "2025",
+  "2026"
+ ],
+ "generated_at": "2026-08-01T22:46:02",
+ "outcomes": {
+  "p0001": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "G"
+   ]
+  },
+  "p0002": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0003": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E"
+   ]
+  },
+  "p0004": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0005": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "G"
+   ]
+  },
+  "p0006": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "D",
+    "G"
+   ]
+  },
+  "p0007": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0008": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E"
+   ]
+  },
+  "p0009": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0010": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0011": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0012": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "C",
+    "G"
+   ]
+  },
+  "p0013": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0014": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E",
+    "G"
+   ]
+  },
+  "p0015": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0016": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0017": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0018": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0019": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0020": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "E"
+   ]
+  },
+  "p0021": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "D",
+    "G"
+   ]
+  },
+  "p0022": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "G"
+   ]
+  },
+  "p0023": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "p0024": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "p0025": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0026": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "p0027": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E"
+   ]
+  },
+  "p0028": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B"
+   ]
+  },
+  "p0029": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E"
+   ]
+  },
+  "p0030": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "G"
+   ]
+  },
+  "p0031": {
+   "o": "caught",
+   "sections": [
+    "A"
+   ]
+  },
+  "p0032": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0033": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "G"
+   ]
+  },
+  "p0034": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0035": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B"
+   ]
+  },
+  "p0036": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B"
+   ]
+  },
+  "p0037": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0038": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B"
+   ]
+  },
+  "p0039": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0040": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E",
+    "G"
+   ]
+  },
+  "p0041": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0042": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B"
+   ]
+  },
+  "p0043": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "D",
+    "G"
+   ]
+  },
+  "p0044": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0045": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E"
+   ]
+  },
+  "p0046": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "G"
+   ]
+  },
+  "p0047": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E"
+   ]
+  },
+  "p0048": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "G"
+   ]
+  },
+  "p0049": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "G"
+   ]
+  },
+  "p0050": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "G"
+   ]
+  },
+  "p0051": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "G"
+   ]
+  },
+  "p0052": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E"
+   ]
+  },
+  "p0053": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0054": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0055": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0056": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "D",
+    "E"
+   ]
+  },
+  "p0057": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E",
+    "G"
+   ]
+  },
+  "p0058": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0059": {
+   "o": "caught",
+   "sections": [
+    "A"
+   ]
+  },
+  "p0060": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "G"
+   ]
+  },
+  "p0061": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "D"
+   ]
+  },
+  "p0062": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0063": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0064": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "G"
+   ]
+  },
+  "p0065": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E"
+   ]
+  },
+  "p0066": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "E"
+   ]
+  },
+  "p0067": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "D"
+   ]
+  },
+  "p0068": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B"
+   ]
+  },
+  "p0069": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B"
+   ]
+  },
+  "p0070": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0071": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "G"
+   ]
+  },
+  "p0072": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "G"
+   ]
+  },
+  "p0073": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "G"
+   ]
+  },
+  "p0074": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "D"
+   ]
+  },
+  "p0075": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E"
+   ]
+  },
+  "p0076": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "D",
+    "E"
+   ]
+  },
+  "p0077": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0078": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "C",
+    "D",
+    "E",
+    "G"
+   ]
+  },
+  "p0079": {
+   "o": "caught",
+   "sections": [
+    "A"
+   ]
+  },
+  "p0080": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "G"
+   ]
+  },
+  "p0081": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "G"
+   ]
+  },
+  "p0082": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E",
+    "G"
+   ]
+  },
+  "p0083": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0084": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0085": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B"
+   ]
+  },
+  "p0086": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E"
+   ]
+  },
+  "p0087": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "D",
+    "G"
+   ]
+  },
+  "p0088": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "G"
+   ]
+  },
+  "p0089": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "G"
+   ]
+  },
+  "p0090": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "G"
+   ]
+  },
+  "p0091": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E"
+   ]
+  },
+  "p0092": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "D",
+    "E"
+   ]
+  },
+  "p0093": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "E"
+   ]
+  },
+  "p0094": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E",
+    "G"
+   ]
+  },
+  "p0095": {
+   "o": "caught",
+   "sections": [
+    "E"
+   ]
+  },
+  "p0096": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B"
+   ]
+  },
+  "p0097": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0098": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "G"
+   ]
+  },
+  "p0099": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "G"
+   ]
+  },
+  "p0100": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0101": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0102": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0103": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B"
+   ]
+  },
+  "p0104": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E"
+   ]
+  },
+  "p0105": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E",
+    "G"
+   ]
+  },
+  "p0106": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0107": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0108": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "D",
+    "E",
+    "G"
+   ]
+  },
+  "p0109": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0110": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "G"
+   ]
+  },
+  "p0111": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0112": {
+   "o": "caught",
+   "sections": [
+    "D",
+    "G"
+   ]
+  },
+  "p0113": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0114": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "C",
+    "E"
+   ]
+  },
+  "p0115": {
+   "o": "caught",
+   "sections": [
+    "B",
+    "E"
+   ]
+  },
+  "p0116": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "G"
+   ]
+  },
+  "p0117": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0118": {
+   "o": "caught",
+   "sections": [
+    "A"
+   ]
+  },
+  "p0119": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0120": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "p0121": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "p0122": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "p0123": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "G"
+   ]
+  },
+  "p0124": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "G"
+   ]
+  },
+  "p0125": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0126": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "E"
+   ]
+  },
+  "p0127": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E",
+    "G"
+   ]
+  },
+  "p0128": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B"
+   ]
+  },
+  "p0129": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0130": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "G"
+   ]
+  },
+  "p0131": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "p0132": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "E"
+   ]
+  },
+  "p0133": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E",
+    "G"
+   ]
+  },
+  "p0134": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "D",
+    "E"
+   ]
+  },
+  "p0135": {
+   "o": "keyword-gap",
+   "sections": []
+  },
+  "p0136": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "D"
+   ]
+  },
+  "p0137": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0138": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0139": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0140": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "E"
+   ]
+  },
+  "p0141": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0142": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E"
+   ]
+  },
+  "p0143": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "G"
+   ]
+  },
+  "p0144": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0145": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E",
+    "G"
+   ]
+  },
+  "p0146": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0147": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "G"
+   ]
+  },
+  "p0148": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "D",
+    "G"
+   ]
+  },
+  "p0149": {
+   "o": "caught",
+   "sections": [
+    "A"
+   ]
+  },
+  "p0150": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "E",
+    "G"
+   ]
+  },
+  "p0151": {
+   "o": "caught",
+   "sections": [
+    "A"
+   ]
+  },
+  "p0152": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0153": {
+   "o": "caught",
+   "sections": [
+    "A"
+   ]
+  },
+  "p0154": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "p0155": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "p0156": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "D",
+    "G"
+   ]
+  },
+  "p0157": {
+   "o": "venue-gap",
+   "sections": [
+    "A"
+   ]
+  },
+  "p0158": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B"
+   ]
+  },
+  "p0159": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E",
+    "G"
+   ]
+  },
+  "p0160": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "G"
+   ]
+  },
+  "p0161": {
+   "o": "caught",
+   "sections": [
+    "A"
+   ]
+  },
+  "p0162": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "E",
+    "G"
+   ]
+  },
+  "p0163": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "p0164": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "E",
+    "G"
+   ]
+  },
+  "p0165": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "D",
+    "G"
+   ]
+  },
+  "p0166": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "p0167": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0168": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "G"
+   ]
+  },
+  "p0169": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0170": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0171": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0172": {
+   "o": "caught",
+   "sections": [
+    "D",
+    "G"
+   ]
+  },
+  "p0173": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "E",
+    "G"
+   ]
+  },
+  "p0174": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0175": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "D",
+    "E",
+    "G"
+   ]
+  },
+  "p0176": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B",
+    "E"
+   ]
+  },
+  "p0177": {
+   "o": "caught",
+   "sections": [
+    "A"
+   ]
+  },
+  "p0178": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0179": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E",
+    "G"
+   ]
+  },
+  "p0180": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E",
+    "G"
+   ]
+  },
+  "p0181": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "E"
+   ]
+  },
+  "p0182": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "G"
+   ]
+  },
+  "p0183": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "G"
+   ]
+  },
+  "p0184": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0185": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B"
+   ]
+  },
+  "p0186": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0187": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "G"
+   ]
+  },
+  "p0188": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0189": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "D",
+    "E"
+   ]
+  },
+  "p0190": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E",
+    "G"
+   ]
+  },
+  "p0191": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "G"
+   ]
+  },
+  "p0192": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "D",
+    "G"
+   ]
+  },
+  "p0193": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "E",
+    "G"
+   ]
+  },
+  "p0194": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0195": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "E"
+   ]
+  },
+  "p0196": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "p0197": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "p0198": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0199": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E"
+   ]
+  },
+  "p0200": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0201": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0202": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E",
+    "G"
+   ]
+  },
+  "p0203": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "E",
+    "G"
+   ]
+  },
+  "p0204": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0205": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0206": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0207": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0208": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0209": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0210": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0211": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "G"
+   ]
+  },
+  "p0212": {
+   "o": "caught",
+   "sections": [
+    "A"
+   ]
+  },
+  "p0213": {
+   "o": "venue-gap",
+   "sections": [
+    "A"
+   ]
+  },
+  "p0214": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B"
+   ]
+  },
+  "p0215": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "D",
+    "E"
+   ]
+  },
+  "p0216": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "E"
+   ]
+  },
+  "p0217": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E",
+    "G"
+   ]
+  },
+  "p0218": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E",
+    "G"
+   ]
+  },
+  "p0219": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0220": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "G"
+   ]
+  },
+  "p0221": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E"
+   ]
+  },
+  "p0222": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0223": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B"
+   ]
+  },
+  "p0224": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "E",
+    "G"
+   ]
+  },
+  "p0225": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E"
+   ]
+  },
+  "p0226": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0227": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "D",
+    "G"
+   ]
+  },
+  "p0228": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "D",
+    "G"
+   ]
+  },
+  "p0229": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0230": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "D",
+    "G"
+   ]
+  },
+  "p0231": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0232": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0233": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "C",
+    "E"
+   ]
+  },
+  "p0234": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0235": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "D"
+   ]
+  },
+  "p0236": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "E",
+    "G"
+   ]
+  },
+  "p0237": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "D",
+    "G"
+   ]
+  },
+  "p0238": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B"
+   ]
+  },
+  "p0239": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E",
+    "G"
+   ]
+  },
+  "p0240": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0241": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0242": {
+   "o": "caught",
+   "sections": [
+    "A"
+   ]
+  },
+  "p0243": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0244": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "D",
+    "G"
+   ]
+  },
+  "p0245": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B"
+   ]
+  },
+  "p0246": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "G"
+   ]
+  },
+  "p0247": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "D",
+    "E"
+   ]
+  },
+  "p0248": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0249": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E"
+   ]
+  },
+  "p0250": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0251": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0252": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "G"
+   ]
+  },
+  "p0253": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "G"
+   ]
+  },
+  "p0254": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "G"
+   ]
+  },
+  "p0255": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "p0256": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B"
+   ]
+  },
+  "p0257": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "G"
+   ]
+  },
+  "p0258": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "G"
+   ]
+  },
+  "p0259": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "E",
+    "G"
+   ]
+  },
+  "p0260": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0261": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0262": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "D",
+    "E"
+   ]
+  },
+  "p0263": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0264": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "D",
+    "G"
+   ]
+  },
+  "p0265": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0266": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "G"
+   ]
+  },
+  "p0267": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "G"
+   ]
+  },
+  "p0268": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "D",
+    "E",
+    "G"
+   ]
+  },
+  "p0269": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "D"
+   ]
+  },
+  "p0270": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B"
+   ]
+  },
+  "p0271": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "p0272": {
+   "o": "caught",
+   "sections": [
+    "A"
+   ]
+  },
+  "p0273": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0274": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0275": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "G"
+   ]
+  },
+  "p0276": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0277": {
+   "o": "caught",
+   "sections": [
+    "A"
+   ]
+  },
+  "p0278": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E"
+   ]
+  },
+  "p0279": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "G"
+   ]
+  },
+  "p0280": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "E"
+   ]
+  },
+  "p0281": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0282": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "D",
+    "G"
+   ]
+  },
+  "p0283": {
+   "o": "caught",
+   "sections": [
+    "A"
+   ]
+  },
+  "p0284": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "D",
+    "E",
+    "G"
+   ]
+  },
+  "p0285": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "G"
+   ]
+  },
+  "p0286": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0287": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "G"
+   ]
+  },
+  "p0288": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0289": {
+   "o": "venue-gap",
+   "sections": [
+    "E",
+    "G"
+   ]
+  },
+  "p0290": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "E",
+    "G"
+   ]
+  },
+  "p0291": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0292": {
+   "o": "venue-gap",
+   "sections": [
+    "A"
+   ]
+  },
+  "p0293": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0294": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B"
+   ]
+  },
+  "p0295": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0296": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "D"
+   ]
+  },
+  "p0297": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E"
+   ]
+  },
+  "p0298": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "G"
+   ]
+  },
+  "p0299": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "p0300": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E",
+    "G"
+   ]
+  },
+  "p0301": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0302": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E"
+   ]
+  },
+  "p0303": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0304": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0305": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "E"
+   ]
+  },
+  "p0306": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "E"
+   ]
+  },
+  "p0307": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0308": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E",
+    "G"
+   ]
+  },
+  "p0309": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E",
+    "G"
+   ]
+  },
+  "p0310": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "D",
+    "G"
+   ]
+  },
+  "p0311": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "G"
+   ]
+  },
+  "p0312": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0313": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B"
+   ]
+  },
+  "p0314": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0315": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0316": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B"
+   ]
+  },
+  "p0317": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B"
+   ]
+  },
+  "p0318": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0319": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E"
+   ]
+  },
+  "p0320": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "G"
+   ]
+  },
+  "p0321": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E"
+   ]
+  },
+  "p0322": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "E",
+    "G"
+   ]
+  },
+  "p0323": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "G"
+   ]
+  },
+  "p0324": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "G"
+   ]
+  },
+  "p0325": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0326": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0327": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "D"
+   ]
+  },
+  "p0328": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "G"
+   ]
+  },
+  "p0329": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "G"
+   ]
+  },
+  "p0330": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "D",
+    "E",
+    "G"
+   ]
+  },
+  "p0331": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ]
+  },
+  "p0332": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0333": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "G"
+   ]
+  },
+  "p0334": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E",
+    "G"
+   ]
+  },
+  "p0335": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0336": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "G"
+   ]
+  },
+  "p0337": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "p0338": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0339": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E"
+   ]
+  },
+  "p0340": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "E"
+   ]
+  },
+  "p0341": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "E"
+   ]
+  },
+  "p0342": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "G"
+   ]
+  },
+  "p0343": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E"
+   ]
+  },
+  "p0344": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0345": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E",
+    "G"
+   ]
+  },
+  "p0346": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "D",
+    "E",
+    "G"
+   ]
+  },
+  "p0347": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "G"
+   ]
+  },
+  "p0348": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0349": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E"
+   ]
+  },
+  "p0350": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0351": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "E",
+    "G"
+   ]
+  },
+  "p0352": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "E",
+    "G"
+   ]
+  },
+  "p0353": {
+   "o": "caught",
+   "sections": [
+    "A"
+   ]
+  },
+  "p0354": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0355": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "E"
+   ]
+  },
+  "p0356": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "E"
+   ]
+  },
+  "p0357": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0358": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "G"
+   ]
+  },
+  "p0359": {
+   "o": "caught",
+   "sections": [
+    "B",
+    "G"
+   ]
+  },
+  "p0360": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D"
+   ]
+  },
+  "p0361": {
+   "o": "caught",
+   "sections": [
+    "A",
+    "B",
+    "D",
+    "E",
+    "G"
+   ]
+  },
+  "p0362": {
+   "o": "venue-gap",
+   "sections": [
+    "A",
+    "B"
+   ]
+  }
+ },
+ "stats": {
+  "caught": 299,
+  "venue-gap": 62,
+  "keyword-gap": 1
+ },
+ "keyword_recall": 0.9972375690607734,
+ "venue_coverage": 0.8287292817679558,
+ "calibration_reported_caught": 0.88,
+ "n_reported": 200,
+ "venue_gaps": 62,
+ "checked_at": "2026-08-01T22:48:21"
+}

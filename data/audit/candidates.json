@@ -1,0 +1,6 @@
+{
+ "ngram_n": 0,
+ "embedding_n": 0,
+ "candidates": [],
+ "note": "keyword layer saturated"
+}

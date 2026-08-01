@@ -1,0 +1,182 @@
+{
+ "n_total": 200,
+ "sample": [
+  {
+   "tag": "llm",
+   "title": "Can Language Models Actually Retrieve In-Context? Drowning in Documents at Million Token Scale",
+   "finding": "At million-token scale, the modified model matches dense retrieval on MS MARCO and NQ while being 7× smaller than concurrent models, and achieves 3× higher scores on retrieval tasks requiring different similarity notions (LIMIT). The attention dilution effect represents a mechanism-level discovery: ",
+   "rating": "keep",
+   "rationale": "Mechanistic (attention dilution at scale); core Pillar-1 question: what attention actually remembers."
+  },
+  {
+   "tag": "llm",
+   "title": "PARTREP: Learning What to Repeat for Decoder-only LLMs",
+   "finding": "Across 8 benchmarks (MMLU, GSM8K, RULER) and 3 model families (Qwen2.5, Llama3.2, Gemma4), PartRep retains most gains of full repetition while using only 59.4% of KV cache and 79.0% of prefill FLOPs. The core insight — that causally disadvantaged (early-position) tokens benefit disproportionately fr",
+   "rating": "keep",
+   "rationale": "Position-dependent retention claim is a real memory mechanism (early-position benefit); Pillar-3 adjacent. Borderline engineering-lean."
+  },
+  {
+   "tag": "llm",
+   "title": "Kara: Efficient Reasoning LLM Serving via Sliding-Window KV Cache Compression",
+   "finding": "Improves throughput over existing threshold-triggered compression methods by avoiding rigid boundary chunking and by compressing only the recent decoding window. The bidirectional scoring mechanism is notable because it mimics the non-causal access to context that biological memory enjoys — this ten",
+   "rating": "drop",
+   "rationale": "Throughput/serving optimization; bio analogy is metaphor, not mechanism."
+  },
+  {
+   "tag": "llm",
+   "title": "CheckRLM: Effective Knowledge-Thought Coherence Checking in Retrieval-Augmented Reasoning",
+   "finding": "Substantially outperforms baselines by mitigating error accumulation in long reasoning chains. The key mechanistic insight is that factual errors in early reasoning steps propagate and compound — a form of memory interference in chain-of-thought generation. This error accumulation dynamic parallels ",
+   "rating": "drop",
+   "rationale": "RAG error-checking tool; 'memory interference' framing is analogy."
+  },
+  {
+   "tag": "llm",
+   "title": "HOLA: A Hippocampus for Linear Attention — An Exact Memory for What the Recurrent State Forgets",
+   "finding": "HOLA reduces Wikitext perplexity from 27.32 to 22.92 (−16.1%), beating a full-attention Transformer++ baseline (26.88). On RULER needle-in-a-haystack recall, it remains robust out to 32k tokens (16× training length), substantially outperforming GDN and recency-cache baselines. The architecture demon",
+   "rating": "keep",
+   "rationale": "Explicit hippocampal architecture for memory; 16% perplexity gain + 16x length extrapolation; Pillars 1&3."
+  },
+  {
+   "tag": "llm",
+   "title": "DRIFTLENS: Measuring Memory-Induced Reasoning Drift in Personalized Language Models",
+   "finding": "User-attribute memory induces medium-to-large reasoning drift above each model's pragmatic-noise floor, even when final answers remain fluent, on-topic, and plausible. Both GRPO and DPO reduce drift, but neither uniformly dominates; effects on downstream capability are model- and reward-dependent. T",
+   "rating": "keep",
+   "rationale": "Directly measures lingering memory effects on reasoning (Pillar 1); quantified drift."
+  },
+  {
+   "tag": "llm",
+   "title": "InduceKV: Fixed-Footprint Continual Adaptation of Multimodal LLMs via Inducing KV Memories",
+   "finding": "Consistently improves over PEFT, MoE, replay, and prompt-retrieval baselines under matched memory budgets across task-incremental instruction tuning, continual VQA, domain-incremental adaptation, and lifelong multimodal instruction tuning. The KV cache as an explicit, addressable memory store — rath",
+   "rating": "keep",
+   "rationale": "KV cache as addressable memory store; Pillar 3."
+  },
+  {
+   "tag": "llm",
+   "title": "Multi-Head Recurrent Memory Agents",
+   "finding": "Retention is the dominant bottleneck — existing monolithic memory designs force every update to risk overwriting prior content. MHM-LRU (Least-Recently-Updated instantiation) improves retention rate from <30% to 73.96% on RULER-HQA at 896K tokens, with zero additional token overhead. Gains generaliz",
+   "rating": "keep",
+   "rationale": "Retention bottleneck quantified (30%->74% at 896K); Pillar 3."
+  },
+  {
+   "tag": "schema",
+   "title": "Goal-directed hippocampal theta sweeps during memory-guided navigation",
+   "finding": "Goal-directed theta sweeps predict upcoming trajectories, coordinate with prefrontal cortical activity, and are preferentially replayed during sharp-wave ripples — suggesting offline consolidation of goal-relevant sequences. The sweeps exploit distinct context-specific latent maps in hippocampus. Th",
+   "rating": "keep",
+   "rationale": "Theta sweeps -> trajectory prediction -> SWR replay; core Pillar 2 mechanism."
+  },
+  {
+   "tag": "schema",
+   "title": "Hippocampal theta sweeps indicate goal direction during navigation",
+   "finding": "Hippocampal theta sweeps encode goal direction independently of movement or head direction, and sweep properties correlate with navigation performance. Published in the same issue as Tang et al., these two papers together provide strong converging evidence — from different labs, using complementary ",
+   "rating": "keep",
+   "rationale": "Converging evidence from independent lab; goal encoding dissociated from movement."
+  },
+  {
+   "tag": "schema",
+   "title": "Human hippocampal ripples tune cortical responses based on predicted uncertainty",
+   "finding": "Hippocampal ripple frequency and duration increase before unpredictable (high-entropy) stimuli, not before surprising (high prediction-error) stimuli — a clean dissociation. Prestimulus ripples suppress occipital gamma increase associated with uncertainty and shift fusiform cortex toward a more bala",
+   "rating": "keep",
+   "rationale": "Clean uncertainty/prediction-error dissociation in human ripples; Pillar 2."
+  },
+  {
+   "tag": "schema",
+   "title": "Time cells lead neural reinstatement of episodic memory",
+   "finding": "Time cell firing precedes broader assembly activation and initiates sequential retrieval — consistent with temporal context models (TCM) where temporal context is recovered first and then drives item recall. Phase coding by complementary populations is recruited depending on task demands (free recal",
+   "rating": "keep",
+   "rationale": "Time cells precede reinstatement — direct TCM evidence; Pillars 2&3."
+  },
+  {
+   "tag": "schema",
+   "title": "Old mice fail to integrate a memory update into an existing hippocampal engram",
+   "finding": "Old mice re-engage a smaller proportion of the original memory engram during updates, and chemogenetic enhancement of this re-engagement alleviates age-related updating deficits. Multiple behavioral and pharmacological approaches promoting training-engram re-engagement also improved updating. This i",
+   "rating": "keep",
+   "rationale": "Mechanistic aging/engram updating with chemogenetic rescue; Pillar 2 adjacent."
+  },
+  {
+   "tag": "schema",
+   "title": "Local Inhibitory Topology Dictates the Spatial Compartmentalization of Hippocampal Sharp-Wave Ripples",
+   "finding": "Perisomatic inhibition gates SWR generation, dendritic inhibition regulates ripple strength and spectral properties, but it is the <em>spatial organization of inhibitory connectivity</em> that establishes local computational domains enabling autonomous ripple generators to coexist. This uncovers a s",
+   "rating": "keep",
+   "rationale": "SWR circuit mechanism; relevant to replay work."
+  },
+  {
+   "tag": "kv",
+   "title": "If Grid Cells are the Answer, What is the Question? A Review of Normative Grid Cell Theory",
+   "finding": "The central argument is that path-integration is the missing ingredient that distinguishes grid cells from purely efficient codes: the translational symmetry within grid modules (which is <em>detrimental</em> for efficient coding) is exactly what enables simple, module-wise path-integration. Only no",
+   "rating": "keep",
+   "rationale": "Normative grid-cell theory review; cognitive map interests (A/G)."
+  },
+  {
+   "tag": "kv",
+   "title": "Analysis of dendritic input currents during place field dynamics",
+   "finding": "Despite abundant localized dendritic events, membrane potential dynamics throughout the dendritic arbor are dominated by back-propagating action potentials (single factor explains ~70% variance). Complex spike bursts can occur at highly variable proximal input levels; strong distal (tuft) inputs fac",
+   "rating": "drop",
+   "rationale": "Peripheral cellular physiology; no direct link to memory pillars."
+  },
+  {
+   "tag": "kv",
+   "title": "AgenticSTS: A Bounded-Memory Testbed for Long-Horizon LLM Agents",
+   "finding": "A fixed-ablation study shows the largest observed difference when triggered strategic skills are enabled: the no-store baseline wins 3/10 games vs. 6/10 with the skill layer (Fisher exact p ≈ 0.37 — directional but not decisive at this sample size). The bounded-memory contract is methodologically in",
+   "rating": "drop",
+   "rationale": "Testbed with non-decisive stats (p~0.37); methodological, no new mechanism."
+  },
+  {
+   "tag": "kv",
+   "title": "Conditional Co-Ablation: Recovering Self-Repair Backups in Transformer Circuits",
+   "finding": "CoAx raises backup-head recovery from 0.33 to 0.91 ROC-AUC on the IOI circuit, outperforming all baselines including self-repair-aware gradient scores (best: 0.82). Counterfactual patching verifies the recovered heads causally carry the repair. The finding that transformer attention circuits contain",
+   "rating": "keep",
+   "rationale": "Mechanistic interpretability of circuit redundancy; Pillar 1."
+  },
+  {
+   "tag": "er",
+   "title": "Early Visual Cortex Supports One-Shot Episodic Memory via Spatially Tuned Reactivation",
+   "finding": "Both recognition and recall evoked spatially tuned responses in V1–V3 peaking at the encoded location, even though recognition did not require spatial information. Effect sizes: encoding amplitude ~0.86% BOLD (~25× larger than memory responses); tuning width was 81° (encoding) vs. 122° (recognition)",
+   "rating": "keep",
+   "rationale": "Spatially tuned reinstatement with effect sizes; Encoding-Retrieval."
+  },
+  {
+   "tag": "er",
+   "title": "The precision of hippocampal representations predicts incremental value-learning across the adult lifespan",
+   "finding": "The precision of posterior hippocampal representations during choice predicted RL accuracy across age groups — a hippocampal contribution to incremental value-learning traditionally associated with striatal systems. In older adults, performance decline was not driven by degraded (\"blurred\") hippocam",
+   "rating": "keep",
+   "rationale": "Hippocampal precision -> RL accuracy; hippocampus x RL bridge."
+  },
+  {
+   "tag": "cross",
+   "title": "Learning shapes neural geometry in the primate prefrontal cortex",
+   "finding": "PFC representations progress through distinct stages: early learning produces high-dimensional, randomly mixed selectivity (all features decodable — a reservoir-like exploration regime), while late learning compresses to low-dimensional, rule-selective geometry (only task-relevant features survive).",
+   "rating": "keep",
+   "rationale": "Mixed selectivity -> low-dim geometry stages; representational geometry interest."
+  },
+  {
+   "tag": "cross",
+   "title": "NeuroCogMap Reveals Cognitive Organization of Large Language Models",
+   "finding": "LLM functional parcels form a stable, semantically coherent organization partly conserved across models. Major LLM failures — hallucination, bias, refusal failure, sycophancy — correspond to distinct disruptions in representational and behavioral-control systems, yielding internal signatures for mec",
+   "rating": "keep",
+   "rationale": "Functional parcellation with mechanistic failure signatures; Pillar 1."
+  },
+  {
+   "tag": "cross",
+   "title": "Hidden Forgetting in Continual Multimodal Learning: When Accuracy Survives but Grounding Fails",
+   "finding": "Across CoIN, COAST, MCITlib, and an evidence-sensitive multimodal stream, RCL consistently reduces modality reliance drift, dominant evidence flips, and hidden forgetting rates compared to replay-free, PEFT, routing, and memory-assisted baselines. The concept of \"hidden forgetting\" — preserved surfa",
+   "rating": "keep",
+   "rationale": "'Hidden forgetting' concept; Pillar 1 (catastrophic forgetting)."
+  },
+  {
+   "tag": "peri",
+   "title": "Hippocampal-cortical coupling dynamics drive system consolidation of remote memory",
+   "finding": "Identifies specific coupling dynamics between hippocampus and cortex that drive the transfer of memory from hippocampal dependence to cortical independence. Adjacent to Pillar 2's interest in systems consolidation mechanisms, though the paper focuses on the temporal dynamics of coupling rather than ",
+   "rating": "keep",
+   "rationale": "Consolidation dynamics; Pillar 2 core even if tagged Peripheral."
+  },
+  {
+   "tag": "peri",
+   "title": "Preserved geometry during representational drift enables stable perception and memory",
+   "finding": "Despite substantial representational drift at the single-neuron level, the geometry of population representations is preserved, enabling stable readout. This is conceptually relevant to the KV-Networks pillar's interest in how structured representations maintain function despite noise — the geometry",
+   "rating": "keep",
+   "rationale": "Drift + geometry; KV pillar (stable readout under noise)."
+  }
+ ],
+ "precision_keep": 0.84,
+ "rated_by": "agent pre-rating (editor standard) — Qihong to confirm"
+}

@@ -1,0 +1,1559 @@
+{
+ "crossref": {
+  "10.1002/hipo.70057": {
+   "journal": "Hippocampus",
+   "type": "journal-article"
+  },
+  "10.1007/s11186-025-09641-3": {
+   "journal": "Theory and Society",
+   "type": "journal-article"
+  },
+  "10.1016/j.cell.2025.05.024": {
+   "journal": "Cell",
+   "type": "journal-article"
+  },
+  "10.1016/j.cell.2025.05.025": {
+   "journal": "Cell",
+   "type": "journal-article"
+  },
+  "10.1016/j.cell.2025.06.015": {
+   "journal": "Cell",
+   "type": "journal-article"
+  },
+  "10.1016/j.cell.2026.02.028": {
+   "journal": "Cell",
+   "type": "journal-article"
+  },
+  "10.1016/j.celrep.2025.115594": {
+   "journal": "Cell Reports",
+   "type": "journal-article"
+  },
+  "10.1016/j.celrep.2025.116383": {
+   "journal": "Cell Reports",
+   "type": "journal-article"
+  },
+  "10.1016/j.conb.2026.103198": {
+   "journal": "Current Opinion in Neurobiology",
+   "type": "journal-article"
+  },
+  "10.1016/j.cub.2025.01.024": {
+   "journal": "Current Biology",
+   "type": "journal-article"
+  },
+  "10.1016/j.isci.2025.114241": {
+   "journal": "iScience",
+   "type": "journal-article"
+  },
+  "10.1016/j.isci.2025.114241.": {
+   "journal": null,
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.1016/j.neuron.2020.12.007": {
+   "journal": "Neuron",
+   "type": "journal-article"
+  },
+  "10.1016/j.neuron.2024.12.008": {
+   "journal": "Neuron",
+   "type": "journal-article"
+  },
+  "10.1016/j.neuron.2025.07.028": {
+   "journal": "Neuron",
+   "type": "journal-article"
+  },
+  "10.1016/j.neuron.2025.11.007": {
+   "journal": "Neuron",
+   "type": "journal-article"
+  },
+  "10.1016/j.neuron.2026.01.023": {
+   "journal": "Neuron",
+   "type": "journal-article"
+  },
+  "10.1016/j.neuron.2026.03.020": {
+   "journal": "Neuron",
+   "type": "journal-article"
+  },
+  "10.1016/j.neuron.2026.03.028": {
+   "journal": "Neuron",
+   "type": "journal-article"
+  },
+  "10.1016/j.neuron.2026.04.008": {
+   "journal": "Neuron",
+   "type": "journal-article"
+  },
+  "10.1016/j.neuron.2026.05.030": {
+   "journal": "Neuron",
+   "type": "journal-article"
+  },
+  "10.1016/j.tics.2024.11.010": {
+   "journal": "Trends in Cognitive Sciences",
+   "type": "journal-article"
+  },
+  "10.1016/j.tics.2025.01.007": {
+   "journal": "Trends in Cognitive Sciences",
+   "type": "journal-article"
+  },
+  "10.1016/j.tics.2025.06.016": {
+   "journal": "Trends in Cognitive Sciences",
+   "type": "journal-article"
+  },
+  "10.1016/j.tics.2026.06.001": {
+   "journal": "Trends in Cognitive Sciences",
+   "type": "journal-article"
+  },
+  "10.1037/xge0001851": {
+   "journal": "Journal of Experimental Psychology: General",
+   "type": "journal-article"
+  },
+  "10.1037/xlm0001456.supp": {
+   "journal": "Journal of Experimental Psychology: Learning, Memory, and Cognition",
+   "type": "journal-article"
+  },
+  "10.1038/s41467-": {
+   "journal": null,
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.1038/s41467-018-05316-z": {
+   "journal": "Nature Communications",
+   "type": "journal-article"
+  },
+  "10.1038/s41467-024-55188-9": {
+   "journal": "Nature Communications",
+   "type": "journal-article"
+  },
+  "10.1038/s41467-024-55459-5": {
+   "journal": "Nature Communications",
+   "type": "journal-article"
+  },
+  "10.1038/s41467-025-55833-x": {
+   "journal": "Nature Communications",
+   "type": "journal-article"
+  },
+  "10.1038/s41467-025-56183-4": {
+   "journal": "Nature Communications",
+   "type": "journal-article"
+  },
+  "10.1038/s41467-025-56405-9": {
+   "journal": "Nature Communications",
+   "type": "journal-article"
+  },
+  "10.1038/s41467-025-56700-5": {
+   "journal": "Nature Communications",
+   "type": "journal-article"
+  },
+  "10.1038/s41467-025-56793-y": {
+   "journal": "Nature Communications",
+   "type": "journal-article"
+  },
+  "10.1038/s41467-025-57025-z": {
+   "journal": "Nature Communications",
+   "type": "journal-article"
+  },
+  "10.1038/s41467-025-57049-5": {
+   "journal": "Nature Communications",
+   "type": "journal-article"
+  },
+  "10.1038/s41467-025-57766-x": {
+   "journal": "Nature Communications",
+   "type": "journal-article"
+  },
+  "10.1038/s41467-025-58848-6": {
+   "journal": "Nature Communications",
+   "type": "journal-article"
+  },
+  "10.1038/s41467-025-59957-y": {
+   "journal": "Nature Communications",
+   "type": "journal-article"
+  },
+  "10.1038/s41467-025-60943-7": {
+   "journal": "Nature Communications",
+   "type": "journal-article"
+  },
+  "10.1038/s41467-025-62375-9": {
+   "journal": "Nature Communications",
+   "type": "journal-article"
+  },
+  "10.1038/s41467-025-64591-9": {
+   "journal": "Nature Communications",
+   "type": "journal-article"
+  },
+  "10.1038/s41467-025-65080-9": {
+   "journal": "Nature Communications",
+   "type": "journal-article"
+  },
+  "10.1038/s41467-025-65231-y": {
+   "journal": "Nature Communications",
+   "type": "journal-article"
+  },
+  "10.1038/s41467-025-65962-y": {
+   "journal": "Nature Communications",
+   "type": "journal-article"
+  },
+  "10.1038/s41467-025-66553-7": {
+   "journal": "Nature Communications",
+   "type": "journal-article"
+  },
+  "10.1038/s41467-026-69950-8": {
+   "journal": "Nature Communications",
+   "type": "journal-article"
+  },
+  "10.1038/s41467-026-72146-9": {
+   "journal": "Nature Communications",
+   "type": "journal-article"
+  },
+  "10.1038/s41467-026-73907-2": {
+   "journal": "Nature Communications",
+   "type": "journal-article"
+  },
+  "10.1038/s41467-026-73914-3": {
+   "journal": "Nature Communications",
+   "type": "journal-article"
+  },
+  "10.1038/s41467-026-74747-w": {
+   "journal": "Nature Communications",
+   "type": "journal-article"
+  },
+  "10.1038/s41467-026-75359-0": {
+   "journal": "Nature Communications",
+   "type": "journal-article"
+  },
+  "10.1038/s41467-026-75705-2": {
+   "journal": "Nature Communications",
+   "type": "journal-article"
+  },
+  "10.1038/s41539-025-00312-7": {
+   "journal": "npj Science of Learning",
+   "type": "journal-article"
+  },
+  "10.1038/s41539-025-00321-6": {
+   "journal": "npj Science of Learning",
+   "type": "journal-article"
+  },
+  "10.1038/s41562-024-02079-0": {
+   "journal": "Nature Human Behaviour",
+   "type": "journal-article"
+  },
+  "10.1038/s41562-024-02088-z": {
+   "journal": "Nature Human Behaviour",
+   "type": "journal-article"
+  },
+  "10.1038/s41562-025-02119-3": {
+   "journal": "Nature Human Behaviour",
+   "type": "journal-article"
+  },
+  "10.1038/s41562-025-02217-2": {
+   "journal": "Nature Human Behaviour",
+   "type": "journal-article"
+  },
+  "10.1038/s41562-025-02315-1": {
+   "journal": "Nature Human Behaviour",
+   "type": "journal-article"
+  },
+  "10.1038/s41562-025-02318-y": {
+   "journal": "Nature Human Behaviour",
+   "type": "journal-article"
+  },
+  "10.1038/s41562-025-02324-0": {
+   "journal": "Nature Human Behaviour",
+   "type": "journal-article"
+  },
+  "10.1038/s41562-025-02340-0": {
+   "journal": "Nature Human Behaviour",
+   "type": "journal-article"
+  },
+  "10.1038/s41562-025-02348-6": {
+   "journal": "Nature Human Behaviour",
+   "type": "journal-article"
+  },
+  "10.1038/s41562-025-02359-3": {
+   "journal": "Nature Human Behaviour",
+   "type": "journal-article"
+  },
+  "10.1038/s41562-025-02383-3": {
+   "journal": "Nature Human Behaviour",
+   "type": "journal-article"
+  },
+  "10.1038/s41562-025-02390-4": {
+   "journal": "Nature Human Behaviour",
+   "type": "journal-article"
+  },
+  "10.1038/s41562-026-02416-5": {
+   "journal": "Nature Human Behaviour",
+   "type": "journal-article"
+  },
+  "10.1038/s41583-024-00898-8": {
+   "journal": "Nature Reviews Neuroscience",
+   "type": "journal-article"
+  },
+  "10.1038/s41583-024-00903-0": {
+   "journal": "Nature Reviews Neuroscience",
+   "type": "journal-article"
+  },
+  "10.1038/s41583-026-01058-w": {
+   "journal": "Nature Reviews Neuroscience",
+   "type": "journal-article"
+  },
+  "10.1038/s41583-026-01065-x": {
+   "journal": "Nature Reviews Neuroscience",
+   "type": "journal-article"
+  },
+  "10.1038/s41591-024-03475-9": {
+   "journal": "Nature Medicine",
+   "type": "journal-article"
+  },
+  "10.1038/s41591-025-04133-4": {
+   "journal": "Nature Medicine",
+   "type": "journal-article"
+  },
+  "10.1038/s41592-025-02654-x": {
+   "journal": "Nature Methods",
+   "type": "journal-article"
+  },
+  "10.1038/s41593-024-01839-5": {
+   "journal": "Nature Neuroscience",
+   "type": "journal-article"
+  },
+  "10.1038/s41593-024-01845-7": {
+   "journal": "Nature Neuroscience",
+   "type": "journal-article"
+  },
+  "10.1038/s41593-025-01869-7": {
+   "journal": "Nature Neuroscience",
+   "type": "journal-article"
+  },
+  "10.1038/s41593-025-01893-7": {
+   "journal": "Nature Neuroscience",
+   "type": "journal-article"
+  },
+  "10.1038/s41593-025-01908-3": {
+   "journal": "Nature Neuroscience",
+   "type": "journal-article"
+  },
+  "10.1038/s41593-025-01928-z": {
+   "journal": "Nature Neuroscience",
+   "type": "journal-article"
+  },
+  "10.1038/s41593-025-02132-9": {
+   "journal": "Nature Neuroscience",
+   "type": "journal-article"
+  },
+  "10.1038/s41593-026-02202-6": {
+   "journal": "Nature Neuroscience",
+   "type": "journal-article"
+  },
+  "10.1038/s41593-026-02231-1": {
+   "journal": "Nature Neuroscience",
+   "type": "journal-article"
+  },
+  "10.1038/s41593-026-02232-0": {
+   "journal": "Nature Neuroscience",
+   "type": "journal-article"
+  },
+  "10.1038/s41593-026-02285-1": {
+   "journal": "Nature Neuroscience",
+   "type": "journal-article"
+  },
+  "10.1038/s41593-026-02290-4": {
+   "journal": "Nature Neuroscience",
+   "type": "journal-article"
+  },
+  "10.1038/s41593-026-02311-2": {
+   "journal": "Nature Neuroscience",
+   "type": "journal-article"
+  },
+  "10.1038/s41593-026-02322-z": {
+   "journal": "Nature Neuroscience",
+   "type": "journal-article"
+  },
+  "10.1038/s41593-026-02333-w": {
+   "journal": "Nature Neuroscience",
+   "type": "journal-article"
+  },
+  "10.1038/s41593-026-02342-9": {
+   "journal": "Nature Neuroscience",
+   "type": "journal-article"
+  },
+  "10.1038/s41593-026-02345-6": {
+   "journal": "Nature Neuroscience",
+   "type": "journal-article"
+  },
+  "10.1038/s41593-026-02365-2": {
+   "journal": "Nature Neuroscience",
+   "type": "journal-article"
+  },
+  "10.1038/s41596-025-01300-2": {
+   "journal": "Nature Protocols",
+   "type": "journal-article"
+  },
+  "10.1038/s41597-025-04803-5": {
+   "journal": "Scientific Data",
+   "type": "journal-article"
+  },
+  "10.1038/s41597-025-05174-7": {
+   "journal": "Scientific Data",
+   "type": "journal-article"
+  },
+  "10.1038/s41597-025-05462-2": {
+   "journal": "Scientific Data",
+   "type": "journal-article"
+  },
+  "10.1038/s41597-025-06110-5": {
+   "journal": "Scientific Data",
+   "type": "journal-article"
+  },
+  "10.1038/s41597-026-07129-y": {
+   "journal": "Scientific Data",
+   "type": "journal-article"
+  },
+  "10.1038/s41597-026-07485-9": {
+   "journal": "Scientific Data",
+   "type": "journal-article"
+  },
+  "10.1038/s41597-026-07955-0": {
+   "journal": "Scientific Data",
+   "type": "journal-article"
+  },
+  "10.1038/s42003-024-07282-3": {
+   "journal": "Communications Biology",
+   "type": "journal-article"
+  },
+  "10.1038/s42003-024-07434-5": {
+   "journal": "Communications Biology",
+   "type": "journal-article"
+  },
+  "10.1038/s42003-024-07440-7": {
+   "journal": "Communications Biology",
+   "type": "journal-article"
+  },
+  "10.1038/s42003-025-07464-7": {
+   "journal": "Communications Biology",
+   "type": "journal-article"
+  },
+  "10.1038/s42003-025-07588-w": {
+   "journal": "Communications Biology",
+   "type": "journal-article"
+  },
+  "10.1038/s42003-025-08377-1": {
+   "journal": "Communications Biology",
+   "type": "journal-article"
+  },
+  "10.1038/s42003-025-08569-9": {
+   "journal": "Communications Biology",
+   "type": "journal-article"
+  },
+  "10.1038/s42003-025-08792-4": {
+   "journal": "Communications Biology",
+   "type": "journal-article"
+  },
+  "10.1038/s42256-025-00981-4": {
+   "journal": "Nature Machine Intelligence",
+   "type": "journal-article"
+  },
+  "10.1038/s42256-025-01034-6": {
+   "journal": "Nature Machine Intelligence",
+   "type": "journal-article"
+  },
+  "10.1038/s42256-025-01127-2": {
+   "journal": "Nature Machine Intelligence",
+   "type": "journal-article"
+  },
+  "10.1038/s42256-026-01204-0": {
+   "journal": "Nature Machine Intelligence",
+   "type": "journal-article"
+  },
+  "10.1038/s42256-026-01254-4": {
+   "journal": "Nature Machine Intelligence",
+   "type": "journal-article"
+  },
+  "10.1038/s42256-026-01274-0": {
+   "journal": "Nature Machine Intelligence",
+   "type": "journal-article"
+  },
+  "10.1038/s43588-025-00863-0": {
+   "journal": "Nature Computational Science",
+   "type": "journal-article"
+  },
+  "10.1038/s44159-024-00392-z": {
+   "journal": "Nature Reviews Psychology",
+   "type": "journal-article"
+  },
+  "10.1038/s44159-025-00458-6": {
+   "journal": "Nature Reviews Psychology",
+   "type": "journal-article"
+  },
+  "10.1038/s44271-024-00169-3": {
+   "journal": "Communications Psychology",
+   "type": "journal-article"
+  },
+  "10.1038/s44271-024-00180-8": {
+   "journal": "Communications Psychology",
+   "type": "journal-article"
+  },
+  "10.1038/s44271-025-00191-z": {
+   "journal": "Communications Psychology",
+   "type": "journal-article"
+  },
+  "10.1038/s44271-025-00203-y": {
+   "journal": "Communications Psychology",
+   "type": "journal-article"
+  },
+  "10.1038/s44271-025-00211-y": {
+   "journal": "Communications Psychology",
+   "type": "journal-article"
+  },
+  "10.1038/s44271-025-00241-6": {
+   "journal": "Communications Psychology",
+   "type": "journal-article"
+  },
+  "10.1038/s44271-025-00243-4": {
+   "journal": "Communications Psychology",
+   "type": "journal-article"
+  },
+  "10.1038/s44271-025-00271-0": {
+   "journal": "Communications Psychology",
+   "type": "journal-article"
+  },
+  "10.1038/s44271-025-00305-7": {
+   "journal": "Communications Psychology",
+   "type": "journal-article"
+  },
+  "10.1038/s44271-025-00320-8": {
+   "journal": "Communications Psychology",
+   "type": "journal-article"
+  },
+  "10.1038/s44271-026-00424-9": {
+   "journal": "Communications Psychology",
+   "type": "journal-article"
+  },
+  "10.1057/s41599": {
+   "journal": null,
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.1057/s41599-024-04355-w": {
+   "journal": "Humanities and Social Sciences Communications",
+   "type": "journal-article"
+  },
+  "10.1073/pnas.": {
+   "journal": null,
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.1073/pnas.2408079122": {
+   "journal": "Proceedings of the National Academy of Sciences",
+   "type": "journal-article"
+  },
+  "10.1073/pnas.2503535122": {
+   "journal": "Proceedings of the National Academy of Sciences",
+   "type": "journal-article"
+  },
+  "10.1073/pnas.2520077122": {
+   "journal": "Proceedings of the National Academy of Sciences",
+   "type": "journal-article"
+  },
+  "10.1073/pnas.2527755123": {
+   "journal": "Proceedings of the National Academy of Sciences",
+   "type": "journal-article"
+  },
+  "10.1073/pnas.2535585123": {
+   "journal": "Proceedings of the National Academy of Sciences",
+   "type": "journal-article"
+  },
+  "10.1073/pnas.​": {
+   "journal": null,
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.1080/09658211.2025.2542226": {
+   "journal": "Memory",
+   "type": "journal-article"
+  },
+  "10.1080/13854046.2025.2481119": {
+   "journal": "The Clinical Neuropsychologist",
+   "type": "journal-article"
+  },
+  "10.1093/ageing/afaf198": {
+   "journal": "Age and Ageing",
+   "type": "journal-article"
+  },
+  "10.1098/rsos.241038": {
+   "journal": "Royal Society Open Science",
+   "type": "journal-article"
+  },
+  "10.1098/rsos.241038/886835/rsos.241038.pdf": {
+   "journal": null,
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.1098/rsta.2025.0012": {
+   "journal": "Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences",
+   "type": "journal-article"
+  },
+  "10.1098/rsta.2025.0012/6137865/rsta.2025.0012.pdf": {
+   "journal": null,
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.1111/jnp.70017": {
+   "journal": "Journal of Neuropsychology",
+   "type": "journal-article"
+  },
+  "10.1111/psyp.14752": {
+   "journal": "Psychophysiology",
+   "type": "journal-article"
+  },
+  "10.1162/imag_a_00466": {
+   "journal": "Imaging Neuroscience",
+   "type": "journal-article"
+  },
+  "10.1177/10738584251321438": {
+   "journal": "The Neuroscientist",
+   "type": "journal-article"
+  },
+  "10.1177/10738584251321438The": {
+   "journal": null,
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.1177/17456916241258951": {
+   "journal": "Perspectives on Psychological Science",
+   "type": "journal-article"
+  },
+  "10.1177/17456916241258951Sanborn": {
+   "journal": null,
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.1371/journal.": {
+   "journal": null,
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.1371/journal.pbio.3003755": {
+   "journal": "PLOS Biology",
+   "type": "journal-article"
+  },
+  "10.1371/journal.pbio.3003759": {
+   "journal": "PLOS Biology",
+   "type": "journal-article"
+  },
+  "10.20944/preprints202501.0269.v1": {
+   "journal": null,
+   "type": "posted-content"
+  },
+  "10.3390/eng6070163": {
+   "journal": "Eng",
+   "type": "journal-article"
+  },
+  "10.3758/s13423-025-02814-2": {
+   "journal": "Psychonomic Bulletin &amp; Review",
+   "type": "journal-article"
+  },
+  "10.3758/s13423-026-02860-4": {
+   "journal": "Psychonomic Bulletin &amp; Review",
+   "type": "journal-article"
+  },
+  "10.7554/eLife.101134": {
+   "journal": "eLife",
+   "type": "journal-article"
+  },
+  "10.7554/eLife.106812.1": {
+   "journal": null,
+   "type": "posted-content"
+  },
+  "10.7554/eLife.106812.1.sa3": {
+   "journal": null,
+   "type": "peer-review"
+  },
+  "10.7554/eLife.106981": {
+   "journal": "eLife",
+   "type": "journal-article"
+  },
+  "10.7554/eLife.107955.1": {
+   "journal": null,
+   "type": "posted-content"
+  },
+  "10.7554/eLife.107955.1.sa9": {
+   "journal": null,
+   "type": "peer-review"
+  },
+  "10.7554/eLife.89908": {
+   "journal": "eLife",
+   "type": "journal-article"
+  },
+  "10.7554/eLife.94231": {
+   "journal": "eLife",
+   "type": "journal-article"
+  },
+  "10.7554/eLife.94961": {
+   "journal": "eLife",
+   "type": "journal-article"
+  }
+ },
+ "crossref_title": {
+  "p0006": {
+   "doi": "10.3390/jdad3010012",
+   "journal": "Journal of Dementia and Alzheimer's Disease",
+   "score": 1.0
+  },
+  "p0007": {
+   "doi": "10.31234/osf.io/aqu29_v1",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0010": {
+   "doi": null,
+   "journal": null,
+   "score": 0.479
+  },
+  "p0012": {
+   "doi": "10.1101/2025.01.10.632411",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0015": {
+   "doi": "10.1038/s41586-025-09910-2",
+   "journal": "Nature",
+   "score": 1.0
+  },
+  "p0017": {
+   "doi": null,
+   "journal": null,
+   "score": 0.478
+  },
+  "p0018": {
+   "doi": null,
+   "journal": null,
+   "score": 0.493
+  },
+  "p0019": {
+   "doi": "10.31234/osf.io/stx6v_v1",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0025": {
+   "doi": null,
+   "journal": null,
+   "score": 0.385
+  },
+  "p0026": {
+   "doi": "10.64898/2026.04.10.717706",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0027": {
+   "doi": "10.31234/osf.io/t5kyx_v1",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0031": {
+   "doi": null,
+   "journal": null,
+   "score": 0.648
+  },
+  "p0036": {
+   "doi": "10.1038/s41586-026-10691-5",
+   "journal": "Nature",
+   "score": 1.0
+  },
+  "p0039": {
+   "doi": "10.1101/2025.02.05.636732",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0041": {
+   "doi": "10.1038/s41586-024-08392-y",
+   "journal": "Nature",
+   "score": 1.0
+  },
+  "p0042": {
+   "doi": "10.1038/s41586-024-08340-w",
+   "journal": "Nature",
+   "score": 1.0
+  },
+  "p0043": {
+   "doi": null,
+   "journal": null,
+   "score": 0.422
+  },
+  "p0044": {
+   "doi": "10.64898/2026.06.08.729424",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0048": {
+   "doi": "10.31234/osf.io/gjw5u_v1",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0049": {
+   "doi": "10.1073/pnas.2417025122",
+   "journal": "Proceedings of the National Academy of Sciences",
+   "score": 1.0
+  },
+  "p0051": {
+   "doi": "10.1038/s41586-025-09245-y",
+   "journal": "Nature",
+   "score": 1.0
+  },
+  "p0054": {
+   "doi": "10.31234/osf.io/mbwe9_v1",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0058": {
+   "doi": "10.1111/desc.70218",
+   "journal": "Developmental Science",
+   "score": 1.0
+  },
+  "p0060": {
+   "doi": "10.2196/63004",
+   "journal": "Journal of Medical Internet Research",
+   "score": 1.0
+  },
+  "p0065": {
+   "doi": "10.31234/osf.io/scaf8_v1",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0067": {
+   "doi": null,
+   "journal": null,
+   "score": 0.428
+  },
+  "p0068": {
+   "doi": "10.1016/j.tics.2025.06.016",
+   "journal": "Trends in Cognitive Sciences",
+   "score": 0.984
+  },
+  "p0070": {
+   "doi": "10.64898/2026.06.09.729603",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0078": {
+   "doi": "10.18653/v1/2026.eacl-long.281",
+   "journal": "Proceedings of the 19th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers)",
+   "score": 1.0
+  },
+  "p0091": {
+   "doi": "10.1016/j.tics.2025.02.003",
+   "journal": "Trends in Cognitive Sciences",
+   "score": 1.0
+  },
+  "p0092": {
+   "doi": "10.31219/osf.io/kqms8_v1",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0094": {
+   "doi": "10.21203/rs.3.rs-5938408/v1",
+   "journal": null,
+   "score": 0.926
+  },
+  "p0095": {
+   "doi": "10.21203/rs.3.rs-9555309/v1",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0097": {
+   "doi": "10.31234/osf.io/wv7mg_v1",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0102": {
+   "doi": null,
+   "journal": null,
+   "score": 0.696
+  },
+  "p0103": {
+   "doi": "10.1109/icdew67478.2025.00027",
+   "journal": "2025 IEEE 41st International Conference on Data Engineering Workshops (ICDEW)",
+   "score": 1.0
+  },
+  "p0107": {
+   "doi": "10.31234/osf.io/fxc87_v3",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0109": {
+   "doi": "10.1038/s41586-025-09008-9",
+   "journal": "Nature",
+   "score": 1.0
+  },
+  "p0110": {
+   "doi": "10.1038/s41586-024-08414-9",
+   "journal": "Nature",
+   "score": 1.0
+  },
+  "p0112": {
+   "doi": null,
+   "journal": null,
+   "score": 0.68
+  },
+  "p0113": {
+   "doi": "10.1101/2025.01.25.634891",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0116": {
+   "doi": null,
+   "journal": null,
+   "score": 0.371
+  },
+  "p0120": {
+   "doi": "10.31234/osf.io/j9rmz_v1",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0121": {
+   "doi": null,
+   "journal": null,
+   "score": 0.667
+  },
+  "p0125": {
+   "doi": null,
+   "journal": null,
+   "score": 0.533
+  },
+  "p0129": {
+   "doi": null,
+   "journal": null,
+   "score": 0.535
+  },
+  "p0133": {
+   "doi": "10.1038/s41586-025-09142-4",
+   "journal": "Nature",
+   "score": 1.0
+  },
+  "p0134": {
+   "doi": null,
+   "journal": null,
+   "score": 0.543
+  },
+  "p0135": {
+   "doi": "10.1038/s41586-026-10942-5",
+   "journal": "Nature",
+   "score": 0.879
+  },
+  "p0139": {
+   "doi": null,
+   "journal": null,
+   "score": 0.571
+  },
+  "p0144": {
+   "doi": "10.1101/2024.02.23.581779",
+   "journal": null,
+   "score": 0.993
+  },
+  "p0147": {
+   "doi": "10.64898/2026.05.26.727586",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0152": {
+   "doi": "10.1109/cvpr52734.2025.02687",
+   "journal": "2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+   "score": 1.0
+  },
+  "p0153": {
+   "doi": "10.1016/j.tics.2025.01.013",
+   "journal": "Trends in Cognitive Sciences",
+   "score": 1.0
+  },
+  "p0154": {
+   "doi": null,
+   "journal": null,
+   "score": 0.634
+  },
+  "p0155": {
+   "doi": null,
+   "journal": null,
+   "score": 0.645
+  },
+  "p0156": {
+   "doi": "10.31234/osf.io/2dbk8_v1",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0159": {
+   "doi": "10.1101/2025.03.13.642273",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0160": {
+   "doi": null,
+   "journal": null,
+   "score": 0.369
+  },
+  "p0163": {
+   "doi": null,
+   "journal": null,
+   "score": 0.448
+  },
+  "p0164": {
+   "doi": "10.31234/osf.io/hqv7p",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0167": {
+   "doi": "10.1371/journal.pbio.3003033",
+   "journal": "PLOS Biology",
+   "score": 1.0
+  },
+  "p0168": {
+   "doi": "10.1109/iccv51701.2025.01630",
+   "journal": "2025 IEEE/CVF International Conference on Computer Vision (ICCV)",
+   "score": 1.0
+  },
+  "p0170": {
+   "doi": "10.1101/2025.09.25.678592",
+   "journal": null,
+   "score": 0.986
+  },
+  "p0171": {
+   "doi": "10.1101/2025.09.25.678592",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0173": {
+   "doi": null,
+   "journal": null,
+   "score": 0.459
+  },
+  "p0177": {
+   "doi": "10.1101/2025.05.06.652408",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0179": {
+   "doi": null,
+   "journal": null,
+   "score": 0.447
+  },
+  "p0182": {
+   "doi": null,
+   "journal": null,
+   "score": 0.65
+  },
+  "p0185": {
+   "doi": null,
+   "journal": null,
+   "score": 0.764
+  },
+  "p0187": {
+   "doi": "10.1038/s41586-025-08617-8",
+   "journal": "Nature",
+   "score": 1.0
+  },
+  "p0188": {
+   "doi": null,
+   "journal": null,
+   "score": 0.374
+  },
+  "p0196": {
+   "doi": "10.1038/s41598-025-89732-4",
+   "journal": "Scientific Reports",
+   "score": 1.0
+  },
+  "p0198": {
+   "doi": "10.1038/s41586-025-09528-4",
+   "journal": "Nature",
+   "score": 1.0
+  },
+  "p0200": {
+   "doi": "10.1101/2025.04.29.651259",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0204": {
+   "doi": "10.18653/v1/2025.bea-1.8",
+   "journal": "Proceedings of the 20th Workshop on Innovative Use of NLP for Building Educational Applications (BEA 2025)",
+   "score": 1.0
+  },
+  "p0206": {
+   "doi": "10.1101/2025.09.22.677779",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0208": {
+   "doi": null,
+   "journal": null,
+   "score": 0.503
+  },
+  "p0209": {
+   "doi": "10.18653/v1/2025.naacl-long.448",
+   "journal": "Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers)",
+   "score": 0.967
+  },
+  "p0210": {
+   "doi": "10.1073/pnas.2502193122",
+   "journal": "Proceedings of the National Academy of Sciences",
+   "score": 1.0
+  },
+  "p0211": {
+   "doi": "10.18653/v1/2025.findings-naacl.73",
+   "journal": "Findings of the Association for Computational Linguistics: NAACL 2025",
+   "score": 1.0
+  },
+  "p0213": {
+   "doi": "10.1016/j.neurobiolaging.2025.03.012",
+   "journal": "Neurobiology of Aging",
+   "score": 1.0
+  },
+  "p0227": {
+   "doi": "10.1101/2025.03.13.643066",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0230": {
+   "doi": "10.64898/2026.06.15.732446",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0231": {
+   "doi": null,
+   "journal": null,
+   "score": 0.53
+  },
+  "p0232": {
+   "doi": "10.64898/2026.01.14.699497",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0233": {
+   "doi": null,
+   "journal": null,
+   "score": 0.357
+  },
+  "p0236": {
+   "doi": "10.64898/2026.04.21.719991",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0240": {
+   "doi": "10.64898/2026.05.20.726585",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0242": {
+   "doi": "10.31234/osf.io/p8w6y_v1",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0243": {
+   "doi": "10.1126/sciadv.ado4112",
+   "journal": "Science Advances",
+   "score": 1.0
+  },
+  "p0244": {
+   "doi": null,
+   "journal": null,
+   "score": 0.503
+  },
+  "p0249": {
+   "doi": "10.1016/j.cogpsych.2025.101714",
+   "journal": "Cognitive Psychology",
+   "score": 1.0
+  },
+  "p0252": {
+   "doi": "10.64898/2026.06.23.733979",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0253": {
+   "doi": null,
+   "journal": null,
+   "score": 0.521
+  },
+  "p0255": {
+   "doi": "10.1038/s41586-026-10668-4",
+   "journal": "Nature",
+   "score": 1.0
+  },
+  "p0262": {
+   "doi": "10.7554/elife.111806",
+   "journal": "eLife",
+   "score": 1.0
+  },
+  "p0263": {
+   "doi": "10.1101/2024.09.29.615736",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0264": {
+   "doi": "10.1073/pnas.2510270122",
+   "journal": "Proceedings of the National Academy of Sciences",
+   "score": 1.0
+  },
+  "p0265": {
+   "doi": "10.1016/j.neuron.2025.09.021",
+   "journal": "Neuron",
+   "score": 1.0
+  },
+  "p0268": {
+   "doi": null,
+   "journal": null,
+   "score": 0.578
+  },
+  "p0271": {
+   "doi": null,
+   "journal": null,
+   "score": 0.494
+  },
+  "p0273": {
+   "doi": "10.7554/elife.106981.2.sa1",
+   "journal": null,
+   "score": 0.862
+  },
+  "p0275": {
+   "doi": "10.1038/s41598-025-06742-y",
+   "journal": "Scientific Reports",
+   "score": 1.0
+  },
+  "p0280": {
+   "doi": "10.1038/s41586-026-10267-3",
+   "journal": "Nature",
+   "score": 1.0
+  },
+  "p0281": {
+   "doi": null,
+   "journal": null,
+   "score": 0.641
+  },
+  "p0283": {
+   "doi": null,
+   "journal": null,
+   "score": 0.538
+  },
+  "p0288": {
+   "doi": "10.1038/s41586-024-08548-w",
+   "journal": "Nature",
+   "score": 1.0
+  },
+  "p0289": {
+   "doi": "10.1145/3708359.3712091",
+   "journal": "Proceedings of the 30th International Conference on Intelligent User Interfaces",
+   "score": 1.0
+  },
+  "p0290": {
+   "doi": "10.1101/2024.01.31.578263",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0292": {
+   "doi": "10.1038/s41598-025-21967-7",
+   "journal": "Scientific Reports",
+   "score": 1.0
+  },
+  "p0305": {
+   "doi": "10.1038/s41598-025-92744-9",
+   "journal": "Scientific Reports",
+   "score": 1.0
+  },
+  "p0306": {
+   "doi": null,
+   "journal": null,
+   "score": 0.475
+  },
+  "p0307": {
+   "doi": "10.1007/978-3-032-03488-5_12",
+   "journal": "Advances in Science, Technology &amp; Innovation",
+   "score": 1.0
+  },
+  "p0308": {
+   "doi": "10.1038/s41586-024-08527-1",
+   "journal": "Nature",
+   "score": 1.0
+  },
+  "p0310": {
+   "doi": "10.1101/2025.04.08.647815",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0311": {
+   "doi": "10.1038/s41586-025-09127-3",
+   "journal": "Nature",
+   "score": 1.0
+  },
+  "p0312": {
+   "doi": null,
+   "journal": null,
+   "score": 0.667
+  },
+  "p0314": {
+   "doi": "10.1177/20552076251386705",
+   "journal": "DIGITAL HEALTH",
+   "score": 1.0
+  },
+  "p0315": {
+   "doi": null,
+   "journal": null,
+   "score": 0.418
+  },
+  "p0317": {
+   "doi": "10.64898/2025.11.30.691403",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0318": {
+   "doi": "10.64898/2026.05.20.726574",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0320": {
+   "doi": "10.1016/j.cortex.2025.05.019",
+   "journal": "Cortex",
+   "score": 1.0
+  },
+  "p0321": {
+   "doi": "10.1073/pnas.2518075122",
+   "journal": "Proceedings of the National Academy of Sciences",
+   "score": 1.0
+  },
+  "p0322": {
+   "doi": "10.31234/osf.io/ygduf_v1",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0323": {
+   "doi": "10.1073/pnas.2507516122",
+   "journal": "Proceedings of the National Academy of Sciences",
+   "score": 1.0
+  },
+  "p0328": {
+   "doi": null,
+   "journal": null,
+   "score": 0.662
+  },
+  "p0333": {
+   "doi": null,
+   "journal": null,
+   "score": 0.52
+  },
+  "p0335": {
+   "doi": null,
+   "journal": null,
+   "score": 0.449
+  },
+  "p0339": {
+   "doi": null,
+   "journal": null,
+   "score": 0.444
+  },
+  "p0342": {
+   "doi": "10.64898/2026.06.25.734656",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0343": {
+   "doi": "10.1038/s41586-024-08168-4",
+   "journal": "Nature",
+   "score": 1.0
+  },
+  "p0344": {
+   "doi": "10.31234/osf.io/b49ga_v1",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0348": {
+   "doi": "10.1038/s41586-025-09196-4",
+   "journal": "Nature",
+   "score": 1.0
+  },
+  "p0349": {
+   "doi": null,
+   "journal": null,
+   "score": 0.462
+  },
+  "p0350": {
+   "doi": "10.32470/jnqbpro",
+   "journal": "Proceedings of Cognitive Computational Neuroscience 2025",
+   "score": 1.0
+  },
+  "p0353": {
+   "doi": "10.21203/rs.3.rs-2745694/v1",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0354": {
+   "doi": null,
+   "journal": null,
+   "score": 0.519
+  },
+  "p0355": {
+   "doi": "10.31234/osf.io/gr5s6_v1",
+   "journal": null,
+   "score": 1.0
+  },
+  "p0356": {
+   "doi": null,
+   "journal": null,
+   "score": 0.0
+  },
+  "p0358": {
+   "doi": null,
+   "journal": null,
+   "score": 0.584
+  },
+  "p0359": {
+   "doi": null,
+   "journal": null,
+   "score": 0.618
+  },
+  "p0361": {
+   "doi": "10.1101/2025.07.24.666222",
+   "journal": null,
+   "score": 1.0
+  }
+ },
+ "arxiv": {
+  "2506.17124v2": "cs.AI",
+  "2506.11128v3": "cs.CL",
+  "2607.22753v1": "cs.CV",
+  "2508.07887v1": "cs.LG",
+  "2506.13131v1": "cs.AI",
+  "2506.19686v3": "cs.AI",
+  "2501.02950v2": "q-bio.NC",
+  "2505.19488v1": "cs.LG",
+  "2603.26524v1": "math.HO",
+  "2501.12948v2": "cs.CL",
+  "2501.03727v3": "eess.AS",
+  "2607.01224v1": "cs.AI",
+  "2606.06479v2": "cs.LG",
+  "2502.10108v1": "cs.LG",
+  "2505.12653v2": "q-bio.NC",
+  "2511.19757v1": "cs.CL"
+ },
+ "biorxiv": {
+  "10.1101/2": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.1101/2024.08.12.607567": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.1101/2025.01.05.631363": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.1101/2025.01.08.632067": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.1101/2025.01.20.633896": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.1101/2025.02.04.636283": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.1101/2025.02.14.638352": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.1101/2025.02.21.639601": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.1101/2025.02.22.639416": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.1101/2025.02.24.639840": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.1101/2025.02.25.640211": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.1101/2025.02.28.640679": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.1101/2025.03.06.641914": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.1101/2025.03.13.643098": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.1101/2025.03.28.646007": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.1101/2025.04.22.649929": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.1101/2025.05.10.653115": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.1101/2025.07.01.662486": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.1101/2025.07.10.664201": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.1101/2025.07.31.667952": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.1101/2025.08.26.672267": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.1101/2025.08.30.673233": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.64898/2025.12.12.693963": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.64898/2026.01.10.698785": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.64898/2026.01.10.698827": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.64898/2026.03.01.708904": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.64898/2026.03.03.709421": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.64898/2026.03.13.711547": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.64898/2026.03.19.712982": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.64898/2026.03.31.715618": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.64898/2026.04.01.715865": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.64898/2026.04.14.718499": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.64898/2026.04.15.718716": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.64898/2026.04.19.719506": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.64898/2026.04.21.7197": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.64898/2026.04.21.719717": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.64898/2026.04.23.720375": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.64898/2026.04.24.720552": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.64898/2026.05.02.722435": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.64898/2026.05.05.723065": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.64898/2026.05.27.728344": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.64898/2026.06.22.733680": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.64898/2026.07.06.732916": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.64898/2026.07.22.740141": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.64898/2026.07.24.740539": {
+   "error": "HTTP Error 404: Not Found"
+  },
+  "10.64898/2026.07.26.740301": {
+   "error": "HTTP Error 404: Not Found"
+  }
+ }
+}

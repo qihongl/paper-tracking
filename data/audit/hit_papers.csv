@@ -1,0 +1,300 @@
+id,year,title,venue_note,sections
+p0001,2026,Composing trajectories for rapid inference of navigational goals,journal:Neuron [direct-scan],A|G
+p0002,2026,Human exploration strategically balances approaching and avoiding uncertainty,journal:eLife [direct-scan],A|B|G
+p0003,2026,Learning reinforces curiosity for related information,journal-unknown(10.1073/pnas.),A|E
+p0005,2026,Entorhinal cortex represents task-relevant remote locations independently of CA1,journal:Nature Neuroscience [direct-scan],A|G
+p0007,2025,Bridging real-world summarization and laboratory-based memory recall,unknown-venue,A|B|E|G
+p0008,2026,Causal network structure predicts memory organization and neural reinstatement across events,bioRxiv:section-unknown,A|E
+p0009,2026,Predictability of evoked activity governs the geometry of spontaneous neural manifolds,bioRxiv:section-unknown,A|B|G
+p0010,2026,Synthesizing scientific literature with retrieval-augmented language models,unknown-venue,A|B|E|G
+p0011,2025,Constructing future behavior in the hippocampal formation through composition and replay,journal:Nature Neuroscience [direct-scan],A|B|E|G
+p0012,2025,Quantifying differences in neural population activity with shape metrics,unknown-venue,A|C|G
+p0013,2025,A neural circuit framework for economic choice - From building blocks of valuation to compositionality in multitasking,bioRxiv:section-unknown,A|B|G
+p0014,2026,Neural mechanisms of time-forward predictions for naturalistic auditory tone sequences,journal:Nature Communications [direct-scan],A|E|G
+p0015,2026,Distinct neuronal populations in the human brain combine content and context,"journal:Nature [title-match, score=1.0]",A|B|G
+p0016,2025,Abstract rule learning promotes cognitive flexibility in complex environments across species,journal:Nature Communications [direct-scan],A|B|E|G
+p0017,2026,Language models need sleep - Learning to self-modify and consolidate memories,unknown-venue,A|B|G
+p0018,2026,Memory Caching - RNNs with growing memory,unknown-venue,A|B|E|G
+p0019,2025,Anxiety modulates event segmentation,unknown-venue,A|B|E|G
+p0021,2025,Dynamics of specialization in neural modules under resource constraints,journal:Nature Communications [direct-scan],A|D|G
+p0023,2026,Episodic memory encoding fluctuates at a theta rhythm of 3–10 Hz,journal:Nature Human Behaviour [direct-scan],A|B|D
+p0024,2026,A communication subspace relays context-dependent actions from human prefrontal to motor cortex,journal:Nature Neuroscience [direct-scan],A|B|D
+p0025,2025,A foundation model to predict and capture human cognition,unknown-venue,A|B|E|G
+p0026,2026,From sequences to schemas - low-rank recurrent dynamics underlie abstract relational representations,unknown-venue,A|B|D
+p0027,2026,Uncovering event and narrative structure from temporal memory,unknown-venue,A|B|E
+p0028,2025,When do measured representational distances reflect the neural representational geometry,journal-unknown(10.7554/eLife.),A|B
+p0029,2026,Age differences in hippocampal neural timescales during movie-viewing,bioRxiv:section-unknown,A|B|E
+p0031,2026,One token is enough - Fingerprinting and verifying large language models from single-token output distributions,unknown-venue,A
+p0032,2025,Understanding learning through uncertainty and bias,journal:Communications Psychology [listed],A|B|G
+p0033,2025,Expectation violations signal goals in novel human communication,journal:Nature Communications [direct-scan],A|G
+p0034,2026,Human learning of noninvasive brain–computer interfaces via manifold geometry,journal:Nature Neuroscience [direct-scan],A|B|G
+p0036,2026,Mapping the neuronal building blocks of human language with language models,"journal:Nature [title-match, score=1.0]",A|B
+p0037,2025,A neuronal code for object representation and memory in the human amygdala and hippocampus,journal:Nature Communications [direct-scan],A|B|G
+p0038,2025,What does it mean to understand language,arXiv:category-unknown,A|B
+p0039,2025,Discovering symbolic cognitive models from human and animal behavior,unknown-venue,A|B|E|G
+p0040,2026,Attention modulates value normalization in human reinforcement learning by shaping reward encoding,journal:Nature Communications [direct-scan],A|E|G
+p0041,2025,Episodic and associative memory from spatial scaffolds in the hippocampus,"journal:Nature [title-match, score=1.0]",A|B|G
+p0042,2025,Sleep microstructure organizes memory replay,"journal:Nature [title-match, score=1.0]",A|B
+p0043,2026,Learning what to remember - A cognitively grounded multi-factor value model for agentic memory,unknown-venue,A|D|G
+p0044,2026,Continuous strategy adaptation and discrete switching driven by environment and internal state in meta-learning,unknown-venue,A|B|E|G
+p0045,2026,Interpreting human sleep activity through neural contrastive learning,journal:Neuron [direct-scan],A|B|E
+p0046,2026,Learning to select computations in recurrent neural circuits,bioRxiv:section-unknown,A|B|D|G
+p0047,2025,Independent continuous tracking of multiple agents in the human hippocampus,bioRxiv:section-unknown,A|B|E
+p0048,2026,"Online behavioral studies are safe for now - Unusual RTs do not imply bots (A reply to Van der Stigchel et al., 2026)",unknown-venue,A|G
+p0049,2025,Learning reshapes the hippocampal representation hierarchy,"journal:Proceedings of the National Academy of Sciences [title-match, score=1.0]",A|B|D|G
+p0051,2025,Hippocampal representations drift in stable multisensory environments,"journal:Nature [title-match, score=1.0]",A|G
+p0052,2025,Neural codes track prior events in a narrative and predict subsequent memory for details,journal:Communications Psychology [listed],A|E
+p0053,2025,A habit and working memory model as an alternative account of human reward-based learning,journal:Nature Human Behaviour [direct-scan],A|B|G
+p0054,2025,Hierarchical context guides human memory search,unknown-venue,A|B|E|G
+p0055,2026,Interpretable abstractions of artificial neural ... edict behavior and neural activity during human information gathering,journal:Nature Neuroscience [direct-scan],A|B|G
+p0057,2025,Goals as reward-producing programs,journal:Nature Machine Intelligence [direct-scan],A|E|G
+p0059,2025,Humans and LLMs rate deliberation as superior to intuition on complex reasoning tasks,journal:Communications Psychology [listed],A
+p0061,2025,Multivariate neural markers of individual differences in thought control difficulties,bioRxiv:section-unknown,A|D
+p0062,2025,DeepSeek-R1 - Incentivizing Reasoning Capability in LLMs via Reinforcement Learning,arXiv:category-unknown,A|B|G
+p0063,2026,Toward the cognitive modeling of dynamic decision making,journal:Psychonomic Bulletin &amp; Review [listed],A|B|E|G
+p0065,2025,Temporal order memory in naturalistic events is scaffolded by semantic knowledge and hierarchical event structure,unknown-venue,A|B|E
+p0066,2025,Reading specific memories from human neurons before and after sleep,bioRxiv:section-unknown,A|B|D|E
+p0067,2026,Memory retrieval in transformers - Insights from the Encoding Specificity Principle,unknown-venue,A|D
+p0068,2025,Towards large language models with human-like episodic memory (1),"journal:Trends in Cognitive Sciences [title-match, score=0.984]",A|B
+p0069,2025,Towards large language models with human-like episodic memory,journal:Trends in Cognitive Sciences [direct-scan],A|B
+p0070,2026,Structured and flexible representations in medial-frontal cortex support goal-directed navigation,unknown-venue,A|B|G
+p0072,2025,"The avalanche of memory - Recent feelings of fam ... ctivity, unlock the brain’s subsequent ability to reactivate memories (1)",bioRxiv:section-unknown,A|B|D|G
+p0073,2025,"The avalanche of memory - Recent feelings of fam ... ctivity, unlock the brain’s subsequent ability to reactivate memories",bioRxiv:section-unknown,A|B|D|G
+p0074,2025,Language is widely distributed throughout the brain,journal:Nature Reviews Neuroscience [listed],A|D
+p0075,2025,Electrophysiological signatures underlying variability in human memory consolidation,journal:Nature Communications [direct-scan],A|E
+p0076,2025,"Neural population activity for memory - Properties, computations, and codes",journal:Neuron [direct-scan],A|D|E
+p0077,2026,Acetylcholine - a candidate substrate for hippocampal predictive learning,journal:Nature Reviews Neuroscience [listed],A|B|G
+p0079,2026,The prefrontal cortex controls memory organization in the hippocampus,journal:Nature Neuroscience [direct-scan],A
+p0080,2025,The cost of thinking is similar between large reasoning models and humans,journal:Proceedings of the National Academy of Sciences [direct-scan],A|B|D|G
+p0081,2026,Hybrid neural-cognitive models reveal how memory shapes human reward learning,journal:Nature Human Behaviour [direct-scan],A|G
+p0082,2025,The individual determinants of morning dream recall,journal:Communications Psychology [listed],A|E|G
+p0083,2025,Fragmented replay of very large environments in the hippocampus of bats,journal:Cell [listed],A|B|G
+p0084,2025,Context-dependent decision-making in the primate hippocampal-prefrontal circuit,journal:Nature Neuroscience [direct-scan],A|B|G
+p0086,2025,BOLD signal changes can oppose oxygen metabolism across the human cortex,journal:Nature Neuroscience [direct-scan],A|E
+p0087,2025,Representational drift reflects ongoing balancing of stochastic changes by Hebbian learning,bioRxiv:section-unknown,A|D|G
+p0088,2025,From memories to maps - Mechanisms of in-context reinforcement learning in transformers,arXiv:category-unknown,A|G
+p0089,2025,Humans learn generalizable representations through efficient coding,journal:Nature Communications [direct-scan],A|B|D|G
+p0090,2026,The resource-rational dynamics of evidence accumulation,bioRxiv:section-unknown,A|G
+p0091,2025,Studying memory narratives with natural language processing,"journal:Trends in Cognitive Sciences [title-match, score=1.0]",A|E
+p0092,2025,Retrieving non-cued episodic memories by taking a cascading walk down memory lane(s),unknown-venue,A|D|E
+p0094,2025,Reevaluating the role of education in cognitive decl ... - Insights from large-scale longitudinal cohorts across 33 countries,unknown-venue,A|E|G
+p0095,2026,Punctuated memory change - The temporal dynamics and brain basis of memory stability in aging,unknown-venue,E
+p0096,2025,A vectorial code for semantics in human hippocampus,bioRxiv:section-unknown,A|B
+p0097,2025,Cognitive modeling using artificial intelligence,unknown-venue,A|B|G
+p0098,2026,Human hippocampal ripples tune cortical responses based on predicted uncertainty,journal:Nature Neuroscience [direct-scan],A|B|D|G
+p0102,2025,The origin of color categories,unknown-venue,A|B|G
+p0104,2026,Dynamic shifts between pattern separation and reinstatement in human CA3 and dentate gyrus,bioRxiv:section-unknown,A|E
+p0105,2025,Key-value memory in the brain,arXiv:category-unknown,A|E|G
+p0106,2025,Distractor-specific control adaptation in multidimensional environments,journal:Nature Human Behaviour [direct-scan],A|B|G
+p0107,2025,"An integrated model of semantics and control, part 2 - Solving the similarity paradox through Context Inference",unknown-venue,A|B|E|G
+p0108,2025,Hippocampal reactivation of planned trajectories is required for effective goal choice in an allocentric memory task,bioRxiv:section-unknown,A|D|E|G
+p0109,2025,Dopaminergic action prediction errors serve as a value-free teaching signal,"journal:Nature [title-match, score=1.0]",A|B|E|G
+p0110,2025,Ensemble reactivations during brief rest drive fast learning of sequences,"journal:Nature [title-match, score=1.0]",A|G
+p0111,2026,Regional specialization in prefrontal cortex manifests in the reliability of task progression codes,journal:Neuron [direct-scan],A|B|E|G
+p0112,2025,From RAG to memory - Non-parametric continual learning for large language models,unknown-venue,D|G
+p0113,2025,Reconciling time and prediction error theories of associative learning,unknown-venue,A|B|E|G
+p0114,2025,High-dimensional structure underlying individual differences in naturalistic visual experience,arXiv:category-unknown,A|B|C|E
+p0115,2026,Behavioral hierarchy without a hierarchical brain,bioRxiv:section-unknown,B|E
+p0116,2025,A multimodal Seq2Seq Transformer for predicting brain responses to naturalistic stimuli,unknown-venue,A|B|D|G
+p0117,2025,How mood-related physiological states bias economic decisions,journal:Communications Psychology [listed],A|B|G
+p0118,2025,Humans and neural networks show similar patterns of transfer and interference during continual learning,journal:Nature Human Behaviour [direct-scan],A
+p0120,2025,A neural state space for episodic memories,unknown-venue,A|B|D
+p0121,2026,Context structure reshapes the representational geometry of Language Models,unknown-venue,A|B|C
+p0123,2025,Comprehensive exploration of visual working memory mechanisms using large-scale behavioral experiment,journal:Nature Communications [direct-scan],A|B|D|G
+p0124,2026,Probabilistic neural code supports metacognition in value-based decisions in the human brain,bioRxiv:section-unknown,A|G
+p0125,2025,Episodic memories generation and evaluation benchmark for Large Language Models,unknown-venue,A|B|G
+p0126,2026,A neural mechanism for online discovery of latent contexts,bioRxiv:section-unknown,A|B|D|E
+p0127,2026,Real-time reconstruction of human visual perception from fMRI,arXiv:category-unknown,A|E|G
+p0128,2026,Prefrontal mechanisms of rule learning,bioRxiv:section-unknown,A|B
+p0129,2026,Can we automatize scientific discovery in the cognitive sciences,unknown-venue,A|B|E|G
+p0130,2025,The metabolic costs of cognition,journal:Trends in Cognitive Sciences [direct-scan],A|G
+p0131,2026,Compositionality and systematicity emerge from iterated learning in deep linear networks,journal-unknown(10.1073/pnas.),A|B|D
+p0133,2025,Discovering cognitive strategies with tiny recurrent neural networks,"journal:Nature [title-match, score=1.0]",A|E|G
+p0134,2026,The AI hippocampus - How far are we from human memory,unknown-venue,A|D|E
+p0136,2025,Robust encoding of stimulus-response mapping by neurons in visual cortex,journal:Proceedings of the National Academy of Sciences [direct-scan],A|D
+p0137,2025,When can model-free reinforcement learning be enough for thinking,arXiv:category-unknown,A|B|E|G
+p0138,2026,Hippocampal engrams configure prefrontal context representations to guide flexible decisions,bioRxiv:section-unknown,A|B|G
+p0139,2025,ENCODING DATA FOR AND DECODING DATA FROM IN VITRO NEURON STIMULATION,unknown-venue,A|B|G
+p0141,2025,Humans rationally balance detailed and temporally abstract world models,journal:Communications Psychology [listed],A|B|G
+p0142,2025,Network structure influences the strength of learned neural representations,journal:Nature Communications [direct-scan],A|E
+p0143,2025,The curious case of dopaminergic prediction errors and learning associative information beyond value,journal:Nature Reviews Neuroscience [listed],A|B|D|G
+p0144,2025,A generic non-invasive neuromotor interface for human-computer interaction,unknown-venue,A|B|E|G
+p0145,2025,Free recall is shaped by inference and scaffolded by event structure,journal:Communications Psychology [listed],A|E|G
+p0146,2026,Predictive abstract task representations support few-shot learning in the rat brain,bioRxiv:section-unknown,A|B|G
+p0147,2026,FASTIMAGES - Validating replay detection methods in human Neuroimaging using a combined MEG and fMRI dataset,unknown-venue,A|G
+p0148,2025,Hippocampal ripples initiate cortical dimensionality expansion for memory retrieval,bioRxiv:section-unknown,A|D|G
+p0149,2025,Exploring the role of dimensionality transformation in episodic memory,journal:Trends in Cognitive Sciences [direct-scan],A
+p0151,2026,Mathematical methods and human thought in the age of AI,arXiv:category-unknown,A
+p0153,2025,On the origin of memory neurons in the human hippocampus,"journal:Trends in Cognitive Sciences [title-match, score=1.0]",A
+p0154,2025,Large language models as model organisms for human associative learning (1),unknown-venue,A|B|D
+p0155,2025,Large language models as model organisms for human associative learning,unknown-venue,A|B|D
+p0156,2025,Memory loves company - Related object pairs benefit visual working memory,unknown-venue,A|D|G
+p0158,2026,Pretraining recurrent networks without recurrence,arXiv:category-unknown,A|B
+p0159,2025,Neurocomputational underpinnings of suboptimal beliefs in recurrent neural network-based agents,unknown-venue,A|E|G
+p0160,2025,Sensory compression as a unifying principle for action chunking and time coding in the brain,unknown-venue,A|G
+p0161,2025,Inner speech in motor cortex and implications for speech neuroprostheses,journal:Cell [listed],A
+p0162,2025,Coordinated representations for naturalistic memory encoding and retrieval in hippocampal neural subspaces,journal:Nature Communications [direct-scan],A|B|D|E|G
+p0163,2025,Latent learning - episodic memory complements parametric learning by enabling flexible reuse of experiences,unknown-venue,A|B|D
+p0164,2025,Finding order in chaos - influences of environmental complexity and predictability on development,unknown-venue,A|B|D|E|G
+p0165,2025,Latent circuit inference from heterogeneous neural responses during cognitive tasks,journal:Nature Neuroscience [direct-scan],A|D|G
+p0169,2025,Cognitive computational model reveals repetition bias in a sequential decision-making task,journal:Communications Psychology [listed],A|B|E|G
+p0170,2025,A neural network model of free recall learns multiple memory strategies (1),unknown-venue,A|B|E|G
+p0171,2025,A neural network model of free recall learns multiple memory strategies,unknown-venue,A|B|E|G
+p0172,2025,Detecting neurocognitive disorders through analyses of ... evolution and cross-modal consistency in visual-stimulated narratives,arXiv:category-unknown,D|G
+p0173,2025,Does object binding naturally emerge in large pretrained Vision Transformers,unknown-venue,A|B|D|E|G
+p0177,2025,Triple-N Dataset - Non-human Primate Neural Responses to Natural Scenes,unknown-venue,A
+p0178,2026,A neural network model of free recall learns multiple memory strategies,journal:Nature Machine Intelligence [direct-scan],A|B|E|G
+p0179,2026,BrainPilot - Automating brain discovery with agentic research,unknown-venue,A|E|G
+p0180,2026,Interactive narratives reveal the personalizing effect of agency on episodic memory,journal:Nature Communications [direct-scan],A|E|G
+p0181,2026,Triple-N dataset - large-scale fMRI-guided dense recordings of nonhuman primate neural responses to natural scenes,journal:Nature Neuroscience [direct-scan],A|B|D|E
+p0182,2025,Compositional generalization requires more than disentangled representations,unknown-venue,A|B|D|G
+p0183,2025,Dopamine encodes deep network teaching signals for individual learning trajectories,journal:Cell [listed],A|G
+p0184,2025,Phase of firing does not reflect temporal order in sequence memory of humans and recurrent neural networks,journal:Nature Neuroscience [direct-scan],A|B|G
+p0185,2025,Neural sampling from cognitive maps supports goal-directed planning and imagination,unknown-venue,A|B
+p0186,2026,Neural sampling from cognitive maps enables goal-directed imagination and planning,journal:Nature Machine Intelligence [direct-scan],A|B|G
+p0187,2025,A hypothalamic circuit underlying the dynamic control of social homeostasis,"journal:Nature [title-match, score=1.0]",A|B|D|G
+p0188,2025,"Advances and challenges in foundation agents - From brain-inspired intelligence to evolutionary, collaborative, and safe systems",unknown-venue,A|B|E|G
+p0190,2025,Neural dissociation of attention and working memory through inhibitory control,journal:Nature Communications [direct-scan],A|E|G
+p0194,2026,No evidence for sleep-dependent memory generalization in a large online sample,bioRxiv:section-unknown,A|B|G
+p0198,2025,Transitions in dynamical regime and neural mode during perceptual decisions,"journal:Nature [title-match, score=1.0]",A|B|E|G
+p0199,2026,Unlocking spontaneous cognition in the age of data science,journal:Nature Reviews Neuroscience [listed],A|B|E
+p0200,2025,"The brain, body, and behavior dataset (BBBD) - Multimodal recordings during educational videos",unknown-venue,A|B|E|G
+p0201,2026,Universal geometry of compositional construction in prefrontal cortex,bioRxiv:section-unknown,A|B|E|G
+p0202,2025,Persistent representation of a prior schema in the orbitofrontal cortex facilitates learning of a conflicting schema,bioRxiv:section-unknown,A|E|G
+p0203,2026,Flexible neural representations of abstract structural knowledge in the human entorhinal cortex,journal:eLife [direct-scan],A|B|D|E|G
+p0205,2025,Modeling rapid language learning by distilling Bayesian priors into artificial neural networks,journal:Nature Communications [direct-scan],A|B|E|G
+p0206,2025,Impact of task similarity and training regimes on cognitive transfer and interference,unknown-venue,A|B|G
+p0207,2025,The effects of task similarity during representation learning in brains and neural networks,bioRxiv:section-unknown,A|B|G
+p0208,2026,Investigating the reproducibility of the social and behavioural sciences,unknown-venue,A|B|G
+p0210,2025,Novelty as a drive of human exploration in complex stochastic environments,"journal:Proceedings of the National Academy of Sciences [title-match, score=1.0]",A|B|G
+p0212,2025,Toward a functional future for the cognitive neuroscience of human aging,journal:Neuron [direct-scan],A
+p0214,2025,Moore et al. 2024 - Mnemonic brain state engagement is diminished in healthy aging,bioRxiv:section-unknown,A|B
+p0215,2026,Greater interference from multiple exposures during memory retrieval drives more memorable and forgettable experiences,journal:Hippocampus [listed],A|D|E
+p0217,2026,"Episodic memory consolidation by reactivation of h ... oncept neurons during sleep reflects contents, not sequence of events",bioRxiv:section-unknown,A|E|G
+p0218,2026,Dopaminergic processes predict temporal distortions in event memory,journal:Nature Communications [direct-scan],A|E|G
+p0219,2025,Efficient uniform sampling explains non-uniform memory of narrative stories,bioRxiv:section-unknown,A|B|E|G
+p0220,2026,Reverse predictivity for bidirectional comparison of neural networks and biological brains,journal:Nature Machine Intelligence [direct-scan],A|B|D|G
+p0221,2025,The development of a story recall test for di ... ween Alzheimer’s disease and mild cognitive impairment in Thai cohort,journal-unknown(10.1057/s41599),A|E
+p0223,2025,Not yet AlphaFold for the mind - Evaluating Centaur as a synthetic participant,arXiv:category-unknown,A|B
+p0224,2025,Neural and behavioral reinstatement jointly reflect retrieval of narrative events,journal:Nature Communications [direct-scan],A|B|D|E|G
+p0225,2026,Inventing the future - A neuroscience research roadmap,journal:Neuron [direct-scan],A|E
+p0226,2025,Multiple event segmentation mechanisms in the human brain,journal-unknown(10.7554/eLife.),A|B|E|G
+p0227,2025,Episodic memory facilitates flexible decision making via access to detailed events,unknown-venue,A|D|G
+p0228,2026,Episodic memory facilitates flexible decision-making via access to detailed events,journal:Nature Human Behaviour [direct-scan],A|D|G
+p0229,2025,Proactive and reactive construction of memory-based preferences,journal:Nature Communications [direct-scan],A|B|G
+p0230,2026,Flexible decisions arise from resource-rational memory sampling,unknown-venue,A|D|G
+p0231,2026,Optimal learning rate schedule for balancing effort and performance,unknown-venue,A|B|G
+p0232,2026,The geometry of context-dependent biased decisions during learning,unknown-venue,A|B|E|G
+p0233,2025,Deep sequence models tend to memorize geometrically; it is unclear why,unknown-venue,A|B|C|E
+p0234,2025,AlphaEvolve - A coding agent for scientific and algorithmic discovery,arXiv:category-unknown,A|B|E|G
+p0235,2025,NeuroXVocal - Detection and explanation of Alzheimer's Disease through non-invasive analysis of picture-prompted speech,arXiv:category-unknown,A|D
+p0236,2026,Linking neural representations to behavior using generalization,unknown-venue,A|B|D|E|G
+p0237,2025,Dynamical constraints on neural population activity,journal:Nature Neuroscience [direct-scan],A|D|G
+p0238,2026,How the 2025 NIH grant terminations varied by researchers' demographic groups,journal:Proceedings of the National Academy of Sciences [direct-scan],A|B
+p0239,2025,The impact of TikTok’s fast-paced content on attention span of students,journal-unknown(10.20944/prepr),A|E|G
+p0240,2026,Internal state dynamically gates task-specific attractor dynamics in prefrontal cortex,unknown-venue,A|B|G
+p0241,2025,Replay builds an efficient cognitive map offline to avoid computation online,bioRxiv:section-unknown,A|B|E|G
+p0242,2026,Online behavioral studies are vulnerable to agentic AI,unknown-venue,A
+p0244,2026,Comparing semantic navigation in humans and large language models using natural language processing,unknown-venue,A|D|G
+p0245,2025,Compositional architecture - Orthogonal neural codes for task context and spatial memory in prefrontal cortex,bioRxiv:section-unknown,A|B
+p0246,2025,Emotional arousal enhances narrative memories through functional integration of large-scale brain networks,journal:Nature Human Behaviour [direct-scan],A|B|D|G
+p0248,2025,Hippocampus supports multi-task reinforcement learning under partial observability,journal:Nature Communications [direct-scan],A|B|G
+p0249,2025,A position coding model that accounts for the effects of event boundaries on temporal order memory,"journal:Cognitive Psychology [title-match, score=1.0]",A|E
+p0250,2025,Hierarchical coding of local and global positions in episodic memory for naturalistic sequences,bioRxiv:section-unknown,A|B|G
+p0251,2025,Shared sensitivity to data distribution during learning in humans and transformer networks,journal:Nature Human Behaviour [direct-scan],A|B|G
+p0252,2026,Interpretable compositional computation with recurrent neural networks,unknown-venue,A|B|D|G
+p0253,2025,Position - Episodic memory is the missing piece for long-term LLM agents,unknown-venue,A|G
+p0254,2025,Addressing low statistical power in computational modelling studies in psychology and neuroscience,journal:Nature Human Behaviour [direct-scan],A|G
+p0255,2026,"Rarely categorical, highly separable representations along the cortical hierarchy","journal:Nature [title-match, score=1.0]",A|B|D
+p0256,2026,Development of non-spatial grid-like neural codes tracks inference and intelligence,journal:Cell [listed],A|B
+p0257,2026,"The First 1,000 days (1kD) project - collecting and analyzing an ultra-dense naturalistic dataset of Human baby development",bioRxiv:section-unknown,A|G
+p0258,2026,A normative account of human temporal structure learning,bioRxiv:section-unknown,A|G
+p0259,2025,Method of loci training yields unique prefrontal representations that support effective memory encoding,bioRxiv:section-unknown,A|B|D|E|G
+p0260,2025,Neural replay is connected to latent cause inference and supports fast generalization,bioRxiv:section-unknown,A|B|E|G
+p0261,2025,Stronger language models produce more human-like errors,arXiv:category-unknown,A|B|G
+p0262,2026,Stronger memories through smarter stimulation,"journal:eLife [title-match, score=1.0]",A|D|E
+p0263,2025,Convergent neural dynamical systems for task control in artificial networks and human brains,unknown-venue,A|B|G
+p0264,2025,Parallel trade-offs in human cognition and neural networks - The dynamic interplay between in-context and in-weight learning,"journal:Proceedings of the National Academy of Sciences [title-match, score=1.0]",A|D|G
+p0265,2025,Between planning and map building - Prioritizing replay when future goals are uncertain,"journal:Neuron [title-match, score=1.0]",A|B|G
+p0266,2026,Modeling attention and binding in the brain through bidirectional recurrent gating,journal:Nature Communications [direct-scan],A|B|D|G
+p0268,2025,Spatially distributed and regionally unbound cellular resolution brain-wide processing loops in mice,unknown-venue,A|D|E|G
+p0269,2025,Anticipatory eye gaze as a marker of memory,journal:Communications Psychology [listed],A|D
+p0270,2025,Neural correlates and reinstatement of recent and remote memory in children and young adults,journal:eLife [direct-scan],A|B
+p0271,2025,Insights from the Algonauts 2025 winners,unknown-venue,A|B|D
+p0272,2025,Human neural dynamics of real-world and imagined navigation,journal:Nature Human Behaviour [direct-scan],A
+p0273,2025,Formation of task representations and replay in mouse medial prefrontal cortex,unknown-venue,A|B|G
+p0274,2026,Formation of task representations and replay in mouse medial prefrontal cortex,journal:eLife [direct-scan],A|B|G
+p0276,2026,Generative replay across hippocampal-neocortical circuits,bioRxiv:section-unknown,A|B|E|G
+p0277,2026,Hippocampal-cortical coupling dynamics drive system consolidation of remote memory,bioRxiv:section-unknown,A
+p0278,2025,Discovery of a β-arrestin-biased CCKBR agonist that blocks CCKBR-dependent long-term potentiation,journal:Nature Communications [direct-scan],A|E
+p0279,2025,Hybrid neural networks for continual learning inspired by corticohippocampal circuits,journal:Nature Communications [direct-scan],A|B|D|G
+p0280,2026,Rapid concerted switching of the neural code in the inferotemporal cortex,"journal:Nature [title-match, score=1.0]",A|B|D|E
+p0281,2026,When do LLM preferences predict downstream behavior,unknown-venue,A|B|G
+p0282,2026,Repeated extrinsic rewards following retrieval practice facilitate later memory,journal:Psychonomic Bulletin &amp; Review [listed],A|D|G
+p0283,2025,A neural network with episodic memory learns causal relationships between narrative events,unknown-venue,A
+p0284,2026,Cortical reinstatement of causally related events sparks narrative insights by updating neural representation patterns,journal:Nature Communications [direct-scan],A|D|E|G
+p0285,2025,Effects of noise and metabolic cost on cortical task representations,journal:eLife [direct-scan],A|G
+p0286,2026,Predictive looking and predictive looking errors in everyday activities,journal:Journal of Experimental Psychology: General [listed],A|B|E|G
+p0287,2026,Fixation duration on natural scenes is explained by memory encoding not processing demand,journal:Nature Neuroscience [direct-scan],A|B|D|G
+p0288,2025,Learning produces an orthogonalized state machine in the hippocampus,"journal:Nature [title-match, score=1.0]",A|B|G
+p0290,2025,Building compositional tasks with shared neural subspaces,unknown-venue,A|B|D|E|G
+p0291,2026,A generalizable foundation model for analysis of human brain MRI,journal:Nature Neuroscience [direct-scan],A|B|E|G
+p0294,2025,Semantic language decoding across participants and stimulus modalities,journal:Current Biology [direct-scan],A|B
+p0296,2026,Neural activations and representations during episodic versus semantic memory retrieval,journal:Nature Human Behaviour [direct-scan],A|D
+p0297,2025,Back to recurrent processing at the crossroad of transformers and state-space models,journal:Nature Machine Intelligence [direct-scan],A|B|E
+p0298,2025,Single-unit activations confer inductive biases for emergent circuit solutions to cognitive tasks,journal:Nature Machine Intelligence [direct-scan],A|B|D|G
+p0299,2025,Mental graphs structure the storage and retrieval of visuomotor associations,journal:Nature Human Behaviour [direct-scan],A|B|D
+p0300,2026,Redundant prefrontal hemispheres adapt storage strategy to working memory demands,journal:Nature Communications [direct-scan],A|E|G
+p0301,2025,Unexpected twists - Electrophysiological correlates of encoding and retrieval of events eliciting prediction error,journal:Psychophysiology [listed],A|B|E|G
+p0302,2025,Key moments in naturalistic events synchronize neural activity patterns and dominate memory reinstatement,bioRxiv:section-unknown,A|E
+p0303,2026,Will online behavioral research follow the fate of online survey research,journal:Proceedings of the National Academy of Sciences [direct-scan],A|B|G
+p0304,2025,Hippocampal mismatch signals are based on episodic memories and not schematic knowledge,journal:Proceedings of the National Academy of Sciences [direct-scan],A|B|G
+p0306,2025,Predicting brain responses to natural movies with multimodal LLMs,unknown-venue,A|B|D|E
+p0308,2025,Left-right-alternating theta sweeps in entorhinal-hippocampal maps of space,"journal:Nature [title-match, score=1.0]",A|E|G
+p0309,2026,Looking into working memory through micro eye movements,journal:Trends in Cognitive Sciences [direct-scan],A|E|G
+p0310,2025,The precision of hippocampal representations predicts incremental value-learning across the adult lifespan,unknown-venue,A|D|G
+p0311,2025,An instantaneous voice-synthesis neuroprosthesis,"journal:Nature [title-match, score=1.0]",A|B|D|G
+p0312,2025,Theoretical neuroscience - Understanding cognition,unknown-venue,A|B|G
+p0313,2026,Toward a foundational brain model of intelligence,journal:Current Opinion in Neurobiology [listed],A|B
+p0315,2025,Bridging brains and models - MoE-based functional lesions for simulating and rehabilitating aphasia,unknown-venue,A|B|G
+p0316,2025,Emergent modularity in large language models - Insights from aphasia simulations,bioRxiv:section-unknown,A|B
+p0317,2025,"Representation, alignment, and generation - A comprehensive survey of Foundation Models for non-invasive brain decoding",unknown-venue,A|B
+p0318,2026,A simple model of co-emergence of grid and place fields,unknown-venue,A|B|G
+p0319,2026,Training constrains neural routes to knowledge assembly,bioRxiv:section-unknown,A|B|E
+p0320,2025,Changes in memory function in adults following SARS-CoV-2 infection - findings from the Covid and Cognition online study,"journal:Cortex [title-match, score=1.0]",A|G
+p0321,2025,The potential existential threat of large language models to online survey research,"journal:Proceedings of the National Academy of Sciences [title-match, score=1.0]",A|E
+p0322,2026,Value-based control over memory encoding and search,unknown-venue,A|B|D|E|G
+p0323,2025,Replay in the human visual cortex during brief task pauses is linked to implicit learning of successor representations,"journal:Proceedings of the National Academy of Sciences [title-match, score=1.0]",A|B|D|G
+p0324,2026,Learning shapes neural geometry in the primate prefrontal cortex,journal:Nature Neuroscience [direct-scan],A|B|C|D|E|G
+p0325,2025,Two types of motifs enhance human recall and generalization of long sequences,journal:Communications Psychology [listed],A|B|G
+p0326,2026,AutoMem - Automated learning of memory as a cognitive skill,arXiv:category-unknown,A|B|G
+p0327,2025,Human hippocampal ripples align new experiences with a grid-like schema,journal:Neuron [direct-scan],A|D
+p0328,2026,Human-like working memory interference in large language models,unknown-venue,A|G
+p0329,2025,Using human mobility data to quantify experienced urban inequalities,journal:Nature Human Behaviour [direct-scan],A|G
+p0330,2025,Non-invasive ultrasonic neuromodulation of the human nucleus accumbens impacts reward sensitivity,journal:Nature Communications [direct-scan],A|D|E|G
+p0331,2026,Polysemanticity in human hippocampal neurons,bioRxiv:section-unknown,A|B|C|D
+p0333,2025,Emergent Symbolic Mechanisms Support Abstract Reasoning in Large Language Models,unknown-venue,A|G
+p0334,2025,Striatal arbitration between choice strategies guides few-shot adaptation,journal:Nature Communications [direct-scan],A|E|G
+p0335,2026,How are linear representations learned - Exact solutions to the dynamics of abstraction,unknown-venue,A|B|G
+p0337,2026,A model of schema learning based on biological dimensionality reduction during sleep,bioRxiv:section-unknown,A|B|D
+p0338,2026,Hippocampal theta sweeps indicate goal direction during navigation,journal:Nature Neuroscience [direct-scan],A|B|G
+p0339,2025,Brains and language models converge on a shared conceptual space across different languages,unknown-venue,A|B|E
+p0341,2025,The 'Podcast' ECoG dataset for modeling neural activity during natural language comprehension,bioRxiv:section-unknown,A|B|D|E
+p0342,2026,Preserved geometry during representational drift enables stable perception and memory,unknown-venue,A|G
+p0343,2025,Offline ensemble co-reactivation links memories across days,"journal:Nature [title-match, score=1.0]",A|E
+p0344,2026,Reconciling rational and mechanistic accounts of the power law of forgetting,unknown-venue,A|B|G
+p0345,2026,Inferring mind wandering from perceptual decision making,journal:Communications Psychology [listed],A|E|G
+p0347,2025,Adaptive stretching of representations across brain regions and deep learning model layers,journal:Nature Communications [direct-scan],A|B|D|G
+p0348,2025,Inter-brain neural dynamics in biological and artificial intelligence systems,"journal:Nature [title-match, score=1.0]",A|B|G
+p0349,2026,Structure abstraction and generalization in a hippocampal-entorhinal inspired world model,unknown-venue,A|B|E
+p0351,2025,Understanding Transformer from the perspective of associative memory,arXiv:category-unknown,A|E|G
+p0352,2025,A gradient of complementary learning systems emerges through meta-learning,bioRxiv:section-unknown,A|B|E|G
+p0353,2025,Event cache - An independent component in working memory,unknown-venue,A
+p0354,2025,Memento - Fine-tuning LLM agents without fine-tuning LLMs,unknown-venue,A|B|G
+p0355,2025,Multicategory emotions align with hierarchical event segmentation across cortical timescales,unknown-venue,A|B|D|E
+p0356,2025,研究计划20260119.docx (1),unknown-venue,A|B|D|E
+p0357,2026,Human hippocampal ripples prioritize model-based learning,journal:Neuron [direct-scan],A|B|G
+p0358,2025,Using reinforcement learning to train large language models to explain human decisions,unknown-venue,A|B|G
+p0359,2026,Large language models do not always need readable language,unknown-venue,B|G
+p0360,2025,Hippocampal output suppresses orbitofrontal cortex schema cell formation,journal:Nature Neuroscience [direct-scan],A|B|D
+p0361,2025,Towards a mental programming neural circuit - Insights from working memory sequence manipulation,unknown-venue,A|B|D|E|G
