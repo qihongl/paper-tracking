@@ -37,7 +37,13 @@ def parse_keyword_matrix(prompt_text):
             order.append(cur)
             sections[cur] = {"name": m.group(2).strip(), "keywords": []}
             continue
-        if cur and line.strip() and not line.startswith("##"):
+        if line.startswith("##"):
+            cur = None  # any other header ends the current section
+            continue
+        if cur and line.strip():
+            stripped = line.strip()
+            if re.match(r"^-{3,}$", stripped) or stripped.startswith("```"):
+                continue
             for kw in line.split(","):
                 kw = kw.strip()
                 if kw:
@@ -83,8 +89,8 @@ def parse_sources(prompt_text):
             cells = [c.strip() for c in line.strip().strip("|").split("|")]
             if len(cells) >= 2 and cells[0] and "---" not in cells[0]:
                 direct_scan.add(cells[0])
-    # --- 47-journal list (single bullet) ---
-    m = re.search(r"\*\*High-impact journals[^*]*\*\*:\s*([^\n]+)", prompt_text)
+    # --- 47-journal list (single bullet; bold span ends with ':**') ---
+    m = re.search(r"\*\*High-impact journals[^*]*:\*\*\s*([^\n]+)", prompt_text)
     if m:
         for item in m.group(1).split(","):
             item = item.strip().rstrip("★").strip()
@@ -121,7 +127,20 @@ def normalize(text):
     return re.sub(r"\s+", " ", t).strip()
 
 
-html_unescape = html.unescape
+def ngrams(text, n):
+    """Character-split n-grams of a normalized (space-separated) string."""
+    toks = text.split()
+    return [" ".join(toks[i : i + n]) for i in range(len(toks) - n + 1)]
+
+
+def specificity(gram, papers):
+    """Fraction of corpus papers whose title+abstract contain gram."""
+    n = max(1, len(papers))
+    df = sum(1 for p in papers if gram in f"{p['title_norm']} {p['abstract_norm']}")
+    return df / n
+
+
+html_unescape = html.unescape  # alias kept for callers
 
 
 def match_paper(keywords, title_norm, abstract_norm):
