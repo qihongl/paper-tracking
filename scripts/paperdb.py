@@ -122,8 +122,10 @@ def extract_metadata(filepath, chunks):
     full = "\n".join(chunks)
     abstract_window = full[:3000]
 
-    # --- identifiers from chunk text ---
-    head2 = "\n".join(chunks[:2])
+    # --- identifiers from chunk text (first N chunks; references further in
+    #     would pollute with cited DOIs) ---
+    N_ID_CHUNKS = 6
+    head2 = "\n".join(chunks[:N_ID_CHUNKS])
     dois = [d for d in DOI_RE.findall(head2) if not d.lower().startswith("10.48550/arxiv")]
     arxiv_ids = ARXIV_ID_RE.findall(head2)
     arxiv_ids += [m2.group(1) for m2 in re.finditer(r"10\.48550/arXiv\.(\d{4}\.\d{4,5})", head2, re.IGNORECASE)]
