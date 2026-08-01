@@ -1,64 +1,14 @@
 id,year,title,outcome,venue_note,sections
 p0004,2025,Why I declare a conflict of interest and you should not,venue-gap,journal:Theory and Society [NOT-listed],A|B|E|G
 p0006,2026,Dementia detection from spontaneous speech using cross-attention fusion,venue-gap,"journal:Journal of Dementia and Alzheimer's Disease [title-match, score=1.0]",A|D|G
-p0020,2025,Classic free recall memory effects using video stimuli,venue-gap,journal:Memory [NOT-listed],A|E
-p0022,2025,Learning to operate an imagined speech Brain-Computer Interface involves the spatial and frequency tuning of neural activity,venue-gap,journal:Communications Biology [NOT-listed],A|B|D|G
 p0030,2025,The reliability of replications - a study in computational reproductions,venue-gap,journal:Royal Society Open Science [NOT-listed],A|G
-p0035,2025,Smartwatch- and smartphone-based remote assessment of brain health and detection of mild cognitive impairment,venue-gap,journal:Nature Medicine [NOT-listed],A|B
 p0050,2025,Development and validation of a model to predict the progression of Alzheimer's disease,venue-gap,journal:Age and Ageing [NOT-listed],A|G
-p0056,2026,"Human neuron activity during an 83-minute movie from 2,286 neurons and 29 patients",venue-gap,journal:Scientific Data [NOT-listed],A|D|E
 p0058,2026,Three-dimensional object perception can emerge from predictive learning,venue-gap,"journal:Developmental Science [title-match, score=1.0]",A|B|E|G
 p0060,2025,Clinical decision support using speech signal analysis - Systematic scoping review of neurological disorders,venue-gap,"journal:Journal of Medical Internet Research [title-match, score=1.0]",A|B|D|G
 p0064,2025,Delayed recall from the primacy portion of a stor ... ion of patients with mild cognitive impairment to Alzheimer's disease,venue-gap,journal:Journal of Neuropsychology [NOT-listed],A|G
-p0071,2025,Hippocampal sequences represent working memory and implicit timing,venue-gap,journal:Cell Reports [NOT-listed],A|G
-p0078,2025,"Strong memory, weak control - An empirical study of executive functioning in LLMs",venue-gap,"journal:Proceedings of the 19th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers) [title-match, score=1.0]",A|C|D|E|G
-p0085,2026,Action information is integrated into entorhinal representations of conceptual space and is reflected in eye movements,venue-gap,journal:PLOS Biology [NOT-listed],A|B
-p0093,2025,Using natural language processing to analyse text data in behavioural science,venue-gap,journal:Nature Reviews Psychology [NOT-listed],A|E
-p0099,2025,Devaluing memories of reward - a case for dopamine,venue-gap,journal:Communications Biology [NOT-listed],A|B|D|G
-p0100,2026,A large Chinese dataset of ten-category semantic relations with developmental performance in children and adolescents,venue-gap,journal:Scientific Data [NOT-listed],A|B|E|G
-p0101,2025,Increasing alignment of large language models with language processing in the human brain,venue-gap,journal:Nature Computational Science [NOT-listed],A|B|G
-p0103,2025,A survey of large language models in mental health disorder detection on social media,venue-gap,"journal:2025 IEEE 41st International Conference on Data Engineering Workshops (ICDEW) [title-match, score=1.0]",A|B
-p0119,2025,Episodic memory contributions to working memory-supported reinforcement learning,venue-gap,"journal:Journal of Experimental Psychology: Learning, Memory, and Cognition [NOT-listed]",A|B|G
-p0122,2025,Neural processing of naturalistic audiovisual events in space and time,venue-gap,journal:Communications Biology [NOT-listed],A|B|D
 p0132,2025,Associations between the logical memory ... ma biomarkers for Alzheimer's disease in individuals free of dementia,venue-gap,journal:The Clinical Neuropsychologist [NOT-listed],A|E
 p0135,2025,Human HDAC6 senses valine abundancy to regulate DNA damage,keyword-gap,"journal:Nature [title-match, score=0.879]",
-p0140,2025,Harnessing intelligence from brain cells in vitro,venue-gap,journal:The Neuroscientist [NOT-listed],A|B|D|E
-p0150,2025,Complementary roles of the human perirhinal and entorhinal cortex in the hippocampal retrieval of episodic memory,venue-gap,journal:iScience [NOT-listed],A|E|G
-p0152,2025,NSD-Imagery - A Benchmark Dataset for Extending fMRI Vision Decoding Methods to Mental Imagery,venue-gap,"journal:2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) [title-match, score=1.0]",A|B|G
 p0157,2026,Levels of analysis for large language models,venue-gap,"journal:Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences [NOT-listed]",A
-p0166,2026,A comprehensive framework for statistical testing of brain dynamics,venue-gap,journal:Nature Protocols [NOT-listed],A|B|D
-p0167,2025,Hippocampal damage disrupts the latent decision-making processes underlying approach-avoidance conflict processing in humans,venue-gap,"journal:PLOS Biology [title-match, score=1.0]",A|B|G
-p0168,2025,ESSENTIAL - Episodic and semantic memory integrAtion for video class-incremental learning,venue-gap,"journal:2025 IEEE/CVF International Conference on Computer Vision (ICCV) [title-match, score=1.0]",A|B|D|G
-p0174,2025,Hierarchical event segmentation of episodic memory in virtual reality,venue-gap,journal:npj Science of Learning [NOT-listed],A|B|E|G
-p0175,2025,Naturalistic fMRI and MEG recordings during viewing of a reality TV show,venue-gap,journal:Scientific Data [NOT-listed],A|D|E|G
-p0176,2025,Similar trajectories of psychological states predict marital satisfaction,venue-gap,journal:Imaging Neuroscience [NOT-listed],A|B|E
-p0189,2025,Hippocampus alters visual representation to encode new memory,venue-gap,journal:Cell Reports [NOT-listed],A|D|E
-p0191,2025,Recurrent neural networks with transient trajectory explain working memory encoding mechanisms,venue-gap,journal:Communications Biology [NOT-listed],A|B|D|G
 p0192,2025,Exploring LLM embedding potential for dementia detection using audio transcripts,venue-gap,journal:Eng [NOT-listed],A|D|G
-p0193,2026,Dataset of cortical and subcortical single neuron activity during value-based tasks in macaque monkey,venue-gap,journal:Scientific Data [NOT-listed],A|E|G
-p0195,2025,Temporal dedifferentiation of neural states with age during naturalistic viewing,venue-gap,journal:Communications Biology [NOT-listed],A|B|D|E
-p0196,2025,Coordinating multiple mental faculties during learning,venue-gap,"journal:Scientific Reports [title-match, score=1.0]",A|B|D
-p0197,2025,Mapping effective connectivity by virtually perturbing a surrogate brain,venue-gap,journal:Nature Methods [NOT-listed],A|B|D
-p0204,2025,Can LLMs effectively simulate human learners - Teachers’ insights from tutoring LLM students,venue-gap,"journal:Proceedings of the 20th Workshop on Innovative Use of NLP for Building Educational Applications (BEA 2025) [title-match, score=1.0]",A|B|G
-p0209,2025,Emergence of episodic memory in transformers - Char ... ing changes in temporal structure of attention scores during training,venue-gap,"journal:Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers) [title-match, score=0.967]",A|B|G
-p0211,2025,Beyond English - The impact of prompt translation strategies across languages and tasks in multilingual LLMs,venue-gap,"journal:Findings of the Association for Computational Linguistics: NAACL 2025 [title-match, score=1.0]",A|G
-p0213,2025,Mnemonic brain state engagement is diminished in healthy aging,venue-gap,"journal:Neurobiology of Aging [title-match, score=1.0]",A
-p0216,2025,Emo-FilM - A multimodal dataset for affective neuroscience using naturalistic stimuli,venue-gap,journal:Scientific Data [NOT-listed],A|E
-p0222,2025,Adaptive compression as a unifying framework for episodic and semantic memory,venue-gap,journal:Nature Reviews Psychology [NOT-listed],A|B|E|G
-p0243,2025,A non-Hebbian code for episodic memory,venue-gap,"journal:Science Advances [title-match, score=1.0]",A|B|G
-p0247,2025,Hippocampal systems for event encoding and sequencing during ongoing narrative comprehension,venue-gap,journal:Communications Biology [NOT-listed],A|D|E
-p0267,2025,Noise in cognition - Bug or feature,venue-gap,journal:Perspectives on Psychological Science [NOT-listed],A|G
-p0275,2025,Memory reactivation during rest forms shortcuts in a cognitive map,venue-gap,"journal:Scientific Reports [title-match, score=1.0]",A|G
-p0289,2025,Limitations of the LLM-as-a-judge approach for evaluating LLM outputs in expert knowledge tasks,venue-gap,"journal:Proceedings of the 30th International Conference on Intelligent User Interfaces [title-match, score=1.0]",E|G
-p0292,2025,Neuronal allocation and sparse coding of episodic memories in the human hippocampus,venue-gap,"journal:Scientific Reports [title-match, score=1.0]",A
-p0293,2025,The medial and lateral orbitofrontal cortex jointly represent the cognitive map of task space,venue-gap,journal:Communications Biology [NOT-listed],A|B|G
-p0295,2026,A multimodal sleep foundation model for disease prediction,venue-gap,journal:Nature Medicine [NOT-listed],A|B|G
-p0305,2025,Non-invasive vestibular nerve stimulation (VeNS) reduces visceral adipose tissue - results of a randomised controlled trial,venue-gap,"journal:Scientific Reports [title-match, score=1.0]",A|E
 p0307,2026,Observational learning in humans and machines,venue-gap,"journal:Advances in Science, Technology &amp; Innovation [title-match, score=1.0]",A|B|E|G
 p0314,2025,A systematic review and meta-analysis of autism screening and diagnosis in children using video-assisted telehealth technology,venue-gap,"journal:DIGITAL HEALTH [title-match, score=1.0]",A|B|G
-p0332,2025,Anterograde interference in multitask perceptual learning,venue-gap,journal:npj Science of Learning [NOT-listed],A|B|G
-p0336,2025,Temporal asymmetry of neural pattern similarity predicts recognition memory decisions,venue-gap,journal:Communications Biology [NOT-listed],A|G
-p0340,2025,The 'Podcast' ECoG dataset for modeling neural activity during natural language comprehension (1),venue-gap,journal:Scientific Data [NOT-listed],A|B|D|E
-p0346,2025,A large-scale MEG and EEG dataset for object recognition in naturalistic scenes,venue-gap,journal:Scientific Data [NOT-listed],A|D|E|G
-p0350,2025,Flexible prefrontal control over hippocampal episodic memory for goal-directed generalization,venue-gap,"journal:Proceedings of Cognitive Computational Neuroscience 2025 [title-match, score=1.0]",A|B|G
-p0362,2026,Neural population dynamics and temporal context cells in macaque medial parietal cortex support temporal order memory,venue-gap,journal:PLOS Biology [NOT-listed],A|B

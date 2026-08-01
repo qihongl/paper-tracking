@@ -109,9 +109,10 @@ def parse_sources(prompt_text):
     biorxiv_sections = set()
     if m:
         for item in m.group(1).split(","):
-            item = item.strip()
-            if item and item.lower() not in ("section", "sections"):
-                biorxiv_sections.add(item.lower())
+            item = item.strip().lower()
+            item = item.replace(" section", "").replace(" sections", "").strip()
+            if item:
+                biorxiv_sections.add(item)
     return {
         "journals": journals,
         "direct_scan": direct_scan,
@@ -169,16 +170,46 @@ def parse_reported_titles(html_text):
     return [html.unescape(t.strip()) for t in PAPER_TITLE_RE.findall(html_text)]
 
 
-def parse_reported_papers(outputs_dir="outputs"):
-    """All reported titles across reports, deduped, order preserved."""
+CARD_RE = re.compile(r'<div class="paper">(.*?)(?=<div class="paper">|</div>\s*</div>|<div class="excluded">)', re.S)
+
+
+def parse_reported_cards(html_text):
+    """(tag, title, finding) for each paper card in one report.
+
+    The tag is read from the closest preceding section header.
+    """
+    sec_pos = [(m.start(), m.group(1)) for m in re.finditer(r'<div class="section-header tag-(\w+)">', html_text)]
+    out = []
+    for m in re.finditer(r'<div class="paper">', html_text):
+        card = html_text[m.start() : m.start() + 6000]
+        tm = re.search(r'<div class="paper-title">\s*<a href="[^"]*"[^>]*>(.*?)</a>', card, re.S)
+        if not tm:
+            continue
+        tag = next((t for pos, t in reversed(sec_pos) if pos < m.start()), "?")
+        fm = re.search(r"<strong>Finding:</strong>\s*(.*?)</p>", card, re.S)
+        out.append({
+            "tag": tag,
+            "title": html.unescape(tm.group(1)).strip(),
+            "finding": html.unescape(fm.group(1)).strip() if fm else "",
+        })
+    return out
+
+
+def parse_reported_papers(outputs_dir="outputs", with_findings=False):
+    """All reported papers across reports, deduped by normalized title.
+
+    with_findings=True returns list of dicts {title, finding, tag}.
+    """
     import glob
 
-    titles, seen = [], set()
+    out, seen = [], set()
     for f in sorted(glob.glob(f"{outputs_dir}/*-paper-tracker.html")):
         with open(f, encoding="utf-8") as fh:
-            for t in parse_reported_titles(fh.read()):
-                key = normalize(t)
+            for card in parse_reported_cards(fh.read()):
+                key = normalize(card["title"])
                 if key and key not in seen:
                     seen.add(key)
-                    titles.append(t)
-    return titles
+                    out.append(card)
+    if with_findings:
+        return out
+    return [c["title"] for c in out]

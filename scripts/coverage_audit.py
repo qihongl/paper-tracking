@@ -271,6 +271,18 @@ JOURNAL_ALIASES = {
     "proceedings of the national academy of sciences": "pnas",
 }
 
+# conference proceedings the tracker covers via the ML-conferences source line
+# (keep in sync with prompts/daily-paper-tracker.md)
+CONFERENCE_HINTS = [
+    "association for computational linguistics",   # ACL/EMNLP/NAACL proceedings + Findings
+    "conference on computer vision",               # CVPR
+    "international conference on computer vision",  # ICCV
+    "international conference on data engineering",  # ICDE(W)
+    "intelligent user interfaces",
+    "educational applications",                    # BEA workshop
+    "cognitive computational neuroscience",        # CCN
+]
+
 
 def norm_journal(name):
     if not name:
@@ -319,7 +331,12 @@ def classify_venue(paper, enrich, sources):
 def _journal_covered(j, sources):
     norm = norm_journal(j)
     jset = {norm_journal(x) for x in sources["journals"]}
-    return norm in jset
+    if norm in jset:
+        return True
+    for hint in CONFERENCE_HINTS:
+        if hint in norm:
+            return True
+    return False
 
 
 def _journal_tag(j, sources):
@@ -330,6 +347,9 @@ def _journal_tag(j, sources):
         return "direct-scan"
     if norm in jset:
         return "listed"
+    for hint in CONFERENCE_HINTS:
+        if hint in norm:
+            return "conference"
     return "NOT-listed"
 
 
@@ -394,7 +414,12 @@ def run_audit():
     for t in miss_reported[:10]:
         print("   NOT caught by matrix:", t[:90])
 
-    # baseline snapshot
+    # baseline snapshot (preserve regression-check state fields if present)
+    old_baseline = {}
+    bl_path = os.path.join(AUDIT_DIR, "audit_baseline.json")
+    if os.path.exists(bl_path):
+        with open(bl_path, encoding="utf-8") as f:
+            old_baseline = json.load(f)
     baseline = {
         "matrix_hash": cl.matrix_hash(sections),
         "window": corpus["window"],
@@ -405,8 +430,10 @@ def run_audit():
         "venue_coverage": venue_coverage,
         "calibration_reported_caught": cal,
         "n_reported": len(reported),
+        "golden_fail": old_baseline.get("golden_fail", []),
+        "venue_gaps": old_baseline.get("venue_gaps"),
     }
-    with open(os.path.join(AUDIT_DIR, "audit_baseline.json"), "w", encoding="utf-8") as f:
+    with open(bl_path, "w", encoding="utf-8") as f:
         json.dump(baseline, f, ensure_ascii=False, indent=1)
 
     # CSVs

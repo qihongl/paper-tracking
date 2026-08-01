@@ -26,6 +26,12 @@ Search using keywords from the matrix below. Run at least 8–12 searches coveri
 | Trends in Cognitive Sciences | `https://www.cell.com/trends/cognitive-sciences/current` |
 | PNAS | `https://www.pnas.org/latest` |
 | Current Biology | `https://www.cell.com/current-biology/current` |
+| Communications Psychology | `https://www.nature.com/commspsychol/` |
+| Nature Reviews Neuroscience | `https://www.nature.com/nrn/` |
+| Cell | `https://www.cell.com/cell/current` |
+| Psychonomic Bulletin & Review | `https://link.springer.com/journal/13423` |
+| Hippocampus | `https://onlinelibrary.wiley.com/journal/10981063` |
+| Journal of Experimental Psychology: General | `https://www.apa.org/pubs/journals/xge` |
 
 For each scan, extract titles and abstracts of recently published articles (last 14 days). Cross-reference against the keyword matrix and include any matches.
 
@@ -34,13 +40,28 @@ For each scan, extract titles and abstracts of recently published articles (last
 - **bioRxiv:** neuroscience section
 - **PsyArXiv:** psychology, cognitive science, neuroscience preprints
 - **PubMed / MEDLINE**
-- **High-impact journals (web search + direct scan for starred):** Nature, Nature Neuroscience★, Nature Machine Intelligence★, Nature Human Behaviour★, Nature Communications★, Science★, Neuron★, eLife★, Current Biology★, Journal of Neuroscience, Cognition, PNAS★, Psychological Review, Psychological Science, Cognitive Psychology, Cognitive Science, Journal of Experimental Psychology: General, Memory & Cognition, Hippocampus, NeuroImage, PLOS Computational Biology, Journal of Cognitive Neuroscience, Cerebral Cortex, eNeuro, Network Neuroscience, Trends in Cognitive Sciences★, Communications Psychology, Learning & Memory, Neurobiology of Learning and Memory, Psychonomic Bulletin & Review, Neural Computation, Current Opinion in Neurobiology, Current Opinion in Behavioral Sciences, Neuroscience & Biobehavioral Reviews, Journal of Memory and Language, Annual Review of Neuroscience, Annual Review of Psychology, Behavioral and Brain Sciences, Cell, Cortex, Cognitive Neuroscience, Trends in Neurosciences, Nature Reviews Neuroscience, Human Brain Mapping, Neuropsychologia, Behavior Research Methods, Psychophysiology
-- **ML conferences (for computational work):** NeurIPS, ICLR, ICML, COSYNE (check recent proceedings)
+- **High-impact journals (web search + direct scan for starred):** Nature, Nature Neuroscience★, Nature Machine Intelligence★, Nature Human Behaviour★, Nature Communications★, Science★, Neuron★, eLife★, Current Biology★, Journal of Neuroscience, Cognition, PNAS★, Psychological Review, Psychological Science, Cognitive Psychology, Cognitive Science, Journal of Experimental Psychology: General, Memory & Cognition, Hippocampus, NeuroImage, PLOS Computational Biology, Journal of Cognitive Neuroscience, Cerebral Cortex, eNeuro, Network Neuroscience, Trends in Cognitive Sciences★, Communications Psychology★, Learning & Memory, Neurobiology of Learning and Memory, Psychonomic Bulletin & Review, Neural Computation, Current Opinion in Neurobiology, Current Opinion in Behavioral Sciences, Neuroscience & Biobehavioral Reviews, Journal of Memory and Language, Annual Review of Neuroscience, Annual Review of Psychology, Behavioral and Brain Sciences, Cell★, Cortex, Cognitive Neuroscience, Trends in Neurosciences, Nature Reviews Neuroscience★, Human Brain Mapping, Neuropsychologia, Behavior Research Methods, Psychophysiology, Communications Biology, Scientific Data, Scientific Reports, PLOS Biology, Nature Medicine, Cell Reports, Nature Reviews Psychology, npj Science of Learning, Journal of Experimental Psychology: Learning Memory and Cognition, Memory, Science Advances, Nature Methods, Nature Protocols, Nature Computational Science, iScience, Imaging Neuroscience, The Neuroscientist, Perspectives on Psychological Science, Neurobiology of Aging
+- **ML conferences (for computational work):** NeurIPS, ICLR, ICML, COSYNE, ACL, EMNLP, NAACL (ACL Anthology recent proceedings), CVPR, ICCV (memory-adjacent work only) — check recent proceedings
 - **Naturalistic neuroimaging datasets (supplemental):** OpenNeuro (especially ds005658 and related naturalistic-story datasets), PIEMAN, Sherlock, Tunnel — monitor for new publications using these datasets
+
+### Library cross-check (local relevance signal) — run on borderline candidates
+
+This machine hosts a local semantic index of the researcher's own 4,269-PDF library (Paperpile). For **borderline candidates** (keyword hit but uncertain relevance, or interesting but off-pattern), query the library before deciding:
+
+```bash
+cd /Users/qlu/WorkBuddy/20260408090457 && env -u PYTHONPATH /Users/qlu/miniforge3/bin/python3 paper_search.py "CANDIDATE TITLE — ABSTRACT" -n 3
+```
+
+- If the top result scores ≥ ~7.5 (or any of the top 3 ≥ ~7.0), the candidate matches what the researcher actually reads: **include it and add the `📚 matches-library` badge** to the paper card.
+- If scores are low (< ~6.0) for a borderline candidate, lean toward excluding it (note "low library affinity" in the excluded list).
+- Never use this to overrule a clearly relevant paper (exact pillar keywords, direct dataset match), and never to include a paper that fails the relevance standards above.
+- If the script is unavailable (path missing, import error), skip this step gracefully — do not fail the run.
 
 ---
 
 ## Deduplication: Skip Previously Reported Papers
+
+**Run guard:** if `outputs/YYYY-MM-DD-paper-tracker.html` (today's date) already exists, stop immediately and report "Tracker already ran today — skipping." This prevents duplicate runs when the harness retries or double-fires.
 
 **Before searching**, read the deduplication store at `data/seen_papers.json`. If the file does not exist yet, create it as an empty JSON object: `{}`.
 
@@ -163,6 +184,7 @@ The HTML must be a complete, standalone document. Use the following template str
   .tag-er { background: #fef3c7; color: #92400e; }
   .tag-cross { background: #e0e7ff; color: #3730a3; }
   .tag-peri { background: #f3f4f6; color: #374151; }
+  .tag-lib { background: #d1fae5; color: #047857; }
   .paper {
     background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
@@ -223,6 +245,7 @@ The HTML must be a complete, standalone document. Use the following template str
     <div class="paper-meta">
       First Author et al. (Last Author) &middot; Journal Name, Date
       <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-lib">📚 matches-library</span>  <!-- only when the local library cross-check says so -->
     </div>
     <div class="paper-body">
       <p><strong>Approach:</strong> [2–3 sentences on design, paradigm, manipulation.]</p>
@@ -341,7 +364,7 @@ Use the `present_files` tool to show the HTML file to the researcher. Include a 
 
 - **Include only if you can actually state the approach AND finding.** If you can't extract both from the abstract/metadata after a reasonable effort, skip it with a note in the excluded section.
 - **Flag methodological concerns** if obvious from the abstract: extremely small N, no control condition, post-hoc storytelling, weak manipulation check. Be brief — use the ⚠ flag div.
-- **Exclude papers that are:** pure engineering/applied without mechanistic insight, narrow clinical case studies without computational relevance, or opinion pieces/commentaries without new data or models (unless they are genuinely important theoretical contributions).
+- **Exclude papers that are:** pure engineering/applied without mechanistic insight, narrow clinical case studies without computational relevance, or opinion pieces/commentaries without new data or models (unless they are genuinely important theoretical contributions). **Also exclude LLM serving / throughput / KV-compression engineering papers unless they make a concrete memory-mechanism claim** (retention, retrieval, forgetting, drift, KV cache as a memory store) — efficiency claims alone do not qualify.
 - **Use search tools aggressively.** If your initial search returns too few results, broaden the keywords. If too many, narrow to the most recent and most relevant. Target 5–15 papers per day in the final report.
 
 ---

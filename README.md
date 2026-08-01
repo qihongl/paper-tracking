@@ -4,7 +4,7 @@
 
 This is an agent skill to keep me on top of new papers in computational cognitive neuroscience of learning and memory. I'm experimenting with it to see if it can provide a better coverage than Bluesky/X.
 
-Every morning an AI agent searches across a broad range of sources — arxiv, bioRxiv, PubMed, 39 journals, and major ML conferences — filters out the noise, and puts together a clean HTML report grouped by research topic. 
+Every morning an AI agent searches across a broad range of sources — arxiv, bioRxiv, PubMed, 66 journals, and major ML conferences — filters out the noise, and puts together a clean HTML report grouped by research topic. 
 
 <p align="center">
   <img src="outputs/wordcloud-unified.png" alt="Word cloud of paper-sharing topics from @qlu.bsky.social (Bluesky) and @Qihong_Lu (X)" width="700">
@@ -26,8 +26,8 @@ An AI agent reads `prompts/daily-paper-tracker.md` and runs it daily. The agent:
 - **bioRxiv:** neuroscience section
 - **PsyArXiv:** psychology, cognitive science, neuroscience preprints
 - **PubMed / MEDLINE**
-- **Journals (47):** Nature, Nature Neuroscience, Nature Machine Intelligence, Nature Human Behaviour, Nature Communications, Science, Neuron, eLife, Current Biology, Journal of Neuroscience, Cognition, PNAS, Psychological Review, Psychological Science, Cognitive Psychology, Cognitive Science, JEP: General, Memory & Cognition, Hippocampus, NeuroImage, PLOS Computational Biology, Journal of Cognitive Neuroscience, Cerebral Cortex, eNeuro, Network Neuroscience, Trends in Cognitive Sciences, Communications Psychology, Learning & Memory, Neurobiology of Learning and Memory, Psychonomic Bulletin & Review, Neural Computation, Current Opinion in Neurobiology, Current Opinion in Behavioral Sciences, Neuroscience & Biobehavioral Reviews, Journal of Memory and Language, Annual Review of Neuroscience, Annual Review of Psychology, Behavioral and Brain Sciences, **Cell, Cortex, Cognitive Neuroscience, Trends in Neurosciences, Nature Reviews Neuroscience, Human Brain Mapping, Neuropsychologia, Behavior Research Methods, Psychophysiology**
-- **ML conferences:** NeurIPS, ICLR, ICML, COSYNE
+- **Journals (66):** Nature, Nature Neuroscience, Nature Machine Intelligence, Nature Human Behaviour, Nature Communications, Science, Neuron, eLife, Current Biology, Journal of Neuroscience, Cognition, PNAS, Psychological Review, Psychological Science, Cognitive Psychology, Cognitive Science, JEP: General, JEP: Learning Memory & Cognition, Memory, Memory & Cognition, Hippocampus, NeuroImage, PLOS Computational Biology, PLOS Biology, Journal of Cognitive Neuroscience, Cerebral Cortex, eNeuro, Network Neuroscience, Trends in Cognitive Sciences, Communications Psychology, Communications Biology, Learning & Memory, Neurobiology of Learning and Memory, Psychonomic Bulletin & Review, Neural Computation, Current Opinion in Neurobiology, Current Opinion in Behavioral Sciences, Neuroscience & Biobehavioral Reviews, Journal of Memory and Language, Annual Review of Neuroscience, Annual Review of Psychology, Behavioral and Brain Sciences, Cell, Cell Reports, Cortex, Cognitive Neuroscience, Trends in Neurosciences, Nature Reviews Neuroscience, Nature Reviews Psychology, Nature Medicine, Nature Methods, Nature Protocols, Nature Computational Science, Scientific Data, Scientific Reports, Science Advances, iScience, Imaging Neuroscience, Human Brain Mapping, Neuropsychologia, Behavior Research Methods, Psychophysiology, The Neuroscientist, Perspectives on Psychological Science, Neurobiology of Aging, npj Science of Learning
+- **ML conferences:** NeurIPS, ICLR, ICML, COSYNE, ACL, EMNLP, NAACL, CVPR, ICCV (memory-adjacent)
 - **Naturalistic neuroimaging datasets:** OpenNeuro, PIEMAN, Sherlock, Tunnel (monitored for new publications)
 
 ## Keyword Matrix (390 keywords, 7 sections)
@@ -53,9 +53,9 @@ An AI agent reads `prompts/daily-paper-tracker.md` and runs it daily. The agent:
 | `Cross-cutting` | Spans multiple pillars or provides theoretical scaffolding |
 | `Peripheral` | Adjacent but interesting |
 
-## Social Topic Analysis
+## Topic Analysis
 
-The keyword matrix is derived from what I actually share on social media — using the **combined** archive of both **Twitter/X** ([@Qihong_Lu](https://x.com/Qihong_Lu)) and **Bluesky** ([@qlu.bsky.social](https://bsky.app/profile/qlu.bsky.social)), not Bluesky alone. The word cloud at the top is recomputed from this unified archive: **1,155 paper-related posts** (of 3,338 total across both platforms, ~92% of them retweets/reposts) spanning 2016–2026. It gives an honest picture of what I care about: **memory**, **events**, **neural** mechanisms, **deep** learning, **prediction**, **theory** and **modeling**, **sequences**, **online** learning, **maps** (cognitive), **training**, **psychology**, **recordings**, **reward**, **hierarchical** structure, **generalization**. The matrix is periodically updated as posting patterns evolve — Category G (RL / decision-making / learning-generalization) was added from this analysis. See `outputs/paper-posts-unified.html` for the full unified archive.
+The tracker's keyword matrix and relevance categories are built around what I actually read and share. That interest is drawn from **both Twitter/X** ([@Qihong_Lu](https://x.com/Qihong_Lu)) and **Bluesky** ([@qlu.bsky.social](https://bsky.app/profile/qlu.bsky.social)). The word cloud above summarizes the topics across **1,155 paper-related posts** from those two accounts: **memory**, **events**, **neural** mechanisms, **deep** learning, **prediction**, **theory** and **modeling**, **sequences**, **online** learning, cognitive **maps**, **training**, **psychology**, **recordings**, **reward**, **hierarchical** structure, and **generalization**. The full archive is in `outputs/paper-posts-unified.html`.
 
 ## Project Structure
 
@@ -71,6 +71,16 @@ paper-tracking/
 │   ├── wordcloud-unified.png          # Word cloud of shared paper topics
 │   └── keyword-suggestions.md        # Candidate keywords for matrix updates
 ```
+
+## Coverage Tooling (local)
+
+The keyword matrix and source list are audited against the researcher's local 4,269-PDF library (semantic index over Paperpile). Scripts in `scripts/`:
+
+- `coverage_audit.py` — two-layer audit (venue gate × keyword gate) of the library's recent papers; miss mining; venue calibration; section analysis; precision sampling. Full run: `env -u PYTHONPATH /Users/qlu/miniforge3/bin/python3 scripts/coverage_audit.py all`
+- `coverage_check.py` — **required before any matrix/source edit**: verifies no regression vs. the pinned baseline and the reported-papers golden set. Exit 0 = safe to commit.
+- `run_health.py` — cadence/dedup reliability report (`outputs/run-health.md`).
+
+See `outputs/coverage-audit.md` for the latest audit. The 2026-08-01 audit expanded journals 47→66, direct-scan 10→16, added ACL/CVPR proceedings, and added a library cross-check step to the daily prompt.
 
 ## Modifying
 

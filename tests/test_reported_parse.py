@@ -47,6 +47,16 @@ def test_parse_reported_papers_glob_dedup(tmp_path):
     assert len(titles) == 2  # the other paper appears once
 
 
+def test_parse_reported_cards_tags_and_findings():
+    cards = cl.parse_reported_cards(SAMPLE_HTML)
+    assert len(cards) == 2
+    assert cards[0]["tag"] == "llm"
+    assert cards[0]["title"] == "Attention & Memory in Transformers"
+    assert cards[0]["finding"] == "y"
+    assert cards[1]["tag"] == "llm"
+    assert cards[1]["finding"] == ""  # card without Finding block
+
+
 def test_keyword_gate_on_reported_title():
     # a reported title must be caught by a matching keyword
     sections = {"A": {"keywords": ["hippocampal replay"]}}

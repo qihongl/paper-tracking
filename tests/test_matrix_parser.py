@@ -43,8 +43,9 @@ def test_matrix_hash_deterministic():
 def test_parse_sources_real_prompt():
     prompt = cl.read_prompt(os.path.join(os.path.dirname(__file__), "..", cl.PROMPT_PATH))
     sources = cl.parse_sources(prompt)
-    assert len(sources["journals"]) >= 40
+    assert len(sources["journals"]) >= 60  # 66 after the 2026-08-01 venue expansion
     assert "Nature Neuroscience" in sources["journals"]
-    assert len(sources["direct_scan"]) == 10
-    assert "Nature Neuroscience" in sources["direct_scan"]
+    assert "Communications Biology" in sources["journals"]  # added from the coverage audit
+    assert len(sources["direct_scan"]) == 16  # 10 + 6 promoted in the coverage audit
+    assert "Communications Psychology" in sources["direct_scan"]
     assert sources["arxiv_cats"] == {"cs.CL", "cs.AI", "cs.LG", "q-bio.NC", "stat.ML"}
