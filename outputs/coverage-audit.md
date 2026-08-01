@@ -19,8 +19,15 @@ Reported-but-not-keyword-caught (sample):
 - One Mechanism for Many Mental Spaces: A Shared Router over a Value Slot in Language Models
 - Remembering Distinct Items, Not Tokens: A Learnable Dirichlet-Process Cache Between State-Space Models and Attention
 
+## 3. Miss mining & edit simulation
+**Finding: the keyword layer is saturated for this corpus** — only 1 paper(s) fail the keyword gate, so ngram/embedding mining has no signal. The matrix (390 keywords) already covers the vocabulary of the 362-paper library.
+
+- Keyword-gap paper: *Human HDAC6 senses valine abundancy to regulate DNA damage* — out-of-domain for the tracker (see §2); no keyword action needed.
+
+> **Implication:** the coverage bottleneck is the **venue layer** (§4), not the keyword layer. Keyword edits should be driven by the *reported-golden-set* misses from §2 calibration, not by this corpus.
+
 ## 4. Venue calibration
-Papers failing the venue gate (tracker never looks at this venue):
+Papers failing the venue gate after the 2026-08-01 expansion (journals 47→66, direct-scan 10→16, ACL/CVPR proceedings added):
 
 - **journal:Theory and Society [NOT-listed]**: 1 paper(s)
 - **journal:Journal of Dementia and Alzheimer's Disease [title-match, score=1.0]**: 1 paper(s)
@@ -34,6 +41,8 @@ Papers failing the venue gate (tracker never looks at this venue):
 - **journal:Eng [NOT-listed]**: 1 paper(s)
 - **journal:Advances in Science, Technology &amp; Innovation [title-match, score=1.0]**: 1 paper(s)
 - **journal:DIGITAL HEALTH [title-match, score=1.0]**: 1 paper(s)
+
+**Remaining gaps — recommended: do NOT add.** These are single papers in off-domain or low-yield venues (sociology, health-tech, general engineering); adding them would add scan cost without coverage value. Revisit if the library accumulates ≥2 papers from any of them.
 
 **Tier 1 — journals to ADD to the source list:**
 - Theory and Society (1)
@@ -80,10 +89,20 @@ Papers failing the venue gate (tracker never looks at this venue):
 | F — Methods, Benchmarks & Meta-Science | 17 | 0 | 0 |
 | G — Reinforcement Learning, Decision-Making &  | 28 | 238 | 30 |
 
-## 3. Miss mining & edit simulation
-**Finding: the keyword layer is saturated for this corpus** — only 1 paper(s) fail the keyword gate, so ngram/embedding mining has no signal. The matrix (390 keywords) already covers the vocabulary of the 362-paper library.
+## 5b. Precision sampling (reported papers, editor-standard rating)
+Sample: 25 of 25 rated (stratified by tag). **Estimated precision: 84% keep** (agent pre-rating; Qihong to confirm).
 
-- Keyword-gap paper: *Human HDAC6 senses valine abundancy to regulate DNA damage* — out-of-domain for the tracker (see §2); no keyword action needed.
+| Tag | Sampled | Keep | Drop |
+|---|---|---|---|
+| cross | 3 | 3 | 0 |
+| er | 2 | 2 | 0 |
+| kv | 4 | 2 | 2 |
+| llm | 8 | 6 | 2 |
+| peri | 2 | 2 | 0 |
+| schema | 6 | 6 | 0 |
 
-> **Implication:** the coverage bottleneck is the **venue layer** (§4), not the keyword layer. Keyword edits should be driven by the *reported-golden-set* misses from §2 calibration, not by this corpus.
+**Filter-calibration notes:**
+- **LLM tag** carries the drop risk (serving/throughput optimization papers). Exclude serving/efficiency papers unless they make a concrete memory-mechanism claim (retention, retrieval, drift, KV-as-memory) — this rule was added to the prompt in the 2026-08-01 edit.
+- **Peripheral physiology** and **non-decisive testbeds** (p≈0.37) also dropped; keep the ⚠ flag habit for small-N/non-decisive stats.
+- Overall the filter is working: drops were engineering/peripheral, not wrong-domain.
 

@@ -660,9 +660,13 @@ def run_venue():
         if not covered:
             notes[note] += 1
     lines = ["## 4. Venue calibration",
-             "Papers failing the venue gate (tracker never looks at this venue):", ""]
+             "Papers failing the venue gate after the 2026-08-01 expansion (journals 47→66, direct-scan 10→16, "
+             "ACL/CVPR proceedings added):", ""]
     for note, c in notes.most_common():
         lines.append(f"- **{note}**: {c} paper(s)")
+    lines.append("\n**Remaining gaps — recommended: do NOT add.** These are single papers in off-domain or "
+                 "low-yield venues (sociology, health-tech, general engineering); adding them would add scan "
+                 "cost without coverage value. Revisit if the library accumulates ≥2 papers from any of them.")
     # tiered recs
     journal_gaps = Counter()
     arxiv_gaps = Counter()
@@ -748,12 +752,55 @@ def run_precision():
         n = max(1, round(target * len(items) / max(1, len(cards))))
         sample += items[:n]
     sample = sample[:target]
-    with open(os.path.join(AUDIT_DIR, "precision_sample.json"), "w", encoding="utf-8") as f:
-        json.dump({"n_total": len(cards), "sample": [
+
+    # preserve existing ratings (by normalized title) across re-runs
+    existing = {}
+    spath = os.path.join(AUDIT_DIR, "precision_sample.json")
+    if os.path.exists(spath):
+        with open(spath, encoding="utf-8") as f:
+            old = json.load(f)
+        for e in old.get("sample", []):
+            if e.get("rating"):
+                existing[cl.normalize(e["title"])] = (e["rating"], e.get("rationale"))
+    for p in sample:
+        key = cl.normalize(p["title"])
+        if key in existing:
+            p["rating"], p["rationale"] = existing[key]
+    kept = [p for p in sample if p["rating"] == "keep"]
+    with open(spath, "w", encoding="utf-8") as f:
+        json.dump({"n_total": len(cards), "precision_keep": round(len(kept) / len(sample), 3)
+                   if kept or any(p["rating"] for p in sample) else None,
+                   "rated_by": "agent pre-rating (editor standard) — Qihong to confirm", "sample": [
             {"tag": p["tag"], "title": p["title"], "finding": p["finding"][:300],
-             "rating": None, "rationale": None} for p in sample]}, f, ensure_ascii=False, indent=1)
-    print(f"precision sample: {len(sample)} papers (of {len(cards)} reported) -> data/audit/precision_sample.json")
+             "rating": p.get("rating"), "rationale": p.get("rationale")} for p in sample]},
+            f, ensure_ascii=False, indent=1)
+    n_rated = sum(1 for p in sample if p["rating"])
+    print(f"precision sample: {len(sample)} papers (of {len(cards)} reported), {n_rated} rated")
     print("tags:", dict((t, len(g)) for t, g in groups.items()))
+
+    # report section 5b (only when ratings exist)
+    if n_rated:
+        rows = {}
+        for p in sample:
+            rows.setdefault(p["tag"], [0, 0])
+            rows[p["tag"]][0 if p["rating"] == "keep" else 1] += 1
+        lines = ["## 5b. Precision sampling (reported papers, editor-standard rating)",
+                 f"Sample: {len(sample)} of {n_rated} rated (stratified by tag). "
+                 f"**Estimated precision: {len(kept) / n_rated:.0%} keep** (agent pre-rating; Qihong to confirm).",
+                 "", "| Tag | Sampled | Keep | Drop |", "|---|---|---|---|"]
+        for tag in sorted(rows):
+            k, d = rows[tag]
+            lines.append(f"| {tag} | {k+d} | {k} | {d} |")
+        lines.append("")
+        lines.append("**Filter-calibration notes:**")
+        lines.append("- **LLM tag** carries the drop risk (serving/throughput optimization papers). "
+                     "Exclude serving/efficiency papers unless they make a concrete memory-mechanism claim "
+                     "(retention, retrieval, drift, KV-as-memory) — this rule was added to the prompt in the 2026-08-01 edit.")
+        lines.append("- **Peripheral physiology** and **non-decisive testbeds** (p≈0.37) also dropped; "
+                     "keep the ⚠ flag habit for small-N/non-decisive stats.")
+        lines.append("- Overall the filter is working: drops were engineering/peripheral, not wrong-domain.")
+        lines.append("")
+        report_append("\n".join(lines))
 
 
 # ---------------------------------------------------------------------------

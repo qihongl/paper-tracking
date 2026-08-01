@@ -272,3 +272,19 @@ env -u PYTHONPATH /Users/qlu/miniforge3/bin/python3 scripts/coverage_audit.py --
 **Runtime:** audit <2 min (embedding mining adds ~5–6 min); enrichment one-time ~15–20 min (network); tests <10 s. No GPU, no model-loading beyond bge-small (already used by the DB pipeline).
 
 **Environment:** always `env -u PYTHONPATH` (Hermes terminal pollutes it, breaking miniforge numpy); `/Users/qlu/miniforge3/bin/python3`; DB via `file:...?mode=ro`; PDF source untouched.
+
+---
+
+## Execution log (2026-08-01)
+
+| Phase | Status | Result |
+|---|---|---|
+| 0 — paperdb.py | ✅ | Read-only DB module; smoke-tested on clean + messy filenames |
+| 1 — Corpus | ✅ | 362 papers (2025–2026), 0 unresolved titles, deterministic |
+| 2 — Two-layer audit | ✅ | Keyword recall 99.7%; venue coverage 79.6% → **96.7%** after Phase 7 edits; calibration 88% (title+finding) |
+| 3 — Mining | ✅ (adapted) | Keyword layer saturated (1 out-of-domain miss, HDAC6 bio paper) → mining correctly short-circuits; bottleneck is venues, not words |
+| 4 — Venue | ✅ | 19 journals added (47→66), 6 promoted to direct-scan (10→16), ACL/EMNLP/NAACL/CVPR/ICCV added; PNAS alias + `&amp;` unescape fixes |
+| 5 — Sections + precision | ✅ | A 98%, G 66%, B 61%, E 39%, D 30%, C 2%, F 0% coverage; precision **84% keep** (21/25, agent pre-rating) |
+| 6 — Regression suite | ✅ | 14 pytest tests; `coverage_check.py` exit 0 (zero regression, golden set stateful); run-health report clean (07-23 cluster = retries, not corruption) |
+| 7 — Apply & validate | ✅ | Prompt edited (journals, direct-scan, conferences, precision filter, run guard); README synced; committed + pushed |
+| 8 — Library-anchored filter | ✅ (deployed) | Daily prompt now queries `paper_search.py` for borderline candidates + `📚 matches-library` badge; 7-day trial starts with next daily run |
