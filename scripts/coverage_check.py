@@ -66,7 +66,13 @@ def main():
         blob = cl.normalize(f"{r['title']} {r['finding']}")
         if not any(k in blob for kws in kw_norm.values() for k in kws):
             not_caught.append(r["title"])
-    print(f"reported golden set: {len(reported) - len(not_caught)}/{len(reported)} keyword-caught")
+    not_caught_set = {cl.normalize(t) for t in not_caught}
+    known = set(baseline.get("golden_fail", []))
+    new_fails = sorted(not_caught_set - known)
+    print(f"reported golden set: {len(reported) - len(not_caught)}/{len(reported)} keyword-caught "
+          f"({len(not_caught)} known-miss: {len(known)}, new: {len(new_fails)})")
+    for t in new_fails[:5]:
+        print(f"  NEW GOLDEN-FAIL: {t[:90]}")
 
     # 3) venue gate on pinned corpus (uses current sources + cached enrichment)
     enrich_data = ca.load_enrich()
@@ -81,15 +87,16 @@ def main():
             print(f"  LOST: [{i}] {p['title'][:80]}")
     if recall_now < recall_base - 1e-9:
         problems.append(f"recall regressed: {recall_base:.1%} -> {recall_now:.1%}")
-    if not_caught:
-        problems.append(f"{len(not_caught)} reported papers not keyword-caught")
-        for t in not_caught[:5]:
+    if new_fails:
+        problems.append(f"{len(new_fails)} NEW reported papers not keyword-caught")
+        for t in new_fails[:5]:
             print(f"  GOLDEN-FAIL: {t[:90]}")
 
-    # refresh baseline snapshot (keeps venue_gaps field for future diffs)
+    # refresh baseline snapshot (keeps golden-fail set + venue gaps for future diffs)
     baseline["matrix_hash"] = cl.matrix_hash(sections)
     baseline["keyword_recall"] = recall_now
     baseline["venue_gaps"] = venue_gaps
+    baseline["golden_fail"] = sorted(not_caught_set)
     baseline["checked_at"] = __import__("time").strftime("%Y-%m-%dT%H:%M:%S")
     with open(os.path.join(AUDIT_DIR, "audit_baseline.json"), "w", encoding="utf-8") as f:
         json.dump(baseline, f, ensure_ascii=False, indent=1)

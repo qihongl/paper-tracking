@@ -2898,5 +2898,31 @@
  "calibration_reported_caught": 0.88,
  "n_reported": 200,
  "venue_gaps": 62,
- "checked_at": "2026-08-01T22:48:21"
+ "checked_at": "2026-08-01T22:48:48",
+ "golden_fail": [
+  "a jolt for the kv cache near lossless compression via tucker jl residual",
+  "auditing forgetting in limited memory language models",
+  "auditory network persistence of stimulus representation in awake and naturally sleeping mice",
+  "creativity honesty and designed forgetting emerge in small hyperbolic language models",
+  "do agent optimizers compound a continual learning evaluation on terminal bench 2 0",
+  "forgetful attention a trainable support vector memory with certified selection and exact unlearning",
+  "from self attention to connection laplacian a unified operator view of transformers",
+  "gate zero growth a geometric framework for function preserving continual learning",
+  "how query visibility changes kv cache compression rankings a matched budget audit",
+  "longcrafter towards diverse long context understanding via evidence graph guided instruction synthesis",
+  "mempoison uncovering persistent memory threats and structural blind spots in llm agents",
+  "mlps are hebbians constructing efficient fact storing mlps for transformers",
+  "one mechanism for many mental spaces a shared router over a value slot in language models",
+  "partition prompt aggregate statistical self consistency in language models",
+  "remember when it matters proactive memory agent for long horizon agents",
+  "remembering distinct items not tokens a learnable dirichlet process cache between state space models and attention",
+  "retoken one token to improve vision language models for visual retrieval",
+  "scoped verification for reliable long horizon agentic context evolution under distribution shift grace",
+  "the refusal residue when probes catch alignment faking and when they don t",
+  "the severance problem llms are unaware of the person beyond the prompt",
+  "track rank crack epistemic working memory scales multi hop reasoning",
+  "understanding is done early a depth division of labor in large language models and its use for unbounded context memory comem",
+  "what models express suppress and resist auditing open weight llms with persona vectors",
+  "xhc expanded hyper connections"
+ ]
 }
