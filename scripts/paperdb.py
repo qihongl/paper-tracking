@@ -14,9 +14,18 @@ import sqlite3
 DB_PATH = "/Users/qlu/WorkBuddy/20260408090457/.workbuddy/paper_db/chroma.sqlite3"
 PDF_ROOT = "/Users/qlu/Library/CloudStorage/GoogleDrive-lvqihong1992@gmail.com/My Drive/Paperpile/All Papers"
 
-DOI_RE = re.compile(r"10\.\d{4,9}/[^\s,;()\"'<>]+")
+# Strict DOI regex (no newline joining: wrapped fragments appear once, while a
+# paper's own DOI recurs in header + page footers — the repeat rule in
+# extract_metadata picks the true DOI and rejects wrap/boilerplate junk).
+DOI_RE = re.compile(r"10\.\d{4,9}/[^\s,;()\"'<>\u200b]+")
 ARXIV_ID_RE = re.compile(r"arXiv:(\d{4}\.\d{4,5})", re.IGNORECASE)
 YEAR_RE = re.compile(r"\b(19|20)\d{2}\b")
+
+
+def clean_doi(match):
+    """Normalize a DOI regex match: strip trailing punctuation (strict regex
+    matches contain no newlines)."""
+    return match.rstrip(".,")
 
 
 def connect():
@@ -126,19 +135,29 @@ def extract_metadata(filepath, chunks):
     #     would pollute with cited DOIs) ---
     N_ID_CHUNKS = 6
     head2 = "\n".join(chunks[:N_ID_CHUNKS])
-    dois = [d for d in DOI_RE.findall(head2) if not d.lower().startswith("10.48550/arxiv")]
+    dois = [clean_doi(d) for d in DOI_RE.findall(head2) if not d.lower().startswith("10.48550/arxiv")]
     arxiv_ids = ARXIV_ID_RE.findall(head2)
     arxiv_ids += [m2.group(1) for m2 in re.finditer(r"10\.48550/arXiv\.(\d{4}\.\d{4,5})", head2, re.IGNORECASE)]
     dois = list(dict.fromkeys(dois))
     arxiv_ids = list(dict.fromkeys(arxiv_ids))
 
-    # --- identifiers from the FULL text (first occurrence = the paper's own
-    #     header DOI/arXiv ID, which precedes any references) ---
+    # --- identifiers from the FULL text ---
+    # A paper's own DOI recurs (header + page footers). Selection: (1) drop
+    # matches that are strict prefixes of longer matches (wrap-truncated
+    # fragments lose to the unwrapped DOI in references/footers), (2) among
+    # the rest pick the most frequent (tie -> earliest). No matches -> None.
     full = "\n".join(chunks)
-    first_doi = None
-    m = DOI_RE.search(full)
-    if m and not m.group(0).lower().startswith("10.48550/arxiv"):
-        first_doi = m.group(0)
+    all_dois = [clean_doi(m) for m in DOI_RE.findall(full)]
+    all_dois = [d for d in all_dois if not d.lower().startswith("10.48550/arxiv")]
+    if all_dois:
+        from collections import Counter
+
+        uniq = list(dict.fromkeys(all_dois))
+        non_prefix = [d for d in uniq if not any(d != o and o.startswith(d) for o in uniq)]
+        doi_counts = Counter(all_dois)
+        first_doi = max(non_prefix, key=lambda d: (doi_counts[d], -uniq.index(d)))
+    else:
+        first_doi = None
     m = ARXIV_ID_RE.search(full)
     first_arxiv = m.group(1) if m else None
     if not first_arxiv:

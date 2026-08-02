@@ -1,12 +1,12 @@
 ## 2. Two-layer recall audit
-Corpus: 3950 papers (since-2000). Keyword-gate recall **99.6%**; venue coverage **92.0%**.
+Corpus: 3950 papers (since-2000). Keyword-gate recall **99.6%**; venue coverage **88.2%**.
 
 | Outcome | n | % |
 |---|---|---|
-| caught | 3620 | 91.6% |
-| venue-gap | 314 | 7.9% |
-| keyword-gap | 13 | 0.3% |
-| both-gap | 3 | 0.1% |
+| caught | 3471 | 87.9% |
+| venue-gap | 463 | 11.7% |
+| keyword-gap | 12 | 0.3% |
+| both-gap | 4 | 0.1% |
 
 **Calibration:** 91.5% of the 200 actually-reported papers are keyword-caught (target ≥90%).
 

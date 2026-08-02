@@ -50,4 +50,4 @@ def test_parse_sources_real_prompt():
     assert len(sources["direct_scan"]) == 26  # 16 + 10 scale-up promotions
     assert "Communications Psychology" in sources["direct_scan"]
     assert "Scientific Reports" in sources["direct_scan"]
-    assert sources["arxiv_cats"] == {"cs.CL", "cs.AI", "cs.LG", "q-bio.NC", "stat.ML"}
+    assert sources["arxiv_cats"] == {"cs.CL", "cs.AI", "cs.LG", "q-bio.NC", "stat.ML", "cs.NE", "cs.HC", "cond-mat.dis-nn"}  # +cs.NE/cs.HC/cond-mat.dis-nn (scale-up)

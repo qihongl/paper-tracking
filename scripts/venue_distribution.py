@@ -29,9 +29,8 @@ RECENT = 2020
 
 def resolve_venue(p, enrich, sources):
     """Return (group_key, display_name, status, covered)."""
-    dois = p["doi_hints"]
-    if not dois and p.get("first_doi"):
-        dois = [p["first_doi"]]
+    # first_doi (header-region, full text) outranks doi_hints (may hold cited/truncated DOIs)
+    dois = [p["first_doi"]] if p.get("first_doi") else p["doi_hints"]
     if dois:
         doi = dois[0]
         if doi.startswith(("10.1101", "10.64898")):

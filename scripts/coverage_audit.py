@@ -257,8 +257,10 @@ def enrich():
         if not has_id and p["title"]:
             title_search.append((p["id"], p["title"]))
 
-    # --- Crossref (by DOI, threaded) ---
-    todo = [d for d in sorted(dois) if d not in cache["crossref"]]
+    # --- Crossref (by DOI, threaded); re-fetch entries whose lookup failed
+    #     (journal is None) — stale 404/timeout entries must not block retries ---
+    todo = [d for d in sorted(dois)
+            if d not in cache["crossref"] or not (cache["crossref"].get(d) or {}).get("journal")]
     print(f"crossref (DOI): {len(todo)} to fetch (of {len(dois)}), 8 threads")
     for _chunk, results in _run_threaded(todo, _crossref_doi_worker,
                                          on_progress=lambda d, t: print(f"  crossref {d}/{t}")):
@@ -302,18 +304,30 @@ def enrich():
         time.sleep(3)
     _save_enrich(path, cache)
 
-    # --- bioRxiv ---
-    todo = [d for d in sorted(biorxiv) if d not in cache["biorxiv"]]
+    # --- bioRxiv (refetch error/None entries; retry+backoff: the API returns
+    #     transient 404s under load; never clobber a good string) ---
+    todo = [d for d in sorted(biorxiv)
+            if d not in cache["biorxiv"] or not isinstance(cache["biorxiv"].get(d), str)]
     print(f"biorxiv: {len(todo)} to fetch")
     for doi in todo:
-        try:
-            url = "https://api.biorxiv.org/details/biorxiv/" + urllib.parse.quote(doi, safe="")
-            data = fetch_json(url)
-            coll = data.get("collection") or []
-            cache["biorxiv"][doi] = coll[0].get("category") if coll else None
-        except Exception as e:
-            cache["biorxiv"][doi] = {"error": str(e)[:80]}
-        time.sleep(0.3)
+        sec = None
+        last_err = None
+        for attempt in range(3):
+            try:
+                url = "https://api.biorxiv.org/details/biorxiv/" + urllib.parse.quote(doi, safe="")
+                data = fetch_json(url)
+                coll = data.get("collection") or []
+                if coll:
+                    sec = coll[0].get("category") or coll[0].get("section")
+                break
+            except Exception as e:
+                last_err = str(e)[:80]
+                time.sleep(5 * (attempt + 1))  # backoff before retry
+        if isinstance(sec, str) or not isinstance(cache["biorxiv"].get(doi), str):
+            cache["biorxiv"][doi] = sec
+        elif last_err:
+            pass  # keep the existing good string
+        time.sleep(1.0)  # politeness: the API 404s under bursts
     _save_enrich(path, cache)
     print("enrichment done ->", path)
     return cache
@@ -382,10 +396,9 @@ def arxiv_lookup(cache, aid):
 
 def classify_venue(paper, enrich, sources):
     # journal DOI first (a published paper's venue is its journal, even if an
-    # arXiv preprint ID also exists); arXiv only when there is no DOI
-    dois = paper["doi_hints"]
-    if not dois and paper.get("first_doi"):
-        dois = [paper["first_doi"]]
+    # arXiv preprint ID also exists); arXiv only when there is no DOI.
+    # first_doi (header-region, full text) outranks doi_hints (may hold cited/truncated DOIs)
+    dois = [paper["first_doi"]] if paper.get("first_doi") else paper["doi_hints"]
     if dois:
         doi = dois[0]
         if doi.startswith(("10.1101", "10.64898")):

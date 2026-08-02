@@ -22,7 +22,7 @@ An AI agent reads `prompts/daily-paper-tracker.md` and runs it daily. The agent:
 
 ## Sources
 
-- **arxiv:** cs.CL, cs.AI, cs.LG, q-bio.NC, stat.ML
+- **arxiv:** cs.CL, cs.AI, cs.LG, q-bio.NC, stat.ML, cs.NE, cs.HC, cond-mat.dis-nn
 - **bioRxiv:** neuroscience section
 - **PsyArXiv:** psychology, cognitive science, neuroscience preprints
 - **PubMed / MEDLINE**

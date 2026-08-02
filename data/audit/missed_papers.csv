@@ -1,291 +1,414 @@
 id,year,title,outcome,venue_note,sections
 p0004,2021,"A review of uncertainty quantification in deep learning - Techniques, applications and challenges",venue-gap,journal:Information Fusion [NOT-listed],A|B|G
+p0010,2026,Human exploration strategically balances approaching and avoiding uncertainty,venue-gap,journal:Advances in Methods and Practices in Psychological Science [NOT-listed],A|B|G
 p0012,2019,A comprehensive review of EEG-based brain-computer interface paradigms,venue-gap,journal:Journal of Neural Engineering [NOT-listed],A|B|E|G
 p0013,2025,Why I declare a conflict of interest and you should not,venue-gap,journal:Theory and Society [NOT-listed],A|B|E|G
 p0017,2016,Computational Psychiatry - towards a mathematically informed understanding of mental illness,venue-gap,"journal:Journal of Neurology, Neurosurgery &amp; Psychiatry [NOT-listed]",A|B|E|G
 p0020,2017,A Primer on Foraging and the Explore - Exploit Trade-Off for Psychiatry Research,venue-gap,journal:Neuropsychopharmacology [NOT-listed],A|B|E|G
 p0021,2018,Are episodic memories special - On the sameness of remembered and imagined event simulation,venue-gap,journal:Journal of the Royal Society of New Zealand [NOT-listed],A|B
-p0033,2022,Predicting dementia from spontaneous speech using large language models,venue-gap,journal:PLOS Digital Health [NOT-listed],A|B|C
-p0035,2026,Dementia detection from spontaneous speech using cross-attention fusion,venue-gap,journal:Journal of Dementia and Alzheimer's Disease [NOT-listed],A|C|D|G
-p0047,2014,Memory,venue-gap,journal:American Psychologist [NOT-listed],A|D|E
+p0035,2026,Dementia detection from spontaneous speech using cross-attention fusion,venue-gap,arXiv:eess.AS,A|C|D|G
+p0052,2018,Task-Free Continual Learning,venue-gap,arXiv:cs.CV,A|B
+p0060,2017,A graph-theoretic approach to multitasking,venue-gap,arXiv:cs.DM,A|D|G
 p0064,2005,Standard deviations and standard errors,venue-gap,journal:BMJ [NOT-listed],G
 p0071,2017,"How Hippocampal Memory Shapes, and Is Shaped by, Attention",venue-gap,journal:The Hippocampus from Cells to Systems [NOT-listed],A|D|E|G
 p0085,2016,Enabling factor analysis on thousand-subject neuroimaging datasets,venue-gap,"journal:2016 IEEE International Conference on Big Data (Big Data) [title-match, score=1.0]",A|B|E
+p0129,2024,"Reliable, Adaptable, and Attributable Language Models with Retrieval",venue-gap,journal:2022 ACM Conference on Fairness Accountability and Transparency [NOT-listed],A|B|C|G
 p0131,2024,Free recall outperforms story recall in associations with plasma biomarkers in preclinical Alzheimer disease,venue-gap,journal:The Journal of Prevention of Alzheimer's Disease [NOT-listed],A|B|G
 p0136,2015,Structure and Flexibility in Bayesian Models of Cognition,venue-gap,"journal:Oxford Handbooks Online [title-match, score=1.0]",A|B|D|E
-p0146,2016,Using Fast Weights to Attend to the Recent Past,venue-gap,arXiv:cs.NE,A|B|C|E
+p0137,2017,The default network and the combination of cognitive processes that mediate self-generated thought,venue-gap,journal:Experimental Brain Research [NOT-listed],A|E
+p0143,2018,Why do deep convolutional networks generalize so poorly to small image transformations,venue-gap,arXiv:cs.CV,A|B|G
+p0148,2018,Machines hear better when they have ears,venue-gap,arXiv:cs.SD,A|B|G
+p0175,2019,Crossing event boundaries changes prospective perceptions of temporal length and proximity,venue-gap,journal:Quarterly Journal of Experimental Psychology [NOT-listed],A|B|D|E|G
 p0180,2006,Top-down facilitation of visual recognition,venue-gap,"journal:Neurobiology of Attention [title-match, score=0.925]",E
+p0184,2016,Hierarchical Boundary-Aware Neural Encoder for Video Captioning,venue-gap,arXiv:cs.CV,A|B|E
+p0185,2016,Recognizing and Presenting the Storytelling Video Structure with Deep Multimodal Networks,venue-gap,arXiv:cs.CV,A|G
 p0188,2009,Random Projections of Smooth Manifolds,venue-gap,journal:Foundations of Computational Mathematics [NOT-listed],A|B|E
 p0206,2020,Prediction and memory - a predictive coding account,venue-gap,journal:Progress in Neurobiology [NOT-listed],A|E|G
-p0228,2021,GPS driving - a digital biomarker for preclinical Alzheimer disease,venue-gap,journal:Alzheimer's Research &amp; Therapy [NOT-listed],A
-p0234,2012,Being critical of criticality in the brain,venue-gap,journal:Frontiers in Physiology [NOT-listed],A|E
-p0275,2019,Dissecting the fornix in basic memory processes and neuropsychiatric disease - A review,venue-gap,"journal:Journal of Neurology, Neurosurgery &amp; Psychiatry [NOT-listed]",A
+p0225,2017,Network Dissection - Quantifying Interpretability of Deep Visual Representations,venue-gap,arXiv:cs.CV,A|B|E
+p0228,2021,GPS driving - a digital biomarker for preclinical Alzheimer disease,venue-gap,journal:Gerontology [NOT-listed],A
+p0234,2012,Being critical of criticality in the brain,venue-gap,arXiv:physics.data-an,A|E
+p0238,2024,Titans - Learning to memorize at test time,venue-gap,journal:Proceedings of the 2019 Conference of the North [NOT-listed],A|B|C|G
+p0240,2026,Memory Caching - RNNs with growing memory,venue-gap,journal:Proceedings of the 2019 Conference of the North [NOT-listed],A|B|E|G
+p0241,2023,"Schemas, reinforcement learning, and the medial prefrontal cortex",venue-gap,journal:Brain and Neuroscience Advances [NOT-listed],A|B|G
+p0242,2015,Delineating the Effect of Semantic Congruency on Episodic Memory - The Role of Integration and Relatedness,venue-gap,journal:Human Movement Science [NOT-listed],A
+p0249,2025,Anxiety modulates event segmentation,venue-gap,journal:Assessment [NOT-listed],A|B|E|G
+p0252,2017,Synthetic and Natural Noise Both Break Neural Machine Translation,venue-gap,journal:International Journal of Machine Learning and Cybernetics [NOT-listed],A|B
 p0276,2023,Setting boundaries - Development of neural and behavioral event cognition in early childhood,venue-gap,"journal:Psychology, Crime &amp; Law [NOT-listed]",A|E
+p0290,2017,Eigen-Distortions of Hierarchical Representations,venue-gap,arXiv:cs.CV,A|B
 p0292,2020,Berensetal_R03_Manuscript (2),venue-gap,journal:Annals of Neurosciences [NOT-listed],A|G
 p0295,2012,"A hippocampal cognitive prosthesis - multi-input, multi-output nonlinear modeling and VLSI implementation",venue-gap,journal:IEEE Transactions on Neural Systems and Rehabilitation Engineering [NOT-listed],A|B
 p0296,2015,Long-term treatment with responsive brain stimulation in adults with refractory partial seizures,venue-gap,journal:Neurology [NOT-listed],A|B
 p0303,2024,A remote digital memory composite to detect cogniti ... n memory clinic samples in unsupervised settings using mobile devices,venue-gap,journal:npj Digital Medicine [NOT-listed],A|E|G
+p0314,2022,Uncertainty-driven updating enables human-like segmentation and categorization of naturalistic activity (1),venue-gap,journal:Cognitive Psychology and Instruction [NOT-listed],A|B|D|E|G
 p0315,2022,Uncertainty-driven updating enables human-like segmentation and categorization of naturalistic activity,venue-gap,journal:Cognitive Psychology and Instruction [NOT-listed],A|B|D|E|G
+p0322,2018,Humans are still the best lossy image compressors,venue-gap,arXiv:eess.IV,A|E|G
+p0324,2021,Procedure Planning in Instructional Videos via Contextual Modeling and Model-based Policy Learning,venue-gap,arXiv:cs.CV,A|B|D|G
+p0329,2023,The role of memory in counterfactual valuation,venue-gap,journal:The American Journal of Psychology [NOT-listed],A|G
 p0339,2016,Blei,venue-gap,journal:Journal of the American Statistical Association [NOT-listed],A|E
 p0340,2016,Variational Inference - A Review for Statisticians,venue-gap,arXiv:stat.CO,E
 p0350,2016,End to End Learning for Self-Driving Cars,venue-gap,arXiv:cs.CV,A|B|D|G
 p0351,2001,Musical Soundtracks as a Schematic Influence on the Cognitive Processing of Filmed Events,venue-gap,"journal:Music Perception [title-match, score=1.0]",A|E|G
-p0366,2023,Associative memory retrieval modulates upcoming perceptual decisions,venue-gap,"journal:Cognitive, Affective, &amp; Behavioral Neuroscience [NOT-listed]",A|D|G
+p0366,2023,Associative memory retrieval modulates upcoming perceptual decisions,venue-gap,journal:CrossRef Listing of Deleted DOIs [NOT-listed],A|D|G
+p0373,2007,Multilevel structure in behaviour and in the brain - a model of Fuster's hierarchy,venue-gap,journal:Philosophical Psychology [NOT-listed],A|B|G
 p0376,2001,Conflict monitoring and cognitive control,venue-gap,"journal:Oxford Handbooks Online [title-match, score=1.0]",A|B|G
+p0385,2019,Unreproducible Research is Reproducible,venue-gap,journal:Science Translational Medicine [NOT-listed],A|B|E|G
 p0395,2016,Why Deep Learning Works - A Manifold Disentanglement Perspective,venue-gap,journal:IEEE Transactions on Neural Networks and Learning Systems [NOT-listed],A|B|D|G
 p0397,2018,Title length,venue-gap,journal:Journal of Economic Behavior &amp; Organization [NOT-listed],A|B
 p0400,2000,On the control of control - The role of dopamine in regulating prefrontal function and working memory,venue-gap,"journal:Control of Cognitive Processes [title-match, score=1.0]",A|B|E
 p0401,2001,Statistical Modeling - The Two Cultures (with comments and a rejoinder by the author),venue-gap,"journal:Statistical Science [title-match, score=1.0]",A|B|E
-p0405,2025,The reliability of replications - a study in computational reproductions,venue-gap,journal:Royal Society Open Science [NOT-listed],A|G
+p0407,2024,Efficient value synthesis in the orbitofro ... ins how loss aversion adapts to the ranges of gain and loss prospects,venue-gap,journal:World Scientific Handbook in Financial Economics Series [NOT-listed],A|B|G
 p0412,2023,would do better to use other forms of memory.  I show that existing accounts of the function of,venue-gap,journal:Philosophy of Science [NOT-listed],A
 p0426,2023,A comparison of diagnostic performance of word-list and story recall tests for biomarker-determined Alzheimer's disease,venue-gap,journal:Journal of Clinical and Experimental Neuropsychology [NOT-listed],A|E|G
+p0432,2017,Computerized cognitive testing for use in clinical trials - A comparison of the NIH Toolbox and Cogstate C3 batteries,venue-gap,journal:The Journal of Prevention of Alzheimer's Disease [NOT-listed],A|G
+p0442,2018,Exact information propagation through fully-connected feed forward neural networks,venue-gap,journal:Proceedings of the IEEE [NOT-listed],B|G
 p0448,2010,Pavlovian Processes in Consumer Choice - The Physical Presence of a Good Increases Willingness-to-Pay,venue-gap,journal:American Economic Review [NOT-listed],A|B|E|G
 p0456,2016,Uncertainty-dependent activity within the ventral striatum predicts task-related changes in response strategy,venue-gap,"journal:Cognitive, Affective, &amp; Behavioral Neuroscience [NOT-listed]",A|G
+p0476,2016,An Analysis of Deep Neural Network Models for Practical Applications,venue-gap,arXiv:cs.CV,A|G
+p0480,2022,Computational reconstruction of mental representations using human behavior,venue-gap,arXiv:eess.IV,A|B|D
+p0485,2020,Extracting Training Data from Large Language Models,venue-gap,arXiv:cs.CR,A|B|C|E
 p0489,2018,Deep Clustering for Unsupervised Learning of Visual Features,venue-gap,arXiv:cs.CV,A|B|D|G
 p0496,2019,A computational model of context-dependent encodings during category learning,venue-gap,journal:Machine Learning [NOT-listed],A|B|D|E|G
+p0498,2023,Comprehensive review of task-based neuroimaging ... ve deficits in Alzheimer's disease using electrophysiological methods,venue-gap,journal:Dementia and Geriatric Cognitive Disorders [NOT-listed],A|E|G
+p0500,2022,A randomized controlled trial to test the efficacy ... lacks - African Americans with diabetes and mild cognitive impairment,venue-gap,journal:Contemporary Clinical Trials [NOT-listed],A
 p0515,2018,Lenia - Biology of Artificial Life,venue-gap,arXiv:nlin.CG,A|B|E|G
 p0535,2016,Distributed Sequence Memory of Multidimensional Inputs in Recurrent Networks,venue-gap,arXiv:cs.IT,A|B|D|G
 p0539,2014,Return of the Devil in the Details - Delving Deep into Convolutional Nets,venue-gap,"journal:Proceedings of the British Machine Vision Conference 2014 [title-match, score=1.0]",D|E|G
 p0552,2014,Joint SVD-Hyperalignment for multi-subject FMRI data alignment,venue-gap,"journal:2014 IEEE International Workshop on Machine Learning for Signal Processing (MLSP) [title-match, score=1.0]",A|D
-p0574,2021,Learning to perform role-filler binding with schematic knowledge,venue-gap,journal:PeerJ [NOT-listed],A|B
-p0588,2011,Intuitive physical reasoning about occluded objects by inexperienced chicks,venue-gap,journal:Proceedings of the Royal Society B: Biological Sciences [NOT-listed],A
-p0589,2024,The memory palace architect - effect of valence on loci-dependent recall accuracy,venue-gap,journal:PsycTESTS Dataset [NOT-listed],A|D|E|G
+p0558,2016,"DeepLab - Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution, and Fully Connected CRFs",venue-gap,arXiv:cs.CV,A|B|D|G
+p0581,2017,A Survey of Model Compression and Acceleration for Deep Neural Networks,venue-gap,journal:SIAM Journal on Scientific Computing [NOT-listed],A|B|E|G
+p0582,2018,Polynomial Regression As an Alternative to Neural Nets,venue-gap,journal:New England Journal of Medicine [NOT-listed],A|B
 p0598,2002,Mechanisms underlying dependencies of performance on stimulus history in a two-alternative forced-choice task,venue-gap,"journal:Cognitive, Affective, &amp; Behavioral Neuroscience [title-match, score=1.0]",A|G
 p0604,2021,Biogas recovery for sustainable cities - A critic ... of enhancement techniques and key local conditions for implementation,venue-gap,journal:Sustainable Cities and Society [NOT-listed],A|E|G
-p0608,2025,Development and validation of a model to predict the progression of Alzheimer's disease,venue-gap,journal:Age and Ageing [NOT-listed],A|G
+p0605,2009,Experience sampling during fMRI reveals default network and executive system contributions to mind wandering,venue-gap,journal:International Journal of Psychophysiology [NOT-listed],A|G
 p0610,2016,Linear readout of object manifolds,venue-gap,journal:Physical Review E [NOT-listed],A|B|D
-p0611,2018,Classification and Geometry of General Perceptual Manifolds,venue-gap,arXiv:quant-ph,A|B|D|E
+p0611,2018,Classification and Geometry of General Perceptual Manifolds,venue-gap,journal:Physical Review X [NOT-listed],A|B|D|E
 p0622,2001,Long-term retrograde amnesia… the crucial role of the hippocampus,venue-gap,"journal:Neurocase [title-match, score=1.0]",A
 p0629,2008,Tighter Bounds for Random Projections of Manifolds,venue-gap,"journal:Proceedings of the twenty-fourth annual symposium on Computational geometry [title-match, score=1.0]",A
 p0636,2019,Computational Reproducibility via Containers in Psychology,venue-gap,journal:Meta-Psychology [NOT-listed],A|E|G
-p0650,2013,Rapid instructed task learning - A new window into the human brain’s unique capacity for flexible cognitive control,venue-gap,"journal:Cognitive, Affective, &amp; Behavioral Neuroscience [NOT-listed]",A|B|E
+p0663,2016,Capacity and Trainability in Recurrent Neural Networks,venue-gap,journal:International Journal of Automation and Computing [NOT-listed],B|E|G
 p0683,2007,Ethanol-associated cues produce general pavlovian-instrumental transfer,venue-gap,journal:Alcoholism: Clinical and Experimental Research [NOT-listed],A|B|G
 p0696,2015,Immediate story recall in elderly individuals with memory complaints - how much does it contribute to memory assessment,venue-gap,journal:International Psychogeriatrics [NOT-listed],E|G
-p0723,2008,Remembering the past and imagining the future in schizophrenia,venue-gap,journal:Memory Studies [NOT-listed],A|B|D
+p0716,2018,Emergence of grid-like representations by training recurrent neural networks to perform spatial localization,venue-gap,arXiv:cs.CV,A|B|D|G
+p0719,2019,Large-scale narrative events in popular cinema,venue-gap,journal:Journal of Modern Applied Statistical Methods [NOT-listed],A|B|E
 p0740,2003,An elementary proof of a theorem of Johnson and Lindenstrauss,venue-gap,journal:Random Structures &amp; Algorithms [NOT-listed],A|C|E
-p0753,2013,A novelty-induced change in episodic (NICE) context account of primacy effects in free recall,venue-gap,journal:Psychology [NOT-listed],A|B
 p0767,2009,Simple artificial neural networks that match probability and exploit and explore when confronting a multiarmed bandit,venue-gap,journal:IEEE Transactions on Neural Networks [NOT-listed],A|B|G
 p0770,2008,"Decision theory, reinforcement learning, and the brain",venue-gap,"journal:Cognitive, Affective, &amp; Behavioral Neuroscience [NOT-listed]",A|B|G
 p0773,2013,Mathematical Formulation of Multi-Layer Networks,venue-gap,arXiv:physics.soc-ph,A|B|E|G
 p0776,2025,Clinical decision support using speech signal analysis - Systematic scoping review of neurological disorders,venue-gap,journal:Journal of Medical Internet Research [NOT-listed],A|B|D|G
-p0790,2021,Effective Dimensionality - A Tutorial,venue-gap,journal:Multivariate Behavioral Research [NOT-listed],A|G
 p0795,2012,The MNIST Database of Handwritten Digit Images for Machine Learning Research [Best of the Web],venue-gap,journal:IEEE Signal Processing Magazine [NOT-listed],A|B|G
 p0815,2025,Delayed recall from the primacy portion of a stor ... ion of patients with mild cognitive impairment to Alzheimer's disease,venue-gap,journal:Journal of Neuropsychology [NOT-listed],A|G
+p0818,2011,The role of responsive feeding in overweight during infancy and toddlerhood - a systematic review,venue-gap,journal:International Journal of Obesity [NOT-listed],A|B|E|G
 p0820,2016,On the distribution of cross-validated Mahalanobis distances,venue-gap,arXiv:stat.AP,A
-p0827,2025,Temporal order memory in naturalistic events is scaffolded by semantic knowledge and hierarchical event structure,venue-gap,journal:American Psychologist [NOT-listed],A|B|E
 p0829,2020,Using machine-learning approach to distinguish patien ... ine dependence from healthy subjects in a virtual reality environment,venue-gap,journal:Brain and Behavior [NOT-listed],A|G
+p0831,2017,Sharp Minima Can Generalize For Deep Nets,venue-gap,"journal:2016 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) [NOT-listed]",A|B|E
+p0847,2020,An image is worth 16x16 words - Transformers for image recognition at scale,venue-gap,journal:SIAM Journal on Control and Optimization [NOT-listed],A|G
 p0854,2023,ChatGPT for (Finance) research - The Bananarama Conjecture,venue-gap,journal:Finance Research Letters [NOT-listed],A|C|G
 p0855,2007,Reinforcement learning - Computational theory and biological mechanisms,venue-gap,journal:HFSP Journal [NOT-listed],A|B|E|G
 p0871,2017,Does mental context drift or shift,venue-gap,journal:Bulletin of the Psychonomic Society [NOT-listed],A|B|E|G
-p0886,2017,Hippocampal Contributions to Language Use and Processing,venue-gap,journal:The Hippocampus from Cells to Systems [NOT-listed],A|E|G
 p0888,2008,Collaborative discourse facilitates efficient communication and new learning in amnesia,venue-gap,journal:Brain and Language [NOT-listed],A|E|G
-p0925,2016,How Deep is the Feature Analysis underlying Rapid Visual Categorization,venue-gap,arXiv:cs.CV,A|B|D|G
+p0909,2020,The extent and drivers of gender imbalance in neuroscience reference lists,venue-gap,journal:Journal of Informetrics [NOT-listed],E
+p0962,2023,GPTs are GPTs - An Early Look at the Labor Market Impact Potential of Large Language Models,venue-gap,arXiv:econ.GN,A|C|E|G
 p0963,2012,Global prevalence of autism and other pervasive developmental disorders - Global epidemiology of autism,venue-gap,journal:Autism Research [NOT-listed],A|B
 p0967,2023,Emotions as computations,venue-gap,journal:Unraveling the complexities of social life: A festschrift in honor of Robert B. Zajonc. [NOT-listed],A|B|G
+p0971,2017,A Rotation and a Translation Suffice - Fooling CNNs with Simple Transformations,venue-gap,journal:International Journal of Computer Vision [NOT-listed],A|G
+p1016,2018,What have we learned from deep representations for action recognition,venue-gap,arXiv:cs.CV,A|B|D|G
 p1040,2021,A systematic review and meta-analysis of memory-gu ... parietal activation suggests involvement of fronto-parietal networks,venue-gap,journal:WIREs Cognitive Science [NOT-listed],A|E|G
 p1041,2005,When induction meets memory - evidence for gradual transition from similarity-based to category-based induction,venue-gap,"journal:Child Development [title-match, score=1.0]",A|B
 p1060,2015,Wittgenstein’s Certainty is Uncertain - Brain Scans of Cured Hydrocephalics Challenge Cherished Assumptions,venue-gap,journal:Biological Theory [NOT-listed],A
 p1068,2017,Open Science Framework (OSF),venue-gap,journal:Journal of the Medical Library Association [NOT-listed],A|D|E
-p1074,2011,A sticky HDP-HMM with application to speaker diarization,venue-gap,journal:The Annals of Applied Statistics [NOT-listed],A|B
+p1082,2021,Expectation-driven novelty effects in episodic memory,venue-gap,journal:Brain Structure and Function [NOT-listed],A|E|G
 p1109,2020,A cognitive mechanism for the persistence of widespread false beliefs,venue-gap,journal:SSRN Electronic Journal [NOT-listed],A|B|E
+p1110,2020,Binding and Retrieval in Action Control (BRAC),venue-gap,journal:Motivation Science [NOT-listed],A|B|G
 p1112,2023,Computational psychiatry - from synapses to sentience,venue-gap,journal:Molecular Psychiatry [NOT-listed],A|B|E
 p1120,2023,Competition on presynaptic resources enhances the discrimination of interfering memories,venue-gap,journal:PNAS Nexus [NOT-listed],A|E|G
-p1121,2010,A moving bump in a continuous manifold - a comprehensive study of the tracking dynamics of continuous attractor neural networks,venue-gap,arXiv:cond-mat.dis-nn,A|B|G
 p1131,2018,Learning facts during aging - the benefits of curiosity,venue-gap,journal:Experimental Aging Research [NOT-listed],A|E
+p1132,2017,Deep Echo State Network (DeepESN) - A Brief Survey,venue-gap,journal:Neurocomputing [NOT-listed],B
 p1143,2018,Multiscale unfolding of real networks by geometric renormalization,venue-gap,journal:Nature Physics [NOT-listed],A|D|E|G
 p1144,2024,The Multiple Dimensions of Familiarity - From Representations to Phenomenology,venue-gap,journal:WIREs Cognitive Science [NOT-listed],A|E
-p1150,2015,A Neural Algorithm of Artistic Style,venue-gap,arXiv:cs.CV,A|B|G
 p1154,2016,Visual Object Recognition - Do We (Finally) Know More Now Than We Did,venue-gap,journal:Annual Review of Vision Science [NOT-listed],A|D|G
 p1155,2011,Sloane's Gap. Mathematical and Social Factors Explain the Distribution of Numbers in the OEIS,venue-gap,arXiv:math.PR,A|B|D|E
 p1158,2019,An experimental study of the formation of collective memories in social networks,venue-gap,journal:Journal of Experimental Social Psychology [NOT-listed],A|B
 p1159,2019,Characterizing the Shape of Activation Space in Deep Neural Networks,venue-gap,journal:2019 18th IEEE International Conference On Machine Learning And Applications (ICMLA) [NOT-listed],A|D|E|G
+p1166,2018,A Dataset for Telling the Stories of Social Media Videos,venue-gap,arXiv:cs.CV,A|C
 p1179,2000,Learning to forget - continual prediction with LSTM,venue-gap,"journal:9th International Conference on Artificial Neural Networks: ICANN '99 [title-match, score=1.0]",A|B|E
 p1180,2004,Shape and the first hundred nouns,venue-gap,"journal:Child Development [title-match, score=1.0]",A|B
 p1188,2012,Exploring a latent cause theory of classical conditioning,venue-gap,journal:Learning &amp; Behavior [NOT-listed],A|B|G
-p1211,2024,Toward the emergence of intelligent control - Episodic Generalization and Optimization,venue-gap,journal:Open Mind [NOT-listed],A|B|D|E|G
+p1205,2017,Interpretation of Neural Networks is Fragile,venue-gap,journal:International Journal of Computer Vision [NOT-listed],A|B|D|G
 p1213,2018,NiftyNet - a deep-learning platform for medical imaging,venue-gap,arXiv:cs.CV,A|B|D
 p1218,2010,"Strategic retrieval, confabulations, and delusions - theory and data",venue-gap,journal:Cognitive Neuropsychiatry [NOT-listed],A|B|D|E|G
 p1220,2002,The cognitive neuroscience of confabulation - A review and a model,keyword-gap,unknown-venue,
+p1228,2018,Adversarial Spheres,venue-gap,arXiv:cs.CV,A|B|E|G
 p1231,2010,Pupil diameter tracks changes in control state predicted by the adaptive gain theory of locus coeruleus function,venue-gap,"journal:Cognitive, Affective, &amp; Behavioral Neuroscience [NOT-listed]",A|B|G
-p1233,2015,Deep Neural Networks with Random Gaussian Weights - A Universal Classification Strategy,venue-gap,arXiv:cs.NE,B|G
+p1234,2019,The roles of supervised machine learning in systems neuroscience,venue-gap,journal:AAAS Articles DO Group [NOT-listed],A|E|G
 p1243,2007,"Strictly Proper Scoring Rules, Prediction, and Estimation",venue-gap,journal:Journal of the American Statistical Association [NOT-listed],A|B|E
 p1246,2001,Chunking mechanisms in human learning,venue-gap,"journal:SpringerReference [title-match, score=0.899]",A|G
-p1247,2019,MemCat - a new category-based image set quantified on memorability,venue-gap,journal:PeerJ [NOT-listed],A|B|D
 p1253,2020,A guide to setting up and managing a lab at a research-intensive institution,venue-gap,journal:BMC Proceedings [NOT-listed],A|E|G
 p1268,2012,Church - a language for generative models,venue-gap,arXiv:cs.PL,A|B|D
+p1274,2019,Recurrent Independent Mechanisms,venue-gap,"journal:Philosophical Transactions of the Royal Society of London. B, Biological Sciences [NOT-listed]",A|B|G
 p1275,2024,Designing an effective semantic fluency test for early MCI diagnosis with machine learning,venue-gap,journal:Computers in Biology and Medicine [NOT-listed],A
-p1277,2022,Leveraging the Power of Media to Drive Cognition - A Media-Informed Approach to Naturalistic Neuroscience,venue-gap,journal:Social Cognitive and Affective Neuroscience [NOT-listed],A|E
-p1282,2013,Generating Sequences With Recurrent Neural Networks,venue-gap,arXiv:cs.NE,A|B|E
-p1284,2014,Neural Turing Machines,venue-gap,arXiv:cs.NE,A|C
+p1287,2024,"The Visual Experience Dataset - Over 200 recorded hours of integrated eye movement, odometry, and egocentric video",venue-gap,journal:Biological Cybernetics [NOT-listed],A|E|G
 p1321,2009,AI and HCI - Two fields divided by a common focus,venue-gap,"journal:AI Magazine [title-match, score=1.0]",A
 p1330,2024,Historical patterns of rice farming explain modern ... guage use in China and Japan more than modernization and urbanization,venue-gap,journal:Humanities and Social Sciences Communications [NOT-listed],A|B|E
-p1346,2024,Discrete memories of a continuous world - A working memory perspective on event segmentation,venue-gap,journal:Current Research in Behavioral Sciences [NOT-listed],A|E|G
+p1332,2018,A computational model of shared fine-scale structure in the human connectome,venue-gap,journal:Journal of Neurophysiology [NOT-listed],A|B|D|E
+p1336,2018,On Characterizing the Capacity of Neural Networks using Algebraic Topology,venue-gap,journal:ACM SIGKDD Explorations Newsletter [NOT-listed],B|D|G
+p1338,2024,HippoRAG - Neurobiologically inspired long-term memory for large language models,venue-gap,journal:2023 IEEE International Conference on Big Data (BigData) [NOT-listed],A|B|C|G
+p1344,2013,Knowledge Matters - Importance of Prior Information for Optimization,venue-gap,journal:Proceedings of the 25th international conference on Machine learning - ICML '08 [NOT-listed],A|B|G
 p1350,2017,Cholinergic modulation of the hippocampal region and memory function,venue-gap,journal:Journal of Neurochemistry [NOT-listed],A|E|G
 p1358,2020,"Dentate gyrus circuits for encoding, retrieval and discrimination of episodic memories",venue-gap,"journal:IBRO Neuroscience Reports [title-match, score=1.0]",A|E|G
 p1366,2018,Developing a hippocampal neural prosthetic to facilitate human memory encoding and recall,venue-gap,journal:Journal of Neural Engineering [NOT-listed],A|B|D
+p1373,2015,Learning both Weights and Connections for Efficient Neural Network,venue-gap,arXiv:cs.CV,A|B
 p1375,2024,Exploring the neural correlates of flow experience with multifaceted tasks and a single-channel prefrontal EEG recording,venue-gap,journal:Sensors [NOT-listed],A
 p1382,2023,Why do valence asymmetries emerge in value learning - A reinforcement learning account,venue-gap,"journal:Cognitive, Affective, &amp; Behavioral Neuroscience [NOT-listed]",A|E|G
+p1390,2017,Functional connectivity networks for preoperative brain mapping in neurosurgery,venue-gap,journal:Journal of Neurosurgery [NOT-listed],A|D
 p1391,2023,Introducing Connect by CloudResearch - Advancing online participant recruitment in the digital age,venue-gap,journal:Journal of Advertising [NOT-listed],A|D|G
+p1398,2007,Patients with hippocampal amnesia cannot imagine new experiences,venue-gap,"journal:Journal of Neurology, Neurosurgery &amp; Psychiatry [NOT-listed]",A|G
 p1405,2011,Modes and models of forebrain cholinergic neuromodulation of cognition,venue-gap,journal:Neuropsychopharmacology [NOT-listed],A|D|G
 p1413,2008,Neurocinematics - The neuroscience of film,venue-gap,"journal:Projections [title-match, score=1.0]",A|B|E
 p1423,2001,Distributed and overlapping representations of faces and objects in ventral temporal cortex,venue-gap,"journal:Social Neuroscience [title-match, score=0.948]",A|E
+p1431,2025,A multimodal Seq2Seq Transformer for predicting brain responses to naturalistic stimuli,venue-gap,arXiv:cs.CV,A|B|D|G
+p1432,2015,Deep Residual Learning for Image Recognition,venue-gap,arXiv:cs.CV,A|B|D
 p1434,2016,Identity Mappings in Deep Residual Networks,venue-gap,arXiv:cs.CV,A|B|G
-p1470,2018,A Survey and Critique of Multiagent Deep Reinforcement Learning,venue-gap,arXiv:cs.MA,A|B|G
+p1435,2018,Mask R-CNN,venue-gap,arXiv:cs.CV,A|B
+p1462,2022,Ten simple rules for writing a Registered Report,venue-gap,journal:Advances in Methods and Practices in Psychological Science [NOT-listed],A|E|G
 p1474,2017,HyperTools - A Python toolbox for visualizing and manipulating high-dimensional data,venue-gap,arXiv:stat.OT,A|C
-p1480,2019,A structural probe for finding syntax in word representations (1),keyword-gap,arXiv:category-unknown,
-p1481,2019,A structural probe for finding syntax in word representations,keyword-gap,arXiv:category-unknown,
+p1480,2019,A structural probe for finding syntax in word representations (1),keyword-gap,arXiv:cs.CL,
+p1481,2019,A structural probe for finding syntax in word representations,keyword-gap,arXiv:cs.CL,
 p1491,2006,Reducing the dimensionality of data with neural networks,keyword-gap,journal:Science [direct-scan],
 p1506,2012,Less efficient pattern separation may contribute to age-related spatial memory deficits,venue-gap,journal:Frontiers in Aging Neuroscience [NOT-listed],A|B|E
 p1526,2019,Refresh my memory - Episodic memory reinstatements intrude on working memory maintenance,venue-gap,"journal:Cognitive, Affective, &amp; Behavioral Neuroscience [NOT-listed]",A|D|G
+p1535,2017,MobileNets - Efficient Convolutional Neural Networks for Mobile Vision Applications,venue-gap,arXiv:cs.CV,A|B|G
 p1538,2022,The nature and frequency of relative clauses in the ... ad - A developmental cross-corpus analysis of English complex grammar,venue-gap,journal:Journal of Child Language [NOT-listed],A|D|E
 p1541,2019,Neurocognitive Signatures of Naturalistic Reading of Scientific Texts - A Fixation-Related fMRI Study,keyword-gap,journal:Scientific Reports [direct-scan],
+p1545,2021,LoRA - Low-Rank Adaptation of large language models,venue-gap,journal:Proceedings of the 25th international conference on Machine learning - ICML '08 [NOT-listed],B|C
+p1546,2018,Deep Paper Gestalt,venue-gap,arXiv:cs.CV,A|E|G
+p1548,2016,Densely Connected Convolutional Networks,venue-gap,arXiv:cs.CV,A|B
+p1557,2017,Age-related impairment on a forced-choice version of the Mnemonic Similarity Task,venue-gap,journal:Behavioral Neuroscience [NOT-listed],A|B|D|E|G
 p1559,2021,Latent Event-Predictive Encodings through Counterfactual Regularization,venue-gap,journal:KI - Künstliche Intelligenz [NOT-listed],A|B|E|G
+p1572,2023,Data is not available upon request,venue-gap,journal:Advances in Methods and Practices in Psychological Science [NOT-listed],A
+p1581,2023,Temporal integration is a robust feature of perceptual decisions,venue-gap,journal:Proceedings of the Royal Society B: Biological Sciences [NOT-listed],A|B|E|G
 p1582,2001,Topographic independent component analysis,both-gap,"journal:Encyclopedia of Computational Neuroscience [title-match, score=1.0]",
 p1583,2003,Bubbles - a unifying framework for low-level statistical properties of natural image sequences,venue-gap,"journal:Journal of the Optical Society of America A [title-match, score=1.0]",A|B
-p1589,2005,Why most published research findings are false,venue-gap,journal:PLoS Medicine [NOT-listed],A|B|E
-p1595,2018,Scale-invariant feature extraction of neural network and renormalization group flow,venue-gap,arXiv:quant-ph,A|B|D|E
+p1586,2018,Are Deep Policy Gradient Algorithms Truly Policy Gradient Algorithms,venue-gap,journal:The Annals of Mathematical Statistics [NOT-listed],A|G
+p1595,2018,Scale-invariant feature extraction of neural network and renormalization group flow,venue-gap,journal:Physical Review E [NOT-listed],A|B|D|E
 p1601,2026,Real-time reconstruction of human visual perception from fMRI,venue-gap,arXiv:cs.CV,A|C|E|G
 p1604,2016,A - T - N - An unbiased descriptive classification scheme for Alzheimer disease biomarkers,venue-gap,"journal:Neurology [title-match, score=1.0]",A
 p1619,2015,Towards a computational model of Dyslexia,venue-gap,journal:BMC Neuroscience [NOT-listed],A|D|E|G
 p1636,2025,Associations between the logical memory ... ma biomarkers for Alzheimer's disease in individuals free of dementia,venue-gap,journal:The Clinical Neuropsychologist [NOT-listed],A|E
 p1649,2018,Event segmentation and the temporal compression of experience in episodic memory,venue-gap,journal:Psychological Research [NOT-listed],A|E
+p1654,2024,Linking in-context learning in transformers to human episodic memory,venue-gap,journal:Open Mind [NOT-listed],A|B|C|G
 p1656,2016,Improving training of deep neural networks via Singular Value Bounding,venue-gap,arXiv:cs.CV,B|G
+p1657,2026,The AI hippocampus - How far are we from human memory,venue-gap,journal:Proceedings of the 47th International ACM SIGIR Conference on Research and Development in Information Retrieval [NOT-listed],A|C|D|E
 p1659,2013,Permutation invariant polynomial neural network approach to fitting potential energy surfaces,venue-gap,journal:The Journal of Chemical Physics [NOT-listed],A|B
-p1666,2025,Human HDAC6 senses valine abundancy to regulate DNA damage,keyword-gap,journal-unknown(10.1038/s41586),
-p1703,2024,Toward a nomenclature consensus for diverse intelligent systems - Call for collaboration,venue-gap,journal:The Innovation [NOT-listed],A|E|G
+p1662,2018,Predicting the Generalization Gap in Deep Networks with Margin Distributions,venue-gap,journal:IEEE Transactions on Information Theory [NOT-listed],A|B|E|G
+p1666,2025,Human HDAC6 senses valine abundancy to regulate DNA damage,keyword-gap,journal:Nature [direct-scan],
+p1667,2017,Preparing for what might happen - An episodic specificity induction impacts the generation of alternative future events,venue-gap,journal:WIREs Cognitive Science [NOT-listed],A|B|E
+p1688,2025,When can model-free reinforcement learning be enough for thinking,venue-gap,journal:Machine Learning [NOT-listed],A|B|C|E|G
+p1703,2024,Toward a nomenclature consensus for diverse intelligent systems - Call for collaboration,venue-gap,journal:Computers &amp; Industrial Engineering [NOT-listed],A|E|G
 p1706,2013,Motivated Numeracy and Enlightened Self-Government,venue-gap,"journal:SSRN Electronic Journal [title-match, score=1.0]",A|E|G
-p1720,2023,Lyfe Agents - Generative agents for low-cost real-time social interactions,venue-gap,arXiv:cs.HC,A|C|G
+p1719,2017,Learning to Remember Rare Events,venue-gap,journal:2006 47th Annual IEEE Symposium on Foundations of Computer Science (FOCS'06) [NOT-listed],A|B
+p1720,2023,Lyfe Agents - Generative agents for low-cost real-time social interactions,venue-gap,journal:Proceedings of the 35th Annual ACM Symposium on User Interface Software and Technology [NOT-listed],A|C|G
 p1727,2009,Hyperdimensional Computing - An Introduction to Computing in Distributed Representation with High-Dimensional Random Vectors,venue-gap,journal:Cognitive Computation [NOT-listed],A|G
-p1805,2013,Auto-Encoding Variational Bayes,keyword-gap,arXiv:category-unknown,
-p1806,2013,Kingma,keyword-gap,arXiv:category-unknown,
+p1764,2017,What Uncertainties Do We Need in Bayesian Deep Learning for Computer Vision,venue-gap,arXiv:cs.CV,A|B|E|G
+p1767,2012,A computational framework for the study of confidence in humans and animals,venue-gap,journal:Journal of Experimental Psychology [NOT-listed],A|E|G
+p1777,2014,"Deep supervised, but not unsupervised, models may explain IT cortical representation",venue-gap,journal:Journal of Neurophysiology [NOT-listed],A|B|D|G
+p1781,2020,Towards Continual Reinforcement Learning - A Review and Perspectives,venue-gap,journal:Machine Learning [NOT-listed],A|B|E|G
+p1786,2007,Object category structure in response patterns of neuronal population in monkey inferior temporal cortex,venue-gap,journal:Journal of Neurophysiology [NOT-listed],A|B|G
+p1805,2013,Auto-Encoding Variational Bayes,keyword-gap,arXiv:stat.ML,
+p1806,2013,Kingma,keyword-gap,arXiv:stat.ML,
 p1807,2014,"Equitability, mutual information, and the maximal information coefficient",keyword-gap,journal:Proceedings of the National Academy of Sciences [direct-scan],
 p1811,2015,"Working memory and executive function decline across normal aging, mild cognitive impairment, and Alzheimer's disease",venue-gap,journal:BioMed Research International [NOT-listed],A|B|E|G
 p1812,2016,Defining emergence in physics,venue-gap,journal:npj Quantum Materials [NOT-listed],A|D|E
 p1815,2002,Memory and Temporal Experience - the Effects of Epis ... Amnesic Patient's Ability to Remember the Past and Imagine the Future,venue-gap,"journal:Social Cognition [title-match, score=0.916]",A|B
 p1818,2026,Mathematical methods and human thought in the age of AI,venue-gap,arXiv:math.HO,A
+p1821,2025,NSD-Imagery - A Benchmark Dataset for Extending fMRI Vision Decoding Methods to Mental Imagery,venue-gap,arXiv:cs.CV,A|B|G
 p1825,2021,Initialization is critical for preserving global data structure in both t-SNE and UMAP,venue-gap,journal:Nature Biotechnology [NOT-listed],A|E|G
 p1834,2009,Tensor Decompositions and Applications,venue-gap,journal:SIAM Review [NOT-listed],A|B
+p1850,2019,Similarity of Neural Network Representations Revisited,venue-gap,journal:Procedings of the British Machine Vision Conference 2016 [NOT-listed],B
+p1851,2019,Stacked Capsule Autoencoders,venue-gap,journal:Nature Biotechnology [NOT-listed],A|D|E
 p1862,2012,"Striatal mechanisms underlying movement, reinforcement, and punishment",venue-gap,journal:Physiology [NOT-listed],A|E|G
 p1864,2015,Deep Neural Networks - A New Framework for Modeling Biological Vision and Brain Information Processing,venue-gap,journal:Annual Review of Vision Science [NOT-listed],A|B|D|G
+p1876,2017,Dense-Captioning Events in Videos,venue-gap,arXiv:cs.CV,A|E|G
 p1879,2012,ImageNet Classification with Deep Convolutional Neural Networks,venue-gap,arXiv:cs.CV,A|B|G
-p1885,2026,Levels of analysis for large language models,venue-gap,"journal:Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences [NOT-listed]",A|C
-p1905,2021,BrainIAK - The Brain Imaging Analysis Kit,venue-gap,journal:Aperture Neuro [NOT-listed],A
+p1891,2022,Biological underpinnings for lifelong learning machines,venue-gap,journal:APL Materials [NOT-listed],A|E
 p1923,2011,"Cohesion, coherence, and declarative memory - Discourse patterns in individuals with hippocampal amnesia",venue-gap,journal:Aphasiology [NOT-listed],A|E
-p1956,2013,Recent advances in false memory research,venue-gap,journal:South African Journal of Psychology [NOT-listed],A|E|G
+p1952,2019,Deep Learning for Symbolic Mathematics,venue-gap,journal:PeerJ Computer Science [NOT-listed],A|B|E|G
 p1964,2005,Dynamic response-by-response models of matching behavior in rhesus monkeys,venue-gap,journal:Journal of the Experimental Analysis of Behavior [NOT-listed],A|B|E|G
 p1967,2013,Building hippocampal circuits to learn and remember - insights into the development of human memory,venue-gap,journal:Behavioural Brain Research [NOT-listed],A|E
+p1968,2018,Emergence of Linguistic Communication from Referential Games with Symbolic and Pixel Input,venue-gap,journal:Machine Learning [NOT-listed],A|B|G
+p1970,2019,Learning to Remember More with Less Memorization,venue-gap,journal:Proceedings of the 24th ACM SIGKDD International Conference on Knowledge Discovery &amp; Data Mining [NOT-listed],A|B|G
 p1974,2012,The cognitive mechanisms of optimal sampling,venue-gap,journal:Behavioural Processes [NOT-listed],A|B|G
+p1988,2025,ESSENTIAL - Episodic and semantic memory integrAtion for video class-incremental learning,venue-gap,arXiv:cs.CV,A|B|D|G
 p1993,2012,Cauchy and the gradient method,both-gap,"journal:Documenta Mathematica Series [title-match, score=1.0]",
+p1995,2014,Understanding image representations by measuring their equivariance and equivalence,venue-gap,arXiv:cs.CV,A
+p2008,2019,The influence of episodic memory decline on value-based choice,venue-gap,"journal:Aging, Neuropsychology, and Cognition [NOT-listed]",A|E|G
 p2010,2015,Data-Driven Phenotypic Dissection of AML Reveals Progenitor-like Cells that Correlate with Prognosis,keyword-gap,journal:Cell [direct-scan],
+p2021,2016,Learning without Forgetting,venue-gap,arXiv:cs.CV,A|B|D|G
 p2023,2009,Joint Blind Source Separation by Multi-set Canonical Correlation Analysis,venue-gap,journal:IEEE Transactions on Signal Processing [NOT-listed],A|G
-p2028,2018,A Closed-form Solution to Photorealistic Image Stylization,keyword-gap,arXiv:category-unknown,
+p2028,2018,A Closed-form Solution to Photorealistic Image Stylization,both-gap,arXiv:cs.CV,
+p2030,2019,Intersubject MVPD - Empirical comparison of fMRI denoising methods for connectivity analysis,venue-gap,journal:Magnetic Resonance in Medicine [NOT-listed],A|B|D|E
 p2041,2025,Detecting neurocognitive disorders through analyses of ... evolution and cross-modal consistency in visual-stimulated narratives,venue-gap,arXiv:eess.AS,D|G
-p2059,2018,Analyzing ordinal data with metric models - What could possibly go wrong,venue-gap,journal:Journal of Experimental Social Psychology [NOT-listed],A|B|G
+p2042,2025,Does object binding naturally emerge in large pretrained Vision Transformers,venue-gap,journal:Scholarpedia [NOT-listed],A|B|C|D|E|G
+p2049,2026,Interactive narratives reveal the personalizing effect of agency on episodic memory,venue-gap,journal:American Journal of Sociology [NOT-listed],A|E|G
+p2054,2021,Can a Fruit Fly Learn Word Embeddings,venue-gap,journal:Proceedings of the thiry-fourth annual ACM symposium on Theory of computing [NOT-listed],B|C|G
+p2068,2021,Noisy Recurrent Neural Networks,venue-gap,arXiv:cs.CE,B|E|G
+p2072,2014,Microsoft COCO - Common Objects in Context,venue-gap,arXiv:cs.CV,A|G
 p2074,2022,Imaging whole-brain activity to understand behaviour,venue-gap,journal:WormBook [NOT-listed],A|D|G
+p2084,2018,Global-and-local attention networks for visual recognition,venue-gap,arXiv:cs.CV,A|D|G
+p2085,2020,Stable and expressive recurrent vision models,venue-gap,arXiv:cs.CV,A|B|G
 p2088,2021,"Practical recommendations for timely, accurate diagno ... s disease (MCI and dementia) in primary care - a review and synthesis",venue-gap,journal:Journal of Internal Medicine [NOT-listed],A|E
+p2093,2018,An Intriguing Failing of Convolutional Neural Networks and the CoordConv Solution (1),venue-gap,arXiv:cs.CV,A|B|G
+p2094,2018,An Intriguing Failing of Convolutional Neural Networks and the CoordConv Solution,venue-gap,arXiv:cs.CV,A|B|E|G
+p2096,2018,Make (Nearly) Every Neural Network Better - Generating Neural Network Ensembles by Weight Parameter Resampling,venue-gap,journal:Procedia Technology [NOT-listed],A|B|G
 p2100,2020,Effects of encoding modes on memory of naturalistic events,venue-gap,journal:Journal of Neurolinguistics [NOT-listed],A|D|E|G
-p2118,2025,Exploring LLM embedding potential for dementia detection using audio transcripts,venue-gap,journal:Eng [NOT-listed],A|C|D|G
-p2135,2024,The BabyView dataset - High-resolution egocentric videos of infants' and young children's everyday experiences,venue-gap,arXiv:cs.CV,A|B|G
+p2112,2025,"Advances and challenges in foundation agents - From brain-inspired intelligence to evolutionary, collaborative, and safe systems",venue-gap,journal:Autonomous Robots [NOT-listed],A|B|C|E|G
+p2135,2024,The BabyView dataset - High-resolution egocentric videos of infants' and young children's everyday experiences,venue-gap,journal:2022 International Conference on Robotics and Automation (ICRA) [NOT-listed],A|B|G
 p2137,2015,Differential neuropsychological outcomes following targeted responsive neurostimulation for partial-onset epilepsy,venue-gap,journal:Epilepsia [NOT-listed],A|G
-p2161,2012,Reservoir Computing Trends,venue-gap,journal:KI - Künstliche Intelligenz [NOT-listed],A|B|E|G
+p2148,2018,Shared Representational Geometry Across Neural Networks,venue-gap,journal:2016 IEEE International Conference on Big Data (Big Data) [NOT-listed],A|E
 p2169,2007,Inhibitory deficit theory - Recent developments in a 'new view',venue-gap,"journal:Inhibition in cognition. [title-match, score=1.0]",A|B|D|G
 p2171,2020,Alzheimer’s dementia recognition through spontaneous speech - The ADReSS challenge,venue-gap,journal:Interspeech 2020 [NOT-listed],A
+p2172,2021,2104.09356v1,venue-gap,arXiv:eess.AS,A|D
 p2173,2021,Detecting cognitive decline using speech only - The ADReSSo Challenge,venue-gap,journal:Interspeech 2021 [NOT-listed],A|D
 p2174,2021,Editorial - Alzheimer's dementia recognition through spontaneous speech,venue-gap,journal:Frontiers in Computer Science [NOT-listed],A|B|D|E
 p2177,2020,Human information processing in complex networks,venue-gap,journal:Nature Physics [NOT-listed],A|B|E
+p2182,2018,Dimensionality-Driven Learning with Noisy Labels,venue-gap,arXiv:cs.CV,A|B|G
 p2192,2017,Medial prefrontal cortex compresses concept representations through learning,venue-gap,"journal:2017 International Workshop on Pattern Recognition in Neuroimaging (PRNI) [title-match, score=1.0]",A|B|D
+p2196,2014,"Constructive episodic simulation - dissociable effe ... n on remembering, imagining, and describing in young and older adults",venue-gap,journal:Journal of Gerontology [NOT-listed],A|D
 p2209,2016,Lecture Notes on Randomized Linear Algebra,venue-gap,arXiv:cs.DS,E|G
+p2211,2019,Ten common statistical mistakes to watch out for when writing or reviewing a manuscript,venue-gap,journal:Social Science &amp; Medicine [NOT-listed],A|B|E|G
 p2218,2014,Hierarchical topographic factor analysis,venue-gap,"journal:2014 International Workshop on Pattern Recognition in Neuroimaging [title-match, score=1.0]",A|B|D|E
-p2235,2014,Neuroscience. The atoms of neural computation,venue-gap,journal:Oryx [NOT-listed],A|E|G
-p2272,2020,Exemplar models are useful and deep neural networks overcome their limitations - A commentary on Ambridge (2020),venue-gap,journal:First Language [NOT-listed],A|B|C|D|G
+p2252,2014,"Verbal fluency, naming and verbal comprehension - three aspects of language as predictors of cognitive impairment",venue-gap,journal:Neuropsychology [NOT-listed],A|E|G
 p2290,2018,UMAP - Uniform Manifold Approximation and Projection for Dimension Reduction,venue-gap,journal:Journal of Open Source Software [NOT-listed],A|D
 p2291,2016,Deep Learning Models of the Retinal Response to Natural Scenes,venue-gap,arXiv:cs.SC,A|B
 p2294,2017,Developing a Comprehensive Framework for Multimodal Feature Extraction,venue-gap,journal:Proceedings of the 23rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining [NOT-listed],A|B|D|G
 p2297,2009,Acquired equivalence changes stimulus representations,venue-gap,journal:Journal of the Experimental Analysis of Behavior [NOT-listed],A|B|D|E|G
+p2300,2013,Episodic context binding in task switching - evidence from amnesia,venue-gap,journal:Psychological Research [NOT-listed],A|B|D|G
 p2307,2021,Cloud-Based Functional Magnetic Resonance Imaging N ... he Negative Attentional Bias in Depression - A Proof-of-Concept Study,venue-gap,journal:Biological Psychiatry: Cognitive Neuroscience and Neuroimaging [NOT-listed],A|B|G
-p2308,2022,Real-time neurofeedback to alter interpretations of a naturalistic narrative,venue-gap,journal:Neuroimage: Reports [NOT-listed],A|B|E|G
 p2331,2016,"Dynamical systems, attractors, and neural circuits",venue-gap,journal:F1000Research [NOT-listed],A|B|D
+p2370,2017,The Ties that Bind Networks - Weak Ties Facilitate the Emergence of Collective Memories,venue-gap,journal:Physical Review E [NOT-listed],A
+p2379,2019,Moments in Time Dataset - one million videos for event understanding,venue-gap,arXiv:cs.CV,A|B
 p2383,2019,Visualizing structure and transitions in high-dimensional biological data,venue-gap,journal:Nature Biotechnology [NOT-listed],A
 p2392,2016,Why We Use Bad Color Maps and What You Can Do About It,venue-gap,arXiv:astro-ph.IM,G
 p2393,2013,Frontal and parietal theta burst TMS impairs working memory for visual-spatial conjunctions,venue-gap,journal:Brain Stimulation [NOT-listed],A|D
-p2401,2021,"Systems consolidation, transformation and r ... tiple Trace Theory, Trace Transformation Theory and their Competitors",venue-gap,journal:Journal of the Royal Society of New Zealand [NOT-listed],A|B
 p2403,2005,"Functional neuroanatomy of remote episodic, sem ... and spatial memory - a unified account based on multiple trace theory",venue-gap,"journal:Journal of Anatomy [title-match, score=0.979]",A|B|G
+p2408,2022,Item-level story recall predictors of amyloid-beta in late middle-aged adults at increased risk for Alzheimer's disease,venue-gap,journal:Journal of the International Neuropsychological Society [NOT-listed],A|B|E
+p2417,2022,"A reward-learning framework of knowledge acquisition - A ... rated account of curiosity, interest, and intrinsic-extrinsic rewards",venue-gap,journal:Review of Educational Research [NOT-listed],A|D|E|G
 p2429,2024,AutoRA - Automated Research Assistant for Closed-Loop Empirical Research,venue-gap,journal:Journal of Open Source Software [NOT-listed],A|B|E
+p2432,2025,The development of a story recall test for di ... ween Alzheimer’s disease and mild cognitive impairment in Thai cohort,venue-gap,journal:Humanities and Social Sciences Communications [NOT-listed],A|E
 p2439,2020,Nine-year prospective efficacy and safety of brain-responsive neurostimulation for focal epilepsy,venue-gap,journal:Neurology [NOT-listed],A
 p2443,2020,Analyzing facial and eye movements to screen for Alzheimer's disease,venue-gap,journal:Sensors [NOT-listed],A|E
 p2447,2019,Online change detection techniques in time series - An overview,venue-gap,journal:2019 IEEE International Conference on Prognostics and Health Management (ICPHM) [NOT-listed],A|E|G
+p2452,2021,Extensive sampling for complete models of individual brains,venue-gap,journal:Communications of the ACM [NOT-listed],A|B|G
+p2454,2018,Tree-Structured Recurrent Switching Linear Dynamical Systems for Multi-Scale Modeling,venue-gap,journal:Journal of the American Statistical Association [NOT-listed],A|B|E
 p2457,2019,Measuring shared responses across subjects using intersubject correlation,venue-gap,journal:Social Cognitive and Affective Neuroscience [NOT-listed],A|E
 p2466,2014,Information versus reward in a changing world,venue-gap,"journal:PsycEXTRA Dataset [title-match, score=1.0]",A|E|G
-p2471,2022,Embracing New Techniques in Deep Learning for Estimating Image Memorability,venue-gap,arXiv:cs.CV,A|B
+p2471,2022,Embracing New Techniques in Deep Learning for Estimating Image Memorability,venue-gap,journal:Proceedings of the 18th ACM international conference on Multimedia [NOT-listed],A|B
 p2486,2002,On Discriminative vs. Generative Classifiers - A comparison of logistic regression and naive Bayes,venue-gap,"journal:Neural Processing Letters [title-match, score=0.945]",A|B|E
+p2489,2014,Deep Neural Networks are Easily Fooled - High Confidence Predictions for Unrecognizable Images,venue-gap,arXiv:cs.CV,A|B|G
 p2495,2024,"Modeling human activity comprehension at human scale - Prediction, segmentation, and categorization",venue-gap,journal:PNAS Nexus [NOT-listed],A|B|D|E|G
 p2505,2019,Is the cell really a machine,venue-gap,journal:Journal of Theoretical Biology [NOT-listed],A
+p2520,2022,"Cognitive, Systems, and Computational Neurosciences of the Self in Motion",venue-gap,journal:New England Journal of Medicine [NOT-listed],A|B|E|G
 p2524,2002,Differential effects of list strength on recollection and familiarity,venue-gap,"journal:PsycEXTRA Dataset [title-match, score=1.0]",A|B
 p2531,2008,Computational Models of Episodic Memory,venue-gap,"journal:The Cambridge Handbook of Computational Cognitive Sciences [title-match, score=1.0]",A|B|E
 p2539,2018,Sharing the social world via intersubject neural synchronisation,venue-gap,journal:Current Opinion in Psychology [NOT-listed],A|B|D|E|G
 p2541,2023,Sensitivity to the instrumental value of choice increases across development,venue-gap,journal:Handbook of Child Psychology [NOT-listed],A|B|G
 p2554,2017,The Leabra Cognitive Architecture,venue-gap,journal:Oxford Handbooks Online [NOT-listed],A|B|G
-p2562,2021,Person knowledge shapes face identity perception,venue-gap,journal:European Review of Social Psychology [NOT-listed],A|D|G
-p2563,2023,Trustworthiness judgments without the halo effect - A data-driven computational modeling approach,venue-gap,journal:Perception [NOT-listed],A|B|E|G
+p2562,2021,Person knowledge shapes face identity perception,venue-gap,journal:Journal of Personality and Social Psychology [NOT-listed],A|D|G
+p2563,2023,Trustworthiness judgments without the halo effect - A data-driven computational modeling approach,venue-gap,journal:Review of Financial Studies [NOT-listed],A|B|E|G
 p2565,2018,Data-driven advice for applying machine learning to bioinformatics problems (1),venue-gap,"journal:Biocomputing 2018 [title-match, score=0.987]",A|B|G
+p2566,2018,Data-driven advice for applying machine learning to bioinformatics problems,venue-gap,arXiv:q-bio.QM,A|B|G
 p2567,2022,In-context learning and induction heads,venue-gap,journal:Distill [NOT-listed],A|B|C
 p2573,2025,The impact of TikTok’s fast-paced content on attention span of students,venue-gap,arXiv:cs.CY,A|E|G
 p2579,2002,Kernel-Based Reinforcement Learning,venue-gap,"journal:Encyclopedia of Machine Learning [title-match, score=0.921]",B|E|G
+p2582,2024,Schema-driven prediction effects on episodic memory across the lifespan,venue-gap,journal:Brain and Cognition [NOT-listed],A|B|D|G
 p2587,2016,Representational Similarity Learning with Application to Brain Networks,venue-gap,arXiv:stat.ME,A|B|D|E
 p2600,2022,enjoyable for all of us. The field of Bayesian modeling of perception and action would not be where,venue-gap,journal:IEEE Transactions on Information Theory [NOT-listed],B|G
 p2607,2014,BEFORE YOU START . . . . . . . . . . . . . . . . . . . . . . .,venue-gap,"journal:You and Your Lodger [title-match, score=1.0]",A|D
+p2609,2018,"modalities (e.g. typed responses, button presses, etc.). Further, the transcription process is often tedious",venue-gap,journal:The Journal of Open Source Software [NOT-listed],A|B|G
 p2620,2019,Hippocampal contributions to value-based learning - Converging evidence from fMRI and amnesia,venue-gap,"journal:Cognitive, Affective, &amp; Behavioral Neuroscience [NOT-listed]",A|B|D|G
+p2630,2016,Transferability in Machine Learning - from Phenomena to Black-Box Attacks using Adversarial Samples,venue-gap,arXiv:cs.CR,A|B|E
 p2631,2024,Early detection of amyloid-related changes in memory among cognitively unimpaired older adults with daily digital testing (1),venue-gap,journal:Annals of Neurology [NOT-listed],A|G
 p2632,2024,Early detection of amyloid-related changes in memory among cognitively unimpaired older adults with daily digital testing,venue-gap,journal:Annals of Neurology [NOT-listed],A|G
 p2645,2006,A case of unusual autobiographical remembering,venue-gap,journal:Neurocase [NOT-listed],A|G
+p2658,2019,"PyTorch - An Imperative Style, High-Performance Deep Learning Library",venue-gap,arXiv:cs.CV,A|B|E|G
+p2664,2013,Ten simple rules for writing a literature review,venue-gap,journal:Proceedings of the 28th international conference on Software engineering [NOT-listed],E|G
 p2679,2019,Large-scale assessment of a smartwatch to identify atrial fibrillation,both-gap,journal:New England Journal of Medicine [NOT-listed],
-p2698,2021,Generative Pseudo-Inverse Memory,venue-gap,arXiv:cs.NE,A|B
+p2687,2016,Adapting Deep Network Features to Capture Psychological Representations,venue-gap,arXiv:cs.CV,A|B|D
 p2701,2010,Permutation P-values should never be zero - calculating exact P-values when permutations are randomly drawn,venue-gap,journal:Statistical Applications in Genetics and Molecular Biology [NOT-listed],A|E
 p2702,2018,One parameter is always enough,venue-gap,journal:AIP Advances [NOT-listed],A
 p2712,2017,Low algebraic dimension matrix completion,venue-gap,"journal:2017 55th Annual Allerton Conference on Communication, Control, and Computing (Allerton) [title-match, score=1.0]",A|B|E|G
-p2733,2021,Self-Organized Criticality in the Brain,venue-gap,journal:Frontiers in Physics [NOT-listed],A|B|D|G
+p2736,2018,Neural Nearest Neighbors Networks,venue-gap,arXiv:cs.CV,A|D|G
 p2738,2015,Meta-analysis of the heritability of human traits based on fifty years of twin studies,venue-gap,journal:Nature Genetics [NOT-listed],A|G
-p2760,2017,Comparison of echo state network output layer classification methods on noisy data,venue-gap,arXiv:cs.NE,A|B|G
+p2752,2018,The effect of semantic relatedness on associative asymmetry in memory,venue-gap,journal:Quarterly Journal of Experimental Psychology [NOT-listed],A|B|G
 p2761,2008,Inverse problems in machine learning - An application to brain activity interpretation,venue-gap,journal:Journal of Physics: Conference Series [NOT-listed],A|B|G
-p2769,2020,Clarifying the normative significance of 'personality changes' following Deep Brain Stimulation,venue-gap,journal:Science and Engineering Ethics [NOT-listed],A|B
 p2771,2024,Explanation strategies in humans versus current explainable artificial intelligence - Insights from image classification,venue-gap,journal:British Journal of Psychology [NOT-listed],A
+p2780,2022,Shape of U - The nonmonotonic relationship between object-location memory and expectedness,venue-gap,journal:The R Journal [NOT-listed],A
+p2799,2011,Event perception,venue-gap,journal:WIREs Cognitive Science [NOT-listed],A|D|E
 p2812,2008,Uniform approximation of functions with random bases,venue-gap,"journal:2008 46th Annual Allerton Conference on Communication, Control, and Computing [title-match, score=1.0]",A|B|E|G
 p2834,2013,Sparse Overlapping Sets Lasso for Multitask Learning and its Application to fMRI Analysis,venue-gap,arXiv:math.ST,A|B|D|E|G
+p2849,2016,iCaRL - Incremental Classifier and Representation Learning,venue-gap,arXiv:cs.CV,A|B
+p2850,2018,Do CIFAR-10 Classifiers Generalize to CIFAR-10,venue-gap,journal:Communications of the ACM [NOT-listed],A|B|G
 p2873,2019,Fast shared response model for fMRI data,venue-gap,arXiv:cs.CV,A|B|D|E
+p2883,2017,Scalable Recollections for Continual Lifelong Learning,venue-gap,journal:Machine Learning [NOT-listed],A|B|E
+p2884,2018,Learning to Learn without Forgetting by Maximizing Transfer and Minimizing Interference (1),venue-gap,journal:Machine Learning [NOT-listed],A|E|G
+p2885,2018,Learning to Learn without Forgetting by Maximizing Transfer and Minimizing Interference,venue-gap,journal:Machine Learning [NOT-listed],A|E|G
 p2887,2018,IntPhys - A Framework and Benchmark for Visual Intuitive Physics Reasoning,venue-gap,journal:Child Development [NOT-listed],A|E|G
 p2909,2006,Anterior temporal cortex and semantic memory - reconciling findings from neuropsychology and functional imaging,venue-gap,"journal:Cognitive, Affective, &amp; Behavioral Neuroscience [title-match, score=1.0]",A|E
 p2910,2006,Semantic memory in Alzheimer's disease and the frontotemporal dementias - a longitudinal study of 236 patients,venue-gap,journal:Neuropsychology [NOT-listed],A|E|G
 p2915,2014,Interleaved Practice Improves Mathematics Learning,venue-gap,journal:Journal of Educational Psychology [NOT-listed],A|E|G
 p2916,2016,Atlasing the frontal lobe connections and their va ... e to age and education - a spherical deconvolution tractography study,venue-gap,journal:Brain Structure and Function [NOT-listed],A|E
-p2919,2013,A quantitative theory of the functions of the hippocampal CA3 network in memory,venue-gap,journal:Frontiers in Cellular Neuroscience [NOT-listed],A|B|G
+p2919,2013,A quantitative theory of the functions of the hippocampal CA3 network in memory,venue-gap,journal:Physical Review E [NOT-listed],A|B|G
 p2929,2016,Visual Concept Recognition and Localization via Iterative Introspection,venue-gap,arXiv:cs.CV,A|B|E
 p2930,2018,"Totally Looks Like - How Humans Compare, Compared to Machines",venue-gap,arXiv:cs.CV,A|B|D|E|G
-p2948,2019,A practical introduction to the bootstrap - a versatile method to make inferences by using data-driven simulations,venue-gap,journal:Advances in Methods and Practices in Psychological Science [NOT-listed],A|B|E|G
-p2989,2017,Recent Advances in Recurrent Neural Networks,venue-gap,arXiv:cs.NE,A|B|D
-p3006,2016,Meta-learning with memory-augmented neural networks,venue-gap,arXiv:cs.NE,A|B|C|G
+p2932,2013,What is brain fog - An evaluation of the symptom in postural tachycardia syndrome,venue-gap,journal:Clinical Autonomic Research [NOT-listed],A|B
+p2947,2019,Reaction times and other skewed distributions - problems with the mean and the median,venue-gap,journal:The Annals of Statistics [NOT-listed],A|B
+p2955,2018,Pooling is neither necessary nor sufficient for appropriate deformation stability in CNNs,venue-gap,arXiv:cs.CV,A|B
+p2961,2015,ImageNet Large Scale Visual Recognition Challenge,venue-gap,arXiv:cs.CV,A|E
+p2978,2017,Dynamic Routing Between Capsules,venue-gap,arXiv:cs.CV,A|E|G
+p2995,2017,Types of approximation for probabilistic cognition - Sampling and variational,venue-gap,journal:Brain and Cognition [NOT-listed],A|G
 p3020,2000,Attractor dynamics in feedforward neural networks,venue-gap,"journal:Graphical Models [title-match, score=1.0]",A
+p3034,2022,The Neural Race Reduction - Dynamics of Abstraction in Gated Networks,venue-gap,journal:Proceedings of the 20th ACM SIGKDD international conference on Knowledge discovery and data mining [NOT-listed],A|B|G
 p3039,2012,Adaptive constructive processes and the future of memory,venue-gap,journal:American Psychologist [NOT-listed],A|G
 p3040,2012,Constructive memory - past and future,venue-gap,"journal:Dialogues in Clinical Neuroscience [title-match, score=1.0]",A|E
 p3044,2008,"Episodic simulation of future events - concepts, data, and applications",venue-gap,journal:Annals of the New York Academy of Sciences [NOT-listed],A|E
 p3048,2017,Escaping the Past - Contributions of the Hippocampus to Future Thinking and Imagination,venue-gap,journal:The Hippocampus from Cells to Systems [NOT-listed],A
+p3063,2015,Prioritized Experience Replay,venue-gap,journal:Proceedings of the IEEE [NOT-listed],A|B|E|G
+p3084,2018,Bayes factor design analysis - Planning for compelling evidence,venue-gap,journal:Statistics in Medicine [NOT-listed],A|B|E
 p3097,2022,Deep learning-based classification of postt ... wing trauma utilizing visual and auditory markers of arousal and mood,venue-gap,journal:Psychological Medicine [NOT-listed],A|B|D|E
 p3105,2008,The importance of stupidity in scientific research,venue-gap,journal:Journal of Cell Science [NOT-listed],E|G
+p3106,2018,Progress & Compress - A scalable framework for continual learning,venue-gap,arXiv:cs.CV,A|B|G
+p3123,2016,Grad-CAM - Visual Explanations from Deep Networks via Gradient-based Localization,venue-gap,arXiv:cs.CV,A|B|E|G
+p3128,2019,"Deep Learning - The Good, the Bad, and the Ugly",venue-gap,arXiv:cs.CV,A|B|E|G
 p3139,2022,Representation and extraction of physics knowledge b ... h and embedding-combined text classification for cooperative learning,venue-gap,journal:2022 IEEE 25th International Conference on Computer Supported Cooperative Work in Design (CSCWD) [NOT-listed],G
+p3141,2014,CNN Features Off-the-Shelf - An Astounding Baseline for Recognition,venue-gap,arXiv:cs.CV,B|D
 p3146,2005,Simple Neural Networks that Optimize Decisions,venue-gap,"journal:International Journal of Bifurcation and Chaos [title-match, score=1.0]",A|B|E|G
+p3152,2018,Efficient Attention - Attention with Linear Complexities,venue-gap,arXiv:cs.CV,A|B|D|G
 p3170,2014,The Chinese version of story recall - a useful screeni ... for mild cognitive impairment and Alzheimer's disease in the elderly,venue-gap,journal:BMC Psychiatry [NOT-listed],A|E|G
-p3176,2024,Generating event boundaries in memory without prediction error,venue-gap,journal:American Psychologist [NOT-listed],A|B|E|G
 p3205,2014,Very Deep Convolutional Networks for Large-Scale Image Recognition,venue-gap,arXiv:cs.CV,A|B|G
+p3206,2013,Deep Inside Convolutional Networks - Visualising Image Classification Models and Saliency Maps,venue-gap,arXiv:cs.CV,G
 p3209,2024,Do grant proposal texts matter for funding decisions - A field experiment,venue-gap,journal:Scientometrics [NOT-listed],A|G
+p3210,2018,Surprise and destabilize - prediction error influences episodic memory reconsolidation,venue-gap,journal:Memory Reconsolidation [NOT-listed],A|B|G
 p3215,2018,Sensory cortex is optimized for prediction of future input,venue-gap,journal:Biology and Diseases of the Ferret [NOT-listed],A|B|D|E|G
+p3218,2018,The importance of the whole - topological data analysis for the network neuroscientist,venue-gap,arXiv:q-bio.QM,A|B|D|E
+p3224,2015,Cyclical Learning Rates for Training Neural Networks,venue-gap,arXiv:cs.CV,A|B
+p3246,2018,The Lifespan Human Connectome Project in Develo ... large-scale study of brain connectivity development in 5-21 year olds,venue-gap,journal:Diabetes Care [NOT-listed],A|D|E
 p3248,2013,Hippocampal Memory Prosthesis,venue-gap,journal:Encyclopedia of Computational Neuroscience [NOT-listed],A|B|D
 p3254,2022,Examining phenotypical heterogeneity in language abil ... nese-speaking children with autism - A naturalistic sampling approach,venue-gap,journal:Journal of Autism and Developmental Disorders [NOT-listed],A|B
+p3284,2016,A Taxonomy of Deep Convolutional Neural Nets for Computer Vision,venue-gap,arXiv:cs.CV,A|B|D|E|G
+p3288,2015,Training Very Deep Networks,venue-gap,arXiv:cs.CV,A|B|G
 p3313,2011,Neural representations of compositional structures - representing and manipulating vector spaces with spiking neurons,venue-gap,journal:Connection Science [NOT-listed],A
+p3318,2023,Error tight - Exercises for lab groups to prevent research mistakes,venue-gap,journal:Proceedings of the Association for Information Science and Technology [NOT-listed],A|E|G
 p3336,2021,"SAYCam - A large, longitudinal audiovisual dataset recorded from the infant's perspective",venue-gap,journal:Open Mind [NOT-listed],A|G
-p3357,2018,Reinforcement learning - An introduction,venue-gap,"journal:Journal of Neurology, Neurosurgery &amp; Psychiatry [NOT-listed]",B|G
+p3348,2017,Axiomatic Attribution for Deep Networks,venue-gap,journal:International Journal of Game Theory [NOT-listed],A|D
+p3349,2021,Learning the Predictability of the Future,venue-gap,arXiv:cs.CV,A|B|D
+p3357,2018,Reinforcement learning - An introduction,venue-gap,journal:Frontiers in Synaptic Neuroscience [NOT-listed],B|G
 p3361,2019,Hyperaligning Neural Representational Spaces,venue-gap,journal:Neuromethods [NOT-listed],A|B|D
+p3363,2013,Intriguing properties of neural networks,venue-gap,arXiv:cs.CV,A|E|G
+p3364,2014,Going Deeper with Convolutions,venue-gap,arXiv:cs.CV,A|B|G
 p3365,2006,Learning Tetris using the noisy cross-entropy method,keyword-gap,"journal:Neural Computation [title-match, score=1.0]",
 p3378,2015,A Neural Network Model of Episode Representations in Working Memory,venue-gap,journal:Cognitive Computation [NOT-listed],A
 p3381,2014,Entorhinal cortex and consolidated memory,venue-gap,journal:Neuroscience Research [NOT-listed],A|D
+p3396,2023,Semantic reconstruction of continuous language from non-invasive brain recordings,venue-gap,journal:Augmentative and Alternative Communication [NOT-listed],A|E|G
+p3397,2024,Self-Retrieval - End-to-End Information Retrieval with One Large Language Model,venue-gap,arXiv:cs.IR,A|C|E|G
 p3399,2012,Topics in Random Matrix Theory,venue-gap,arXiv:math.CO,A|B|E|G
 p3400,2014,Random matrices have simple spectrum,venue-gap,arXiv:math.PR,A|E
 p3405,2022,DEPAC - A corpus for depression and anxiety detection from speech,venue-gap,"journal:Proceedings of the Eighth Workshop on Computational Linguistics and Clinical Psychology [title-match, score=1.0]",A|B|D|G
@@ -293,12 +416,17 @@ p3408,2023,Efficient Transformers - A survey,venue-gap,journal:ACM Computing Sur
 p3411,2000,Rules and Similarity in Concept Learning,venue-gap,"journal:The Making of Human Concepts [title-match, score=0.93]",A|B
 p3422,2024,Therapeutic potential of APP antisense oligonuc ... for Alzheimer's disease and down syndrome-related Alzheimer's disease,venue-gap,journal:Molecular Neurodegeneration [NOT-listed],A
 p3423,2014,Bias in Natural Actor-Critic Algorithms,venue-gap,"journal:Automatica [title-match, score=0.886]",A|E|G
+p3424,2018,RNNs Implicitly Implement Tensor Product Representations,venue-gap,"journal:Proceedings of the 11th International Workshop on Semantic Evaluation
+          (SemEval-2017) [NOT-listed]",A|B
 p3445,2015,A Viscosity Proof of the Cauchy–Schwarz Inequality,venue-gap,journal:The American Mathematical Monthly [NOT-listed],A|E
 p3463,2024,Introduction to Large Language Models (LLMs) for dementia care and research,venue-gap,journal:Frontiers in Dementia [NOT-listed],A|B|C|D
+p3468,2026,Redundant prefrontal hemispheres adapt storage strategy to working memory demands,venue-gap,journal:Journal of Neurophysiology [NOT-listed],A|E|G
+p3481,2017,A semi-supervised method for multi-subject FMRI functional alignment,venue-gap,arXiv:cs.MS,A|D|E
 p3482,2018,Capturing Shared and Individual Information in fMRI Data,venue-gap,"journal:2018 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) [title-match, score=1.0]",A|E
+p3485,2024,Mixed selectivity - Cellular computations for complexity,venue-gap,journal:BMC Neuroscience [NOT-listed],A|E
 p3486,2008,The variational approximation for Bayesian inference,venue-gap,journal:IEEE Signal Processing Magazine [NOT-listed],B|E
-p3501,2021,Neural representation of abstract task structure during generalization,venue-gap,journal:Multimedia Tools and Applications [NOT-listed],A|B|D|G
 p3503,2018,Pingouin - statistics in Python,venue-gap,journal:Journal of Open Source Software [NOT-listed],A
+p3505,2010,"Intrinsic functional connectivity as a tool for human connectomics - theory, properties, and optimization",venue-gap,journal:Journal of Neurophysiology [NOT-listed],A|B|D
 p3512,2019,Movies in the magnet - Naturalistic paradigms in developmental functional neuroimaging,venue-gap,journal:Developmental Cognitive Neuroscience [NOT-listed],A|D|E|G
 p3523,2023,Attention and memory after COVID-19 as measured by neuropsychological tests - Systematic review and meta-analysis,venue-gap,journal:Acta Psychologica [NOT-listed],A|G
 p3524,2018,Spurious Valleys in Two-layer Neural Network Optimization Landscapes,venue-gap,arXiv:math.OC,B|G
@@ -308,24 +436,46 @@ p3555,2011,ENCODING AND DECODING V1 FMRI RESPONSES TO NATURAL IMAGES WITH SPARSE
 p3584,2008,"Graphical Models, Exponential Families, and Variational Inference",venue-gap,journal:Foundations and Trends® in Machine Learning [NOT-listed],B
 p3589,2008,An Alternative Prior Process for Nonparametric Bayesian Clustering,venue-gap,arXiv:stat.ME,A|B|G
 p3608,2015,Full correlation matrix analysis (FCMA) - An unbiased method for task-related functional connectivity,venue-gap,journal:Journal of Neuroscience Methods [NOT-listed],A|B|D|G
+p3618,2019,Learning Robust Representations by Projecting Superficial Statistics Out,venue-gap,arXiv:cs.CV,A|B|G
 p3625,2025,A systematic review and meta-analysis of autism screening and diagnosis in children using video-assisted telehealth technology,venue-gap,journal:DIGITAL HEALTH [NOT-listed],A|B|G
+p3629,2026,A simple model of co-emergence of grid and place fields,venue-gap,journal:Network: Computation in Neural Systems [NOT-listed],A|B|G
 p3634,2010,All of Nonparametric Statistics,venue-gap,"journal:Springer Texts in Statistics [title-match, score=1.0]",A|B|E
-p3645,2020,Importance of Tuning Hyperparameters of Machine Learning Algorithms,venue-gap,journal:Zeitschrift f�r Wahrscheinlichkeitstheorie und Verwandte Gebiete [NOT-listed],B|G
+p3638,2021,"Modular Object-Oriented Games - A Task Framework for Reinforcement Learning, Psychology, and Neuroscience",venue-gap,journal:Foundations and Trends® in Machine Learning [NOT-listed],A|E|G
+p3643,2023,The Relational Bottleneck as an Inductive Bias for Efficient Abstraction,venue-gap,journal:Artifact Digital Object Group [NOT-listed],A|B|G
+p3645,2020,Importance of Tuning Hyperparameters of Machine Learning Algorithms,venue-gap,journal:Communications in Statistics - Simulation and Computation [NOT-listed],B|G
+p3650,2025,Changes in memory function in adults following SARS-CoV-2 infection - findings from the Covid and Cognition online study,venue-gap,journal:Journal of the Royal Statistical Society Series B: Statistical Methodology [NOT-listed],A|G
 p3659,2008,On Estimation of Covariance Matrices With Kronecker Product Structure,venue-gap,journal:IEEE Transactions on Signal Processing [NOT-listed],A|B
 p3675,2010,Recurrent policy gradients,venue-gap,"journal:Logic Journal of IGPL [title-match, score=1.0]",A|B|E|G
-p3717,2023,Memory accuracy after 20 years for interviews about child maltreatment,venue-gap,journal:Child Maltreatment [NOT-listed],A|E
+p3685,2019,Ten simple rules for the computational modeling of behavioral data,venue-gap,journal:Machine Learning [NOT-listed],A|B|D|G
+p3704,2024,Analysis of NIH K99 - R00 awards and the career progression of awardees,venue-gap,"journal:Academic Work and Careers in Europe: Trends, Challenges, Perspectives [NOT-listed]",A|B
+p3714,2020,Similar time course of fast familiarity and slow recollection processes for recognition memory in humans and macaques,venue-gap,journal:Animal Cognition [NOT-listed],A|B|E|G
 p3722,2000,Task switching and the measurement of 'switch costs',venue-gap,"journal:Psychological Research [title-match, score=1.0]",A
+p3735,2016,Aggregated Residual Transformations for Deep Neural Networks,venue-gap,arXiv:cs.CV,A|B|D|G
+p3744,2018,Using psychophysical methods to understand mechanisms of face identification in a deep neural network,venue-gap,arXiv:cs.CV,A|B|G
 p3780,2017,Dynamic Word Embeddings for Evolving Semantic Discovery,venue-gap,journal:Proceedings of the Eleventh ACM International Conference on Web Search and Data Mining [NOT-listed],A|C|E
+p3782,2023,Tree of Thoughts - Deliberate Problem Solving with Large Language Models,venue-gap,journal:IEEE Transactions on Systems Science and Cybernetics [NOT-listed],A|B|C|G
+p3789,2021,Representation learning for neural population activity with Neural Data Transformers,venue-gap,journal:Journal of Open Source Software [NOT-listed],A|B
 p3792,2023,Improving the robustness of analog deep neural networks through a Bayes-optimized noise injection approach,venue-gap,journal:Communications Engineering [NOT-listed],A|B|G
+p3800,2017,"A gift from knowledge distillation - Fast optimization, network minimization and transfer learning",venue-gap,arXiv:cs.CV,A|B|D|G
+p3813,2015,Understanding Neural Networks Through Deep Visualization,venue-gap,arXiv:cs.CV,A|B|D
 p3814,2017,Learning from Multiple Teacher Networks,venue-gap,journal:Proceedings of the 23rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining [NOT-listed],A|B|G
 p3818,2009,Gaussian-process factor analysis for low-dimensional single-trial analysis of neural population activity (1),venue-gap,"journal:Journal of Neurophysiology [title-match, score=0.99]",A|G
+p3819,2009,Gaussian-process factor analysis for low-dimensional single-trial analysis of neural population activity,venue-gap,journal:Journal of Neurophysiology [NOT-listed],A
 p3828,2008,Event perception,venue-gap,journal:Scholarpedia [NOT-listed],A|D|E|G
 p3830,2013,Constructing event representations during film comprehension,venue-gap,"journal:Psychocinematics [title-match, score=1.0]",A
+p3844,2025,Brains and language models converge on a shared conceptual space across different languages,venue-gap,journal:Distill [NOT-listed],A|B|C|E
+p3854,2018,Taskonomy - Disentangling Task Transfer Learning,venue-gap,arXiv:cs.CV,A|B|D|E|G
 p3859,2013,Visualizing and Understanding Convolutional Networks,venue-gap,arXiv:cs.CV,A|B|E|G
-p3883,2019,A Survey on Deep Learning-based Non-Invasive Brain Signals - Recent Advances and New Frontiers,venue-gap,arXiv:cs.HC,A|B|D|E
+p3876,2017,Deep Mutual Learning,venue-gap,arXiv:cs.CV,A|B|G
 p3887,2021,Understanding deep learning (still) requires rethinking generalization,venue-gap,journal:Communications of the ACM [NOT-listed],A|B|G
+p3896,2016,Energy-based Generative Adversarial Network,venue-gap,journal:International Journal of Computer Vision [NOT-listed],A|B|E
 p3898,2022,Rapid vigilance and episodic memory decrements in COVID-19 survivors,venue-gap,journal:Brain Communications [NOT-listed],A
-p3900,2024,Impaired belief revision yet intact information seeki ... schizotypy - A modified task of bias against disconfirmatory evidence,venue-gap,journal:PLOS Mental Health [NOT-listed],A|B|E
 p3908,2024,Selective modulation of fear memory in non-rapid eye movement sleep,venue-gap,journal:Advanced Science [NOT-listed],A
 p3912,2017,Recovery Guarantees for One-hidden-layer Neural Networks,keyword-gap,arXiv:cs.LG,
+p3927,2015,Aligning Books and Movies - Towards Story-like Visual Explanations by Watching Movies and Reading Books (1),venue-gap,arXiv:cs.CV,A|B|G
+p3931,2021,Vision Transformer Pruning,venue-gap,arXiv:cs.CV,A|B|E|G
+p3932,2022,Understanding the structure of cognitive noise,venue-gap,journal:SIAM Review [NOT-listed],A|B|D|G
+p3935,2019,Local Aggregation for Unsupervised Learning of Visual Embeddings,venue-gap,arXiv:cs.CV,A|B|C|G
+p3942,2017,Learning Transferable Architectures for Scalable Image Recognition,venue-gap,arXiv:cs.CV,A|B|D
 p3943,2020,"Anxiety, Avoidance, and Sequential Evaluation",venue-gap,journal:Computational Psychiatry [NOT-listed],A|B|D|G
+p3949,2026,Neural population dynamics and temporal context cells in macaque medial parietal cortex support temporal order memory,venue-gap,journal:Annals of Neurology [NOT-listed],A|B

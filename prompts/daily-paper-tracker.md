@@ -46,7 +46,7 @@ Search using keywords from the matrix below. Run at least 8–12 searches coveri
 For each scan, extract titles and abstracts of recently published articles (last 14 days). Cross-reference against the keyword matrix and include any matches.
 
 ### All sources
-- **arxiv:** cs.CL, cs.AI, cs.LG, q-bio.NC, stat.ML
+- **arxiv:** cs.CL, cs.AI, cs.LG, q-bio.NC, stat.ML, cs.NE, cs.HC, cond-mat.dis-nn
 - **bioRxiv:** neuroscience section
 - **PsyArXiv:** psychology, cognitive science, neuroscience preprints
 - **PubMed / MEDLINE**
