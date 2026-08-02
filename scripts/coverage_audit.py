@@ -112,6 +112,8 @@ def build_corpus(window, since=None):
             "title_norm": cl.normalize(meta["title"]),
             "doi_hints": meta["doi_hints"],
             "arxiv_ids": meta["arxiv_ids"],
+            "first_doi": meta["first_doi_fulltext"],
+            "first_arxiv": meta["first_arxiv_fulltext"],
         }
         out.append(entry)
         stats["total"] += 1
@@ -234,14 +236,23 @@ def enrich():
     title_search = []  # papers with no identifiers: (paper_id, title)
     for p in corpus["papers"]:
         has_id = False
-        for d in p["doi_hints"]:
+        all_dois = list(p["doi_hints"])
+        if p.get("first_doi") and p["first_doi"] not in all_dois:
+            all_dois.append(p["first_doi"])
+        for d in all_dois:
             if d.startswith(("10.1101", "10.64898")):
                 biorxiv.add(d)
             elif not d.startswith("10.31234") and not d.startswith("10.48550"):
                 dois.add(d)
             has_id = True
-        if p["arxiv_ids"]:
-            arxiv_ids.update(p["arxiv_ids"])
+        all_arx = list(p["arxiv_ids"])
+        if p.get("first_arxiv") and p["first_arxiv"] not in all_arx:
+            all_arx.append(p["first_arxiv"])
+        if all_arx:
+            # only fetch arXiv categories for papers with NO DOI at all —
+            # published papers resolve via their journal even if they have a preprint ID
+            if not has_id:
+                arxiv_ids.update(all_arx)
             has_id = True
         if not has_id and p["title"]:
             title_search.append((p["id"], p["title"]))
@@ -264,24 +275,30 @@ def enrich():
         _save_enrich(path, cache)
     _save_enrich(path, cache)
 
-    # --- arXiv (batches of 50) ---
-    todo = [a for a in sorted(arxiv_ids) if a not in cache["arxiv"]]
-    print(f"arxiv: {len(todo)} to fetch")
+    # --- arXiv (batches of 50, with 429/timeout backoff) ---
+    todo = [a for a in sorted(arxiv_ids) if a not in cache["arxiv"]
+            and not any(k.startswith(a + "v") for k in cache["arxiv"])]
+    print(f"arxiv: {len(todo)} to fetch (arXiv-only papers)")
     ns = {"a": "http://www.w3.org/2005/Atom", "ar": "http://arxiv.org/schemas/atom"}
     for i in range(0, len(todo), 50):
         batch = todo[i : i + 50]
-        try:
-            url = "http://export.arxiv.org/api/query?id_list=" + ",".join(batch) + "&max_results=100"
-            req = urllib.request.Request(url, headers=UA)
-            with urllib.request.urlopen(req, timeout=30) as r:
-                root = ET.fromstring(r.read())
-            for entry in root.findall("a:entry", ns):
-                eid = (entry.findtext("a:id", "", ns) or "").rsplit("/", 1)[-1]
-                pc = entry.find("ar:primary_category", ns)
-                if eid and pc is not None:
-                    cache["arxiv"][eid] = pc.get("term")
-        except Exception as e:
-            print(f"  arxiv batch failed: {e}")
+        for attempt in range(3):
+            try:
+                url = "http://export.arxiv.org/api/query?id_list=" + ",".join(batch) + "&max_results=100"
+                req = urllib.request.Request(url, headers=UA)
+                with urllib.request.urlopen(req, timeout=60) as r:
+                    root = ET.fromstring(r.read())
+                for entry in root.findall("a:entry", ns):
+                    eid = (entry.findtext("a:id", "", ns) or "").rsplit("/", 1)[-1]
+                    pc = entry.find("ar:primary_category", ns)
+                    if eid and pc is not None:
+                        eid = re.sub(r"v\d+$", "", eid)  # strip version: corpus stores bare IDs
+                        cache["arxiv"][eid] = pc.get("term")
+                break
+            except Exception as e:
+                print(f"  arxiv batch failed (attempt {attempt + 1}): {e}")
+                time.sleep(25 * (attempt + 1))  # 429/timeout backoff
+        _save_enrich(path, cache)
         time.sleep(3)
     _save_enrich(path, cache)
 
@@ -353,14 +370,44 @@ def norm_journal(name):
     return n
 
 
+def arxiv_lookup(cache, aid):
+    """arXiv category lookup tolerant of version suffixes in cache keys."""
+    if aid in cache:
+        return cache[aid]
+    for k, v in cache.items():
+        if k.startswith(aid + "v"):
+            return v
+    return None
+
+
 def classify_venue(paper, enrich, sources):
-    if paper["arxiv_ids"]:
-        cats = [enrich["arxiv"].get(a) for a in paper["arxiv_ids"] if enrich["arxiv"].get(a)]
+    # journal DOI first (a published paper's venue is its journal, even if an
+    # arXiv preprint ID also exists); arXiv only when there is no DOI
+    dois = paper["doi_hints"]
+    if not dois and paper.get("first_doi"):
+        dois = [paper["first_doi"]]
+    if dois:
+        doi = dois[0]
+        if doi.startswith(("10.1101", "10.64898")):
+            sec = enrich["biorxiv"].get(doi)
+            if isinstance(sec, str):
+                covered = sec.lower() in sources["biorxiv_sections"]
+                return covered, f"bioRxiv:{sec}"
+            return True, "bioRxiv:section-unknown"
+        if doi.startswith("10.31234"):
+            return True, "PsyArXiv"
+        j = enrich["crossref"].get(doi, {}).get("journal")
+        if j:
+            return _journal_covered(j, sources), f"journal:{j} [{_journal_tag(j, sources)}]"
+        # DOI known but Crossref lookup failed -> fall through to arXiv/title search
+    arx = paper.get("arxiv_ids") or ([paper["first_arxiv"]] if paper.get("first_arxiv") else [])
+    if arx:
+        cats = [arxiv_lookup(enrich["arxiv"], a) for a in arx]
+        cats = [c for c in cats if c]
         if cats:
             covered = cats[0] in sources["arxiv_cats"]
             return covered, f"arXiv:{cats[0]}"
         return True, "arXiv:category-unknown"
-    dois = paper["doi_hints"]
     if not dois:
         # title-search fallback (venue enrichment)
         ts = enrich.get("crossref_title", {}).get(paper["id"], {})

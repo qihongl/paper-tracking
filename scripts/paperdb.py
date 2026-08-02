@@ -132,6 +132,19 @@ def extract_metadata(filepath, chunks):
     dois = list(dict.fromkeys(dois))
     arxiv_ids = list(dict.fromkeys(arxiv_ids))
 
+    # --- identifiers from the FULL text (first occurrence = the paper's own
+    #     header DOI/arXiv ID, which precedes any references) ---
+    full = "\n".join(chunks)
+    first_doi = None
+    m = DOI_RE.search(full)
+    if m and not m.group(0).lower().startswith("10.48550/arxiv"):
+        first_doi = m.group(0)
+    m = ARXIV_ID_RE.search(full)
+    first_arxiv = m.group(1) if m else None
+    if not first_arxiv:
+        m = re.search(r"10\.48550/arXiv\.(\d{4}\.\d{4,5})", full, re.IGNORECASE)
+        first_arxiv = m.group(1) if m else None
+
     return {
         "basename": stem,
         "year": year,
@@ -141,6 +154,8 @@ def extract_metadata(filepath, chunks):
         "abstract_window": abstract_window,
         "doi_hints": dois,
         "arxiv_ids": arxiv_ids,
+        "first_doi_fulltext": first_doi,
+        "first_arxiv_fulltext": first_arxiv,
     }
 
 

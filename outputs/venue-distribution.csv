@@ -1,0 +1,365 @@
+rank,venue,status,n_papers,n_2020plus,year_range,cum_share_all,cum_share_2020plus
+1,arXiv (unknown),arxiv-gap,668,205,2013–2026,0.169,0.327
+2,Unknown / no identifier,unknown,431,111,2000–2026,0.278,0.408
+3,bioRxiv/medRxiv (section unknown),biorxiv-gap,415,243,2005–2026,0.383,0.177
+4,Nature Neuroscience,direct-scan,137,45,2000–2026,0.418,0.534
+5,Neuron,direct-scan,123,33,2000–2026,0.449,0.612
+6,Nature Communications,direct-scan,121,81,2014–2026,0.480,0.467
+7,The Journal of Neuroscience,listed,96,17,2003–2024,0.504,0.677
+8,Proceedings of the National Academy of Sciences,direct-scan,95,20,2005–2026,0.528,0.664
+9,Nature,direct-scan,92,47,2000–2026,0.551,0.501
+10,Trends in Cognitive Sciences,direct-scan,91,27,2000–2026,0.574,0.632
+11,NeuroImage,listed,66,10,2002–2023,0.591,0.770
+12,arXiv (cs.LG),arxiv-covered,65,12,2012–2026,0.608,0.737
+13,Nature Human Behaviour,direct-scan,58,38,2016–2026,0.622,0.562
+14,Science,direct-scan,58,7,2000–2023,0.637,0.788
+15,Nature Reviews Neuroscience,direct-scan,53,15,2000–2026,0.650,0.699
+16,Scientific Reports,direct-scan,43,25,2011–2025,0.661,0.650
+17,Hippocampus,direct-scan,42,3,2000–2026,0.672,0.855
+18,Psychological Review,listed,41,6,2001–2026,0.682,0.803
+19,PLOS Computational Biology,listed,39,14,2011–2024,0.692,0.719
+20,eLife,direct-scan,38,36,2018–2026,0.702,0.588
+21,Current Biology,direct-scan,36,10,2009–2025,0.711,0.778
+22,Psychonomic Bulletin &amp; Review,direct-scan,32,5,2000–2026,0.719,0.815
+23,Cerebral Cortex,direct-scan,31,2,2000–2023,0.727,0.885
+24,arXiv (stat.ML),arxiv-covered,28,1,2011–2020,0.734,0.922
+25,Journal of Cognitive Neuroscience,listed,26,4,2005–2024,0.741,0.841
+26,Neuropsychologia,listed,24,2,2007–2023,0.747,0.883
+27,Psychological Science,direct-scan,22,4,2003–2023,0.752,0.832
+28,PLOS ONE,listed,21,5,2009–2023,0.757,0.811
+29,Frontiers in Psychology,listed,21,3,2012–2022,0.763,0.861
+30,Nature Machine Intelligence,direct-scan,19,15,2019–2026,0.768,0.688
+31,Cognition,listed,19,5,2007–2024,0.772,0.818
+32,Cell,direct-scan,18,13,2015–2026,0.777,0.729
+33,Philosophical Transactions of the Royal Society B: Biological Sciences,listed,18,3,2005–2024,0.782,0.864
+34,arXiv (cs.CL),arxiv-covered,17,12,2013–2025,0.786,0.746
+35,Annual Review of Psychology,direct-scan,17,0,2005–2017,0.790,1.000
+36,Scientific Data,direct-scan,17,12,2014–2026,0.794,0.755
+37,Cognitive Science,direct-scan,17,3,2007–2024,0.799,0.872
+38,arXiv (cs.CV),arxiv-gap,16,3,2012–2026,0.803,0.868
+39,Current Opinion in Neurobiology,direct-scan,16,4,2006–2026,0.807,0.853
+40,arXiv (q-bio.NC),arxiv-covered,15,4,2013–2025,0.811,0.835
+41,Neural Networks,listed,14,3,2000–2023,0.814,0.857
+42,PLOS Biology,listed,14,7,2005–2026,0.818,0.794
+43,Communications Psychology,direct-scan,14,14,2024–2026,0.821,0.709
+44,Journal of Experimental Psychology: General,direct-scan,14,2,2000–2026,0.825,0.891
+45,arXiv (cs.AI),arxiv-covered,14,7,2012–2026,0.828,0.799
+46,Neurobiology of Learning and Memory,listed,13,3,2004–2021,0.832,0.859
+47,Current Opinion in Behavioral Sciences,direct-scan,13,3,2015–2021,0.835,0.870
+48,Neural Computation,listed,13,0,2001–2018,0.838,1.000
+49,Communications Biology,direct-scan,12,11,2018–2025,0.841,0.763
+50,Trends in Neurosciences,listed,12,4,2000–2024,0.844,0.850
+51,Cognitive Psychology,listed,11,1,2005–2025,0.847,0.920
+52,Neuroscience Letters,listed,11,0,2018–2018,0.850,1.000
+53,Memory &amp; Cognition,listed,11,2,2003–2022,0.853,0.888
+54,Annual Review of Neuroscience,listed,11,0,2000–2016,0.855,1.000
+55,"Journal of Experimental Psychology: Learning, Memory, and Cognition",listed,11,2,2000–2025,0.858,0.903
+56,"Cognitive, Affective, &amp; Behavioral Neuroscience",not-listed,10,2,2002–2023,0.861,0.893
+57,Topics in Cognitive Science,listed,9,2,2009–2020,0.863,0.890
+58,Behavior Research Methods,listed,9,6,2017–2024,0.865,0.807
+59,arXiv (cs.NE),arxiv-gap,8,1,2013–2021,0.867,0.926
+60,Cell Reports,listed,8,4,2016–2025,0.869,0.847
+61,Journal of Mathematical Psychology,listed,8,1,2002–2026,0.871,0.934
+62,Frontiers in Human Neuroscience,listed,8,2,2011–2023,0.873,0.897
+63,PsyArXiv,listed,8,8,2021–2025,0.875,0.783
+64,Neuroscience &amp; Biobehavioral Reviews,listed,7,4,2019–2025,0.877,0.844
+65,Lecture Notes in Computer Science,conference,7,0,2005–2019,0.879,1.000
+66,Human Brain Mapping,listed,7,0,2005–2019,0.881,1.000
+67,Nature Methods,listed,7,1,2011–2025,0.883,0.955
+68,Frontiers in Computational Neuroscience,listed,6,1,2013–2022,0.884,0.925
+69,Psychological Bulletin,listed,6,1,2001–2021,0.886,0.927
+70,Journal of Memory and Language,listed,6,1,2002–2024,0.887,0.928
+71,Behavioral and Brain Sciences,listed,6,0,2011–2019,0.889,1.000
+72,Current Directions in Psychological Science,listed,6,2,2010–2024,0.890,0.896
+73,Brain,listed,6,1,2006–2024,0.892,0.937
+74,Cortex,listed,6,1,2015–2021,0.893,0.943
+75,Frontiers in Systems Neuroscience,listed,6,1,2008–2022,0.895,0.960
+76,Nature Medicine,listed,5,5,2022–2026,0.896,0.822
+77,Science Advances,listed,5,5,2021–2025,0.897,0.826
+78,Frontiers in Neuroinformatics,listed,5,1,2010–2025,0.898,0.940
+79,Physical Review Letters,listed,5,1,2004–2020,0.900,0.948
+80,Nature Reviews Psychology,listed,5,5,2023–2025,0.901,0.829
+81,Brain Sciences,listed,4,4,2022–2026,0.902,0.838
+82,American Psychologist,not-listed,4,2,2012–2025,0.903,0.884
+83,Computational Brain &amp; Behavior,listed,4,3,2019–2024,0.904,0.866
+84,Network Neuroscience,listed,4,0,2018–2019,0.905,1.000
+85,eneuro,listed,4,2,2018–2022,0.906,0.899
+86,Consciousness and Cognition,listed,4,1,2004–2021,0.907,0.942
+87,Developmental Science,listed,4,2,2007–2026,0.908,0.900
+88,Frontiers in Behavioral Neuroscience,listed,4,2,2012–2023,0.909,0.902
+89,Neuroscience,listed,4,0,2006–2018,0.910,1.000
+90,npj Science of Learning,listed,4,3,2018–2025,0.911,0.879
+91,Psychology and Aging,listed,4,3,2002–2024,0.912,0.881
+92,"Journal of Neurology, Neurosurgery &amp; Psychiatry",not-listed,3,0,2016–2019,0.913,1.000
+93,The Hippocampus from Cells to Systems,not-listed,3,0,2017–2017,0.914,1.000
+94,Oxford Handbooks Online,not-listed,3,0,2001–2017,0.914,1.000
+95,"Attention, Perception, &amp; Psychophysics",listed,3,1,2019–2021,0.915,0.926
+96,Neurology,not-listed,3,1,2015–2020,0.916,0.931
+97,Applied Cognitive Psychology,listed,3,1,2017–2021,0.917,0.934
+98,"Language, Cognition and Neuroscience",listed,3,1,2015–2020,0.917,0.942
+99,Journal of Alzheimer's Disease,listed,3,1,2016–2024,0.918,0.946
+100,Child Development,not-listed,3,0,2004–2018,0.919,1.000
+101,Perspectives on Psychological Science,listed,3,2,2014–2025,0.920,0.909
+102,Cognitive Research: Principles and Implications,listed,3,2,2017–2023,0.921,0.912
+103,Frontiers in Neuroscience,listed,3,0,2009–2018,0.921,1.000
+104,iScience,listed,3,3,2022–2025,0.922,0.875
+105,Journal of Cognition,listed,3,3,2020–2021,0.923,0.877
+106,The Neuroscientist,listed,3,1,2013–2025,0.924,0.963
+107,Journal of Open Source Software,not-listed,3,1,2018–2024,0.924,0.975
+108,Journal of Neural Engineering,not-listed,2,0,2018–2019,0.925,1.000
+109,Neuropsychopharmacology,not-listed,2,0,2011–2017,0.925,1.000
+110,Journal of the Royal Society of New Zealand,not-listed,2,1,2018–2021,0.926,0.920
+111,Memory,listed,2,1,2016–2025,0.926,0.921
+112,Alzheimer's &amp; Dementia,listed,2,2,2024–2024,0.927,0.887
+113,Advances in Neural Information Processing Systems 19,conference,2,0,2007–2007,0.927,1.000
+114,Journal of the American Statistical Association,not-listed,2,0,2007–2016,0.928,1.000
+115,Nature Computational Science,listed,2,2,2023–2025,0.928,0.894
+116,PeerJ,not-listed,2,1,2019–2021,0.929,0.938
+117,arXiv (quant-ph),arxiv-gap,2,0,2018–2018,0.929,1.000
+118,Neurocase,not-listed,2,0,2001–2006,0.930,1.000
+119,Cognitive Neuropsychology,listed,2,0,2000–2019,0.930,1.000
+120,Cognitive Neuroscience,listed,2,0,2018–2019,0.931,1.000
+121,IEEE Signal Processing Magazine,not-listed,2,0,2008–2012,0.931,1.000
+122,Nature Protocols,listed,2,2,2020–2026,0.932,0.904
+123,WIREs Cognitive Science,not-listed,2,2,2021–2024,0.932,0.906
+124,The Annals of Applied Statistics,not-listed,2,0,2011–2011,0.933,1.000
+125,SSRN Electronic Journal,not-listed,2,1,2013–2020,0.933,0.950
+126,PNAS Nexus,not-listed,2,2,2023–2024,0.934,0.907
+127,Nature Physics,not-listed,2,1,2018–2020,0.934,0.951
+128,Annual Review of Vision Science,not-listed,2,0,2015–2016,0.935,1.000
+129,arXiv (math.PR),arxiv-gap,2,0,2011–2014,0.935,1.000
+130,Journal of Experimental Social Psychology,not-listed,2,0,2018–2019,0.936,1.000
+131,Open Mind,not-listed,2,2,2021–2024,0.936,0.910
+132,Social Cognitive and Affective Neuroscience,not-listed,2,1,2019–2022,0.937,0.954
+133,Sensors,not-listed,2,2,2020–2024,0.937,0.913
+134,2015 IEEE International Conference on Computer Vision (ICCV),conference,2,0,2015–2015,0.938,1.000
+135,KI - Künstliche Intelligenz,not-listed,2,1,2012–2021,0.938,0.959
+136,Encyclopedia of Computational Neuroscience,not-listed,2,0,2001–2013,0.939,1.000
+137,Psychological Research,not-listed,2,0,2000–2018,0.939,1.000
+138,Psychophysiology,listed,2,1,2015–2025,0.940,0.961
+139,arXiv (cs.HC),arxiv-gap,2,1,2019–2023,0.941,0.964
+140,Cognitive Computation,not-listed,2,0,2009–2015,0.941,1.000
+141,Nature Biotechnology,not-listed,2,1,2019–2021,0.942,0.965
+142,Journal of the Experimental Analysis of Behavior,not-listed,2,0,2005–2009,0.942,1.000
+143,IEEE Transactions on Signal Processing,not-listed,2,0,2008–2009,0.943,1.000
+144,Imaging Neuroscience,listed,2,2,2024–2025,0.943,0.915
+145,Frontiers in Psychiatry,listed,2,2,2021–2024,0.944,0.916
+146,Proceedings of the 23rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining,not-listed,2,0,2017–2017,0.944,1.000
+147,PsycEXTRA Dataset,not-listed,2,0,2002–2014,0.945,1.000
+148,arXiv (stat.ME),arxiv-gap,2,0,2008–2016,0.945,1.000
+149,Annals of Neurology,not-listed,2,2,2024–2024,0.946,0.918
+150,Information Fusion,not-listed,1,1,2021–2021,0.946,0.918
+151,Theory and Society,not-listed,1,1,2025–2025,0.946,0.919
+152,PLOS Digital Health,not-listed,1,1,2022–2022,0.946,0.923
+153,Journal of Dementia and Alzheimer's Disease,not-listed,1,1,2026–2026,0.947,0.923
+154,BMJ,not-listed,1,0,2005–2005,0.947,1.000
+155,2016 IEEE International Conference on Big Data (Big Data),not-listed,1,0,2016–2016,0.947,1.000
+156,The Journal of Prevention of Alzheimer's Disease,not-listed,1,1,2024–2024,0.947,0.924
+157,Neurobiology of Attention,not-listed,1,0,2006–2006,0.948,1.000
+158,2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR),conference,1,0,2017–2017,0.948,1.000
+159,Foundations of Computational Mathematics,not-listed,1,0,2009–2009,0.948,1.000
+160,Progress in Neurobiology,not-listed,1,1,2020–2020,0.948,0.929
+161,Alzheimer's Research &amp; Therapy,not-listed,1,1,2021–2021,0.949,0.929
+162,Frontiers in Physiology,not-listed,1,0,2012–2012,0.949,1.000
+163,"Psychology, Crime &amp; Law",not-listed,1,1,2023–2023,0.949,0.930
+164,Annals of Neurosciences,not-listed,1,1,2020–2020,0.949,0.931
+165,IEEE Transactions on Neural Systems and Rehabilitation Engineering,not-listed,1,0,2012–2012,0.950,1.000
+166,npj Digital Medicine,not-listed,1,1,2024–2024,0.950,0.932
+167,Cognitive Psychology and Instruction,not-listed,1,1,2022–2022,0.950,0.933
+168,arXiv (stat.CO),arxiv-gap,1,0,2016–2016,0.950,1.000
+169,Music Perception,not-listed,1,0,2001–2001,0.951,1.000
+170,IEEE Transactions on Neural Networks and Learning Systems,not-listed,1,0,2016–2016,0.951,1.000
+171,Journal of Economic Behavior &amp; Organization,not-listed,1,0,2018–2018,0.951,1.000
+172,Control of Cognitive Processes,not-listed,1,0,2000–2000,0.951,1.000
+173,Statistical Science,not-listed,1,0,2001–2001,0.952,1.000
+174,Royal Society Open Science,not-listed,1,1,2025–2025,0.952,0.935
+175,Philosophy of Science,not-listed,1,1,2023–2023,0.952,0.936
+176,Journal of Clinical and Experimental Neuropsychology,not-listed,1,1,2023–2023,0.952,0.937
+177,American Economic Review,not-listed,1,0,2010–2010,0.953,1.000
+178,Machine Learning,not-listed,1,0,2019–2019,0.953,1.000
+179,arXiv (nlin.CG),arxiv-gap,1,0,2018–2018,0.953,1.000
+180,arXiv (cs.IT),arxiv-gap,1,0,2016–2016,0.953,1.000
+181,Proceedings of the British Machine Vision Conference 2014,not-listed,1,0,2014–2014,0.954,1.000
+182,2014 IEEE International Workshop on Machine Learning for Signal Processing (MLSP),not-listed,1,0,2014–2014,0.954,1.000
+183,Proceedings of the Royal Society B: Biological Sciences,not-listed,1,0,2011–2011,0.954,1.000
+184,PsycTESTS Dataset,not-listed,1,1,2024–2024,0.954,0.939
+185,Sustainable Cities and Society,not-listed,1,1,2021–2021,0.955,0.939
+186,Age and Ageing,not-listed,1,1,2025–2025,0.955,0.941
+187,Physical Review E,not-listed,1,0,2016–2016,0.955,1.000
+188,Proceedings of the twenty-fourth annual symposium on Computational geometry,not-listed,1,0,2008–2008,0.955,1.000
+189,Meta-Psychology,not-listed,1,0,2019–2019,0.956,1.000
+190,Alcoholism: Clinical and Experimental Research,not-listed,1,0,2007–2007,0.956,1.000
+191,International Psychogeriatrics,not-listed,1,0,2015–2015,0.956,1.000
+192,Memory Studies,not-listed,1,0,2008–2008,0.956,1.000
+193,Random Structures &amp; Algorithms,not-listed,1,0,2003–2003,0.957,1.000
+194,Psychology,not-listed,1,0,2013–2013,0.957,1.000
+195,IEEE Transactions on Neural Networks,not-listed,1,0,2009–2009,0.957,1.000
+196,arXiv (physics.soc-ph),arxiv-gap,1,0,2013–2013,0.957,1.000
+197,Journal of Medical Internet Research,not-listed,1,1,2025–2025,0.958,0.944
+198,Multivariate Behavioral Research,not-listed,1,1,2021–2021,0.958,0.945
+199,2009 IEEE Conference on Computer Vision and Pattern Recognition,conference,1,0,2009–2009,0.958,1.000
+200,Journal of Neuropsychology,not-listed,1,1,2025–2025,0.958,0.945
+201,arXiv (stat.AP),arxiv-gap,1,0,2016–2016,0.959,1.000
+202,Brain and Behavior,not-listed,1,1,2020–2020,0.959,0.947
+203,Journal of Vision,listed,1,0,2003–2003,0.959,1.000
+204,Finance Research Letters,not-listed,1,1,2023–2023,0.959,0.947
+205,HFSP Journal,not-listed,1,0,2007–2007,0.960,1.000
+206,Bulletin of the Psychonomic Society,not-listed,1,0,2017–2017,0.960,1.000
+207,Brain and Language,not-listed,1,0,2008–2008,0.960,1.000
+208,Autism Research,not-listed,1,0,2012–2012,0.961,1.000
+209,Unraveling the complexities of social life: A festschrift in honor of Robert B. Zajonc.,not-listed,1,1,2023–2023,0.961,0.949
+210,Biological Theory,not-listed,1,0,2015–2015,0.961,1.000
+211,Journal of the Medical Library Association,not-listed,1,0,2017–2017,0.961,1.000
+212,Molecular Psychiatry,not-listed,1,1,2023–2023,0.962,0.950
+213,arXiv (cond-mat.dis-nn),arxiv-gap,1,0,2010–2010,0.962,1.000
+214,Experimental Aging Research,not-listed,1,0,2018–2018,0.962,1.000
+215,2025 IEEE 41st International Conference on Data Engineering Workshops (ICDEW),conference,1,1,2025–2025,0.962,0.952
+216,2019 18th IEEE International Conference On Machine Learning And Applications (ICMLA),not-listed,1,0,2019–2019,0.963,1.000
+217,9th International Conference on Artificial Neural Networks: ICANN '99,not-listed,1,0,2000–2000,0.963,1.000
+218,Learning &amp; Behavior,not-listed,1,0,2012–2012,0.963,1.000
+219,Cognitive Neuropsychiatry,not-listed,1,0,2010–2010,0.963,1.000
+220,SpringerReference,not-listed,1,0,2001–2001,0.964,1.000
+221,BMC Proceedings,not-listed,1,1,2020–2020,0.964,0.953
+222,arXiv (cs.PL),arxiv-gap,1,0,2012–2012,0.964,1.000
+223,Computers in Biology and Medicine,not-listed,1,1,2024–2024,0.964,0.953
+224,AI Magazine,not-listed,1,0,2009–2009,0.965,1.000
+225,Humanities and Social Sciences Communications,not-listed,1,1,2024–2024,0.965,0.956
+226,Current Research in Behavioral Sciences,not-listed,1,1,2024–2024,0.965,0.956
+227,Journal of Neurochemistry,not-listed,1,0,2017–2017,0.965,1.000
+228,IBRO Neuroscience Reports,not-listed,1,1,2020–2020,0.966,0.957
+229,Journal of Advertising,not-listed,1,1,2023–2023,0.966,0.958
+230,Projections,not-listed,1,0,2008–2008,0.966,1.000
+231,Social Neuroscience,not-listed,1,0,2001–2001,0.966,1.000
+232,2015 IEEE Conference on Computer Vision and Pattern Recognition (CVPR),conference,1,0,2015–2015,0.967,1.000
+233,arXiv (cs.MA),arxiv-gap,1,0,2018–2018,0.967,1.000
+234,arXiv (stat.OT),arxiv-gap,1,0,2017–2017,0.967,1.000
+235,Frontiers in Aging Neuroscience,not-listed,1,0,2012–2012,0.967,1.000
+236,Journal of Child Language,not-listed,1,1,2022–2022,0.968,0.958
+237,Journal of the Optical Society of America A,not-listed,1,0,2003–2003,0.968,1.000
+238,PLoS Medicine,not-listed,1,0,2005–2005,0.968,1.000
+239,IEEE Transactions on Pattern Analysis and Machine Intelligence,listed,1,0,2014–2014,0.968,1.000
+240,BMC Neuroscience,not-listed,1,0,2015–2015,0.969,1.000
+241,The Clinical Neuropsychologist,not-listed,1,1,2025–2025,0.969,0.961
+242,The Journal of Chemical Physics,not-listed,1,0,2013–2013,0.969,1.000
+243,The Innovation,not-listed,1,1,2024–2024,0.969,0.962
+244,BioMed Research International,not-listed,1,0,2015–2015,0.970,1.000
+245,npj Quantum Materials,not-listed,1,0,2016–2016,0.970,1.000
+246,Social Cognition,not-listed,1,0,2002–2002,0.970,1.000
+247,arXiv (math.HO),arxiv-gap,1,1,2026–2026,0.970,0.964
+248,SIAM Review,not-listed,1,0,2009–2009,0.971,1.000
+249,Physiology,not-listed,1,0,2012–2012,0.971,1.000
+250,"Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences",not-listed,1,1,2026–2026,0.971,0.966
+251,Aperture Neuro,not-listed,1,1,2021–2021,0.971,0.966
+252,Aphasiology,not-listed,1,0,2011–2011,0.972,1.000
+253,South African Journal of Psychology,not-listed,1,0,2013–2013,0.972,1.000
+254,Behavioural Brain Research,not-listed,1,0,2013–2013,0.972,1.000
+255,Behavioural Processes,not-listed,1,0,2012–2012,0.972,1.000
+256,Documenta Mathematica Series,not-listed,1,0,2012–2012,0.973,1.000
+257,Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing,conference,1,1,2021–2021,0.973,0.967
+258,Findings of the Association for Computational Linguistics ACL 2024,conference,1,1,2024–2024,0.973,0.968
+259,arXiv (eess.AS),arxiv-gap,1,1,2025–2025,0.973,0.969
+260,WormBook,not-listed,1,1,2022–2022,0.974,0.969
+261,Journal of Internal Medicine,not-listed,1,1,2021–2021,0.974,0.970
+262,Journal of Neurolinguistics,not-listed,1,1,2020–2020,0.974,0.971
+263,Eng,not-listed,1,1,2025–2025,0.974,0.972
+264,Epilepsia,not-listed,1,0,2015–2015,0.975,1.000
+265,Inhibition in cognition.,not-listed,1,0,2007–2007,0.975,1.000
+266,Interspeech 2020,not-listed,1,1,2020–2020,0.975,0.972
+267,Interspeech 2021,not-listed,1,1,2021–2021,0.975,0.973
+268,Frontiers in Computer Science,not-listed,1,1,2021–2021,0.976,0.974
+269,2017 International Workshop on Pattern Recognition in Neuroimaging (PRNI),not-listed,1,0,2017–2017,0.976,1.000
+270,arXiv (cs.DS),arxiv-gap,1,0,2016–2016,0.976,1.000
+271,2014 International Workshop on Pattern Recognition in Neuroimaging,not-listed,1,0,2014–2014,0.976,1.000
+272,Oryx,not-listed,1,0,2014–2014,0.977,1.000
+273,First Language,not-listed,1,1,2020–2020,0.977,0.974
+274,arXiv (cs.SC),arxiv-gap,1,0,2016–2016,0.977,1.000
+275,2007 IEEE Conference on Computer Vision and Pattern Recognition,conference,1,0,2007–2007,0.977,1.000
+276,Biological Psychiatry: Cognitive Neuroscience and Neuroimaging,not-listed,1,1,2021–2021,0.978,0.976
+277,Neuroimage: Reports,not-listed,1,1,2022–2022,0.978,0.977
+278,F1000Research,not-listed,1,0,2016–2016,0.978,1.000
+279,Neurobiology of Aging,listed,1,1,2025–2025,0.978,0.977
+280,arXiv (astro-ph.IM),arxiv-gap,1,0,2016–2016,0.979,1.000
+281,Brain Stimulation,not-listed,1,0,2013–2013,0.979,1.000
+282,Journal of Anatomy,not-listed,1,0,2005–2005,0.979,1.000
+283,2019 IEEE International Conference on Prognostics and Health Management (ICPHM),not-listed,1,0,2019–2019,0.979,1.000
+284,Neural Processing Letters,not-listed,1,0,2002–2002,0.980,1.000
+285,Journal of Theoretical Biology,not-listed,1,0,2019–2019,0.980,1.000
+286,The Cambridge Handbook of Computational Cognitive Sciences,not-listed,1,0,2008–2008,0.980,1.000
+287,Current Opinion in Psychology,not-listed,1,0,2018–2018,0.981,1.000
+288,Handbook of Child Psychology,not-listed,1,1,2023–2023,0.981,0.978
+289,European Review of Social Psychology,not-listed,1,1,2021–2021,0.981,0.979
+290,Perception,not-listed,1,1,2023–2023,0.981,0.980
+291,Biocomputing 2018,not-listed,1,0,2018–2018,0.982,1.000
+292,Distill,not-listed,1,1,2022–2022,0.982,0.980
+293,arXiv (cs.CY),arxiv-gap,1,1,2025–2025,0.982,0.981
+294,Encyclopedia of Machine Learning,not-listed,1,0,2002–2002,0.982,1.000
+295,IEEE Transactions on Information Theory,not-listed,1,1,2022–2022,0.983,0.982
+296,You and Your Lodger,not-listed,1,0,2014–2014,0.983,1.000
+297,Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP),conference,1,0,2014–2014,0.983,1.000
+298,New England Journal of Medicine,not-listed,1,0,2019–2019,0.983,1.000
+299,Statistical Applications in Genetics and Molecular Biology,not-listed,1,0,2010–2010,0.984,1.000
+300,AIP Advances,not-listed,1,0,2018–2018,0.984,1.000
+301,"2017 55th Annual Allerton Conference on Communication, Control, and Computing (Allerton)",not-listed,1,0,2017–2017,0.984,1.000
+302,Frontiers in Physics,not-listed,1,1,2021–2021,0.984,0.982
+303,Nature Genetics,not-listed,1,0,2015–2015,0.985,1.000
+304,2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR),conference,1,0,2016–2016,0.985,1.000
+305,Journal of Physics: Conference Series,not-listed,1,0,2008–2008,0.985,1.000
+306,Science and Engineering Ethics,not-listed,1,1,2020–2020,0.985,0.983
+307,British Journal of Psychology,not-listed,1,1,2024–2024,0.986,0.984
+308,"2008 46th Annual Allerton Conference on Communication, Control, and Computing",not-listed,1,0,2008–2008,0.986,1.000
+309,arXiv (math.ST),arxiv-gap,1,0,2013–2013,0.986,1.000
+310,Neuropsychology,not-listed,1,0,2006–2006,0.986,1.000
+311,Journal of Educational Psychology,not-listed,1,0,2014–2014,0.987,1.000
+312,Brain Structure and Function,not-listed,1,0,2016–2016,0.987,1.000
+313,Frontiers in Cellular Neuroscience,not-listed,1,0,2013–2013,0.987,1.000
+314,Advances in Methods and Practices in Psychological Science,not-listed,1,0,2019–2019,0.987,1.000
+315,Graphical Models,not-listed,1,0,2000–2000,0.988,1.000
+316,Dialogues in Clinical Neuroscience,not-listed,1,0,2012–2012,0.988,1.000
+317,Annals of the New York Academy of Sciences,not-listed,1,0,2008–2008,0.988,1.000
+318,Journal of Experimental Psychology: Human Perception and Performance,listed,1,0,2000–2000,0.988,1.000
+319,Psychological Medicine,not-listed,1,1,2022–2022,0.989,0.985
+320,Journal of Cell Science,not-listed,1,0,2008–2008,0.989,1.000
+321,2022 IEEE 25th International Conference on Computer Supported Cooperative Work in Design (CSCWD),not-listed,1,1,2022–2022,0.989,0.985
+322,International Journal of Bifurcation and Chaos,not-listed,1,0,2005–2005,0.989,1.000
+323,BMC Psychiatry,not-listed,1,0,2014–2014,0.990,1.000
+324,Scientometrics,not-listed,1,1,2024–2024,0.990,0.986
+325,Biology and Diseases of the Ferret,not-listed,1,0,2018–2018,0.990,1.000
+326,Proceedings of the 2015 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies,conference,1,0,2018–2018,0.990,1.000
+327,Journal of Autism and Developmental Disorders,not-listed,1,1,2022–2022,0.991,0.987
+328,Connection Science,not-listed,1,0,2011–2011,0.991,1.000
+329,Neuromethods,not-listed,1,0,2019–2019,0.991,1.000
+330,Proceedings of the 30th International Conference on Intelligent User Interfaces,conference,1,1,2025–2025,0.991,0.988
+331,Neuroscience Research,not-listed,1,0,2014–2014,0.992,1.000
+332,arXiv (math.CO),arxiv-gap,1,0,2012–2012,0.992,1.000
+333,Proceedings of the Eighth Workshop on Computational Linguistics and Clinical Psychology,not-listed,1,1,2022–2022,0.992,0.988
+334,ACM Computing Surveys,not-listed,1,1,2023–2023,0.992,0.989
+335,The Making of Human Concepts,not-listed,1,0,2000–2000,0.993,1.000
+336,Molecular Neurodegeneration,not-listed,1,1,2024–2024,0.993,0.990
+337,Automatica,not-listed,1,0,2014–2014,0.993,1.000
+338,The American Mathematical Monthly,not-listed,1,0,2015–2015,0.993,1.000
+339,Frontiers in Dementia,not-listed,1,1,2024–2024,0.994,0.991
+340,"2018 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)",not-listed,1,0,2018–2018,0.994,1.000
+341,Multimedia Tools and Applications,not-listed,1,1,2021–2021,0.994,0.991
+342,Developmental Cognitive Neuroscience,not-listed,1,0,2019–2019,0.994,1.000
+343,Acta Psychologica,not-listed,1,1,2023–2023,0.995,0.992
+344,arXiv (math.OC),arxiv-gap,1,0,2018–2018,0.995,1.000
+345,The Cerebellum,not-listed,1,1,2023–2023,0.995,0.993
+346,"Advances in Science, Technology &amp; Innovation",not-listed,1,1,2026–2026,0.995,0.993
+347,Foundations and Trends® in Machine Learning,not-listed,1,0,2008–2008,0.996,1.000
+348,Journal of Neuroscience Methods,not-listed,1,0,2015–2015,0.996,1.000
+349,DIGITAL HEALTH,not-listed,1,1,2025–2025,0.996,0.994
+350,Springer Texts in Statistics,not-listed,1,0,2010–2010,0.996,1.000
+351,Zeitschrift f�r Wahrscheinlichkeitstheorie und Verwandte Gebiete,not-listed,1,1,2020–2020,0.997,0.995
+352,Logic Journal of IGPL,not-listed,1,0,2010–2010,0.997,1.000
+353,Child Maltreatment,not-listed,1,1,2023–2023,0.997,0.996
+354,2010 IEEE Computer Society Conference on Computer Vision and Pattern Recognition,conference,1,0,2010–2010,0.997,1.000
+355,Proceedings of the Eleventh ACM International Conference on Web Search and Data Mining,not-listed,1,0,2017–2017,0.998,1.000
+356,Communications Engineering,not-listed,1,1,2023–2023,0.998,0.996
+357,Journal of Neurophysiology,not-listed,1,0,2009–2009,0.998,1.000
+358,Scholarpedia,not-listed,1,0,2008–2008,0.998,1.000
+359,Psychocinematics,not-listed,1,0,2013–2013,0.999,1.000
+360,Communications of the ACM,not-listed,1,1,2021–2021,0.999,0.997
+361,Brain Communications,not-listed,1,1,2022–2022,0.999,0.998
+362,PLOS Mental Health,not-listed,1,1,2024–2024,0.999,0.999
+363,Advanced Science,not-listed,1,1,2024–2024,1.000,0.999
+364,Computational Psychiatry,not-listed,1,1,2020–2020,1.000,1.000
