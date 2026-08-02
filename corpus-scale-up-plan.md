@@ -128,3 +128,20 @@ env -u PYTHONPATH /Users/qlu/miniforge3/bin/python3 scripts/coverage_audit.py au
 env -u PYTHONPATH /Users/qlu/miniforge3/bin/python3 scripts/coverage_check.py               # gate before commit
 env -u PYTHONPATH /Users/qlu/miniforge3/bin/python3 -m pytest tests/ -q
 ```
+
+---
+
+## Execution log (2026-08-02)
+
+| Item | Planned (estimate) | Actual |
+|---|---|---|
+| Corpus | ~3,930–4,000 | **3,950** (chunk-year fallback recovered 20 yearless; 9 unresolved titles flagged) |
+| Enrichment | ~3,950 API calls; 10–14 min threaded | **3,890 calls** (1,262 DOI + 2,296 title + 150 arXiv + 182 bioRxiv); **~20 min** incl. one crashed resume (tuple-key bug fixed; cache resume worked) |
+| Audit | venue coverage ≥90% (2020+) | **93.9%** (n=1,371); overall 92.3%; keyword recall 99.6% |
+| Mining | recency-filtered candidates | 18 misses (mostly off-domain: HDAC6, cardiology, CV methods); recency filter killed all legacy-only vocabulary; **+3 keywords applied** to Section C (`language models`, `in-context learning`, `embeddings`) |
+| Venue | recency-filtered adds | **+33 journals** (66→102; Frontiers family ×8, Neural Networks 17, PLoS ONE 22 merged, Phil Trans B 12, Psychological Bulletin 7…); **+10 direct-scan** (16→26; Scientific Reports 34, Nature 23, Cerebral Cortex 17…); NeurIPS/EMNLP/LNCS added to the conference gate (17+9+12 papers reclassified) |
+| Calibration | unchanged | **88.0% → 91.5%** (first time ≥90%; the 3 C keywords caught 7 more reported papers) |
+| Regression | zero | coverage_check exit 0 (0 lost hits, 0 new golden-fails); 14 pytest tests pass |
+| Wall clock | 25–40 min | ~35 min (enrichment ~20, corpus 5, rest ~10) |
+| Tokens | 120–250k | ~60–90k (leaner than estimated — script reuse dominated) |
+| Git | ~20 MB corpus | committed (corpus.json 25 MB + enrichment cache ~5 MB); repo healthy |
