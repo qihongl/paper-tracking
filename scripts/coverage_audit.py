@@ -333,6 +333,9 @@ CONFERENCE_HINTS = [
     "intelligent user interfaces",
     "educational applications",                    # BEA workshop
     "cognitive computational neuroscience",        # CCN
+    "advances in neural information processing",   # NeurIPS proceedings (any volume)
+    "empirical methods in natural language",       # EMNLP proceedings (any year)
+    "lecture notes in computer science",           # LNCS proceedings umbrella
 ]
 
 

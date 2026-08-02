@@ -10,9 +10,9 @@ import re
 
 PROMPT_PATH = "prompts/daily-paper-tracker.md"
 
-# Expected matrix totals (integrity check)
-EXPECTED_SECTION_COUNTS = {"A": 134, "B": 58, "C": 47, "D": 63, "E": 43, "F": 17, "G": 28}
-EXPECTED_TOTAL = 390
+# expected matrix totals (integrity check) — updated 2026-08-02 (scale-up: +3 to C)
+EXPECTED_SECTION_COUNTS = {"A": 134, "B": 58, "C": 50, "D": 63, "E": 43, "F": 17, "G": 28}
+EXPECTED_TOTAL = 393
 
 ARXIV_COVERED = {"cs.CL", "cs.AI", "cs.LG", "q-bio.NC", "stat.ML"}
 BIORXIV_COVERED_SECTIONS = {"neuroscience"}

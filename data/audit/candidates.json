@@ -1,6 +1,1754 @@
 {
- "ngram_n": 0,
- "embedding_n": 0,
- "candidates": [],
- "note": "keyword layer saturated"
+ "ngram_n": 2749,
+ "embedding_n": 80,
+ "recency_year": 2020,
+ "candidates": [
+  {
+   "keyword": "independent",
+   "freq": 17,
+   "spec": 0.08075949367088607,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "G"
+   ],
+   "n_rescued": 2,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1582",
+     "year": "2001",
+     "title": "Topographic independent component analysis",
+     "snippet": "Topographic Independent Component Analysis Aapo Hyvärinen, Patrik O. Hoyer, and Mika Inki Neural Networks Research Centre Helsinki University of Technology P.O. Box 5400, FIN-02015 HUT, Finland aapo.hyvarinen@hut.fi Neur"
+    },
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "cient",
+   "freq": 14,
+   "spec": 0.24658227848101266,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "B"
+   ],
+   "n_rescued": 5,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1541",
+     "year": "2019",
+     "title": "Neurocognitive Signatures of Naturalistic Reading of Scientific Texts - A Fixation-Related fMRI Study",
+     "snippet": "1 Scientific Reports |         (2019) 9:10678  | https://doi.org/10.1038/s41598-019-47176-7 www.nature.com/scientificreports Neurocognitive Signatures of  Naturalistic Reading of Scientific  Texts: A Fixation-Related fMR"
+    },
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    },
+    {
+     "id": "p1805",
+     "year": "2013",
+     "title": "Auto-Encoding Variational Bayes",
+     "snippet": "Auto-Encoding Variational Bayes Diederik P. Kingma Machine Learning Group Universiteit van Amsterdam dpkingma@gmail.com Max Welling Machine Learning Group Universiteit van Amsterdam welling.max@gmail.com Abstract How can"
+    }
+   ]
+  },
+  {
+   "keyword": "valine",
+   "freq": 13,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "amino",
+   "freq": 9,
+   "spec": 0.0030379746835443038,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "B"
+   ],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "hdac6",
+   "freq": 8,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "cell",
+   "freq": 8,
+   "spec": 0.13265822784810127,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "G"
+   ],
+   "n_rescued": 4,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1491",
+     "year": "2006",
+     "title": "Reducing the dimensionality of data with neural networks",
+     "snippet": "The setup for measuring the SHG is described in the supporting online material (22). We expect that the SHG strongly depends on the resonance that is excited. Obviously, the incident polariza- tion and the detuning of th"
+    },
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    },
+    {
+     "id": "p2010",
+     "year": "2015",
+     "title": "Data-Driven Phenotypic Dissection of AML Reveals Progenitor-like Cells that Correlate with Prognosis",
+     "snippet": "Resource Data-Driven Phenotypic Dissection of AML Reveals Progenitor-like Cells that Correlate with Prognosis Graphical Abstract Highlights d PhenoGraph partitions high-dimensional single-cell data into subpopulations d "
+    }
+   ]
+  },
+  {
+   "keyword": "human",
+   "freq": 8,
+   "spec": 0.46860759493670884,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "G"
+   ],
+   "n_rescued": 2,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    },
+    {
+     "id": "p2028",
+     "year": "2018",
+     "title": "A Closed-form Solution to Photorealistic Image Stylization",
+     "snippet": "A Closed-form Solution to Photorealistic Image Stylization Yijun Li1, Ming-Yu Liu2, Xueting Li1, Ming-Hsuan Yang1,2, and Jan Kautz2 1University of California, Merced 2NVIDIA {yli62,xli75,mhyang}@ucmerced.edu {mingyul,jka"
+    }
+   ]
+  },
+  {
+   "keyword": "patient",
+   "freq": 7,
+   "spec": 0.0610126582278481,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "G"
+   ],
+   "n_rescued": 3,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1220",
+     "year": "2002",
+     "title": "The cognitive neuroscience of confabulation - A review and a model",
+     "snippet": "CHAPTER 15  The Cognitive Neuroscience  of Confabulation: A Review  and a Model  Asaf Gilboa  and  Morris Moscovitch  Baycrest Center for Geriatric Care, North York, Ontario, Canada  Confabulation may be defined as hones"
+    },
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    },
+    {
+     "id": "p2010",
+     "year": "2015",
+     "title": "Data-Driven Phenotypic Dissection of AML Reveals Progenitor-like Cells that Correlate with Prognosis",
+     "snippet": "Resource Data-Driven Phenotypic Dissection of AML Reveals Progenitor-like Cells that Correlate with Prognosis Graphical Abstract Highlights d PhenoGraph partitions high-dimensional single-cell data into subpopulations d "
+    }
+   ]
+  },
+  {
+   "keyword": "functions",
+   "freq": 7,
+   "spec": 0.11620253164556962,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "B"
+   ],
+   "n_rescued": 3,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    },
+    {
+     "id": "p1993",
+     "year": "2012",
+     "title": "Cauchy and the gradient method",
+     "snippet": "Documenta Math. 251 Cauchy and the Gradient Method Claude Lemar´echal 2010 Mathematics Subject Classiﬁcation: 65K05, 90C30 Keywords and Phrases: Unconstrained optimization, descent method, least-square method Any textboo"
+    },
+    {
+     "id": "p3912",
+     "year": "2017",
+     "title": "Recovery Guarantees for One-hidden-layer Neural Networks",
+     "snippet": "Recovery Guarantees for One-hidden-layer Neural Networks∗ Kai Zhong† zhongkai@ices.utexas.edu UT-Austin Zhao Song‡ zhaos@utexas.edu UT-Austin Prateek Jain prajain@microsoft.com Microsoft Research, India Peter L. Bartlett"
+    }
+   ]
+  },
+  {
+   "keyword": "dna damage",
+   "freq": 6,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "damage",
+   "freq": 6,
+   "spec": 0.03189873417721519,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "G"
+   ],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "remains",
+   "freq": 6,
+   "spec": 0.10708860759493671,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "G"
+   ],
+   "n_rescued": 4,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1491",
+     "year": "2006",
+     "title": "Reducing the dimensionality of data with neural networks",
+     "snippet": "The setup for measuring the SHG is described in the supporting online material (22). We expect that the SHG strongly depends on the resonance that is excited. Obviously, the incident polariza- tion and the detuning of th"
+    },
+    {
+     "id": "p1541",
+     "year": "2019",
+     "title": "Neurocognitive Signatures of Naturalistic Reading of Scientific Texts - A Fixation-Related fMRI Study",
+     "snippet": "1 Scientific Reports |         (2019) 9:10678  | https://doi.org/10.1038/s41598-019-47176-7 www.nature.com/scientificreports Neurocognitive Signatures of  Naturalistic Reading of Scientific  Texts: A Fixation-Related fMR"
+    },
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "specific",
+   "freq": 6,
+   "spec": 0.14531645569620252,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "G"
+   ],
+   "n_rescued": 3,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1541",
+     "year": "2019",
+     "title": "Neurocognitive Signatures of Naturalistic Reading of Scientific Texts - A Fixation-Related fMRI Study",
+     "snippet": "1 Scientific Reports |         (2019) 9:10678  | https://doi.org/10.1038/s41598-019-47176-7 www.nature.com/scientificreports Neurocognitive Signatures of  Naturalistic Reading of Scientific  Texts: A Fixation-Related fMR"
+    },
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    },
+    {
+     "id": "p1807",
+     "year": "2014",
+     "title": "Equitability, mutual information, and the maximal information coefficient",
+     "snippet": "Equitability, mutual information, and the maximal information coefficient Justin B. Kinney1 and Gurinder S. Atwal Simons Center for Quantitative Biology, Cold Spring Harbor Laboratory, Cold Spring Harbor, NY 11724 Edited"
+    }
+   ]
+  },
+  {
+   "keyword": "intracellular",
+   "freq": 5,
+   "spec": 0.0020253164556962027,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "E"
+   ],
+   "n_rescued": 2,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    },
+    {
+     "id": "p2010",
+     "year": "2015",
+     "title": "Data-Driven Phenotypic Dissection of AML Reveals Progenitor-like Cells that Correlate with Prognosis",
+     "snippet": "Resource Data-Driven Phenotypic Dissection of AML Reveals Progenitor-like Cells that Correlate with Prognosis Graphical Abstract Highlights d PhenoGraph partitions high-dimensional single-cell data into subpopulations d "
+    }
+   ]
+  },
+  {
+   "keyword": "driven",
+   "freq": 5,
+   "spec": 0.06886075949367089,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "B"
+   ],
+   "n_rescued": 2,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    },
+    {
+     "id": "p2010",
+     "year": "2015",
+     "title": "Data-Driven Phenotypic Dissection of AML Reveals Progenitor-like Cells that Correlate with Prognosis",
+     "snippet": "Resource Data-Driven Phenotypic Dissection of AML Reveals Progenitor-like Cells that Correlate with Prognosis Graphical Abstract Highlights d PhenoGraph partitions high-dimensional single-cell data into subpopulations d "
+    }
+   ]
+  },
+  {
+   "keyword": "underlying",
+   "freq": 5,
+   "spec": 0.14,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "G"
+   ],
+   "n_rescued": 3,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1220",
+     "year": "2002",
+     "title": "The cognitive neuroscience of confabulation - A review and a model",
+     "snippet": "CHAPTER 15  The Cognitive Neuroscience  of Confabulation: A Review  and a Model  Asaf Gilboa  and  Morris Moscovitch  Baycrest Center for Geriatric Care, North York, Ontario, Canada  Confabulation may be defined as hones"
+    },
+    {
+     "id": "p1541",
+     "year": "2019",
+     "title": "Neurocognitive Signatures of Naturalistic Reading of Scientific Texts - A Fixation-Related fMRI Study",
+     "snippet": "1 Scientific Reports |         (2019) 9:10678  | https://doi.org/10.1038/s41598-019-47176-7 www.nature.com/scientificreports Neurocognitive Signatures of  Naturalistic Reading of Scientific  Texts: A Fixation-Related fMR"
+    },
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "even",
+   "freq": 5,
+   "spec": 0.3951898734177215,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "G"
+   ],
+   "n_rescued": 5,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1220",
+     "year": "2002",
+     "title": "The cognitive neuroscience of confabulation - A review and a model",
+     "snippet": "CHAPTER 15  The Cognitive Neuroscience  of Confabulation: A Review  and a Model  Asaf Gilboa  and  Morris Moscovitch  Baycrest Center for Geriatric Care, North York, Ontario, Canada  Confabulation may be defined as hones"
+    },
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    },
+    {
+     "id": "p1805",
+     "year": "2013",
+     "title": "Auto-Encoding Variational Bayes",
+     "snippet": "Auto-Encoding Variational Bayes Diederik P. Kingma Machine Learning Group Universiteit van Amsterdam dpkingma@gmail.com Max Welling Machine Learning Group Universiteit van Amsterdam welling.max@gmail.com Abstract How can"
+    }
+   ]
+  },
+  {
+   "keyword": "sensed",
+   "freq": 4,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "human hdac6",
+   "freq": 4,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "amino acids",
+   "freq": 4,
+   "spec": 0.0007594936708860759,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "B"
+   ],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "acids",
+   "freq": 4,
+   "spec": 0.0012658227848101266,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "D"
+   ],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "amino acid",
+   "freq": 4,
+   "spec": 0.0017721518987341772,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "B"
+   ],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "to regulate",
+   "freq": 4,
+   "spec": 0.002531645569620253,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "G"
+   ],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "acid",
+   "freq": 4,
+   "spec": 0.003291139240506329,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "B"
+   ],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "regulate",
+   "freq": 4,
+   "spec": 0.014177215189873417,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "G"
+   ],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "cellular",
+   "freq": 4,
+   "spec": 0.025822784810126582,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "G"
+   ],
+   "n_rescued": 2,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    },
+    {
+     "id": "p2010",
+     "year": "2015",
+     "title": "Data-Driven Phenotypic Dissection of AML Reveals Progenitor-like Cells that Correlate with Prognosis",
+     "snippet": "Resource Data-Driven Phenotypic Dissection of AML Reveals Progenitor-like Cells that Correlate with Prognosis Graphical Abstract Highlights d PhenoGraph partitions high-dimensional single-cell data into subpopulations d "
+    }
+   ]
+  },
+  {
+   "keyword": "the underlying",
+   "freq": 4,
+   "spec": 0.047341772151898734,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "B"
+   ],
+   "n_rescued": 2,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1541",
+     "year": "2019",
+     "title": "Neurocognitive Signatures of Naturalistic Reading of Scientific Texts - A Fixation-Related fMRI Study",
+     "snippet": "1 Scientific Reports |         (2019) 9:10678  | https://doi.org/10.1038/s41598-019-47176-7 www.nature.com/scientificreports Neurocognitive Signatures of  Naturalistic Reading of Scientific  Texts: A Fixation-Related fMR"
+    },
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "directly",
+   "freq": 4,
+   "spec": 0.07822784810126582,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "G"
+   ],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "local",
+   "freq": 4,
+   "spec": 0.09367088607594937,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "B"
+   ],
+   "n_rescued": 2,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    },
+    {
+     "id": "p3912",
+     "year": "2017",
+     "title": "Recovery Guarantees for One-hidden-layer Neural Networks",
+     "snippet": "Recovery Guarantees for One-hidden-layer Neural Networks∗ Kai Zhong† zhongkai@ices.utexas.edu UT-Austin Zhao Song‡ zhaos@utexas.edu UT-Austin Prateek Jain prajain@microsoft.com Microsoft Research, India Peter L. Bartlett"
+    }
+   ]
+  },
+  {
+   "keyword": "identify",
+   "freq": 4,
+   "spec": 0.10177215189873418,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "G"
+   ],
+   "n_rescued": 3,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    },
+    {
+     "id": "p1807",
+     "year": "2014",
+     "title": "Equitability, mutual information, and the maximal information coefficient",
+     "snippet": "Equitability, mutual information, and the maximal information coefficient Justin B. Kinney1 and Gurinder S. Atwal Simons Center for Quantitative Biology, Cold Spring Harbor Laboratory, Cold Spring Harbor, NY 11724 Edited"
+    },
+    {
+     "id": "p2679",
+     "year": "2019",
+     "title": "Large-scale assessment of a smartwatch to identify atrial fibrillation",
+     "snippet": "The new engl and jour nal of medicine n engl j med 381;20  nejm.org  November 14, 2019 1909 From the Division of Cardiovascular  Medicine (M.V.P.), Stanford Center for  Clinical Research (K.W.M., A.R., N.T.),  the Quanti"
+    }
+   ]
+  },
+  {
+   "keyword": "us to",
+   "freq": 4,
+   "spec": 0.10379746835443038,
+   "source": "embedding",
+   "sections": [
+    "A",
+    "B"
+   ],
+   "n_rescued": 4,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    },
+    {
+     "id": "p1805",
+     "year": "2013",
+     "title": "Auto-Encoding Variational Bayes",
+     "snippet": "Auto-Encoding Variational Bayes Diederik P. Kingma Machine Learning Group Universiteit van Amsterdam dpkingma@gmail.com Max Welling Machine Learning Group Universiteit van Amsterdam welling.max@gmail.com Abstract How can"
+    },
+    {
+     "id": "p1806",
+     "year": "2013",
+     "title": "Kingma",
+     "snippet": "Auto-Encoding Variational Bayes Diederik P. Kingma Machine Learning Group Universiteit van Amsterdam dpkingma@gmail.com Max Welling Machine Learning Group Universiteit van Amsterdam welling.max@gmail.com Abstract How can"
+    }
+   ]
+  },
+  {
+   "keyword": "signal",
+   "freq": 4,
+   "spec": 0.14025316455696202,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "G"
+   ],
+   "n_rescued": 3,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1491",
+     "year": "2006",
+     "title": "Reducing the dimensionality of data with neural networks",
+     "snippet": "The setup for measuring the SHG is described in the supporting online material (22). We expect that the SHG strongly depends on the resonance that is excited. Obviously, the incident polariza- tion and the detuning of th"
+    },
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    },
+    {
+     "id": "p2010",
+     "year": "2015",
+     "title": "Data-Driven Phenotypic Dissection of AML Reveals Progenitor-like Cells that Correlate with Prognosis",
+     "snippet": "Resource Data-Driven Phenotypic Dissection of AML Reveals Progenitor-like Cells that Correlate with Prognosis Graphical Abstract Highlights d PhenoGraph partitions high-dimensional single-cell data into subpopulations d "
+    }
+   ]
+  },
+  {
+   "keyword": "remain",
+   "freq": 4,
+   "spec": 0.1779746835443038,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "G"
+   ],
+   "n_rescued": 6,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1480",
+     "year": "2019",
+     "title": "A structural probe for finding syntax in word representations (1)",
+     "snippet": "A Structural Probe for Finding Syntax in Word Representations John Hewitt Stanford University johnhew@stanford.edu Christopher D. Manning Stanford University manning@stanford.edu Abstract Recent work has improved our abi"
+    },
+    {
+     "id": "p1481",
+     "year": "2019",
+     "title": "A structural probe for finding syntax in word representations",
+     "snippet": "Proceedings of NAACL-HLT 2019, pages 4129–4138 Minneapolis, Minnesota, June 2 - June 7, 2019. c⃝2019 Association for Computational Linguistics 4129 A Structural Probe for Finding Syntax in Word Representations John Hewit"
+    },
+    {
+     "id": "p1491",
+     "year": "2006",
+     "title": "Reducing the dimensionality of data with neural networks",
+     "snippet": "The setup for measuring the SHG is described in the supporting online material (22). We expect that the SHG strongly depends on the resonance that is excited. Obviously, the incident polariza- tion and the detuning of th"
+    }
+   ]
+  },
+  {
+   "keyword": "identi",
+   "freq": 4,
+   "spec": 0.21240506329113923,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "G"
+   ],
+   "n_rescued": 7,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1480",
+     "year": "2019",
+     "title": "A structural probe for finding syntax in word representations (1)",
+     "snippet": "A Structural Probe for Finding Syntax in Word Representations John Hewitt Stanford University johnhew@stanford.edu Christopher D. Manning Stanford University manning@stanford.edu Abstract Recent work has improved our abi"
+    },
+    {
+     "id": "p1481",
+     "year": "2019",
+     "title": "A structural probe for finding syntax in word representations",
+     "snippet": "Proceedings of NAACL-HLT 2019, pages 4129–4138 Minneapolis, Minnesota, June 2 - June 7, 2019. c⃝2019 Association for Computational Linguistics 4129 A Structural Probe for Finding Syntax in Word Representations John Hewit"
+    },
+    {
+     "id": "p1491",
+     "year": "2006",
+     "title": "Reducing the dimensionality of data with neural networks",
+     "snippet": "The setup for measuring the SHG is described in the supporting online material (22). We expect that the SHG strongly depends on the resonance that is excited. Obviously, the incident polariza- tion and the detuning of th"
+    }
+   ]
+  },
+  {
+   "keyword": "general",
+   "freq": 4,
+   "spec": 0.29468354430379745,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "B"
+   ],
+   "n_rescued": 5,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1582",
+     "year": "2001",
+     "title": "Topographic independent component analysis",
+     "snippet": "Topographic Independent Component Analysis Aapo Hyvärinen, Patrik O. Hoyer, and Mika Inki Neural Networks Research Centre Helsinki University of Technology P.O. Box 5400, FIN-02015 HUT, Finland aapo.hyvarinen@hut.fi Neur"
+    },
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    },
+    {
+     "id": "p1805",
+     "year": "2013",
+     "title": "Auto-Encoding Variational Bayes",
+     "snippet": "Auto-Encoding Variational Bayes Diederik P. Kingma Machine Learning Group Universiteit van Amsterdam dpkingma@gmail.com Max Welling Machine Learning Group Universiteit van Amsterdam welling.max@gmail.com Abstract How can"
+    }
+   ]
+  },
+  {
+   "keyword": "high",
+   "freq": 4,
+   "spec": 0.41265822784810124,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "B"
+   ],
+   "n_rescued": 6,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1220",
+     "year": "2002",
+     "title": "The cognitive neuroscience of confabulation - A review and a model",
+     "snippet": "CHAPTER 15  The Cognitive Neuroscience  of Confabulation: A Review  and a Model  Asaf Gilboa  and  Morris Moscovitch  Baycrest Center for Geriatric Care, North York, Ontario, Canada  Confabulation may be defined as hones"
+    },
+    {
+     "id": "p1582",
+     "year": "2001",
+     "title": "Topographic independent component analysis",
+     "snippet": "Topographic Independent Component Analysis Aapo Hyvärinen, Patrik O. Hoyer, and Mika Inki Neural Networks Research Centre Helsinki University of Technology P.O. Box 5400, FIN-02015 HUT, Finland aapo.hyvarinen@hut.fi Neur"
+    },
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "abundancy",
+   "freq": 3,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "xenograft",
+   "freq": 3,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "valine abundancy",
+   "freq": 3,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "a valine",
+   "freq": 3,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "valine sensor",
+   "freq": 3,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "directly binding",
+   "freq": 3,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "a valine sensor",
+   "freq": 3,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "by directly binding",
+   "freq": 3,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "by directly",
+   "freq": 3,
+   "spec": 0.003291139240506329,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "G"
+   ],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "binding",
+   "freq": 3,
+   "spec": 0.020253164556962026,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "E"
+   ],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "levels",
+   "freq": 3,
+   "spec": 0.06683544303797469,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "B"
+   ],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "sensor",
+   "freq": 3,
+   "spec": 0.12962025316455697,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "G"
+   ],
+   "n_rescued": 2,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    },
+    {
+     "id": "p2679",
+     "year": "2019",
+     "title": "Large-scale assessment of a smartwatch to identify atrial fibrillation",
+     "snippet": "The new engl and jour nal of medicine n engl j med 381;20  nejm.org  November 14, 2019 1909 From the Division of Cardiovascular  Medicine (M.V.P.), Stanford Center for  Clinical Research (K.W.M., A.R., N.T.),  the Quanti"
+    }
+   ]
+  },
+  {
+   "keyword": "level",
+   "freq": 3,
+   "spec": 0.22556962025316454,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "B"
+   ],
+   "n_rescued": 3,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1491",
+     "year": "2006",
+     "title": "Reducing the dimensionality of data with neural networks",
+     "snippet": "The setup for measuring the SHG is described in the supporting online material (22). We expect that the SHG strongly depends on the resonance that is excited. Obviously, the incident polariza- tion and the detuning of th"
+    },
+    {
+     "id": "p1541",
+     "year": "2019",
+     "title": "Neurocognitive Signatures of Naturalistic Reading of Scientific Texts - A Fixation-Related fMRI Study",
+     "snippet": "1 Scientific Reports |         (2019) 9:10678  | https://doi.org/10.1038/s41598-019-47176-7 www.nature.com/scientificreports Neurocognitive Signatures of  Naturalistic Reading of Scientific  Texts: A Fixation-Related fMR"
+    },
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "mechanism",
+   "freq": 3,
+   "spec": 0.230126582278481,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "G"
+   ],
+   "n_rescued": 2,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1491",
+     "year": "2006",
+     "title": "Reducing the dimensionality of data with neural networks",
+     "snippet": "The setup for measuring the SHG is described in the supporting online material (22). We expect that the SHG strongly depends on the resonance that is excited. Obviously, the incident polariza- tion and the detuning of th"
+    },
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "repre",
+   "freq": 3,
+   "spec": 0.44,
+   "source": "ngram",
+   "sections": [
+    "A",
+    "B"
+   ],
+   "n_rescued": 10,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1220",
+     "year": "2002",
+     "title": "The cognitive neuroscience of confabulation - A review and a model",
+     "snippet": "CHAPTER 15  The Cognitive Neuroscience  of Confabulation: A Review  and a Model  Asaf Gilboa  and  Morris Moscovitch  Baycrest Center for Geriatric Care, North York, Ontario, Canada  Confabulation may be defined as hones"
+    },
+    {
+     "id": "p1480",
+     "year": "2019",
+     "title": "A structural probe for finding syntax in word representations (1)",
+     "snippet": "A Structural Probe for Finding Syntax in Word Representations John Hewitt Stanford University johnhew@stanford.edu Christopher D. Manning Stanford University manning@stanford.edu Abstract Recent work has improved our abi"
+    },
+    {
+     "id": "p1481",
+     "year": "2019",
+     "title": "A structural probe for finding syntax in word representations",
+     "snippet": "Proceedings of NAACL-HLT 2019, pages 4129–4138 Minneapolis, Minnesota, June 2 - June 7, 2019. c⃝2019 Association for Computational Linguistics 4129 A Structural Probe for Finding Syntax in Word Representations John Hewit"
+    }
+   ]
+  },
+  {
+   "keyword": "e g",
+   "freq": 3,
+   "spec": 0.5774683544303797,
+   "source": "embedding",
+   "sections": [
+    "A",
+    "B"
+   ],
+   "n_rescued": 12,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1220",
+     "year": "2002",
+     "title": "The cognitive neuroscience of confabulation - A review and a model",
+     "snippet": "CHAPTER 15  The Cognitive Neuroscience  of Confabulation: A Review  and a Model  Asaf Gilboa  and  Morris Moscovitch  Baycrest Center for Geriatric Care, North York, Ontario, Canada  Confabulation may be defined as hones"
+    },
+    {
+     "id": "p1480",
+     "year": "2019",
+     "title": "A structural probe for finding syntax in word representations (1)",
+     "snippet": "A Structural Probe for Finding Syntax in Word Representations John Hewitt Stanford University johnhew@stanford.edu Christopher D. Manning Stanford University manning@stanford.edu Abstract Recent work has improved our abi"
+    },
+    {
+     "id": "p1481",
+     "year": "2019",
+     "title": "A structural probe for finding syntax in word representations",
+     "snippet": "Proceedings of NAACL-HLT 2019, pages 4129–4138 Minneapolis, Minnesota, June 2 - June 7, 2019. c⃝2019 Association for Computational Linguistics 4129 A Structural Probe for Finding Syntax in Word Representations John Hewit"
+    }
+   ]
+  },
+  {
+   "keyword": "branched",
+   "freq": 2,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "shuttling",
+   "freq": 2,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "tet2",
+   "freq": 2,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "demethylation",
+   "freq": 2,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "trna",
+   "freq": 2,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "gcn2",
+   "freq": 2,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "mtorc1",
+   "freq": 2,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "sensors7",
+   "freq": 2,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "hdac6 senses",
+   "freq": 2,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "senses valine",
+   "freq": 2,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "abundancy to",
+   "freq": 2,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "regulate dna",
+   "freq": 2,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "wang1 as",
+   "freq": 2,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "essential branched",
+   "freq": 2,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "branched amino",
+   "freq": 2,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "nucleus and",
+   "freq": 2,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "and cytoplasm",
+   "freq": 2,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "cytoplasm shuttling",
+   "freq": 2,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "shuttling of",
+   "freq": 2,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "not mouse",
+   "freq": 2,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "hdac6 is",
+   "freq": 2,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "intracellular levels",
+   "freq": 2,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "valine deprivation",
+   "freq": 2,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "active dna",
+   "freq": 2,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "dna demethylation",
+   "freq": 2,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "dietary valine",
+   "freq": 2,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "valine restriction",
+   "freq": 2,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  },
+  {
+   "keyword": "tumour growth",
+   "freq": 2,
+   "spec": 0.00025316455696202533,
+   "source": "ngram",
+   "sections": [],
+   "n_rescued": 1,
+   "n_recent": 1,
+   "rescued": [
+    {
+     "id": "p1666",
+     "year": "2025",
+     "title": "Human HDAC6 senses valine abundancy to regulate DNA damage",
+     "snippet": "Nature  |  Vol 637  |  2 January 2025  |  215 Article Human HDAC6 senses valine abundancy to  regulate DNA damage Jiali Jin1,11, Tong Meng1,2,11, Yuanyuan Yu3,11, Shuheng Wu4,11, Chen-Chen Jiao1, Sihui Song1,  Ya-Xu Li1,"
+    }
+   ]
+  }
+ ]
 }
