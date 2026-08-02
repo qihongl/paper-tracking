@@ -260,7 +260,7 @@ def enrich():
     print(f"crossref (title search): {len(todo)} to fetch, 8 threads")
     for _chunk, results in _run_threaded(todo, _crossref_title_worker,
                                          on_progress=lambda d, t: print(f"  titlesearch {d}/{t}")):
-        cache["crossref_title"].update(results)
+        cache["crossref_title"].update({pid: res for (pid, _t), res in results.items()})
         _save_enrich(path, cache)
     _save_enrich(path, cache)
 
