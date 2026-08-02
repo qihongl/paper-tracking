@@ -77,8 +77,18 @@ def report_append(text):
 # ---------------------------------------------------------------------------
 # Stage: build-corpus
 # ---------------------------------------------------------------------------
-def build_corpus(window):
+def build_corpus(window, since=None):
     os.makedirs(AUDIT_DIR, exist_ok=True)
+    # preserve the previous pinned corpus when the window changes
+    old_path = os.path.join(AUDIT_DIR, "corpus.json")
+    if os.path.exists(old_path):
+        with open(old_path, encoding="utf-8") as f:
+            old = json.load(f)
+        if old.get("window") != window and old.get("window") != (since and f"since-{since}") and os.path.exists(old_path):
+            import shutil
+
+            shutil.copy(old_path, os.path.join(AUDIT_DIR, "corpus_2025.json"))
+            print("preserved previous corpus -> corpus_2025.json")
     conn = paperdb.connect()
     papers = paperdb.list_papers(conn)
     out, stats = [], Counter()
@@ -86,6 +96,8 @@ def build_corpus(window):
         chunks = paperdb.get_chunks(conn, fp)
         meta = paperdb.extract_metadata(fp, chunks)
         if window and meta["year"] not in window:
+            continue
+        if since and not (meta["year"] and int(meta["year"]) >= since):
             continue
         entry = {
             "id": f"p{len(out) + 1:04d}",
@@ -111,11 +123,11 @@ def build_corpus(window):
     out.sort(key=lambda p: p["filepath"])
     for i, p in enumerate(out, 1):
         p["id"] = f"p{i:04d}"
-    corpus = {"window": window, "built_at": time.strftime("%Y-%m-%dT%H:%M:%S"), "papers": out, "stats": dict(stats)}
-    path = os.path.join(AUDIT_DIR, "corpus.json")
-    with open(path, "w", encoding="utf-8") as f:
+    label = window if window else f"since-{since}"
+    corpus = {"window": label, "built_at": time.strftime("%Y-%m-%dT%H:%M:%S"), "papers": out, "stats": dict(stats)}
+    with open(old_path, "w", encoding="utf-8") as f:
         json.dump(corpus, f, ensure_ascii=False, indent=1)
-    print(f"corpus: {len(out)} papers -> {path}")
+    print(f"corpus: {len(out)} papers (window={label}) -> {old_path}")
     print("stats:", dict(stats))
     # validation
     unresolved = [p for p in out if not p["title"] or len(p["title"]) < 10]
@@ -133,6 +145,83 @@ def load_corpus():
 # ---------------------------------------------------------------------------
 # Stage: enrich
 # ---------------------------------------------------------------------------
+def _run_threaded(jobs, worker, workers=8, batch=200, on_progress=None):
+    """Run worker(item) over jobs with a thread pool; yields (item, result) as
+    they complete, with retry+backoff inside the worker. Batch-wise so callers
+    can persist cache incrementally."""
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
+    results = {}
+    done = 0
+    for start in range(0, len(jobs), batch):
+        chunk = jobs[start : start + batch]
+        with ThreadPoolExecutor(max_workers=workers) as ex:
+            futs = {ex.submit(worker, item): item for item in chunk}
+            for fut in as_completed(futs):
+                item = futs[fut]
+                try:
+                    results[item] = fut.result()
+                except Exception as e:
+                    results[item] = {"error": str(e)[:80]}
+                done += 1
+                if on_progress and done % 100 == 0:
+                    on_progress(done, len(jobs))
+        yield chunk, results
+    if on_progress:
+        on_progress(done, len(jobs))
+
+
+def _crossref_doi_worker(doi):
+    import time as _t
+
+    last = None
+    for attempt in range(3):
+        try:
+            url = "https://api.crossref.org/works/" + urllib.parse.quote(doi, safe="") + f"?mailto={MAILTO}"
+            msg = fetch_json(url)["message"]
+            journal = None
+            for k in ("container-title", "short-container-title"):
+                if msg.get(k):
+                    journal = msg[k][0]
+                    break
+            return {"journal": journal, "type": msg.get("type")}
+        except Exception as e:
+            last = {"journal": None, "error": str(e)[:80]}
+            _t.sleep(1.5 * (attempt + 1))
+    return last
+
+
+def _crossref_title_worker(job):
+    import difflib
+    import time as _t
+
+    pid, title = job
+    last = None
+    for attempt in range(3):
+        try:
+            url = ("https://api.crossref.org/works?query.bibliographic="
+                   + urllib.parse.quote(title) + f"&rows=3&mailto={MAILTO}")
+            items = fetch_json(url).get("message", {}).get("items", [])
+            best, best_score = None, 0.0
+            for it in items:
+                t = (it.get("title") or [""])[0]
+                score = difflib.SequenceMatcher(None, cl.normalize(title), cl.normalize(t)).ratio()
+                if score > best_score:
+                    best, best_score = it, score
+            if best and best_score >= 0.85:
+                journal = None
+                for k in ("container-title", "short-container-title"):
+                    if best.get(k):
+                        journal = best[k][0]
+                        break
+                return {"doi": best.get("DOI"), "journal": journal, "score": round(best_score, 3)}
+            return {"doi": None, "journal": None, "score": round(best_score, 3)}
+        except Exception as e:
+            last = {"doi": None, "journal": None, "error": str(e)[:80]}
+            _t.sleep(1.5 * (attempt + 1))
+    return last
+
+
 def enrich():
     os.makedirs(AUDIT_DIR, exist_ok=True)
     path = os.path.join(AUDIT_DIR, "venue_enrichment.json")
@@ -157,59 +246,22 @@ def enrich():
         if not has_id and p["title"]:
             title_search.append((p["id"], p["title"]))
 
-    # --- Crossref (by DOI) ---
+    # --- Crossref (by DOI, threaded) ---
     todo = [d for d in sorted(dois) if d not in cache["crossref"]]
-    print(f"crossref (DOI): {len(todo)} to fetch (of {len(dois)})")
-    for i, doi in enumerate(todo, 1):
-        try:
-            url = "https://api.crossref.org/works/" + urllib.parse.quote(doi, safe="") + f"?mailto={MAILTO}"
-            msg = fetch_json(url)["message"]
-            journal = None
-            for k in ("container-title", "short-container-title"):
-                if msg.get(k):
-                    journal = msg[k][0]
-                    break
-            cache["crossref"][doi] = {"journal": journal, "type": msg.get("type")}
-        except Exception as e:
-            cache["crossref"][doi] = {"journal": None, "error": str(e)[:80]}
-        if i % 25 == 0:
-            print(f"  crossref {i}/{len(todo)}")
-            _save_enrich(path, cache)
-        time.sleep(0.25)
+    print(f"crossref (DOI): {len(todo)} to fetch (of {len(dois)}), 8 threads")
+    for _chunk, results in _run_threaded(todo, _crossref_doi_worker,
+                                         on_progress=lambda d, t: print(f"  crossref {d}/{t}")):
+        cache["crossref"].update(results)
+        _save_enrich(path, cache)
     _save_enrich(path, cache)
 
-    # --- Crossref (title search fallback for identifier-less papers) ---
-    import difflib
-
+    # --- Crossref (title search fallback, threaded) ---
     todo = [(pid, t) for pid, t in title_search if pid not in cache["crossref_title"]]
-    print(f"crossref (title search): {len(todo)} to fetch")
-    for i, (pid, title) in enumerate(todo, 1):
-        try:
-            url = ("https://api.crossref.org/works?query.bibliographic="
-                   + urllib.parse.quote(title) + f"&rows=3&mailto={MAILTO}")
-            items = fetch_json(url).get("message", {}).get("items", [])
-            best, best_score = None, 0.0
-            for it in items:
-                t = (it.get("title") or [""])[0]
-                score = difflib.SequenceMatcher(None, cl.normalize(title), cl.normalize(t)).ratio()
-                if score > best_score:
-                    best, best_score = it, score
-            if best and best_score >= 0.85:
-                journal = None
-                for k in ("container-title", "short-container-title"):
-                    if best.get(k):
-                        journal = best[k][0]
-                        break
-                cache["crossref_title"][pid] = {"doi": best.get("DOI"), "journal": journal,
-                                                "score": round(best_score, 3)}
-            else:
-                cache["crossref_title"][pid] = {"doi": None, "journal": None, "score": round(best_score, 3)}
-        except Exception as e:
-            cache["crossref_title"][pid] = {"doi": None, "journal": None, "error": str(e)[:80]}
-        if i % 25 == 0:
-            print(f"  titlesearch {i}/{len(todo)}")
-            _save_enrich(path, cache)
-        time.sleep(0.25)
+    print(f"crossref (title search): {len(todo)} to fetch, 8 threads")
+    for _chunk, results in _run_threaded(todo, _crossref_title_worker,
+                                         on_progress=lambda d, t: print(f"  titlesearch {d}/{t}")):
+        cache["crossref_title"].update(results)
+        _save_enrich(path, cache)
     _save_enrich(path, cache)
 
     # --- arXiv (batches of 50) ---
@@ -400,6 +452,14 @@ def run_audit():
     print("\n=== TWO-LAYER AUDIT ===")
     print(f"n={n} | {dict(stats)}")
     print(f"keyword-gate recall: {kw_recall:.1%}  | venue coverage: {venue_coverage:.1%}")
+
+    # venue coverage on the 2020+ subset (scale-up acceptance metric)
+    recent = [r for r in results if corpus and r["year"] and int(r["year"]) >= 2020]
+    if recent:
+        recent_cov = sum(1 for r in recent if r["venue_covered"]) / len(recent)
+        print(f"venue coverage (2020+ subset, n={len(recent)}): {recent_cov:.1%}")
+    else:
+        recent_cov = None
 
     # calibration: reported papers must be keyword-caught (title OR finding text)
     reported = cl.parse_reported_papers(os.path.join(REPO, "outputs"), with_findings=True)
@@ -616,30 +676,39 @@ def run_mine():
     for g, info in ranked[:20]:
         print(f"  {info['freq']:3d}x spec={info['spec']:.2f} {info['source']:9s} {g[:70]}")
 
-    # ---- simulation: rescued papers per candidate ----
+    # ---- simulation: rescued papers per candidate (recency-filtered) ----
+    RECENT_YEAR = 2020  # the tracker reports new papers; only candidates that
+    # rescue at least one recent paper are worth adding (scale-up decision D5)
     sim = []
-    for g, info in ranked[:60]:
+    for g, info in ranked:
         rescued = []
         for p in corpus["papers"]:
             if p["id"] in miss_ids and g in f"{p['title_norm']} {p['abstract_norm']}":
                 rescued.append(p)
+        recent = [p for p in rescued if p["year"] and int(p["year"]) >= RECENT_YEAR]
+        if not recent:
+            continue  # recency filter: useless for the daily digest
         sim.append({"keyword": g, "freq": info["freq"], "spec": info["spec"], "source": info["source"],
-                    "sections": sorted(info["sections"]), "n_rescued": len(rescued),
+                    "sections": sorted(info["sections"]), "n_rescued": len(rescued), "n_recent": len(recent),
                     "rescued": [{"id": p["id"], "year": p["year"], "title": p["title"],
                                  "snippet": p["abstract_window"][:220].replace("\n", " ")} for p in rescued[:3]]})
+        if len(sim) >= 80:
+            break
     with open(os.path.join(AUDIT_DIR, "candidates.json"), "w", encoding="utf-8") as f:
-        json.dump({"ngram_n": len(ngram_cands), "embedding_n": len(em_cands), "candidates": sim},
+        json.dump({"ngram_n": len(ngram_cands), "embedding_n": len(em_cands),
+                   "recency_year": RECENT_YEAR, "candidates": sim},
                   f, ensure_ascii=False, indent=1)
 
     # report section 3
     lines = ["## 3. Miss mining & edit simulation",
-             f"Misses: {len(misses)}. Candidates: {len(sim)} shown (freq≥2, specificity≤60%, not already in matrix).",
+             f"Misses: {len(misses)}. Candidates: {len(sim)} shown (freq≥2, specificity≤60%, not already in matrix, "
+             f"**and rescuing ≥1 paper from {RECENT_YEAR}+** — scale-up recency filter).",
              "Review = the **rescued papers**, not the keywords: drop any keyword whose rescued papers look off-topic.",
-             "", "| Keyword | Source | Freq | Spec | Section(s) | #rescued | Rescued papers (first 3)", "|---|---|---|---|---|---|---|"]
+             "", "| Keyword | Source | Freq | Spec | Section(s) | #rescued (≥2020) | Rescued papers (first 3)", "|---|---|---|---|---|---|---|"]
     for c in sim[:50]:
         titles = "; ".join(f"{r['year']} {r['title'][:60]}" for r in c["rescued"])
         lines.append(f"| `{c['keyword']}` | {c['source']} | {c['freq']} | {c['spec']:.2f} | "
-                     f"{','.join(c['sections']) or '?'} | {c['n_rescued']} | {titles[:200]} |")
+                     f"{','.join(c['sections']) or '?'} | {c['n_rescued']} ({c['n_recent']}) | {titles[:200]} |")
     lines.append("")
     report_append("\n".join(lines))
     print("mining done -> data/audit/candidates.json")
@@ -667,8 +736,10 @@ def run_venue():
     lines.append("\n**Remaining gaps — recommended: do NOT add.** These are single papers in off-domain or "
                  "low-yield venues (sociology, health-tech, general engineering); adding them would add scan "
                  "cost without coverage value. Revisit if the library accumulates ≥2 papers from any of them.")
-    # tiered recs
-    journal_gaps = Counter()
+    # tiered recs (recency-filtered: scale-up decision D4 — only recommend
+    # journals still publishing, i.e. with >=1 corpus paper from 2020+)
+    RECENT_YEAR = 2020
+    journal_years = defaultdict(list)  # journal name -> [years]
     arxiv_gaps = Counter()
     for p in corpus["papers"]:
         covered, note = classify_venue(p, enrich_data, sources)
@@ -676,12 +747,34 @@ def run_venue():
             continue
         if note.startswith("journal:"):
             name = note.split("[")[0][len("journal:"):].strip()
-            journal_gaps[name] += 1
+            if p["year"]:
+                journal_years[name].append(int(p["year"]))
         elif note.startswith("arXiv:"):
             arxiv_gaps[note[len("arXiv:"):]] += 1
-    lines.append("\n**Tier 1 — journals to ADD to the source list:**")
-    for name, c in journal_gaps.most_common(10):
-        lines.append(f"- {name} ({c})")
+
+    active = {n: ys for n, ys in journal_years.items() if len(ys) >= 2 and max(ys) >= RECENT_YEAR}
+    historical = {n: ys for n, ys in journal_years.items() if len(ys) >= 2 and max(ys) < RECENT_YEAR}
+    singles = {n: ys for n, ys in journal_years.items() if len(ys) == 1}
+
+    lines.append("\n**Tier 1 — ACTIVE journals to ADD to the source list** (≥2 library papers, ≥1 from 2020+):")
+    if active:
+        for name, ys in sorted(active.items(), key=lambda kv: -len(kv[1])):
+            lines.append(f"- {name} ({len(ys)} papers, {min(ys)}–{max(ys)})")
+    else:
+        lines.append("- (none)")
+    lines.append("\n**Tier 1b — HISTORICAL ONLY (do NOT add to the daily scan)** "
+                 "(≥2 papers but none from 2020+ — likely dead/renamed venues):")
+    if historical:
+        for name, ys in sorted(historical.items(), key=lambda kv: -len(kv[1])):
+            lines.append(f"- {name} ({len(ys)} papers, {min(ys)}–{max(ys)})")
+    else:
+        lines.append("- (none)")
+    lines.append("\n**Tier 1c — single-paper venues (no recommendation, for reference):**")
+    if singles:
+        for name, ys in sorted(singles.items(), key=lambda kv: -kv[1][0])[:15]:
+            lines.append(f"- {name} ({ys[0]})")
+    else:
+        lines.append("- (none)")
     lines.append("\n**Tier 2 — promote to direct-scan?** (listed in the 47 but not direct-scanned; "
                  "shown with corpus paper counts — prefer venues with high library weight)")
     listed_counts = Counter()
@@ -714,27 +807,43 @@ def run_sections():
     counts, total = cl.matrix_totals(sections)
     kw_norm = {s: [cl.normalize(k) for k in v["keywords"]] for s, v in sections.items()}
 
+    def era_of(year):
+        if not year:
+            return "?"
+        y = int(year)
+        if y < 2010:
+            return "2000-09"
+        if y < 2020:
+            return "2010-19"
+        return "2020-26"
+
     # non-exclusive coverage + primary section (most matched keywords)
     cover = Counter()
     prim = Counter()
+    cover_era = defaultdict(Counter)  # era -> section -> n
     for p in corpus["papers"]:
         blob = f"{p['title_norm']} {p['abstract_norm']}"
         matched = {s: [k for k in kws if k in blob] for s, kws in kw_norm.items()}
         matched = {s: hits for s, hits in matched.items() if hits}
+        era = era_of(p["year"])
         for s in matched:
             cover[s] += 1
+            cover_era[era][s] += 1
         if matched:
             best = max(order, key=lambda s: (len(matched.get(s, [])), -order.index(s)))
             prim[best] += 1
 
-    lines = ["## 5. Section distribution",
-             "| Section | Keywords | Corpus papers matched (any kw) | Primary (most kws) |", "|---|---|---|---|"]
+    lines = ["## 5. Section distribution (by era)",
+             "| Section | Keywords | Total | 2000–09 | 2010–19 | 2020–26 |",
+             "|---|---|---|---|---|---|"]
     for s in order:
-        lines.append(f"| {s} — {sections[s]['name'][:42]} | {counts[s]} | {cover.get(s, 0)} | {prim.get(s, 0)} |")
+        lines.append(f"| {s} — {sections[s]['name'][:36]} | {counts[s]} | {cover.get(s, 0)} | "
+                     f"{cover_era['2000-09'].get(s, 0)} | {cover_era['2010-19'].get(s, 0)} | {cover_era['2020-26'].get(s, 0)} |")
     lines.append("")
     report_append("\n".join(lines))
     print("section coverage:", dict(cover))
     print("primary:", dict(prim))
+    print("by era:", {e: dict(c) for e, c in cover_era.items()})
     print("sections done")
 
 
@@ -808,6 +917,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("stage", choices=["build-corpus", "enrich", "audit", "mine", "venue", "sections", "precision", "all"])
     ap.add_argument("--window", default="2025-2026")
+    ap.add_argument("--since", type=int, default=None, help="include papers with year >= N (e.g. 2000)")
     ap.add_argument("--enrich-only", action="store_true")
     args = ap.parse_args()
 
@@ -815,7 +925,10 @@ def main():
         os.remove(OUT_MD)  # fresh report for full runs
 
     if args.stage in ("build-corpus", "all"):
-        build_corpus(args.window.split("-") if args.window != "all" else None)
+        if args.since:
+            build_corpus(None, since=args.since)
+        else:
+            build_corpus(args.window.split("-") if args.window != "all" else None)
     if args.stage in ("enrich", "all"):
         enrich()
     if args.stage in ("audit", "all"):
