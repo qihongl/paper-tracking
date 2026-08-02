@@ -32,6 +32,8 @@ Search using keywords from the matrix below. Run at least 8–12 searches coveri
 | Psychonomic Bulletin & Review | `https://link.springer.com/journal/13423` |
 | Hippocampus | `https://onlinelibrary.wiley.com/journal/10981063` |
 | Journal of Experimental Psychology: General | `https://www.apa.org/pubs/journals/xge` |
+| Journal of Neuroscience | `https://www.jneurosci.org/` |
+| NeuroImage | `https://www.sciencedirect.com/journal/neuroimage` |
 | Scientific Reports | `https://www.nature.com/srep/` |
 | Nature | `https://www.nature.com/nature/` |
 | Cerebral Cortex | `https://academic.oup.com/cercor` |

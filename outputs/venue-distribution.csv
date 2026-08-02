@@ -7,12 +7,12 @@ rank,venue,status,n_papers,n_2020plus,year_range,cum_share_all,cum_share_2020plu
 6,Proceedings of the National Academy of Sciences,direct-scan,118,35,2005–2026,0.369,0.556
 7,Nature,direct-scan,115,52,2000–2026,0.398,0.364
 8,Nature Communications,direct-scan,114,81,2014–2026,0.427,0.326
-9,The Journal of Neuroscience,listed,100,17,2003–2024,0.453,0.631
+9,The Journal of Neuroscience,direct-scan,100,17,2003–2024,0.453,0.631
 10,arXiv (stat.ML),arxiv-covered,100,8,2011–2024,0.478,0.746
 11,arXiv (cs.CL),arxiv-covered,97,47,2013–2026,0.503,0.470
 12,Trends in Cognitive Sciences,direct-scan,97,29,2000–2026,0.527,0.601
 13,Science,direct-scan,78,16,2000–2026,0.547,0.643
-14,NeuroImage,listed,77,13,2002–2023,0.566,0.693
+14,NeuroImage,direct-scan,77,13,2002–2023,0.566,0.693
 15,arXiv (cs.CV),arxiv-gap,77,8,2012–2026,0.586,0.752
 16,Nature Human Behaviour,direct-scan,56,39,2016–2026,0.600,0.530
 17,Nature Reviews Neuroscience,direct-scan,55,14,2000–2026,0.614,0.663
