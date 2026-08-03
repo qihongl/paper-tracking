@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker — 2026-08-03</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .tag-lib { background: #d1fae5; color: #047857; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+</style>
+</head>
+<body>
+
+<h1>🧠 Daily Paper Tracker</h1>
+<div class="date">August 3, 2026 &middot; Window: since last run (2026-07-31) &middot; 12 papers</div>
+
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.29503" target="_blank">The Grokked Illusion: True Equilibrium Mitigates Catastrophic Forgetting</a></td>
+        <td class="col-authors">Zhang, Chan, Shang (Zhang)</td>
+        <td class="col-finding">High-entropy (large-volume) networks retain ~95% of original-task accuracy under new-learning interference vs &lt;75% for AdamW — effective rank buffers against forgetting.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.29433" target="_blank">Know It, Act on It: Investigating Memory Utilization in LLM Personalization</a></td>
+        <td class="col-authors">Feng, Ma, Chersoni</td>
+        <td class="col-finding">Decoupled Know/Act tests show models often store user preferences but fail to act on them — isolating a "memory utilization" gap distinct from forgetting.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.64898/2026.07.30.740767" target="_blank">Synaptic engram underlies memory</a></td>
+        <td class="col-authors">Han, Do&hellip;Kaang</td>
+        <td class="col-finding">Optically implemented STDP reverses learning-induced synaptic strengthening between engram ensembles and impairs retrieval — causal evidence for the synaptic engram.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1523/JNEUROSCI.0047-26.2026" target="_blank">Hippocampal theta distinguishes memory-guided and exploratory saccades in humans</a></td>
+        <td class="col-authors">Castelblanco Riveros&hellip;Robertson</td>
+        <td class="col-finding">In 11 patients, hippocampal theta power/coherence dissociate memory-guided from memory-independent fixations during naturalistic movie viewing (slow vs fast theta separable).</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1523/JNEUROSCI.0309-26.2026" target="_blank">Positive and Negative Retinotopic Codes in the Human Hippocampus</a></td>
+        <td class="col-authors">Angeli, Steel, Robertson</td>
+        <td class="col-finding">7T pRF modeling reveals a robust voxel-scale bivalent retinotopic code across hippocampal subfields and long axis, persisting at rest.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.64898/2026.07.29.741555" target="_blank">Memory encoding reprograms neuronal transcriptional responses via durable chromatin remodeling</a></td>
+        <td class="col-authors">Ke, Sun, Greenleaf, Schnitzer</td>
+        <td class="col-finding">mPFC memory encoding durably reprograms transcriptional responses via chromatin remodeling — a substrate for remote-memory persistence over weeks&ndash;months.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.64898/2026.07.30.741885" target="_blank">A progressive reduction in basal phosphorylation of glutamate receptors&hellip;maturation of hippocampal theta-burst-induced LTP</a></td>
+        <td class="col-authors">Bento, Guerreiro-Pinto&hellip;Cunha-reis</td>
+        <td class="col-finding">From weaning to adulthood, rising AMPA GluA1/GluA2 ratio and falling basal phosphorylation track the developmental maturation of theta-burst LTP.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.29554" target="_blank">Exponential Capacity in Multilayer Hetero-Associative Neural Networks</a></td>
+        <td class="col-authors">Agliari, Barra, Ladiana</td>
+        <td class="col-finding">L-layer binary network with exponential-of-product Mattis energy achieves exponentially growing hetero-associative capacity (cue&rarr;different target).</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.3758/s13421-026-01924-z" target="_blank">Conditional automaticity of memory-driven attention</a></td>
+        <td class="col-authors">Kim, Kwon, Heo, Han</td>
+        <td class="col-finding">WM-matching distractors slow RT but add no accuracy cost beyond nonmatching distractors — capture acts post-perceptually, downstream of target encoding.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s41597-026-07955-0" target="_blank">Human neuron activity during an 83-minute movie from 2,286 neurons and 29 patients</a></td>
+        <td class="col-authors">Darcher, Gerken&hellip;(SUMMER)</td>
+        <td class="col-finding">NWB single-unit MTL dataset during a full film; population decoding of movie features exceeds chance (Cohen's &kappa; up to 0.28) — directly usable for Sherlock/PIEMAN replication.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://doi.org/10.1002/hipo.70114" target="_blank">An Update on the Model of Connectivity of the Hippocampal Formation (I): The Perforant Pathway to the Dentate Gyrus</a></td>
+        <td class="col-authors">Arellano, Rakic</td>
+        <td class="col-finding">Revised rat EC&rarr;DG model: ~80k projecting neurons, divergence 1:20&ndash;1:30, ~8k EC synapses/GC — far denser/more divergent than the classic Amaral model.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://doi.org/10.7554/eLife.112308" target="_blank">Toothy: an interactive platform for dentate spike curation</a></td>
+        <td class="col-authors">Esfahany, Schott&hellip;Farrell</td>
+        <td class="col-finding">Interactive curation/benchmark platform for dentate spikes — reproducible tooling for hippocampal events implicated in memory alongside ripples.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.29503" target="_blank">The Grokked Illusion: True Equilibrium Mitigates Catastrophic Forgetting</a>
+    </div>
+    <div class="paper-meta">
+      Xiaotian Zhang, Lai Shun Chan, Yue Shang, Entao Yang, Ge Zhang &middot; arXiv (cs.LG), 2026-07-31
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Uses grokking in modular arithmetic as a controlled setting and a noise-injection protocol to compare AdamW-trained transformers against high-entropy solutions sampled from Wang&ndash;Landau Molecular Dynamics at identical saturated (100%) performance. Both model classes are then forced to memorize new data with random labels, and original-task retention is measured.</p>
+      <p><strong>Finding:</strong> AdamW-trained models suffer catastrophic forgetting &mdash; original-task test accuracy drops from 100% to below 75% &mdash; whereas high-entropy models retain ~95%. SVD of weights shows high-entropy networks have significantly higher effective rank in attention and MLP layers both before and after noise, suggesting richer feature representations act as a buffer against interference. The authors coin "grokked illusion" to denote hidden fragility behind apparent generalization. Connects to Pillar 1 (lifelong learning / forgetting) by showing that perfect generalization does not imply equal robustness to new-learning interference.</p>
+    </div>
+    <div class="flag">⚠ Demonstrated in modular-arithmetic grokking (toy setting); generalization to large-scale LLMs untested.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.29433" target="_blank">Know It, Act on It: Investigating Memory Utilization in LLM Personalization</a>
+    </div>
+    <div class="paper-meta">
+      Zhaoxin Feng, Jianfei Ma, Emmanuele Chersoni &middot; arXiv (cs.CL), 2026-07-31
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Introduces a decoupled evaluation paradigm that administers paired "Know" and "Act" tests to LLM agents: the Know test checks whether a previously shared user preference is present/retrievable in context, and the Act test checks whether the model tailors its response accordingly. This isolates whether failures stem from not remembering or from remembering-but-not-using.</p>
+      <p><strong>Finding:</strong> Reveals a "knowledge utilization problem": models frequently pass the Know test yet fail the Act test, i.e., relevant preferences are in context but not acted upon. This decouples storage from usage and is directly relevant to the lingering-memory framing (does the model remember vs. use prior context). A methodological contribution to how we evaluate long-term/episodic memory use in agents.</p>
+    </div>
+    <div class="flag">⚠ Behavioral evaluation only; no mechanistic account of why utilization fails.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.64898/2026.07.30.740767" target="_blank">Synaptic engram underlies memory</a>
+    </div>
+    <div class="paper-meta">
+      D. H. Han, H. Lee, J. Do&hellip;B.-K. Kaang (Seoul National Univ) &middot; bioRxiv, posted 2026-07-31
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Developed optically implemented spike-timing-dependent plasticity (oSTDP) that induces synaptic depression selectively at target synapses between memory-encoding ("engram") ensembles. This lets the authors test whether learning-induced synaptic reorganization is causally sufficient for memory, independently of heterosynaptic and intrinsic plasticity confounds.</p>
+      <p><strong>Finding:</strong> Selective reversal of the learning-induced synaptic changes between engram ensembles impairs memory retrieval, establishing the "synaptic engram" as a causal substrate rather than a correlate. A clean causal demonstration that inter-ensemble synaptic strengthening is necessary for memory &mdash; directly on-pillar for Pillar 2 (hippocampal/engram mechanisms).</p>
+    </div>
+    <div class="flag">⚠ Preprint; quantitative effect sizes (e.g., retrieval-impairment magnitude) not in the abstract.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1523/JNEUROSCI.0047-26.2026" target="_blank">Hippocampal theta distinguishes between memory-guided and exploratory saccades in humans</a>
+    </div>
+    <div class="paper-meta">
+      C. A. Castelblanco Riveros, P. A. Angeli, M. A. A. van der Meer, K. A. Bujarski, C. E. Robertson (Dartmouth) &middot; J Neurosci, Online ahead of print (2026-07-30/31)
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Combined intracranial EEG and eye-tracking in 11 neurosurgical patients and used fixation-locked analyses during episodic memory-guided viewing of naturalistic scenes (movies). Tested whether hippocampal theta couples to eye movements, whether slow (3&ndash;6 Hz) and fast (6&ndash;10 Hz) theta bands play dissociable functions, and whether coupling is sensitive to the direction of the upcoming saccade.</p>
+      <p><strong>Finding:</strong> Hippocampal theta dynamics differentiate memory-guided from memory-independent fixations via power and coherence mechanisms that are both temporally and spectrally dissociable (emerging immediately after fixations). Shows hippocampal theta coordinates mnemonic processing with oculomotor behavior during real-world episodic retrieval &mdash; a human extension of the primate hippocampal-theta/eye-movement coupling literature and relevant to Pillar 2 (hippocampal mechanisms of memory-guided behavior).</p>
+    </div>
+    <div class="flag">⚠ Small n (11 patients); invasive recordings limit generalizability.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1523/JNEUROSCI.0309-26.2026" target="_blank">Positive and Negative Retinotopic Codes in the Human Hippocampus</a>
+    </div>
+    <div class="paper-meta">
+      P. A. Angeli, A. Steel, C. E. Robertson (Dartmouth / UIUC) &middot; J Neurosci, Online ahead of print (2026-07-31)
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Leveraged high-resolution 7T fMRI with voxel-scale visual population receptive field (pRF) modeling in 7 densely-sampled individuals (5 female) to test whether a bivalent retinotopic code &mdash; previously observed at the cortical apex of large-scale memory networks &mdash; also persists within the hippocampus itself.</p>
+      <p><strong>Finding:</strong> Reveals a robust, voxel-scale retinotopic code broadly distributed across hippocampal subfields and along the long axis, comprised of roughly equal proportions of pRFs with positive and negative amplitude responses to visual stimulation. Hippocampal pRFs showed canonical visual properties (stable valence, visual-field preferences, contralateral bias) and the retinotopic structure persisted at rest. Reframes the hippocampus as carrying a latent visual scaffold at the apex of the visual hierarchy &mdash; relevant to Pillar 2 (hippocampal representational geometry).</p>
+    </div>
+    <div class="flag">⚠ Small n (7 participants); 7T pRF inference in hippocampus is contested.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.64898/2026.07.29.741555" target="_blank">Memory encoding reprograms neuronal transcriptional responses via durable chromatin remodeling</a>
+    </div>
+    <div class="paper-meta">
+      Y. Ke, X. Sun, W. J. Greenleaf, M. J. Schnitzer (Stanford) &middot; bioRxiv, posted 2026-07-31
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Examined how medial prefrontal cortex (mPFC) long-term memory circuits integrate prior and new experiences. Profiled the durable transcriptional and chromatin remodeling triggered by memory encoding, linking initial molecular activation to the persistent synaptic/transcriptional/epigenetic changes that support remote memory.</p>
+      <p><strong>Finding:</strong> Memory encoding durably reprograms neuronal transcriptional responses via chromatin remodeling, providing a mechanistic substrate for how remote memories persist over weeks&ndash;months in rodents (and years in humans). Positions epigenetic/chromatin state as the bridge between transient encoding activity and long-timescale memory maintenance &mdash; on-pillar for Pillar 2 (systems consolidation / memory persistence).</p>
+    </div>
+    <div class="flag">⚠ Preprint; behavioral-memory link and effect sizes not in the abstract.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.64898/2026.07.30.741885" target="_blank">A progressive reduction in basal phosphorylation of glutamate receptors along postweaning development accompanies maturation of hippocampal theta-burst-induced LTP</a>
+    </div>
+    <div class="paper-meta">
+      M. Bento, V. Guerreiro-Pinto, M. Gil, N. C. Rodrigues, D. Cunha-reis &middot; bioRxiv, posted 2026-07-31
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Tracked developmental changes in the basal phosphorylation state of synaptic proteins essential for transmission and hippocampal LTP from weaning (3 weeks) to adulthood (12 weeks) in rats, elicited via theta-burst stimulation.</p>
+      <p><strong>Finding:</strong> Synaptic AMPA GluA1 and GluA2 subunit levels increased with age, but to different extents (raising the GluA1/GluA2 ratio), while basal phosphorylation of these receptors progressively declined. The reduction in basal phosphorylation accompanies the maturation of theta-burst-induced LTP &mdash; a developmental gating story for hippocampal plasticity. Relevant to Pillar 2 (hippocampal synaptic plasticity mechanisms).</p>
+    </div>
+    <div class="flag">⚠ Preprint; rodent developmental study &mdash; translational relevance to human memory unestablished.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.29554" target="_blank">Exponential Capacity in Multilayer Hetero-Associative Neural Networks</a>
+    </div>
+    <div class="paper-meta">
+      E. Agliari, A. Barra, A. Ladiana &middot; arXiv (stat.ML), 2026-07-31
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Introduces and analyzes an exponential neural network of L layers of N binary neurons, each layer carrying its own dataset, whose energy is an exponential of the product of the per-layer Mattis overlaps. The energy is minimized precisely when each layer retrieves its target pattern, enabling hetero-associative mapping (a cue in one layer retrieves a different target in another).</p>
+      <p><strong>Finding:</strong> Establishes analytically that the network stores a number of patterns growing exponentially with N &mdash; extending classical Hopfield networks (auto-associative) to deep hetero-associative memory with exact retrieval-phase behavior. This is a theoretical contribution to associative / content-addressable memory capacity, directly in the spirit of Pillar 3 (KV / associative memory networks) and complements prior dense-associative-memory work tracked here.</p>
+    </div>
+    <div class="flag">⚠ Theoretical model (binary neurons, equilibrium statics); biological or transformer realization not addressed.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.3758/s13421-026-01924-z" target="_blank">Conditional automaticity of memory-driven attention: Dissociable effects on reaction time and accuracy</a>
+    </div>
+    <div class="paper-meta">
+      S. Kim, J. Kwon, S. Heo, S. W. Han (Chungnam National Univ) &middot; Memory &amp; Cognition, 2026-07-30
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Two visual search tasks differing in filtering demands and structure (T/L search; line-search), with set size varied. Measured both reaction time and accuracy for working-memory-matching vs. nonmatching distractors, emphasizing accuracy as the index of target-report fidelity, to determine whether memory-driven attentional capture (MDAC) penetrates perception.</p>
+      <p><strong>Finding:</strong> WM-matching distractors reliably slowed responses across both experiments (a robust attentional-priority signal from WM), but produced no additional accuracy decrement beyond nonmatching distractors. Because accuracy &mdash; the cleaner index of perceptual/target encoding &mdash; was not specifically harmed, the authors conclude MDAC operates downstream of initial target encoding (later decisional/response stage) rather than as a uniquely perceptual impairment. Constrains strong claims that WM-matching distractors uniformly penetrate perception.</p>
+    </div>
+    <div class="flag">⚠ Numerical effect sizes not reported in the abstract (OSF data available).</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s41597-026-07955-0" target="_blank">Human neuron activity during an 83-minute movie from 2,286 neurons and 29 patients</a>
+    </div>
+    <div class="paper-meta">
+      A. Darcher, F. Gerken&hellip;(Mormann lab, Bonn) &middot; Scientific Data, 2026-07-30
+      <span class="tag tag-cross">Cross-cutting</span>
+      <span class="tag tag-lib">📚 matches-library</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Intracranial single-unit recordings (Behnke&ndash;Fried microwire bundles) from human medial temporal lobe &mdash; amygdala, hippocampus, entorhinal, parahippocampal cortex &mdash; during complete presentation of the 83-minute film <em>500 Days of Summer</em> to 29 epilepsy patients (2,286 neurons; 1,190 single-units). Provides frame-wise annotations of 53 movie features and an NWB-formatted, ML-ready release with a decoding codebase.</p>
+      <p><strong>Finding:</strong> Releases the largest naturalistic human MTL single-neuron movie dataset to date. Technical validation shows single-neuron tuning to movie features (ZETA test; e.g., 195 neurons responsive to camera cuts) and population decoding (LSTM) of characters/settings/cuts exceeding chance (Cohen's &kappa; up to 0.28 in amygdala for "Summer"; parahippocampal cortex tops scene-cut decoding). <strong>Directly actionable</strong> for the researcher's ongoing Sherlock / PIEMAN / Tunnel naturalistic replication analyses &mdash; a human MTL single-neuron counterpart to the fMRI movie-viewing datasets, with frame-aligned annotations. Library cross-check confirms strong affinity (surfaced the Faraut human-MTL single-neuron dataset and Rutishauser 2019 declarative-memory papers).</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1002/hipo.70114" target="_blank">An Update on the Model of Connectivity of the Hippocampal Formation (I): The Perforant Pathway to the Dentate Gyrus</a>
+    </div>
+    <div class="paper-meta">
+      J. I. Arellano, P. Rakic (Yale) &middot; Hippocampus, 2026 Sep;36(5):e70114
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Updates the classic Amaral et al. (1990) rat perforant-pathway model using design-based stereology and molecular criteria &mdash; defining entorhinal cortex (EC) layer II by reelin expression, since only reelin-expressing layer II neurons project to the hippocampus &mdash; and quantitatively reassesses divergence and synaptic load onto dentate granule cells.</p>
+      <p><strong>Finding:</strong> ~80,000 EC layer II neurons project to the dentate gyrus (vs. the old 200,000 estimate), with divergence of 1:20&ndash;1:30 (vs. 1:5) and each EC neuron contacting ~68,000&ndash;86,000 granule cells; each granule cell receives ~8,000 EC synapses. Reveals a far more divergent and densely connected entorhinal input than previously assumed, reshaping the calculus for pattern separation and realistic hippocampal modeling. Useful quantitative scaffolding for Pillar 2 (dentate gyrus / pattern separation).</p>
+    </div>
+    <div class="flag">⚠ Quantitative model / review synthesis, not new empirical data; MEC/LEC split wording in abstract vs. table is inconsistent.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.7554/eLife.112308" target="_blank">Toothy: an interactive platform for dentate spike curation</a>
+    </div>
+    <div class="paper-meta">
+      K. N. Esfahany, A. L. Schott&hellip;J. S. Farrell &middot; eLife Reviewed Preprint v1, 2026-07-31
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Presents Toothy, an interactive platform for curating dentate spikes &mdash; hippocampal electrophysiology events increasingly implicated in memory alongside sharp-wave ripples &mdash; from large-scale recordings, addressing the lack of standardized curation/benchmark tooling.</p>
+      <p><strong>Finding:</strong> Provides a reproducible curation workflow and benchmark for dentate spike detection, enabling consistent analysis across labs. A methods/benchmark contribution (category F) relevant to Pillar 2 hippocampal physiology &mdash; dentate spikes are gaining traction as a memory-computation signal, so standardized tooling lowers the barrier to studying them.</p>
+    </div>
+    <div class="flag">⚠ Method/benchmark paper; empirical memory-link validation is limited.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-peri">Peripheral</div>
+  <div class="empty-section">No papers today.</div>
+</div>
+
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>Vagus nerve promotes memory in rats via nutrient-induced septo-hippocampal ACh signaling</strong> (Nat Commun s41467-026-73896-2) &mdash; on-pillar (gut&ndash;brain&rarr;dorsal hippocampus ACh&rarr;memory) but <em>published 04 June 2026</em>, far outside the window (surfaced only via the journal's static Collections listing).</li>
+    <li><strong>Distinct spatial associations of adversity with hippocampal macro- and microstructure in early adolescence</strong> (bioRxiv 741706) &mdash; ABCD correlational hippocampal-structure finding; no causal/memory-mechanism manipulation. Low priority.</li>
+    <li><strong>Metabolic brain networks switch between sparsely connected baseline and highly integrated states</strong> (bioRxiv 695042) &mdash; fPET network-state switching for "cognition" generally; not memory-specific.</li>
+    <li><strong>Dissociable thalamic oscillatory mechanisms support motor sequence learning</strong> (bioRxiv 741410) &mdash; human VIM / serial reaction time; motor/procedural learning, not memory.</li>
+    <li><strong>A Neurotensin Brake on Exploratory Drive under Persistent Threat</strong> (bioRxiv 741073) &mdash; avoidance behavior; not memory.</li>
+    <li><strong>ResKV / Mixture-of-Translators / Zero-Mem / TransMem / Tokenizer-Agnostic Engram / SESA / Beyond Retrieval: Analytic Memory / Memory Provenance Laundering</strong> (arXiv 2607.29591, 2607.28979, 2607.29377, 2607.29032, 2607.29065, 2607.29468, 2607.29440, 2607.29167) &mdash; LLM/KV agent-memory <em>engineering</em> without a concrete memory-mechanism claim (retention/retrieval/forgetting/drift). Excluded per the quality bar.</li>
+    <li><strong>Conditional automaticity&hellip;</strong> included above; note its OSF data (osf.io/2becf) for full statistics.</li>
+    <li><strong>PubMed clinical / pharmacology / epilepsy cluster</strong> (e.g., OEA modulates fear memory + rapamycin hippocampus 10.1016/j.neuropharm.2026.111120; CBD seizure/recognition-memory 10.1016/j.expneurol.2026.115946; tACS modulates WM RT 10.1016/j.neuroimage.2026.122157; WM/emotion predictors of depression 10.1038/s41380-026-03771-5; CA3 visual-WM epilepsy 10.1093/braincomms/fcag284; theta-gamma epilepsy 10.1016/j.nbd.2026.107552) &mdash; narrow clinical/pharmacology/epilepsy, no general memory-mechanism claim.</li>
+    <li><strong>Out-of-window bioRxiv preprints indexed by PubMed 07-31</strong> (hierarchical musical-structure integration 738980 posted 07-22; neural-manifold connectomics 740595 posted 07-24; cerebellum nonmotor learning 740142 posted 07-22; fear-memory sex differences 702335 posted 07-20; circadian memory-gene rhythm 738771 posted 07-21; single-pulse TMS on WM 738980 posted 07-21) &mdash; posted before the run window; not re-reported.</li>
+    <li><strong>eLife PKM&zeta; hippocampal LTP/memory (110499, Jul 22) &amp; "Hippocampal Network: Stronger memories through smarter stimulation" (111806, Jun 9)</strong> &mdash; outside window / already in store.</li>
+  </ul>
+</div>
+
+</body>
+</html>
