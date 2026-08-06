@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker — 2026-08-06</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .summary-table .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .tag-lib { background: #d1fae5; color: #047857; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+</style>
+</head>
+<body>
+
+<h1>🧠 Daily Paper Tracker</h1>
+<div class="date">2026-08-06</div>
+
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2608.04746" target="_blank">Caching for the Future: Scrub Jay Episodic Memory Principles for Agent Memory Systems</a></td>
+        <td class="col-authors">Bhandari et al. (Narang)</td>
+        <td class="col-finding">Type-conditioned temporal decay (What–Where–When tuples) makes an LLM memory store the only retrieval system with positive GenGap (+0.108).</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2608.05095" target="_blank">Hierarchical Graph Memory for LLM Agents with Path-level Localization and Rewrite</a></td>
+        <td class="col-authors">Yue et al. (Ziwei Zhang)</td>
+        <td class="col-finding">Coarse-to-fine graph memory + coordinated path-level rewrite beats flat-graph baselines on long-horizon QA and conflict-aware memory.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2608.04830" target="_blank">ContextWeave: A Real-World Workflow Benchmark</a></td>
+        <td class="col-authors">Wang et al. (Qiu)</td>
+        <td class="col-finding">Longitudinal agent-memory benchmark from 14 participants' real workflows: recall raises Workspace 68→78 and Preference 42→71.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s41593-026-02388-9" target="_blank">Hippocampal CA3 connectomics reveals a gradient of mossy fiber inputs and selective feedforward inhibition onto pyramidal cells</a></td>
+        <td class="col-authors">Zheng, Park…Tank</td>
+        <td class="col-finding">proximodistal MF-input gradient + MF→perisomatic-interneuron feedforward inhibition selectively targeting a pyramidal subtype.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s41593-026-02381-2" target="_blank">Creating true and false memories from forgotten information in Drosophila</a></td>
+        <td class="col-authors">Yang…Felsenberg</td>
+        <td class="col-finding">Forgotten aversive memories persist as silent traces; reminders recover true memory or, if manipulated, create false memory via separable DA pathways.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1016/j.celrep.2026.117794" target="_blank">Subicular plateaus signal reward locations during goal-directed behavior</a></td>
+        <td class="col-authors">Bhatia, Adel, Grienberger</td>
+        <td class="col-finding">NMDA-dependent subicular plateau bursts cluster near learned reward locations and rearrange when the reward moves.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1088/1741-2552/ae93f5" target="_blank">Integrated decoding of local and prospective spatial representations for future decision prediction</a></td>
+        <td class="col-authors">Wang, Luo…Zheng</td>
+        <td class="col-finding">CA1 local + prospective features decode future choice at 74.4% and trajectory at 78.2% on a modified T-maze.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2608.04893" target="_blank">When Does Latent Communication Pay? A Causal Audit of Relayed KV Caches in Multi-Agent LLMs</a></td>
+        <td class="col-authors">Cheng, Das, Ramnath</td>
+        <td class="col-finding">Mismatched-cache audit shows a large KV-cache effect need not be a pairing effect — benchmark deltas don't prove latent-thought transmission.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://doi.org/10.1080/09658211.2026.2712599" target="_blank">Boundary-constrained chunking shapes local-global positional representations in working memory</a></td>
+        <td class="col-authors">Yang, Wang, Zhan</td>
+        <td class="col-finding">Separable local–global positional geometry in WM only emerges with strong chunking cues; absent boundaries collapse to 1-D.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.1162/IMAG.a.1321" target="_blank">Phase similarity between similar objects indicates representational merging across retrieval training but not sleep</a></td>
+        <td class="col-authors">Caldwell…Michelmann</td>
+        <td class="col-finding">Retrieval training (not sleep) drives additional representational merging; greater merging predicts better lure discrimination.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.1162/JOCN.a.2682" target="_blank">Memory Traces Reflect How They Were Last Accessed</a></td>
+        <td class="col-authors">Qi, Coutanche</td>
+        <td class="col-finding">Prior semantic-access level during retrieval leaves decodable traces in early visual, ventral temporal, and hippocampal recognition patterns.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.1093/scan/nsag063" target="_blank">Tuning out emotional distractors by tuning in theta rhythm: improving visual working memory using TMS</a></td>
+        <td class="col-authors">Thiffault, Brisson, Blanchette</td>
+        <td class="col-finding">Left-DLPFC theta-rTMS boosts vWM accuracy by inhibiting emotional-distractor processing rather than amplifying relevant items.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2608.05111" target="_blank">Reward Structure Shapes the Interaction Between Episodic Exploration and Neural Memory in Reinforcement Learning</a></td>
+        <td class="col-authors">Malegaonkar, Patil, Christensen</td>
+        <td class="col-finding">Exploration bonus and memory are complements, not substitutes: an identical bonus yields three regimes tracked by reward structure, not density.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2608.04746" target="_blank">Caching for the Future: Scrub Jay Episodic Memory Principles for Agent Memory Systems</a>
+    </div>
+    <div class="paper-meta">
+      Bhandari, Wadhwani, Kumar, Narang &middot; arXiv, 2026-08-05 (v1)
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Operationalizes the western scrub jay's type-conditioned temporal decay as a per-memory auto-classified perishability coefficient π_i in an external LLM-agent memory store. Each memory is a jointly-bound What–Where–When tuple with an estimated perishability and utility horizon τ_i, retrieved by query-adaptive scoring and revised retroactively at O(1) LLM calls. Evaluated with a new Temporal Generalization Test (TGT) using held-out retention intervals and a Generalization Gap (GenGap) metric, plus MemoryAgentBench EventQA-64k.</p>
+      <p><strong>Finding:</strong> On TGT, ScrubJay-MEM is the only retrieval-based system with substantially positive GenGap (+0.108); on EventQA-64k it improves F1 by +2.66 over Mem0 and +3.09 over Qwen3-Embedding-4B. A decay ablation collapses GenGap by 5.7×, establishing type-conditioned decay as necessary. Directly relevant to Pillar 1: explicit, mechanism-grounded (perishable-fact) temporal memory rather than uniform persistence.</p>
+    </div>
+    <div class="flag">Gains narrow under stronger backbones and reverse on fact-consolidation tasks — contribution scoped to temporal reasoning over perishable facts.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2608.05095" target="_blank">Hierarchical Graph Memory for LLM Agents with Path-level Localization and Rewrite</a>
+    </div>
+    <div class="paper-meta">
+      Yue, Wang, Zhang, Zheng, Ziwei Zhang &middot; arXiv, 2026-08-05 (v1)
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Proposes an evolving hierarchical graph memory (coarse-to-fine upper-level nodes + MemoryUnits) to reduce irrelevant context during retrieval, plus MicroGraph-based path-level localization that identifies the support subgraph and evidence path before rewrite, and a coordinated rewriting method that jointly revises intra-unit memory and inter-unit dependencies. Tested on long-term conversational QA and conflict-aware memory benchmarks.</p>
+      <p><strong>Finding:</strong> Substantial improvements over flat-graph baselines in answer quality and token efficiency, with better accuracy and query-valid evidence selection under dynamic, static, and conditional conflicts. Relevant to Pillar 1 as a structured, update-efficient long-horizon memory organization — structured state as the active ingredient (cf. SLEUTH).</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2608.04830" target="_blank">ContextWeave: A Real-World Workflow Benchmark</a>
+    </div>
+    <div class="paper-meta">
+      Wang, Yao, … Qiu &middot; arXiv, 2026-08-05 (v1)
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A longitudinal benchmark reconstructing privacy-preserved, multi-month workflows of 14 participants into 1,005 executable tasks (568 core evaluation), with instructions, containerized environments, trajectories, and rubrics. Measures workspace quality and alignment with participant-specific preferences, plus diagnostics of relevance, continuity, solvability, and robustness to misleading recall.</p>
+      <p><strong>Finding:</strong> Across six memory components under a fixed model, the strongest configuration raises Workspace Score 68.08→78.20 and Preference Score 41.50→70.60; with a fixed memory component, recall improves outcomes for all five tested base models, though gains vary. Findings motivate memory systems that optimize reliable use during execution, not just retrieval relevance. On-pillar Pillar 1 as an evaluation harness for experience-rich agent memory.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s41593-026-02388-9" target="_blank">Hippocampal CA3 connectomics reveals a gradient of mossy fiber inputs and selective feedforward inhibition onto pyramidal cells</a>
+    </div>
+    <div class="paper-meta">
+      Zheng, Park, … Tank &middot; Nature Neuroscience, 2026-08-05
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Assembled a ~1×1×0.1 mm³ 3D electron-microscopy volume from mouse hippocampal CA3 and reconstructed all soma-containing neurons (1,815 pyramidal, 229 inhibitory) and &gt;55,000 mossy-fiber (MF) axons via proofread automated segmentation.</p>
+      <p><strong>Finding:</strong> Pyramidal cells receive more numerous MF inputs along a proximodistal gradient (some distal cells showing high convergence via small terminals); pyramidal cells share more MF inputs than randomized networks. The authors identify a feedforward inhibitory motif from MFs via perisomatic interneurons that selectively targets a pyramidal subtype. Large-scale circuit-to-cell-type mapping of CA3 — directly on-pillar Pillar 2 (CA3/place cells, mossy-fiber input statistics, inhibitory control of recall).</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s41593-026-02381-2" target="_blank">Creating true and false memories from forgotten information in Drosophila</a>
+    </div>
+    <div class="paper-meta">
+      Yang, Zattera, … Felsenberg &middot; Nature Neuroscience, 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Used Drosophila to test how forgotten aversive memories are recovered by reminder cues and how recovery can be distorted into false memories; combined behavior with neuronal tracking of mushroom-body output neurons across reminder conditions.</p>
+      <p><strong>Finding:</strong> Forgotten memories persist as silent traces in behaviorally neutral mushroom-body output neurons; reminders recover true memory by reinstating the original trace, while manipulated reminders create false memories. Both true recovery and false formation are context-dependent and gated by separable dopaminergic pathways — forgotten memories re-emerge through a reconstructive process integrating stored and recent information. On-pillar Pillar 2: memory traces, reconstructive retrieval, false-memory formation.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1016/j.celrep.2026.117794" target="_blank">Subicular plateaus signal reward locations during goal-directed behavior</a>
+    </div>
+    <div class="paper-meta">
+      Bhatia, Adel, Grienberger &middot; Cell Reports, 2026-08-05
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> In vivo whole-cell recordings from dorsal subiculum neurons in head-fixed mice performing goal-directed navigation; examined burst origin (plateau events), NMDA-dependence, and organization by pre-onset membrane potential.</p>
+      <p><strong>Finding:</strong> Many subicular bursts arise from plateau events (NMDA-dependent). Plateaus initiated from hyperpolarized potentials clustered near reward locations and required a fixed learned reward location, dynamically rearranging when a new reward location was learned in a familiar environment; depolarized-initiated plateaus were more spatially distributed. Identifies subicular plateaus as a cellular substrate of hippocampal output bursting organized by behavioral state — on-pillar Pillar 2 (hippocampal output, reward coding).</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1088/1741-2552/ae93f5" target="_blank">Integrated decoding of local and prospective spatial representations for future decision prediction</a>
+    </div>
+    <div class="paper-meta">
+      Wang, Luo, Wang, Deng, Zheng &middot; Journal of Neural Engineering, 2026-08-03
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Recorded hippocampal CA1 ensemble activity from rats in a continuous spatial decision task on a modified T-maze; segmented the decision process into starting/running/approaching phases and examined local (place-cell) and prospective (choice-arm) representations over time.</p>
+      <p><strong>Finding:</strong> Central-arm place cells showed increasing trajectory-dependence near the choice point (local theta sequences overrepresenting the actual choice), while prospective representations transitioned from predicting the actual choice during running to representing potential paths more equally near the choice point. Integrating local + prospective features reached 74.4% future-choice accuracy and 78.2% trajectory decoding. On-pillar Pillar 2 (CA1 cognitive map, prospective coding).</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2608.04893" target="_blank">When Does Latent Communication Pay? A Causal Audit of Relayed KV Caches in Multi-Agent LLMs</a>
+    </div>
+    <div class="paper-meta">
+      Cheng, Das, Ramnath &middot; arXiv, 2026-08-05 (v1)
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Causally audits the claim that multi-agent LLM systems gain from relaying KV caches (vs text) by replacing the relayed cache with deranged (mismatched-example), zeroed, and moment-matched random counterparts, under two regimes (receiver needs vs does not need the sender's private info). Uses a pre-registered five-seed TOST with Holm correction on GSM8K/ARC-Challenge/MedQA across Qwen3 scales.</p>
+      <p><strong>Finding:</strong> Where the receiver needs private info, a mismatched cache reads ceiling (100% vs 23–25% for answer-irrelevant relays); where it does not, equivalence within 2.8 points. A large cache effect need not be a pairing effect (zeroing costs 14.7 pts; a mismatched cache only 0.4). Establishes that benchmark deltas do not prove latent-thought transmission — a methodological corrective for treating KV caches as memory stores. On-pillar Pillar 3 (KV cache as memory; causal attribution of what the cache carries).</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1080/09658211.2026.2712599" target="_blank">Boundary-constrained chunking shapes local-global positional representations in working memory</a>
+    </div>
+    <div class="paper-meta">
+      Yang, Wang, Zhan &middot; Memory, 2026-08-04
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-er">Encoding-Retrieval</span>
+      <span class="tag tag-lib">📚 matches-library</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Four behavioral experiments; participants encoded nine-item sequences (structured linguistic, scrambled linguistic, color-segmented shape, uniformly colored shape) and reported probed positions. Parameterized behavioral representational-similarity analysis on position-specific response distributions characterized local vs global positional geometry.</p>
+      <p><strong>Finding:</strong> Structured linguistic sequences produced near-orthogonal local/global positional geometry (clearly separable); color-segmented shapes gave a reduced-angle/reduced-scale (weaker) solution with participant heterogeneity; scrambled/uniform sequences collapsed to 1-D (no separable local-global). Shows chunking does not yield a uniform WM format — separable positional structure depends on the source and strength of chunking cues. On-pillar Pillar 3 (serial/positional representations).</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1162/IMAG.a.1321" target="_blank">Phase similarity between similar objects indicates representational merging across retrieval training but not sleep</a>
+    </div>
+    <div class="paper-meta">
+      Caldwell, Chatburn, Lushington, Hanslmayr, Michelmann &middot; Imaging Neuroscience, 2026-07-31
+      <span class="tag tag-er">Encoding-Retrieval</span>
+      <span class="tag tag-lib">📚 matches-library</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> 30 subjects (27F, 18–34) learned object-word pairs, then immediate recognition, then one of four 120-min interventions (retrieval training, restudy, sleep, wake), then delayed recognition; compared EEG phase similarity between similar/different objects across encoding and each intervention.</p>
+      <p><strong>Finding:</strong> Increased representational similarity between similar objects across encoding (theta, occipital). Crucially, additional merging occurred only across retrieval training (alpha, parieto-occipital), not sleep; greater merging across retrieval training predicted better similar-object-lure discrimination. Concludes sleep and retrieval training induce different memory transformations over equivalent timescales — retrieval training drives rapid gist extraction/neocortical integration; sleep selectively maintains task-relevant details. On-pillar Pillar 2/ER (consolidation, representational transformation).</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1162/JOCN.a.2682" target="_blank">Memory Traces Reflect How They Were Last Accessed</a>
+    </div>
+    <div class="paper-meta">
+      Qi, Coutanche &middot; Journal of Cognitive Neuroscience, 2026-08-04
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> fMRI; participants learned novel word-image pairs, then re-exposure requiring semantic access at item/category/theme levels, then recognition. Compared neural patterns by prior semantic-access level (early visual, ventral temporal, hippocampus) and tested whether same-level access yielded more similar/distinct representations.</p>
+      <p><strong>Finding:</strong> Behavioral performance matched across conditions, but recognition patterns were classifiable by prior semantic-access history in early visual cortex, ventral temporal cortex, and hippocampus; category-level access increased similarity among items in early visual cortex, while item-level access produced more differentiated representations in the visual word form area. Shows semantic-access history during retrieval leaves measurable traces in subsequent neural representations.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1093/scan/nsag063" target="_blank">Tuning out emotional distractors by tuning in theta rhythm: improving visual working memory using TMS</a>
+    </div>
+    <div class="paper-meta">
+      Thiffault, Brisson, Blanchette &middot; Social Cognitive and Affective Neuroscience, 2026-08-04
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Rhythmic TMS (rhTMS) boosted theta power over left DLPFC in 19 healthy participants during a visual change-detection task with neutral/angry-prosody auditory distractors; EEG measured theta power, contralateral delay activity (maintenance), and auditory P2 (distractor processing).</p>
+      <p><strong>Finding:</strong> rhTMS boosted theta power and improved vWM accuracy vs sham; the theta boost associated with lower emotional-distractor processing, not better maintenance. Indicates attentional control of emotional auditory distractors in vWM operates via inhibition of distractors rather than amplification of relevant items.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2608.05111" target="_blank">Reward Structure Shapes the Interaction Between Episodic Exploration and Neural Memory in Reinforcement Learning</a>
+    </div>
+    <div class="paper-meta">
+      Malegaonkar, Patil, Christensen &middot; arXiv, 2026-08-05 (v1)
+      <span class="tag tag-cross">Cross-cutting</span>
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Controlled study crossing episodic exploration bonuses with diverse neural memory architectures across three POMDP environments that vary how memory content is acquired; uses observation-anchored reward machines to separate structural sparsity from potential sparsity.</p>
+      <p><strong>Finding:</strong> An identical bonus yields three regimes — amplifies architectural capacity differences (unsupervised memory discovery), equalizes architectures to a shared ceiling (single reward-supervised cue), or is null (purely scheduled observations). Controlled reward manipulations verify patterns track reward structure, not density. Conclusion: exploration and memory are complements, not substitutes — a bonus induces exposure, only memory converts it to return. On-pillar Pillars 1 &amp; 3 (episodic memory, neural memory architectures).</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-peri">Peripheral</div>
+  <div class="empty-section">No papers today.</div>
+</div>
+
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>Nature Communications — "Place and behavioral modulation of hippocampal neurons during immobility"</strong> (Sartorato/Burgalossi, s41467-026-75492-w) — published 24 Jul 2026, outside the 2026-08-03→08-06 window (predates last run).</li>
+    <li><strong>Nature Communications — "Multimodal evidence for hippocampal engagement and modulation by FC-guided parietal TMS"</strong> (s41467-026-70346-x) — no confirmable in-window online date (Vol 17, Art 3650, 2026); excluded pending date verification.</li>
+    <li><strong>Neuron — "Distinct brain regions map olfactory and visual spaces"</strong> (Davoudi et al., 10.1016/j.neuron.2026.03.008) — published 02 Apr 2026, far outside window.</li>
+    <li><strong>Journal of Neuroscience — "Different Learning Stabilization Processes between Wakefulness and Sleep"</strong> (e2336252026) — could not be verified (DOI 404, no matching record in PubMed/JNeurosci); excluded.</li>
+    <li><strong>Nature Machine Intelligence — free-recall RNN / memory strategies</strong> (s42256-026-01274-0, Li et al.) — already reported 2026-07-23 (Run #19); duplicate.</li>
+    <li><strong>~8 arXiv KV/LLM serving / throughput / compression engineering papers</strong> in window (e.g., S4R 2608.00528, online compaction 2608.00902, "Internet for KV Cache" 2608.01526) — efficiency-only claims, no mechanistic-memory contribution; excluded per quality standard.</li>
+    <li><strong>PubMed memory-keyword hits that were clinical / metabolic / TBI / AD-biomarker reviews</strong> without computational or mechanistic memory-system relevance: CAA + cognition (42555885), ferulic-acid early-life-stress (42555483), microglial/BBB AD (42554945), prediabetic perfusion (42554911), liver–alcohol cognition (42554258), TBI glycoprotein130 (42553406), VAD atrophy (42553336), hippocampal LTP historical review (42554116), hippocampal-cortical review (42552872), sleep–memory book chapters (42547206/207/210/205).</li>
+    <li><strong>Psychon Bull Rev — "Context reinstatement reveals preserved context memory specificity in typical ageing"</strong> (42547664) — relevant but lower priority this cycle; scanned, not included.</li>
+  </ul>
+</div>
+
+</body>
+</html>
