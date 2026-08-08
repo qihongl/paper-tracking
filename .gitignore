@@ -10,3 +10,8 @@ x-archive/
 data/raw/
 data/posts_normalized.json
 
+outputs/2026-08-03-ccn-poster-scan.md
+outputs/2026-08-03-ccn-poster-scan.html
+
+# GitHub Pages deploy staging dir (created at runtime by static.yml, never commit)
+_site/

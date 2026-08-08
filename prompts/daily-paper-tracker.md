@@ -366,9 +366,23 @@ git push
 
 If the push fails (e.g., network issue, merge conflict from overlapping runs), log a brief warning but do NOT fail the run. The HTML file is already saved locally.
 
-### Step 3: Present the HTML
+### Step 3: Verify the GitHub Pages deploy (self-heal — DO NOT SKIP)
 
-Use the `present_files` tool to show the HTML file to the researcher. Include a brief 1–2 sentence summary in your response (e.g., "7 papers today: 3 LLM-Memory, 2 Schema-Episodic, 1 KV-Networks, 1 Encoding-Retrieval. Pushed to GitHub. Live at https://qihongl.github.io/paper-tracking/outputs/YYYY-MM-DD-paper-tracker.html").
+A successful `git push` does **NOT** mean the report is live. The site is published by a separate GitHub Actions workflow (`.github/workflows/static.yml`, build_type `workflow`). That deploy can fail on a transient `upload-pages-artifact` timeout (observed 2026-08-06, run #31104676465 → 404 even though the file was committed), because it keeps serving the *previous* build. Always verify, and auto-recover before you claim success:
+
+1. Get the just-pushed SHA: `git rev-parse HEAD`.
+2. Poll the deploy run for that commit until it finishes:
+   `gh run list --repo qihongl/paper-tracking --commit $(git rev-parse HEAD) --json databaseId,status,conclusion`
+   Poll every ~15s (up to ~3 min) until `status == "completed"`.
+3. If `conclusion == "failure"`: re-run it — `gh run rerun <databaseId> --repo qihongl/paper-tracking` — then wait for completion. Allow up to **2 rerun attempts**.
+4. Verify the page is actually live:
+   `curl -s -o /dev/null -w "%{http_code}" https://qihongl.github.io/paper-tracking/outputs/YYYY-MM-DD-paper-tracker.html`
+   Require `200`. Allow a short CDN-propagation delay — if you first get non-200, wait ~10s and re-check once.
+5. **Only if the URL returns 200, claim success.** If it still fails after reruns, report the failure explicitly (include the Actions run URL) and state the report is NOT live — do NOT claim it is.
+
+### Step 4: Present the HTML
+
+Use the `present_files` tool to show the HTML file to the researcher. Include a brief 1–2 sentence summary in your response (e.g., "7 papers today: 3 LLM-Memory, 2 Schema-Episodic, 1 KV-Networks, 1 Encoding-Retrieval. Pushed to GitHub and confirmed live. URL: https://qihongl.github.io/paper-tracking/outputs/YYYY-MM-DD-paper-tracker.html").
 
 ---
 
