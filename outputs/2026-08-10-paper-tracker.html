@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker — 2026-08-10</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .summary-table .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .tag-lib { background: #d1fae5; color: #047857; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+</style>
+</head>
+<body>
+
+<h1>🧠 Daily Paper Tracker</h1>
+<div class="date">2026-08-10</div>
+
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2608.07429" target="_blank">TEPA: Revoking Stale Memories for Conflict-Robust Language Agents</a></td>
+        <td class="col-authors">Yan Zhou et al. (Xiang)</td>
+        <td class="col-finding">A revocable evidence-memory that revokes stale precedents under the same key prevents memory pollution during world changes (0.95 vs 0.21 for append-only under reversal).</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s41593-026-02392-z" target="_blank">Striatal endocannabinoids drive one-shot learning</a></td>
+        <td class="col-authors">Piette et al. (Venance)</td>
+        <td class="col-finding">A brief single experience drives endocannabinoid-mediated LTP in striatum that is necessary and sufficient for one-shot avoidance learning.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42572094/" target="_blank">A spatially discretized convolutional neural mass model for studying meso-scale spatio-temporal transformations in the rat hippocampus</a></td>
+        <td class="col-authors">Pham et al. (Bouteiller)</td>
+        <td class="col-finding">A convolutional neural mass model reproduces CA3 meso-scale spike dynamics and theta/beta oscillations, revealing afferent-integration gradients.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.7554/eLife.111859" target="_blank">Characterising semantic prioritisation in visual working memory</a></td>
+        <td class="col-authors">Kerrén, González-García, Linde-Domingo</td>
+        <td class="col-finding">Semantic representations in visual WM are accessed faster than perceptual detail, especially when attentional support is low.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42572487/" target="_blank">Development of memory linking supports precise temporal inference</a></td>
+        <td class="col-authors">Friend et al. (Preston)</td>
+        <td class="col-finding">Memory linking across experiences underlies developmental gains in precise temporal inference (ages 7-25).</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://doi.org/10.7554/eLife.111930" target="_blank">Accumulation of neural state transitions in dorsomedial striatum predicts patch foraging decisions</a></td>
+        <td class="col-authors">Sutlief, Zhang, Forsberg, Shuler</td>
+        <td class="col-finding">DMS neurons accumulate reward-reset transitions to a threshold that predicts patch-exit timing (R² = 0.39 of exit variance).</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42571756/" target="_blank">A transient effect of episodic simulation in repeated decision-making</a></td>
+        <td class="col-authors">Lalla and Sheldon</td>
+        <td class="col-finding">Episodic simulation transiently boosts the choice of a simulated activity, mainly when imagining rather than planning it.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2608.07429" target="_blank">TEPA: Revoking Stale Memories for Conflict-Robust Language Agents</a>
+    </div>
+    <div class="paper-meta">
+      Yan Zhou, Yue Ouyang, Kaiyang Zheng, Suncheng Xiang &middot; arXiv, 2026-08-07
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-lib">📚 matches-library</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Characterizes "memory pollution" — degradation when stale active memories remain retrievable after the world changes — and introduces TEPA, a revocable evidence-memory in which each observation is a keyed precedent with an explicit validity state. When fresh evidence contradicts an active precedent under the same key, TEPA revokes it (removing it from retrieval) while preserving revoked history for audit. Evaluated on controlled hidden-regime drift, real file-backed executable drift, and preference-update streams (50 seeds), plus MemoryAgentBench.</p>
+      <p><strong>Finding:</strong> Revocation prevents stale active memory from surviving a reversal. In controlled drift, append-only and last-write-wins memory fell below even no-memory during full reversal (both 0.210 vs no-memory 0.309 vs TEPA 0.950); the same pattern held under real execution. On clean MemoryAgentBench SH-6k, TEPA matches a strong last-write-wins cache, confirming current-key replacement as the decisive operation for single-hop fact consolidation. Boundary tests expose retrieval-chain and context-selection bottlenecks beyond fact-level validity. Establishes lifecycle revocation as a core memory operation for agents that must falsify, audit, and re-promote evolving knowledge — directly relevant to lingering/stale-memory interference.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s41593-026-02392-z" target="_blank">Striatal endocannabinoids drive one-shot learning</a>
+    </div>
+    <div class="paper-meta">
+      Charlotte Piette, Arnaud Hubert, Sylvie Perez, … Laurent Venance &middot; Nature Neuroscience, 2026-08-07
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Developed a one-shot "sticky tape avoidance" paradigm in mice (a single brief spontaneous contact is the learning event; retrieval tested ≥24 h later) and asked whether brief vs prolonged contact engage distinct plasticity. Combined in vivo optrode/Neuropixels recording in dorsolateral striatum, GRABeCB2.0 fiber photometry for endocannabinoid release, ex vivo STDP patch-clamp, a "Plasticitymeter" computational model integrating spikes into eCB/NMDAR STDP, and CB1R/D2R conditional knockouts plus AM251 (CB1R) / D-AP5 (NMDAR) pharmacology.</p>
+      <p><strong>Finding:</strong> Brief (≤~20-25 s) single contact drives endocannabinoid-mediated LTP (eCB-LTP) at corticostriatal synapses that underlies one-shot learning; 63% of mice became avoiders (paired t-test P&lt;0.001) and memory persisted ≥1 month. eCB-LTP was both necessary and sufficient: CB1R/D2R knockouts and AM251 abolished brief-contact learning, whereas prolonged contact instead recruited NMDAR-LTP (D-AP5-sensitive) and was unaffected by CB1R blockade. Demonstrates a nonclassical plasticity mechanism supporting memory formation after a single experience.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42572094/" target="_blank">A spatially discretized convolutional neural mass model for studying meso-scale spatio-temporal transformations in the rat hippocampus</a>
+    </div>
+    <div class="paper-meta">
+      Duy J. Pham, … Jean-Marie C. Bouteiller &middot; Journal of Computational Neuroscience, 2026-08-10
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Introduces a convolutional neural mass model (CNMM) computing the meso-scale activity of spatially discretized CA3 "neural masses" in the rat. A kernel architecture using first-order Volterra expansions with Laguerre (temporal) and Chebyshev (spatial) basis functions transforms entorhinal-cortex, dentate-gyrus, and neighboring-CA3 input spike densities into output CA3 spike density. Trained and validated against a biophysically detailed large-scale mechanistic model simulating exploratory behavior.</p>
+      <p><strong>Finding:</strong> The CNMM achieved high predictive accuracy for spike density across 32 CA3 neural masses (mean correlation) and replicated theta and beta oscillations consistent with experiment; forward modeling predicted single-mass LFPs. Kernel analysis revealed topographic gradients in afferent integration — dentate-gyrus inputs dominate proximally (CA3c) while associational/EC inputs dominate distally — offering a computationally efficient bridge from micro-scale mechanisms to meso-scale CA3 dynamics relevant to hippocampal autoassociation and pattern separation/completion.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+  <div class="empty-section">No papers today.</div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.7554/eLife.111859" target="_blank">Characterising semantic prioritisation in visual working memory</a>
+    </div>
+    <div class="paper-meta">
+      Casper Kerrén, Carlos González-García, Juan Linde-Domingo &middot; eLife (Reviewed Preprint), 2026-08-07
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Combined hierarchical drift-diffusion modelling (HDDM) with behavioural manipulations across a reanalysis of a prior dataset (n=103) and two preregistered experiments (Exp1 n=83, Exp2 n=77). Used retro-cues and an interference (prospective) manipulation during the delay to dissociate semantic vs perceptual feature prioritisation in visual WM, separating pre-decisional access (non-decision time, NDT) from evidence accumulation (drift rate).</p>
+      <p><strong>Finding:</strong> Semantic representations were accessed faster than perceptual detail — a reduced NDT (e.g., −0.067 to −0.127 s across loads/lags in the reanalysis; semantic RT advantage BF₁₀&gt;1000 in Exp1). The semantic advantage was expressed selectively in pre-accumulation processes and was amplified when items fell outside the focus of attention (neutral vs valid cue: 198 ms vs 128 ms RT gap) or had to be maintained under interference (prospective vs immediate). Suggests semantic formats remain more readily accessible than perceptual detail when attentional support is limited, consistent with a shift toward more abstract, long-term-memory-like representations.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42572487/" target="_blank">Development of memory linking supports precise temporal inference</a>
+    </div>
+    <div class="paper-meta">
+      Olivia W. Friend, … Alison R. Preston &middot; Child Development, 2026-08-10
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A representative community sample (n=104, ages 7-25) completed a memory task in which event times could be inferred from temporal cues that varied in variability across learning repetitions, requiring participants to link and update information across experiences to locate events precisely in time.</p>
+      <p><strong>Finding:</strong> Adults localized events in time precisely through inference, whereas younger participants' temporal estimates were biased toward average times — especially when temporal cues were more variable. The authors conclude that developmental improvements in linking and updating information across multiple experiences underlie age-related gains in how children represent time, i.e., memory linking supports precise temporal inference. Bears on temporal-context models of memory development.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.7554/eLife.111930" target="_blank">Accumulation of neural state transitions in dorsomedial striatum predicts patch foraging decisions</a>
+    </div>
+    <div class="paper-meta">
+      Elissa Sutlief, Shichen Zhang, Kate Forsberg, Marshall G. H. Shuler &middot; eLife (Reviewed Preprint), 2026-08-07
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Recorded Neuropixels 2.0 from dorsomedial striatum (DMS) in 10 freely moving mice performing a patch-foraging task (stochastic rewards, alternating high/low reward-rate context blocks). Identified step-like neurons with reward-triggered firing-rate transitions (sigmoid fits; 898/1,849 units) and modeled a population accumulation-to-threshold signal that resets with each reward.</p>
+      <p><strong>Finding:</strong> Transition times tiled the post-reward interval across the population, producing an accumulation signal whose rate scaled with the cost of time (faster under high reward rate and later rewards). Accumulation reached a consistent threshold at the moment of patch exit, explaining 39% of variance in observed exit times (R²=0.386, p≈3×10⁻²⁵⁸, n=2,418 intervals; slope negatively correlated with exit time, mean r=−0.551, p=1.4×10⁻²⁶). Identifies a time-cost-variable, reward-reset, accumulation-to-threshold computation integrating reward rate, elapsed time, and reward recency to decide when to abandon a depleting pursuit — linking interval timing, reward memory, and value-based decision-making.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42571756/" target="_blank">A transient effect of episodic simulation in repeated decision-making</a>
+    </div>
+    <div class="paper-meta">
+      Aleea Lalla and Saman Sheldon &middot; Consciousness and Cognition, 2026-08-09
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Three experiments tested how episodic simulation affects repeated choices to engage in everyday activities. Hypotheses: simulated activities would be chosen more than unsimulated ones, the effect would decline across repeated choice scenarios (Exp1/2), and depend on simulation content — imagining vs planning the activity (Exp3).</p>
+      <p><strong>Finding:</strong> Simulated activities were more likely chosen than unsimulated ones, but this effect was transient: it declined across repeated choices and depended on content — the boost occurred primarily when simulations involved imagining rather than planning the activity. Constrains how the episodic memory system biases future decision-making, showing simulation's influence is state-dependent rather than a stable preference shift.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-peri">Peripheral</div>
+  <div class="empty-section">No papers today.</div>
+</div>
+
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>Davoudi, Climer, Issa &amp; Dombeck, "Distinct brain regions map olfactory and visual spaces" (Neuron)</strong> — verified via WebSearch/PubMed: DOI 10.1016/j.neuron.2026.03.008, PMID 41923616, published <em>March 2026</em>. OUT OF WINDOW. (Corrects a prior-turn misclassification that had placed it in the Aug 05 2026 issue; that DOI does not exist.)</li>
+    <li><strong>Nat Neurosci CA3 connectomics (Zheng…Tank, s41593-026-02388-9)</strong> and <strong>Drosophila true/false memory (Yang…Felsenberg, s41593-026-02381-2)</strong> — already reported in Run #30 (2026-08-06); dedup-store hit.</li>
+    <li><strong>arXiv 08-07 LLM/KV batch</strong> — CoinRAG (2608.07458), DocMemo (2608.07065), PsychoAgent (2608.07438), Agent Memory Distillation (2608.07126), MemWM (2608.07091), LifelongCrossNav (2608.07068), MemOPD (2608.07067), Every Cache Entry Earns Its Place (2608.06992), Explicit Not Longer (2608.06949), From Test-Time Scaling to Reusable Memory (2608.07213), Addressable Memory for Video World Models (2608.07408): RAG / agent / world-model / KV-compression engineering without a concrete memory-mechanism claim. Excluded per quality standard (KV-compression/serving excluded unless a retention/retrieval/forgetting/drift claim is made).</li>
+    <li><strong>J Neurosci candidates</strong> — Zhang/Buchsbaum auditory/visual episodic retrieval reinstatement (46(11), Feb 2026); "Modulation of Neuronal Ensembles Switches Memory Flexibility via Hippocampal Network Resynchronization" (46(23), Jun 2026): both OUT OF WINDOW.</li>
+    <li><strong>Science — Zemke et al., "Epigenetic and 3D genome reprogramming during aging of human hippocampus"</strong> (23 Jul 2026): OUT OF WINDOW.</li>
+    <li><strong>Nat Commun — Sartorato/Burgalossi (s41467-026-75492-w, 24 Jul 2026)</strong> and <strong>TMS paper (s41467-026-70346-x)</strong>: OUT OF WINDOW / no confirmable in-window date.</li>
+  </ul>
+</div>
+
+</body>
+</html>
