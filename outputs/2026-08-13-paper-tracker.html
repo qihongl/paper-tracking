@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker — 2026-08-13</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .summary-table .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .tag-lib { background: #d1fae5; color: #047857; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+</style>
+</head>
+<body>
+
+<h1>🧠 Daily Paper Tracker</h1>
+<div class="date">2026-08-13 &middot; window 2026-08-11 → 2026-08-13 (since last run 2026-08-10)</div>
+
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2608.11775" target="_blank">The Sleeping Agent: What Gist-Based Context Compression Loses and Why</a></td>
+        <td class="col-authors">Kyrkewood NE</td>
+        <td class="col-finding">Gist compression helps multi-hop/factual retrieval but collapses temporal questions; a one-sentence prompt fix raised temporal-expression preservation ~20× (+0.314 judge accuracy).</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42583526/" target="_blank">Learning to Recall with Transformers Beyond Orthogonal Embeddings</a></td>
+        <td class="col-authors">Vural NM et al. (Wu D)</td>
+        <td class="col-finding">Theory of a 1-layer transformer on token retrieval yields explicit storage-capacity scaling with a multiplicative N·d·L dependence under non-orthogonal embeddings.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42586057/" target="_blank">Developmentally defined subcircuits in the hippocampus support spatial learning</a></td>
+        <td class="col-authors">Huszár R et al. (Buzsáki G)</td>
+        <td class="col-finding">In a place-reward task, learning reorganized CA3–CA1 correlations near rewarded locations; these patterns reactivated in sleep and predicted retrieval.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42587070/" target="_blank">Cross-region neuron co-firing mediated by ripple oscillations supports distributed working memory representations</a></td>
+        <td class="col-authors">Verzhbinsky IA et al. (Rutishauser U)</td>
+        <td class="col-finding">Human iEEG: cross-region co-rippling boosted co-firing ~30% (up to 220 mm) and scaled with load; co-ripples reinstated encoding-phase co-firing during retrieval.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s12276-026-01794-0" target="_blank">Extinction-restraint intervention eradicates fear memory encoded in BLA engram cells via D2 receptor-mediated dopaminergic modulation from locus coeruleus</a></td>
+        <td class="col-authors">Li T et al. (Zhang P)</td>
+        <td class="col-finding">In a PTSD relapse mouse model, extinction-restraint protected against relapse via LC dopamine (not norepinephrine) acting on BLA-engram D2 receptors.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42586331/" target="_blank">Implementing Manipulation in the Face of Distraction: Spatiotemporal and Spectral Dynamics in Visual Working Memory</a></td>
+        <td class="col-authors">Luo C et al. (Li J)</td>
+        <td class="col-finding">EEG: the manipulation-related neural representation stayed intact under distraction, while distraction specifically disrupted maintenance-related activity.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42579016/" target="_blank">Temporal effects of exercise on retrieval-induced forgetting</a></td>
+        <td class="col-authors">Loprinzi PD et al. (Storm BC)</td>
+        <td class="col-finding">Large replication (N=372): retrieval-induced forgetting replicated, and acute aerobic exercise between tests preserved the RIF effect over time.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42586904/" target="_blank">Neural reactivation supports memory formation when events end</a></td>
+        <td class="col-authors">Silva M et al. (Fuentemilla L)</td>
+        <td class="col-finding">Review: rapid end-of-event reactivation/reinstatement is a robust mechanism that structures continuous experience into discrete, retrievable episodes.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-peri"></span>Peripheral</td>
+        <td class="col-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42587263/" target="_blank">Protective role of hemokinin-1 against age-dependent spatial memory and attention decline in mice</a></td>
+        <td class="col-authors">Tajti BT et al. (Borbély É)</td>
+        <td class="col-finding">HK-1-deficient mice showed impaired spatial memory and attention with age, implicating Tac4/neuroimmune signaling in protecting cognitive aging.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2608.11775" target="_blank">The Sleeping Agent: What Gist-Based Context Compression Loses and Why</a>
+    </div>
+    <div class="paper-meta">
+      Kyrkewood NE &middot; arXiv, 2026-08-12
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Uses Salience-Weighted Consolidation (SWC), a biologically-inspired compression framework motivated by sleep-based memory consolidation, as a diagnostic probe to study when gist-based context compression helps versus hurts long-horizon LLM-agent memory. Evaluated across all 10 LoCoMo conversations (1,935 matched text-only questions, 1,501 in the primary aggregate).</p>
+      <p><strong>Finding:</strong> Gist compression substantially outperforms truncation on multi-hop reasoning and single-hop factual questions, but temporal questions degrade sharply under compression. The failure is traced mechanistically to the gist-abstraction prompt preserving relational/event structure while discarding dates and times. A one-sentence prompt modification raised temporal-expression preservation ~20× (3.05% → 62.39%) with negligible change to entity/event preservation, recovering +0.314 [0.254, 0.375] judge accuracy on temporal questions — a precision instrument for the lingering-memory vs consolidation trade-off.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42583526/" target="_blank">Learning to Recall with Transformers Beyond Orthogonal Embeddings</a>
+    </div>
+    <div class="paper-meta">
+      Vural NM, Bietti A, Soltanolkotabi M, Wu D &middot; ICLR 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Theory paper analyzing a single-layer transformer with random (non-orthogonal) token embeddings trained by empirical gradient descent on a token-retrieval task, where the model must identify an informative token in a length-L sequence and learn a one-to-one token→label mapping. Tracks the early phase of GD and complements analysis with a lower bound for the underlying statistical problem.</p>
+      <p><strong>Finding:</strong> Yields explicit formulas for storage capacity revealing a multiplicative dependence among sample size N, embedding dimension d, and sequence length L — quantitatively different from the idealized orthogonal-embedding regime. Numerical validation confirms the scaling, and the lower bound shows this multiplicative rate is intrinsic under non-orthogonal embeddings. Directly informs factual-recall capacity limits of real LLMs.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42586057/" target="_blank">Developmentally defined subcircuits in the hippocampus support spatial learning</a>
+    </div>
+    <div class="paper-meta">
+      Huszár R, … Buzsáki G &middot; Neuron, 2026 Aug 12
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Combined embryonic birthdating of interconnected CA3–CA1 neurons with electrophysiology in a place-reward association task in mice, examining how parallel developmentally defined subcircuits along the trisynaptic pathway support spatial memory.</p>
+      <p><strong>Finding:</strong> Learning reorganized correlation patterns near rewarded locations; these patterns were reactivated during sleep and predicted subsequent memory retrieval. Neurons born on the same embryonic day exhibited correlated activity across brain states and subfields. Implicates developmentally defined parallel hippocampal subcircuits — and offline reactivation — in the encoding and retrieval of spatial/episodic memory.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42587070/" target="_blank">Cross-region neuron co-firing mediated by ripple oscillations supports distributed working memory representations</a>
+    </div>
+    <div class="paper-meta">
+      Verzhbinsky IA, … Rutishauser U, Halgren E &middot; Nature Neuroscience, 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Human intracranial microwire recordings across hippocampus, amygdala, vmPFC, ACC, and pre-SMA bilaterally during a working-memory task, analyzing ripple-oscillation co-occurrence and cross-region neuronal co-firing.</p>
+      <p><strong>Finding:</strong> Ripple rates increased in all recorded regions during encoding, maintenance, and retrieval. Co-occurring ripples increased cross-region co-firing by ~30% without decrement over distances up to 220 mm, and scaled with memory load during maintenance and retrieval. During retrieval, co-ripples promoted reinstatement of stimulus-specific, long-distance co-firing patterns observed at encoding — especially during rapid recognition. Shows ripple oscillations coordinate long-range, stimulus-specific co-firing supporting distributed WM representations.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s12276-026-01794-0" target="_blank">Extinction-restraint intervention eradicates fear memory encoded in BLA engram cells via D2 receptor-mediated dopaminergic modulation from locus coeruleus</a>
+    </div>
+    <div class="paper-meta">
+      Li T, … Zhang P, Tian B &middot; Experimental &amp; Molecular Medicine, 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> PTSD-related fear-relapse mouse model testing an extinction-restraint (Ext-Res) intervention; combined chemogenetic/circuit manipulation of basolateral amygdala (BLA) engram cells and locus coeruleus (LC) tyrosine-hydroxylase-positive neurons.</p>
+      <p><strong>Finding:</strong> Reactivation of BLA engram cells correlated with relapse after fear reinstatement, and post-extinction BLA-engram activation induced relapse. Ext-Res protected against relapse and facilitated BLA-engram reactivation. Dopamine (not norepinephrine) released from LC→BLA, acting via D2 receptors, deactivated the engram; LC–BLA circuit manipulation replicated or reversed Ext-Res effects. Reveals a D2-dependent dopaminergic circuit mechanism for erasing fear-memory relapse.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42586331/" target="_blank">Implementing Manipulation in the Face of Distraction: Spatiotemporal and Spectral Dynamics in Visual Working Memory</a>
+    </div>
+    <div class="paper-meta">
+      Luo C, … Li J &middot; NeuroImage, 2026 Aug 12
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Recorded EEG in healthy adults performing a visual working-memory task in which "manipulation" (transforming goal-relevant info) and "distraction" (irrelevant input) were orthogonally crossed; used individualized representational analyses.</p>
+      <p><strong>Finding:</strong> Manipulation and distraction each increased response times and decreased accuracy, with no significant interaction. Neurally, the manipulation-related representation remained intact regardless of distraction, whereas distraction specifically disrupted maintenance-related activity. Dissociates the neural demands of implementing manipulation from resisting distraction in WM.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42579016/" target="_blank">Temporal effects of exercise on retrieval-induced forgetting</a>
+    </div>
+    <div class="paper-meta">
+      Loprinzi PD, … Storm BC &middot; Psychological Research, 2026 Aug 11
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Direct replication and extension (N=372 healthy young adults) of retrieval-induced forgetting (RIF) using a standard category-exemplar task with selective retrieval practice and two final test assessments; acute aerobic exercise was performed between the two tests.</p>
+      <p><strong>Finding:</strong> Replicated the RIF effect (selective retrieval impairs later recall of related non-retrieved items). Critically, exercise performed between tests preserved the RIF effect over time relative to a no-exercise comparison, supporting a protective effect of acute exercise on the inhibitory/retrieval processes underlying RIF.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42586904/" target="_blank">Neural reactivation supports memory formation when events end</a>
+    </div>
+    <div class="paper-meta">
+      Silva M, … Fuentemilla L &middot; Trends in Cognitive Sciences, 2026 Aug 12
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Review synthesizing a growing body of evidence across tasks and recording modalities on rapid neural reactivation occurring at the termination of an event, describing when it occurs, how it is measured, and its neural signatures.</p>
+      <p><strong>Finding:</strong> End-of-event reactivation — rapid reinstatement of just-encoded representations — is a robust and functionally meaningful phenomenon. The authors propose it as an efficient neural mechanism that structures continuous experience into discrete, retrievable episodes, bridging event segmentation and memory formation. Useful theoretical scaffolding for the episodic-memory and consolidation pillars.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-peri">Peripheral</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42587263/" target="_blank">Protective role of hemokinin-1 against age-dependent spatial memory and attention decline in mice</a>
+    </div>
+    <div class="paper-meta">
+      Tajti BT, … Borbély É &middot; GeroScience, 2026 Aug 12
+      <span class="tag tag-peri">Peripheral</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Longitudinal and cross-sectional comparison of young (3–5 mo), middle-aged (12–15 mo), and old (18–20 mo) wild-type and hemokinin-1 (HK-1 / Tac4)-deficient C57BL/6J mice on complementary cognitive tasks.</p>
+      <p><strong>Finding:</strong> Endogenous HK-1 modulates age-dependent cognitive impairment: deficient mice showed impaired spatial memory and attention with age, implicating Tac4/neuroimmune signaling in protecting against aging-related memory decline. Relevant to the lab's aging and spatial-memory interests, though at the molecular/rodent level rather than computational mechanism.</p>
+    </div>
+  </div>
+</div>
+
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <p style="font-size:12px;color:#999;margin-bottom:8px;">Window 2026-08-11 → 2026-08-13. Sources: PubMed eUtils (edat), arXiv API (submittedDate), bioRxiv details API, and direct journal-record verification via PubMed pages (several PubMed records carried mismatched/erroneous DOIs this cycle — links use PubMed IDs to stay authoritative).</p>
+  <ul>
+    <li><strong>Cognition &amp; Emotion — "Efficacy of emotional working memory training…" (42590932)</strong> — borderline clinical RCT; local library semantic cross-check scored 1.80 (low affinity, &lt;6.0) → excluded per rule.</li>
+    <li><strong>J Clin Sleep Med — "Reconsidering the sleep-memory link after insomnia therapy" (42587218)</strong> — PubMed record had an empty abstract and a mismatched (2023) DOI; approach/finding unverifiable → excluded.</li>
+    <li><strong>J Cogn Neurosci — "Hippocampal Reactivation Trades Episodic Detail for Semantic Gist" (PMID 41955347)</strong> — published 2026 Aug 1, out of window.</li>
+    <li><strong>Cerebral Cortex — "Aging shifts hippocampal reactivation… category-level misbinding" (PMID 42574752)</strong> — published 2026 Jul 14, out of window.</li>
+    <li><strong>Adv Sci — "Neuromorphic Devices and Computing for Sensing, Memory, and Control" (42591065)</strong> — hardware/engineering; no mechanistic neuroscience claim.</li>
+    <li><strong>Cell Reports — "Adipose TGFβ-asprosin memory promotes obesity relapse" (42585018)</strong> — metabolic (non-brain) "memory"; off-pillar.</li>
+    <li><strong>Nano Lett — "Electrochemical Metallization… Integrated Memory and Neuromorphic Computing" (42584269)</strong> — hardware; excluded.</li>
+    <li><strong>Neurobiol Learn Mem — "Ivermectin impairs memory retrieval…" (42586306); Pathology — "Astrocyte activation… heatstroke memory impairment" (42586026); Neuropharmacology — "Hippocampal teneurin-4 knockdown…" (42586309); Prog Neuropsychopharmacol Biol Psychiatry — "Developmental alcohol exposure… mPFC" (42586194); GeroScience — "Lifestyle correlates of verbal memory" (42587261)</strong> — rodent molecular/clinical or behavioral-correlation studies; peripheral to the computational pillars → excluded to keep focus.</li>
+    <li><strong>arXiv 2608.12308 "DreamFly: Causal Memory and Receding-Horizon Diffusion Planning"</strong> — embodied aerial-navigation planning memory; not an on-pillar episodic-memory mechanism → excluded.</li>
+    <li><strong>arXiv 2608.11879 "Total Recall at What Cost? Benchmarking the Serving Cost of Agentic Memory Systems"</strong> — serving-cost engineering; no memory-mechanism claim → excluded.</li>
+    <li><strong>arXiv 2608.12121 "QV-PIC: Query-Aware Visual Position-Independent Caching for RAG Serving"</strong> — KV-caching serving efficiency; no mechanism claim → excluded.</li>
+    <li><strong>bioRxiv 2026-08-11 → 2026-08-13 batch (30 preprints)</strong> — no memory-relevant cognitive/neuro papers (evolutionary, molecular, ecology).</li>
+  </ul>
+</div>
+
+</body>
+</html>
