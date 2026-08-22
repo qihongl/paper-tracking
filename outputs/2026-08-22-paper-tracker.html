@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker — 2026-08-22</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 12px; }
+  .coverage-note { font-size: 12px; color: #777; background: #fff; border: 1px solid #e5e7eb;
+    border-radius: 6px; padding: 8px 12px; margin-bottom: 24px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .summary-table .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .tag-lib { background: #d1fae5; color: #047857; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+</style>
+</head>
+<body>
+
+<h1>🧠 Daily Paper Tracker</h1>
+<div class="date">2026-08-22</div>
+
+<div class="coverage-note">
+  <strong>Coverage note:</strong> The academic-search MCP server was unavailable this run (<code>asyncio.run()</code> error on the host), so coverage relied on WebSearch plus direct journal scans of Nature Neuroscience, eLife, and the Journal of Neuroscience. A small number of central recent (ICML 2026) LLM papers slightly predating the 14-day window were retained to keep Pillar 1 represented; several Jan–Mar 2026 items (Zhou eLife, Myers JNeurosci, Hall-McMaster JNeurosci, Harkotte JNeurosci, ProphetKV, Casco-Rodriguez) were excluded as outside the recency window and not re-reported.
+</div>
+
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2607.22575" target="_blank">Temporal Context Reinstatement Drives Episodic-Like Order Memory in Long-Context Language Models</a></td>
+        <td class="col-authors">Pink et al. (Toneva, Norman)</td>
+        <td class="col-finding">A single attention head reinstates a 1-D temporal code at retrieval; ablating it drops order-memory accuracy 10–15% toward chance.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2601.21714" target="_blank">E-mem: Multi-Agent Based Episodic Context Reconstruction for LLM Agent Memory</a></td>
+        <td class="col-authors">Wang et al. (Li)</td>
+        <td class="col-finding">Uncompressed multi-agent episodic reconstruction reaches 54% F1 on LoCoMo (+7.75 pts) with &gt;70% token savings.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://www.nature.com/articles/s41593-026-02410-0" target="_blank">Reusable modular architecture enables flexible cognitive operations in the mouse brain and artificial recurrent networks</a></td>
+        <td class="col-authors">Osako et al. (Sur)</td>
+        <td class="col-finding">Mice (and matched RNNs) reuse the same neurons for stimulus processing and memory maintenance regardless of content.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://elifesciences.org/reviewed-preprints/110795" target="_blank">REM sleep prefrontal high-frequency oscillation chains mediate distinct cortical–hippocampal reactivation patterns compared to NREM sleep</a></td>
+        <td class="col-authors">Shin, Satchell et al. (Jadhav)</td>
+        <td class="col-finding">REM prefrontal HFO chains drive reactivation patterns distinct from NREM, suggesting dissociable offline consolidation.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://www.nature.com/articles/s41593-026-02403-z" target="_blank">Cross-region neuron co-firing mediated by ripple oscillations supports distributed working memory representations</a></td>
+        <td class="col-authors">Verzhbinsky et al. (Halgren)</td>
+        <td class="col-finding">Human bilateral corticolimbic neurons reinstate stimulus-selective firing when coupled at ~90&nbsp;Hz, supporting distributed WM.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://www.nature.com/articles/s41593-026-02395-w" target="_blank">Strong and localized recurrence controls the dimensionality of neural activity across brain areas</a></td>
+        <td class="col-authors">Dahmen et al. (Shea-Brown)</td>
+        <td class="col-finding">Recurrent connectivity governs how many dominant activity patterns exist, letting neural complexity vary with behavior.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2607.22575" target="_blank">Temporal Context Reinstatement Drives Episodic-Like Order Memory in Long-Context Language Models</a>
+    </div>
+    <div class="paper-meta">
+      Mathis Pink, Vy A. Vo, Qinyuan Wu, Jianing Mu, Javier Turek, Uri Hasson, Kenneth A. Norman, Sebastian Michelmann, Alexander Huth, Mariya Toneva &middot; ICML 2026 (arXiv 2607.22575)
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> The authors probe whether LLMs solve episodic temporal-order memory like humans, using a Sequence Order Recall Task (SORT) built on a full-length novel (Agatha Christie's <em>The Murder of Roger Ackroyd</em>) with 97 human readers (990 segment-pair judgments) and Llama-3.1 8B/70B. They apply PCA to locate a "temporal direction" in hidden states, define a temporal reinstatement score (TRS) to pinpoint the responsible attention head, and run causal interventions (project-out / scale by 1.75×) on that head's retrieval output.</p>
+      <p><strong>Finding:</strong> Both humans and models show the classic distance effect — accuracy rises with the temporal separation of two probe segments. The behavior is carried by a single attention head that builds a one-dimensional temporal code while reading and reinstates it at retrieval (L8H11 in 8B; L14H21 in 70B). Ablating the head's temporal axis drops SORT accuracy ~10–15% toward chance, while amplifying it improves accuracy by up to 9%. The effect survives scrambled-narrative controls (so it tracks position, not plot logic), and generalizes across Llama, Mistral-7B, and Qwen2.5-7B.</p>
+      <div class="flag">⚠ Ablation effect is moderate (10–15%); the "relies on" claim outruns a single-head manipulation, and a 1-D code may not generalize to richer event segmentation/causal reasoning.</div>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2601.21714" target="_blank">E-mem: Multi-Agent Based Episodic Context Reconstruction for LLM Agent Memory</a>
+    </div>
+    <div class="paper-meta">
+      Kaixiang Wang, Yidan Lin, Zihan Wang, Bunyod Suvonov, Zhaojiacheng Zhou, Yuxiang Zheng, Jiaxi Cao, Zhiheng Dong, Chentao Wu, Jiong Lou, Jie Li &middot; ICML 2026 (arXiv 2601.21714)
+      <span class="tag tag-llm">LLM-Memory</span>
+      *<span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Proposes a multi-agent LLM-agent memory framework inspired by biological engrams. Multiple assistant agents (Qwen3-4B SLMs) hold <em>uncompressed</em> raw text segments; a central master agent (GPT-4o-mini / Qwen2.5-14B) performs global planning. A multi-pathway router (global-alignment + semantic + symbolic triggers) activates assistants, which locally reason over raw text and return timestamped evidence tuples before aggregation. Evaluated on LoCoMo (multi-session dialogue), HotpotQA-streaming (≤200k tokens), and AMA.</p>
+      <p><strong>Finding:</strong> E-mem reaches &gt;54% F1 on LoCoMo, +7.75 points over the prior SOTA (GAM), while cutting token cost by &gt;70% (43× normalized vs. brute-force long context); a 14B backbone even beats GPT-4o on long-context. The thesis: preserving raw episodic context via local reconstruction avoids the "destructive de-contextualization" of embedding/graph compression, keeping causal chains intact for System-2 reasoning.</p>
+      <div class="flag">⚠ Efficiency numbers rest on coordination-token accounting that is not fully reported (Pith critique); if assistant–master overhead isn't fully counted, the net savings may shrink.</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://www.nature.com/articles/s41593-026-02410-0" target="_blank">Reusable modular architecture enables flexible cognitive operations in the mouse brain and artificial recurrent networks</a>
+    </div>
+    <div class="paper-meta">
+      Yuma Osako, Greggory R. Heller, Mriganka Sur &middot; Nature Neuroscience, 17 Aug 2026
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Recorded neural activity across cortico–basal-ganglia circuits in mice during tasks requiring stimulus processing and memory maintenance, and compared the organization to artificial recurrent networks trained on analogous tasks. The question: are neurons specialized per content, or reused across distinct cognitive operations?</p>
+      <p><strong>Finding:</strong> Mice flexibly reuse the same neurons for stimulus processing and memory maintenance independent of content — a "reusable modular architecture" rather than a content-specific map. Artificial RNNs trained on matched tasks reproduce the same principle, arguing that reusable coding is a computationally motivated organizational solution. This dovetails with Pillar 3's claim that memory systems reuse representational substrates (key–value / modular organization) for flexible cognition.</p>
+      <div class="flag">⚠ The cross-species comparison is analogical; the mapping from mouse circuits to artificial RNNs is loose and not causal.</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://elifesciences.org/reviewed-preprints/110795" target="_blank">REM sleep prefrontal high-frequency oscillation chains mediate distinct cortical–hippocampal reactivation patterns compared to NREM sleep</a>
+    </div>
+    <div class="paper-meta">
+      Justin D. Shin, Michael Satchell, … Shantanu P. Jadhav &middot; eLife Reviewed Preprint v2, 21 Aug 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> In rats, the authors compared reactivation during REM versus NREM sleep using prefrontal high-frequency oscillation (HFO) chain recordings and assayed the resultant cortical–hippocampal reactivation patterns. The design isolates whether REM and NREM contribute differently to offline memory processing.</p>
+      <p><strong>Finding:</strong> Prefrontal HFO chains during REM mediate reactivation patterns that are distinct from those in NREM sleep, pointing to dissociable offline consolidation mechanisms across sleep states. Directly relevant to the user's sleep-reactivation / systems-consolidation replication work; extends the replay literature beyond the usual hippocampal-ripple framing.</p>
+      <div class="flag">⚠ Preprint (not yet peer-reviewed); sample size not extractable from the listing — verify N at full text.</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://www.nature.com/articles/s41593-026-02403-z" target="_blank">Cross-region neuron co-firing mediated by ripple oscillations supports distributed working memory representations</a>
+    </div>
+    <div class="paper-meta">
+      Ilya A. Verzhbinsky, Jonathan Daume, … Eric Halgren &middot; Nature Neuroscience, 12 Aug 2026
+      <span class="tag tag-er">Encoding-Retrieval</span>
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Human intracranial recordings across bilateral corticolimbic sites during a working-memory task, examining how cross-region co-firing is modulated by WM demand and by ~90&nbsp;Hz ripple-like oscillations.</p>
+      <p><strong>Finding:</strong> Human neurons in bilateral corticolimbic sites fire together, modulated by working-memory load, and reinstate stimulus-selective firing when the two sites briefly oscillate together at ~90&nbsp;Hz — evidence for a long-distance integration mechanism supporting distributed WM representations.</p>
+      <div class="flag">⚠ The ~90&nbsp;Hz band is labeled "ripple" but sits below classic hippocampal ripple (150–250&nbsp;Hz); terminology differs from standard hippocampal replay and should be distinguished.</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://www.nature.com/articles/s41593-026-02395-w" target="_blank">Strong and localized recurrence controls the dimensionality of neural activity across brain areas</a>
+    </div>
+    <div class="paper-meta">
+      David Dahmen, Stefano Recanatesi, Eric Shea-Brown &middot; Nature Neuroscience, 19 Aug 2026
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> An analytical and computational study of how brain connectivity — specifically the strength and spatial localization of recurrent connections — shapes the dimensionality of neural population activity across areas, without assuming a stationary target distribution.</p>
+      <p><strong>Finding:</strong> Strong, localized recurrence controls how many dominant activity patterns (the dimensionality) the system expresses, allowing complexity to vary across time and behavior rather than being fixed. Relevant to population coding and representational geometry that underpins memory representations.</p>
+    </div>
+  </div>
+</div>
+
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>Zhou, Kahana &amp; Schapiro — A unifying account of replay as context-driven memory reactivation</strong> (eLife, Jan 2026; DOI 10.7554/eLife.99931) — strong CMR-replay framework, but published Jan 2026, outside the recency window; not re-reported.</li>
+    <li><strong>Myers, Stokes &amp; Muhle-Karbe — Human Beta Oscillations Reflect Magnitude and Fidelity of Priority Shifts in Working Memory</strong> (J Neurosci, Mar 2026; DOI 10.1523/JNEUROSCI.1548-25.2026) — published Mar 2026, outside window; not re-reported.</li>
+    <li><strong>Hall-McMaster, Wittkuhn, Irie, Dayan, Schuck — Entorhinal cortex signals dimensions of past experience that can be generalised</strong> (J Neurosci, Jan 2026; DOI 10.1523/JNEUROSCI.1492-25.2025) — published Jan 2026, outside window; not re-reported.</li>
+    <li><strong>Harkotte, Heimel, Dimitrov, Inostroza, Born — The emergence of new schema memory requires sleep</strong> (J Neurosci, Jan/Feb 2026; DOI 10.1523/JNEUROSCI.1810-25.2025) — published Jan 2026, outside window; not re-reported.</li>
+    <li><strong>ProphetKV (Wang et al.)</strong> (arXiv 2602.02579) &amp; <strong>Leakage and Second-Order Dynamics Improve Hippocampal RNN Replay</strong> (Casco-Rodriguez et al., arXiv 2602.18401) — Feb 2026 preprints, outside window; ProphetKV is also efficiency-leaning with no explicit memory-mechanism claim.</li>
+  </ul>
+</div>
+
+</body>
+</html>
