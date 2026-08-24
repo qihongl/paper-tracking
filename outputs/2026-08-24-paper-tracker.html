@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker — 2026-08-24</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .summary-table .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .tag-lib { background: #d1fae5; color: #047857; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+</style>
+</head>
+<body>
+
+<h1>🧠 Daily Paper Tracker</h1>
+<div class="date">2026-08-24</div>
+<p class="date" style="margin-bottom:18px;max-width:760px;">Editor's note: this window is dominated by a <strong>KV-cache memory cluster</strong> (6 of 14 papers) — eviction, retention, compression, and associative (Hopfield/delta-rule) formulations of the KV store as a genuine memory system. Neuro side: two <em>Neuron</em> papers (infant schemas; human ripples → model-based learning) plus naturalistic and order-memory <em>Hippocampus</em> work reinforce the PFC↔hippocampus schema-consolidation theme. Sources: arXiv (cs.CL/AI/LG/NE), PubMed, bioRxiv, and direct scans of Neuron, eLife, Hippocampus, Nature Neuroscience, Nature Human Behaviour, Nature Communications, J Neurosci, Current Biology, Trends Cogn Sci. Window: 2026-08-14 → 2026-08-24.</p>
+
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2608.17616" target="_blank">MoNe: Modular Neural Memory for Efficient Long Context Inference</a></td>
+        <td class="col-authors">Wonguk Cho et al. (Jeongho Kim et al.)</td>
+        <td class="col-finding">Decouples inference cost from context length via a neural memory that generates K/V on demand — a concrete "KV generated by memory" design for long-context rete…</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2608.16844" target="_blank">Proteus: Incremental Memory Activation for Long-Context Sequence Modeling</a></td>
+        <td class="col-authors">Reza Bayat et al. (Aaron Courville)</td>
+        <td class="col-finding">Early tokens occupy too many degrees of freedom and "pollute" the memory state, increasing interference between stored and incoming context; incremental activat…</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2608.19920" target="_blank">Learning how to Forget: Fine-tuning for Long-Context Sparse Attention</a></td>
+        <td class="col-authors">Matthias Seeger et al. (Sebastian Schelter)</td>
+        <td class="col-finding">Models trained with sparse/evicted KV attention can match or beat exact-attention baselines once they co-adapt to the policy — i.e., the network learns what to …</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://www.cell.com/neuron/fulltext/S0896-6273%2826%2900209-6" target="_blank">Infant learning forms lasting memory schemas that influence adult behavior</a></td>
+        <td class="col-authors">Benjamin Bessières et al. (Cristina M. Alberini)</td>
+        <td class="col-finding">Infantile episodic-like learning creates lasting memory schemas that facilitate adult relearning and the formation of new congruent memories. Schemas undergo hi…</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://www.cell.com/neuron/fulltext/S0896-6273%2826%2900211-4" target="_blank">Human hippocampal ripples prioritize model-based learning</a></td>
+        <td class="col-authors">Xiaoyu Zhou et al. (Yunzhe Liu)</td>
+        <td class="col-finding">Hippocampal ripples coordinate with frontopolar cortex to convert sparse direct experience into model-based learning that generalizes. A human replay/ripple → s…</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1002/hipo.70123" target="_blank">Dissociation of Memory for Order and Memory for Items by Concurrent Cognitive Load in Rhesus Monkeys</a></td>
+        <td class="col-authors">Pankhuri Singhal, Victoria L. Templer, Robert R. Hampton (et al.)</td>
+        <td class="col-finding">Concurrent load impaired order memory far more than recognition, indicating monkeys solved the task via working memory, not long-term episodic memory — so it is…</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1002/hipo.70120" target="_blank">Cancer Treatment and Memory in Breast Cancer Survivors: Differential Effects on Detailed Episodic and Gist-Like Memory Recall Over Time</a></td>
+        <td class="col-authors">Meenakshie Bradley-Garcia et al. (Melanie J. Sekeres)</td>
+        <td class="col-finding">BCS recalled fewer peripheral (detailed episodic) details, especially at immediate recall, while gist recall was preserved; no group difference in temporal sequ…</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2608.15939" target="_blank">Aborted but Not Forgotten: KV-Cache Retention Breaks Rollback Consistency in Language Agents</a></td>
+        <td class="col-authors">Guijia Zhang, Harry Yang</td>
+        <td class="col-finding">KV-cache retention breaks rollback consistency — a cross-layer failure where a logical abort is incomplete because the model keeps attending to aborted context.…</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2608.15797" target="_blank">KV-Rescue: Recovering Reasoning Language Model KV Eviction Loss via Stepwise Interleaving</a></td>
+        <td class="col-authors">Minsoo Cheong et al. (Sungjoo Yoo)</td>
+        <td class="col-finding">Aggressive KV eviction causes runaway degeneration because the model decodes from a partial view of history; reframing the loss as missing-context (not capacity…</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2608.21304" target="_blank">Basin-Preserving Discretizations of Modern Hopfield Retrieval Dynamics: Energy Cells, Dissipation, and the Attention Limit</a></td>
+        <td class="col-authors">Francisco R. Villatoro</td>
+        <td class="col-finding">Proves every finite energy cell below escape energy is preserved under the proposed discretization, linking Hopfield retrieval to the attention update as a diff…</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2608.14191" target="_blank">KV Cache Compression Through the Lens of Transform Coding</a></td>
+        <td class="col-authors">Hannah Laus et al. (Felix Krahmer)</td>
+        <td class="col-finding">KV-cache compression should optimize attention-aware distortion, not raw cache MSE: errors propagate nonlinearly through softmax attention. A concrete mechanist…</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2608.19491" target="_blank">DeltaMomentum: A Key-Value based Anisotropic Momentum Update via Delta Rule</a></td>
+        <td class="col-authors">Euijin Hong, Guannan Qu</td>
+        <td class="col-finding">Reframes optimizer momentum as a key-value memory that adapts per-direction learning rates to input anisotropy. A neat bridge between the delta rule (classical …</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2608.15062" target="_blank">RecurrentGPT: Expressive Depth through Recurrent Modulation in Transformers</a></td>
+        <td class="col-authors">Amr Hegazy, Amr Alanwar, Mostafa Elhoushi (et al.)</td>
+        <td class="col-finding">Recurrent modulation enables expressive depth with constant memory footprint, trading layer-wise weights for a recurrent state. Positions recurrence as a memory…</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.1002/hipo.70122" target="_blank">Differential Functional Connectivity Between Hippocampus and Prefrontal Cortex Is Associated With Heterogeneity in Open Field Exploration and Is Disrupted Following Maternal Immune Activation</a></td>
+        <td class="col-authors">Robert G. K. Munn et al. (David K. Bilkey)</td>
+        <td class="col-finding">HPC–PFC functional connectivity tracks heterogeneity in exploratory behavior and is disrupted following MIA. Extends the PFC–hippocampus circuitry theme (cf. Be…</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+    <div class="paper">
+      <div class="paper-title">
+        <a href="https://arxiv.org/abs/2608.17616" target="_blank">MoNe: Modular Neural Memory for Efficient Long Context Inference</a>
+      </div>
+      <div class="paper-meta">
+        Wonguk Cho, Kyubyung Chae, Tribhuvanesh Orekondy, Sunghyun Park, Hyoungwoo Park, Jeongho Kim et al. &middot; arXiv:2608.17616, 2026-08-18
+        <span class="tag tag-llm">LLM-Memory</span><span class="tag tag-kv">KV-Networks</span>
+      </div>
+      <div class="paper-body">
+        <p><strong>Approach:</strong> Attaches a lightweight modular neural memory (fast-weight network with layer-local gradient updates) to a frozen pretrained Transformer; at inference the memory emits keys/values from query tokens alone, with no context re-read, giving O(N) cost.</p>
+        <p><strong>Finding:</strong> Decouples inference cost from context length via a neural memory that generates K/V on demand — a concrete "KV generated by memory" design for long-context retention. Directly probes the KV-as-memory-store hypothesis.</p>
+      </div>
+      <div class="flag">⚠ Preprint (not peer-reviewed).</div>
+    </div>
+    <div class="paper">
+      <div class="paper-title">
+        <a href="https://arxiv.org/abs/2608.16844" target="_blank">Proteus: Incremental Memory Activation for Long-Context Sequence Modeling</a>
+      </div>
+      <div class="paper-meta">
+        Reza Bayat, Ali Behrouz, Vahab Mirrokni, Aaron Courville &middot; arXiv:2608.16844, 2026-08-17
+        <span class="tag tag-llm">LLM-Memory</span><span class="tag tag-kv">KV-Networks</span>
+      </div>
+      <div class="paper-body">
+        <p><strong>Approach:</strong> Proposes incremental memory activation for long-context models: instead of a static compressed state, later context can displace/refine early tokens' memory allocation to reduce interference.</p>
+        <p><strong>Finding:</strong> Early tokens occupy too many degrees of freedom and "pollute" the memory state, increasing interference between stored and incoming context; incremental activation mitigates this. Interference in the memory state is exactly the phenomenon studied in KV/position memory — actionable.</p>
+      </div>
+      <div class="flag">⚠ Preprint (not peer-reviewed).</div>
+    </div>
+    <div class="paper">
+      <div class="paper-title">
+        <a href="https://arxiv.org/abs/2608.19920" target="_blank">Learning how to Forget: Fine-tuning for Long-Context Sparse Attention</a>
+      </div>
+      <div class="paper-meta">
+        Matthias Seeger, Zeyu Zhang, Vihang Patil, Konstantinos Benidis, Sebastian Schelter &middot; arXiv:2608.19920, 2026-08-20
+        <span class="tag tag-llm">LLM-Memory</span><span class="tag tag-kv">KV-Networks</span>
+      </div>
+      <div class="paper-body">
+        <p><strong>Approach:</strong> Fine-tunes transformers with sparse-attention KV-cache policies (any eviction rule) on a single A100, letting the model co-adapt with the policy rather than using exact attention.</p>
+        <p><strong>Finding:</strong> Models trained with sparse/evicted KV attention can match or beat exact-attention baselines once they co-adapt to the policy — i.e., the network learns what to forget. Forgetting as a trainable memory-mechanism property; the inverse of lingering memory.</p>
+      </div>
+      <div class="flag">⚠ Preprint (not peer-reviewed).</div>
+    </div>
+  </div>
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+    <div class="paper">
+      <div class="paper-title">
+        <a href="https://www.cell.com/neuron/fulltext/S0896-6273%2826%2900209-6" target="_blank">Infant learning forms lasting memory schemas that influence adult behavior</a>
+      </div>
+      <div class="paper-meta">
+        Benjamin Bessières, Emmanuel Prikas, Sebastian Goodwin-Groen, Leonardo Silenzi, Cristina M. Alberini &middot; Neuron, 2026-08-19
+        <span class="tag tag-schema">Schema-Episodic</span><span class="tag tag-kv">KV-Networks</span>
+      </div>
+      <div class="paper-body">
+        <p><strong>Approach:</strong> Infant mice underwent episodic-like learning; the study traced whether this seeds an enduring schema and dissected the circuit via hippocampus-dependent consolidation assays and PFC manipulation during adult relearning of congruent vs. incongruent material.</p>
+        <p><strong>Finding:</strong> Infantile episodic-like learning creates lasting memory schemas that facilitate adult relearning and the formation of new congruent memories. Schemas undergo hippocampus-dependent systems consolidation; critically, adult facilitation of congruent memories requires the PFC and top-down PFC→hippocampus projections — a direct mechanistic bridge to schema-binding hippocampal models.</p>
+      </div>
+      
+    </div>
+    <div class="paper">
+      <div class="paper-title">
+        <a href="https://www.cell.com/neuron/fulltext/S0896-6273%2826%2900211-4" target="_blank">Human hippocampal ripples prioritize model-based learning</a>
+      </div>
+      <div class="paper-meta">
+        Xiaoyu Zhou, Xiongfei Wang, Xiangyu Hu, Haiteng Wang, Jinbo Zhang, Qianqian Yu, Jiahua Xu, Zhibing Xiao, Li He, Yunzhe Liu &middot; Neuron, 2026-08-19
+        <span class="tag tag-schema">Schema-Episodic</span>
+      </div>
+      <div class="paper-body">
+        <p><strong>Approach:</strong> Human intracranial recordings during learning from sparse experience; analyzed hippocampal ripple events and their coordination with frontopolar cortex, testing generalization to related situations.</p>
+        <p><strong>Finding:</strong> Hippocampal ripples coordinate with frontopolar cortex to convert sparse direct experience into model-based learning that generalizes. A human replay/ripple → schema-consolidation mechanism, consonant with the Bessières infant-schema results and with ripple-driven consolidation accounts.</p>
+      </div>
+      
+    </div>
+    <div class="paper">
+      <div class="paper-title">
+        <a href="https://doi.org/10.1002/hipo.70123" target="_blank">Dissociation of Memory for Order and Memory for Items by Concurrent Cognitive Load in Rhesus Monkeys</a>
+      </div>
+      <div class="paper-meta">
+        Pankhuri Singhal, Victoria L. Templer, Robert R. Hampton &middot; Hippocampus, 2026-08-21
+        <span class="tag tag-schema">Schema-Episodic</span><span class="tag tag-kv">KV-Networks</span>
+      </div>
+      <div class="paper-body">
+        <p><strong>Approach:</strong> Rhesus monkeys viewed 5 images in sequence and reported which appeared first; a concurrent cognitive load was inserted between study and test, with familiarity-based recognition tested as a control.</p>
+        <p><strong>Finding:</strong> Concurrent load impaired order memory far more than recognition, indicating monkeys solved the task via working memory, not long-term episodic memory — so it is a weak model of episodic order memory. Clean dissociation between working-memory-dependent order coding and item/familiarity memory; bears on position/serial memory (the KV-network pillar).</p>
+      </div>
+      
+    </div>
+    <div class="paper">
+      <div class="paper-title">
+        <a href="https://doi.org/10.1002/hipo.70120" target="_blank">Cancer Treatment and Memory in Breast Cancer Survivors: Differential Effects on Detailed Episodic and Gist-Like Memory Recall Over Time</a>
+      </div>
+      <div class="paper-meta">
+        Meenakshie Bradley-Garcia, Hamed Neveu Karimpour, Defne Oksit, Mitchell Lilley, Chloé Cateaux, Annick F. Tanguay, Melanie J. Sekeres &middot; Hippocampus, 2026-08-14
+        <span class="tag tag-schema">Schema-Episodic</span>
+      </div>
+      <div class="paper-body">
+        <p><strong>Approach:</strong> Breast cancer survivors (n=42) vs. non-cancer controls (n=41) viewed 40 short film clips; recall of central (gist) vs. peripheral (detailed episodic) details was tested immediately and after a 7-day delay.</p>
+        <p><strong>Finding:</strong> BCS recalled fewer peripheral (detailed episodic) details, especially at immediate recall, while gist recall was preserved; no group difference in temporal sequencing or forgetting rate. Chemotherapy selectively impoverishes the richness of event representations while sparing the schematic core and temporal organization. Naturalistic film paradigm — directly relevant to Sherlock/PIEMAN-style event-memory analyses.</p>
+      </div>
+      <div class="flag">⚠ Observational; treatment not randomized. Naturalistic paradigm — flagged as priority.</div>
+    </div>
+  </div>
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+    <div class="paper">
+      <div class="paper-title">
+        <a href="https://arxiv.org/abs/2608.15939" target="_blank">Aborted but Not Forgotten: KV-Cache Retention Breaks Rollback Consistency in Language Agents</a>
+      </div>
+      <div class="paper-meta">
+        Guijia Zhang, Harry Yang &middot; arXiv:2608.15939, 2026-08-16
+        <span class="tag tag-kv">KV-Networks</span><span class="tag tag-llm">LLM-Memory</span>
+      </div>
+      <div class="paper-body">
+        <p><strong>Approach:</strong> Formalizes "rollback consistency" for stateful LLM agents: tests whether clearing a rejected branch from the transcript also clears the model's retained KV state.</p>
+        <p><strong>Finding:</strong> KV-cache retention breaks rollback consistency — a cross-layer failure where a logical abort is incomplete because the model keeps attending to aborted context. A crisp demonstration that the KV cache is a persistent memory store whose retention is decoupled from the visible transcript. (A textbook exhibit for the lingering-memory story.)</p>
+      </div>
+      <div class="flag">⚠ Preprint (not peer-reviewed).</div>
+    </div>
+    <div class="paper">
+      <div class="paper-title">
+        <a href="https://arxiv.org/abs/2608.15797" target="_blank">KV-Rescue: Recovering Reasoning Language Model KV Eviction Loss via Stepwise Interleaving</a>
+      </div>
+      <div class="paper-meta">
+        Minsoo Cheong, Woosang Lim, Vincent-Daniel Yun, Sungjoo Yoo &middot; arXiv:2608.15797, 2026-08-16
+        <span class="tag tag-kv">KV-Networks</span><span class="tag tag-llm">LLM-Memory</span>
+      </div>
+      <div class="paper-body">
+        <p><strong>Approach:</strong> Characterizes loss from KV-cache eviction during long reasoning as an information gap (missing context) rather than a capability gap; proposes stepwise interleaving to recover evicted context.</p>
+        <p><strong>Finding:</strong> Aggressive KV eviction causes runaway degeneration because the model decodes from a partial view of history; reframing the loss as missing-context (not capacity) motivates context recovery. Speaks directly to retention/forgetting in the KV store.</p>
+      </div>
+      <div class="flag">⚠ Preprint (not peer-reviewed).</div>
+    </div>
+    <div class="paper">
+      <div class="paper-title">
+        <a href="https://arxiv.org/abs/2608.21304" target="_blank">Basin-Preserving Discretizations of Modern Hopfield Retrieval Dynamics: Energy Cells, Dissipation, and the Attention Limit</a>
+      </div>
+      <div class="paper-meta">
+        Francisco R. Villatoro &middot; arXiv:2608.21304, 2026-08-21
+        <span class="tag tag-kv">KV-Networks</span><span class="tag tag-llm">LLM-Memory</span>
+      </div>
+      <div class="paper-body">
+        <p><strong>Approach:</strong> Studies time discretizations of modern Hopfield retrieval dynamics that preserve energy decay, equilibria, and basins of attraction; introduces "energy cells" (sublevel-set components containing one attractor).</p>
+        <p><strong>Finding:</strong> Proves every finite energy cell below escape energy is preserved under the proposed discretization, linking Hopfield retrieval to the attention update as a difference-of-convex step. Connects associative memory (Hopfield) to attention — the mathematical backbone of KV/associative memory networks.</p>
+      </div>
+      <div class="flag">⚠ Preprint (single-author; not peer-reviewed).</div>
+    </div>
+    <div class="paper">
+      <div class="paper-title">
+        <a href="https://arxiv.org/abs/2608.14191" target="_blank">KV Cache Compression Through the Lens of Transform Coding</a>
+      </div>
+      <div class="paper-meta">
+        Hannah Laus, Claudio Mayrink Verdun, Hao Wang, Flavio du Pin Calmon, Felix Krahmer &middot; arXiv:2608.14191, 2026-08-14
+        <span class="tag tag-kv">KV-Networks</span><span class="tag tag-llm">LLM-Memory</span>
+      </div>
+      <div class="paper-body">
+        <p><strong>Approach:</strong> Frames KV-cache quantization as transform coding; proves (white-noise quantization model) the expected attention-aware distortion and derives an optimal compression objective that accounts for error propagation through attention rather than minimizing cache reconstruction error.</p>
+        <p><strong>Finding:</strong> KV-cache compression should optimize attention-aware distortion, not raw cache MSE: errors propagate nonlinearly through softmax attention. A concrete mechanistic characterization of the KV cache as an information store — directly relevant to KV-memory capacity/retention claims.</p>
+      </div>
+      <div class="flag">⚠ Preprint (not peer-reviewed).</div>
+    </div>
+    <div class="paper">
+      <div class="paper-title">
+        <a href="https://arxiv.org/abs/2608.19491" target="_blank">DeltaMomentum: A Key-Value based Anisotropic Momentum Update via Delta Rule</a>
+      </div>
+      <div class="paper-meta">
+        Euijin Hong, Guannan Qu &middot; arXiv:2608.19491, 2026-08-19
+        <span class="tag tag-kv">KV-Networks</span><span class="tag tag-llm">LLM-Memory</span>
+      </div>
+      <div class="paper-body">
+        <p><strong>Approach:</strong> Builds direction-awareness into optimizer momentum via a key–value structured anisotropic update (delta rule), replacing the fixed-rate exponential moving average of past gradients.</p>
+        <p><strong>Finding:</strong> Reframes optimizer momentum as a key-value memory that adapts per-direction learning rates to input anisotropy. A neat bridge between the delta rule (classical associative-memory update) and KV-structured memory — relevant to how KV networks store and retrieve associations.</p>
+      </div>
+      <div class="flag">⚠ Preprint (not peer-reviewed).</div>
+    </div>
+    <div class="paper">
+      <div class="paper-title">
+        <a href="https://arxiv.org/abs/2608.15062" target="_blank">RecurrentGPT: Expressive Depth through Recurrent Modulation in Transformers</a>
+      </div>
+      <div class="paper-meta">
+        Amr Hegazy, Amr Alanwar, Mostafa Elhoushi &middot; arXiv:2608.15062, 2026-08-15
+        <span class="tag tag-kv">KV-Networks</span><span class="tag tag-llm">LLM-Memory</span>
+      </div>
+      <div class="paper-body">
+        <p><strong>Approach:</strong> Introduces a recurrent-depth transformer: a fixed-depth prelude/coda wraps a recurrent core that re-reads its own hidden state, decoupling representational depth from parameter count.</p>
+        <p><strong>Finding:</strong> Recurrent modulation enables expressive depth with constant memory footprint, trading layer-wise weights for a recurrent state. Positions recurrence as a memory mechanism alternative to the growing KV cache — relevant to the KV vs. recurrent memory trade-off in long-context models.</p>
+      </div>
+      <div class="flag">⚠ Preprint (not peer-reviewed).</div>
+    </div>
+  </div>
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+    <div class="paper">
+      <div class="paper-title">
+        <a href="https://doi.org/10.1002/hipo.70122" target="_blank">Differential Functional Connectivity Between Hippocampus and Prefrontal Cortex Is Associated With Heterogeneity in Open Field Exploration and Is Disrupted Following Maternal Immune Activation</a>
+      </div>
+      <div class="paper-meta">
+        Robert G. K. Munn, Desiree D. Dickerson, Amy R. Wolff, David K. Bilkey &middot; Hippocampus, 2026-08-20
+        <span class="tag tag-er">Encoding-Retrieval</span>
+      </div>
+      <div class="paper-body">
+        <p><strong>Approach:</strong> Assayed hippocampus–prefrontal cortex functional connectivity and its relationship to individual differences in open-field exploration; tested disruption by maternal immune activation (MIA).</p>
+        <p><strong>Finding:</strong> HPC–PFC functional connectivity tracks heterogeneity in exploratory behavior and is disrupted following MIA. Extends the PFC–hippocampus circuitry theme (cf. Bessières/Zhou) into a developmental/disruption model.</p>
+      </div>
+      
+    </div>
+  </div>
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+  <div class="empty-section">No papers today.</div>
+</div>
+<div class="section">
+  <div class="section-header tag-peri">Peripheral</div>
+  <div class="empty-section">No papers today.</div>
+</div>
+
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>Which Eviction Policy Should an LLM Cache Use? (arXiv:2608.20280)</strong> — semantic <em>response</em>-cache eviction-policy benchmarking; serving/throughput engineering without a memory-mechanism claim. Excluded per quality standard (efficiency alone does not qualify).</li>
+    <li><strong>Shin et al., REM sleep PFC HFO chains (eLife 110795.2)</strong> — already reported on 2026-08-22 (dedup store).</li>
+    <li><strong>~640 other in-window candidates</strong> — generic LLM prompting / RAG / agent-tooling or non-memory ML; out of scope for the three pillars.</li>
+    <li><strong>Lower-priority scans held</strong> — ReCache (agent tool caching), TreeWY (speculative-decoding systems), Handover of ICL State (session methodology), Hippocampus 10.1002/hipo.70124 (anterior-hippocampal gyrification correlation), 10.1002/hipo.70121 (interneuron-migration review).</li>
+  </ul>
+</div>
+
+</body>
+</html>
