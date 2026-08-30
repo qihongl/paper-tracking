@@ -93,6 +93,14 @@ The file maps a unique identifier (DOI, arxiv ID, or a normalized title slug) to
 
 Check this identifier against `data/seen_papers.json`. If the identifier exists, **skip the paper** — do not include it in today's report, and add a brief note: "Previously reported on YYYY-MM-DD."
 
+**Mandatory second pass — title grep against prior reports (do not skip).** The JSON store alone is NOT sufficient. Papers can be missed by it for two reasons: (a) the identifier was recorded under a different key (e.g. a PubMed ID instead of a DOI), and (b) more commonly, the paper was reported in an earlier run but never enters today's harvest pool at all, so the store is never consulted on it. Observed 2026-08-30: two finalists (a Nature Neuroscience paper reported 2026-08-22 and a Trends in Cognitive Sciences paper reported 2026-08-13) passed the JSON check and had to be pulled at the last minute. Before writing the HTML, run, for each finalist title (or a distinctive 30–40 char fragment of it):
+
+```bash
+grep -ril "DISTINCTIVE TITLE FRAGMENT" outputs/ --include="*.html" | grep -v "TODAYS_DATE"
+```
+
+Any non-empty hit means the paper was already reported — drop it from the report, list it under "Papers Scanned but Not Included" with the earlier date, and (if its identifier is absent or carries today's date) correct/add the `seen_papers.json` entry with the **true first-reported date** rather than today's. This costs one command per paper and is the only reliable guard against duplicate coverage.
+
 **After finalizing today's report**, save an updated copy of `data/seen_papers.json` with all newly reported papers appended (set the value to today's date). Do NOT remove old entries — the store should accumulate indefinitely.
 
 ---
