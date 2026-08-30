@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker — 2026-08-30</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .summary-table .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .tag-lib { background: #d1fae5; color: #047857; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .note { font-size: 12px; color: #0369a1; background: #f0f9ff; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+</style>
+</head>
+<body>
+
+<h1>🧠 Daily Paper Tracker</h1>
+<div class="date">2026-08-30 &middot; 15 papers &middot; window 2026-08-24 → 2026-08-30 (last run: 2026-08-24)</div>
+
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://www.biorxiv.org/content/10.64898/2026.08.24.746712v1" target="_blank">A complementary learning system for continual episodic memory in large language models</a></td>
+        <td class="col-authors">Pan et al. (Sompolinsky)</td>
+        <td class="col-finding">A hippocampus-like bank of sparse per-episode adapters (2–3 params/token) with competitive gating stores 1,000 episodes in one LLM; batch replay then consolidates them into the base weights.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2608.23851" target="_blank">Does Episodic Memory Help Close the Lexical Frequency Gap in Sensitivity to Syntactic Contrasts?</a></td>
+        <td class="col-authors">Liu &amp; Kim</td>
+        <td class="col-finding"><em>k</em>NN retrieval augmentation narrows — but does not close — the high- vs low-frequency gap on syntactic contrasts; structural, not semantic, similarity drives the benefit.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2608.24460" target="_blank">Shortcut Before Circuit: Document Statistics Time In-Context Conflict Resolution</a></td>
+        <td class="col-authors">Liao &amp; Liang</td>
+        <td class="col-finding">With recency and rarity made coextensive, all 75 runs hit ≥0.999 accuracy yet per-cell attribution fails to replicate across seeds — corpus statistics fix <em>when</em> a mechanism appears, not <em>which</em> one.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s41467-026-77240-6" target="_blank">Prefrontal–thalamic goal states organize spatially aligned hippocampal maps</a></td>
+        <td class="col-authors">Golipour et al. (Ito)</td>
+        <td class="col-finding">CA1 encodes goal state on a population axis largely <em>orthogonal</em> to the spatial-coding subspace; silencing nucleus reuniens abolishes goal coding while sparing spatial coding.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.3758/s13421-026-01930-1" target="_blank">Dissociable effects of schema congruency on item recognition and source memory</a></td>
+        <td class="col-authors">Yacoby et al. (Levy)</td>
+        <td class="col-finding">SLIMM's U-shape appears in source memory but not item recognition, and for a reason SLIMM does not predict: participants retrieve a studied "expected/surprising" <em>tag</em>.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1162/jocn.a.2688" target="_blank">Neural Organization of Episodic Memory and Navigation in Children and Adults</a></td>
+        <td class="col-authors">Nguyen et al. (Newcombe)</td>
+        <td class="col-finding">Naturalistically encoded episodic vs navigational memories recruit entorhinal/perirhinal cortex differently, and ERC–PRC connectivity for episodic memory <em>decreases</em> with age from 8 years to adulthood.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1177/02698811261473397" target="_blank">Dopaminergic fronto-striatal connectivity underlies schema-dependent learning</a></td>
+        <td class="col-authors">Yousuf et al. (Bunzeck)</td>
+        <td class="col-finding">In 90 participants the schema-congruency advantage follows an <em>inverted-U</em> in dopamine: both a D2 agonist and a D2 antagonist reduce it relative to placebo.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42658610/" target="_blank">Organizational Dynamics of Memory Across Days</a></td>
+        <td class="col-authors">Rafla et al. (Kahana)</td>
+        <td class="col-finding">Across days, recall increasingly clusters by <em>previous output order</em>, and false memories generated in one session recur on later ones — retrieval itself rewrites the memory.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2608.27128" target="_blank">TwinKV: A Composable Repair Pass for KV Cache Eviction via Pairwise Key Redundancy</a></td>
+        <td class="col-authors">Chen et al. (Hu)</td>
+        <td class="col-finding">A leave-one-out probe shows attention magnitude is <em>unrelated</em> to a token's causal contribution (Spearman ρ = −0.004), undercutting the premise of attention-scored KV eviction.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2608.25230" target="_blank">Trust the Mass: Forced Weights in KV-Cache Eviction</a></td>
+        <td class="col-authors">Shi &amp; Gu</td>
+        <td class="col-finding">Exact enumeration over 168,192 attention rows: keeping the largest weights is already near-optimal (best subset closes a median 2–5% of the gap), so published eviction margins must come from bytes held, not selection.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.1371/journal.pbio.3003938" target="_blank">Theta oscillations tag episodic memories for sleep-dependent consolidation</a></td>
+        <td class="col-authors">Denis et al. (Cairney)</td>
+        <td class="col-finding">EEG decoding identifies memories tagged at learning for sleep consolidation; tagging tracks 3–8 Hz theta at encoding and predicts slow-oscillation–spindle coupling, which predicts retention.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.1073/pnas.2603685123" target="_blank">Large-scale brain network reinstatement supports recognition memory</a></td>
+        <td class="col-authors">Sheng et al. (Wang)</td>
+        <td class="col-finding">In the Natural Scenes Dataset, <em>network-level</em> reinstatement predicts item-level recognition and mediates — but is not redundant with — local activation reinstatement.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.1177/09567976261461522" target="_blank">A Single Dimension of Memory Strength Underlies Semantic and Phonological False Memories</a></td>
+        <td class="col-authors">Zhang &amp; Osth</td>
+        <td class="col-finding">The remember/know dissociation between semantic and phonological DRM replicates (N = 227), but state-trace and SDT analyses show one strength dimension with a shifted criterion — no dual process.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s41586-026-10946-1" target="_blank">Granule cells reorient cortical trajectories to separate contexts</a></td>
+        <td class="col-authors">Garcia-Garcia et al. (Wagner)</td>
+        <td class="col-finding">Cerebellar granule cells do <em>not</em> expand cortical codes; they keep low-rank task codes and rotate their trajectories apart, separating contexts while preserving cortical geometry.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-peri"></span>Peripheral</td>
+        <td class="col-title"><a href="https://doi.org/10.1016/j.neuropsychologia.2026.109579" target="_blank">Film Recall Reveals Intact Event Memory but Impaired Sequence Memory in Temporal Lobe Epilepsy</a></td>
+        <td class="col-authors">Farahani et al. (Liu)</td>
+        <td class="col-finding">Naturalistic film recall isolates a pure <em>sequence</em> deficit in TLE (Hedges' g = 0.85) that is invisible to film/event-level scoring and to standard neuropsychological memory tests.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://www.biorxiv.org/content/10.64898/2026.08.24.746712v1" target="_blank">A complementary learning system for continual episodic memory in large language models</a>
+    </div>
+    <div class="paper-meta">
+      Xu Pan, Ely Hahami, Roy Siegelmann, Haim Sompolinsky (Sompolinsky) &middot; bioRxiv, 2026-08-24
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A pretrained LLM supplies the semantic (neocortical) context; a hippocampus-like fast module assigns each episode to a dedicated, extremely sparse low-rank adapter, and competitive gating selects among these separated traces at recall. An internal retrieval-augmented mechanism reconstructs the selected episode back into context for question answering. Slow "cortical" consolidation is implemented by fine-tuning the base weights through batch replay. Tested on streams of up to 1,000 factual and autobiographical episodes.</p>
+      <p><strong>Finding:</strong> Each adapter costs only 2–3 parameters per token while preserving excellent recall at 1,000-episode scale; batch-replay consolidation then supports reconstruction <em>and</em> direct question answering without the episodic adapters. This is a rare implementation of both CLS components — fast separated storage plus slow integration — inside a single model, and it directly targets the interference-vs-consolidation trade-off that Hebbian superposition models (Hopfield-style, shared weights) get wrong.</p>
+    </div>
+    <div class="flag">⚠ Preprint, not peer-reviewed. "Excellent recall" is not quantified in the abstract — no accuracy figures or baselines given; the interference claim at 1,000 episodes needs the curve, not the adjective.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2608.23851" target="_blank">Does Episodic Memory Help Close the Lexical Frequency Gap in Sensitivity to Syntactic Contrasts? A Test Using Retrieval-Augmented Language Models</a>
+    </div>
+    <div class="paper-meta">
+      Jing Liu, Najoung Kim (Kim) &middot; arXiv cs.CL, 2026-08-24
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Draws on Complementary Learning Systems theory to predict that a hippocampal-style episodic store should make grammaticality judgements robust to lexical frequency. Episodic memory is instantiated as <em>k</em>-nearest-neighbour language models — explicit instance storage bolted onto a parametric model — and tested on syntactic contrasts with frequency-stratified items, across models pretrained on child-realistic and large-scale corpora.</p>
+      <p><strong>Finding:</strong> Retrieval augmentation narrows the performance gap between high- and low-frequency items, consistently across syntactic phenomena and pretraining regimes. Critically, <em>structural</em> information drives effective retrieval while semantic similarity alone provides little benefit — a useful constraint on what an episodic store must index. The gap is narrowed, not closed, so episodic memory partially compensates for weak parametric representations rather than replacing them.</p>
+    </div>
+    <div class="flag">⚠ Authors are explicit that this is proof-of-concept; the gap survives augmentation, so only the weak form of the CLS prediction is supported.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2608.24460" target="_blank">Shortcut Before Circuit: Document Statistics Time In-Context Conflict Resolution</a>
+    </div>
+    <div class="paper-meta">
+      Yijun Liao, Fanwei Liang (Liang) &middot; arXiv cs.CL, 2026-08-25
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> When a context asserts two values for one fact, a model must commit to a cue — recency, repetition, or position — but natural data rarely makes these disagree, so behaviour cannot reveal which one was used. They train 26M-parameter transformers on a synthetic language in which recency and rarity are <em>exactly</em> coextensive, then apply a minimal causal edit that inverts one cue while holding truth, token count and answer position fixed. 75 runs total.</p>
+      <p><strong>Finding:</strong> Every run reaches accuracy ≥ 0.999, so no held-in evaluation distinguishes which cue was used. The per-cell attribution readout does not replicate: 13 of 25 cells differ by more than 0.3 in sign fraction across three seeds (largest 0.879 against a standard error of 0.025). What <em>does</em> replicate is timing — escape from a positional shortcut with a closed-form ceiling, monotone in redundancy — and probed before that escape, attribution reverses sign in 32 of 75 runs at unchanged accuracy. The claim is that corpus statistics determine when a mechanism appears, not which one, giving a criterion for when mechanistic attribution to data is available at all.</p>
+    </div>
+    <div class="flag">⚠ The replication failure rests on 3 seeds, and everything is done in a synthetic language at 26M parameters. This is a negative/methodological result; generality to real corpora is the open question.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s41467-026-77240-6" target="_blank">Prefrontal–thalamic goal states organize spatially aligned hippocampal maps</a>
+    </div>
+    <div class="paper-meta">
+      Zahra Golipour, Marjan Mozaffarilegha, Shao-Fan Yen, Cansu Üstüner, Hiroshi T. Ito (Ito) &middot; Nature Communications, 2026-08-29
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Male rats navigated the <em>same</em> maze under different goal configurations while CA1, medial prefrontal cortex (mPFC) and nucleus reuniens (NR) were recorded. The design isolates the generalisation–separation problem: the hippocampus must maintain one stable spatial map while keeping individual experiences distinct. A causal arm silenced NR.</p>
+      <p><strong>Finding:</strong> CA1 segregates navigation experiences by encoding goal state along a population dimension largely <em>orthogonal</em> to the spatial-coding subspace, so goal-configuration-specific maps remain spatially aligned. The same goal-state signal appears in mPFC and NR as persistent representations across both locomotion and immobility, reinstated when a previously experienced goal configuration recurs. Silencing NR reduces CA1 goal-state coding, shrinks goal-axis separation and removes goal-biased pre-navigation spike sequences — while leaving spatial coding intact. A clean dissociation between the "what for" and "where" subspaces, with a thalamic gate controlling the former.</p>
+    </div>
+    <div class="flag">⚠ Male rats only; sex-specific goal-coding strategies untested.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.3758/s13421-026-01930-1" target="_blank">Dissociable effects of schema congruency on item recognition and source memory across levels of expectedness and surprise</a>
+    </div>
+    <div class="paper-meta">
+      Amnon Yacoby, Andrea Greve, Erin Schaverien, Limor Shtoots, Richard N. Henson, Daniel A. Levy (Levy) &middot; Memory &amp; Cognition, 2026-08-28
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-lib">📚 matches-library</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Four experiments. Participants viewed scenes containing schema-congruent or incongruent objects and rated each on a four-level expected/surprising scale. Memory was probed two ways: old/new item recognition decomposed into recollection and familiarity, and source memory for whether the object had been rated expected or surprising. The SLIMM framework predicts a U-shaped function of expectedness.</p>
+      <p><strong>Finding:</strong> The two tests dissociate. Item recognition shows an advantage for <em>expected</em> trials only, driven by recollection; familiarity instead increases with surprise, contrary to SLIMM. Source memory <em>does</em> produce the U-shape — but for a reason SLIMM does not predict: participants appear to tag events as "expected" or "surprising" at study and later retrieve the tag, falling back on schema-based retrieval only when the tag is weak or unavailable (i.e. for moderately categorised events). Prior knowledge therefore shapes episodic memory in a strongly test-dependent way.</p>
+    </div>
+    <div class="note">Top library hit: Frank, O'Reilly &amp; Curran (2018) on beneficial and detrimental effects of schema incongruence.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1162/jocn.a.2688" target="_blank">Neural Organization of Episodic Memory and Navigation in Children and Adults</a>
+    </div>
+    <div class="paper-meta">
+      Kim V. Nguyen, Lena J. Skalaban, Büşra Tanriverdi, Jack J. Erardi, G. Arantes de Oliveira Campos, Ingrid R. Olson, Vishnu P. Murty, Nora S. Newcombe (Newcombe) &middot; Journal of Cognitive Neuroscience, August 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Naturalistic encoding: children aged 8–13 and young adults first had real-world experiences (a tour of a new environment, or sitting in a room with objects) and later viewed pictures of those objects plus novel foils during fMRI. This contrasts episodic memory that is <em>versus</em> is not additionally embedded in a navigational experience — the key manipulation is that natural navigation requires moving one's body through space while episodic memory does not. Univariate activation plus functional connectivity.</p>
+      <p><strong>Finding:</strong> Tour-related activity in entorhinal (ERC) and perirhinal (PRC) cortex differs between early adolescents and adults. ERC–PRC connectivity supporting episodic memory <em>decreases</em> with age — a counterintuitive developmental direction that argues against simple "integration increases with age" accounts. Exploratory analyses implicate hippocampus–ERC–lateral occipital connectivity in reconstructing spatial context. Both episodic and navigational contexts engage MTL, but the regions interact differently by context and developmental stage.</p>
+    </div>
+    <div class="flag">⚠ Connectivity results are explicitly exploratory; PubMed carries a date typo (2028-08-17) on this record.</div>
+    <div class="note">Naturalistic paradigm — relevant to the ongoing Sherlock / PIEMAN / ds005658 replication work.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1177/02698811261473397" target="_blank">Dopaminergic fronto-striatal connectivity underlies schema-dependent learning</a>
+    </div>
+    <div class="paper-meta">
+      Mushfa Yousuf, Niels Kloosterman, Jannik Prasuhn, Norbert Brüggemann, Lluís Fuentemilla, Nils Bunzeck (Bunzeck) &middot; Journal of Psychopharmacology, 2026-08-25
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Double-blind mixed design in 90 healthy humans (70 female, 20 male): 1.25 mg bromocriptine (D2 agonist), 400 mg sulpiride (D2 antagonist), or placebo before encoding semantically congruent versus incongruent words during fMRI, with recognition tested the following day.</p>
+      <p><strong>Finding:</strong> Semantic congruency enhanced next-day recognition in all three groups, but the size of the effect followed an <em>inverted-U</em> as a function of drug: the congruency effect was largest under placebo and significantly reduced by both the agonist and the antagonist. Neurally this was mirrored by non-linear modulation of striatal activity and its functional connectivity with the superior frontal gyrus. Schema-dependent learning is therefore dopamine-dependent in a non-monotonic way — both too little and too much D2 tone degrade it, which is a sharper prediction than any simple "dopamine helps" account.</p>
+    </div>
+    <div class="flag">⚠ Sample is 78% female and sex was not modelled; no plasma drug levels, so the inverted-U is inferred from dose rather than exposure.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42658610/" target="_blank">Organizational Dynamics of Memory Across Days</a>
+    </div>
+    <div class="paper-meta">
+      Daniella A. Rafla, Nathaniel R. Greene, Bradley S. Katerman, Dana Halpern, Michael J. Kahana (Kahana) &middot; Journal of Experimental Psychology: Learning, Memory, and Cognition, 2026-08-27
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-lib">📚 matches-library</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Classic studies tracked how recall organisation evolves across lists within a single session. Here two multi-session free-recall experiments ask how semantic, temporal and subjective organisation during one recall period shapes memory <em>after days</em> of intervening cognitive activity — a timescale nobody has tracked organisation over.</p>
+      <p><strong>Finding:</strong> Subjects show a strong tendency to cluster recalls according to <em>previous output order</em>, and this effect strengthens across sessions — recall organisation is itself a learned, persisting structure rather than a transient readout of the study list. Consistent with "thoughts become memories," even false memories produced in one session tend to re-occur on subsequent days. This is a direct argument that retrieval, not just encoding, sculpts long-term episodic memory, and it is exactly the multi-timescale clustering behaviour that a temporal-context / CMR-style model should be able to reproduce.</p>
+    </div>
+    <div class="note">Top library hit: Polyn, Norman &amp; Kahana (2009), "A context maintenance and retrieval model of organizational processes in free recall" — the CMR paper.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2608.27128" target="_blank">TwinKV: A Composable Repair Pass for KV Cache Eviction via Pairwise Key Redundancy</a>
+    </div>
+    <div class="paper-meta">
+      Hong Chen, Yudong Zeng, Yongwei Huang, Zuhao Ouyang, Junyan Zhang, Xuming Hu (Hu) &middot; arXiv cs.CL, 2026-08-27
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A controlled leave-one-out probe measures each token's actual causal contribution to the answer, which is then compared against the attention weight used by dominant eviction policies. On that basis they build TwinKV: a training-free, attention-free redundancy signal detecting whether a token's key has a near-duplicate elsewhere in context. It operates as a composable <em>repair pass</em> — given a policy's fixed retained set, swap evicted "orphans" (no surviving duplicate) for retained "redundant donors," holding budget and scoring rule fixed. Composed with four recent policies across LongBench, LooGLE, RULER and an MMLU-Pro no-harm control at compression ratios {0.3, 0.5, 0.7}.</p>
+      <p><strong>Finding:</strong> The headline is a negative result with teeth: attention magnitude is <em>unrelated</em> to a token's causal contribution to the answer (Spearman ρ = −0.004), undercutting the premise behind attention-scored eviction. TwinKV then improves a majority of configurations for two policies on Qwen3-4B, is near-even for a third, and helps only a minority of a fourth adaptive baseline already at ceiling — but on RULER with Llama-3.2-1B that fourth policy improves in every evaluated cell. It fails on few-shot classification exemplars on both models.</p>
+    </div>
+    <div class="flag">⚠ Preprint. Gains are strongly policy- and model-dependent; the repair pass only helps where the base policy left headroom, so it is not a free lunch.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2608.25230" target="_blank">Trust the Mass: Forced Weights in KV-Cache Eviction</a>
+    </div>
+    <div class="paper-meta">
+      Jack Shi, Jerry Gu (Gu) &middot; arXiv cs.LG, 2026-08-25
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Every deployed sparse-attention or KV-eviction rule keeps a subset of keys, discards the rest, and renormalises attention over the kept set. They enumerate the exact optimal subset under that constraint on 168,192 attention rows from five models — a brute-force upper bound on what selection can buy — and then measure the bytes each method actually holds in a shared evaluation pipeline.</p>
+      <p><strong>Finding:</strong> Keeping the largest weights is already near-optimal: the exact best subset closes only a median 2–5% of the remaining gap to full attention. So published margins between eviction methods cannot come from selection quality. The margin comes from bytes: the strongest query-agnostic methods hold the <em>full</em> cache because per-head selections are stored as masks, and only ragged per-head storage frees that memory. Enforcing a nominal budget on one fixed selection costs 14–62 benchmark points, and an 87.6-point retrieval margin traces to rankings computed while the question was visible. Their ContourKV allocator wins 93 of 160 paired comparisons against that state of the art.</p>
+    </div>
+    <div class="flag">⚠ Preprint. The "question is visible" leakage critique applies to the specific baselines re-evaluated here; whether it generalises to all reported eviction margins is not established.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1371/journal.pbio.3003938" target="_blank">Theta oscillations tag episodic memories for sleep-dependent consolidation</a>
+    </div>
+    <div class="paper-meta">
+      Dan Denis, Zhiyi Chen, Manroop Kaur, Bethany Clayden, Thomas Schreiner, Scott A. Cairney (Cairney) &middot; PLOS Biology, August 2026
+      <span class="tag tag-er">Encoding-Retrieval</span>
+      <span class="tag tag-lib">📚 matches-library</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Neurobiological frameworks have long proposed that some memories are "tagged" at learning for later consolidation, but direct human evidence has been missing. They used multivariate classification of human EEG to decode brain states at learning for memories that were subsequently consolidated across sleep versus across wakefulness.</p>
+      <p><strong>Finding:</strong> Tagging states were decodable above chance. Tagging for consolidation across <em>sleep</em> — but not across wakefulness — was linked to 3–8 Hz theta activity during learning. The magnitude of this tagging-related theta response predicted slow-oscillation–spindle coupling during post-learning sleep (an established correlate of sleep-dependent processing), and that coupling in turn was associated with better memory at the post-sleep test. This closes a long-postulated chain in humans: theta at encoding → SO–spindle coupling in sleep → retention.</p>
+    </div>
+    <div class="note">Top library hit: Diekelmann &amp; Born (2010), "The memory function of sleep" — the sleep-consolidation classic.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1073/pnas.2603685123" target="_blank">Large-scale brain network reinstatement supports recognition memory</a>
+    </div>
+    <div class="paper-meta">
+      Jintao Sheng, Junle Li, Xiangli Zeng, Jinhui Wang (Wang) &middot; PNAS, 2026-08-26
+      <span class="tag tag-er">Encoding-Retrieval</span>
+      <span class="tag tag-peri">Peripheral</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Rather than reinstatement of local activation patterns, they build dynamic large-scale brain networks from <em>trial-wise</em> activation maps in the Natural Scenes Dataset and test whether network-level (edge-based) item-specific representations exist and predict recognition.</p>
+      <p><strong>Finding:</strong> Robust network-level item-specific representations at whole-brain, subsystem and regional scales. Network reinstatement — especially connections involving higher-order visual and dorsal attention systems — was associated with condition-level recognition performance and predicted item-level accuracy. It also <em>mediated</em> the relationship between local activation-based representations and accuracy, yet the two representational forms had distinct spatial topographies and contributed independently. Network-level reinstatement is therefore a partly separate coding channel, not a restatement of regional activity.</p>
+    </div>
+    <div class="flag">⚠ The alignment of network patterns with neuromodulatory receptor distributions and mitochondrial bioenergetic gradients is post-hoc and correlational — no independent prediction was tested.</div>
+    <div class="note">Natural Scenes Dataset — large-scale naturalistic fMRI, relevant to the replication project.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1177/09567976261461522" target="_blank">A Single Dimension of Memory Strength Underlies Semantic and Phonological False Memories</a>
+    </div>
+    <div class="paper-meta">
+      Lyulei Zhang, Adam F. Osth (Osth) &middot; Psychological Science, 2026-08-25
+      <span class="tag tag-er">Encoding-Retrieval</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> The Deese–Roediger–McDermott paradigm produces false memory from either semantic or phonological similarity. Because semantic associates elicit more false "remember" (R) judgments while phonological associates elicit more false "know" (K) judgments, the two have been argued to reflect distinct memory processes. They tested this directly with semantic and phonological DRM tasks using old-new recognition followed by RK ratings (N = 227).</p>
+      <p><strong>Finding:</strong> The R/K dissociation replicated, but both parametric and nonparametric analyses revealed a single underlying dimension: a signal-detection model in which R judgments reflect a stricter response criterion than K fitted the data nearly perfectly, and a state-trace analysis showed a monotonic relation between old/new and R false alarms across tasks. Semantic materials simply produce higher rates of false recognition — no separate process is needed. A clean case where a qualitative dissociation is fully explained by criterion placement on one strength axis.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s41586-026-10946-1" target="_blank">Granule cells reorient cortical trajectories to separate contexts</a>
+    </div>
+    <div class="paper-meta">
+      Martha G. Garcia-Garcia, Michał J. Wójcik, Suhasa Thota, Lillian Drake, Amanda Otchere, Oluwatosin Akinwale, Lilian Ramos, Rui Ponte Costa, Mark J. Wagner (Wagner) &middot; Nature, 2026-08-26
+      <span class="tag tag-cross">Cross-cutting</span>
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> The textbook story is that generalisation rides on low-dimensional cortical manifolds while context separation requires an expanded, high-dimensional representation — cerebellar granule cells being the canonical expansion layer. They tested this directly by simultaneously imaging both ends of the cortico-cerebellar pathway, premotor layer-5 pyramidal tract (L5PT) neurons and granule cells, in mice learning two distinct skills that share a temporal structure.</p>
+      <p><strong>Finding:</strong> Granule cells do <em>not</em> expand the cortical code: they retain a low-rank encoding of each task. Across contexts, cortico-cerebellar coupling stays stable and L5PT activity patterns generalise, whereas granule-cell patterns temporally remap — but coherently, with their low-dimensional trajectories rotating apart rather than scrambling independently. This separates contexts while preserving each task's cortical geometry, and the divergence is strongest in expert mice. The architectural claim: cortex supplies invariant dynamic primitives for smooth generalisation; cerebellum reconfigures them into context-specific output.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-peri">Peripheral</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1016/j.neuropsychologia.2026.109579" target="_blank">Film Recall Reveals Intact Event Memory but Impaired Sequence Memory in Temporal Lobe Epilepsy Patients</a>
+    </div>
+    <div class="paper-meta">
+      Forouzan Farahani, Herui Zhang, Eden Tefera, … Anli Liu (Liu) &middot; Neuropsychologia, 2026-08-26
+      <span class="tag tag-peri">Peripheral</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Naturalistic paradigm with high ecological validity: 51 participants (27 temporal lobe epilepsy, 24 healthy controls) watched six short films and then freely recalled them. Spoken responses were transcribed, segmented and scored at film, coarse-event and fine-event levels. Recall <em>order</em> was quantified with Damerau-Levenshtein distance, and semantic and causal centrality were estimated from sentence embeddings and rater-identified causal links.</p>
+      <p><strong>Finding:</strong> The groups were indistinguishable on film-level (HC 89% vs TLE 88%, p = 0.54), coarse-event (50% vs 44%, p = 0.19) and fine-event (25% vs 22%, p = 0.17) recall; both recalled causally central events better. But TLE patients showed significantly greater fine-grained sequence deviations at recall (HC 15% vs TLE 23%, p = 0.02, Hedges' g = 0.85, Cliff's δ = 0.51), with right TLE worse still (29% vs 15%, p = 0.021). Age, education, MoCA and standard verbal/visual memory tests were all unrelated to film, event and sequence recall — so the task measures something the standard battery misses.</p>
+    </div>
+    <div class="flag">⚠ Exploratory, cross-sectional, single Level-4 centre; MoCA thresholds differed by group by design (TLE ≥ 22, HC ≥ 26), so general cognitive level is not matched.</div>
+    <div class="note">Naturalistic paradigm — directly relevant to the ongoing Sherlock / PIEMAN / ds005658 replication work.</div>
+  </div>
+</div>
+
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>Cross-region neuron co-firing mediated by ripple oscillations supports distributed working memory representations</strong> (Verzhbinsky, Daume, Cheng, Rutishauser, Halgren; Nature Neuroscience, 2026-08-12) — strong paper (~30% cross-region co-firing increase during co-ripples, no distance decay), but <strong>previously reported on 2026-08-22</strong>.</li>
+    <li><strong>Neural reactivation supports memory formation when events end</strong> (Silva, Wu &amp; Fuentemilla; Trends in Cognitive Sciences, 2026-08-12) — <strong>previously reported on 2026-08-13</strong>.</li>
+    <li><strong>Inhibitory tone in the dentate gyrus dynamically prioritizes memory flexibility or stability</strong> (PLOS Biology, 2026-08-18) — strong paper on the sensitivity/consistency trade-off, but it fell inside the previous run's window; queued rather than double-counted.</li>
+    <li><strong>Experience reorganizes content-specific memory traces in macaques</strong> (Nature Neuroscience, 2026-07-29) — assembly drift, metassemblies, sleep reactivation; published before this window.</li>
+    <li><strong>Creating true and false memories from forgotten information in Drosophila</strong> (Nature Neuroscience, 2026-07-30) — silent memory traces recoverable by context-rich reminders; same date problem.</li>
+    <li><strong>Generative replay across hippocampal-neocortical circuits</strong> (bioRxiv v2, 2026-08-03) and <strong>The breathing cycle gates memory reactivation during human NREM sleep</strong> (bioRxiv, 2026-08-04) — both strong; posting dates precede this window.</li>
+    <li><strong>Sigmoid Attention as a Better Substrate for Learned KV Cache Eviction</strong> (arXiv 2608.23296) — the attention substrate changes the soft-to-hard eviction transition; folded into the TwinKV entry rather than given its own card.</li>
+    <li><strong>Sensory context improves language prediction in humans and LLMs</strong> (PNAS, 2026-08-26) — human/LLM comparison without a memory-mechanism claim.</li>
+    <li><strong>Cognitive maps as a medium for thought</strong> (Trends in Cognitive Sciences, 2026-08-26) — opinion piece, adjacent to the pillars but no new data or model.</li>
+    <li><strong>Association Between Anterior Hippocampal Gyrification and Episodic Memory</strong> (Hippocampus, 2026-08-24) — structure–behaviour correlation without a mechanistic handle.</li>
+    <li><strong>Multiscale network reorganization during the multidimensional recollection of naturalistic events</strong> (Brain Structure &amp; Function, 2026-08-27) — naturalistic and close to the mark, but n = 22 with exploratory graph metrics.</li>
+    <li><strong>Latent persistence in fMRI dynamics during human memory consolidation</strong> (NeuroImage: Reports) — Koopman/DMD framework, methodological with no behavioural validation.</li>
+    <li><strong>VisCache, PuzzleKV, Minima-KV, Elastic KV Cache, WnW, More GPUs or a Smaller Cache?</strong> (arXiv, 2026-08-24 to 08-27) — excluded per the standing rule: LLM-serving / KV-compression engineering with efficiency claims only and no concrete memory-mechanism claim.</li>
+    <li>~460 additional candidates screened from arXiv (cs.CL/AI/LG/NE/IR/HC, q-bio.NC, stat.ML), PubMed (688 records), bioRxiv and Crossref across 40+ journals — low keyword scores, no memory content, or molecular/clinical work with hippocampal markers only.</li>
+  </ul>
+</div>
+
+</body>
+</html>
