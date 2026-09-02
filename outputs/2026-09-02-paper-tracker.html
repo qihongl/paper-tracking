@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker — 2026-09-02</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .summary-table .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .tag-lib { background: #d1fae5; color: #047857; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+</style>
+</head>
+<body>
+
+<h1>🧠 Daily Paper Tracker</h1>
+<div class="date">2026-09-02 &middot; covering 2026-08-22 → 2026-09-02 (since last run 2026-08-30)</div>
+
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2608.26152" target="_blank">AI Models Can Predict and Collaboratively Modulate Human Memory Search</a></td>
+        <td class="col-authors">Lacosse et al. (McNamee)</td>
+        <td class="col-finding">In the semantic fluency task, an LLM predicts human memory-search trajectories better than other humans do.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2608.30647" target="_blank">What It Costs to Compose, Rebuild, and Correct Precomputed Memory</a></td>
+        <td class="col-authors">Shepard</td>
+        <td class="col-finding">Saved KV-cache memories degrade when composed, need costly rebuilds, and reject corrections based on phrasing.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1016/j.neuroimage.2026.122066" target="_blank">Assimilation of newly learned category features in the vmPFC–anterior hippocampus system</a></td>
+        <td class="col-authors">Yuan et al. (Seger)</td>
+        <td class="col-finding">The vmPFC–anterior hippocampus schema system flexibly assimilates new features into an existing prototype; exemplar representations use IPS and caudate instead.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.3758/s13421-026-01928-9" target="_blank">Between the lines: Role of cultural schemas in remembering and forgetting</a></td>
+        <td class="col-authors">Peng et al. (Della Sala)</td>
+        <td class="col-finding">Cultural schemas boost immediate and delayed prose recall, but the forgetting rate is invariant — schemas raise the intercept, not the slope.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.3758/s13421-026-01932-z" target="_blank">The contribution of semantic control to elaborative episodic encoding</a></td>
+        <td class="col-authors">Lancelotte &amp; Morcom</td>
+        <td class="col-finding">Controlled semantic retrieval at encoding improves concept-level recognition and source memory but not specific lure discrimination.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://doi.org/10.64898/2026.08.25.747129" target="_blank">Structural generalization and continual learning enabled by factorized entorhinal-hippocampal memory</a></td>
+        <td class="col-authors">Hwang et al. (Fiete)</td>
+        <td class="col-finding">A content-independent grid-cell scaffold factorized from sensory associations lets a policy network generalize structurally and learn continually without catastrophic forgetting — RNNs fail all three tests.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s41467-026-76686-y" target="_blank">Subicular spatial codes arise from predictive mapping</a></td>
+        <td class="col-authors">Bennett &amp; de Cothi et al. (Barry)</td>
+        <td class="col-finding">Behaviourally-informed successor representation reproduces subicular boundary and corner cells and reveals a temporal hierarchy: subiculum predicts over longer horizons than CA1.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.64898/2026.08.23.746434" target="_blank">Active control modulates memory-related activity during encoding and encoding–retrieval similarity</a></td>
+        <td class="col-authors">Ding et al. (Mingxia Zhang)</td>
+        <td class="col-finding">Active control leaves early ERP subsequent-memory effects intact but creates late-window effects and encoding–retrieval similarity that yoked learning lacks.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.1523/JNEUROSCI.0492-26.2026" target="_blank">Prioritization in working memory reduces interference via beta band-linked stimulus transformations</a></td>
+        <td class="col-authors">Fulvio &amp; Postle</td>
+        <td class="col-finding">Prioritization shields an item by transforming the unprioritized item into a distinct "unprioritized" state maintained by a ~15 Hz low-beta mechanism.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://doi.org/10.1016/j.celrep.2026.117929" target="_blank">Orthogonal representational geometry in dACC underpins human hierarchical reasoning</a></td>
+        <td class="col-authors">Xu et al. (Chen)</td>
+        <td class="col-finding">Accumulated error and perceptual difficulty occupy near-orthogonal dACC dimensions; closer-to-orthogonal geometry predicts better hierarchical reasoning.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://doi.org/10.1016/j.celrep.2026.117828" target="_blank">Reduced astroglial-synapse coverage on cortical non-engram cells shapes remote memory strength</a></td>
+        <td class="col-authors">Mak et al. (Verheijen)</td>
+        <td class="col-finding">Astrocytes selectively retract from non-engram (not engram) prelimbic synapses at remote timepoints; reducing coverage enhances remote memory.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://doi.org/10.1371/journal.pcbi.1014719" target="_blank">Manifold-constrained plasticity enables stable learning in recurrent neural circuits</a></td>
+        <td class="col-authors">Godin &amp; Thivierge</td>
+        <td class="col-finding">Tracking the intrinsic activity subspace online and learning in manifold coordinates keeps plasticity stable under representational drift.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://doi.org/10.7554/eLife.110252" target="_blank">Noradrenergic infraslow rhythm during sleep links heart-rate dynamics and memory consolidation</a></td>
+        <td class="col-authors">Jacobsen et al. (Kjaerby)</td>
+        <td class="col-finding">Infraslow heart-rate variability is phase-locked to locus coeruleus rhythms and indexes spindle-dependent consolidation in both mice and humans.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-peri"></span>Peripheral</td>
+        <td class="col-title"><a href="https://doi.org/10.1002/hipo.70125" target="_blank">Single-Unit Activity in the Human Medial Temporal Lobe Reflects Reduced Error Monitoring During Mind Wandering</a></td>
+        <td class="col-authors">Reber et al. (Fell)</td>
+        <td class="col-finding">Human MTL neurons encode performance errors, and this error signal is significantly attenuated during mind wandering.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2608.26152" target="_blank">AI Models Can Predict and Collaboratively Modulate Human Memory Search</a>
+    </div>
+    <div class="paper-meta">
+      Eric Lacosse, Mariana Duarte, Graham Todd, Peter M. Todd, Daniel C. McNamee &middot; arXiv:2608.26152 (v2, 28 Aug 2026), Indiana University
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Uses the semantic fluency task (SFT) — generate as many members of a category as possible — as a controlled assay of generative semantic memory retrieval. The authors test whether an LLM can track and predict the trajectory of an individual human's memory search, benchmarked against human-to-human prediction, and then ask whether the model can be used interactively to modulate (extend) that search.</p>
+      <p><strong>Finding:</strong> The LLM's ability to track and predict human memory trajectories exceeds that of other humans. The result positions LLM-derived semantic structure as a candidate computational model of human memory search — and, more provocatively, as an interactive scaffold that can push a person's search into regions of semantic space they would not have reached unaided.</p>
+    </div>
+    <div class="flag">⚠ Preprint, not peer reviewed. The headline comparison ("exceeds other humans") warrants scrutiny: an LLM trained on aggregate corpus statistics may predict the <em>typical</em> trajectory well while failing on idiosyncratic, experience-specific paths — which is precisely where episodic rather than semantic structure should dominate.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2608.30647" target="_blank">What It Costs to Compose, Rebuild, and Correct Precomputed Memory</a>
+    </div>
+    <div class="paper-meta">
+      Asa Shepard &middot; arXiv:2608.30647 (31 Aug 2026)
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Treats a saved KV cache over a corpus — "precomputed memory," a model's saved reading of material, reused across queries — and trained compressions of it as a memory store, then measures three operations that any deployed memory must support: <em>composing</em> memories prepared separately, <em>rebuilding</em> after the underlying material changes, and <em>correcting</em> by serving new information alongside the memory. Experiments use Llama-3.1-8B-Instruct.</p>
+      <p><strong>Finding:</strong> All three operations are fragile in specific ways. Composed precomputed memories degrade relative to memories computed over the joint material; staying current requires rebuilds costing a large fraction of full preparation; and corrections served beside a memory are simply ignored, conditional on phrasing. Warm-rebuilding trained compressions, and serving specifically-phrased updates as pasted text or injected cache state, are the most promising remedies. The practical implication is that precomputed memory should be rebuilt on the cadence at which new information changes what the memory was computed from.</p>
+    </div>
+    <div class="flag">⚠ Single-author preprint, single 8B model, no independent replication. The phrasing-dependence of correction uptake is the most interesting result and also the one most likely to be an artifact of prompt construction.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1016/j.neuroimage.2026.122066" target="_blank">Assimilation of newly learned category features in the ventromedial prefrontal–anterior hippocampus system</a>
+    </div>
+    <div class="paper-meta">
+      Jingzhao Yuan, Fang Yue, Peijuan Li, &hellip;, Carol A. Seger &middot; NeuroImage, September 2026 (online June 2026)
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-lib">📚 matches-library</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> fMRI during two-phase family-resemblance category learning. Participants first learned a category (during which most adopt an abstract prototype strategy), then learned <em>new features</em> for the already-learned category — Piaget's "assimilation" — followed by a transfer test. Controlled (trial-based) design, not naturalistic.</p>
+      <p><strong>Finding:</strong> Before new-feature acquisition, prototype representations were present in vmPFC and anterior hippocampus. During new-feature learning, vmPFC and anterior hippocampus were <em>more</em> active than during initial learning, and at transfer, participants using a prototype strategy again showed prototype representations in vmPFC and anterior hippocampus — whereas exemplar representations recruited intraparietal sulcus and caudate instead. The double dissociation is the point: abstract prototypes are carried by a declarative, schema-like system (vmPFC–anterior hippocampus), not by the procedural/exemplar system, and that schema system flexibly assimilates new features rather than requiring the category to be relearned.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.3758/s13421-026-01928-9" target="_blank">Between the lines: Role of cultural schemas in remembering and forgetting</a>
+    </div>
+    <div class="paper-meta">
+      Nan Peng, Robert H. Logie, Sergio Della Sala &middot; Memory &amp; Cognition, 28 Aug 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Four experiments using coherent narrative prose with cued recall at immediate and delayed retention intervals. In Experiments 1–2, participants' interpretation of the cultural properties implied by the narrative indexed cultural-schema activation; in Experiments 3–4, activation was manipulated directly by presenting culturally familiar versus unfamiliar versions.</p>
+      <p><strong>Finding:</strong> Activated cultural schemas facilitated recall of coherent narrative at both immediate and delayed tests. The shape of forgetting was negatively accelerating and better fit by a power function than alternatives, in both group and individual data. Critically, the <em>rate</em> of forgetting was independent of initial degree of learning — schema activation raises the intercept of the forgetting function without changing its slope. Schemas buy you a better starting representation, not a slower decay.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.3758/s13421-026-01932-z" target="_blank">The contribution of semantic control to elaborative episodic encoding</a>
+    </div>
+    <div class="paper-meta">
+      Fiona Lancelotte, Alexa Morcom &middot; Memory &amp; Cognition, 1 Sep 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Two preregistered experiments (N = 78; N = 64) in young adults. Participants studied object images under one of two semantic encoding tasks: controlled semantic retrieval (choose the word most related in meaning) versus semantic selection (choose the word most similar in size). Memory was tested for concept-level item recognition, old-lure discrimination, and source memory; a hierarchical Bayesian multinomial processing tree model decomposed source memory parameters.</p>
+      <p><strong>Finding:</strong> Controlled semantic retrieval at encoding improved concept-level recognition relative to semantic selection but did <em>not</em> affect specific memory (old-lure discrimination). Greater control demand — indexed by lower word2vec image–word similarity — slowed encoding judgements but had no significant effect on later memory. The modeling showed better source-memory detection following controlled retrieval encoding. So elaborative encoding via controlled retrieval buys gist-level and source-level memory, but not the fine-grained detail that distinguishes a studied item from a related lure.</p>
+    </div>
+    <div class="flag">⚠ Young adults only; the control-demand manipulation produced a null effect on all memory measures, so the "demand" half of the design is uninformative as reported.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.64898/2026.08.25.747129" target="_blank">Structural generalization and continual learning enabled by factorized entorhinal-hippocampal memory and entorhinal-parietal action circuits</a>
+    </div>
+    <div class="paper-meta">
+      Jaedong Hwang, Sujaya Neupane, Mehrdad Jazayeri, Ila Fiete &middot; bioRxiv, 25 Aug 2026
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Combines behaviour, neural recordings, and modeling in an abstract sequential image navigation task that dissociates three generalizations: mnemonic (visual → mental navigation), transitive (trained → novel routes), and structural (familiar → new environments). Neural activity was recorded from entorhinal cortex and posterior parietal cortex in two monkeys.</p>
+      <p><strong>Finding:</strong> Generic recurrent neural networks failed at <em>all three</em> generalizations, whereas monkeys and humans succeed. A structured entorhinal-hippocampal memory model — a content-independent metric scaffold based on grid cells for storing experience — coupled to a separate policy RNN succeeded at all three. The scaffold supports mnemonic and transitive generalization through path integration, enables structural generalization by letting a previously learned action policy be reused, and its high combinatorial capacity permits continual learning without catastrophic forgetting. EC and PPC populations carried two distinct computations; modularizing them into separate distance-tracking and action-initiation networks captured the population dynamics and improved performance. An RL module learned a scale factor aligning grid periodicity to the environment's temporal structure.</p>
+    </div>
+    <div class="flag">⚠ Preprint, not peer reviewed. The monkey electrophysiology rests on n = 2 animals.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s41467-026-76686-y" target="_blank">Subicular spatial codes arise from predictive mapping</a>
+    </div>
+    <div class="paper-meta">
+      Lauren Bennett, William de Cothi, Laurenz Muessig, &hellip;, Steven Poulter, Caswell Barry &middot; Nature Communications, 31 Aug 2026
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+      <span class="tag tag-lib">📚 matches-library</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Computational modeling study. The successor representation (SR) has explained place cells and grid cells, but subicular neurons — the main hippocampal output — show heterogeneous spatial responses that have resisted a unified account. The authors incorporate rodent behavioural biases into the SR and compare it against purely spatial and boundary-vector-cell models of subiculum.</p>
+      <p><strong>Finding:</strong> The behaviourally-informed SR reproduces the heterogeneous activity patterns of subicular neurons and — notably — accounts for the emergence of boundary and corner cells, cell types absent from upstream hippocampal regions. Subicular firing is better described by SR than by spatial or BVC models. The work also establishes a temporal hierarchy in hippocampal–subicular processing: subiculum encodes predictive representations over longer time horizons than CA1, capturing extended behavioural patterns and environmental affordances. This is a clean instance of a single normative predictive code generating cell types that look like a zoo of unrelated tuning curves.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.64898/2026.08.23.746434" target="_blank">Active control modulates memory-related activity during encoding and encoding–retrieval similarity</a>
+    </div>
+    <div class="paper-meta">
+      Zhuolei Ding, Shuge Yuan, Jincheng Xu, Shudong Zhang, Simon Hanslmayr, Xun Liu, Mingxia Zhang &middot; bioRxiv, 23 Aug 2026 (Beijing Normal University / University of Glasgow)
+      <span class="tag tag-er">Encoding-Retrieval</span>
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> EEG recorded while participants encoded objects under an active (self-directed) versus yoked (matched passive) condition, then again during a delayed recognition test roughly 24 hours later. ERPs were examined across early windows (pre-stimulus slow potential, N2) and late windows (P300, late slow wave, post-stimulus slow potential), plus encoding–retrieval similarity (ERS) between neural patterns at encoding and retrieval.</p>
+      <p><strong>Finding:</strong> Active control improved delayed recognition, with the advantage expressed selectively for detailed recognition. Early processing windows showed classic subsequent-memory effects — pre-stimulus slow potential and N2 separated later-remembered from later-forgotten items — but these were <em>not</em> modulated by active control. Active control modulated only the <em>late</em> effects: remembered–forgotten differences in late stimulus-related and immediate post-stimulus processing appeared only in the active condition. ERS showed the same signature, with memory-related encoding–retrieval similarity present under active but absent under yoked learning, in relatively late windows. Supports a constructive-processing account: active control builds richer, more detailed encoding representations that can actually be reinstated at retrieval.</p>
+    </div>
+    <div class="flag">⚠ Preprint, not peer reviewed. The yoked design is the strength here; the null ERS under yoked learning is the load-bearing result and would benefit from an equivalence test rather than a null comparison.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1523/JNEUROSCI.0492-26.2026" target="_blank">Prioritization in working memory reduces interference via beta band-linked stimulus transformations</a>
+    </div>
+    <div class="paper-meta">
+      Jacqueline M. Fulvio, Bradley R. Postle &middot; Journal of Neuroscience, 1 Sep 2026
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A two-step retrocuing task in which participants hold two items in working memory and the item not cued by the first cue cannot be dropped, because the second cue may prioritize it. Experiment 1 used dense sampling of recall performance over time; Experiment 2 sought EEG correlates.</p>
+      <p><strong>Finding:</strong> Recall performance oscillated at ~15 Hz ("low-beta") in the prioritization task versus ~20 Hz ("higher-beta") in a matched neutral-cue task. The prioritized item was shielded from bias exerted by the uncued item and by items carried over from the previous trial. The prioritization cue uniquely triggered a phase reset at 15 Hz and an increase in low-beta oscillatory peaks; burst analysis ruled out bursting as the mechanism, and self-correlation showed the cue triggered greater whole-topography reorganization than a neutral cue. The interpretation is that shielding arises from <em>transforming</em> the non-prioritized item into an active "unprioritized" state maintained by a low-beta mechanism — not from simply dropping it.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1016/j.celrep.2026.117929" target="_blank">Orthogonal representational geometry in dACC underpins human hierarchical reasoning</a>
+    </div>
+    <div class="paper-meta">
+      Chuanyong Xu, Ning Mei, Wenshan Dong, Rui Hu, Tom Verguts, Qi Chen &middot; Cell Reports 45(9):117929, 1 Sep 2026
+      <span class="tag tag-cross">Cross-cutting</span>
+      <span class="tag tag-lib">📚 matches-library</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Combines Bayesian modeling and recurrent neural network simulation of hierarchical reasoning with human neuroimaging. Tasks are hierarchically structured, with high-level rules governing low-level perceptual judgments, so good performance requires reasoning about the rule level rather than the stimulus level.</p>
+      <p><strong>Finding:</strong> Accumulated errors and perceptual difficulty are integrated in dorsal anterior cingulate cortex to estimate high-level rule-switch confidence. These two variables are represented along two separable dimensions approximable by basis functions, and <em>orthogonality</em> between them supports a two-dimensional representation well suited to hierarchical reasoning. Crucially, a closer-to-orthogonal representational geometry correlates with more accurate computation and better task performance — geometry is doing computational work here, not merely decorrelating nuisance variables.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1016/j.celrep.2026.117828" target="_blank">Reduced astroglial-synapse coverage on cortical non-engram cells shapes remote memory strength</a>
+    </div>
+    <div class="paper-meta">
+      Aline Mak, Cristina Boers-Escuder, Sandra Parisi, Twinke M. Blok, August B. Smit, Michel C. van den Oever, Mark H.G. Verheijen &middot; Cell Reports 45(9):117828, 1 Sep 2026
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Introduces Astro-GRASP, a genetically targeted method for probing astrocyte–synapse interactions, applied in mouse prelimbic cortex. The authors tracked perisynaptic astrocytic process (PAP) coverage separately for engram versus non-engram neurons at recent versus remote timepoints after fear conditioning, then depleted ezrin from astrocytes to test causality.</p>
+      <p><strong>Finding:</strong> Fear conditioning <em>globally</em> increased astrocyte–synapse coverage during recent consolidation, but at the remote timepoint astrocytes selectively <em>retracted</em> from non-engram synapses. Ezrin depletion reduced local coverage and enhanced remote memory expression. The counterintuitive upshot: astroglial coverage of non-engram — not engram — synapses shapes remote memory strength, implying that withdrawal of glial support from competing synapses sharpens the expressed engram. This adds a non-neuronal, competitive mechanism to systems consolidation.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1371/journal.pcbi.1014719" target="_blank">Manifold-constrained plasticity enables stable learning in recurrent neural circuits</a>
+    </div>
+    <div class="paper-meta">
+      Camille Godin, Jean-Philippe Thivierge &middot; PLOS Computational Biology, 25 Aug 2026
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Addresses the problem that population activity is confined to low-dimensional manifolds that drift over time, while standard learning rules implicitly assume stable, full-rank representations. The proposed rule, SPLiT (Synaptic Projection Learning with intrinsic Tracking), uses an online Oja rule to continuously estimate the intrinsic low-dimensional activity subspace and performs normalized least-mean-squares learning <em>in manifold coordinates</em>. Tested in rate-based recurrent networks under both constrained dynamics (activity restricted to a fixed manifold) and unconstrained dynamics (drifting dominant subspace).</p>
+      <p><strong>Finding:</strong> SPLiT reliably learns time-varying target signals in both regimes, with faster convergence, reduced sensitivity to recurrent gain, smaller weight updates, and greater robustness to noisy teaching signals than baselines. Analytically, SPLiT learns the optimal decoder projected onto the instantaneous principal subspace and maintains bounded error under drift — a mechanistic account of how plasticity can exploit manifold structure to keep learning stable despite representational drift.</p>
+    </div>
+    <div class="flag">⚠ Purely simulation work — no comparison against biological plasticity or neural recording data, so the claim is about a possible mechanism rather than an identified one.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.7554/eLife.110252" target="_blank">Noradrenergic infraslow rhythm during sleep is the critical link between heart-rate dynamics and memory consolidation</a>
+    </div>
+    <div class="paper-meta">
+      Sofie S. Jacobsen, Allison B. Morehouse, Pin-Chun Chen, &hellip;, Celia Kjaerby &middot; eLife, 28 Aug 2026
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Cross-species design. Optogenetics in mice establishes causality for the locus coeruleus (LC) → heart rate (HR) relationship during NREM; parallel human sleep recordings test whether infraslow HR variability indexes spindle-dependent memory processing, using overnight retention as the behavioural readout.</p>
+      <p><strong>Finding:</strong> HR fluctuations during NREM are tightly phase-locked to noradrenergic infraslow (~0.02 Hz) rhythms, identifying LC as a key driver of very-low-frequency HR variability. Transient LC inhibition blunts HR slowing and LC activation produces rapid acceleration; the relationship holds across a defined range of LC activity but breaks down when LC activity becomes excessive — a graded, non-monotonic link. In mice, the amplitude of NREM HR decelerations correlates with spindle activity and subsequent memory performance, and human sleepers show the same pattern: stronger VLF-HR fluctuations track increased spindle expression and better overnight retention. Infraslow HR variability thus becomes a non-invasive peripheral marker for brainstem-driven consolidation.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-peri">Peripheral</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1002/hipo.70125" target="_blank">Single-Unit Activity in the Human Medial Temporal Lobe Reflects Reduced Error Monitoring During Mind Wandering</a>
+    </div>
+    <div class="paper-meta">
+      Thomas P. Reber, Leila Chaieb, Marlene Derner, &hellip;, Juergen Fell &middot; Hippocampus, 27 Aug 2026
+      <span class="tag tag-peri">Peripheral</span>
+      <span class="tag tag-lib">📚 matches-library</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Single-unit recordings from the medial temporal lobe of presurgical epilepsy patients performing an attention task with interspersed experience-sampling probes, allowing periods of mind wandering to be identified from the participant rather than inferred.</p>
+      <p><strong>Finding:</strong> Behaviourally, error adjustment was reduced during mind-wandering periods relative to task-focused attention. At the neural level, MTL population responses encoded performance errors — supporting a role for hippocampus and adjacent cortex in error monitoring — and this error-related population activity was significantly reduced during mind wandering. The result links a subjective state to a degradation of a specific MTL computation rather than to global inattention.</p>
+    </div>
+    <div class="flag">⚠ Small N, inherent to human intracranial single-unit work, and recorded in presurgical epilepsy patients — generalisation to healthy MTL function is an assumption.</div>
+  </div>
+</div>
+
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>A complementary learning system for continual episodic memory in large language models</strong> (Pan, Hahami, Siegelmann, Sompolinsky; bioRxiv) — previously reported 2026-08-30.</li>
+    <li><strong>Prefrontal–thalamic goal states organize spatially aligned hippocampal maps</strong> (Nature Communications) — previously reported 2026-08-30.</li>
+    <li><strong>Large-scale brain network reinstatement supports recognition memory</strong> (PNAS, Natural Scenes Dataset) — previously reported 2026-08-30.</li>
+    <li><strong>Multiscale network reorganization during the multidimensional recollection of naturalistic events</strong> (Brain Structure and Function) — previously reported 2026-08-30.</li>
+    <li><strong>Dissociable effects of schema congruency on item recognition and source memory</strong> (Memory &amp; Cognition) — previously reported 2026-08-30.</li>
+    <li><strong>A Single Dimension of Memory Strength Underlies Semantic and Phonological False Memories</strong> (Psychological Science) — previously reported 2026-08-30.</li>
+    <li><strong>Does Episodic Memory Help Close the Lexical Frequency Gap in Sensitivity to Syntactic Contrasts?</strong> (arXiv:2608.23851) — previously reported 2026-08-30.</li>
+    <li><strong>Association Between Anterior Hippocampal Gyrification and Episodic Memory Performance</strong> (Hippocampus) — previously reported 2026-08-30.</li>
+    <li><strong>Causality organizes episodic memory and neural reinstatement</strong> (Antony; bioRxiv) — previously reported 2026-07-25.</li>
+    <li><strong>What can we learn from studying replay in humans?</strong> (Schuck, Petzka, Fleming; Trends in Cognitive Sciences) — previously reported 2026-07-25.</li>
+    <li><strong>Memory in the Palm of Your Hand: Smartphone-based Methods for Measuring Memory in the Wild</strong> (Goldfarb, Davachi, Barense; J Cogn Neurosci) — previously reported 2026-07-05.</li>
+    <li><strong>Prestimulus Activity in the Cingulo-Opercular Network Predicts Memory for Naturalistic Episodic Experience</strong> — <em>not new</em>: this is Cohen, Ben-Yakov, Weber, Edelson, Paz &amp; Dudai, Cerebral Cortex 30(3):1902–1913 (2020). Recent news coverage only; the underlying paper is six years old.</li>
+    <li><strong>The Role of Plasticity in Replay: Stability Through Anti-Hebbian Rules</strong> (Baron, Diba, Amarasingham; Hippocampus) — published April 2026, outside the reporting window.</li>
+    <li><strong>Prior knowledge biases episodic memory by filling in the gaps in imprecise memories</strong> (Ramey; Cognition) — already surfaced in the researcher's own Bluesky post analysis; not new to them.</li>
+    <li><strong>Interactions between hippocampus and visceral organs in sleep and wakefulness</strong> (J Neurosci) — n = 2 cats; interesting but low mechanistic yield for the three pillars.</li>
+    <li><strong>KV-cache compression / long-context serving papers</strong> (CateKV, IndexMem, RetrievalAttention, "Learning how to Forget") — excluded per policy: throughput and memory-footprint gains without a memory-mechanism claim.</li>
+    <li><strong>Agent-memory engineering papers</strong> (Agent Zero Memory, GraphMemix, PonderPounce, Prospective Intention Store, and similar) — applied systems work; benchmarks improved without mechanistic insight into retention, retrieval, or forgetting.</li>
+  </ul>
+</div>
+
+</body>
+</html>
