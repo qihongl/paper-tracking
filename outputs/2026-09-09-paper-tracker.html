@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker — 2026-09-09</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .summary-table .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .tag-lib { background: #d1fae5; color: #047857; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+</style>
+</head>
+<body>
+
+<h1>🧠 Daily Paper Tracker</h1>
+<div class="date">2026-09-09 &middot; window 2026-09-02 → 2026-09-09 &middot; 15 papers</div>
+
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2609.04434" target="_blank">What Attention Recalls and Recurrence Controls in Hybrid Language Models</a></td>
+        <td class="col-authors">Afendulev et al. (Korznikov)</td>
+        <td class="col-finding">KV cache and recurrent state dissociate causally: exact retrieval needs attention (64–98%), language/persona needs recurrence (~1% if KV-only).</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2609.07282" target="_blank">Separating Stream Stability from Long-Term Recall in Language Models</a></td>
+        <td class="col-authors">Cao, Zhang, Tang et al. (Pei)</td>
+        <td class="col-finding">Attention sinks give an infinite stability horizon but finite access/utility horizons — stable streaming is not memory.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.64898/2026.09.02.748628" target="_blank">Hippocampal stimulation timed to memory reactivation shapes human sleep oscillatory dynamics and consolidation</a></td>
+        <td class="col-authors">Okyere, Li, Raufeisen et al. (Violante)</td>
+        <td class="col-finding">First human hippocampal temporal-interference stimulation during sleep: reactivation-timed stimulation cuts associative forgetting.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.31234/osf.io/k8cje_v1" target="_blank">Temporal compression of naturalistic events in episodic memory: Effects of environmental familiarity and action involvement</a></td>
+        <td class="col-authors">Durocher, Leroy (D'Argembeau)</td>
+        <td class="col-finding">Action involvement consistently enriches and de-compresses event memory; familiarity shifts subjective but not objective recall.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1002/ana.78354" target="_blank">Hippocampal Seizure-Related Burden is Associated with Accelerated Long-Term Forgetting in Focal Epilepsy</a></td>
+        <td class="col-authors">Bratu, Lambert, Felician et al. (Bartolomei)</td>
+        <td class="col-finding">Cumulative hippocampal ictal + postictal burden from intracranial EEG predicts 1-week verbal retention loss.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://doi.org/10.1016/j.cub.2026.08.016" target="_blank">Compression as a neural mechanism of mnemonic chunking in prefrontal cortex</a></td>
+        <td class="col-authors">Chiang &amp; Rich</td>
+        <td class="col-finding">Chunking biases dlPFC target representations toward chunk centres and lowers population dimensionality — lossy, not lossless.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://doi.org/10.1016/j.isci.2026.117391" target="_blank">Context-dependent abstraction of temporal relationships during naturalistic episodic memory</a></td>
+        <td class="col-authors">Ye, Hu, Ku, Appiah (Kwok)</td>
+        <td class="col-finding">Precuneus multivoxel geometry tracks remembered temporal distance from &lt;1 s to ~18 min; rTMS erases the pattern, not the BOLD.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://doi.org/10.3758/s13423-026-02981-w" target="_blank">Modeling complex narrative memory via sentence recognition (MINERVA 2 + distributional semantics)</a></td>
+        <td class="col-authors">Reid, Jamieson (Mak)</td>
+        <td class="col-finding">A preregistered episodic model with LSA/RPM vectors predicts the verbatim &gt; paraphrase &gt; inference &gt; wrong gradient for narrative sentences.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2609.07757" target="_blank">A Bifurcation Theory for the Equilibria of Modern Hopfield Networks</a></td>
+        <td class="col-authors">Schimmenti &amp; Ciarchi</td>
+        <td class="col-finding">Memory correlations organize hierarchical attractors through successive bifurcations; a general stability criterion for associative memory.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.1523/JNEUROSCI.1605-25.2026" target="_blank">Context-dependent functional diversity of dorsomedial posterior parietal neurons revealed by single-unit fMRI mapping during naturalistic viewing</a></td>
+        <td class="col-authors">Zhou, Wang, Tam et al. (Kwok)</td>
+        <td class="col-finding">Neuron–BOLD maps are context-locked in macaques, yet neighbouring dmPPC neurons carry strikingly different whole-brain profiles.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s41380-026-03845-4" target="_blank">Severe PTSD symptoms magnify episodic memory-encoding deficits and amygdala-ACC attenuation during unpredictable threat</a></td>
+        <td class="col-authors">Aberg, Efrati, Idan et al. (Doenyas-Barak)</td>
+        <td class="col-finding">PTSD severity selectively impairs incidental encoding under unpredictable threat, with blunted amygdala/dACC encoding signals.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.3758/s13423-026-02998-1" target="_blank">Long-term memory speeds encoding, independently of attention</a></td>
+        <td class="col-authors">Wyllie, von Bastian (Zivony)</td>
+        <td class="col-finding">Familiar stimuli encode faster, but capture attention no more than unfamiliar ones — a clean LTM template-matching effect.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://doi.org/10.1177/17456916261469175" target="_blank">Aging as a Continuation of Development: A Hypothesis and Framework</a></td>
+        <td class="col-authors">Fernandez, Burke (Nadel)</td>
+        <td class="col-finding">Reframes episodic-precision loss as an adaptive hippocampal→cortical recalibration favouring schema over detail.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://doi.org/10.1016/j.biopsych.2026.08.017" target="_blank">Mechanistic computational models of cognition across scales and species</a></td>
+        <td class="col-authors">Froudist-Walsh, Ivanov et al. (Wang)</td>
+        <td class="col-finding">Multi-scale working-memory models now generate testable receptor-to-behaviour hypotheses and cross-species translation.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-peri"></span>Peripheral</td>
+        <td class="col-title"><a href="https://doi.org/10.1080/09658211.2026.2727404" target="_blank">Tracking changes for a positive public event memory: a longitudinal study of the 2024 solar eclipse</a></td>
+        <td class="col-authors">Nordstrom, Gordon, Lalla et al. (Sheldon)</td>
+        <td class="col-finding">Public-event gist outlasts personal-event gist over 6 months while detail consistency decays faster — divergent trajectories.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2609.04434" target="_blank">What Attention Recalls and Recurrence Controls in Hybrid Language Models</a>
+    </div>
+    <div class="paper-meta">
+      Kirill Afendulev, Alexey Dontsov, Elena Tutubalina, Anton Korznikov &middot; arXiv (cs.CL), 2026-09-03
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Two cache-level interventions on hybrid attention-plus-recurrence models (Qwen3.5, Falcon-H1). <em>Split-prefill</em> discards one channel after prefilling a context — keeping either the KV cache or the recurrent state — and then generates. <em>State-swap</em> pairs the KV cache from one context with the recurrent state from another inside a single forward pass, giving a causal read on which channel drives which aspect of the output.</p>
+      <p><strong>Finding:</strong> The channels split sharply. Exact retrieval survives only through attention (64–98% of full accuracy) and collapses to zero through recurrence. Output language and persona reverse the pattern: both survive recurrence (70–80% and 3–5×) while KV-only drops to ~1% language accuracy. State-swap confirms causality — the answer's <em>content</em> comes from the KV side, its <em>language</em> from the recurrent side. Recurrent-only generation also accepts words never present in context but sharing meaning or subword parts with seen items, i.e. the compressed state reconstructs rather than copies.</p>
+    </div>
+    <div class="flag">⚠ Preprint, not peer reviewed; two model families only — generality of the dissociation untested</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2609.07282" target="_blank">Separating Stream Stability from Long-Term Recall in Language Models</a>
+    </div>
+    <div class="paper-meta">
+      Peipei Cao, Xin Zhang, Jie Tang, Xiao Li, … Qing Pei &middot; arXiv (cs.CL), 2026-09-07
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Argues that "streaming" and "memory" are conflated in the literature and separates three horizons: <em>stability</em> (predictive behaviour stays well-behaved), <em>access</em> (past content can still causally affect output), and <em>utility</em> (task performance remains acceptable). Introduces ThreeH, an evaluation contract measuring all three under matched state and compute, applied to attention-sink streaming on 128K-token streams with delayed binding recall and delayed decisions.</p>
+      <p><strong>Finding:</strong> Constructively demonstrates that the stability horizon can be infinite while access and utility horizons are finite: attention sinks preserve local modelling but not content beyond the active cache. Anchor tokens should not be treated as semantic memory. Recurrent state and retrieval, by contrast, extend the semantic horizon. This is a genuinely useful conceptual cleanup for anyone claiming "unbounded context."</p>
+    </div>
+    <div class="flag">⚠ Preprint; proposes an evaluation contract and diagnostics rather than a new mechanism or model</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.64898/2026.09.02.748628" target="_blank">Hippocampal stimulation timed to memory reactivation shapes human sleep oscillatory dynamics and consolidation</a>
+    </div>
+    <div class="paper-meta">
+      Prince Okyere, Junheng Li, Tobias Raufeisen, Ketevan Alania, … Ines R. Violante &middot; bioRxiv, 2026-09-02
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> The first hippocampal stimulation in human sleep. Temporal interference (TI) stimulation was applied to the left hippocampal head either concurrently with, or prior to, induced (cue-triggered) memory reactivation during sleep — a within-subject timing manipulation that prior invasive work could only run in small patient cohorts, and that prior non-invasive work could only target at cortex.</p>
+      <p><strong>Finding:</strong> Stimulation concurrent with reactivation reduced associative memory forgetting relative to mistimed stimulation, enhanced fast spindle amplitude, and preserved the association between slow oscillation–spindle coupling and memory. The behavioural benefit was mediated by a distributed, left-lateralised set of spindle and coupling features. This is a causal, spatially specific demonstration that hippocampal sleep reactivation timing matters for human consolidation — not merely a correlational coupling result.</p>
+    </div>
+    <div class="flag">⚠ Preprint, not peer reviewed; declared conflict of interest (a co-author holds the TI patent and equity in TI Solutions AG)</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.31234/osf.io/k8cje_v1" target="_blank">Temporal compression of naturalistic events in episodic memory: Effects of environmental familiarity and action involvement</a>
+    </div>
+    <div class="paper-meta">
+      Bastien Durocher, Nathan Leroy, Arnaud D'Argembeau &middot; PsyArXiv (OSF preprint), 2026-09-05
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Three experiments. Participants viewed first-person videos of navigation through familiar or unfamiliar places, with goal-directed action videos (e.g. buying a notebook) added in two experiments, then mentally replayed each video to yield a temporal-compression index, plus subjective ratings and written recall. Critically, list composition was manipulated: immediate recall (Exp 1), familiarity blocked across lists (Exp 2), and familiar/unfamiliar mixed within lists (Exp 3).</p>
+      <p><strong>Finding:</strong> Action involvement consistently <em>reduced</em> compression and enriched both subjective and objective remembering. Familiarity effects were context-dependent in a diagnostically useful way: absent with immediate recall, present when familiarity was blocked (unfamiliar videos remembered less compressed), and eliminated when familiar and unfamiliar videos were mixed within the same list. Familiar videos were nonetheless always rated as more detailed and easier to remember. The result is a clean dissociation between subjective memory experience and objective recall content, with actions doing the structuring work that familiarity only appears to do.</p>
+    </div>
+    <div class="flag">⚠ Preprint, not peer reviewed; compression index rests on mental-replay timing, which is itself a reconstruction</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1002/ana.78354" target="_blank">Hippocampal Seizure-Related Burden is Associated with Accelerated Long-Term Forgetting in Focal Epilepsy</a>
+    </div>
+    <div class="paper-meta">
+      Ionuț-Flavius Bratu, Isabelle Lambert, Olivier Felician, Samuel Medina Villalon, … Fabrice Bartolomei &middot; Annals of Neurology, 2026-09-03
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Twenty patients undergoing stereo-EEG in Marseille had continuous intracranial recordings between two memory assessments (30 min and 1 week post-encoding). Hippocampal ictal involvement and duration were quantified with epileptogenicity markers and visual review; the postictal period was quantified with permutation entropy; ictal, postictal and combined hippocampal burden metrics were computed. Verbal and visual memory were assessed with standardised recall and recognition, with retention defined as 1-week performance expressed as a percentage of 30-min performance.</p>
+      <p><strong>Finding:</strong> Higher dominant-hemisphere hippocampal burden was associated with poorer 1-week verbal memory — both raw performance and retention — independently of standard clinical covariates. This is one of the few human datasets that measures the <em>intervening</em> neural disruption between encoding and retrieval rather than inferring it, and it links seizure-related hippocampal activity specifically to the consolidation window rather than to encoding.</p>
+    </div>
+    <div class="flag">⚠ n=20, single-centre, observational — burden is measured, not manipulated, so causality is unestablished</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1016/j.cub.2026.08.016" target="_blank">Compression as a neural mechanism of mnemonic chunking in prefrontal cortex</a>
+    </div>
+    <div class="paper-meta">
+      Feng-Kuei Chiang &amp; Erin L. Rich &middot; Current Biology, 2026-09-02
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Macaques performed a self-ordered visuospatial working-memory task in which spontaneous chunking could be characterised behaviourally, while dorsolateral prefrontal cortex was recorded. The design lets the authors ask what chunking does to the <em>geometry</em> of the maintained representations, not just to accuracy.</p>
+      <p><strong>Finding:</strong> Chunking improved memory overall but produced lower accuracy and longer reaction times at chunk boundaries. In dlPFC, chunking systematically biased spatial-target representations toward common chunk centres and <em>reduced</em> the dimensionality of population activity — a compression of mnemonic information. Memory-guided behaviour was biased in the same direction as the neural distortion, showing the compression is lossy rather than lossless: detail within a chunk is sacrificed to improve overall retention. Directly relevant to any key-value account in which chunk/group identity is written at the expense of item-level fidelity.</p>
+    </div>
+    <div class="flag">⚠ Abstract does not report N (macaque electrophysiology, typically 2 animals); chunk boundaries inferred from behaviour</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1016/j.isci.2026.117391" target="_blank">Context-dependent abstraction of temporal relationships during naturalistic episodic memory</a>
+    </div>
+    <div class="paper-meta">
+      Qun Ye, Yi Hu, Yixuan Ku, Kofi Appiah, Sze Chai Kwok &middot; iScience, 2026-09-05
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-er">Encoding-Retrieval</span>
+      <span class="tag tag-lib">📚 matches-library</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Healthy adults played a first-person interactive video game and later judged the temporal order of pairs of event moments during fMRI. Representational similarity analysis searched for a geometry tracking retrieved temporal distance; control analyses ruled out perceptual similarity, situational change and task difficulty. A within-subject inhibitory rTMS protocol to medial precuneus was applied before retrieval.</p>
+      <p><strong>Finding:</strong> A distributed multivoxel pattern in precuneus and surrounding posteromedial cortex tracked temporal distance across intervals from under 1 s to roughly 18 min, and was stronger for events sharing a common episodic context. Precuneus rTMS attenuated the representational pattern without changing overall BOLD amplitude. The claim is that the precuneus codes temporal distance <em>within structured episodic contexts</em> rather than as a metric of elapsed time — a naturalistic-paradigm result with a causal perturbation, and a direct descendant of work already in your library.</p>
+    </div>
+    <div class="flag">⚠ Abstract does not report N; the rTMS dissociation rests on multivariate-pattern sensitivity, not an amplitude change</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.3758/s13423-026-02981-w" target="_blank">Modeling complex narrative memory via sentence recognition: A marriage of distributional semantic models and an episodic model (MINERVA 2)</a>
+    </div>
+    <div class="paper-meta">
+      J. Nick Reid, Randall K. Jamieson, Matthew H. C. Mak &middot; Psychonomic Bulletin &amp; Review, 2026-09-08
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Participants read short narratives and completed an OLD/NEW sentence recognition test either immediately or after a delay of more than 10 hours. Probes were verbatim, paraphrase, inference, or wrong. Semantic word representations from two distributional semantic models (LSA and the Random Permutation Model) were imported into MINERVA 2. Importantly, the modelling procedure and parameters were <em>preregistered</em> for Study 2 — rare in computational memory research.</p>
+      <p><strong>Finding:</strong> The standard gradient replicated (verbatim judged OLD most often, then paraphrase, then inference, then wrong). The MINERVA 2 model with DSM-derived representations performed very well, and because Study 2 was preregistered the fit is a genuine prediction rather than a postdiction. This is the most direct test to date of whether a global-matching episodic model scales from word lists to sentence-level narrative memory — the exact regime your schema-guided episodic RNN targets.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2609.07757" target="_blank">A Bifurcation Theory for the Equilibria of Modern Hopfield Networks</a>
+    </div>
+    <div class="paper-meta">
+      Vincenzo Maria Schimmenti &amp; Matteo Ciarchi &middot; arXiv (cond-mat.dis-nn), 2026-09-07
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Derives stability and bifurcation criteria for the fixed points of general convex-dual Modern Hopfield networks under a general statistics of stored patterns — going beyond specific architectures and idealized pattern ensembles. The framework is then applied to random, block-correlated, and infinitely hierarchical pattern ensembles.</p>
+      <p><strong>Finding:</strong> Memory correlations systematically organize the emergence of hierarchical attractors through successive bifurcations. The predictions quantitatively describe retrieval bifurcations in MHNs storing MNIST patterns and recapitulate the hierarchical organization of haematopoietic cell identities. Because Modern Hopfield networks unify associative memory, transformer attention and attractor dynamics, a general bifurcation theory is a genuine piece of scaffolding for thinking about how correlated memories compete and reorganize.</p>
+    </div>
+    <div class="flag">⚠ Preprint; theory only — no behavioural or neural data, and the biology application is a recapitulation rather than a test</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1523/JNEUROSCI.1605-25.2026" target="_blank">Context-dependent functional diversity of dorsomedial posterior parietal neurons revealed by single-unit fMRI mapping during naturalistic viewing</a>
+    </div>
+    <div class="paper-meta">
+      Xufeng Zhou, Lei Wang, Shu K. E. Tam, Michael Ortiz-Rios, Dazhi Yin, Sze Chai Kwok &middot; Journal of Neuroscience, 2026-09-08
+      <span class="tag tag-er">Encoding-Retrieval</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> <strong>Naturalistic paradigm — priority.</strong> Combined single-unit electrophysiology with awake fMRI in five rhesus macaques viewing identical naturalistic video stimuli. Whole-brain neuron–BOLD functional maps were generated by correlating each neuron's activity with voxel-wise fMRI signal, then compared across video contexts and against spiking alone and critical fMRI frames alone.</p>
+      <p><strong>Finding:</strong> Neuron–BOLD maps were strongly context-dependent: neurons recorded during the same video context showed substantially greater map similarity than neurons recorded during different videos, and the maps captured contextual structure more robustly than spikes or critical frames. Yet a substantial subset of <em>neighbouring</em> neurons recorded simultaneously from the same electrode showed markedly distinct whole-brain association patterns — considerable local heterogeneity within dmPPC that waveform features did not explain. Actionable for anyone doing neuron-to-network mapping on naturalistic datasets: shared large-scale context and local diversity coexist.</p>
+    </div>
+    <div class="flag">⚠ n=5 macaques; anaesthetized-free awake fMRI is technically demanding, and local heterogeneity is descriptive</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s41380-026-03845-4" target="_blank">Severe PTSD symptoms magnify episodic memory-encoding deficits and amygdala-ACC attenuation during unpredictable threat in male combat veterans</a>
+    </div>
+    <div class="paper-meta">
+      Kristoffer C. Aberg, Shai Efrati, Sagi Idan, Rachel Merzbach, … Keren Doenyas-Barak &middot; Molecular Psychiatry, 2026-09-03
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Sixty male combat veterans underwent fMRI during <em>incidental</em> encoding of everyday objects presented under unpredictable threat, predictable threat, or no threat — threat operationalised as potential exposure to a highly aversive sound. An <em>unexpected</em> recognition test followed 90 minutes later. Memory, subjective anxiety and encoding-related BOLD were related to PTSD symptom severity (CAPS-5).</p>
+      <p><strong>Finding:</strong> Greater symptom severity predicted heightened anxiety and poorer memory specifically for items encoded under unpredictable threat. Amygdala and dorsal anterior cingulate activity tracked overall encoding success, but these responses were <em>attenuated</em> with increasing severity specifically in the unpredictable condition. The specificity is the point: it is not a general encoding deficit, but a failure of threat-related modulation of encoding circuits.</p>
+    </div>
+    <div class="flag">⚠ Male-only sample (n=60); threat and arousal are not dissociated, so the mechanism could be arousal rather than unpredictability per se</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.3758/s13423-026-02998-1" target="_blank">Long-term memory speeds encoding, independently of attention</a>
+    </div>
+    <div class="paper-meta">
+      Abigail C. Wyllie, Claudia C. von Bastian, Alon Zivony &middot; Psychonomic Bulletin &amp; Review, 2026-09-08
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Uses a Rapid Serial Visual Presentation task with a familiarity manipulation previously shown not to affect attention: targets were English or Hebrew letters, presented to native English or Hebrew speakers. In Experiment 2 a peripheral distractor preceded the target to induce an attentional blink; in Experiment 3 target language was blocked.</p>
+      <p><strong>Finding:</strong> Participants were more accurate reporting targets in their native (familiar) alphabet. Critically, familiar and unfamiliar distractors produced attentional blinks of <em>equal</em> magnitude — equal efficacy in capturing attention — while the familiarity benefit for target accuracy persisted, including under blocked language. That double dissociation is what licenses the claim: LTM template-matching speeds the perceptual-to-WM encoding transformation, and it is not just an attentional-priority effect wearing a different hat.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1177/17456916261469175" target="_blank">Aging as a Continuation of Development: A Hypothesis and Framework</a>
+    </div>
+    <div class="paper-meta">
+      Fabian-Xosé Fernandez, Sara N. Burke, Lynn Nadel &middot; Perspectives on Psychological Science, 2026-09-03
+      <span class="tag tag-cross">Cross-cutting</span>
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A theoretical synthesis drawing on molecular, network, behavioural and comparative evidence, arguing against the prevailing "compensatory decline" framing of cognitive ageing. No new data; the contribution is a reframing plus testable predictions across longitudinal, neuroimaging and computational domains.</p>
+      <p><strong>Finding:</strong> The authors argue that the well-documented decline in episodic-memory precision reflects a deliberate recalibration of plasticity from hippocampal to cortical circuits, favouring semantic integration and schematic stability over rapid encoding of novel detail — an evolved optimization rather than a workaround for loss. Cognitive reserve is reinterpreted as an expression of this developmental reallocation. Interesting, and directly relevant to any model that trades hippocampal detail for cortical schema; but note it is a hypothesis paper, and the "adaptive" reading is hard to falsify without specifying the fitness function.</p>
+    </div>
+    <div class="flag">⚠ Hypothesis/framework paper — no new data; predictions are stated but untested here</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1016/j.biopsych.2026.08.017" target="_blank">Mechanistic computational models of cognition across scales and species</a>
+    </div>
+    <div class="paper-meta">
+      Sean Froudist-Walsh, Tsvetoslav G. Ivanov, Teo Fantacci, Loic Magrou, Harper Cho, … Xiao-Jing Wang &middot; Biological Psychiatry, 2026-09-07
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A review organised around three trends: multi-scale models of working memory linking receptors and cell types to brain-wide activity and behaviour; extension of mechanistic circuit models beyond WM to conscious perception, attention and planning; and cross-species comparative models supporting translational computational neuroscience. Primer coding notebooks accompany the article.</p>
+      <p><strong>Finding:</strong> The authors' claim is that computational findings now generate specific, testable mechanistic hypotheses for a wider range of symptoms, and that modelling can guide translational neuroscience toward experiments most likely to survive the jump to human treatment. Useful as a map of where biophysically grounded circuit modelling currently stands relative to the more abstract RNN/transformer modelling style.</p>
+    </div>
+    <div class="flag">⚠ Review — no new data or model</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-peri">Peripheral</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1080/09658211.2026.2727404" target="_blank">Tracking changes for a positive public event memory: a longitudinal study of the 2024 solar eclipse</a>
+    </div>
+    <div class="paper-meta">
+      Lauren Nordstrom, Jade Gordon, Azara Lalla, Daniela J. Palombo, Signy Sheldon &middot; Memory, 2026-09-04
+      <span class="tag tag-peri">Peripheral</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A naturalistic, real-world memory design: 175 undergraduates reported on a personal event and on a shared positive public event (the 2024 solar eclipse) four times across six months. At each timepoint they gave free recalls, answered detailed questions, and provided subjective ratings. Gist was scored from free recalls using natural language processing, and detail consistency was tracked across timepoints.</p>
+      <p><strong>Finding:</strong> Gist was <em>better</em> preserved for the eclipse than for personal memories, yet consistency of specific details declined <em>more steeply</em> for the eclipse, and eclipse memories retained higher confidence. Personal versus public event memories therefore follow different trajectories. Peripheral here, but the design — NLP-scored gist on freely recalled real-world events over months — is a template worth borrowing.</p>
+    </div>
+    <div class="flag">⚠ Student sample; purely behavioural, no mechanistic or neural measure</div>
+  </div>
+</div>
+
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>Offline generative network reconfiguration guides insight-like accelerated learning by assimilation into schema in rats</strong> (Bhattarai &amp; Dragoi, Nat Commun, 2026-09-03) — a perfect Pillar-2 hit, but <em>previously reported on 2026-09-06</em>; caught only by the second-pass title grep.</li>
+    <li><strong>Hippocampal mechanisms underlying the resolution of competition in memory and perception</strong> (Favila &amp; Aly, Nat Commun, 2026-09-04) — previously reported on 2026-09-06.</li>
+    <li><strong>Differential locus coeruleus–hippocampus interactions during offline states</strong> (Yang &amp; Eschenko, eLife, 2026-09-04) — previously reported on 2026-09-06.</li>
+    <li><strong>REM sleep prefrontal high-frequency oscillation chains … compared to NREM sleep</strong> (Shin, Satchell, Miller &amp; Jadhav, eLife) — v3 posted in-window, but <em>previously reported on 2026-08-22</em>; this is a revision, not new work.</li>
+    <li><strong>Replay of procedural memory is independent of the hippocampus</strong> (Thompson et al., Nat Neurosci) — strong paper, but <em>previously reported on 2026-07-25</em>.</li>
+    <li><strong>Goal-directed hippocampal theta sweeps during memory-guided navigation</strong> (Tang, Mei, Harvey et al., Nat Neurosci) — previously reported on 2026-07-04 and 2026-07-17.</li>
+    <li><strong>A septo–entorhinal GABAergic pathway that enables switching between episodic memories</strong> (Kim, Suh, So et al., Nat Neurosci) — <em>stale</em>: published online 2026-04-29 (Nat Neurosci 29(6):1439–1451); it surfaced only through recent indexing and news coverage. Outside the window.</li>
+    <li><strong>Interpreting human sleep activity through neural contrastive learning</strong> (Chen, Zheng, Zhou et al., Neuron; Sleep Interpreter) — <em>stale</em>: first published online 2026-04-17 (10.1016/j.neuron.2026.03.028); only its issue appearance (Vol 114, Iss 17, Sep 2) falls in-window.</li>
+    <li><strong>Entorhinal grid coding as a functional link between tau accumulation and episodic memory in human aging</strong> (Segen et al., bioRxiv) — v1 posted 2026-08-26, outside the window.</li>
+    <li><strong>KV-cache compression / long-context serving papers</strong> — BeaconKV, ECOKV, SGD-KV, Jacap, MetaKV, HeadWiseKV, VestigeKV, Random Attention, Interface-Aware KV Quantization, BIO-MEMART, CONDUIT, "What Matters for Aggressive Decoding-Time KV Eviction?", "Language Models Can Control Their Own Attention". Efficiency/throughput claims without a memory-mechanism result; excluded per standing policy.</li>
+    <li><strong>Agent-memory engineering systems</strong> — MemForest, SkillGLoW, CAPTURE, MEMO, "Forgetting Without Restarting". Applied agent architectures, no memory-mechanism claim.</li>
+    <li><strong>Kalman Delta Networks: Uncertainty-aware Associative Memory</strong> (Bui, Huang &amp; Ying, arXiv, 2026-09-07) — borderline. The Kalman-gain write rule is a genuine memory-mechanism idea (what to overwrite, weighted by accumulated evidence), but it is framed and evaluated as a linear-attention efficiency architecture. Held out; worth revisiting if a follow-up reports memory-specific behaviour.</li>
+    <li><strong>Complementary univariate and multivariate signals in the parietal cortex for visual working memory pointers and features</strong> (Yu &amp; Lau, Cereb Cortex, 2026-09-02) and <strong>Mesoscale functional architecture in medial posterior parietal cortex</strong> (Hira et al., eLife, 2026-09-02) — solid, but overlapping with the dmPPC paper already included and lower yield for the three pillars.</li>
+    <li><strong>Rodent/pharmacology and environmental-toxicology hippocampal papers</strong> (PFAS neurogenesis; artemisinin; probiotics/LPS; isoniazid; tree-shrew entorhinal cytoarchitecture; wild-to-domestic hippocampal transcriptomics) — hippocampal in name only, no memory-mechanism content.</li>
+  </ul>
+</div>
+
+</body>
+</html>
