@@ -50,6 +50,18 @@ CORE = {
     "neural manifold": 5, "representational drift": 7, "mixed selectivity": 6,
     "population coding": 4, "neural geometry": 6, "sparse autoencoder": 4,
     "mechanistic interpretability": 5,
+    # --- Added 2026-09-05 / 09-15: title-phrase gaps that caused confirmed misses ---
+    # (MEC strategy learning; human hippocampal abstraction; Bayesian-connectionist;
+    #  emergent symbolic structure.) Keep in sync with the prompt's keyword matrix.
+    "medial entorhinal cortex": 7, "strategy learning": 6, "strategy switching": 6,
+    "neural dynamics": 5, "geometric alignment": 7, "neuronal selectivity": 6,
+    "abstract generalization": 8, "human hippocampus": 7, "human hippocampal": 7,
+    "connectionist": 5, "bayesian-connectionist": 7, "hybrid model": 5,
+    "behavioral prediction": 6, "predicting human behavior": 6, "inductive bias": 5,
+    "cognitive modeling": 5, "behavioral modeling": 5,
+    "symbolic structure": 7, "symbolic representation": 7, "symbolic reasoning": 6,
+    "emergent structure": 6, "compositionality": 7, "systematicity": 7,
+    "neurosymbolic": 5, "vector representation": 5,
 }
 
 # Terms that attract but are usually engineering-only (penalise unless core memory present)
@@ -66,6 +78,10 @@ GATE = [
     "attention", "narrative", "event segmentation", "remember", "recognition",
     "context", "working memory", "reactivation", "ripple", "place cell", "grid cell",
     "reinstatement", "serial",
+    # Added 2026-09-15: abstraction / symbolic / decision-adjacent work was being
+    # gated out of the pool even when the abstract was squarely on-topic.
+    "generalization", "abstraction", "compositional", "symbolic", "entorhinal",
+    "navigation", "decision-making", "concept learning", "neural network", "language model",
 ]
 
 
@@ -74,25 +90,32 @@ def norm(s):
 
 
 def score(p):
-    text = norm(p.get("title", "")) + " " + norm(p.get("abstract", ""))
     ti = norm(p.get("title", ""))
+    ab = norm(p.get("abstract", ""))
+    text = ti + " " + ab
     s = 0.0
-    hits = []
+    hits, title_hits, abs_hits = [], [], []
     for k, w in CORE.items():
         if k in text:
             # title hits count double
-            mult = 2 if k in ti else 1
-            s += w * mult
+            if k in ti:
+                s += w * 2
+                title_hits.append(k)
+            else:
+                s += w
+                abs_hits.append(k)
             hits.append(k)
     if re.search(r"\bkv\b", text) and "cache" in text:
         s += 5
     for e in ENGINEERING:
         if e in text:
             s -= 2
-    # gate: must contain at least 2 distinct gate terms
+    # gate: >=2 distinct gate terms, OR strong abstract-level relevance.
+    # The rescue exists because abstract-only matches are precisely the papers
+    # whose titles are opaque — the failure mode behind the 2026-09 misses.
     ghits = sum(1 for g in GATE if g in text)
-    gated = ghits >= 2
-    return s, hits, gated, ghits
+    gated = ghits >= 2 or s >= 12
+    return s, hits, title_hits, abs_hits, gated, ghits
 
 
 def slug(t):
@@ -113,6 +136,28 @@ def ids_of(p):
     return out
 
 
+def evidence(p, terms, width=200):
+    """Abstract snippets around each matched term — the evidence a reviewer needs.
+
+    Abstract-only hits are the cases where the title was uninformative, so showing
+    the matched context is what makes the include/exclude call defensible.
+    """
+    ab = p.get("abstract", "") or ""
+    low = norm(ab)
+    out, seen = [], []
+    for t in terms:
+        i = low.find(t)
+        if i < 0:
+            continue
+        lo = max(0, i - width // 2)
+        hi = min(len(ab), i + len(t) + width // 2)
+        if any(lo < e and s2 < hi for s2, e in seen):
+            continue
+        seen.append((lo, hi))
+        out.append(("\u2026" if lo else "") + ab[lo:hi].strip() + "\u2026")
+    return out
+
+
 def main():
     cands = json.load(open(CAND))
     seen = json.load(open(SEEN))
@@ -125,11 +170,13 @@ def main():
         if keys & seenkeys:
             ndup += 1
             continue
-        s, hits, gated, ghits = score(p)
+        s, hits, title_hits, abs_hits, gated, ghits = score(p)
         if not gated:
             continue
         p["_score"] = round(s, 1)
         p["_hits"] = hits
+        p["_title_hits"] = title_hits
+        p["_abs_hits"] = abs_hits
         p["_ghits"] = ghits
         rows.append(p)
 
@@ -150,7 +197,13 @@ def main():
         print(f"[{p['_score']}] {p['src']:9s} | {p.get('date','')} | {p.get('venue','')[:45]}")
         print(f"T: {p.get('title','')}")
         print(f"A: {', '.join(p.get('authors',[])[:3])}{' et al.' if len(p.get('authors',[]))>3 else ''}")
-        print(f"HITS: {', '.join(sorted(set(p['_hits']))[:18])}")
+        th = sorted(set(p.get("_title_hits", [])))
+        ah = sorted(set(p.get("_abs_hits", [])))
+        print(f"TITLE-HITS:    {', '.join(th[:18]) or '(none)'}")
+        print(f"ABS-ONLY-HITS: {', '.join(ah[:18]) or '(none)'}"
+              + ("   <-- abstract-only: review, do not auto-drop" if ah and not th else ""))
+        for sn in evidence(p, ah[:3] or th[:2]):
+            print(f"  ~ {sn}")
         print(f"ABS: {(p.get('abstract','') or '')[:700]}")
         print(f"URL: {p.get('url') or p.get('doi') or p.get('id')}")
 

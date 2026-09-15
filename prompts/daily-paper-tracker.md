@@ -45,7 +45,7 @@ Search using keywords from the matrix below. Run at least 8–12 searches coveri
 | Current Opinion in Behavioral Sciences | `https://www.cell.com/current-opinion-in-behavioral-sciences/current` |
 | Communications Biology | `https://www.nature.com/commsbio/` |
 
-For each scan, extract titles and abstracts of recently published articles (last 14 days). Cross-reference against the keyword matrix and include any matches.
+For each scan, extract titles and abstracts of recently published articles (last 14 days). Cross-reference **both the title and the abstract** against the keyword matrix (see "Match on title AND abstract" above) and include any match in either field.
 
 ### All sources
 - **arxiv:** cs.CL, cs.AI, cs.LG, q-bio.NC, stat.ML, cs.NE, cs.HC, cond-mat.dis-nn
@@ -108,6 +108,37 @@ Any non-empty hit means the paper was already reported — drop it from the repo
 ## Keyword Search Matrix
 
 Run multiple searches using combinations from these categories. Cross-category pairings (e.g., "episodic memory" AND "large language model") are especially valuable.
+
+### Match on title AND abstract — never the title alone
+
+Apply the matrix to **both the title and the abstract**. Titles are systematically
+under-informative: every confirmed miss so far (Bowler et al. 2026-09-05; Torbati &
+Davoudi, Lake et al., McCoy et al. 2026-09-15) had a title whose wording was absent
+from the matrix while the abstract stated the mechanism plainly. Screened on titles
+alone, all four were invisible.
+
+- **Title hit** — strong evidence; treat as a candidate immediately.
+- **Abstract-only hit** — a candidate to **review**, never to auto-drop. Read the
+  abstract before deciding; an uninformative title is not grounds for exclusion.
+- **Never exclude a paper solely because its title lacks matrix terms.** If the
+  abstract names a pillar mechanism — attention-based retention/forgetting,
+  schema binding, key-value or temporal-context structure, encoding–retrieval
+  overlap, representational geometry for abstraction, symbolic/compositional
+  structure in neural networks — it belongs in the candidate pool.
+- **Do not include on keyword presence alone**, in either field. A passing mention
+  of "memory" or "generalization" with no stated approach and finding still fails
+  the Quality Standards below.
+- When scanning the raw harvest pool (the second pass), concatenate
+  `title + abstract` and match against that, and **record which field matched**.
+  An abstract-only match is the higher-risk, higher-value case: when such a paper is
+  included, say so in the report (e.g. "abstract-only match — title uninformative").
+- Where a script is used, prefer the abstract-aware scorer
+  (`scripts/score.py <cands> <seen> <out> [topN]`), which prints `TITLE-HITS` and
+  `ABS-ONLY-HITS` separately plus the matched abstract context for each candidate.
+  **When adding terms to the matrix above, add them to `CORE` in
+  `scripts/score.py` as well.** The two lists drifted silently once (found
+  2026-09-15): the matrix had gained four terms the scorer could not see, so the
+  script was blind to exactly the papers the matrix had been fixed to catch.
 
 ### A — Human/Animal Systems & Cognitive Neuroscience
 episodic memory, hippocampus, hippocampal, entorhinal cortex, medial entorhinal cortex, medial temporal lobe, place cells, time cells, grid cells, memory consolidation, systems consolidation, pattern separation, pattern completion, memory replay, sharp-wave ripples, spatial navigation, cognitive map, relational memory, source memory, autobiographical memory, free recall, serial recall, context-dependent memory, temporal context, spacing effect, lag effect, memory interference, retrieval practice, testing effect, encoding variability, subsequent memory effect, recognition memory, familiarity vs recollection, episodic future thinking, mental time travel, schema memory, statistical learning memory, event segmentation, narrative memory, event model, event boundary, temporal integration memory, human replay, replay detection, offline replay, awake replay, replay benchmark, polysemanticity, mixed selectivity, hippocampal plasticity, single-unit human hippocampus, anaesthetized hippocampus, polysemantic neuron, sleep replay, sleep consolidation, NREM sleep memory, sleep spindles, memory reactivation sleep, targeted memory reactivation, TMR, cortical replay, hippocampal replay, sharp-wave ripple content, ripple replay, forward replay, reverse replay, remote memory, recent memory, systems memory consolidation, memory transformation, memory schemas, schema memory, schema binding, prior knowledge memory, neural geometry, neural dimensionality, representational geometry, geometric alignment, neuronal selectivity, population coding, population dynamics, neural dynamics, manifold learning, abstract representations, abstract generalization, human hippocampus, human hippocampal, rule learning, strategy learning, task learning, task switching, strategy switching, cognitive flexibility, prefrontal cortex, PFC learning, orbitofrontal cortex, anterior cingulate cortex, ACC, lateral prefrontal cortex, dorsolateral prefrontal cortex, DLPFC, representational drift, representational alignment, cross-condition generalization, stimulus generalization, concept learning, category learning, primate electrophysiology, macaque neurophysiology, single-unit recording, multi-unit recording, Utah array, Neuropixels, memories, events, neural activity, neurons, neuronal, brains, brain activity, neural recordings, recordings, humans, adults, psychology, cognitive psychology, objects, mapping, interactions, factors, situation, experiences, mind, processes, stored representations, sequences, sequence, predicting, predictions, prediction, images, animals, animal models
