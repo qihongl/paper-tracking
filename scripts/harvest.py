@@ -234,6 +234,12 @@ def crossref(start, end):
 
 if __name__ == "__main__":
     start, end, outp = sys.argv[1], sys.argv[2], sys.argv[3]
+    # bioRxiv is OFF by default: the date-range endpoint (api.biorxiv.org/details/
+    # <server>/<start>/<end>/0) is a paginated cursor that hangs for >8 min or 504s
+    # (observed 2026-09-06, 09-09, 09-13). Cover bioRxiv via targeted web search
+    # plus single-DOI api.biorxiv.org/details/biorxiv/<doi> lookups instead.
+    # Set HARVEST_BIORXIV=1 only if you specifically want to retry it.
+    import os
     allp = []
     sys.stderr.write("arXiv...\n")
     a = arxiv(start, end)
@@ -243,10 +249,13 @@ if __name__ == "__main__":
     p = pubmed(start, end)
     sys.stderr.write(f"  {len(p)}\n")
     allp += p
-    sys.stderr.write("bioRxiv...\n")
-    b = biorxiv(start, end)
-    sys.stderr.write(f"  {len(b)}\n")
-    allp += b
+    if os.environ.get("HARVEST_BIORXIV") == "1":
+        sys.stderr.write("bioRxiv...\n")
+        b = biorxiv(start, end)
+        sys.stderr.write(f"  {len(b)}\n")
+        allp += b
+    else:
+        sys.stderr.write("bioRxiv... SKIPPED (paginated endpoint hangs; use web search)\n")
     sys.stderr.write("Crossref...\n")
     c = crossref(start, end)
     sys.stderr.write(f"  {len(c)}\n")
