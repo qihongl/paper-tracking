@@ -186,7 +186,10 @@ CROSSREF_ISSN = [
     "1471-003X",  # Nat Rev Neurosci
     "0092-8674",  # Cell
     "1050-9631",  # Hippocampus
-    "2662-9992",  # Commun Psychol
+    # NOTE: 2662-9992 is *Humanities and Social Sciences Communications*, NOT
+    # Communications Psychology. Using it silently swapped in an irrelevant
+    # journal and left Communications Psychology unscanned (found 2026-09-23).
+    "2731-9121",  # Commun Psychol
     "2399-3642",  # Commun Biol
     "2052-4463",  # Sci Data
     "0096-3445",  # JEP:General
