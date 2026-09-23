@@ -86,7 +86,7 @@ GATE = [
 
 
 def norm(s):
-    return (s or "").lower()
+    return _astext(s).lower()
 
 
 def score(p):
@@ -118,8 +118,15 @@ def score(p):
     return s, hits, title_hits, abs_hits, gated, ghits
 
 
+def _astext(v):
+    """Crossref returns title/container-title as 1-element lists, sometimes absent."""
+    if isinstance(v, list):
+        v = v[0] if v else ""
+    return str(v or "")
+
+
 def slug(t):
-    t = (t or "").lower()
+    t = _astext(t).lower()
     t = re.sub(r"[^a-z0-9 ]+", "", t)
     t = re.sub(r"\s+", "-", t.strip())
     return t[:60]
@@ -128,10 +135,12 @@ def slug(t):
 def ids_of(p):
     out = set()
     if p.get("doi"):
-        out.add(p["doi"].lower().strip())
+        out.add(_astext(p["doi"]).lower().strip())
+    if p.get("DOI"):
+        out.add(_astext(p["DOI"]).lower().strip())
     i = p.get("id", "")
     if i:
-        out.add(i.lower().strip())
+        out.add(_astext(i).lower().strip())
     out.add(slug(p.get("title", "")))
     return out
 
@@ -142,7 +151,7 @@ def evidence(p, terms, width=200):
     Abstract-only hits are the cases where the title was uninformative, so showing
     the matched context is what makes the include/exclude call defensible.
     """
-    ab = p.get("abstract", "") or ""
+    ab = _astext(p.get("abstract", ""))
     low = norm(ab)
     out, seen = [], []
     for t in terms:
@@ -204,7 +213,7 @@ def main():
               + ("   <-- abstract-only: review, do not auto-drop" if ah and not th else ""))
         for sn in evidence(p, ah[:3] or th[:2]):
             print(f"  ~ {sn}")
-        print(f"ABS: {(p.get('abstract','') or '')[:700]}")
+        print(f"ABS: {_astext(p.get('abstract',''))[:700]}")
         print(f"URL: {p.get('url') or p.get('doi') or p.get('id')}")
 
 

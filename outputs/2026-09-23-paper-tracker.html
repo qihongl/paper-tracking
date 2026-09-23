@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker — 2026-09-23</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .summary-table .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .tag-lib { background: #d1fae5; color: #047857; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+</style>
+</head>
+<body>
+
+<h1>🧠 Daily Paper Tracker</h1>
+<div class="date">2026-09-23 &middot; window 2026-09-18 → 2026-09-23 (widened one day before the 09-20 → 09-23 gap to catch boundary-day items)</div>
+
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2609.22005" target="_blank">Abstention and Noise Filtering: Two Missing Primitives of Softmax Attention</a></td>
+        <td class="col-authors">R. Z. Wang</td>
+        <td class="col-finding">Value-gating supplies two separable functions softmax attention lacks — abstention dominates at 10M params, interference filtering at 350M.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2609.24635" target="_blank">Written as a Record, Read as an Address: What a Forward Pass Leaves in an Operation's KV Cache</a></td>
+        <td class="col-authors">Wu &amp; Shomali</td>
+        <td class="col-finding">Operation spans leave a causally recoverable routing record at layers 12–15 (Llama-3.1-8B); the model reads the address, not the payload.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2609.24238" target="_blank">Memory vs. Context? Influential Factors of Factual Recall in Language Models</a></td>
+        <td class="col-authors">Fouilhé et al. (Muller)</td>
+        <td class="col-finding">Across 31 models, question phrasing alone shifts reliance on memorized vs. in-context knowledge by up to 80 percentage points.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.64898/2026.09.15.751737" target="_blank">Prefrontal control of hippocampal map reorganization during sleep</a></td>
+        <td class="col-authors">Huang et al. (Burgalossi)</td>
+        <td class="col-finding">Post-encoding sleep reverses novelty-induced CA1 remapping via mPFC; chemogenetic mPFC silencing abolishes the generalization.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.64898/2026.09.15.751773" target="_blank">Transient excitability and synaptic consolidation support stable memory despite neural drift</a></td>
+        <td class="col-authors">Wagle &amp; Clopath</td>
+        <td class="col-finding">A transient excitability bump in recruited ACC neurons rescues cortical engram stability against drift propagated from hippocampus.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1016/j.cub.2026.08.064" target="_blank">A vector navigation and inference architecture can construct universal cognitive maps for abstract reasoning</a></td>
+        <td class="col-authors">A. Bicanski</td>
+        <td class="col-finding">Non-local inference over vector-navigation primitives builds cognitive maps that support analogy, subspace construction and perspective-taking.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.64898/2026.09.19.752914" target="_blank">Gradual evolution of multiplexed spatial coding within a conserved hippocampal scaffold</a></td>
+        <td class="col-authors">Ge et al. (Lu)</td>
+        <td class="col-finding">Tree shrew CA1 multiplexes position with non-positional variables, decoding location as well as rats with fewer neurons.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2609.25802" target="_blank">Latest Exact Match Attention</a></td>
+        <td class="col-authors">M. Brösamle</td>
+        <td class="col-finding">Binarized Q/K with latest-exact-match addressing gives a growing associative store that beats fixed-state DeltaNet on associative recall.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2609.24417" target="_blank">ARM: Attention with Routed-Memory for Learnable Sparse Control</a></td>
+        <td class="col-authors">Zeng et al. (Wang)</td>
+        <td class="col-finding">Fixed-size routed memory with sigmoid-gated soft updates replaces hard KV eviction, retaining information the eviction baselines discard.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://doi.org/10.1037/rev0000639" target="_blank">Sequence learning as Bayesian filtering</a></td>
+        <td class="col-authors">Norris &amp; Kalm</td>
+        <td class="col-finding">One prediction-update cycle reproduces the full Hebb-effect catalogue, including multi-list learning, spacing, and forward/backward asymmetries.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.1371/journal.pcbi.1014761" target="_blank">Drift-diffusion dynamics of hippocampal replay</a></td>
+        <td class="col-authors">Wu &amp; Wei</td>
+        <td class="col-finding">Replay trajectories show quadratic MSD scaling — drifts, not a random walk; &lt;1% of SWRs are sequential before spatial experience.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.64898/2026.09.14.751602" target="_blank">CA1 reinstatement and novelty response independently support recognition memory</a></td>
+        <td class="col-authors">Quent, Zhang &amp; Vatansever</td>
+        <td class="col-finding">In 213,000 trials across 41 days, CA1 reinstatement and novelty signals each predict encoding success after controlling for the other.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.1162/neco.a.1582" target="_blank">The Quasi-Systematic Nature of Splitter Cells</a></td>
+        <td class="col-authors">Chaix-Eichel et al. (Rougier)</td>
+        <td class="col-finding">Splitter cells emerge spontaneously from random recurrent structure and are not necessary — lesioning them leaves behaviour intact.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://doi.org/10.1177/17456916261475284" target="_blank">Misinformation as an Event-Model Problem</a></td>
+        <td class="col-authors">Huff, Göbel &amp; Fischer</td>
+        <td class="col-finding">Corrections fail because negation removes a causal node from an event model; causally adequate replacements restore coherence.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-peri"></span>Peripheral</td>
+        <td class="col-title"><a href="https://doi.org/10.1523/jneurosci.2200-25.2026" target="_blank">Uncovering latent cognitive, metacognitive, and neural bases of problem-solving deficits in children with developmental dyscalculia</a></td>
+        <td class="col-authors">Lasnick et al. (Menon)</td>
+        <td class="col-finding">In 68 children, striatal-hippocampal decoding separates dyscalculia from peers where univariate analysis fails; deficits span strategy switching.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2609.22005" target="_blank">Abstention and Noise Filtering: Two Missing Primitives of Softmax Attention</a>
+    </div>
+    <div class="paper-meta">
+      Richard Zhe Wang &middot; arXiv (cs.LG), 18 Sep 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Argues that value-pathway gating in attention supplies two distinct capacities that softmax attention by construction lacks: <em>abstention</em> (a head can output nothing, escaping the constraint that weights sum to one) and <em>noise filtering</em> (suppressing interference from superposed features in the residual stream). Matched models from 10M to 350M parameters implement abstention via a learned per-head sink logit in the softmax and filtering via a per-value gate. A controlled-interference probe injects known distractors into the values a head reads and measures what each gate removes.</p>
+      <p><strong>Finding:</strong> The two primitives trade off with scale — abstention accounts for nearly all of the gating benefit at 10M parameters, filtering for most of it at 350M. The best model at every scale has both. Injecting controlled interference confirms the gate removes it, and each gate form has a characteristic blind spot. Both are KV-cache-compatible and add negligible parameters.</p>
+    </div>
+    <div class="flag">⚠ Max scale 350M — the scale crossover is real but far from frontier; no mechanistic account of what the sink logit encodes</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2609.24635" target="_blank">Written as a Record, Read as an Address: What a Forward Pass Leaves in an Operation's KV Cache</a>
+    </div>
+    <div class="paper-meta">
+      Lingfeng Wu &amp; Behzad Shomali &middot; arXiv (cs.CL), 21 Sep 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Splits a forward pass into a <em>frozen writer</em> (cache recomputed without gradients) and a <em>reader</em> that sees only instruction and operation tokens with all state descriptions hidden, trained in isolation. Anything the reader recovers was therefore already present in the unmodified cache. Tested on a synthetic boxes task ("swap the contents of Box F and Box B") plus ToMi and GSM8K, across Llama-3.1-8B and Mistral-7B, with causal operation-span transplants between worlds holding identical values.</p>
+      <p><strong>Finding:</strong> A base reader recovers ≤0.06 of queried bindings; after isolation training, 0.75–1.00 — and recoverability tracks the operation's read/write footprint. Two access modes emerge: transplants causally redirect <em>which</em> visible state is read (a routing record) even when values are identical, while isolation training additionally opens direct payload access from the single operand-name token in a narrow mid-depth band (layers 12–15 of 32 in Llama-3.1-8B; 14–17 in Mistral-7B). The writing model reads mainly the address, not the value.</p>
+    </div>
+    <div class="flag">⚠ Preprint, not peer reviewed; isolation training costs open-book accuracy and is bounded by training coverage</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2609.24238" target="_blank">Memory vs. Context? Influential Factors of Factual Recall in Language Models</a>
+    </div>
+    <div class="paper-meta">
+      Guilhem Fouilhé, Nicholas Asher, Philippe Muller &middot; arXiv (cs.CL), 21 Sep 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Large-scale replication and stress test of Yu et al. (2023) on how LMs arbitrate between memorized knowledge and contradictory in-context statements. World-capitals experiments rerun on 31 models spanning Pythia, GPT-2, Qwen3 and Ministral families (base and post-trained), extended to five additional knowledge relation types from ParaConflict.</p>
+      <p><strong>Finding:</strong> Most original findings hold — larger models and higher-frequency entities favour memorized answers, with substantial family-level variance. But generalization is poor in specific, informative ways: entity-frequency effects vanish on Qwen3-14B and 32B; post-training shifts the memory–context trade-off inconsistently across families; and question phrasing alone moves reliance on memorized knowledge by up to 80 percentage points. Semantically unrelated prose can mimic coherent supporting context.</p>
+    </div>
+    <div class="flag">⚠ Purely behavioural — no attention or KV-level analysis; the 80-point phrasing effect is reported without a mechanistic account</div>
+  </div>
+
+</div>
+
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.64898/2026.09.15.751737" target="_blank">Prefrontal control of hippocampal map reorganization during sleep</a>
+    </div>
+    <div class="paper-meta">
+      Ruoyu Huang, Masahiro Nakano, Claudia Clopath, Jan Born, Thorsten Bartsch, Martin Both, Eduardo Blanco-Hernandez, Andrea Burgalossi &middot; bioRxiv (posted 21 Sep 2026), Univ. Tübingen
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Miniscope Ca²⁺ imaging of mouse CA1 place cells as animals explored a familiar environment followed by a similar novel one. Post-encoding sleep versus wake was contrasted, and mPFC was chemogenetically inactivated during post-encoding sleep. Read-outs were place-map reinstatement in the novel context plus behavioural familiarity indices (exploration, rearing).</p>
+      <p><strong>Finding:</strong> Place cells remapped in the novel context as expected — but a single episode of post-encoding sleep <em>reversed</em> the remapping, reinstating familiar place-cell representations in the novel environment, an effect absent in the wake condition. Neural reinstatement was accompanied by reduced exploration and rearing. mPFC inactivation during post-encoding sleep abolished the generalization and instead preserved the novel map. Sleep therefore does not merely stabilize wake-formed hippocampal patterns; it actively reshapes them under prefrontal control.</p>
+    </div>
+    <div class="flag">⚠ Preprint, not peer reviewed; N not stated in the abstract and the causal claim rests on a single chemogenetic manipulation</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.64898/2026.09.15.751773" target="_blank">Transient excitability and synaptic consolidation support stable memory despite neural drift</a>
+    </div>
+    <div class="paper-meta">
+      Surbhit Wagle, Claudia Clopath &middot; bioRxiv (posted 21 Sep 2026), Imperial College London
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Two-region recurrent network model of hippocampus (HPC) and anterior cingulate cortex (ACC) with region-specific synaptic plasticity, excitability-dependent neuronal allocation, HPC→cortical coupling and activity-dependent intrinsic plasticity. Regions were run independently and as an intact circuit; simulated erasure of learning-induced potentiation tested the time course of hippocampal dependence.</p>
+      <p><strong>Finding:</strong> In isolation, faster HPC synaptic turnover produced pronounced drift while persistent ACC connectivity stayed stable. In the intact circuit, hippocampal input recruited ACC neurons but also <em>propagated hippocampal variability into cortex</em>, destabilizing the emerging cortical engram and impairing memory expression — drift is contagious, not merely local. A transient increase in intrinsic excitability of recruited ACC neurons rescued this by promoting repeated reactivation during an early consolidation window, stabilizing ensemble membership without preventing hippocampal drift. Simulated erasure reproduced early hippocampal dependence that ACC plasticity did not share.</p>
+    </div>
+    <div class="flag">⚠ Purely computational — no new neural or behavioural data; the excitability window is a model assumption fitted to prior literature</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1016/j.cub.2026.08.064" target="_blank">A vector navigation and inference architecture can construct universal cognitive maps for abstract reasoning</a>
+    </div>
+    <div class="paper-meta">
+      Andrej Bicanski &middot; Current Biology, 22 Sep 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A model showing how existing spatial-navigation architectures (vector navigation plus non-local inference) can iteratively construct cognitive maps over arbitrary stimulus dimensions, using the same grid-cell manifolds that support spatial representation. The model is probed for noise tolerance, handling of discontinuous stimulus spaces, and transfer to abstract reasoning tasks; neural-level implementations are proposed for several components.</p>
+      <p><strong>Finding:</strong> The same computational modules that build a map also support analogy-making, subspace construction and perspective-taking — abstract reasoning falls out of the mapping machinery rather than requiring separate mechanisms. Noise tolerance matches behavioural data, discontinuous stimulus spaces are accommodated, and the 1D attributes to be combined can be isolated upstream of entorhinal cortex.</p>
+    </div>
+    <div class="flag">⚠ Single-author theory paper; neural implementations are proposed, not tested against recordings</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.64898/2026.09.19.752914" target="_blank">Gradual evolution of multiplexed spatial coding within a conserved hippocampal scaffold</a>
+    </div>
+    <div class="paper-meta">
+      Xiao-Fan Ge, Chu Deng, … Li Lu &middot; bioRxiv, 19 Sep 2026, Kunming Institute of Zoology / CUHK
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> CA1 recordings from rats and tree shrews (<em>Tupaia belangeri chinensis</em>) — a mammal phylogenetically and ecologically intermediate between rodents and primates — using identical tasks and analyses. Position selectivity, non-positional tuning and multiplexing were quantified, and decoding accuracy compared against cell-count matched populations.</p>
+      <p><strong>Finding:</strong> Rat CA1 was position-dominant; tree shrew CA1 showed a hybrid code — weaker position selectivity, stronger non-positional tuning, and prevalent multiplexing approaching primate characteristics. Multiplexed populations decoded location as accurately as rat position populations <em>while using fewer neurons</em>, implying a computational advantage to high-dimensional coding. Despite this representational shift, the proximo-distal gradient, pattern completion and global remapping all persisted: representational format can be tuned without altering the underlying circuit.</p>
+    </div>
+    <div class="flag">⚠ Preprint, not peer reviewed; N not stated in the abstract; "fewer neurons" advantage is demonstrated only for location decoding</div>
+  </div>
+
+</div>
+
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2609.25802" target="_blank">Latest Exact Match Attention</a>
+    </div>
+    <div class="paper-meta">
+      Moritz Brösamle &middot; arXiv (cs.LG), 22 Sep 2026
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Introduces LEMA: queries and keys are binarized and each query attends only to the <em>latest exactly matching</em> key. Proves LEMA transformers with chain-of-thought can simulate word-RAMs, and — the direction prior hard-attention variants lacked — that word-RAMs can simulate LEMA at per-token cost independent of context length. Training uses a straight-through estimator for binarization plus a soft-attention surrogate annealed toward LEMA. Evaluated on synthetic associative recall, repeated rare phrases and needle retrieval, with LMs scaled to 834M parameters.</p>
+      <p><strong>Finding:</strong> LEMA models use their <em>growing</em> state to store and recall a large number of associations, outperforming gated DeltaNet with its fixed state size. At 834M they match softmax transformers of roughly half the size in loss; on repeated rare phrases and needle retrieval they remain behind softmax transformers but recall across longer distances than comparable-size GDN. Dictionary-based inference gives constant generation speed with dictionaries in main memory rather than VRAM.</p>
+    </div>
+    <div class="flag">⚠ Preprint, not peer reviewed; 834M is a small scaling test, and LEMA still trails softmax attention on the retrieval tasks that matter most</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2609.24417" target="_blank">ARM: Attention with Routed-Memory for Learnable Sparse Control</a>
+    </div>
+    <div class="paper-meta">
+      Qiuhao Zeng, Jerry Huang, Peng Lu, … Charles Ling, Gang Niu, Boyu Wang &middot; arXiv (cs.LG), 21 Sep 2026 &middot; ICML 2026
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Replaces hard KV eviction/pruning with a fully differentiable fixed-size memory organized as a hierarchical router. A Gumbel-Softmax selects memory slots and sigmoid-gated updates <em>softly combine</em> new and stored information, so nothing is discarded outright. A trained policy dynamically varies how much memory is accessed at inference.</p>
+      <p><strong>Finding:</strong> Soft gated updates avoid the information loss that hard eviction incurs, and the adaptive access policy lets the model spend more memory on inputs requiring deeper reasoning. Reports superior performance and efficiency versus fixed KV-caching approaches on commonsense and long-context reasoning benchmarks, with favourable memory and latency scaling.</p>
+    </div>
+    <div class="flag">⚠ Retained here because it makes an explicit retention-vs-eviction claim, but evaluation is benchmark accuracy only — no analysis of what is actually retained or forgotten</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1037/rev0000639" target="_blank">Sequence learning as Bayesian filtering</a>
+    </div>
+    <div class="paper-meta">
+      Dennis Norris, Kristjan Kalm &middot; Psychological Review, 21 Sep 2026
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A model of sequence learning and recall in which memory's function is to maintain an up-to-date representation of the environment as a <em>prior</em>, combined with short-term-memory information to form a posterior that drives recall and then updates the priors — a Bayesian filter. Applied to Hebb's (1961) task, in which participants learn sequences over repeated presentations embedded in immediate serial recall.</p>
+      <p><strong>Finding:</strong> The single prediction-update cycle simulates a wide swathe of Hebb-effect data: learning multiple lists simultaneously, list-spacing effects, the differential impact of variation at list beginning versus end, learning from response errors, interference between similar lists, and repetition effects on forward versus backward recall. The phenomena follow directly from the basic computational principles rather than from added mechanisms.</p>
+    </div>
+    <div class="flag">⚠ Behavioural fits only — no neural data; parsimony is the argument, and alternative filter formulations are not contrasted</div>
+  </div>
+
+</div>
+
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1371/journal.pcbi.1014761" target="_blank">Drift-diffusion dynamics of hippocampal replay</a>
+    </div>
+    <div class="paper-meta">
+      Zhongxuan Wu, Xue-Xin Wei &middot; PLOS Computational Biology, 22 Sep 2026
+      <span class="tag tag-er">Encoding-Retrieval</span>
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A computational framework modelling replay during sharp-wave ripples as a drift-diffusion process, allowing switching between several well-motivated dynamic types to capture population-level heterogeneity. Applied to rat hippocampal recordings; diagnostics include stationarity fraction, trajectory speed versus the animal's movement speed, and mean-squared displacement scaling.</p>
+      <p><strong>Finding:</strong> Three results matter. A small fraction of SWRs are stationary, and those with drift-diffusion dynamics move much faster than the animal did. Replay dynamics are heterogeneous and <em>inconsistent with the previously proposed random-walk model</em> — mean-squared displacement scales quadratically with time, indicating substantial drift. And fewer than 1% of SWR events show sequential structure at the 100 ms timescale before the animal had spatial experience in the environment, arguing that pre-existing sequential structure is not simply awaiting expression.</p>
+    </div>
+    <div class="flag">⚠ Method is validated on existing datasets without ground truth; the quadratic-MSD claim depends on the model's switching assumptions</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.64898/2026.09.14.751602" target="_blank">CA1 reinstatement and novelty response independently support recognition memory</a>
+    </div>
+    <div class="paper-meta">
+      Joern Alexander Quent, Mengya Zhang, Deniz Vatansever &middot; bioRxiv (posted 21 Sep 2026), Fudan University
+      <span class="tag tag-er">Encoding-Retrieval</span>
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Re-analyses the Natural Scenes Dataset — 8 participants, a continuous recognition memory task spanning 41 separate days, 213,000 trials total. Reinstatement and novelty indices were computed per image and related to successful memory encoding, with each index tested while controlling for the other. Exploratory analyses extended to CA3.</p>
+      <p><strong>Finding:</strong> CA1 showed encoding-related reinstatement <em>and</em> novelty processing that survived mutual control — consistency and differentiation are orthogonal, independently contributing signals coexisting within the same subfield. Reinstatement was specific to retrieving the initial representation on the first retrieval attempt and did not generalize to other reinstatement forms. CA3 showed reinstatement with a different response profile.</p>
+    </div>
+    <div class="flag">⚠ Preprint, not peer reviewed; n = 8 participants, and the CA3 extension is explicitly exploratory</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1162/neco.a.1582" target="_blank">The Quasi-Systematic Nature of Splitter Cells</a>
+    </div>
+    <div class="paper-meta">
+      Naomi Chaix-Eichel, Snigdha Dagar, Frédéric Alexandre, Nicolas P. Rougier &middot; Neural Computation, 22 Sep 2026
+      <span class="tag tag-er">Encoding-Retrieval</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Tests whether a <em>random</em> recurrent structure is sufficient to generate splitter cells — cells firing differentially at the same location depending on past or future trajectory. An agent with egocentric sensory inputs navigates and alternates choices at intersections; identified splitter cells are then systematically lesioned and behaviour re-measured, with position, orientation and decision decoded from reservoir activity.</p>
+      <p><strong>Finding:</strong> Splitter cells emerge spontaneously from random recurrence, consistent with temporal-sequence accounts of spatial firing. Critically, lesioning them left behaviour intact: in most cases new splitter cells re-emerged through network reorganization, and otherwise the task was solved with no detectable splitter cells at all. Position, orientation and decision remained decodable after repeated lesioning.</p>
+    </div>
+    <div class="flag">⚠ Model only — no neural data; the lesion result shows sufficiency is not necessity, which is a claim about the model rather than about hippocampus</div>
+  </div>
+
+</div>
+
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1177/17456916261475284" target="_blank">Misinformation as an Event-Model Problem</a>
+    </div>
+    <div class="paper-meta">
+      Markus Huff, Jan Pascal Göbel, Helen Fischer &middot; Perspectives on Psychological Science, 21 Sep 2026
+      <span class="tag tag-cross">Cross-cutting</span>
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Conceptual argument, not new data. Reframes the continued-influence effect: because misinformation is typically encountered inside temporally unfolding narratives, it is integrated into event-structured mental models where it acquires a <em>causal</em> role supporting prediction, explanation and inference — not merely a proposition accepted or rejected.</p>
+      <p><strong>Finding:</strong> The framework's key prediction is that corrections which merely negate false information remove a causal element without restoring model completeness, leaving incoherent representations that invite compensatory inference and allow the misinformation to re-emerge. Corrections that align with event boundaries and supply factually accurate, causally adequate replacements should stabilize updated representations. It unifies continued influence, delayed resurgence, and inference-based false memory under one mechanism.</p>
+    </div>
+    <div class="flag">⚠ Theory piece with no new experiments — the central prediction (causally adequate replacements aligned to event boundaries) is untested here</div>
+  </div>
+
+</div>
+
+<div class="section">
+  <div class="section-header tag-peri">Peripheral</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1523/jneurosci.2200-25.2026" target="_blank">Uncovering latent cognitive, metacognitive, and neural bases of problem-solving deficits in children with developmental dyscalculia</a>
+    </div>
+    <div class="paper-meta">
+      O.H.M. Lasnick, Yunji Park, Percy Mistry, … Vinod Menon &middot; Journal of Neuroscience, 21 Sep 2026, Stanford
+      <span class="tag tag-peri">Peripheral</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Integrates Bayesian computational modelling with whole-brain decoding in 68 children aged 8–10 (38 female), comparing developmental dyscalculia (DD) with typically achieving peers. Latent parameters quantify strategy execution efficiency (counting, retrieval, decomposition) and metacognitive control (switching time between strategies, sensitivity to problem difficulty, adaptivity of strategy selection), linked to neural measures via ElasticNet decoding.</p>
+      <p><strong>Finding:</strong> Children with DD were impaired across <em>all</em> strategies, not one — reduced execution efficiency plus longer baseline switching times, blunted difficulty sensitivity and lower adaptivity. Whole-brain decoding distinguished DD from peers on distributed frontoparietal, hippocampal and ventral-visual patterns <em>where univariate analysis did not</em>, and predicted individual working efficiency. The authors read this as multidimensional neural disruption rather than a simple numerical deficit.</p>
+    </div>
+    <div class="flag">⚠ Cross-sectional with no intervention — the decoding result is correlational and the hippocampal contribution is not isolated causally</div>
+  </div>
+
+</div>
+
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>Cellular code for mnemonic pattern separation in the human hippocampus is revealed by false memories</strong> (Kurilenko/Rutishauser, bioRxiv) — previously reported on 2026-09-20.</li>
+    <li><strong>Different kinds of causality in event cognition: Memory for antecedents and consequences</strong> (<em>Memory &amp; Cognition</em>, 18 Sep) — previously reported on 2026-09-20.</li>
+    <li><strong>Event segmentation and encoding rely on information accumulated over different temporal scales</strong> (preprint) — previously reported on 2026-09-20.</li>
+    <li><strong>Cortical reinstatement of causally related events sparks narrative insights</strong> (Song/Rosenberg, <em>Nature Communications</em>) — indexed 2026-08-26, out of window; resurfaced by September coverage.</li>
+    <li><strong>Hunger and sleep recruit distinct brain systems to form spatial memory</strong> (Tosadori/Born, bioRxiv) — strong, but held for length; non-hippocampal consolidation via retrosplenial cortex and NPY.</li>
+    <li><strong>Brief disruption of activity in a subset of dopaminergic neurons during consolidation impairs long-term memory by fragmenting sleep</strong> (<em>eLife</em>) — DOI resolves to version 4, treated as a revision rather than a new paper.</li>
+    <li><strong>KV-COBRA, HySparse2, CompKV, QuantWM, Flash-dLLM, GDN Tree-Scan</strong> — KV-cache compression / serving / throughput engineering with no memory-mechanism claim.</li>
+    <li><strong>JustMem, RPMem, AdaRepair-Mem, When Does Execution Provenance Help Agent Memory Retrieval?</strong> — agent-memory engineering, excluded under standing policy.</li>
+    <li><strong>Instructive signals drive learning through behavioral timescale synaptic plasticity in the hippocampus</strong> (<em>Curr Res Neurobiol</em>) — 2026-09-10, out of window.</li>
+    <li><strong>Reliability of computational versus noncomputational metrics of working memory and episodic memory in serious mental illness</strong> (<em>J Psychopathol Clin Sci</em>) — psychometrics focus, no memory-mechanism claim.</li>
+    <li><strong>No evidence for the impact of mind wandering on recognition associative task</strong> (<em>Psychol Res</em>) — well-powered preregistered null, but no positive mechanism.</li>
+    <li><strong>Aging brains blend related memories / hippocampal reactivation paradox</strong> (<em>Cerebral Cortex</em>, McDonough) — date not yet verified against Crossref; deferred to next run.</li>
+  </ul>
+</div>
+
+</body>
+</html>
