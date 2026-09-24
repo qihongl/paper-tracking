@@ -62,6 +62,15 @@ CORE = {
     "symbolic structure": 7, "symbolic representation": 7, "symbolic reasoning": 6,
     "emergent structure": 6, "compositionality": 7, "systematicity": 7,
     "neurosymbolic": 5, "vector representation": 5,
+    # --- Added 2026-09-24: large-scale human-vs-model comparison / benchmark ---
+    # resources (CogGym, arXiv:2609.21259) had zero CORE coverage and were gated
+    # out despite being squarely on-pillar for LLM-vs-human behavioural fidelity.
+    "human-model comparison": 7, "human-machine comparison": 7, "model-human alignment": 7,
+    "behavioral alignment": 6, "comparative evaluation": 6, "human judgment": 5,
+    "commonsense reasoning": 5, "large language model": 4,
+    "cognitive benchmark": 6, "behavioral benchmark": 6, "evaluation framework": 5,
+    "benchmark suite": 5, "split-half reliability": 7, "split-half": 5,
+    "human behavior": 5,
 }
 
 # Terms that attract but are usually engineering-only (penalise unless core memory present)
@@ -82,6 +91,10 @@ GATE = [
     # gated out of the pool even when the abstract was squarely on-topic.
     "generalization", "abstraction", "compositional", "symbolic", "entorhinal",
     "navigation", "decision-making", "concept learning", "neural network", "language model",
+    # Added 2026-09-24: cognitive-science evaluation resources. Kept specific to
+    # avoid admitting generic ML benchmark papers — bare "benchmark" is deliberately
+    # NOT a gate term.
+    "human judgment", "cognitive science",
 ]
 
 
