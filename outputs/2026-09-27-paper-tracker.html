@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker — 2026-09-27</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .summary-table .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .tag-lib { background: #d1fae5; color: #047857; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+</style>
+</head>
+<body>
+
+<h1>🧠 Daily Paper Tracker</h1>
+<div class="date">2026-09-27 &middot; window 21–27 Sep 2026 (widened one day back to catch boundary items; last run 23 Sep)</div>
+
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2609.28399" target="_blank">Memory Attention</a></td>
+        <td class="col-authors">Kang (solo)</td>
+        <td class="col-finding">Token-indexed memory tables can stand in for the value projection; values become lookup + addition, and language modelling improves at matched training budget.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://doi.org/10.1162/jocn.a.2679" target="_blank">Transformer Mechanisms Mimic Frontostriatal Gating Operations When Trained on Human Working Memory Tasks</a></td>
+        <td class="col-authors">Soni et al. (Pavlick)</td>
+        <td class="col-finding">Attention spontaneously develops role-addressable input/output gating — but only on task distributions that reward it — and this raises effective storage capacity.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2609.28250" target="_blank">Complementary Roles of Activation and Parametric Memory in Few-Shot Learning</a></td>
+        <td class="col-authors">Niu et al. (Xiao)</td>
+        <td class="col-finding">KV-cache (activation) memory wins on factual recall, parametric memory does not reliably win on task learning, and a composite task needs both — recruiting disjoint neuron sets.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1016/j.neuron.2026.08.023" target="_blank">Hippocampal representations of alternative possibilities are flexibly generated to meet cognitive demands</a></td>
+        <td class="col-authors">Comrie et al. (Frank)</td>
+        <td class="col-finding">Rat hippocampus simultaneously represents multiple alternative paths and distant patches, weighting them by evolving relative value and by whether the moment calls for choice or value updating.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s41467-026-77885-3" target="_blank">Navigational strategy dictates hippocampal representation of space in an everyday memory task</a></td>
+        <td class="col-authors">Gobbo et al. (Tse)</td>
+        <td class="col-finding">Optogenetic inactivation shows planning-phase hippocampal representations are causally required for the allocentric but not the egocentric version of the same arena task.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.64898/2026.09.20.752934" target="_blank">Abstract representation in the hippocampus predicts spontaneously adopted structure-based behavioral strategy</a></td>
+        <td class="col-authors">Jiang et al. (Zhao)</td>
+        <td class="col-finding">CA1 maps drift from sensory-oriented to cue-invariant reward-sequence codes across learning, and that drift predicts which mice fall back on structure-based inference.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1016/j.celrep.2026.117971" target="_blank">Navigation strategies predict spatial memory and hippocampal recruitment</a></td>
+        <td class="col-authors">Patai et al. (Axmacher)</td>
+        <td class="col-finding">Hippocampal BOLD and theta power are generally anti-correlated, and recruitment is jointly determined by strategy and by group (iEEG patients vs APOE-ε4 carriers vs controls).</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://doi.org/10.1037/xge0001994" target="_blank">Bridging real-world summarization and laboratory-based memory recall</a></td>
+        <td class="col-authors">Angne et al. (Zhang)</td>
+        <td class="col-finding">45,220 human summaries reproduce primacy, recency and temporal contiguity — the laboratory recall signature — in a naturalistic, high-abstraction task.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://doi.org/10.3758/s13421-026-01875-5" target="_blank">Spaced repetition and list-strength in recognition memory</a></td>
+        <td class="col-authors">Caplan &amp; Guitard</td>
+        <td class="col-finding">Spacing is the exception: it yields a null or upright list-strength effect where massed repetition and long study time invert it, constraining REM and attentional subsetting theory.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://doi.org/10.64898/2026.09.15.751647" target="_blank">Spike-history gating of plateau potentials enables closed-loop rewriting of CA1 representations</a></td>
+        <td class="col-authors">Kurth &amp; Asabuki</td>
+        <td class="col-finding">A cell-specific gate on BTSP plateau initiation makes existing place fields bias where new ones form — reproducing drift, reward over-representation and cross-day reinstatement.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.3758/s13423-026-03009-z" target="_blank">Learning from mistakes: Objective and subjective error magnitudes predict the testing effect</a></td>
+        <td class="col-authors">Shi &amp; Liu</td>
+        <td class="col-finding">Predicted and perceived error magnitude each predict memory updating beyond objective error, formalised in a WRAP-E model — testing effect as error-driven learning.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.1126/sciadv.aee4232" target="_blank">Medial temporal default mode network selectively encodes autobiographical visual imagery</a></td>
+        <td class="col-authors">Anderson et al. (Lin)</td>
+        <td class="col-finding">With Stable Diffusion reconstructions and LLM semantic features controlled out, MT-DMN carries participant-specific image structure during imagination but not during reading.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.1162/jocn.a.2677" target="_blank">Slow Oscillations Modulate Overnight Brain Changes in Working Memory Function</a></td>
+        <td class="col-authors">Zhang et al. (Tambini)</td>
+        <td class="col-finding">Overnight sleep cuts precuneal/frontal control demands and boosts sensory item reinstatement; slow-oscillation activity in premotor and vmPFC predicts the size of that shift.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://doi.org/10.1037/rev0000645" target="_blank">Dynamics of variability and bias in working memory</a></td>
+        <td class="col-authors">Tomić et al. (Bays)</td>
+        <td class="col-finding">Delay and set size interact on recall variability, while bias amplitude is invariant to both — favouring diffusion over stable-attractor accounts of maintenance.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://doi.org/10.1162/neco.a.1577" target="_blank">Shaping Slow Manifolds in Equivariant Recurrent Neural Networks</a></td>
+        <td class="col-authors">Bernardo et al. (Ostojic)</td>
+        <td class="col-finding">Group representation theory gives a general map from recurrent-connectivity symmetry to the geometry of continuous-attractor manifolds.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2609.28399" target="_blank">Memory Attention</a>
+    </div>
+    <div class="paper-meta">
+      Jiale Kang (solo author; no affiliation listed) &middot; arXiv (cs.LG), 23 Sep 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Asks whether the value projection in attention is necessary at all. The proposed Memory Attention (MA) builds values from layer-specific, token-indexed memory tables combined with contextual keys — memory supplies the token-specific content, keys preserve context dependence. At inference, normalisation folds into the memory tables, so value construction reduces to lookup and addition, and the tables can be offloaded to CPU with prefetching.</p>
+      <p><strong>Finding:</strong> Under matched training-token budgets (with extra memory parameters), MA improves language modelling loss and average downstream performance across attention configurations. The mechanism-level claim is the interesting part: a key-indexed content store can substitute for a learned value projection, which is exactly the K/V factorisation the KV-network pillar assumes.</p>
+    </div>
+    <div class="flag">⚠ Preprint, single author, no peer review; scale and architecture sweep not stated in the abstract — treat the claim as provisional</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1162/jocn.a.2679" target="_blank">Transformer Mechanisms Mimic Frontostriatal Gating Operations When Trained on Human Working Memory Tasks</a>
+    </div>
+    <div class="paper-meta">
+      Soni, Traylor, Merullo, Frank, Pavlick (Brown University) &middot; Journal of Cognitive Neuroscience, 21 Sep 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Frontostriatal models attribute WM capacity limits to "role addressability" — binding items to roles and credit-assigning the gating operations that read and write them. The authors train Transformers (no built-in gating) on human WM tasks explicitly designed to tax gating, then dissect the mechanisms that emerge, comparing against frontostriatal predictions.</p>
+      <p><strong>Finding:</strong> Attention does develop role-addressable input and output gating — but only when the training distribution rewards frontostriatal-like gating. Where it emerges, it improves generalisation and variable binding and increases the effective number of items the model can store and address. Gating looks like a computational attractor that any architecture converges on when the task demands it, not a biological accident.</p>
+    </div>
+    <div class="flag">⚠ Michael Frank is a co-author on this and on the Neuron paper below — both are directly on-pillar, read them together</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2609.28250" target="_blank">Complementary Roles of Activation and Parametric Memory in Few-Shot Learning</a>
+    </div>
+    <div class="paper-meta">
+      Niu, Zhao, Liu, Jin, Qiao, Zhang, Zhu, Xiao (Northeastern University, China) &middot; arXiv (cs.CL), 23 Sep 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Controlled dissociation of the two ways an LLM can carry history at test time: activation memory (the KV cache) versus parametric memory (updated weights). They test factual recall and task learning separately, then add a composite task, Conditional Arithmetic, that may require both, and run neuron-level analyses of which units are recruited under each regime.</p>
+      <p><strong>Finding:</strong> Activation memory is superior for factual recall; parametric memory does <em>not</em> consistently beat activation memory on task learning. Conditional Arithmetic requires both working together. Neuron-level analysis: accessing the same information through the two routes activates largely distinct neuron sets, and the combined condition recruits from both — the union is what solves the task.</p>
+    </div>
+    <div class="flag">⚠ Preprint, not peer reviewed; a clean dissociation but the composite task is synthetic and the generalisation beyond it is untested</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1016/j.neuron.2026.08.023" target="_blank">Hippocampal representations of alternative possibilities are flexibly generated to meet cognitive demands</a>
+    </div>
+    <div class="paper-meta">
+      Comrie, Monroe, Kahn, Denovellis, Joshi, Guidera, Krausz, Berke, Daw, Frank (UCSF) &middot; Neuron, 25 Sep 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Hippocampal ensemble recordings in rats navigating a complex patch-foraging environment with changing reward probabilities — a setting with many candidate alternatives. They looked for representations of alternative spatial locations both along paths ahead of and behind the animal and in distant, unvisited patches, and asked how those representations are modulated across successive trials.</p>
+      <p><strong>Finding:</strong> The hippocampus represents multiple alternatives simultaneously, including distant patches. Critically, the modulation differs by kind: alternative <em>paths</em> are represented in proportion to their evolving relative value and predict the next decision, whereas <em>distant</em> alternatives dominate during value updating. Generation of alternatives is thus not a fixed sweep but is titrated to what the current computation needs — a value-keyed sampling of a state space, which is close to the KV-network picture.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s41467-026-77885-3" target="_blank">Navigational strategy dictates hippocampal representation of space in an everyday memory task</a>
+    </div>
+    <div class="paper-meta">
+      Gobbo, Mitchell-Heggs, Duszkiewicz, Faillace, Tse, Garcia-Font, Hazon, Clarke, Spooner, Keshishian et al. (Dorothy Tse lab) &middot; Nature Communications, 24 Sep 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Two carefully matched naturalistic variants of the everyday memory task run in the same arena, one forcing egocentric and one allocentric coordinates. CA1 activity was imaged with miniature microscopes in male rats during both, and hippocampal activity was optogenetically inactivated during the navigational decision/planning phase.</p>
+      <p><strong>Finding:</strong> The chosen reference frame changes what CA1 represents and what memory-based planning looks like. Inactivation during planning abolishes performance on the allocentric version but leaves the egocentric version intact — a clean causal dissociation showing non-local hippocampal representations are specifically required when the frame is allocentric.</p>
+    </div>
+    <div class="flag">⚠ Male rats only; the allocentric/egocentric contrast rests on the two task variants behaving as intended</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.64898/2026.09.20.752934" target="_blank">Abstract representation in the hippocampus predicts spontaneously adopted structure-based behavioral strategy</a>
+    </div>
+    <div class="paper-meta">
+      Yuhan Jiang, Yaorui Liu, Xinyu Zhao (Tsinghua University) &middot; bioRxiv (neuroscience), posted 25 Sep 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A structured cue-guided navigation task in virtual reality with longitudinal two-photon CA1 calcium imaging across the full course of learning in mice. The task never explicitly requires latent-structure learning. At test, sensory information was made partially unavailable to reveal whether each animal falls back on structure-based inference. Computational modelling tested which objectives reproduce the observed geometry.</p>
+      <p><strong>Finding:</strong> Most animals progressively converted their hippocampal map from sensory-oriented into cue-invariant representations of the reward sequence — spontaneously, without task pressure to do so. Whether that abstract map emerged predicted individual strategy adoption. The reward-sequence representations formed a latent-state map supporting a parsimonious Markov graph of future transitions; next-state prediction plus representational regularisation were the two objectives needed to reproduce it across architectures.</p>
+    </div>
+    <div class="flag">⚠ Preprint, not peer reviewed; the strategy prediction is correlational (map emergence → strategy), so causal direction is not established</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1016/j.celrep.2026.117971" target="_blank">Navigation strategies predict spatial memory and hippocampal recruitment</a>
+    </div>
+    <div class="paper-meta">
+      Patai, Stawarczyk, Herweg, Gomes, Zhang, Schulze-Bonhage, Kunz, Axmacher (Ruhr University Bochum / Freiburg) &middot; Cell Reports, 25 Sep 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Virtual navigation in three groups: epilepsy patients with invasive electrophysiology, fMRI in young adults at genetic risk for Alzheimer's (APOE-ε4 carriers), and healthy controls. Trajectories were reduced to quantitative strategy metrics — straightness, deviation to boundary, and path overlap — and related to hippocampal BOLD and theta power.</p>
+      <p><strong>Finding:</strong> Strategy use is idiosyncratic, varies within a participant across the experiment, and adapts in a group-dependent way. Hippocampal BOLD and theta power are generally <em>inversely</em> related, and hippocampal recruitment depends jointly on group and on strategy. The practical upshot: "hippocampal engagement" is not interpretable without measuring what strategy the subject is actually running.</p>
+    </div>
+    <div class="flag">⚠ Three heterogeneous cohorts with unequal and partly small n; cross-sectional, so the AD-risk inference is about compensation, not decline</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1037/xge0001994" target="_blank">Bridging real-world summarization and laboratory-based memory recall</a>
+    </div>
+    <div class="paper-meta">
+      Angne, Mishra, Lin, Zhang &middot; Journal of Experimental Psychology: General, 24 Sep 2026
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Turns machine-learning summarisation corpora into cognitive-science data: 45,220 human summaries drawn from three large datasets (news articles, autobiographical stories, Reddit posts), compared against an existing dataset of narrative memory recall. The question is whether a real-world, deliberately abstract generative task obeys the laws of laboratory recall.</p>
+      <p><strong>Finding:</strong> It does. Summarisation shows primacy, recency and temporal contiguity effects — the canonical recall signature — despite operating at a higher level of abstraction. And the relation is symmetric: recall itself behaves like summarisation, prioritising central and important information. This is the strongest naturalistic validation of contiguity-based retrieval I have seen outside the lab, and it hands us a 45k-sample corpus for testing temporal-context models.</p>
+    </div>
+    <div class="flag">⚠ Corpus comparison across different datasets and participants rather than within-subject; abstraction level differs between conditions by construction</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.3758/s13421-026-01875-5" target="_blank">Spaced repetition and list-strength in recognition memory</a>
+    </div>
+    <div class="paper-meta">
+      Caplan &amp; Guitard &middot; Memory &amp; Cognition, 26 Sep 2026
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Three experiments in the regime that robustly produces an <em>inverted</em> list-strength effect (long study time, massed repetition) to ask whether spaced repetition behaves the same way. Attentional subsetting theory predicts inversion whenever weak items can be disregarded on pure-strong lists.</p>
+      <p><strong>Finding:</strong> Spaced repetition produces a null or upright list-strength effect — it is resilient to the inversion that massed repetition and long duration produce under equated conditions. The boundary condition is sharp and constrains both attentional subsetting theory and REM: whatever spacing does to an item's feature distribution, it is not the same as what extra study time does.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.64898/2026.09.15.751647" target="_blank">Spike-history gating of plateau potentials enables closed-loop rewriting of CA1 representations</a>
+    </div>
+    <div class="paper-meta">
+      Anno C. Kurth &amp; Toshitake Asabuki (RIKEN Center for Brain Science) &middot; bioRxiv (neuroscience), posted 21 Sep 2026
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A two-compartment spiking model of CA1 in which recent somatic spike history gates whether a behavioural-timescale-plasticity (BTSP) plateau can initiate — cells are sensitive to rising activity after relative silence, and refractory to further plasticity during sustained firing. The gate interacts with entorhinal input to form a feedback loop; the authors then reanalyse existing experimental data to test a model prediction.</p>
+      <p><strong>Finding:</strong> Because existing representations bias where subsequent plateaus land, the loop produces gradual place-field drift, reward-associated over-representation, recovery of environment-specific representations after remapping, and cross-day reinstatement — from one gate. The predicted relationship (stronger residual activity biases subsequent plateaus toward previous field locations) is found in data reanalysis. The claim that what is stored determines where the next write lands is a genuinely closed-loop memory mechanism.</p>
+    </div>
+    <div class="flag">⚠ Model plus reanalysis of existing data; no new experiment, so the predicted relationship is confirmed but not prospectively tested</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.3758/s13423-026-03009-z" target="_blank">Learning from mistakes: Objective and subjective error magnitudes predict the testing effect</a>
+    </div>
+    <div class="paper-meta">
+      Aike Shi &amp; Xiaonan L. Liu &middot; Psychonomic Bulletin &amp; Review, 24 Sep 2026
+      <span class="tag tag-er">Encoding-Retrieval</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Two experiments using a colour-wheel paradigm so retrieval error can be measured on a continuous scale. Three error signals are separated: objective error (angular discrepancy), predicted error (pre-feedback estimate of inaccuracy), and perceived error (post-feedback estimate). A computational model (WRAP-E) assigns distinct strengthening roles to each across retrieval stages.</p>
+      <p><strong>Finding:</strong> Larger objective error during practice predicted greater memory updating. Beyond that, predicted and perceived error each uniquely predicted updating — the metacognitive reading of an error contributes over and above its actual size. Errors are not a byproduct of failed recall but the learning signal itself, which reframes the testing effect as error-driven learning.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1126/sciadv.aee4232" target="_blank">Medial temporal default mode network selectively encodes autobiographical visual imagery</a>
+    </div>
+    <div class="paper-meta">
+      Andrew J. Anderson, Adam Turnbull, Feng V. Lin (Vanderbilt / Rochester) &middot; Science Advances, 23 Sep 2026
+      <span class="tag tag-er">Encoding-Retrieval</span>
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Fifty participants imagined re-experiencing 20 natural scenarios during fMRI, cued only by generic text prompts. Beforehand they gave verbal descriptions of each scenario, from which Stable Diffusion generated personalised synthetic images; those were passed through an image-recognition network to obtain hidden-state representations. Representational similarity analysis tested whether MT-DMN carries that structure, controlling for semantic features derived from a large language model.</p>
+      <p><strong>Finding:</strong> MT-DMN encoded the participant-specific representational geometry of the reconstructed images even after removing LLM-derived semantics. The effect was absent in other networks and absent during reading without active imagination — so it tracks visual reconstruction, not language or generic scene content. Methodologically this is the template for using generative models as personalised stimulus encoders.</p>
+    </div>
+    <div class="flag">⚠ Synthetic reconstructions are an approximation to what participants actually imagined; the LLM semantic control is only as good as the LLM's feature space</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1162/jocn.a.2677" target="_blank">Slow Oscillations Modulate Overnight Brain Changes in Working Memory Function</a>
+    </div>
+    <div class="paper-meta">
+      Zhang, Chen, Mednick, Tambini (UC Riverside / UC Irvine) &middot; Journal of Cognitive Neuroscience, 21 Sep 2026
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> WM task during fMRI before and after sleep, with simultaneous EEG–fMRI through the first 2.5 hours of sleep, so slow-oscillation (SO) activity during NREM can be related directly to the overnight change in WM-related activation.</p>
+      <p><strong>Finding:</strong> Overnight change took a specific form: reduced dorsal precuneus recruitment during encoding/maintenance and reduced frontal recruitment during retrieval, together with <em>increased</em> item-specific reinstatement in a sensory region. Stronger SO activity in premotor cortex and ventromedial PFC predicted larger overnight reductions, with a parallel multivoxel relationship in the ventral attention network. Sleep appears to trade top-down control for sharper sensory reinstatement.</p>
+    </div>
+    <div class="flag">⚠ No wake control condition described in the abstract, so circadian and time-of-day alternatives to a sleep-specific effect are not excluded</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1037/rev0000645" target="_blank">Dynamics of variability and bias in working memory</a>
+    </div>
+    <div class="paper-meta">
+      Tomić (Zagreb), Schneegans &amp; Bays (Cambridge) &middot; Psychological Review, 24 Sep 2026
+      <span class="tag tag-cross">Cross-cutting</span>
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Addresses a genuinely contradictory literature — does load accelerate decay during maintenance, and does recall drift toward canonical feature values? Six new experiments plus reanalysis of seven published ones under consistent analytic methods, explicitly separating response variability from stimulus-specific bias and modelling swap errors.</p>
+      <p><strong>Finding:</strong> Recall variability grows with both delay and set size, and — the key result — the two do not act independently: the delay effect is amplified at higher set sizes. Systematic biases are reliably present but their amplitude changes with neither set size nor retention interval. That dissociation supports diffusion accounts (random error accumulating during maintenance) and is hard to reconcile with stable-attractor models, which predict drift toward canonical values that should grow with time.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1162/neco.a.1577" target="_blank">Shaping Slow Manifolds in Equivariant Recurrent Neural Networks</a>
+    </div>
+    <div class="paper-meta">
+      Bernardo, Valente, Mastrogiuseppe, Ostojic (ENS Paris) &middot; Neural Computation, 22 Sep 2026
+      <span class="tag tag-cross">Cross-cutting</span>
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Uses group representation theory to formalise the link between symmetries in recurrent connectivity and the geometry of the resulting fixed-point (continuous-attractor) manifolds. They reinterpret the classical ring attractor's connectivity as circular convolution, draw the parallel to feedforward CNNs, and generalise to arbitrary symmetry groups via group convolution, then reduce the resulting networks to low-rank models with the group Fourier transform.</p>
+      <p><strong>Finding:</strong> A general principle — specify the symmetry group, and the attractor manifold's geometry follows — rather than the case-by-case construction the literature has relied on. For anyone building RNN models of hippocampal or head-direction-like representations, this gives a principled way to pick connectivity that yields a wanted manifold shape.</p>
+    </div>
+    <div class="flag">⚠ Theory paper; no fitting to neural population data, so empirical adequacy of the constructed manifolds is untested</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-peri">Peripheral</div>
+  <div class="empty-section">No papers today.</div>
+</div>
+
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>Cross-region neuron co-firing mediated by ripple oscillations supports distributed working memory representations</strong> (Verzhbinsky, Daume, Cheng, Rutishauser &amp; Halgren, <em>Nature Neuroscience</em>, 10.1038/s41593-026-02403-z) — heavy September news coverage, but Crossref gives published 2026-08-12; out of window.</li>
+    <li><strong>Echoes of time: Organization of episodic autobiographical memories in the brain according to their remoteness</strong> (Adriano et al., <em>NeuroImage</em>, 10.1016/j.neuroimage.2026.121857) — recirculated by PsyPost this week; PubMed pubdate 2026 May, out of window.</li>
+    <li><strong>Prefrontal control of hippocampal map reorganization during sleep</strong> (10.64898/2026.09.15.751737) — already reported 2026-09-23.</li>
+    <li><strong>Transient excitability and synaptic consolidation support stable memory despite neural drift</strong> (Wagle &amp; Clopath, 10.64898/2026.09.15.751773) — already reported 2026-09-23.</li>
+    <li><strong>CA1 reinstatement and novelty response independently support recognition memory</strong> (Quent, Zhang &amp; Vatansever, 10.64898/2026.09.14.751602) — already reported 2026-09-23.</li>
+    <li><strong>ARM: Attention with Routed-Memory for Learnable Sparse Control</strong> (arXiv:2609.24417) — already reported 2026-09-23.</li>
+    <li><strong>Written as a Record, Read as an Address</strong> (arXiv:2609.24635) — already reported 2026-09-23.</li>
+    <li><strong>Brief disruption of activity in a subset of dopaminergic neurons during consolidation impairs long-term memory by fragmenting sleep</strong> (eLife 10.7554/eLife.104862) — resolves to v4, a revision of a previously reported paper.</li>
+    <li><strong>Semantic generation masks value directed remembering in memory but not metamemory</strong> (Kaya &amp; Besken, <em>Cognition</em>, 10.1016/j.cognition.2026.106730) — five experiments with a single-paper meta-analysis, but the headline result is a null (value never improved recall); low library affinity, held over.</li>
+    <li><strong>Remembering others' knowledge: Memory, metacognition, and guessing in partner modeling</strong> (Ülker &amp; Bodemer, <em>Memory &amp; Cognition</em>, 10.3758/s13421-026-01944-9) — preregistered MPT design, but the partner-schema effect is modest; held over.</li>
+    <li><strong>KV-cache compression / long-context serving cluster</strong> — StepKV (2609.22158), Shared Global KV with Layer-Specific Local History (2609.28006), HySparse2, Risk-Controlled KV-Cache Eviction, DeltaS, Flash-dLLM, MILO: efficiency and throughput claims with no retention/retrieval/forgetting mechanism; excluded per standing editorial policy.</li>
+    <li><strong>Agent-memory engineering cluster</strong> — Memory of Memory / P-Mem (2609.25054), Just-in-Time Memory, EnSIMem, Scope Before You Persist, C3M, Agent Memory with Episodic Retrieval: applied systems work, excluded per standing policy.</li>
+    <li><strong>Disentangling interaction and bias effects in opinion dynamics of large language models</strong> (10.1038/s41467-026-77340-3) — useful method for human-model comparison, but no memory mechanism; peripheral only.</li>
+    <li><strong>A Brain-wide Neuronal Spiking and Behavioral Dataset for Working Memory-specific Activation and Reactivation in Mice</strong> (10.1007/s12264-026-01720-4) — 33,028 neurons across 62 regions; a resource, no result; noted for the replay analyses it enables.</li>
+    <li><strong>Large clinical / AD-biomarker and molecular cluster</strong> (plasma p-tau217, β-synuclein in Down syndrome, ketogenic diet, α7 nAChR, METTL3, circRNA, etc.) — no memory mechanism or computational content.</li>
+  </ul>
+</div>
+
+</body>
+</html>
