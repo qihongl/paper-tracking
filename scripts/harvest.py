@@ -201,6 +201,20 @@ CROSSREF_ISSN = [
     "1759-1198",  # Nat Rev Psychol
     "2057-1720",  # npj Sci Learn
     "1467-9280",  # Psych Sci
+    # Added 2026-09-29: all of these are named in the prompt's mandatory
+    # direct-scan table but were absent from the automated Crossref harvest, so
+    # a paper published here had to be caught by the manual WebFetch sweep or
+    # not at all (Nature Machine Intelligence case: s42256-026-01306-9).
+    # Row counts verified against a 4-week window before adding.
+    "2522-5839",  # Nat Mach Intell   (~12 rows/mo)
+    "0036-8075",  # Science           (~162 rows/mo)
+    "0028-0836",  # Nature            (~347 rows/mo)
+    "1531-5320",  # Psychon Bull Rev  (~24 rows/mo; note 1342-3458 is NOT this journal)
+    "1047-3211",  # Cerebral Cortex   (~26 rows/mo)
+    "0066-4308",  # Annu Rev Psychol  (~1 row/mo)
+    # Deliberately NOT added: Scientific Reports (2045-2322) returns ~3,900
+    # rows/month — a mega-journal that would flood the pool for near-zero yield.
+    # Current Opinion in Neurobiology / Behavioral Sciences return 0 rows.
 ]
 
 

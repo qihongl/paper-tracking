@@ -71,6 +71,15 @@ CORE = {
     "cognitive benchmark": 6, "behavioral benchmark": 6, "evaluation framework": 5,
     "benchmark suite": 5, "split-half reliability": 7, "split-half": 5,
     "human behavior": 5,
+    # --- Added 2026-09-29: task-structured modularity / brain-architecture alignment ---
+    # (Wu et al., Nat Mach Intell, 10.1038/s42256-026-01306-9). Note the matrix
+    # already had "neural modularity" / "brain-like modularity" as compound
+    # phrases, which do NOT match a bare "network modularity" — compounds do not
+    # subsume their head noun, so the bare term has to be listed too.
+    "modularity": 5, "modular organization": 6, "brain architecture": 6,
+    "brain network": 6, "network topology": 5, "brain-network alignment": 7,
+    "multitask learning": 6, "multi-task learning": 6,
+    "incremental multitask learning": 7, "capacity constraint": 5, "task structure": 5,
 }
 
 # Terms that attract but are usually engineering-only (penalise unless core memory present)
@@ -95,6 +104,9 @@ GATE = [
     # avoid admitting generic ML benchmark papers — bare "benchmark" is deliberately
     # NOT a gate term.
     "human judgment", "cognitive science",
+    # Added 2026-09-29: modularity is a core cognitive-neuroscience / neuroAI
+    # concept and low-noise as a gate term (few irrelevant papers use it).
+    "modularity",
 ]
 
 
