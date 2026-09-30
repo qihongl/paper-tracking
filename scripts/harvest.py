@@ -33,33 +33,65 @@ ARXIV_CATS = [
 ]
 
 
+def _arxiv_fetch(url, retries=4):
+    """Fetch the arXiv Atom feed via `curl`.
+
+    Do NOT use urllib here. Observed 2026-09-27: over `https` a browser-UA curl
+    gets 200 on the exact same URL that urllib gets 406 on, and the old
+    `http://` scheme 301-redirects into a 406. A 13-minute urllib retry loop
+    returned 0 records — never reintroduce it.
+    """
+    import subprocess
+    ua = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+          "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
+    for i in range(retries):
+        p = subprocess.run(
+            ["curl", "-sS", "-L", "--max-time", "120", "-A", ua, url],
+            capture_output=True)
+        if p.returncode == 0 and p.stdout.strip():
+            return p.stdout
+        sys.stderr.write(f"  arxiv curl retry {i+1} rc={p.returncode}\n")
+        time.sleep(4)
+    return None
+
+
 def arxiv(start, end):
-    out = []
-    catq = " OR ".join(f"cat:{c}" for c in ARXIV_CATS)
-    q = f"({catq}) AND submittedDate:[{start.replace('-','')}0000 TO {end.replace('-','')}2359]"
-    url = ("http://export.arxiv.org/api/query?search_query="
-           + urllib.parse.quote(q)
-           + "&start=0&max_results=2000&sortBy=submittedDate&sortOrder=descending")
-    raw = get(url)
-    if not raw:
-        return out
     import xml.etree.ElementTree as ET
+    out = []
     ns = {"a": "http://www.w3.org/2005/Atom"}
-    root = ET.fromstring(raw)
-    for e in root.findall("a:entry", ns):
-        eid = e.findtext("a:id", "", ns)
-        title = " ".join(e.findtext("a:title", "", ns).split())
-        summ = " ".join(e.findtext("a:summary", "", ns).split())
-        pub = e.findtext("a:published", "", ns)[:10]
-        upd = e.findtext("a:updated", "", ns)[:10]
-        authors = [a.findtext("a:name", "", ns) for a in e.findall("a:author", ns)]
-        doi = e.findtext("{http://arxiv.org/schemas/atom}doi", "") or ""
-        cats = [c.get("term") for c in e.findall("a:category", ns)]
-        out.append({
-            "src": "arXiv", "id": eid, "doi": doi, "title": title,
-            "abstract": summ, "authors": authors, "date": pub, "updated": upd,
-            "venue": "arXiv " + (cats[0] if cats else ""),
-        })
+    # One category at a time: the combined OR query is what 429s.
+    for cat in ARXIV_CATS:
+        q = (f"cat:{cat} AND submittedDate:[{start.replace('-','')}0000 "
+             f"TO {end.replace('-','')}2359]")
+        url = ("https://export.arxiv.org/api/query?search_query="
+               + urllib.parse.quote(q)
+               + "&start=0&max_results=300&sortBy=submittedDate&sortOrder=descending")
+        raw = _arxiv_fetch(url)
+        if not raw:
+            sys.stderr.write(f"  arxiv {cat}: FAILED\n")
+            continue
+        try:
+            root = ET.fromstring(raw)
+        except Exception as ex:
+            sys.stderr.write(f"  arxiv {cat}: parse {ex}\n")
+            continue
+        n0 = len(out)
+        for e in root.findall("a:entry", ns):
+            eid = e.findtext("a:id", "", ns)
+            title = " ".join(e.findtext("a:title", "", ns).split())
+            summ = " ".join(e.findtext("a:summary", "", ns).split())
+            pub = e.findtext("a:published", "", ns)[:10]
+            upd = e.findtext("a:updated", "", ns)[:10]
+            authors = [a.findtext("a:name", "", ns) for a in e.findall("a:author", ns)]
+            doi = e.findtext("{http://arxiv.org/schemas/atom}doi", "") or ""
+            cats = [c.get("term") for c in e.findall("a:category", ns)]
+            out.append({
+                "src": "arXiv", "id": eid, "doi": doi, "title": title,
+                "abstract": summ, "authors": authors, "date": pub, "updated": upd,
+                "venue": "arXiv " + (cats[0] if cats else ""),
+            })
+        sys.stderr.write(f"  arxiv {cat}: +{len(out)-n0}\n")
+        time.sleep(4)
     return out
 
 
