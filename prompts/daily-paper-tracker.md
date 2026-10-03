@@ -118,7 +118,7 @@ The ledger at `data/open_items.json` is the carry-forward guarantee. Schema:
       "id": "10.1038/s41593-026-02409-7",
       "title": "…",
       "authors": "…", "venue": "…", "posted": "YYYY-MM-DD", "fixed_on": "YYYY-MM-DD",
-      "failure_mode": "keyword | source-registry | harvest | window",
+      "failure_mode": "keyword | source-registry | harvest | post-fix-staleness",
       "terms_added": ["…"],
       "status": "open | resolved | dropped",
       "reported": null,
