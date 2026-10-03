@@ -105,6 +105,45 @@ Any non-empty hit means the paper was already reported — drop it from the repo
 
 ---
 
+## Open-items Ledger — Carry Confirmed Misses to Completion (drain FIRST)
+
+**A keyword fix does not, by itself, get the paper into a report.** Six papers were diagnosed and patched between 2026-09-05 and 2026-09-30 — Bowler et al.; Hakkak Moghadam Torbati & Davoudi; Lake et al.; McCoy et al.; CogGym; Wu et al. All six were correctly fixed and committed, and **five of the six have never appeared in any report.** The one that did (Wu et al., in the 2026-09-30 report) is the control case: it posted on 09-28, still inside the next run's window (09-25 → 09-30), so the freshly added ISSN and vocabulary could actually retrieve it. The other five had already dropped out of the pool. The cause is structural, not lexical: a patch changes what *future* harvests can retrieve, while the harvest window is a moving target that steps past the paper's posting date on the very next run. Once a paper is out of window and out of the pool, no amount of new vocabulary can reach it.
+
+The ledger at `data/open_items.json` is the carry-forward guarantee. Schema:
+
+```json
+{
+  "items": [
+    {
+      "id": "10.1038/s41593-026-02409-7",
+      "title": "…",
+      "authors": "…", "venue": "…", "posted": "YYYY-MM-DD", "fixed_on": "YYYY-MM-DD",
+      "failure_mode": "keyword | source-registry | harvest | window",
+      "terms_added": ["…"],
+      "status": "open | resolved | dropped",
+      "reported": null,
+      "note": "…"
+    }
+  ]
+}
+```
+
+**Step 0 of every run — before searching:**
+
+1. Read `data/open_items.json` (create `{"items": []}` if absent).
+2. For each entry with `status == "open"`:
+   - Fetch its metadata **directly by identifier** — Crossref `/works/<DOI>` for journal DOIs, `https://export.arxiv.org/api/query?id_list=<id>` (via `curl` with a browser UA), or the bioRxiv single-DOI API. **Do not wait for it to appear in this run's harvest pool** — it will not.
+   - Score it with the current scorer (`scripts/score.py`). It should pass comfortably; if it does not, the earlier keyword patch has regressed — say so explicitly.
+   - Apply the same Quality Standards as any other paper: you must be able to state both **approach** and **finding**. The ledger bypasses the *window* and the *dedup store*, never the relevance bar.
+   - If it passes: include it in today's report, add the `[backfill]` marker to its `.paper-meta` line, and note in the card that it is a previously-missed paper now recovered. Then set `status: "resolved"` and `reported: "<today>"`.
+   - If it fails the relevance bar: set `status: "dropped"` with the reason in `note`. Never leave it silently open.
+3. Ledger items count toward the 5–15 target.
+4. Commit the updated `data/open_items.json` alongside the report.
+
+**When you patch the matrix, `CORE`, `GATE`, or the ISSN list for a missed paper, you MUST add that paper to this ledger in the same commit.** That is the step which was missing on 2026-09-24: the CogGym patch was committed, but nothing obliged the next run to publish CogGym, so it never was.
+
+---
+
 ## Keyword Search Matrix
 
 Run multiple searches using combinations from these categories. Cross-category pairings (e.g., "episodic memory" AND "large language model") are especially valuable.
@@ -355,6 +394,7 @@ The HTML must be a complete, standalone document. Use the following template str
 8. **If no papers found at all across all sources**, still generate the HTML with a message in the summary table row: "No new papers matching criteria were found today" and a brief note on what was searched.
 9. **Target 5–15 papers** in the final report. If too few, broaden keywords. If too many, apply stricter relevance filtering.
 10. **Each paper appears in exactly ONE detailed section.** When a paper spans multiple relevance tags, choose the primary tag (highest priority: LLM-Memory > Schema-Episodic > KV-Networks > Encoding-Retrieval > Cross-cutting > Peripheral) and place the full paper card there only. In the summary table, the paper gets one row with its primary tag dot. Secondary tags should be shown as additional `<span class="tag tag-xxx">` badges within the paper card's `.paper-meta` div (alongside the primary tag), but never as a duplicate paper card in another section. No paper should appear twice in the detailed view.
+11. **Mark recovered papers.** Any paper sourced from the open-items ledger (`data/open_items.json`) gets a literal `[backfill]` marker in its `.paper-meta` line, and the card body opens with a short italic note such as `<em>Recovered from the open-items ledger — missed by the YYYY-MM-DD run; the keyword fix landed after the harvest window had passed it.</em>` Include these papers in the summary table like any other.
 
 ---
 
@@ -398,7 +438,7 @@ After regenerating, verify the new row is present and the total count matches.
 Run these exact commands from the project root:
 
 ```bash
-git add outputs/YYYY-MM-DD-paper-tracker.html data/seen_papers.json index.html
+git add outputs/YYYY-MM-DD-paper-tracker.html data/seen_papers.json data/open_items.json index.html
 git commit -m "Daily report: YYYY-MM-DD"
 git push
 ```

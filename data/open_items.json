@@ -1,0 +1,83 @@
+{
+  "_note": "Open-items ledger. Papers confirmed MISSED by the tracker and then keyword-fixed, but not yet published in any report. A keyword fix is forward-looking only: it changes what future runs can retrieve, it does NOT carry the specific paper into a report, and the moving harvest window immediately steps past the paper's posting date. This ledger is the carry-forward guarantee. DRAIN IT AT THE START OF EVERY RUN: fetch each status=\"open\" item's metadata, score it with the current scorer, include it if it passes Quality Standards, then set status=\"resolved\" and reported=<YYYY-MM-DD>. If it fails the relevance bar, set status=\"dropped\" with a reason. See prompts/daily-paper-tracker.md -> 'Open-items ledger'.",
+  "items": [
+    {
+      "id": "10.1038/s41593-026-02409-7",
+      "title": "Structured experience shapes strategy learning and neural dynamics in the medial entorhinal cortex",
+      "authors": "Bowler, J. C., Azhar, D. B., Jensen, C. M., et al.",
+      "venue": "Nature Neuroscience",
+      "posted": "2026-09-03",
+      "fixed_on": "2026-09-05",
+      "failure_mode": "keyword",
+      "terms_added": ["medial entorhinal cortex", "strategy learning", "strategy switching", "neural dynamics"],
+      "status": "open",
+      "reported": null,
+      "note": "Title terms absent from the matrix. Fixed in commit before 0db57e5 (2026-09-05). Never appeared in any report."
+    },
+    {
+      "id": "10.64898/2026.08.25.746980",
+      "title": "Neuronal selectivity and geometric alignment in the human hippocampus support abstract generalization",
+      "authors": "Hakkak Moghadam Torbati, A., & Davoudi, N.",
+      "venue": "bioRxiv (neuroscience)",
+      "posted": "2026-08-28",
+      "fixed_on": "2026-09-15",
+      "failure_mode": "keyword",
+      "terms_added": ["geometric alignment", "neuronal selectivity", "abstract generalization", "human hippocampus", "human hippocampal"],
+      "status": "open",
+      "reported": null,
+      "note": "Gated out pre-fix (1 gate term, low score); scores 83.0 post-fix. API date 2026-08-28 is authoritative; the DOI slug's 2026.08.25 is the submission date, not the posting date. Fixed in 1c968cf. Never appeared in any report."
+    },
+    {
+      "id": "10.48550/arXiv.2608.22154",
+      "title": "More accurate behavioral predictions with hybrid Bayesian-connectionist models",
+      "authors": "Lake, B. M., Jagadish, A. K., & Jiang, G.",
+      "venue": "arXiv (cs.LG / q-bio.NC)",
+      "posted": "2026-08-23",
+      "fixed_on": "2026-09-15",
+      "failure_mode": "keyword",
+      "terms_added": ["connectionist model", "connectionist", "hybrid model", "Bayesian-connectionist", "behavioral prediction", "predicting human behavior", "human behavior", "cognitive modeling", "behavioral modeling", "inductive bias", "Bayesian modeling of behavior"],
+      "status": "open",
+      "reported": null,
+      "note": "Gated out pre-fix; scores 47.0 post-fix. Fixed in 1c968cf. Never appeared in any report."
+    },
+    {
+      "id": "10.48550/arXiv.2608.29530",
+      "title": "The Emergent Symbolic Structure of Artificial Neural Networks",
+      "authors": "McCoy, R. T., Soulos, P., Linzen, T., & Smolensky, P.",
+      "venue": "arXiv (cs.CL / cs.AI)",
+      "posted": "2026-08-30",
+      "fixed_on": "2026-09-15",
+      "failure_mode": "keyword",
+      "terms_added": ["symbolic structure", "symbolic representation", "symbolic reasoning", "emergent structure", "compositionality", "systematicity", "vector representations", "neurosymbolic"],
+      "status": "open",
+      "reported": null,
+      "note": "Gated out pre-fix; scores 23.0 post-fix. Fixed in 1c968cf. Never appeared in any report."
+    },
+    {
+      "id": "10.48550/arXiv.2609.21259",
+      "title": "CogGym: Towards Large-Scale Comparative Evaluation of Human and Machine Cognition",
+      "authors": "Ying, L., Wu, J., Wang, Y. S., et al. (Tenenbaum, J. B., last)",
+      "venue": "arXiv (cs.AI)",
+      "posted": "2026-09-18",
+      "fixed_on": "2026-09-24",
+      "failure_mode": "keyword+window",
+      "terms_added": ["human-model comparison", "human-machine comparison", "model-human alignment", "behavioral alignment", "comparative evaluation", "human judgments", "commonsense reasoning", "cognitive benchmark", "behavioral benchmark", "evaluation framework", "human evaluation", "benchmark suite", "split-half reliability", "split-half"],
+      "status": "open",
+      "reported": null,
+      "note": "Was present in the 2026-09-23 raw pool (window 09-18->09-23) but gated out with zero CORE hits. Fixed in dee0b53 (2026-09-24); scores 84.0 post-fix. The 09-27 window (21-27 Sep) and 09-30 window (25-30 Sep) both start after its 09-18 posting, so it can never re-enter the pool. Canonical example of the post-fix staleness failure mode."
+    },
+    {
+      "id": "10.1038/s42256-026-01306-9",
+      "title": "Task-structured modularity emerges in artificial networks and aligns with brain architecture",
+      "authors": "Wu, Y., Deng, S., Du, K., Mattar, M. G., et al.",
+      "venue": "Nature Machine Intelligence",
+      "posted": "2026-09-28",
+      "fixed_on": "2026-09-29",
+      "failure_mode": "source-registry+keyword",
+      "terms_added": ["modularity", "modular organization", "brain architecture", "brain network", "network topology", "brain-network alignment", "multitask learning", "multi-task learning", "incremental multitask learning", "capacity constraint", "task structure"],
+      "status": "resolved",
+      "reported": "2026-09-30",
+      "note": "Dual gap: Nature Machine Intelligence (2522-5839) was absent from harvest.py CROSSREF_ISSN AND the modularity vocabulary was missing. Scores 61.0 post-fix. Fixed in 228ad5f (2026-09-29). PUBLISHED in the 2026-09-30 report (Cross-cutting, with an LLM-Memory badge). The control case for this ledger: it posted 2026-09-28, inside the next run's window (09-25 -> 09-30), so the same fix that failed for the other five worked here. The only differentiator was whether the posting date still fell inside the next harvest window."
+    }
+  ]
+}
