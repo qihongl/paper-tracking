@@ -228,9 +228,12 @@ def main():
     json.dump(outrows, open(OUT, "w"))
     for p in outrows[:TOPN]:
         print("=" * 100)
-        print(f"[{p['_score']}] {p['src']:9s} | {p.get('date','')} | {p.get('venue','')[:45]}")
+        print(f"[{p['_score']}] {str(p.get('src') or 'direct'):9s} | {p.get('date') or ''} | {(p.get('venue') or '')[:45]}")
         print(f"T: {p.get('title','')}")
-        print(f"A: {', '.join(p.get('authors',[])[:3])}{' et al.' if len(p.get('authors',[]))>3 else ''}")
+        _au = p.get('authors') or []
+        if isinstance(_au, str):
+            _au = [_au]
+        print(f"A: {', '.join(_au[:3])}{' et al.' if len(_au)>3 else ''}")
         th = sorted(set(p.get("_title_hits", [])))
         ah = sorted(set(p.get("_abs_hits", [])))
         print(f"TITLE-HITS:    {', '.join(th[:18]) or '(none)'}")
@@ -239,7 +242,7 @@ def main():
         for sn in evidence(p, ah[:3] or th[:2]):
             print(f"  ~ {sn}")
         print(f"ABS: {_astext(p.get('abstract',''))[:700]}")
-        print(f"URL: {p.get('url') or p.get('doi') or p.get('id')}")
+        print(f"URL: {p.get('url') or p.get('URL') or p.get('doi') or p.get('DOI') or p.get('id') or ''}")
 
 
 if __name__ == "__main__":

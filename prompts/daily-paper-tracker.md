@@ -137,7 +137,7 @@ The ledger at `data/open_items.json` is the carry-forward guarantee. Schema:
    - Apply the same Quality Standards as any other paper: you must be able to state both **approach** and **finding**. The ledger bypasses the *window* and the *dedup store*, never the relevance bar.
    - If it passes: include it in today's report, add the `[backfill]` marker to its `.paper-meta` line, and note in the card that it is a previously-missed paper now recovered. Then set `status: "resolved"` and `reported: "<today>"`.
    - If it fails the relevance bar: set `status: "dropped"` with the reason in `note`. Never leave it silently open.
-3. Ledger items count toward the 5–15 target.
+3. **Ledger items do NOT count toward the 5–15 target.** They are additive: a run that drains five backfills must still deliver its usual 5–15 *fresh* papers. Backfills must never crowd out fresh coverage — recovering an old paper is not a substitute for finding this week's ones.
 4. Commit the updated `data/open_items.json` alongside the report.
 
 **When you patch the matrix, `CORE`, `GATE`, or the ISSN list for a missed paper, you MUST add that paper to this ledger in the same commit.** That is the step which was missing on 2026-09-24: the CogGym patch was committed, but nothing obliged the next run to publish CogGym, so it never was.
