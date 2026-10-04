@@ -101,6 +101,8 @@ grep -ril "DISTINCTIVE TITLE FRAGMENT" outputs/ --include="*.html" | grep -v "TO
 
 Any non-empty hit means the paper was already reported — drop it from the report, list it under "Papers Scanned but Not Included" with the earlier date, and (if its identifier is absent or carries today's date) correct/add the `seen_papers.json` entry with the **true first-reported date** rather than today's. This costs one command per paper and is the only reliable guard against duplicate coverage.
 
+**Probe conference-proceedings hits especially hard.** Observed 2026-10-04: the run's top-scored candidate was the PMLR proceedings version of an arXiv preprint already reported 2026-08-22, carrying a completely different identifier (a PMID, no DOI), so the JSON store could not see it — only the grep pass caught it. A published version of a previously reported preprint is still a duplicate.
+
 **After finalizing today's report**, save an updated copy of `data/seen_papers.json` with all newly reported papers appended (set the value to today's date). Do NOT remove old entries — the store should accumulate indefinitely.
 
 ---
