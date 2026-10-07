@@ -137,6 +137,45 @@
       "status": "resolved",
       "reported": "2026-09-30",
       "note": "Dual gap: Nature Machine Intelligence (2522-5839) was absent from harvest.py CROSSREF_ISSN AND the modularity vocabulary was missing. Scores 61.0 post-fix. Fixed in 228ad5f (2026-09-29). PUBLISHED in the 2026-09-30 report (Cross-cutting, with an LLM-Memory badge). The control case for this ledger: it posted 2026-09-28, inside the next run's window (09-25 -> 09-30), so the same fix that failed for the other five worked here. The only differentiator was whether the posting date still fell inside the next harvest window."
+    },
+    {
+      "id": "10.1093/cercor/bhag114",
+      "title": "Aging shifts hippocampal reactivation from selective reinstatement to category-level misbinding during episodic memory",
+      "authors": "Mekbib, D. B.; McDonough, I. M.",
+      "venue": "Cerebral Cortex",
+      "posted": "2026-08-10",
+      "fixed_on": "2026-10-07",
+      "failure_mode": "post-fix-staleness",
+      "terms_added": [],
+      "status": "open",
+      "reported": null,
+      "note": "Deferred from the 2026-09-23 run as 'date unverified'. Date now confirmed via Crossref/OUP: published 2026-08-10, i.e. already out of window by 09-23 and every run since. Resurfaced by October news coverage. Hippocampal encoding-retrieval similarity predicts associative accuracy in younger adults but predicts category-level binding ERRORS in older adults (n=61, ages 20-74). Squarely on-pillar for Encoding-Retrieval."
+    },
+    {
+      "id": "10.1016/j.cub.2025.12.061",
+      "title": "Disrupted hippocampal replay is associated with reduced offline map stabilization in an Alzheimer's mouse model",
+      "authors": "Shipley, S.; Abrate, M. P.; Hayman, R.; Chan, D.; Barry, C.",
+      "venue": "Current Biology",
+      "posted": "2026-01-01",
+      "fixed_on": "2026-10-07",
+      "failure_mode": "post-fix-staleness",
+      "terms_added": [],
+      "status": "open",
+      "reported": null,
+      "note": "Recycling trap: UCL press coverage in October 2026, but Curr Biol 36(4):859-871.e5, published January 2026 (PMID 41616770). Was never reported. Replay RATE is unchanged in App NL-G-F mice but replay QUALITY is degraded (disrupted cell recruitment, reduced co-firing structure), and that degradation predicts failure of offline place-cell stabilization. Directly on-pillar for Schema-Episodic (hippocampal replay / consolidation)."
+    },
+    {
+      "id": "10.1371/journal.pbio.3003956",
+      "title": "Inhibitory tone in the dentate gyrus dynamically prioritizes memory flexibility or stability by tuning a sensitivity-consistency continuum",
+      "authors": "Perez-Montoyo, E.; Carames, J. M.; Garcia-Hernandez, R.; Peralta-Canadas, M.; Canals, S.; Marcos, E.",
+      "venue": "PLOS Biology",
+      "posted": "2026-08-18",
+      "fixed_on": "2026-10-07",
+      "failure_mode": "post-fix-staleness",
+      "terms_added": [],
+      "status": "open",
+      "reported": null,
+      "note": "Recycling trap: October 2026 news coverage, published 2026-08-18 (PLoS Biol 24(8):e3003956). Pharmacogenetics + behaviour + computational model: reducing DG inhibition during encoding of overlapping experiences enhances later discrimination but increases interference susceptibility under high memory load; increasing inhibition stabilizes but blurs. A pattern-separation/completion trade-off set by inhibitory tone - on-pillar for Schema-Episodic."
     }
   ]
 }
