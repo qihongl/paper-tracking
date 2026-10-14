@@ -189,6 +189,32 @@
       "status": "resolved",
       "reported": "2026-10-11",
       "note": "DOI stem reads 2026-09-24 but the bioRxiv API posting date is 2026-09-30, five days before the 2026-10-06 window opened; never entered any prior pool. Recovered and published 2026-10-11 as [backfill]."
+    },
+    {
+      "id": "10.1162/jocn.a.2592",
+      "title": "Hippocampal Reactivation Trades Episodic Detail for Semantic Gist in Human Memory",
+      "authors": "Hindy, N. C.; Coleman, R.; Selvam, S. R. M. (College of Charleston; VU Amsterdam; U Louisville)",
+      "venue": "Journal of Cognitive Neuroscience 38(8):1541-1553",
+      "posted": "2026-04-05",
+      "fixed_on": "2026-10-14",
+      "failure_mode": "post-fix-staleness",
+      "terms_added": [],
+      "status": "open",
+      "reported": null,
+      "note": "Confirmed miss. Surfaced by an October 2026 PsyPost/Dispatch Times news cycle, but JOCN issue 38(8) published 2026-04-05 - out of window for every run in September/October. Never previously reported. Squarely on-pillar: high-resolution fMRI in 24 participants shows CA1 reactivation frequency during a 90-s post-encoding delay has OPPOSING relations with later memory - more reactivation predicts MORE false recognition of semantic lures (gist, dz=0.52) but WORSE voice-discrimination/source accuracy (dz=-0.65), a bidirectional CA1 effect of paired dz=1.00, strongest in anterior-to-mid hippocampus. Directly relevant to the Schema-Episodic pillar (schema-driven gist extraction competitively weakening episode-specific detail) and to Encoding-Retrieval. Drain and publish with a [backfill] marker."
+    },
+    {
+      "id": "10.1177/09567976261483544",
+      "title": "Artists Can Design Memory, and AI Can Predict It",
+      "authors": "Davis, T. M.; Chen, Y. E.; Bainbridge, W. A. (University of Chicago)",
+      "venue": "Psychological Science (online ahead of print)",
+      "posted": "2026-10-13",
+      "fixed_on": "2026-10-14",
+      "failure_mode": "harvest",
+      "terms_added": [],
+      "status": "open",
+      "reported": null,
+      "note": "Confirmed miss by metadata gap: in window for the 2026-10-14 run, but no abstract was retrievable from Crossref, Europe PMC or PubMed, so approach/finding could not be stated under the Quality Standards and it was listed in the excluded section instead. National art contest (n~1073 across MTurk/Prolific/gallery samples) in which artists deliberately produced memorable vs forgettable artworks; ResMem predicted memorability better than artists or laypeople. Peripheral/memorability. Next run: fetch the abstract from the SAGE page or the OSF repository and publish with a [backfill] marker."
     }
   ]
 }
