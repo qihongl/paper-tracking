@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker — 2026-10-21</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .summary-table .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .tag-lib { background: #d1fae5; color: #047857; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+</style>
+</head>
+<body>
+
+<h1>🧠 Daily Paper Tracker</h1>
+<div class="date">2026-10-21 &middot; window 14–21 October 2026 (7-day sliding window; overlaps the 19 Oct run by five days — deduplicated below)</div>
+
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2610.25596" target="_blank">Cognitive Maps in Large Language Models</a></td>
+        <td class="col-authors">Qin, Cohen &amp; Reddy</td>
+        <td class="col-finding">Relational structure is stored as pairwise links composed on demand — not as a coordinate map — and binding is carried by a sparse set of key–value pairs that can be edited to implant false memories.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2610.20399" target="_blank">Cortex: Consolidating Context into Parametric Memory</a></td>
+        <td class="col-authors">Zhang et al. (N. Zhang)</td>
+        <td class="col-finding">Context-conditioned gains can be internalised into weights: after 50 sequential edits on a 14B model, 88.9% of the context gain survives removal while 99.8% of non-target behaviour is retained.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1016/j.neuron.2026.09.031" target="_blank">An acetylcholine-inhibited sleep-active hippocampal interneuron orchestrates memory consolidation</a></td>
+        <td class="col-authors">Feng et al. (Xu &amp; Peng)</td>
+        <td class="col-finding">Chrm2⁺ interneurons are the missing NREM-selective gate on ripples; suppressing them in dCA3 or vHPC impairs spatial and social memory respectively.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1002/hipo.70141" target="_blank">The Strength of Target Representations Drives Mnemonic Discrimination</a></td>
+        <td class="col-authors">Kirwan et al. (Cobia)</td>
+        <td class="col-finding">Lure discrimination degrades with delay and with hippocampal damage, but ROC analysis preserves it — the deficit is in decision criteria, not in the underlying representation.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://www.biorxiv.org/content/10.64898/2026.10.11.757684v1" target="_blank">Firing Without Wiring: How REM-like Sleep Reactivation Rebalances Excitation and Inhibition to Orthogonalize Memories</a></td>
+        <td class="col-authors">Kubo, Delanois &amp; Bazhenov</td>
+        <td class="col-finding">REM replay decorrelates overlapping memories by pruning only the inputs silent when the reactivated population fires — and the effect vanishes if the same synaptic change is spread evenly.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1177/10738584261489262" target="_blank">The Schematic Brain: The Neurophysiology of Behavioral Schemas</a></td>
+        <td class="col-authors">Maor, Zong, Gostolupce &amp; Schoenbaum</td>
+        <td class="col-finding">Schemas are low-dimensional population geometries distributed across hippocampal–prefrontal circuits, and formation, use and updating are one continuous adaptive process, not three stages.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2610.00910" target="_blank">The Geometry of Contextual Relations: Language Models Address Facts by Order of Mention</a></td>
+        <td class="col-authors">Zhou</td>
+        <td class="col-finding">A steering vector addresses facts by serial position in the context, not by name; the resulting accessibility curve — first-mentioned easiest — resembles the human serial-position curve.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2610.25463" target="_blank">DiaLong: Benchmarking Reminiscence in Long-Context Dialogues</a></td>
+        <td class="col-authors">Bianchi, Aslan &amp; Saito</td>
+        <td class="col-finding">New 100-conversation fact-recall probe: current memory enhancements do not close the long-range forgetting gap in dialogue.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.1162/jocn.a.2687" target="_blank">Enhanced Episodic Memory Encoding Following Modulation of the Amygdala via Transcranial Low-intensity Focused Ultrasound</a></td>
+        <td class="col-authors">Doss et al. (Dunsmoor)</td>
+        <td class="col-finding">Inhibiting the amygdala before encoding made memory <em>better</em>, not worse — the amygdala filters weak input rather than amplifying emotional salience.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s41467-026-78719-y" target="_blank">A prefrontal–bed nucleus pathway controls aversive memory specificity independently of glucocorticoids</a></td>
+        <td class="col-authors">Lingg et al. (Radley)</td>
+        <td class="col-finding">rPL→avBST inhibition drives generalisation without changing memory strength, and does so even in adrenalectomised rats — a clean dissociation from the hormonal route.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.1080/17588928.2026.2737633" target="_blank">Pupil dilation as an index of episodic processing when remembering, imagining, and thinking creatively</a></td>
+        <td class="col-authors">Thakral, Madore &amp; Devitt</td>
+        <td class="col-finding">Pupil dilation tracks episodic detail generation across memory, simulation and divergent thinking, but is silent for semantic retrieval — which instead shows up in fixation counts.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://doi.org/10.1162/IMAG.a.1400" target="_blank">Inter-subject correlations and their behavioral associations vary across movies</a></td>
+        <td class="col-authors">Leipold et al. (Toni)</td>
+        <td class="col-finding">Across 318 subjects and 36 movies, ISC–behaviour associations are strongly movie-specific with little overlap between movies — a direct generalizability warning for single-movie designs.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://doi.org/10.1016/j.isci.2026.117492" target="_blank">Neural subspace reorganization reflects value-based decision-making</a></td>
+        <td class="col-authors">Li et al. (Miller)</td>
+        <td class="col-finding">A decision rotates chosen and unchosen options into orthogonal LPFC subspaces and maps the chosen one onto an order-invariant action-aligned subspace.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-peri"></span>Peripheral</td>
+        <td class="col-title"><a href="https://doi.org/10.1002/evan.70051" target="_blank">Homo Memorabiliaxis: Souvenirs and the Evolution of Autobiographical Memory and Self</a></td>
+        <td class="col-authors">Barkai et al. (Ram)</td>
+        <td class="col-finding">Curated objects from ~500 kya are argued to be portable external memory devices that scaffold source monitoring, driving gene–culture coevolution of autobiographical memory.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2610.25596" target="_blank">Cognitive Maps in Large Language Models</a>
+    </div>
+    <div class="paper-meta">
+      Qin, Cohen &amp; Reddy (Princeton) &middot; arXiv cs.CL, 19 October 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Relational-reasoning tasks in open-weight LLMs combined with causal "mosaic" interventions that manipulate internal activations. Models had to infer unstated relations between entities and generalise to synthetic entity names; the authors then probed how relational structure and entity identity are jointly represented, and perturbed the candidate binding substrate to test whether behaviour follows.</p>
+      <p><strong>Finding:</strong> Models above ~10B parameters succeed at inferring unstated relations and generalising to novel names. Abstract relational structure is represented separately from entity identity and combined <em>additively</em> with it. Critically, relationships are stored as <em>pairwise links composed retrospectively at query time</em>, not laid out prospectively in a global coordinate system — so this is not a Tolman-style map. Binding is carried by a sparse, distributed set of key–value pairs; perturbing those pairs implants "false memories" that change behaviour predictably.</p>
+    </div>
+    <div class="flag">⚠ Preprint. The negative result in smaller models and the composition-vs-coordinate claim both rest on activation interventions rather than behavioural dissociations.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2610.20399" target="_blank">Cortex: Consolidating Context into Parametric Memory</a>
+    </div>
+    <div class="paper-meta">
+      Zhang, He, Liang et al. (N. Zhang) &middot; arXiv cs.CL, 14 October 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> The authors formalise <em>memory consolidation</em> — internalising the performance gain a context confers so it survives context removal without damaging non-target capabilities — and build a five-task-family testbed spanning single, batch and sequential updates. Cortex generates prospective queries anticipating how the context will be used, then distils context-conditioned outputs into mergeable low-rank or structural FFN updates.</p>
+      <p><strong>Finding:</strong> Across 4B–120B dense and MoE backbones (text-only and multimodal), Cortex sits on the empirical consolidation–retention Pareto frontier in most settings. After 50 sequential factual edits on a 14B model it recovers 88.9% of the context-induced gain while retaining 99.8% of original non-target performance. The consolidation framing usefully unifies context-specified editing, skill learning and behavioural steering under one objective.</p>
+    </div>
+    <div class="flag">⚠ Preprint. Sequential-edit retention is the hard case and the 50-edit figure is a single model scale.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1016/j.neuron.2026.09.031" target="_blank">An acetylcholine-inhibited sleep-active hippocampal interneuron orchestrates memory consolidation</a>
+    </div>
+    <div class="paper-meta">
+      Feng, Dai, Fei et al. (Xu &amp; Peng) &middot; <em>Neuron</em>, 19 October 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Calcium imaging across the sleep–wake cycle in mice, then genetic targeting of M2 muscarinic receptor (Chrm2)-expressing interneurons — chosen because acetylcholine is high in wake/REM but low in NREM. The authors recorded the population's spontaneous dynamics, manipulated it in dorsal CA3 versus ventral hippocampus, and measured ripple occurrence and spatial versus social memory.</p>
+      <p><strong>Finding:</strong> Every previously known genetically labelled hippocampal interneuron class was most active in wake and REM, not NREM — which is why the NREM-selective gate on ripples had stayed hidden. Chrm2⁺ neurons are preferentially active in NREM sleep and quiet wakefulness, are inhibited by acetylcholine, and inhibit the whole hippocampus at an infra-slow ~0.015 Hz rhythm. Their activity bidirectionally modulates ripple occurrence. Suppression in dorsal CA3 impairs spatial memory; suppression in ventral hippocampus impairs social memory.</p>
+    </div>
+    <div class="flag">⚠ The infra-slow rhythm and the ripple-coupling are correlational in places; the spatial/social dissociation is anatomically clean but rests on different downstream readouts.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1002/hipo.70141" target="_blank">The Strength of Target Representations Drives Mnemonic Discrimination: Evidence From Extended Delay and Hippocampal Damage</a>
+    </div>
+    <div class="paper-meta">
+      Kirwan, Chipman, Hollearn et al. (Cobia) &middot; <em>Hippocampus</em>, 19 October 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Mnemonic Similarity Task performance measured at delays from a few minutes to seven days across three experiments in healthy young adults, plus a patient with hippocampal damage. Target memory strength was manipulated via delay; the authors contrasted the standard lure discrimination index (LDI) with receiver operating characteristic (ROC) analysis, which separates discriminability from response criterion.</p>
+      <p><strong>Finding:</strong> Both target recognition and lure discrimination declined with delay, and the graded lure-similarity effect disappeared beyond one day. But ROC analysis revealed <em>preserved</em> discriminability across delays and similarity levels; the same dissociation appears in the hippocampal patient, who is impaired on LDI yet shows intact discrimination for the least-similar lures at immediate delay. The deficit is therefore largely one of decision criterion and representation strength, not of pattern separation itself.</p>
+    </div>
+    <div class="flag">⚠ n=1 for the hippocampal patient; the ROC/LDI dissociation is the paper's whole load-bearing claim and worth re-deriving on an independent dataset.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://www.biorxiv.org/content/10.64898/2026.10.11.757684v1" target="_blank">Firing Without Wiring: How REM-like Sleep Reactivation Rebalances Excitation and Inhibition to Orthogonalize Memories</a>
+    </div>
+    <div class="paper-meta">
+      Kubo, Delanois &amp; Bazhenov (UC San Diego) &middot; bioRxiv, posted 18 October 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Recurrent networks trained with Equilibrium Propagation — a biologically plausible learning rule — then run through simulated REM-like sleep with spontaneous reactivation. The authors tracked excitatory and inhibitory drive onto the populations encoding recent versus older memories, and tested a targeted-pruning account against a control that spread the same total synaptic change evenly across populations.</p>
+      <p><strong>Finding:</strong> REM-like sleep reduced interference by decorrelating task-specific populations, isolating individual memory traces. Reactivation was dominated by the most recent memory's population; net excitatory input onto it fell, most strongly from older-memory populations, which let older memories' own inputs drive their neurons again. Crucially, the effect requires <em>targeted</em> pruning: spreading the identical total synaptic change evenly abolished the recovery entirely. Plasticity confined to one population, removing inputs silent when it fires, held under Dale's law and with excitatory depression alone.</p>
+    </div>
+    <div class="flag">⚠ Preprint. Model-only; the REM-sleep mapping is by analogy, and there is no behavioural or electrophysiological validation.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1177/10738584261489262" target="_blank">The Schematic Brain: The Neurophysiology of Behavioral Schemas</a>
+    </div>
+    <div class="paper-meta">
+      Maor, Zong, Gostolupce &amp; Schoenbaum &middot; <em>The Neuroscientist</em>, 20 October 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A synthesis of the emerging systems neuroscience of schemas in animal models, made possible by large-scale neural recordings, population-level analysis and causal circuit tools. The review's organising move is to treat schema formation, use and updating as points on one continuum rather than separate processes.</p>
+      <p><strong>Finding:</strong> The authors argue that what a schema does at a given moment depends on the continuous interplay between prior-knowledge strength and the fit of new information. Neurally, schemas appear as structured low-dimensional population geometries distributed across hippocampal–prefrontal circuits, with distinct but interacting contributions from orbitofrontal, medial prefrontal and anterior cingulate cortex plus hippocampus, and these representations reorganise when the environment demands it.</p>
+    </div>
+    <div class="flag">⚠ Review — included because it is the clearest current statement of the population-geometry account of schemas, but it is a position piece, not new data.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2610.00910" target="_blank">The Geometry of Contextual Relations: Language Models Address Facts by Order of Mention</a>
+    </div>
+    <div class="paper-meta">
+      Zhou &middot; arXiv cs.CL, submitted 1 October 2026
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-llm">LLM-Memory</span>
+      [backfill]
+    </div>
+    <div class="paper-body">
+      <p><em>Recovered via the open-items ledger — submitted 1 October, just outside every subsequent harvest window, and never published in a report. The strongest Pillar-3 miss of the month.</em></p>
+      <p><strong>Approach:</strong> The model is given a list of facts in context (e.g. "Alice eats an apple. Bob eats a pear.") and the author measures how the hidden state changes when the question switches from one subject to the next. Averaged over many lists this change is a <em>ordinal vector</em>. The study tests four predictions of an ordinal-addressing hypothesis across Qwen, Gemma and Llama, at scales from 1.5B to 32B, and tracks when in pretraining the structure emerges.</p>
+      <p><strong>Finding:</strong> Models represent the fact a question asks about <em>by its order of mention</em>, not by the name in the question. The fact addresses are ordered by mention; steerable — adding the ordinal vector to a question about the first fact yields the second fact's answer; low-rank, with the first-mentioned fact easiest to reach and later links crowding together, a profile the author notes is "surprisingly similar to human recall"; and emergent, shared across late-middle layers and forming early in pretraining. The formal statement is a decomposition of the last-token residual state into a per-context offset plus a shared positional address — which is, structurally, a key–value address indexed by serial position.</p>
+    </div>
+    <div class="flag">⚠ Preprint; single author, and the ordinal vector is measured under a specific prompt construction.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2610.25463" target="_blank">DiaLong: Benchmarking Reminiscence in Long-Context Dialogues</a>
+    </div>
+    <div class="paper-meta">
+      Bianchi, Aslan &amp; Saito &middot; arXiv cs.CL, 18 October 2026
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A dataset of 100 human-authored conversations, LLM-augmented to lengths beyond existing datasets, paired with a fact-recall task: classify 40 candidate facts about a dialogue as true or false. The authors benchmark current LLMs and proposed memory enhancements on it.</p>
+      <p><strong>Finding:</strong> Long-range factual recall in extended conversational contexts remains poor and existing memory enhancements do not close the gap. The benchmark's value is that it isolates retention-and-retrieval of specific facts over serial position in a naturalistic input stream, rather than synthetic needle-in-a-haystack retrieval.</p>
+    </div>
+    <div class="flag">⚠ Preprint. Benchmark papers are scaffolding, not mechanism — included for the measurement instrument, not for a result.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1162/jocn.a.2687" target="_blank">Enhanced Episodic Memory Encoding Following Modulation of the Amygdala via Transcranial Low-intensity Focused Ultrasound</a>
+    </div>
+    <div class="paper-meta">
+      Doss, Lambert, Samaha et al. (Dunsmoor) &middot; <em>Journal of Cognitive Neuroscience</em>, 15 October 2026
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Double-blind, sham-controlled, repeated-measures design. Transcranial low-intensity focused ultrasound (tFUS) targeted the left amygdala before encoding of emotional and neutral pictures, using a protocol previously shown to attenuate amygdala BOLD signal, with memory tested 24 h later. A dynamic fearful-face recognition task served as a secondary manipulation check, and computational modelling was applied to both.</p>
+      <p><strong>Finding:</strong> The hypothesis was that pre-encoding amygdala inhibition would <em>impair</em> emotional memory. The opposite happened: active sonication enhanced — or tended to enhance — memory for both neutral and emotional pictures across two tests, and selectively enhanced recognition of subtle fearful expressions. The authors' reading is that the amygdala acts as a <em>filter</em> that suppresses weak or ambiguous signals, so inhibiting it unmasks subtle affective cues and lets them into memory.</p>
+    </div>
+    <div class="flag">⚠ Small N (n=23 memory, n=20 faces); the interpretation is explicitly conditional on the assumed inhibitory direction of the tFUS protocol, which was not verified in these participants. A contrary-to-hypothesis result with a post-hoc reframing.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s41467-026-78719-y" target="_blank">A prefrontal–bed nucleus pathway controls aversive memory specificity independently of glucocorticoids</a>
+    </div>
+    <div class="paper-meta">
+      Lingg, Johnson, Hinz et al. (Radley) &middot; <em>Nature Communications</em>, 20 October 2026
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Post-training optogenetic inhibition and excitation of the rostral prelimbic cortex→anteroventral bed nuclei of stria terminalis (rPL→avBST) pathway in an inhibitory-avoidance discrimination task in male rats, with the key control being adrenalectomy to remove the glucocorticoid route. Calcium signals were recorded during retrieval.</p>
+      <p><strong>Finding:</strong> Inhibiting the pathway after training promoted contextual <em>generalisation</em> without changing memory strength. This held even in adrenalectomised rats despite elevated corticosterone — establishing glucocorticoid independence. Excitation enhanced discrimination. During retrieval, both avBST and avBST-projecting rPL neurons responded more to the neutral than the aversive context, consistent with the pathway supporting safety discrimination rather than threat expression.</p>
+    </div>
+    <div class="flag">⚠ Male rats only. The negative result (no strength change) is central and worth checking for power.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1080/17588928.2026.2737633" target="_blank">Pupil dilation as an index of episodic processing when remembering, imagining, and thinking creatively</a>
+    </div>
+    <div class="paper-meta">
+      Thakral, Madore &amp; Devitt &middot; <em>Cognitive Neuroscience</em>, 15 October 2026
+      <span class="tag tag-er">Encoding-Retrieval</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Eye-tracking while participants recalled past experiences, imagined novel future ones, engaged in divergent creative thinking, or performed a non-episodic semantic retrieval task. The design exploits prior evidence that pupil dilation and hippocampal activity both increase when retrieval recruits episodic detail.</p>
+      <p><strong>Finding:</strong> Pupil dilation tracked divergent-thinking ability and the number of episodic details generated during both memory and simulation. It showed no relationship to semantic-task performance or to non-episodic detail generation. Fixation counts instead tracked semantic retrieval. The dissociation is clean: two oculometric indices separate constructive episodic processing from semantic retrieval in the same participants.</p>
+    </div>
+    <div class="flag">⚠ Pupillometry is an indirect index and is confounded with arousal and effort; the inference to hippocampal activity is from prior literature, not measured here.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1162/IMAG.a.1400" target="_blank">Inter-subject correlations and their behavioral associations vary across movies: Implications for generalizability</a>
+    </div>
+    <div class="paper-meta">
+      Leipold, Rao, Schoffelen, Bögels &amp; Toni (Donders / Radboud) &middot; <em>Imaging Neuroscience</em>, 16 October 2026
+      <span class="tag tag-cross">Cross-cutting</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Three independent movie-watching fMRI datasets, 318 subjects and 36 movies in total. The authors quantified between-movie variability in inter-subject correlation (ISC) across the cortex and then asked what that variability does to ISC–behaviour associations, using movie-specific inter-subject representational similarity analysis across two distinct behavioural constructs.</p>
+      <p><strong>Finding:</strong> ISC varies between movies throughout the cortex, and the variability is spatially heterogeneous — regions with stronger ISC show <em>greater</em> between-movie variability. Most importantly, the spatial distribution of ISC–behaviour associations differs per movie with little overlap between them, replicated across two behavioural constructs. Because ISC is inherently stimulus-driven, single-movie designs carry a real generalizability problem.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1016/j.isci.2026.117492" target="_blank">Neural subspace reorganization reflects value-based decision-making</a>
+    </div>
+    <div class="paper-meta">
+      Li, Chrysanthidis, Brincat, Rose &amp; Miller (MIT) &middot; <em>iScience</em>, 16 October 2026
+      <span class="tag tag-cross">Cross-cutting</span>
+      [backfill]
+    </div>
+    <div class="paper-body">
+      <p><em>Recovered from the open-items ledger — added by the 19 October run, which could not retrieve an abstract from Crossref (month-level dating only). Europe PMC had it; the true publication date is 9 September, so the window had already passed it.</em></p>
+      <p><strong>Approach:</strong> Single-unit and population recordings from lateral prefrontal cortex in non-human primates holding two sequentially presented option-value pairs in working memory and selecting the higher-value one. The authors tracked how option representations were organised before versus after a decision became possible.</p>
+      <p><strong>Finding:</strong> Before the decision, representations were organised by <em>presentation order</em>. Once a decision could be made, chosen and unchosen representations rotated into mutually orthogonal subspaces and the chosen representation expanded. After the decision the chosen option was transformed, regardless of its presentation order, into a common subspace aligned with the prescribed action. Population activity is thus reorganised for efficient downstream readout, with the order-dependence of the pre-decision state explicitly discarded.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-peri">Peripheral</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1002/evan.70051" target="_blank">Homo Memorabiliaxis: Souvenirs and the Evolution of Autobiographical Memory and Self</a>
+    </div>
+    <div class="paper-meta">
+      Barkai, Assaf, Efrati et al. (Ram) &middot; <em>Evolutionary Anthropology</em>, 19 October 2026
+      <span class="tag tag-peri">Peripheral</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Archaeological synthesis integrated with theories of extended memory and niche construction, covering the terminal Lower Palaeolithic (~500 kya) onward: transported distinctive stones, fossils, and patinated "old" tools whose earlier surfaces were deliberately preserved.</p>
+      <p><strong>Finding:</strong> The authors argue curated keepsakes functioned as portable external memory devices that do more than cue recall — by providing durable material traces they support <em>source monitoring</em>, distinguishing experienced from imagined events. Routine curation could have created a "souvenir niche" selecting for better integration of internal recollection with external tokens, and thereby for the neural systems underlying autobiographical memory and self.</p>
+    </div>
+    <div class="flag">⚠ Irreducibly speculative: the archaeological record cannot discriminate curation for memory from curation for status or aesthetics, and the selection argument is not testable as stated.</div>
+  </div>
+</div>
+
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>Remembered event features shape default mode network engagement during emotional memory recall</strong> (Curko et al., <em>eNeuro</em> 10.1523/ENEURO.0146-26.2026) — in window and an excellent naturalistic-memory paper, but <strong>previously reported 2026-10-19</strong>. Caught by the DOI grep pass, not the title pass: the title fragment should have matched, and it is a reminder that the DOI sweep is the more reliable of the two.</li>
+    <li><strong>Sleep forms flexible context representations in toddlers</strong> (Bastian et al., <em>Nat Commun</em> 10.1038/s41467-026-78303-4) — the ledger item carried by the 19 October run. It turns out it was <strong>already published as a full paper card on 2026-10-14</strong>; the earlier run's note that it was "never reported" was wrong. Removed rather than re-published, and the ledger entry closed with the true first-reported date. The 19 October run created a ledger entry on a false premise.</li>
+    <li><strong>Brain-thought states during movie-watching</strong> (bioRxiv 10.64898/2026.10.16.756266) — API posting date 17 October, in window, but <strong>previously reported 2026-10-19</strong>.</li>
+    <li><strong>NoteBank / History Replays Itself</strong> (arXiv:2610.15715) and <strong>Attic-KV</strong> (arXiv:2610.12133) — both already reported (2026-10-14 and 2026-10-11). <strong>Language Models Share a Readout Bottleneck in Working Memory</strong> — in window and on-pillar, but previously reported 2026-10-19.</li>
+    <li><strong>Distributed cortical learning through LEC-mediated γ-synchrony</strong> (Nat Commun 10.1038/s41467-026-77266-w) — LEC γ-synchrony tracking TD-learning reward prediction errors, an appealing result. But Crossref gives <strong>2026-09-01</strong>; the October university press release is a news-recycling trap.</li>
+    <li><strong>Planar, spiral, and concentric traveling waves distinguish behavioral states in human memory</strong> (Nat Commun 10.1038/s41467-026-71386-z) — surfaced by news again; reported 2026-10-04.</li>
+    <li><strong>Selective Hippocampal Reactivation Driven by Neocortical Feedback</strong> (bioRxiv 755342, API date 2026-10-01) and <strong>Orexin-Dependent Modulation of Memory Consolidation</strong> (bioRxiv 756298, API date 2026-10-10) — both before this window and both already reported.</li>
+    <li><strong>A half-center oscillator regulates sleep pressure</strong> (<em>Nat Neurosci</em>), <strong>Chronic Electroconvulsive Shock Disrupts Hippocampal Physiology</strong> (<em>Hippocampus</em>), <strong>Vitamin D binding protein in ventral CA3</strong> (<em>Sci Adv</em>) — in window and competently done, but each is about neuromodulation or metabolism rather than a memory mechanism, and incremental for the three pillars.</li>
+    <li>Routine exclusions: the KV-compression and serving-engineering arXiv stream (RoLaQ, RACE, Stratified Sparse Attention, Kronecker Delta Rule, "Real Long-Term Memory for AI" — efficiency claims with no retention/retrieval/forgetting mechanism), continual-learning optimizers, prototype-based explainable AI, plus clinical and nutrition cohorts whose only link to memory is a hippocampal volume covariate.</li>
+    <li><strong>Engram Memory Network</strong> (arXiv:2610.27770) and the <strong>Physiology &amp; Behavior</strong> GAT memory-network paper — both use memory vocabulary for a non-memory result (prototype selection; classifier accuracy), and the latter is dated 1 October, outside the window.</li>
+  </ul>
+</div>
+
+</body>
+</html>

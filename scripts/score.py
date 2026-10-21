@@ -50,6 +50,11 @@ CORE = {
     "neural manifold": 5, "representational drift": 7, "mixed selectivity": 6,
     "population coding": 4, "neural geometry": 6, "sparse autoencoder": 4,
     "mechanistic interpretability": 5,
+    # --- Added 2026-10-21: the iScience LPFC paper (10.1016/j.isci.2026.117492) scored
+    # only 5.0 because "neural subspace" was absent, and it had to be recovered by the
+    # ledger instead of by the pool. Keep in sync with the prompt's keyword matrix.
+    "neural subspace": 7, "subspace reorganization": 8, "orthogonal subspace": 7,
+    "population geometry": 7,
     # --- Added 2026-09-05 / 09-15: title-phrase gaps that caused confirmed misses ---
     # (MEC strategy learning; human hippocampal abstraction; Bayesian-connectionist;
     #  emergent symbolic structure.) Keep in sync with the prompt's keyword matrix.
