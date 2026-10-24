@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker — 2026-10-25</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .summary-table .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .tag-lib { background: #d1fae5; color: #047857; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+</style>
+</head>
+<body>
+
+<h1>🧠 Daily Paper Tracker</h1>
+<div class="date">2026-10-25 &middot; Window 20–25 Oct 2026 (last run 21 Oct) &middot; 2,198 harvested + 600 supplementary PubMed records &rarr; 14 papers</div>
+
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2610.31135" target="_blank">Mixing Matters: Evidence Position Bias Across Sequence Mixers in Long-Context Question Answering</a></td>
+        <td class="col-authors">Behera et al. (Anand)</td>
+        <td class="col-finding">Transformers show a beginning advantage that matched state-space models lack; both families favour the end, so the primacy half of the serial-position curve is architecture-specific.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://doi.org/10.7554/eLife.108442" target="_blank">Large language models poorly capture how word order shapes representations of sentence meaning in the human brain</a></td>
+        <td class="col-authors">Fodor et al. (Suzuki)</td>
+        <td class="col-finding">All eight transformers tested match brain representations worse than word-order-blind baselines do for sentences requiring semantic roles, and lose to models that encode structure explicitly.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2610.29419" target="_blank">When Thoughts Become Memory: Unifying In-Context Learning and Fine-Tuning</a></td>
+        <td class="col-authors">Chlon &amp; Huang</td>
+        <td class="col-finding">An exact law for the information value of context versus weights yields a certificate that picks the better of GPT-2's KV cache and a fine-tune in 61,948 of 64,000 query streams.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2610.31421" target="_blank">How Depth Growth and Looping Shape In-Context Learning in Language Models</a></td>
+        <td class="col-authors">Kapl et al. (von Oswald)</td>
+        <td class="col-finding">Depth-grown and looped models acquire ICL earlier and retain it more strongly; depth growth propagates early induction heads across layers, and ablations confirm heavier reliance on them.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1146/annurev-psych-042126-090849" target="_blank">Episodic Memory: Dynamic Modes for Constructing Episodes</a></td>
+        <td class="col-authors">Ranganath &amp; Ritchey</td>
+        <td class="col-finding">Reframes episodic memory as the product of a generative schema-based mode and a contextual binding mode arising from dynamic cortico-hippocampal interaction — a direct theoretical frame for Pillar 2.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.64898/2026.10.17.759791" target="_blank">A Mechanistic Theory Unifying Value and Schema in the Prefrontal Cortex</a></td>
+        <td class="col-authors">Warren et al. (Whittington)</td>
+        <td class="col-finding">Value acts as a gate on structured working-memory representations of context rather than an action readout, unifying RL and cognitive-map accounts and generalising without synaptic plasticity.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://doi.org/10.64898/2026.10.20.760541" target="_blank">Forward reactivation in human hippocampal CA1 supports repetition learning and is preserved in the aging brain</a></td>
+        <td class="col-authors">Gao et al. (Cai)</td>
+        <td class="col-finding">In 418 participants, CA1 forward — not backward — reactivation predicts repetition gains and only CA1 survives control for other MTL regions: the forward asymmetry, in humans, with a clean locus.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s41467-026-78895-x" target="_blank">Neural subspaces encode sequential working memory without detectable neural sequences</a></td>
+        <td class="col-authors">Santo-Angles et al. (Sreenivasan)</td>
+        <td class="col-finding">MEG shows order carried by orthogonalised low-dimensional subspaces indexed to ordinal position, with no sequential replay during the delay — geometry instead of re-running the list.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://doi.org/10.1016/j.celrep.2026.118192" target="_blank">Optogenetic reduction of theta oscillations induces remapping of time cells without memory impairment</a></td>
+        <td class="col-authors">Yong et al. (Brandon)</td>
+        <td class="col-finding">Silencing the septal theta generator remapped many time cells and recruited new ones, yet behaviour and trajectory coding were intact — time-cell sequences are not the behaviourally necessary code.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.64898/2026.10.20.760394" target="_blank">The human hippocampus retroactively binds experiences across time</a></td>
+        <td class="col-authors">He et al. (Staresina)</td>
+        <td class="col-finding">Intracranial data show hippocampal high-frequency activity predicts memory at the arrival of the second event, when image-tuned neurons reinstate the absent first stimulus — binding is retroactive.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.7554/eLife.109678" target="_blank">Strong mnemonic prediction errors increase cognitive control, attention, and arousal</a></td>
+        <td class="col-authors">Xue et al. (Wagner)</td>
+        <td class="col-finding">Across 101 participants, strong prediction errors raise frontal theta, posterior alpha and pupil size more than weak ones, and theta during those errors predicts better learning of unexpected items.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.1111/jsr.70468" target="_blank">Closed-Loop Targeted Memory Reactivation During Sleep Spindles Enhances Motor Memory Consolidation</a></td>
+        <td class="col-authors">Gupta et al. (Doyon)</td>
+        <td class="col-finding">Cueing time-locked to detected spindles improved overnight consolidation within subjects, and the benefit scaled with the fraction of stimulations that landed on true spindles.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s41562-026-02515-3" target="_blank">Privileged representational axes in biological and artificial neural networks</a></td>
+        <td class="col-authors">Khosla et al. (Kanwisher)</td>
+        <td class="col-finding">Brains and DCNNs both favour particular tuning axes, and DCNN axes align with perceptual cortex — axis-sensitive similarity separates models that axis-blind RSA cannot.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-peri"></span>Peripheral</td>
+        <td class="col-title"><a href="https://doi.org/10.7554/eLife.111177" target="_blank">Complementary stable and dynamic prelimbic ensembles encode learned threat value underlying generalization and discrimination</a></td>
+        <td class="col-authors">Normandin et al. (Muzzio)</td>
+        <td class="col-finding">Over 30 days of calcium imaging, prelimbic ensemble membership turned over heavily while a graded value code stayed stable — drift in identity, invariance in population geometry.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2610.31135" target="_blank">Mixing Matters: Evidence Position Bias Across Sequence Mixers in Long-Context Question Answering</a>
+    </div>
+    <div class="paper-meta">
+      Aman Behera, Namit Solanki, Mehul Anand &middot; arXiv cs.CL (NeurIPS 2026 PriGM workshop), 22 Oct 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A single gold document is moved through a fixed set of nine distractor documents, so that ordinal position is the only thing that varies. The same manipulation is run across Transformer, state-space (Mamba) and hybrid Mamba architectures, with position also decoded from residual representations and attention concentration measured near the initial tokens. Controlled, not naturalistic.</p>
+      <p><strong>Finding:</strong> The evaluated Transformers show a beginning advantage that the matched state-space models do not; both families favour evidence near the end. Transformer primacy reappears on synthetic retrieval, where a state-space ceiling blocks the family contrast. Prompt changes can create or nearly erase the beginning advantage, and attention concentration near initial tokens covaries with it in the Transformer family. The authors are careful about the causal claim: effective context use depends jointly on architecture family, capability, task and prompt, so the sequence mixer alone is not identified.</p>
+    </div>
+    <div class="flag">⚠ Exploratory, 9 pages; the pure-versus-hybrid Mamba contrast is described as statistically uncertain; no model-level variance reported for the headline family difference</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.7554/eLife.108442" target="_blank">Large language models poorly capture how word order shapes representations of sentence meaning in the human brain</a>
+    </div>
+    <div class="paper-meta">
+      James Fodor, Carsten Murawski, Shinsuke Suzuki &middot; eLife, 23 Oct 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> 7T fMRI in 30 participants reading 108 sentences engineered so that sentence structure and word meaning can be dissociated. Representational similarity analysis compares eight transformer models and eleven other semantic models against language-region ROIs. Controlled sentence paradigm, not naturalistic.</p>
+      <p><strong>Finding:</strong> Transformers do beat models that ignore word order entirely — so they carry some structure — but every one of the eight matched human representations poorly for sentences that require sensitivity to structural relations such as semantic roles (who did what to whom), and all were significantly inferior to models built to encode relational structure explicitly. The result constrains any claim that transformer sentence representations are brain-like, and is directly relevant to lingering-memory work that assumes attention over positions is the operative representation.</p>
+    </div>
+    <div class="flag">⚠ eLife Version of Record of a reviewed preprint first posted July 2025 — the finding predates this window; n=30, ROI-level RSA</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2610.29419" target="_blank">When Thoughts Become Memory: Unifying In-Context Learning and Fine-Tuning</a>
+    </div>
+    <div class="paper-meta">
+      Leon Chlon, Julie Huang &middot; arXiv stat.ML, 21 Oct 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Derives an exact identity for the information value of data placed in context versus in weights — the code length saved on held-out queries equals, in expectation, the bits stored about the query plus a prior-repair term minus a decoding loss, for any model, architecture, dataset or task. Ceilings on that quantity plus an anytime-valid sequential test then certify the context-versus-weights choice from held-out queries alone, with error control whenever the test stops.</p>
+      <p><strong>Finding:</strong> Every certificate issued on a trained transformer, TabPFN, an occupancy network and a stereo network was correct. Operationally, the test picks the better of GPT-2's KV cache and a fine-tune in 61,948 of 64,000 query streams across 32 comparisons and errs in at most 3.3% of null streams. Two consequences the authors draw are more interesting than the benchmark numbers: deleting part of a context is exactly held-out validation of that part in any model, and adding parts one at a time traces the in-context learning curve without labels.</p>
+    </div>
+    <div class="flag">⚠ Preprint; the "first certified rule" framing is unvetted, and the identity is an expectation statement — per-stream guarantees come from the test, not the law</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2610.31421" target="_blank">How Depth Growth and Looping Shape In-Context Learning in Language Models</a>
+    </div>
+    <div class="paper-meta">
+      Ferdinand Kapl, Kaitlin Maile, Stefan Bauer, Johannes von Oswald &middot; arXiv cs.CL, 22 Oct 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Compares looped and depth-grown language models (up to 3B parameters) against a full-depth dense reference on controlled ICL tasks, tracking acquisition and retention of the ability, tracing induction heads through training, and ablating induction-ranked heads.</p>
+      <p><strong>Finding:</strong> Both reuse schemes acquire ICL earlier in training and retain it more strongly when the same associations can also be learned directly in the weights — a regime that is exactly the context-versus-weights competition. Depth growth propagates early induction heads across layers, and ablations show grown and looped models rely more heavily on induction-ranked heads for both few-shot performance and later-token prediction. The authors read this as a shared inductive bias toward learning from context, with parameter reuse shaping which attention mechanisms carry it.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1146/annurev-psych-042126-090849" target="_blank">Episodic Memory: Dynamic Modes for Constructing Episodes</a>
+    </div>
+    <div class="paper-meta">
+      Charan Ranganath, Maureen Ritchey &middot; Annual Review of Psychology, 21 Oct 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A synthesis of roughly fifty years of behavioral and neuroscientific work on episodic memory, organised around a standing tension: memories as traces carrying objective information about specific moments, versus memories as imaginative reconstructions scaffolded on prior knowledge. No new data; the contribution is the framework.</p>
+      <p><strong>Finding:</strong> The tension is resolved by treating episodic memory not as readout from a static store but as the outcome of two neurocognitive modes — a <em>generative</em> mode supporting schema-based inference and prediction, and a <em>contextual</em> mode binding memories to context-specific anchor points — both arising from dynamic cortico-hippocampal interaction. This is the cleanest current statement of the schema-binding position, and it maps almost one-to-one onto the two components the Schema-Guided Episodic Memory RNN is trying to separate: prior-knowledge inference and context anchoring.</p>
+    </div>
+    <div class="flag">⚠ Narrative review, no new data — included as theoretical scaffolding rather than as an empirical result</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.64898/2026.10.17.759791" target="_blank">A Mechanistic Theory Unifying Value and Schema in the Prefrontal Cortex</a>
+    </div>
+    <div class="paper-meta">
+      James Warren, Kristopher T. Jensen, Timothy Behrens, James C. Whittington &middot; bioRxiv (neuroscience), posted 19 Oct 2026
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Builds a mechanistic model of PFC in which the role of value is inverted: instead of driving action readout, value acts as a control signal that gates structured working-memory representations of the current context. The model is then compared against RNNs meta-trained with either reinforcement learning or supervised learning on a battery of value-based tasks.</p>
+      <p><strong>Finding:</strong> Value-as-gate parsimoniously explains both the RL and the cognitive-map accounts of PFC, and — the load-bearing claim — generalises to novel contexts with no additional synaptic plasticity, because the structure lives in the gated representation rather than in the weights. The meta-trained RNNs recapitulate the model, so the account is mechanistically realisable in a network trained the way these tasks are usually trained. This is a concrete, testable bridge between schema and value that does not require a separate schema module.</p>
+    </div>
+    <div class="flag">⚠ Preprint posted 19 Oct (just before this window — bioRxiv's batch endpoint is not harvested, so it surfaced only via direct DOI lookup); simulation and meta-trained RNNs only, no neural data</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.64898/2026.10.20.760541" target="_blank">Forward reactivation in human hippocampal CA1 supports repetition learning and is preserved in the aging brain</a>
+    </div>
+    <div class="paper-meta">
+      Zhiyao Gao, Li Zheng, Vinod Menon, Weidong Cai &middot; bioRxiv (neuroscience), 24 Oct 2026
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> High-resolution fMRI with representational similarity analysis in a lifespan cohort of N = 418 (ages 36–100). Participants encoded two fixed sequences of face–name pairs twice; hippocampal reactivation was resolved separately by direction, by lag, and by sequence. Controlled, trial-based design with an unusually large lifespan sample.</p>
+      <p><strong>Finding:</strong> During repeated encoding, CA1 and CA2/3/DG representations spontaneously anticipated the immediate next state, without any task demand to do so. Forward — not backward — reactivation predicted repetition-related gains, and showed no detectable age dependence. Critically, only CA1 forward reactivation predicted memory gains after controlling for reactivation in other medial temporal lobe regions. This is the forward asymmetry as a measured, directional, behaviourally-predictive quantity with a clean subfield locus, and the insensitivity to age is a strong constraint: whatever generates the forward preference is not something that degrades with hippocampal ageing.</p>
+    </div>
+    <div class="flag">⚠ Cross-sectional lifespan design, so "preserved in ageing" is an age-invariance claim from between-subject comparison rather than longitudinal tracking; fMRI RSA resolution cannot separate forward reactivation from lag-dependent similarity drift</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s41467-026-78895-x" target="_blank">Neural subspaces encode sequential working memory without detectable neural sequences</a>
+    </div>
+    <div class="paper-meta">
+      Aniol Santo-Angles, Jiarui Yang, Ying Zhou, Wing Kwan Hannah Chu, Grace W. Lindsay, Kartik K. Sreenivasan &middot; Nature Communications, 23 Oct 2026
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Broadband MEG during a sequential working-memory task, with the two competing accounts tested head-on: neural sequences (items reactivated one at a time during the delay) versus neural subspaces (items organised into distinct low-dimensional spaces indexed to ordinal position). Source reconstruction with symmetric orthogonalisation and a 200-region parcellation, PCA, Procrustes and Frobenius subspace comparison, and permutation-based null models.</p>
+      <p><strong>Finding:</strong> Behaviourally relevant low-dimensional subspaces organised memory representations by ordinal position, and subspaces were more orthogonal than chance in both the stimulus and delay windows — with weaker orthogonality on error trials, which is what makes the geometry causal rather than incidental. Position was decodable from the subspace geometry but not comparably from the raw matrices, and leading components carried a substantial share of variance during the delay. There was no evidence of sequential replay in the retention period. Order, in other words, is carried by an address-like geometric arrangement rather than by re-running the items — the strongest human support yet for an ordinal-addressing account of position memory.</p>
+    </div>
+    <div class="flag">⚠ Source-reconstructed MEG, so inference is population-level and indirect; "no detectable sequences" is a null under this decoding sensitivity</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1016/j.celrep.2026.118192" target="_blank">Optogenetic reduction of theta oscillations induces remapping of time cells without memory impairment</a>
+    </div>
+    <div class="paper-meta">
+      Hyun Choong Yong, HaoRan Chang, Mark P. Brandon &middot; Cell Reports, 21 Oct 2026
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Optogenetic silencing of the medial septal GABAergic theta-generating circuit during the delay portion of a delayed spatial alternation task, with simultaneous recording of hippocampal time cells. The causal manipulation targets the mechanism most often proposed to generate time-cell sequences.</p>
+      <p><strong>Finding:</strong> With hippocampal theta substantially reduced, many time cells remapped and new time cells were recruited — a large perturbation of the delay-period temporal code. Yet behavioural performance remained intact and trajectory-specific coding was preserved. The dissociation argues that theta-generated time-cell sequences are not the behaviourally necessary substrate for the delay representation: the task-relevant information survives their reorganisation. For any model that treats the temporal context signal as the memory itself, this sets a boundary condition.</p>
+    </div>
+    <div class="flag">⚠ The central claim is a null (no impairment) from a single task and a single region; partial theta reduction, not abolition</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.64898/2026.10.20.760394" target="_blank">The human hippocampus retroactively binds experiences across time</a>
+    </div>
+    <div class="paper-meta">
+      Xianhui He, Marlieke Petzka, Mohamad F. Khazali, Alexander Brandt, Maren S. Kehl, Lukas Kunz, Andreas Schulze-Bonhage, Bernhard P. Staresina &middot; bioRxiv (neuroscience), 21 Oct 2026
+      <span class="tag tag-er">Encoding-Retrieval</span>
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Intracranial recordings in human epilepsy patients forming image–word associations across a roughly two-second temporal gap — a design that separates the moment the first event is seen, the empty delay, and the moment the second event arrives. Hippocampal high-frequency activity and single-neuron tuning were tracked at each epoch.</p>
+      <p><strong>Finding:</strong> Hippocampal high-frequency activity predicted later memory when the second event arrived, and not during the initial image or the intervening delay. At that moment, neurons tuned to the preceding image reinstated stimulus-specific firing despite its sensory absence, and high-frequency activity was selectively coupled to this reinstatement on successful trials and rose before image-tuned spikes. The binding is therefore <em>retroactive</em>: the representation of what came first is recruited forward into the moment new information lands. That is a mechanistic answer to how associations form across timescales longer than canonical plasticity, and it puts the integration event at the second item rather than at encoding of the first.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.7554/eLife.109678" target="_blank">Strong mnemonic prediction errors increase cognitive control, attention, and arousal</a>
+    </div>
+    <div class="paper-meta">
+      Alice M. Xue, Jenna Jokhani, Anthony M. Norcia, Anthony D. Wagner &middot; eLife, 21 Oct 2026
+      <span class="tag tag-er">Encoding-Retrieval</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Two experiments, 101 young adults, associative memory task with simultaneous scalp EEG and/or pupillometry. Mnemonic prediction errors (divergence between current experience and a memory-based prediction) were manipulated in strength, and the physiological signatures of control, attention and arousal were measured trial by trial.</p>
+      <p><strong>Finding:</strong> Strong prediction errors, more than weak ones, increased frontal theta (cognitive control), posterior alpha suppression and pupil size (attention), and pupil size (arousal) — three dissociable pathways, not one generic surprise signal. Greater frontal theta during strong errors predicted better subsequent learning of the prediction-violating items specifically. This is a clean experimental grounding for the encoding-versus-retrieval arbitration that models of contextual encoding usually assume rather than measure.</p>
+    </div>
+    <div class="flag">⚠ eLife Version of Record; the preprint was posted October 2025, so the result is not new to the field even though this citable version is</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1111/jsr.70468" target="_blank">Closed-Loop Targeted Memory Reactivation During Sleep Spindles Enhances Motor Memory Consolidation</a>
+    </div>
+    <div class="paper-meta">
+      Prakriti Gupta, Vaishali Mutreja, Ovidiu Lungu, Latifa Lazzouni, Ella Gabitov, Habib Benali, Hugo R. Jourde, Giovanni Beltrame, Emily B. J. Coffey, Jean Marc Lina, Geneviève Albouy, Bradley R. King, Arnaud Boutin, Julie Carrier, Julien Doyon &middot; Journal of Sleep Research, 23 Oct 2026
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Twenty-six young adults practised two eight-element finger-movement sequences, each paired with a distinct auditory cue. During N2 and N3 sleep, a portable deep-learning EEG device (Portiloop) detected spindles online and selectively replayed the cue for one sequence; the other sequence served as a within-subject non-reactivated control. Performance was tested before and after sleep.</p>
+      <p><strong>Finding:</strong> Overnight improvement was greater for the reactivated than the non-reactivated sequence, and the size of the benefit correlated positively with the percentage of stimulations delivered during true spindles, and with stimulation during spindle trains (two or more spindles within six seconds). This converts targeted memory reactivation from a correlational to a causally-timed manipulation: the spindle is the effective window, not merely a marker.</p>
+    </div>
+    <div class="flag">⚠ n=26, within-subject, motor sequence learning only; closed-loop detection accuracy is the limiting factor and is not independently validated here</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s41562-026-02515-3" target="_blank">Privileged representational axes in biological and artificial neural networks</a>
+    </div>
+    <div class="paper-meta">
+      Meenakshi Khosla, Sudhanshu Srivastava, Alex H. Williams, Josh McDermott, Nancy Kanwisher &middot; Nature Human Behaviour, 23 Oct 2026
+      <span class="tag tag-cross">Cross-cutting</span>
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> New methods for testing whether the native tuning axes of neural responses are aligned across brains and deep convolutional networks, applied in both vision and audition. The core move is to compare axis-sensitive model–brain similarity against the axis-blind measures (RSA, CKA-style geometry) that dominate current practice. Analysis of publicly available models and datasets, with code on OSF.</p>
+      <p><strong>Finding:</strong> Brains and DCNNs both consistently favoured particular axes for representing the natural world — some tunings are systematically privileged over others, which axis-blind geometry measures cannot see. DCNN axes trained on natural inputs aligned with those in perceptual cortex, and axis-sensitive similarity metrics discriminated competing models of biological sensory systems better than axis-blind ones did. Coding schemes that privilege certain axes also improved task performance, reduced downstream wiring cost, and improved generalisation. The practical implication is uncomfortable and useful in equal measure: any model–brain comparison built purely on representational geometry is discarding a signal that separates models.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-peri">Peripheral</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.7554/eLife.111177" target="_blank">Complementary stable and dynamic prelimbic ensembles encode learned threat value underlying generalization and discrimination</a>
+    </div>
+    <div class="paper-meta">
+      Marc E. Normandin, Pedro M. Ogallar, Matthew R. Lopez, M. M. Ramos-Alvarez, Isabel A. Muzzio &middot; eLife, 21 Oct 2026
+      <span class="tag tag-peri">Peripheral</span>
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Longitudinal calcium imaging of prelimbic cortex in freely moving mice across 30 days during auditory discriminative fear learning and retrieval, tracking ensemble membership and tuning session by session. A generalised linear model then asked whether graded activity was better explained by tone threat value or by freezing.</p>
+      <p><strong>Finding:</strong> Despite substantial ensemble turnover across the month, stable graded representations persisted at the population level. Tone threat value explained graded activity better than freezing did, indicating prelimbic cortex encodes stimulus significance rather than the motor outcome. Population similarity was highest for shock-associated and highly generalised tones, and the stability was carried by a stable subpopulation preserving graded gradients while learning modulated the rate of the dynamic frequency-selective neurons. A clean within-animal demonstration that representational drift in membership is compatible with invariance in population code.</p>
+    </div>
+    <div class="flag">⚠ Single region, single paradigm; "stable" is measured against a 30-day window that may not be long enough to reveal slow drift</div>
+  </div>
+</div>
+
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>Strength of Target Representations Drives Mnemonic Discrimination</strong> (Hippocampus, 20 Oct) — already reported 2026-10-21; LDI-versus-ROC dissociation.</li>
+    <li><strong>A prefrontal–bed nucleus pathway controls aversive memory specificity independently of glucocorticoids</strong> (Nat Commun, 20 Oct) — already reported 2026-10-21.</li>
+    <li><strong>Memory Traces Reflect How They Were Last Accessed</strong> (J Cogn Neurosci, online 19 Oct) — DOI <code>10.1162/jocn.a.2682</code> already reported 2026-08-06; another instance of Crossref re-dating an older article to the current issue.</li>
+    <li><strong>An acetylcholine-inhibited sleep-active hippocampal interneuron orchestrates memory consolidation</strong> (Neuron, 19 Oct) — already reported 2026-10-21; surfaced again this week through a Chinese-language press cycle.</li>
+    <li><strong>A mechanistic theory of planning in prefrontal cortex</strong> (eLife, 21 Oct, Jensen et al.) — eLife Version of Record of a preprint posted September 2025; planning rather than memory, and not new work.</li>
+    <li><strong>First Passage Attention</strong> (arXiv:2610.22714, posted 15 Oct) — a genuinely good selective-erasure result for forget-gated attention, but posted before the window and missed by the 21 Oct arXiv harvest; carried forward rather than reported late.</li>
+    <li><strong>Dynamic Thresholds and Spatial Boundaries Coordinate Memory Association and Discrimination Across Scales</strong> (Neurosci Biobehav Rev, Oct) — no retrievable abstract from Crossref, Europe PMC or PubMed, so neither approach nor finding can be stated.</li>
+    <li><strong>Neocortical Feedback Biases Hippocampal Reactivation…</strong> (bioRxiv 2026.09.29.755342v4) — v4 revision of an already-reported preprint.</li>
+    <li><strong>From Consensus to Individual Differences: Typicality…</strong> (bioRxiv 2026.08.14.744685v3) — v3 revision of an August preprint; also cross-sectional.</li>
+    <li><strong>MoEZip, KV-Surgeon, UlaCache, RIFT, Gandalf, Cache Engineering for Agents, AKV, MemT-1.0</strong> — KV-cache compression, serving throughput and agent-memory engineering; efficiency claims only, no retention/retrieval mechanism.</li>
+    <li><strong>Chunking: What working memory gains and loses</strong> (Current Biology, 19 Oct) — commentary/dispatch, no new data.</li>
+    <li><strong>Episodic memory in immersive virtual reality environments</strong> (Psychological Research, 23 Oct) — n=234 but only one of three outcomes survived Holm correction, ω² = 0.031.</li>
+    <li><strong>CD51 delineates functionally distinct astrocyte subtypes</strong> (Nature, 21 Oct) — glial subtype biology; hippocampal circuit plasticity is a downstream readout, not the claim.</li>
+    <li><strong>Blurred vision shifts emotional processing toward sound</strong> (Front Hum Neurosci) — cross-sectional, no behavioural measure, ISC differences only.</li>
+    <li><strong>Sequential diagnosis with language models</strong> (Science, 22 Oct) and <strong>attention-guided feature steering of LLMs</strong> (PNAS, 20 Oct) — applied LLM use; no memory-mechanism claim.</li>
+  </ul>
+</div>
+
+</body>
+</html>
