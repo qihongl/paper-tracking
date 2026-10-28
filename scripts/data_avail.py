@@ -87,11 +87,6 @@ DATA_WORDS = re.compile(r"\b(data|dataset|datasets|data ?files?|recordings?|spik
 CODE_WORDS = re.compile(r"\b(code|source code|scripts?|software|toolbox|pipeline|"
                         r"implementations?|algorithms?|codebase)\b", re.I)
 
-HEADING = (r"\b(data (?:and code |, materials, and software |and materials |and software )?"
-           r"availability(?: statement)?|availability of data(?: and materials)?)\b")
-STOP = (r"\b(code availability|references|acknowledg|author contributions|"
-        r"competing interests|supplementary information|materials and correspondence|"
-        r"additional information|funding)\b")
 CHROME = (r"ethical publishing practice|expressions of concern|disclosure of funding|"
           r"licenses and copyright|competing interests|authorship|"
           r"materials, software and code sharing|complementary research|"
@@ -105,9 +100,9 @@ CODE_ANCHORS = ('id="code-availability-content"', 'id="code-availability"',
 
 def fetch(url, timeout=40):
     try:
-        r = subprocess.run(["curl", "-sS", "-L", "-A", UA, "--max-time", str(timeout), url],
+        r = subprocess.run(["curl", "-fsS", "-L", "-A", UA, "--max-time", str(timeout), url],
                            capture_output=True, text=True, errors="ignore")
-        return r.stdout or ""
+        return (r.stdout or "") if r.returncode == 0 else ""
     except Exception:
         return ""
 
@@ -123,6 +118,25 @@ def looks_like_chrome(text):
     return len(re.findall(CHROME, text, re.I)) >= 2
 
 
+def statement_text(section):
+    """Keep linked destinations beside their labels for proximity checks."""
+    def link(m):
+        label = strip_tags(m.group(2))
+        url = htmlmod.unescape(m.group(1))
+        return (label + " " + url if re.match(r"https?://", url)
+                and not re.search(r"#(?:ref|sec|fig|table)", url, re.I)
+                and url not in label else label)
+    section = re.sub(r'''(?is)<(?:a|ext-link)\b[^>]*\bhref=["']([^"']+)["'][^>]*>(.*?)</(?:a|ext-link)>''',
+                     link, section)
+    section = re.sub(r"(?is)<h[1-6]\b[^>]*>.*?</h[1-6]>", " ", section)
+    section = re.sub(r"(?is)<title\b[^>]*>.*?</title>|"
+                     r"<strong>\s*(?:data|code)[^<]{0,40}availability\s*:?\s*</strong>",
+                     " ", section)
+    section = re.sub(r"(?i)</(?:p|div)>|<br\s*/?>", "\n", section)
+    return "\n".join(strip_tags(part) for part in section.splitlines()
+                     if strip_tags(part))
+
+
 def slice_section(doc, kind):
     """Raw HTML of the 'data' or 'code' availability section, or ''."""
     for anchor in (DATA_ANCHORS if kind == "data" else CODE_ANCHORS):
@@ -135,11 +149,13 @@ def slice_section(doc, kind):
         other = 'id="code-availability' if kind == "data" else 'id="data-availability'
         other_title = ('data-title="Code availability"' if kind == "data"
                        else 'data-title="Data availability"')
-        for stop in ("</section>", other, other_title):
+        other_type = ('sec-type="code-availability"' if kind == "data"
+                      else 'sec-type="data-availability"')
+        for stop in ("</section>", "</sec>", other, other_title, other_type):
             j = seg.find(stop)
             if j > 0:
                 seg = seg[:j]
-        if len(strip_tags(seg)) > 30:
+        if len(strip_tags(seg)) > 30 and not looks_like_chrome(strip_tags(seg)):
             return seg
     # Bold lead-in, e.g. PLOS/BMC: <p><strong>Data Availability: </strong>...</p>
     word = "data" if kind == "data" else "code"
@@ -148,32 +164,14 @@ def slice_section(doc, kind):
     if m:
         return m.group(0)
     # Heading tag.
-    m = re.search(r"(?is)<h[1-4][^>]*>[^<]{0,40}?" + word +
-                  r"[^<]{0,60}?availab[^<]{0,40}?</h[1-4]>", doc)
-    if m:
-        seg = doc[m.start():m.start() + 6000]
-        nxt = re.search(r"(?is)</h[1-4]>.*?<h[1-4]", seg[10:])
+    for m in re.finditer(r"(?is)<h[1-4][^>]*>[^<]{0,40}?" + word +
+                         r"[^<]{0,60}?availab[^<]{0,40}?</h[1-4]>", doc):
+        seg = doc[m.end():m.end() + 6000]
+        nxt = re.search(r"(?is)<h[1-4]\b", seg)
         if nxt:
-            seg = seg[:nxt.start() + 10]
-        if len(strip_tags(seg)) > 30:
+            seg = seg[:nxt.start()]
+        if len(strip_tags(seg)) > 30 and not looks_like_chrome(strip_tags(seg)):
             return seg
-    return ""
-
-
-def generic_scan(doc):
-    """Fallback for pages with no anchored section: first heading with real content."""
-    text = strip_tags(doc)
-    for m in re.finditer(HEADING, text, re.I):
-        tail = text[m.end():m.end() + 900]
-        if looks_like_chrome(tail):
-            continue
-        if not re.search(r"available|deposit|accession|provided|archiv|request|restrict",
-                         tail, re.I):
-            continue
-        s = re.search(STOP, tail, re.I)
-        if s and s.start() > 40:
-            tail = tail[:s.start()]
-        return tail.strip()
     return ""
 
 
@@ -181,43 +179,60 @@ def extract(doc):
     """-> (data_stmt, data_hrefs, code_stmt, code_hrefs)"""
     ds = slice_section(doc, "data")
     cs = slice_section(doc, "code")
-    d_txt = strip_tags(ds) if ds else ""
-    c_txt = strip_tags(cs) if cs else ""
+    d_txt = statement_text(ds) if ds else ""
+    c_txt = statement_text(cs) if cs else ""
     if d_txt and looks_like_chrome(d_txt):
         d_txt = ""
     if c_txt and looks_like_chrome(c_txt):
         c_txt = ""
-    if not d_txt:
-        d_txt = generic_scan(doc)
-    return (d_txt[:1500], re.findall(r'href="([^"]+)"', ds),
-            c_txt[:1200], re.findall(r'href="([^"]+)"', cs))
+    return (d_txt[:1500], re.findall(r'''href=["']([^"']+)["']''', ds),
+            c_txt[:1200], re.findall(r'''href=["']([^"']+)["']''', cs))
 
 
 def _repo_hit(low, words, hrefs):
     """First repository whose link sits near a matching word, else first plain repo."""
     for label, pat in REPOS:
-        m = re.search(pat, low, re.I)
-        if not m:
-            continue
-        if label in AMBIGUOUS_HOSTS:
-            window = low[max(0, m.start() - 170):m.end() + 170]
-            if not words.search(window):
-                continue
-        return label
+        for m in re.finditer(pat, low, re.I):
+            if label in AMBIGUOUS_HOSTS:
+                window = low[max(0, m.start() - 170):m.end() + 170]
+                if not words.search(window):
+                    continue
+            return label
     for label, pat in REPOS:
+        if label in AMBIGUOUS_HOSTS:
+            continue                 # hidden hrefs need their local text context
         for h in hrefs:
             if re.search(pat, h, re.I):
                 return label
     return None
 
 
+def channel_context(stmt, hrefs, words, other_words):
+    """Exclude clauses about only the other channel, including their URLs."""
+    clauses = re.split(r"\n+|(?<=[.!?])\s+(?=[A-Z])|;\s*|"
+                       r",?\s+(?:whereas|while|but)\s+|"
+                       r",\s*and\s+(?=(?:the\s+)?(?:data|code|scripts?|software)\b)",
+                       stmt)
+    kept = [c for c in clauses if words.search(c) or not other_words.search(c)]
+    text = " ".join(kept)
+    links = [h for h in hrefs if h in text or
+             (h not in stmt and len(kept) == len(clauses))]
+    return text, links
+
+
 def classify_data(stmt, hrefs):
     if not stmt:
         return "unknown"
+    stmt, hrefs = channel_context(stmt, hrefs, DATA_WORDS, CODE_WORDS)
     blob = (stmt + " " + " ".join(hrefs)).lower()
     if re.search(RESTRICTED, blob):
         return "restricted"
-    if _repo_hit(stmt.lower(), DATA_WORDS, hrefs):
+    # A repository linked only as a way to request data is not a public release.
+    public_stmt = " ".join(c for c in re.split(r"(?<=[.!?])\s+(?=[A-Z])|;\s*", stmt)
+                           if not re.search(ON_REQUEST, c, re.I))
+    public_hrefs = [h for h in hrefs if h in public_stmt or
+                    (h not in stmt and not re.search(ON_REQUEST, stmt, re.I))]
+    if _repo_hit(public_stmt.lower(), DATA_WORDS, public_hrefs):
         return "open_data"
     if re.search(ON_REQUEST, blob):
         return "on_request"
@@ -230,16 +245,28 @@ def classify_code(code_stmt, code_hrefs, data_stmt="", data_hrefs=()):
     stmt = (code_stmt or "").strip()
     hrefs = list(code_hrefs or [])
     # Some papers put the code statement inside the data statement.
-    if not stmt and data_stmt and re.search(r"\bcode\b", data_stmt, re.I):
+    if not stmt and data_stmt and CODE_WORDS.search(data_stmt):
         stmt, hrefs = data_stmt, list(data_hrefs)
     if not stmt:
         return "unknown"
+    stmt, hrefs = channel_context(stmt, hrefs, CODE_WORDS, DATA_WORDS)
     blob = (stmt + " " + " ".join(hrefs)).lower()
-    if re.search(ON_REQUEST, blob) and not re.search(r"https?://", blob):
+    if re.search(ON_REQUEST, blob):
         return "on_request"
-    if re.search(r"https?://", blob) or _repo_hit(stmt.lower(), CODE_WORDS, hrefs):
-        return "open_code"
-    if re.search(r"\bcode\b[^.]{0,160}?(?:available|deposited|archived|released)", blob):
+    if re.search(RESTRICTED, blob):
+        return "unknown"
+    urls = re.findall(r"https?://[^\s)\]\"']+", stmt) + hrefs
+    qualified = []
+    for url in urls:
+        if not re.match(r"https?://", url):
+            continue
+        ambiguous = any(label in AMBIGUOUS_HOSTS and re.search(pat, url, re.I)
+                        for label, pat in REPOS)
+        pos = stmt.find(url)
+        if not ambiguous or (pos >= 0 and CODE_WORDS.search(
+                stmt[max(0, pos - 170):pos + len(url) + 170])):
+            qualified.append(url)
+    if qualified or _repo_hit(stmt.lower(), CODE_WORDS, hrefs):
         return "open_code"
     return "unknown"
 
@@ -260,7 +287,7 @@ def pick_url(stmt, hrefs):
     if best:
         return best
     m = re.search(r"https?://[^\s)\]\"']+", stmt or "")
-    return m.group(0) if m else ""
+    return m.group(0).rstrip(".,;:") if m else ""
 
 
 def _https(u):
@@ -271,8 +298,21 @@ def scan_text(text):
     """Cheap channel for preprints: repo links near data/code words in the abstract."""
     if not text:
         return None, None
-    low = text.lower()
-    return (_repo_hit(low, DATA_WORDS, []), _repo_hit(low, CODE_WORDS, []))
+    hits = []
+    for words, other in ((DATA_WORDS, CODE_WORDS), (CODE_WORDS, DATA_WORDS)):
+        stmt, _ = channel_context(text, [], words, other)
+        if not words.search(stmt) or re.search(RESTRICTED + "|" + ON_REQUEST, stmt, re.I):
+            hits.append(None)
+            continue
+        # Even a normally unambiguous host needs a channel word in an abstract.
+        hit = None
+        for label, pat in REPOS:
+            if any(words.search(stmt[max(0, m.start() - 170):m.end() + 170])
+                   for m in re.finditer(pat, stmt, re.I)):
+                hit = label
+                break
+        hits.append(hit)
+    return tuple(hits)
 
 
 def europepmc_fulltext(doi):
@@ -295,42 +335,54 @@ def lookup(doi_or_url, abstract=""):
     m = re.search(r"10\.48550/arxiv\.(\d{4}\.\d{4,5})", doi_or_url, re.I)
     if m:
         candidates.insert(0, "https://arxiv.org/html/" + m.group(1))
-    docs = []
-    for u in candidates:
-        doc = fetch(u)
-        if len(doc) >= 20000:          # skip bot stubs / paywalls
-            docs.append(doc)
     doi = re.search(r"(10\.\d{4,9}/[^\s\"?#]+)", doi_or_url)
-    if doi:
-        xml = europepmc_fulltext(doi.group(1))
-        if len(xml) > 5000:
-            docs.append(xml)
+    def documents():
+        for u in candidates:
+            doc = fetch(u)
+            if len(doc) >= 20000:      # skip bot stubs / paywalls
+                yield doc
+        if doi:
+            xml = europepmc_fulltext(doi.group(1))
+            if len(xml) > 5000:
+                yield xml
 
-    for doc in docs:
+    result = {
+        "data_avail": "unknown", "data_avail_evidence": "", "data_avail_url": "",
+        "code_avail": "unknown", "code_avail_evidence": "", "code_avail_url": "",
+    }
+    for doc in documents():
         d_stmt, d_hrefs, c_stmt, c_hrefs = extract(doc)
         d_status = classify_data(d_stmt, d_hrefs)
         c_status = classify_code(c_stmt, c_hrefs, d_stmt, d_hrefs)
-        if d_status != "unknown" or c_status != "unknown":
-            c_used, c_urls = c_stmt, c_hrefs
-            if not c_used and re.search(r"\bcode\b", d_stmt, re.I):
-                c_used, c_urls = d_stmt, d_hrefs      # statement shared with the data section
-            return {
-                "data_avail": d_status,
-                "data_avail_evidence": d_stmt[:400],
-                "data_avail_url": _https(pick_url(d_stmt, d_hrefs)) if d_status == "open_data" else "",
-                "code_avail": c_status,
-                "code_avail_evidence": c_used[:400],
-                "code_avail_url": _https(pick_url(c_used, c_urls)) if c_status == "open_code" else "",
-            }
-    d_hit, c_hit = scan_text(abstract)
-    return {
-        "data_avail": "open_data" if d_hit else "unknown",
-        "data_avail_evidence": ("[abstract] " + abstract[:300]) if d_hit else "",
-        "data_avail_url": "",
-        "code_avail": "open_code" if c_hit else "unknown",
-        "code_avail_evidence": ("[abstract] " + abstract[:300]) if c_hit else "",
-        "code_avail_url": "",
-    }
+        c_used, c_urls = c_stmt, c_hrefs
+        if not c_used and CODE_WORDS.search(d_stmt):
+            c_used, c_urls = d_stmt, d_hrefs
+        for kind, status, stmt, hrefs, words, other in (
+                ("data", d_status, d_stmt, d_hrefs, DATA_WORDS, CODE_WORDS),
+                ("code", c_status, c_used, c_urls, CODE_WORDS, DATA_WORDS)):
+            if result[kind + "_avail"] != "unknown":
+                continue
+            result[kind + "_avail"] = status
+            result[kind + "_avail_evidence"] = stmt[:400]
+            if status in ("open_data", "open_code"):
+                context, links = channel_context(stmt, hrefs, words, other)
+                result[kind + "_avail_url"] = _https(pick_url(context, links) or url)
+        if all(result[k + "_avail"] != "unknown" for k in ("data", "code")):
+            return result
+
+    preprint = re.search(r"10\.(?:48550/arxiv\.|1101/|64898/)|"
+                         r"(?:arxiv\.org|biorxiv\.org|medrxiv\.org|psyarxiv\.com)/",
+                         doi_or_url, re.I)
+    if preprint:
+        for kind, hit, words, other in zip(
+                ("data", "code"), scan_text(abstract),
+                (DATA_WORDS, CODE_WORDS), (CODE_WORDS, DATA_WORDS)):
+            if result[kind + "_avail"] == "unknown" and hit:
+                stmt, _ = channel_context(abstract, [], words, other)
+                result[kind + "_avail"] = "open_" + kind
+                result[kind + "_avail_evidence"] = "[abstract] " + stmt[:300]
+                result[kind + "_avail_url"] = _https(pick_url(stmt, []))
+    return result
 
 
 def main():
@@ -348,7 +400,8 @@ def main():
     for i, p in enumerate(rows):
         key = p.get("DOI") or p.get("doi") or p.get("url") or p.get("URL") or ""
         if not key:
-            p.update(data_avail="unknown", code_avail="unknown")
+            p.update(data_avail="unknown", data_avail_url="", data_avail_evidence="",
+                     code_avail="unknown", code_avail_url="", code_avail_evidence="")
         else:
             p.update(lookup(key, p.get("abstract", "")))
         print(f"  [d:{p.get('data_avail','?'):11s} c:{p.get('code_avail','?'):10s}] "

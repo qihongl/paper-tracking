@@ -218,18 +218,18 @@ reinforcement learning, reward, reward learning, decision-making, decisions, cho
    - `[Cross-cutting]` — spans multiple pillars or provides theoretical scaffolding
    - `[Peripheral]` — adjacent but interesting; may spark ideas
 7. **⚠️ Flag** — (optional) methodological concern if obvious: small N, no control, post-hoc claim, etc.
-8. **Data & Code Availability** — run the detector on EVERY paper: `python3 scripts/data_avail.py --doi <DOI>`. This returns two independent fields:
+8. **Data & Code Availability** — include EVERY report paper in the batch detector pass below. For an ad hoc lookup, use `python3 scripts/data_avail.py --doi <DOI-or-URL>`. This returns two independent fields:
    - `data_avail` ∈ `open_data` | `restricted` | `on_request` | `unknown`
    - `code_avail` ∈ `open_code` | `on_request` | `unknown`
 
-   Record which one you got, and the evidence snippet. These are separate facts and earn separate badges. Availability statements live in their own publisher section, never in the abstract, so you must fetch the article page — an abstract-only pass will report `unknown` for almost everything. See the badge rules below.
+   Record both verdicts and their evidence snippets independently. Statements must come from the publisher's own Data availability / Code availability sections, with Europe PMC full text as the fallback when a PMCID exists. The only abstract exception is the detector's repository-link heuristic for preprints, which requires the corresponding data/code word near an ambiguous repository link. A data statement cannot establish code availability, or vice versa, unless it explicitly addresses both. A bot stub, paywall, timeout or missing section means `unknown`; stay silent rather than infer absence. Do not add workarounds for inaccessible pages. See the badge rules below.
 
    **Preferred: annotate the whole finalist list in one pass**, which also produces the audit file for the commit. Point it at the scored-candidates JSON you already wrote this run (whatever you named it):
    ```bash
    mkdir -p data/avail
    python3 scripts/data_avail.py <scored-candidates>.json data/avail/YYYY-MM-DD.json
    ```
-   The batch annotator reads `DOI`/`doi`/`url` from each record, adds `data_avail`, `data_avail_url`, `code_avail`, `code_avail_url` and evidence snippets, prints one progress line per paper to stderr, and spaces requests ~1.5 s apart. Read that output rather than re-fetching paper by paper; the `--doi` form is for a paper added after the batch ran.
+   The batch annotator reads `DOI`/`doi`/`url`/`URL` from each record, adds `data_avail`, `data_avail_url`, `code_avail`, `code_avail_url` and evidence snippets, prints one progress line per paper to stderr, and spaces requests ~1.5 s apart. Keep every final report paper in the audit file, including papers with no identifier and `unknown` verdicts. Read that output rather than re-fetching paper by paper; the `--doi` form is for a paper added after the batch ran, whose result must also be included in the audit file.
 
 ---
 
@@ -353,8 +353,8 @@ The HTML must be a complete, standalone document. Use the following template str
       First Author et al. (Last Author) &middot; Journal Name, Date
       <span class="tag tag-llm">LLM-Memory</span>
       <span class="tag tag-lib">📚 matches-library</span>  <!-- only when the local library cross-check says so -->
-      <span class="tag tag-avail">🗂 data available</span>  <!-- only when data_avail == "open_data" -->
-      <span class="tag tag-code">💻 code available</span>  <!-- only when code_avail == "open_code" -->
+      <a class="tag tag-avail" href="DATA_AVAIL_URL" target="_blank">🗂 data available</a>  <!-- only when data_avail == "open_data"; use data_avail_url -->
+      <a class="tag tag-code" href="CODE_AVAIL_URL" target="_blank">💻 code available</a>  <!-- only when code_avail == "open_code"; use code_avail_url -->
     </div>
     <div class="paper-body">
       <p><strong>Approach:</strong> [2–3 sentences on design, paradigm, manipulation.]</p>
@@ -414,18 +414,20 @@ The HTML must be a complete, standalone document. Use the following template str
 9. **Target 5–15 papers** in the final report. If too few, broaden keywords. If too many, apply stricter relevance filtering.
 10. **Each paper appears in exactly ONE detailed section.** When a paper spans multiple relevance tags, choose the primary tag (highest priority: LLM-Memory > Schema-Episodic > KV-Networks > Encoding-Retrieval > Cross-cutting > Peripheral) and place the full paper card there only. In the summary table, the paper gets one row with its primary tag dot. Secondary tags should be shown as additional `<span class="tag tag-xxx">` badges within the paper card's `.paper-meta` div (alongside the primary tag), but never as a duplicate paper card in another section. No paper should appear twice in the detailed view.
 11. **Mark recovered papers.** Any paper sourced from the open-items ledger (`data/open_items.json`) gets a literal `[backfill]` marker in its `.paper-meta` line, and the card body opens with a short italic note such as `<em>Recovered from the open-items ledger — missed by the YYYY-MM-DD run; the keyword fix landed after the harvest window had passed it.</em>` Include these papers in the summary table like any other.
-12. **Data & Code badges — run the detector on every paper, badge only positives.** Every paper in the report goes through `python3 scripts/data_avail.py --doi <DOI>`; a paper with no accession is still run, because `unknown` is a real answer and you must have asked. Add badges to `.paper-meta` after the tag spans:
+12. **Data & Code badges — run the detector on every paper, badge only positives.** Every paper in the report must be included in the batch annotation described in item 8; use `--doi <DOI-or-URL>` only for ad hoc additions. A paper with no accession still belongs in the batch, because `unknown` is a real answer and you must have asked. Add badges at the end of `.paper-meta`, after the relevance-tag spans:
     ```html
-    <span class="tag tag-avail">🗂 data available</span>
-    <span class="tag tag-code">💻 code available</span>
+    <a class="tag tag-avail" href="DATA_AVAIL_URL" target="_blank">🗂 data available</a>
+    <a class="tag tag-code" href="CODE_AVAIL_URL" target="_blank">💻 code available</a>
     ```
     - `data_avail == "open_data"` → the `tag-avail` badge. Nothing else earns it.
     - `code_avail == "open_code"` → the `tag-code` badge. Nothing else earns it.
     - **Never badge `on_request`, `restricted`, or `unknown`.** "Available upon reasonable request" is not available. dbGaP / EGA / UK Biobank / data-use-agreement deposits are not available. A Zenodo, Figshare, Dataverse, Mendeley, Code Ocean or GitHub link with no accompanying data-or-code word is ambiguous — the detector already refuses it; do not re-add it by hand.
-    - When the detector returns a URL for the badge, link the badge to it: `<a class="tag tag-avail" href="https://…" target="_blank">🗂 data available</a>`. The two badges are a matched pair — same markup, same size, only the colour differs.
+    - Replace `DATA_AVAIL_URL` / `CODE_AVAIL_URL` with the corresponding detector URL. The selected URL is the one whose domain appears earliest in the statement text, not the first link in document order. Never invent a repository URL. The two badges are a matched pair — identical anchor markup, font size, padding and radius through `.paper-meta .tag`; only the colour differs.
     - **A failed lookup is not evidence of absence.** If the page was a bot stub, a paywall, or timed out, say nothing rather than guessing; do not badge and do not list the paper as "no data".
     - **Badges live in the paper card's `.paper-meta` only** — not in the summary table, whose 80px tag column cannot hold them. Do not add a new column.
 13. **Never write the availability status into prose as a substitute for the badge.** The badge is the signal. Do not add "Data are openly available on OSF" sentences to the `Approach` or `Finding` fields; those fields are for science, not for data-management reporting. The evidence snippets belong in `data/avail/YYYY-MM-DD.json`, not in the report body.
+
+Before saving or committing generated HTML, strip WorkBuddy editor attributes with `re.sub(r'\sdata-page-node-id="[^"]*"', '', html)`. Verify opening/closing div counts balance, the paper count matches the finalist list, and availability badges occur only in `.paper-meta`.
 
 ---
 
@@ -484,13 +486,16 @@ A successful `git push` does **NOT** mean the report is live. The site is publis
 
 1. Get the just-pushed SHA: `git rev-parse HEAD`.
 2. Poll the deploy run for that commit until it finishes:
-   `gh run list --repo qihongl/paper-tracking --commit $(git rev-parse HEAD) --json databaseId,status,conclusion`
-   Poll every ~15s (up to ~3 min) until `status == "completed"`.
-3. If `conclusion == "failure"`: re-run it — `gh run rerun <databaseId> --repo qihongl/paper-tracking` — then wait for completion. Allow up to **2 rerun attempts**.
-4. Verify the page is actually live:
-   `curl -s -o /dev/null -w "%{http_code}" https://qihongl.github.io/paper-tracking/outputs/YYYY-MM-DD-paper-tracker.html`
-   Require `200`. Allow a short CDN-propagation delay — if you first get non-200, wait ~10s and re-check once.
-5. **Only if the URL returns 200, claim success.** If it still fails after reruns, report the failure explicitly (include the Actions run URL) and state the report is NOT live — do NOT claim it is.
+   `/opt/homebrew/bin/gh run list --repo qihongl/paper-tracking --commit $(git rev-parse HEAD) --json databaseId,status,conclusion`
+   Poll every ~15s until `status == "completed"`; an empty result means the run has not appeared yet. If it takes longer than expected, keep checking and report progress; do not treat an unfinished run as success.
+3. If `conclusion == "failure"`: re-run it — `/opt/homebrew/bin/gh run rerun <databaseId> --repo qihongl/paper-tracking` — then wait for completion. Allow up to **2 rerun attempts**, using the same run and commit; never make a new commit just to retrigger deployment. Require `conclusion == "success"` before proceeding.
+4. Fetch the live report body and HTTP status, saving the body under `work/`:
+   ```bash
+   mkdir -p work
+   curl -sS -L -o work/live-report.html -w "%{http_code}" https://qihongl.github.io/paper-tracking/outputs/YYYY-MM-DD-paper-tracker.html
+   ```
+   Require `200` **and** compare the live body with the local report. Count actual badge elements by parsing their `class` attributes for `tag-avail` and `tag-code`; do not count the CSS rules as badges. Both live counts must match the corresponding local counts, and each live badge must have the expected URL and text. When local counts are zero, require zero live badges and confirm the rest of the report body matches the local report; absence of badge strings alone proves nothing. Comparing the complete live and local HTML also verifies the zero-badge case. Raw text counts, if used as an extra check, include two CSS occurrences per badge class plus one per actual badge.
+5. A `200` with missing or mismatched badges can be the previous CDN build. Wait ~20s and fetch again before concluding anything. **Claim success only after the deploy completed successfully, HTTP is 200, and the live report matches the expected badge markup/counts.** If verification still fails after reruns and the propagation retry, report the failure explicitly, include the Actions run URL, and state which part remains unverified.
 
 ### Step 4: Present the HTML
 
