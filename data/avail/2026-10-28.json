@@ -1,0 +1,134 @@
+[
+ {
+  "url": "https://arxiv.org/abs/2610.34682",
+  "title": "Beyond Deduplication: Sharp Retrieval Limits for Attention with Correlated Distractors",
+  "DOI": "10.48550/arxiv.2610.34682",
+  "data_avail": "unknown",
+  "data_avail_evidence": "",
+  "data_avail_url": "",
+  "code_avail": "unknown",
+  "code_avail_evidence": "",
+  "code_avail_url": ""
+ },
+ {
+  "url": "https://arxiv.org/abs/2610.32411",
+  "title": "A Broader Look into MLLM's Retrieval Heads",
+  "DOI": "10.48550/arxiv.2610.32411",
+  "data_avail": "unknown",
+  "data_avail_evidence": "",
+  "data_avail_url": "",
+  "code_avail": "unknown",
+  "code_avail_evidence": "",
+  "code_avail_url": ""
+ },
+ {
+  "url": "https://doi.org/10.1038/s41593-026-02491-x",
+  "title": "Circuit mechanisms for disentangled representations and generalization in the hippocampus",
+  "DOI": "10.1038/s41593-026-02491-x",
+  "data_avail": "on_request",
+  "data_avail_evidence": "All data necessary to evaluate the results of the study are available in the main text or the supplementary materials. Additional raw data are available from the corresponding authors upon request. Source data are provided with this paper.",
+  "data_avail_url": "",
+  "code_avail": "open_code",
+  "code_avail_evidence": "Custom scripts used in this study can be downloaded from GitHub ( https://github.com/ayalab1/neurocode and https://github.com/ayalab1/drift_project ).",
+  "code_avail_url": "https://github.com/ayalab1/neurocode"
+ },
+ {
+  "url": "https://doi.org/10.1523/jneurosci.1803-24.2026",
+  "title": "One-shot learning of paired association navigation with biologically plausible schemas",
+  "DOI": "10.1523/jneurosci.1803-24.2026",
+  "data_avail": "unknown",
+  "data_avail_evidence": "",
+  "data_avail_url": "",
+  "code_avail": "unknown",
+  "code_avail_evidence": "",
+  "code_avail_url": ""
+ },
+ {
+  "url": "https://doi.org/10.1038/s41467-026-78482-0",
+  "title": "The intermediate hippocampus integrates shock-observation and spatial information during observational fear memory in male rats",
+  "DOI": "10.1038/s41467-026-78482-0",
+  "data_avail": "open_data",
+  "data_avail_evidence": "Source data are provided with this paper and via Zenodo ( https://doi.org/10.5281/zenodo.22677727 ). Raw electrophysiological and behavioral data generated in this study will be made available without restrictions upon request to the first corresponding author (FML). Source data are provided in this paper.",
+  "data_avail_url": "https://doi.org/10.5281/zenodo.22677727",
+  "code_avail": "open_code",
+  "code_avail_evidence": "All analyses were conducted using custom code in Python 3.8 and R. Custom analysis code is publicly available in a dedicated repository available in GitHub ( https://github.com/FredMichon/HippocampalShockObservationResponses) and Zenodo https://doi.org/10.5281/zenodo.22677727 .",
+  "code_avail_url": "https://github.com/FredMichon/HippocampalShockObservationResponses"
+ },
+ {
+  "url": "https://doi.org/10.1016/j.cub.2026.09.087",
+  "title": "Environment-specific virtual head direction representation in the human anteroventral thalamus during memory-guided spatial orientation",
+  "DOI": "10.1016/j.cub.2026.09.087",
+  "data_avail": "unknown",
+  "data_avail_evidence": "",
+  "data_avail_url": "",
+  "code_avail": "unknown",
+  "code_avail_evidence": "",
+  "code_avail_url": ""
+ },
+ {
+  "url": "https://doi.org/10.1038/s41467-026-78727-y",
+  "title": "Emergence of diffusion models from associative memory through memorization and generalization",
+  "DOI": "10.1038/s41467-026-78727-y",
+  "data_avail": "unknown",
+  "data_avail_evidence": "",
+  "data_avail_url": "",
+  "code_avail": "unknown",
+  "code_avail_evidence": "",
+  "code_avail_url": ""
+ },
+ {
+  "url": "https://doi.org/10.1073/pnas.2607559123",
+  "title": "Neuromodulation-inspired gated associative memory networks: Extended memory retrieval and emergent multistability",
+  "DOI": "10.1073/pnas.2607559123",
+  "data_avail": "unknown",
+  "data_avail_evidence": "",
+  "data_avail_url": "",
+  "code_avail": "unknown",
+  "code_avail_evidence": "",
+  "code_avail_url": ""
+ },
+ {
+  "url": "https://doi.org/10.1038/s41593-026-02493-9",
+  "title": "Stimulus-specific recruitment of human amygdala neurons predicts episodic memory encoding success",
+  "DOI": "10.1038/s41593-026-02493-9",
+  "data_avail": "open_data",
+  "data_avail_evidence": "Data that support the findings of this study are publicly available via OSF at https://osf.io/8m3jp/overview . Task 1 has also been released at https://dandiarchive.org/dandiset/000673 and an earlier version of Task 2 at https://osf.io/hv7ja/overview . Source data are provided with this paper.",
+  "data_avail_url": "https://osf.io/8m3jp/overview",
+  "code_avail": "open_code",
+  "code_avail_evidence": "Codes that support the findings of this study are publicly available via OSF at https://osf.io/8m3jp/overview .",
+  "code_avail_url": "https://osf.io/8m3jp/overview"
+ },
+ {
+  "url": "https://doi.org/10.64898/2026.10.20.760554",
+  "title": "Post-Learning Reactivation of Memories for Naturalistic Continuous Experiences",
+  "DOI": "10.64898/2026.10.20.760554",
+  "data_avail": "unknown",
+  "data_avail_evidence": "",
+  "data_avail_url": "",
+  "code_avail": "unknown",
+  "code_avail_evidence": "",
+  "code_avail_url": ""
+ },
+ {
+  "url": "https://arxiv.org/abs/2610.35089",
+  "title": "Learning to Remember: Advances in Memory Mechanisms for Large Language Models",
+  "DOI": "10.48550/arxiv.2610.35089",
+  "data_avail": "unknown",
+  "data_avail_evidence": "",
+  "data_avail_url": "",
+  "code_avail": "unknown",
+  "code_avail_evidence": "",
+  "code_avail_url": ""
+ },
+ {
+  "url": "https://doi.org/10.1038/s41467-026-78974-z",
+  "title": "Neural limits of temporal feature binding in human visual cortex",
+  "DOI": "10.1038/s41467-026-78974-z",
+  "data_avail": "open_data",
+  "data_avail_evidence": "All data supporting the findings of this study are available within the paper. Source data are provided for this paper accessible at OSF https://doi.org/10.17605/OSF.IO/6T325 . Source data are provided with this paper.",
+  "data_avail_url": "https://doi.org/10.17605/OSF.IO/6T325",
+  "code_avail": "open_code",
+  "code_avail_evidence": "Custom code for transforming Curry8 to FreeSurfer data is available at https://osf.io/vt9dk .",
+  "code_avail_url": "https://osf.io/vt9dk"
+ }
+]

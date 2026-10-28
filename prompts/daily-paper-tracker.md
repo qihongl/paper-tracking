@@ -218,6 +218,18 @@ reinforcement learning, reward, reward learning, decision-making, decisions, cho
    - `[Cross-cutting]` — spans multiple pillars or provides theoretical scaffolding
    - `[Peripheral]` — adjacent but interesting; may spark ideas
 7. **⚠️ Flag** — (optional) methodological concern if obvious: small N, no control, post-hoc claim, etc.
+8. **Data & Code Availability** — run the detector on EVERY paper: `python3 scripts/data_avail.py --doi <DOI>`. This returns two independent fields:
+   - `data_avail` ∈ `open_data` | `restricted` | `on_request` | `unknown`
+   - `code_avail` ∈ `open_code` | `on_request` | `unknown`
+
+   Record which one you got, and the evidence snippet. These are separate facts and earn separate badges. Availability statements live in their own publisher section, never in the abstract, so you must fetch the article page — an abstract-only pass will report `unknown` for almost everything. See the badge rules below.
+
+   **Preferred: annotate the whole finalist list in one pass**, which also produces the audit file for the commit. Point it at the scored-candidates JSON you already wrote this run (whatever you named it):
+   ```bash
+   mkdir -p data/avail
+   python3 scripts/data_avail.py <scored-candidates>.json data/avail/YYYY-MM-DD.json
+   ```
+   The batch annotator reads `DOI`/`doi`/`url` from each record, adds `data_avail`, `data_avail_url`, `code_avail`, `code_avail_url` and evidence snippets, prints one progress line per paper to stderr, and spaces requests ~1.5 s apart. Read that output rather than re-fetching paper by paper; the `--doi` form is for a paper added after the batch ran.
 
 ---
 
@@ -277,6 +289,9 @@ The HTML must be a complete, standalone document. Use the following template str
   .tag-cross { background: #e0e7ff; color: #3730a3; }
   .tag-peri { background: #f3f4f6; color: #374151; }
   .tag-lib { background: #d1fae5; color: #047857; }
+  .tag-avail { background: #e0f2fe; color: #075985; }
+  .tag-code { background: #f3e8ff; color: #6b21a8; }
+  a.tag-avail, a.tag-code { text-decoration: none; }
   .paper {
     background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
@@ -338,6 +353,8 @@ The HTML must be a complete, standalone document. Use the following template str
       First Author et al. (Last Author) &middot; Journal Name, Date
       <span class="tag tag-llm">LLM-Memory</span>
       <span class="tag tag-lib">📚 matches-library</span>  <!-- only when the local library cross-check says so -->
+      <span class="tag tag-avail">🗂 data available</span>  <!-- only when data_avail == "open_data" -->
+      <span class="tag tag-code">💻 code available</span>  <!-- only when code_avail == "open_code" -->
     </div>
     <div class="paper-body">
       <p><strong>Approach:</strong> [2–3 sentences on design, paradigm, manipulation.]</p>
@@ -397,6 +414,18 @@ The HTML must be a complete, standalone document. Use the following template str
 9. **Target 5–15 papers** in the final report. If too few, broaden keywords. If too many, apply stricter relevance filtering.
 10. **Each paper appears in exactly ONE detailed section.** When a paper spans multiple relevance tags, choose the primary tag (highest priority: LLM-Memory > Schema-Episodic > KV-Networks > Encoding-Retrieval > Cross-cutting > Peripheral) and place the full paper card there only. In the summary table, the paper gets one row with its primary tag dot. Secondary tags should be shown as additional `<span class="tag tag-xxx">` badges within the paper card's `.paper-meta` div (alongside the primary tag), but never as a duplicate paper card in another section. No paper should appear twice in the detailed view.
 11. **Mark recovered papers.** Any paper sourced from the open-items ledger (`data/open_items.json`) gets a literal `[backfill]` marker in its `.paper-meta` line, and the card body opens with a short italic note such as `<em>Recovered from the open-items ledger — missed by the YYYY-MM-DD run; the keyword fix landed after the harvest window had passed it.</em>` Include these papers in the summary table like any other.
+12. **Data & Code badges — run the detector on every paper, badge only positives.** Every paper in the report goes through `python3 scripts/data_avail.py --doi <DOI>`; a paper with no accession is still run, because `unknown` is a real answer and you must have asked. Add badges to `.paper-meta` after the tag spans:
+    ```html
+    <span class="tag tag-avail">🗂 data available</span>
+    <span class="tag tag-code">💻 code available</span>
+    ```
+    - `data_avail == "open_data"` → the `tag-avail` badge. Nothing else earns it.
+    - `code_avail == "open_code"` → the `tag-code` badge. Nothing else earns it.
+    - **Never badge `on_request`, `restricted`, or `unknown`.** "Available upon reasonable request" is not available. dbGaP / EGA / UK Biobank / data-use-agreement deposits are not available. A Zenodo, Figshare, Dataverse, Mendeley, Code Ocean or GitHub link with no accompanying data-or-code word is ambiguous — the detector already refuses it; do not re-add it by hand.
+    - When the detector returns a URL for the badge, link the badge to it: `<a class="tag tag-avail" href="https://…" target="_blank">🗂 data available</a>`. The two badges are a matched pair — same markup, same size, only the colour differs.
+    - **A failed lookup is not evidence of absence.** If the page was a bot stub, a paywall, or timed out, say nothing rather than guessing; do not badge and do not list the paper as "no data".
+    - **Badges live in the paper card's `.paper-meta` only** — not in the summary table, whose 80px tag column cannot hold them. Do not add a new column.
+13. **Never write the availability status into prose as a substitute for the badge.** The badge is the signal. Do not add "Data are openly available on OSF" sentences to the `Approach` or `Finding` fields; those fields are for science, not for data-management reporting. The evidence snippets belong in `data/avail/YYYY-MM-DD.json`, not in the report body.
 
 ---
 
@@ -440,10 +469,12 @@ After regenerating, verify the new row is present and the total count matches.
 Run these exact commands from the project root:
 
 ```bash
-git add outputs/YYYY-MM-DD-paper-tracker.html data/seen_papers.json data/open_items.json index.html
+git add outputs/YYYY-MM-DD-paper-tracker.html data/seen_papers.json data/open_items.json data/avail/YYYY-MM-DD.json index.html
 git commit -m "Daily report: YYYY-MM-DD"
 git push
 ```
+
+The `data/avail/YYYY-MM-DD.json` file is the detector's raw output for the day — every paper's `data_avail`, `code_avail`, evidence snippet and URL. Commit it even on days when no paper earned a badge: it is the audit trail that lets a wrong badge (or a missed one) be diagnosed later without re-fetching the pages.
 
 If the push fails (e.g., network issue, merge conflict from overlapping runs), log a brief warning but do NOT fail the run. The HTML file is already saved locally.
 
@@ -471,6 +502,7 @@ Use the `present_files` tool to show the HTML file to the researcher. Include a 
 
 - **Include only if you can actually state the approach AND finding.** If you can't extract both from the abstract/metadata after a reasonable effort, skip it with a note in the excluded section.
 - **Flag methodological concerns** if obvious from the abstract: extremely small N, no control condition, post-hoc storytelling, weak manipulation check. Be brief — use the ⚠ flag div.
+- **Data/code availability is never an inclusion or ranking criterion.** It is a property to report, not a reason to pick a paper. Do not promote a paper because it ships open data, and do not demote one because it does not — the badge only records what is already true. A paper still has to clear the approach+finding bar on its science.
 - **Exclude papers that are:** pure engineering/applied without mechanistic insight, narrow clinical case studies without computational relevance, or opinion pieces/commentaries without new data or models (unless they are genuinely important theoretical contributions). **Also exclude LLM serving / throughput / KV-compression engineering papers unless they make a concrete memory-mechanism claim** (retention, retrieval, forgetting, drift, KV cache as a memory store) — efficiency claims alone do not qualify.
 - **Use search tools aggressively.** If your initial search returns too few results, broaden the keywords. If too many, narrow to the most recent and most relevant. Target 5–15 papers per day in the final report.
 
