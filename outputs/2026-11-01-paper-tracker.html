@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker &mdash; 2026-11-01</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .summary-table .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .tag-lib { background: #d1fae5; color: #047857; }
+  .tag-avail { background: #e0f2fe; color: #075985; }
+  .tag-code { background: #f3e8ff; color: #6b21a8; }
+  a.tag-avail, a.tag-code { text-decoration: none; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+</style>
+</head>
+<body>
+
+<h1>&#129504; Daily Paper Tracker</h1>
+<div class="date">2026-11-01</div>
+
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2610.37962" target="_blank">Statistical Detection of Positional Bias in LLM-Based Recommender Systems: Methodologies and Empirical Evidence</a></td>
+        <td class="col-authors">Peláez-González et al. (Herrera-Poyatos)</td>
+        <td class="col-finding">Positional independence is rejected in every evaluated SOTA model across 40,000 prompt permutations; the bias is structural and model-dependent, not a decoding artefact.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2610.36734" target="_blank">CAMR: Compatibility-Aware Memory Replay for Continual Learning in Large Language Models</a></td>
+        <td class="col-authors">J. Yang et al. (X. Zhang)</td>
+        <td class="col-finding">A learned gate choosing learn / jointly-reinforce / skip per incoming example reaches 93.66% Original Match on WikiBigEdit and beats full-history replay past 100K facts.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.64898/2026.10.20.760493" target="_blank">Hippocampal replay repairs the cognitive map for flexible planning</a></td>
+        <td class="col-authors">Bazarjani et al. (Piray)</td>
+        <td class="col-finding">Replay order is not fixed but varies with trajectory geometry, and the usual prospective-then-retrospective order inverts exactly when past and future paths converge.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1126/sciadv.aef9907" target="_blank">Intrinsic cellular persistent firing sustains hippocampal spatial representations during working memory</a></td>
+        <td class="col-authors">Saber Marouf et al. (Yoshida)</td>
+        <td class="col-finding">Persistent firing during spatial working memory is sustained cell-intrinsically through TRPC4 channels, and it maintains the <em>immediate spatial representation</em> rather than a generic working-memory content.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2610.38578" target="_blank">Dual DeltaNet: Value-Side Memory Reorganization for Linear Attention</a></td>
+        <td class="col-authors">Qian et al. (C. Xu)</td>
+        <td class="col-finding">Adding a value-side delta rule &mdash; reorganising the <em>addresses</em> a value occupies, not just correcting the value at a key &mdash; beats KDA, GDN-2 and Mamba-3 on language modelling, zero-shot tasks and retrieval.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2610.40545" target="_blank">Retrieval as Traversal: Value-Indexed Memory for Stateful Long-Context Agents</a></td>
+        <td class="col-authors">Strauß et al. (Knoll)</td>
+        <td class="col-finding">Separating content from address and charging for local accessibility yields a normative rule: complementary memories should be co-retrievable, redundant ones should not.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2610.36948" target="_blank">Self-Keyed In-Parameter Memorization for External Memory-Free Dialogue Recall in Frozen Language Models</a></td>
+        <td class="col-authors">Piao et al. (J.-K. Kim)</td>
+        <td class="col-finding">A frozen model that writes <em>its own generated questions</em> about each turn into its parameters as retrieval keys recalls most stored turns from later, differently-phrased user questions.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s41467-026-78425-9" target="_blank">Intruding delta waves during REM sleep are associated with tau, amyloid, and forgetting in aging</a></td>
+        <td class="col-authors">Desel et al. (Sharon)</td>
+        <td class="col-finding">Ageing shifts REM delta from fast sawtooth to slow NREM-like waves, a shift that tracks A&beta; and tau burden, predicts impaired overnight consolidation independent of NREM quality, and is independently associated with APOE.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2610.40511" target="_blank">A Low-Rank Space Captures Linear Alignment Between LLM and Human Neural Activity During Naturalistic Language Listening</a></td>
+        <td class="col-authors">Paris &amp; Finn</td>
+        <td class="col-finding">1&ndash;3% of embedding dimensions suffice to recover full linear encoding performance, and those brain-predictive directions are <em>not</em> the high-variance principal components.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.1016/j.nlm.2026.108224" target="_blank">Memory reactivation alters the fate of neutral episodic memories following a subsequent independent experience</a></td>
+        <td class="col-authors">Moyano et al. (Brusco)</td>
+        <td class="col-finding">Reactivating a neutral everyday memory before a second, unrelated episode caused substantially more intrusion of the second story into recall of the first &mdash; and the effect was confined to free recall.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.1371/journal.pcbi.1014906" target="_blank">Interpretable embeddings of speech explain and enhance the brain encoding performance of audio models</a></td>
+        <td class="col-authors">Shimizu et al. (Mesgarani)</td>
+        <td class="col-finding">Speech-foundation-model alignment with ECoG is mostly explained by simple interpretable features, with a residual semantic component that grows with model size and context length.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://doi.org/10.1523/jneurosci.0623-25.2026" target="_blank">Hexagonal modulation of theta rhythmic attentional sampling of visual space</a></td>
+        <td class="col-authors">Kienitz et al. (Helfrich)</td>
+        <td class="col-finding">Reaction times show higher theta power at locations aligned to multiples of 60&deg;, and participants with stronger hexagonal structure rely less on the spatial cue.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-peri"></span>Peripheral</td>
+        <td class="col-title"><a href="https://doi.org/10.1016/j.neuron.2026.10.002" target="_blank">Trait-linked brainstem circuit resilience balances tau pathology-induced cellular vulnerability in Alzheimer's disease</a></td>
+        <td class="col-authors">Zheng et al. (Liu, Zhu)</td>
+        <td class="col-finding">Attention fails before memory in AD mice and tracks plasma p-tau; exploratory behaviour recruits an mPB&ndash;EW Tacr1 pathway that sustains the vulnerable CART<sup>+</sup> neurons.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2610.37962" target="_blank">Statistical Detection of Positional Bias in LLM-Based Recommender Systems: Methodologies and Empirical Evidence</a>
+    </div>
+    <div class="paper-meta">
+      Carlos Peláez-González et al. (Andrés Herrera-Poyatos) &middot; Univ. Granada / DaSCI &middot; arXiv:2610.37962 [cs.IR], 27 Oct 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Builds a controlled RAG testbed on a real product catalogue with a fixed prompt template, 2,000 template-generated user queries and 20 candidate-order permutations each (40,000 instances), and compares two detection procedures: POB-ICM (contingency-matrix &chi;&sup2; independence testing) and POB-UNBP, a permutation-based uniformity null model that stays valid under stochastic decoding. Three metrics separate mere order sensitivity from <em>strong</em> positional bias, where order displaces the answer toward clearly less relevant candidates.</p>
+      <p><strong>Finding:</strong> Both detectors reject positional independence and uniformity in all evaluated state-of-the-art models, and robustness sweeps over candidate-set size and decoding temperature show the effect is structural rather than a deterministic-decoding artefact. The dissociation between weak and strong bias matters: much reported &ldquo;position sensitivity&rdquo; only rearranges comparably relevant items, whereas strong bias actively degrades answer quality. Provides a null model for exactly the position-preference effect measured in free-form recall, but in a setting where ground-truth relevance is defined.</p>
+    </div>
+    <div class="flag">&#9888; Recommender setting, not free-form recall &mdash; no mechanistic account of <em>why</em> order dominates. 34 pages of methodology for a single behavioural signature.</div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2610.36734" target="_blank">CAMR: Compatibility-Aware Memory Replay for Continual Learning in Large Language Models</a>
+    </div>
+    <div class="paper-meta">
+      Jingpu Yang, Tianhao Li, Fengxian Ji et al. (Xiaoqing Zhang) &middot; arXiv:2610.36734 [cs.CL], 27 Oct 2026
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Treats continual learning in an LLM as a policy problem: a compatibility check plus a learned memory gate decides, for each arriving example, whether to update with general replay, to reinforce compatible related history, or to skip supervision of an already-mastered duplicate &mdash; all under a bounded per-arrival replay budget. Trained from acquisition, retention and training-cost feedback; evaluated with Qwen3-8B-Base on WikiBigEdit (3K&ndash;100K facts), four TRACE tasks, and a cross-domain sequence spanning financial QA, maths, code and summarisation.</p>
+      <p><strong>Finding:</strong> 93.66% Original Match after only 3K facts, and it overtakes Full-history Replay (LoRA) beyond 100K facts while holding earlier-task performance at or above post-acquisition levels across all four TRACE tasks. The interesting claim is structural: retention is not bought with a bigger buffer but with a decision about <em>which</em> history is worth re-exposing &mdash; i.e. replay as a selective retrieval policy rather than uniform rehearsal.</p>
+    </div>
+    <div class="flag">&#9888; Retention is measured by task accuracy, not by probing what is actually stored &mdash; forgetting could be masked by output-level compensation.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.64898/2026.10.20.760493" target="_blank">Hippocampal replay repairs the cognitive map for flexible planning</a>
+    </div>
+    <div class="paper-meta">
+      Armin Bazarjani, Caitlin Mallory, David Foster, Payam Piray &middot; USC / Einstein / UC Berkeley &middot; bioRxiv 10.64898/2026.10.20.760493, posted 26 Oct 2026
+      <span class="tag tag-schema">Schema-Episodic</span><span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A normative model plus a targeted test on rat foraging recordings. The premise is that a map supporting planning must already be built around where the animal is going, because plans terminate at the goal &mdash; so the goal is part of the map's structure. Every goal change therefore leaves the map wrong in two specific places (the goal adopted, the goal left behind); the model derives which repair is expressed first, what each depicts, and a sharp prediction that the ordering should invert in the one condition where the animal's past and future paths converge.</p>
+      <p><strong>Finding:</strong> Recordings from rats foraging in an open arena confirm the inversion: replay order is not as fixed as previously believed but tracks trajectory geometry. This is the first account that generates replay's ordering, its direction, and its apparently paradoxical content (replay toward abandoned goals) from a single error-correction premise, instead of treating them as separate regularities. Read as a memory system, replay retrieves whatever the current map error demands &mdash; retrieval conditioned on the discrepancy, not on recency.</p>
+    </div>
+    <div class="flag">&#9888; One behavioural prediction confirmed; the &ldquo;map&rdquo; is a model construct and its error terms are not measured directly. Preprint, not peer reviewed.</div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1126/sciadv.aef9907" target="_blank">Intrinsic cellular persistent firing sustains hippocampal spatial representations during working memory</a>
+    </div>
+    <div class="paper-meta">
+      Babak Saber Marouf, Antonio Reboreda, Frederik Theissen et al. (Motoharu Yoshida) &middot; DZNE Magdeburg / Linnaeus &middot; Science Advances, 30 Oct 2026
+      <span class="tag tag-schema">Schema-Episodic</span><a class="tag tag-avail" href="https://doi.org/10.5281/zenodo.21775727" target="_blank">&#128451; data available</a><a class="tag tag-code" href="https://doi.org/10.5281/zenodo.21775727" target="_blank">&#128187; code available</a>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Combines in vitro and in vivo recordings in mice with molecular manipulation of TRPC4, asking whether delay-period firing in hippocampal place cells requires recurrent synaptic drive or can be sustained by a single neuron's own intrinsic conductances. Place-cell firing and the spatial information it carries were tracked through the delay.</p>
+      <p><strong>Finding:</strong> TRPC4-dependent intrinsic persistent firing, not network reverberation alone, keeps place cells firing and preserves their spatial code across the delay. The dissociation is the important part: persistent activity here maintains the current spatial representation, not an abstracted working-memory &ldquo;item&rdquo; &mdash; which reframes the neuron from a passive input&ndash;output unit into an active store. For a KV framing this is a per-item, addressable store implemented at the single-cell level, with the &ldquo;key&rdquo; being the cell's place field rather than a distributed pattern.</p>
+    </div>
+    <div class="flag">&#9888; Molecular manipulation cannot fully exclude network contributions; the content-vs-representation dissociation rests on decoding, not a double dissociation.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2610.38578" target="_blank">Dual DeltaNet: Value-Side Memory Reorganization for Linear Attention</a>
+    </div>
+    <div class="paper-meta">
+      Yixiao Qian, Yaxin Zhang, Song Chen et al. (Chao Xu) &middot; arXiv:2610.38578 [cs.LG], 28 Oct 2026
+      <span class="tag tag-kv">KV-Networks</span><a class="tag tag-code" href="https://github.com/ReichtumQian/DualDeltaNet" target="_blank">&#128187; code available</a>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Reads the linear-attention state <em>S</em> &isin; &#8477;<sup>d<sub>k</sub>&times;d<sub>v</sub></sup> explicitly as a bank of d<sub>k</sub> addresses each holding a d<sub>v</sub> value. A key-side read <em>S</em><sup>&#8868;</sup><em>k</em> retrieves the value bound to <em>k</em>; a value-side read <em>Se</em> aggregates all addresses whose stored features match a selector <em>e</em>. Dual DeltaNet extends Kimi Delta Attention with a second, value-side delta rule, plus a chunkwise-parallel training algorithm and a rank-2 inference recurrence.</p>
+      <p><strong>Finding:</strong> Strongest overall performance against KDA, GDN-2 and Mamba-3 across language modelling, zero-shot downstream tasks and retrieval, at modest overhead relative to KDA. The mechanism is the point: standard delta-rule updates reduce interference only by correcting what is written at the current key, leaving related items scattered across unrelated addresses. Correcting from the value side pulls a family of related values into nearby addresses, which is a concrete, falsifiable version of the &ldquo;key-to-position mapping&rdquo; idea.</p>
+    </div>
+    <div class="flag">&#9888; Benchmark-driven; no probe of whether the reorganised addresses actually correspond to interpretable item families.</div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2610.40545" target="_blank">Retrieval as Traversal: Value-Indexed Memory for Stateful Long-Context Agents</a>
+    </div>
+    <div class="paper-meta">
+      Daniel Strau&szlig;, Zhenshan Bing, Alois Knoll &middot; TU Munich &middot; arXiv:2610.40545 [cs.CL], 29 Oct 2026
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Instead of re-searching a store on every forward pass, retrieval becomes a persistent local traversal through an address space. A memory's utility is defined as the information revealed by retrieving it, while geometry sets only how cheaply it can be reached. This induces a cost-regularised indexing objective that preserves information value inside local neighbourhoods and charges for every memory made locally accessible; its marginal-value form yields opposing attractive and exclusion pressures.</p>
+      <p><strong>Finding:</strong> A proof-of-principle fixed-geometry instance (a persistent local traversal head on MiniGrid Memory) reaches 0.95 task accuracy. The theoretical payload is larger than the experiment: the marginal-value form says a memory store should be organised so that jointly useful items sit close together and individually useful but redundant items do not share a retrieval set &mdash; a normative statement about the shape of a memory, derived from cost rather than from similarity.</p>
+    </div>
+    <div class="flag">&#9888; Single toy environment; no comparison against standard top-<em>k</em> retrieval at realistic scale. The apparatus is conceptual, not empirical.</div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2610.36948" target="_blank">Self-Keyed In-Parameter Memorization for External Memory-Free Dialogue Recall in Frozen Language Models</a>
+    </div>
+    <div class="paper-meta">
+      XinYu Piao, Myunghoon Ryu, Joongheon Kim, Jong-Kook Kim &middot; Korea University &middot; arXiv:2610.36948 [cs.CL], 27 Oct 2026
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Assumes no external store and no prior knowledge of the future query. For each dialogue turn the model generates many varied questions about that turn and writes them, in closed form, into the parameters as keys; a later user question matches one of those keys and the answer is recalled from the parameters alone. Evaluated across five language models.</p>
+      <p><strong>Finding:</strong> Most stored dialogue turns are recalled from later paraphrases with zero external storage &mdash; the model's own questions act as a bank of keys per value, which is exactly the multi-key-per-item structure that makes a KV store robust to query variation. This is a clean existence proof that a soft, distributed store can support content-addressable recall in a frozen network.</p>
+    </div>
+    <div class="flag">&#9888; &ldquo;Most turns&rdquo; is not quantified in the abstract; capacity limits as the dialogue grows and cross-user interference are not addressed.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s41467-026-78425-9" target="_blank">Intruding delta waves during REM sleep are associated with tau, amyloid, and forgetting in aging</a>
+    </div>
+    <div class="paper-meta">
+      Tenzin Desel, Matthew P. Walker, Chelsea Brown et al. (Omer Sharon) &middot; UC Berkeley &middot; Nature Communications, 30 Oct 2026
+      <span class="tag tag-er">Encoding-Retrieval</span><span class="tag tag-peri">Peripheral</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Two independent cohorts with polysomnography and REM microstate analysis. REM delta (1&ndash;4 Hz) is split into fast sawtooth waves and slower NREM-like waves and tracked across phasic and tonic REM periods; the shift is then related to chronological age, PET-measured amyloid-&beta; and tau burden, overnight memory consolidation, and APOE genotype.</p>
+      <p><strong>Finding:</strong> Ageing moves REM delta toward the slow NREM-like form, particularly during phasic REM &mdash; a period normally marked by high cortical activation. Beyond age, the shift is associated with A&beta; and tau burden, is linked to impaired overnight consolidation independently of NREM sleep quality, and APOE variation independently predicts reduced fast-sawtooth density. REM is thereby implicated as a distinct vulnerable substrate for pathology-related forgetting, separate from the NREM spindle&ndash;ripple route.</p>
+    </div>
+    <div class="flag">&#9888; Cross-sectional age contrast and correlational pathology associations; no causal manipulation of REM microstructure.</div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2610.40511" target="_blank">A Low-Rank Space Captures Linear Alignment Between LLM and Human Neural Activity During Naturalistic Language Listening</a>
+    </div>
+    <div class="paper-meta">
+      Zach Paris, Emily Finn &middot; Dartmouth &middot; arXiv:2610.40511 [cs.CL], 29 Oct 2026
+      <span class="tag tag-er">Encoding-Retrieval</span><span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Ridge reduced-rank regression identifies the brain-predictive subspace of LLM representations across three naturalistic language-listening datasets (intracranial electrophysiology and fMRI) and six model conditions spanning autoregressive, bidirectional-masked and randomly-initialised language models. The recovered subspaces are then compared against the principal axes of variation in the embeddings, and probed for interpretable features over-represented in brain activity.</p>
+      <p><strong>Finding:</strong> The full linear encoding performance is recovered from 1&ndash;3% of the original embedding dimensionality; the subspaces generalise across held-out participants and, more weakly, across datasets. PCA needs far more dimensions to reach the same prediction, so the directions that predict brain activity are distinct from those carrying most representational variance &mdash; a caution for any RSA-style comparison that assumes high-variance axes are the behaviourally relevant ones.</p>
+    </div>
+    <div class="flag">&#9888; Naturalistic encoding, but no memory manipulation &mdash; the alignment is with language processing, not with encoding or retrieval success.</div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1016/j.nlm.2026.108224" target="_blank">Memory reactivation alters the fate of neutral episodic memories following a subsequent independent experience</a>
+    </div>
+    <div class="paper-meta">
+      Malen D. Moyano, Jingyi Wang, Luis I. Brusco et al. &middot; UNC C&oacute;rdoba / CONICET &middot; Neurobiology of Learning and Memory, 30 Oct 2026
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Participants encoded a neutral audiovisual story and returned a week later for an incomplete reminder. One group then encoded a second neutral story; another received the reminder only; two controls either encoded the second story without prior reactivation or received no reminder. A week later, memory was tested with free recall, cued recall, recognition and temporal order.</p>
+      <p><strong>Finding:</strong> Exposure to the second episode reduced accurate recall and increased distortion, and participants reactivated beforehand incorporated significantly more accessory details from Story 2 into their Story 1 recall than those who merely encoded Story 2. Reminder-only reactivation did the opposite &mdash; better preservation, fewer distortions. The effects appeared primarily in free recall, i.e. exactly the test that permits reconstruction, which constrains the account: reactivation opens the memory to incorporation rather than simply weakening it.</p>
+    </div>
+    <div class="flag">&#9888; Behavioural only; &ldquo;significant&rdquo; incorporation is reported without an effect size in the abstract.</div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1371/journal.pcbi.1014906" target="_blank">Interpretable embeddings of speech explain and enhance the brain encoding performance of audio models</a>
+    </div>
+    <div class="paper-meta">
+      Jarrod Shimizu, Riccardo Antonello, Menoua Keshari Singh, Nima Mesgarani &middot; Columbia &middot; PLOS Computational Biology, 30 Oct 2026
+      <span class="tag tag-er">Encoding-Retrieval</span><a class="tag tag-avail" href="https://doi.org/10.1371/journal.pcbi.1014906" target="_blank">&#128451; data available</a><a class="tag tag-code" href="https://doi.org/10.1371/journal.pcbi.1014906" target="_blank">&#128187; code available</a>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Linear encoding models from six interpretable feature families (mel-spectrogram, Gabor filter bank, speech presence, phonetic, syntactic, semantic) plus contextualised embeddings from Whisper, HuBERT and WavLM, fitted to electrocorticography during natural speech. Variance partitioning attributes shared and unique ECoG variance to each feature class and to each model layer.</p>
+      <p><strong>Finding:</strong> A large share of the foundation models' brain alignment is accounted for by their ability to encode simple interpretable speech features, and there is a systematic layer-wise trade-off between brain-relevant low-level and high-level features. Critically, a semantic component survives that lower-level features cannot explain, and that component grows with model size and context length &mdash; evidence that context length buys something the brain actually uses, rather than just better acoustics.</p>
+    </div>
+    <div class="flag">&#9888; Descriptive variance partitioning; no manipulation of what listeners remember.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1523/jneurosci.0623-25.2026" target="_blank">Hexagonal modulation of theta rhythmic attentional sampling of visual space</a>
+    </div>
+    <div class="paper-meta">
+      Ricardo Kienitz, Michael Moroz, Jan Martini, Randolph F. Helfrich &middot; T&uuml;bingen &middot; Journal of Neuroscience, 29 Oct 2026
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Twenty participants performed a cue-guided attention task while reaction time was measured as a function of spatial location and cue&ndash;target interval. The resulting space&ndash;time surface was tested for hexagonal organisation, on the hypothesis that covert attention samples space using the same theta-clocked grid geometry as entorhinal&ndash;hippocampal grid cells.</p>
+      <p><strong>Finding:</strong> Theta power was elevated at spatial locations aligned to multiples of 60&deg;, consistent with a hexagonal sampling lattice, and individual variation in the strength of that structure predicted weaker reliance on the explicit spatial cue. If it holds, theta is a common organising principle for spatial cognition that extends the grid code out of the entorhinal&ndash;hippocampal system into attentional selection &mdash; relevant to any account in which positional coding is a general-purpose coordinate frame rather than a navigation-specific one.</p>
+    </div>
+    <div class="flag">&#9888; n = 20; a neural geometry inferred from reaction-time structure, with no effect sizes in the abstract and no neural recording.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-peri">Peripheral</div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1016/j.neuron.2026.10.002" target="_blank">Trait-linked brainstem circuit resilience balances tau pathology-induced cellular vulnerability in Alzheimer's disease</a>
+    </div>
+    <div class="paper-meta">
+      Zheng, Fan, Yao, Lai et al. (Dan Liu, Ling-Qiang Zhu) &middot; HUST Tongji &middot; Neuron, 27 Oct 2026
+      <span class="tag tag-peri">Peripheral</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Human cohorts spanning healthy controls, MCI and AD were assessed with a continuous performance test and plasma p-tau217/p-tau181. 3&times;Tg-AD mice were run on the 5-choice serial reaction time task across age, with calcium imaging and circuit dissection of the medial parabrachial nucleus to Edinger-Westphal nucleus (mPB&ndash;EW) projection, including substance P/Tacr1 signalling.</p>
+      <p><strong>Finding:</strong> Attentional deficits appeared well before spatial-memory deficits in the mouse model and correlated with plasma p-tau in patients; tau pathology suppressed CART<sup>+</sup> EW neurons, and exploratory behaviour recruited the mPB&ndash;EW pathway via Tacr1 to restore their activity. The proposed framing &mdash; a balance between cellular vulnerability and circuit resilience determining cognitive outcome &mdash; is a useful reframe for biomarker work, because it predicts that two patients with equal pathology burden can differ in attentional trajectory.</p>
+    </div>
+    <div class="flag">&#9888; Circuit causality is established in mice; the human data are correlational, and the resilience construct is inferred from group differences.</div>
+  </div>
+</div>
+
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>Forget Attention: Importance-Aware Attention Is All You Need (SISA)</strong> &mdash; arXiv:2606.02332 &mdash; v3 posted 28 Oct, but v1 dates to 1 Jun 2026. A revision, not a new paper; the v3 revision trap again.</li>
+    <li><strong>Optogenetic reduction of theta oscillations induces remapping of time cells without memory impairment</strong> &mdash; Cell Reports &mdash; reported 2026-10-25; Crossref stamps the 2026-11 issue month, which passes every window filter.</li>
+    <li><strong>The intermediate hippocampus integrates shock-observation and spatial information during observational fear memory</strong> &mdash; Nat Commun 78482-0 (Michon Linde / Gazzola / Keysers) &mdash; reported 2026-10-28, two days before this window opened.</li>
+    <li><strong>Neuromodulation-inspired gated associative memory networks</strong> &mdash; PNAS &mdash; reported 2026-10-28. Strong candidate (attractor capacity expansion by gating), lost only to the dedup pass.</li>
+    <li><strong>One-shot learning of paired association navigation with biologically plausible schemas</strong> &mdash; J Neurosci &mdash; reported 2026-10-28.</li>
+    <li><strong>Circuit mechanisms for disentangled representations and generalization in the hippocampus</strong> &mdash; Nat Neurosci 02491-x &mdash; reported 2026-10-28.</li>
+    <li><strong>Stimulus-specific recruitment of human amygdala neurons predicts episodic memory encoding success</strong> &mdash; Nat Neurosci 02493-9 &mdash; reported 2026-10-28.</li>
+    <li><strong>The human hippocampus retroactively binds experiences across time</strong> &mdash; bioRxiv 760394 &mdash; reported 2026-10-25.</li>
+    <li><strong>Bridging real-world summarization and laboratory-based memory recall</strong> &mdash; JEP:General &mdash; reported 2026-09-27. Crossref re-dated it to the 2026-11 issue; only the title grep caught it.</li>
+    <li><strong>MEMT-1.0: Towards Memory-Native Evolution</strong> &mdash; arXiv:2610.26825 &mdash; 66&times; KV storage reduction. Efficiency claims only, no memory-mechanism claim that survives the editorial bar.</li>
+    <li><strong>Multi-State Linear Attention with Generalized Second-Order Routing (MERLIN)</strong> &mdash; arXiv:2610.37645 &mdash; second-moment routing improves aggregation, but the contribution is a routing heuristic, not a claim about what is stored or forgotten.</li>
+    <li><strong>Learning from Error Predictions Rather Than Prediction Errors</strong> &mdash; J Neurosci Perspective &mdash; restates a March 2025 PsyArXiv preprint with no new data or model.</li>
+    <li><strong>Heterogeneous self-couplings enable scale-invariant memory and cognitive flexibility without criticality</strong> &mdash; bioRxiv 10.64898/2026.10.25.761657 (posted 25 Oct) &mdash; genuinely on-pillar recurrent-memory model, but kept out of a 13-paper run as the weakest of the finalists. Worth revisiting.</li>
+    <li><strong>Ventral CA1 perineuronal nets modulate morphine-associated contextual memory</strong> &mdash; Nat Commun 79300-3 &mdash; drug-specific circuit pharmacology with no representational claim.</li>
+    <li><strong>Sleep-dependent DNA methylation remodeling in basolateral amygdala fear engrams</strong> &mdash; Cell Reports &mdash; molecular epigenetics of a fear engram; no systems-level memory claim.</li>
+    <li><strong>Age-dependent structural evolution of a functional amyloid contributes to memory impairment in Drosophila</strong> &mdash; Cell &mdash; protein aggregation in a fly model; clinical/molecular rather than mechanistic for the tracked pillars.</li>
+  </ul>
+</div>
+
+</body>
+</html>
