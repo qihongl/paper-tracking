@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker — 2026-11-04</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .summary-table .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .tag-lib { background: #d1fae5; color: #047857; }
+  .tag-avail { background: #e0f2fe; color: #075985; }
+  .tag-code { background: #f3e8ff; color: #6b21a8; }
+  a.tag-avail, a.tag-code { text-decoration: none; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+</style>
+</head>
+<body>
+
+<h1>&#129504; Daily Paper Tracker</h1>
+<div class="date">2026-11-04 &middot; 13 papers &middot; window 2026-10-30 &rarr; 2026-11-04 (last run 2026-11-01)</div>
+
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2611.02361" target="_blank">Agent Memory as Rate-Limited Filtering: Explicit State Outlasts Long Context Beyond a Reader-Dependent Horizon</a></td>
+        <td class="col-authors">Guo et al. (Guo)</td>
+        <td class="col-finding">Reading the full access history collapses from 72–86% to 48–55% by 256 events, while a bounded explicit state holds at 96–98%; the crossover horizon scales with reader capability, and a store smaller than its state forgets on a capacity-set timescale.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2610.41367" target="_blank">When History Overrides Intent: Relational Schema Lock-In in Human-LLM Interaction</a></td>
+        <td class="col-authors">W. Yang</td>
+        <td class="col-finding">With a history-grounded position in context, 75.0% of 360 participants dispatched the assistant's suspension letter even though 11 of them stated cancellation as their final intent — accumulated history distorted behaviour while leaving task completion intact.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.64898/2026.10.28.762461" target="_blank">Multi-scale place fields provide a predictive basis for hierarchical control</a></td>
+        <td class="col-authors">Yu et al. (Lengyel)</td>
+        <td class="col-finding">A factorised hierarchical successor representation reproduces multi-scale CA1 place fields in rats and bats and predicts that population firing rates are spatially periodic with a wavelength independent of environment size — a prediction confirmed in the experimental data.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1523/JNEUROSCI.1360-26.2026" target="_blank">Learning-dependent hippocampal–striatal reorganization during sequential decision-making in pigeons</a></td>
+        <td class="col-authors">Yang et al. (Shang)</td>
+        <td class="col-finding">Choice behaviour shifted from model-based-like to model-free-like control as learning stabilised, and hippocampal–striatal phase coordination rose while hippocampus→striatum directed influence fell and covaried positively with the model-based strategy weight — the two structures trade off rather than jointly strengthen.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.64898/2026.10.28.762439" target="_blank">Reward changes the use and structure of predictive spatial maps</a></td>
+        <td class="col-authors">Oza et al. (Recanatesi)</td>
+        <td class="col-finding">Goal-directed behaviour strongly concentrated place fields near reward, but the underlying representational change was smaller and more variable; a reward-proximity teaching signal, not the goal per se, produced consistent map reshaping, and this was attenuated when recurrent plasticity was restricted.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s41467-026-79286-y" target="_blank">State space models naturally produce time cell and oscillatory behaviors and scale to abstract cognitive functions</a></td>
+        <td class="col-authors">Lu et al. (W. D. Lu)</td>
+        <td class="col-finding">Time-cell-like, ramping and oscillatory response profiles emerge from a structured multi-timescale complex rotational basis before any training; learning adapts a pre-existing temporal basis rather than constructing it, and the same model scales to event counting.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2610.41994" target="_blank">DAMI: Dual-Axis Memory Initialization for Enhanced Long-Context Retrieval in Gated Linear Attention</a></td>
+        <td class="col-authors">Feng et al. (R. Zhang)</td>
+        <td class="col-finding">Gate parameters stay close to their initial values after training, so state decay is largely set rather than learned; initialising geometric timescales across heads and a low-high-low input-sensitivity profile across layers raises RULER-style retrieval accuracy by 5.29–16.71 points on five architectures.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://doi.org/10.64898/2026.10.25.761606" target="_blank">Mental replay rescales the subjective duration of past events via alpha and theta oscillations</a></td>
+        <td class="col-authors">Yue et al. (Hu)</td>
+        <td class="col-finding">Replaying a remembered event at expanded pace lengthened its judged original duration relative to free and compressed replay, while gist and detail recall were unaffected — remembered duration is read out from a rescaled temporal code, not from the amount of content retrieved.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.64898/2026.10.28.762515" target="_blank">How goals shape naturalistic memories: bias in gaze and narrative recall</a></td>
+        <td class="col-authors">Habenicht et al. (Roueast)</td>
+        <td class="col-finding">An induced goal progressively shifted gaze during encoding and systematically biased free narration toward goal-relevant dimensions, so the same naturalistic episode is both sampled and reported differently depending on the observer's goal.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.64898/2026.10.27.762314" target="_blank">Coordinated Drift of Image Representations in Human EEG</a></td>
+        <td class="col-authors">Wang et al. (Lakshminarasimhan)</td>
+        <td class="col-finding">Image-evoked EEG patterns drifted across sessions in a coordinated, channel-wide way concentrated along identity-encoding dimensions, yet global distance statistics and dimensionality were preserved — drift is low-dimensional and structured, and simulated Hebbian readouts adapt faster to structured than to unstructured drift.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://doi.org/10.64898/2026.11.01.763457" target="_blank">The transformer as a candidate canonical cortical microcircuit</a></td>
+        <td class="col-authors">Shah &amp; Yamins</td>
+        <td class="col-finding">Embedding a spectrum of candidate microcircuits in a common macrocircuit, the transformer alone captured unit-level circuit detail, population functional maps, activity patterns and wiring-efficiency/behavioural demands at once; the enabling ingredient is a learned multiplicative component that makes relational information available without long-range wiring.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://doi.org/10.64898/2026.10.30.762936" target="_blank">A Unified World Model in Human Posterior Parietal Cortex</a></td>
+        <td class="col-authors">Bougou et al. (Andersen)</td>
+        <td class="col-finding">Superior parietal lobule units engaged by intuitive physics also predicted impending object collisions hundreds of milliseconds before contact and generalised across physical scenarios, and the same populations encoded intended hand action — one population supporting physical world modelling and action selection.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-peri"></span>Peripheral</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s41467-026-79269-z" target="_blank">Mapping hippocampal subfield heterogeneity across neurological disorders by normative modeling</a></td>
+        <td class="col-authors">Du et al. (Y. Liu)</td>
+        <td class="col-finding">Subfield volumes peak at different ages (27.4–40.1 years) in a 34,789-person normative reference, and personalised centile deviations in 3,521 patients captured disease-specific hippocampal abnormalities that supported classification and tracked cognitive outcome and progression.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2611.02361" target="_blank">Agent Memory as Rate-Limited Filtering: Explicit State Outlasts Long Context Beyond a Reader-Dependent Horizon</a>
+    </div>
+    <div class="paper-meta">
+      Guo et al. (Guo) &middot; arXiv:2611.02361 [cs.CL], 2026-11-02
+      <span class="tag tag-llm">LLM-Memory</span><span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Executable benchmark of access-log histories (grants, withdrawals, reinstatements, expiries, groups, change windows) under a known policy, scored on pairs of histories that differ only in the order or one field of the deciding events. Open models of 7–32B reading the full history were compared against reasoning models reading only the current explicit state, with a 120B reader tested from 256 to 1,024 events. Agent memory is formalised as a recursive filter whose state size is set by the number of tracked keys.</p>
+      <p><strong>Finding:</strong> Reading the full access history collapses from 72–86% to 48–55% by 256 events, while a bounded explicit state holds at 96–98%; the crossover horizon scales with reader capability, and a store smaller than its state forgets on a capacity-set timescale.</p>
+    </div>
+    <div class="flag">&#9888; Synthetic policy-execution benchmark, not naturalistic text; no within-context comparison against attention-based retention.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2610.41367" target="_blank">When History Overrides Intent: Relational Schema Lock-In in Human-LLM Interaction</a>
+    </div>
+    <div class="paper-meta">
+      W. Yang &middot; arXiv:2610.41367 [cs.HC], 2026-10-30
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Three studies. Study 1 documents user reports of assistants using earlier exchanges to question or alter requested actions; Study 2 reproduces the pattern across controlled interaction histories and six models; Study 3 is a 360-participant behavioural experiment in which a model holding a history-grounded understanding faces a changed user intent, with the produced artefact inspected against the participant's stated goal.</p>
+      <p><strong>Finding:</strong> With a history-grounded position in context, 75.0% of 360 participants dispatched the assistant's suspension letter even though 11 of them stated cancellation as their final intent — accumulated history distorted behaviour while leaving task completion intact.</p>
+    </div>
+    <div class="flag">&#9888; Three-arm behavioural design; 'schema lock-in' is a descriptive label and no mechanism is isolated.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.64898/2026.10.28.762461" target="_blank">Multi-scale place fields provide a predictive basis for hierarchical control</a>
+    </div>
+    <div class="paper-meta">
+      Yu et al. (Lengyel) &middot; bioRxiv 10.64898/2026.10.28.762461, 2026-11-03
+      <span class="tag tag-schema">Schema-Episodic</span><span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Introduces the factorised hierarchical successor representation (fHSR), a predictive map that supports hierarchical control through subgoal-directed subroutines, and tests whether it scales to environments of naturalistic size where unimodal place fields fail. Compares the model's scaling and topology against multi-scale CA1 recordings from rats and bats, then tests a novel model-derived prediction about population-rate periodicity against those data.</p>
+      <p><strong>Finding:</strong> A factorised hierarchical successor representation reproduces multi-scale CA1 place fields in rats and bats and predicts that population firing rates are spatially periodic with a wavelength independent of environment size — a prediction confirmed in the experimental data.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1523/JNEUROSCI.1360-26.2026" target="_blank">Learning-dependent hippocampal–striatal reorganization during sequential decision-making in pigeons</a>
+    </div>
+    <div class="paper-meta">
+      Yang et al. (Shang) &middot; The Journal of Neuroscience, 2026-11-03
+      <span class="tag tag-schema">Schema-Episodic</span><span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Six pigeons performed a probabilistic two-step decision task with simultaneous hippocampal and striatal LFP recording. Strategy evolution was tracked by fitting model-based, model-free and weighted RL models across sliding windows; hippocampal–striatal coordination was measured by phase-locking and directed influence by kernel Granger causality, then related to the fitted strategy weights.</p>
+      <p><strong>Finding:</strong> Choice behaviour shifted from model-based-like to model-free-like control as learning stabilised, and hippocampal–striatal phase coordination rose while hippocampus→striatum directed influence fell and covaried positively with the model-based strategy weight — the two structures trade off rather than jointly strengthen.</p>
+    </div>
+    <div class="flag">&#9888; n = 6 pigeons; avian pallial hippocampus, so homology with mammalian hippocampus is an assumption rather than a given.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.64898/2026.10.28.762439" target="_blank">Reward changes the use and structure of predictive spatial maps</a>
+    </div>
+    <div class="paper-meta">
+      Oza et al. (Recanatesi) &middot; bioRxiv 10.64898/2026.10.28.762439, 2026-10-29
+      <span class="tag tag-schema">Schema-Episodic</span><span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A two-pathway model in which a recurrent network learns to predict sensory input and develops a spatial representation, while a reinforcement-learning controller combines that representation with an explicit goal signal. Replaying identical trajectories before and after learning isolated representational plasticity from a change in how the map is used; reward relocation, reward withdrawal and restriction of recurrent plasticity were manipulated in turn.</p>
+      <p><strong>Finding:</strong> Goal-directed behaviour strongly concentrated place fields near reward, but the underlying representational change was smaller and more variable; a reward-proximity teaching signal, not the goal per se, produced consistent map reshaping, and this was attenuated when recurrent plasticity was restricted.</p>
+    </div>
+    <div class="flag">&#9888; Simulation only — offers a framework for experiments rather than a test against recorded place-cell data.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s41467-026-79286-y" target="_blank">State space models naturally produce time cell and oscillatory behaviors and scale to abstract cognitive functions</a>
+    </div>
+    <div class="paper-meta">
+      Lu et al. (W. D. Lu) &middot; Nature Communications, 2026-11-02
+      <span class="tag tag-kv">KV-Networks</span><span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Proposes state space models as a framework in which a structured multi-timescale complex rotational basis performs optimised history compression. Examines which temporal response profiles appear prior to training, how learning then exploits and adapts that basis for specific tasks, and whether the same architecture scales from single-cell temporal selectivity to abstract cognitive functions such as event counting.</p>
+      <p><strong>Finding:</strong> Time-cell-like, ramping and oscillatory response profiles emerge from a structured multi-timescale complex rotational basis before any training; learning adapts a pre-existing temporal basis rather than constructing it, and the same model scales to event counting.</p>
+    </div>
+    <div class="flag">&#9888; Resemblance to biological time cells is qualitative in the abstract; no quantitative fit to recorded time-cell data is reported there.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2610.41994" target="_blank">DAMI: Dual-Axis Memory Initialization for Enhanced Long-Context Retrieval in Gated Linear Attention</a>
+    </div>
+    <div class="paper-meta">
+      Feng et al. (R. Zhang) &middot; arXiv:2610.41994 [cs.LG], 2026-10-30
+      <span class="tag tag-kv">KV-Networks</span><a class="tag tag-code" href="https://speedai.com/research/dami" target="_blank">&#128187; code available</a>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Shows in controlled Gated DeltaNet experiments that A_log and dt_bias remain highly correlated with their initial values after training, making initialisation the dominant influence on retention. DAMI then assigns geometric timescales across heads (for different retrieval distances) and a low-high-low input-sensitivity profile across layers before training, calibrated on a small activation sample with no added parameters, and is evaluated on GDN, KDA, GDN2, Mamba-2 and RWKV-7.</p>
+      <p><strong>Finding:</strong> Gate parameters stay close to their initial values after training, so state decay is largely set rather than learned; initialising geometric timescales across heads and a low-high-low input-sensitivity profile across layers raises RULER-style retrieval accuracy by 5.29–16.71 points on five architectures.</p>
+    </div>
+    <div class="flag">&#9888; Gains are concentrated in long-context retrieval; language-modelling and commonsense benchmarks are reported as broadly unchanged, and per-task variance is not given in the abstract.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.64898/2026.10.25.761606" target="_blank">Mental replay rescales the subjective duration of past events via alpha and theta oscillations</a>
+    </div>
+    <div class="paper-meta">
+      Yue et al. (Hu) &middot; bioRxiv 10.64898/2026.10.25.761606, 2026-10-30
+      <span class="tag tag-kv">KV-Networks</span><span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Participants encoded naturalistic videos, then mentally replayed them at compressed, expanded or self-paced speed during scalp EEG, and afterwards judged the original duration. Recalled gist and detail were compared across speed conditions, and alpha/theta power plus neural pattern similarity between instructed and later spontaneous replay were related to the duration judgements.</p>
+      <p><strong>Finding:</strong> Replaying a remembered event at expanded pace lengthened its judged original duration relative to free and compressed replay, while gist and detail recall were unaffected — remembered duration is read out from a rescaled temporal code, not from the amount of content retrieved.</p>
+    </div>
+    <div class="flag">&#9888; EEG only; the oscillatory effects are correlational and no hippocampal source is demonstrated.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.64898/2026.10.28.762515" target="_blank">How goals shape naturalistic memories: bias in gaze and narrative recall</a>
+    </div>
+    <div class="paper-meta">
+      Habenicht et al. (Roueast) &middot; bioRxiv 10.64898/2026.10.28.762515, 2026-10-29
+      <span class="tag tag-er">Encoding-Retrieval</span><span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Eye-tracking during encoding of episodic-like memories in movie scenes, with a naturalistic goal induced by a 'secret job' that later rewarded person-based or space-based information. Retrieval was measured by free narration coded with data-driven methods, and gaze was analysed with computer-vision semantic segmentation of the scenes.</p>
+      <p><strong>Finding:</strong> An induced goal progressively shifted gaze during encoding and systematically biased free narration toward goal-relevant dimensions, so the same naturalistic episode is both sampled and reported differently depending on the observer's goal.</p>
+    </div>
+    <div class="flag">&#9888; No neural measure; the goal is instructed, so demand characteristics are not excluded.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.64898/2026.10.27.762314" target="_blank">Coordinated Drift of Image Representations in Human EEG</a>
+    </div>
+    <div class="paper-meta">
+      Wang et al. (Lakshminarasimhan) &middot; bioRxiv 10.64898/2026.10.27.762314, 2026-10-29
+      <span class="tag tag-er">Encoding-Retrieval</span><span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Reanalysis of THINGS-EEG2, which repeats presentations of natural images across multiple sessions, to test whether image-specific EEG response patterns drift and whether the drift is geometrically constrained. Quantified cross-session decoding accuracy, distance statistics and dimensionality, and simulated downstream Hebbian readout adaptation under structured versus unstructured drift.</p>
+      <p><strong>Finding:</strong> Image-evoked EEG patterns drifted across sessions in a coordinated, channel-wide way concentrated along identity-encoding dimensions, yet global distance statistics and dimensionality were preserved — drift is low-dimensional and structured, and simulated Hebbian readouts adapt faster to structured than to unstructured drift.</p>
+    </div>
+    <div class="flag">&#9888; Reanalysis of an existing dataset; the compensation result comes from simulation, not from measured readout neurons.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.64898/2026.11.01.763457" target="_blank">The transformer as a candidate canonical cortical microcircuit</a>
+    </div>
+    <div class="paper-meta">
+      Shah &amp; Yamins &middot; bioRxiv 10.64898/2026.11.01.763457, 2026-11-02
+      <span class="tag tag-cross">Cross-cutting</span><span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Placed a range of candidate microcircuit architectures inside a common spatial macrocircuit and measured each against an extensive battery of cortical signatures — fine-grained unit-level circuit details, population-level functional maps, neuronal activity patterns, and systems-level wiring efficiency with behavioural demands — using newly available large-scale data and mapping techniques.</p>
+      <p><strong>Finding:</strong> Embedding a spectrum of candidate microcircuits in a common macrocircuit, the transformer alone captured unit-level circuit detail, population functional maps, activity patterns and wiring-efficiency/behavioural demands at once; the enabling ingredient is a learned multiplicative component that makes relational information available without long-range wiring.</p>
+    </div>
+    <div class="flag">&#9888; Convergence is measured against aggregate cortical signatures; winning among a candidate set is not evidence of the cortical implementation.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.64898/2026.10.30.762936" target="_blank">A Unified World Model in Human Posterior Parietal Cortex</a>
+    </div>
+    <div class="paper-meta">
+      Bougou et al. (Andersen) &middot; bioRxiv 10.64898/2026.10.30.762936, 2026-11-01
+      <span class="tag tag-cross">Cross-cutting</span><span class="tag tag-peri">Peripheral</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Microelectrode-array recordings from the superior parietal lobule of two tetraplegic participants during intuitive-physics judgements (block-tower stability), viewing of naturalistic physical events, a collision-prediction task, and hand-action intention. The key comparison is whether the units recruited by one function also carry the others.</p>
+      <p><strong>Finding:</strong> Superior parietal lobule units engaged by intuitive physics also predicted impending object collisions hundreds of milliseconds before contact and generalised across physical scenarios, and the same populations encoded intended hand action — one population supporting physical world modelling and action selection.</p>
+    </div>
+    <div class="flag">&#9888; n = 2 participants from a clinical population; 'unified' rests on population overlap rather than on a fitted model.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-peri">Peripheral</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s41467-026-79269-z" target="_blank">Mapping hippocampal subfield heterogeneity across neurological disorders by normative modeling</a>
+    </div>
+    <div class="paper-meta">
+      Du et al. (Y. Liu) &middot; Nature Communications, 2026-11-03
+      <span class="tag tag-peri">Peripheral</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Established normative references for hippocampal and subfield volumes from 3D T1-weighted MRI of 34,789 healthy individuals aged 4–85 years, then derived personalised deviation (centile) scores in 3,521 patients across mild cognitive impairment, Alzheimer's disease, Parkinson's disease, cerebral small vessel disease and multiple sclerosis, relating those scores to cognition and longitudinal outcome.</p>
+      <p><strong>Finding:</strong> Subfield volumes peak at different ages (27.4–40.1 years) in a 34,789-person normative reference, and personalised centile deviations in 3,521 patients captured disease-specific hippocampal abnormalities that supported classification and tracked cognitive outcome and progression.</p>
+    </div>
+    <div class="flag">&#9888; Cross-sectional normative reference; the disease-specificity of the deviations is partly entailed by the composition of the patient groups.</div>
+  </div>
+</div>
+
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>Memory reactivation alters the fate of neutral episodic memories <em>Neurobiol Learn Mem</em></strong> — Already reported on 2026-11-01 — caught by both the title grep and the DOI grep (the store and the report agree).</li>
+    <li><strong>Dual-mode dynamics in hippocampal populations enable rapid and precise spatial coding <em>Curr Biol</em></strong> — Crossref <code>created</code> 2026-10-13 — the November date is issue assignment, outside the window.</li>
+    <li><strong>Real-time fMRI feedback guides self-generated cognition toward upregulation of hippocampal activity <em>Curr Biol</em></strong> — Crossref <code>created</code> 2026-10-01; November is the issue month.</li>
+    <li><strong>Representation of fear memory features in the ventral hippocampus <em>Curr Biol</em></strong> — Crossref <code>created</code> 2026-10-07; issue-month leak again.</li>
+    <li><strong>Hippocampal–prefrontal cortical interactions and neural representations of memory (Morales-Rodriguez &amp; Frank) <em>Curr Biol</em></strong> — Review — flagged as <code>IM, Review</code> by Europe PMC and no new data or model.</li>
+    <li><strong>Multiscale organization of amyloid-associated vulnerability across the hippocampal memory system <em>NeuroImage</em></strong> — Crossref <code>created</code> 2026-09-29; the November volume date passes every window filter.</li>
+    <li><strong>Mental Scene and Memory Construction and the Hippocampus <em>Hippocampus</em></strong> — Published 2026-09-28 — four days outside the window.</li>
+    <li><strong>Publisher Correction: A population code for semantics in human hippocampus <em>Nat Neurosci</em></strong> — Publisher Correction of a paper reported 2026-09-30; carries its own DOI so identifier dedup cannot see it.</li>
+    <li><strong>Transformer Mechanisms Mimic Frontostriatal Gating Operations When Trained on Human Working Memory Tasks <em>J Cogn Neurosci</em></strong> — Crossref <code>created</code> 2026-07-29; 2026-11-01 is issue assignment. The sibling <code>a.2682</code> was already reported 2026-08-06.</li>
+    <li><strong>Doorway event boundaries weaken but do not eliminate bindings <em>Psychon Bull Rev</em></strong> — Response–response binding in action control — an event-file claim, not a memory-retention mechanism.</li>
+    <li><strong>Representational geometry of punishment learning across basolateral amygdala neurons</strong> — Punishment learning and value coding; off-pillar and no temporal or associative-memory structure.</li>
+    <li><strong>BasisKV / FlagRot / LoopKV / Who Should Score the Cache / DAMI-adjacent KV-compression and sparse-attention papers</strong> — Serving and compression engineering without a retention, forgetting or retrieval mechanism claim.</li>
+    <li><strong>Solvable dynamics model of in-context learning; In-context learning as a retraining-free paradigm for constitutive modeling</strong> — ICL but about learning dynamics or engineering application, not memory structure.</li>
+    <li><strong>Neural Bases for Working Memory of Natural Sound Textures</strong> — Auditory texture WM; adjacent but no pillar mechanism and no positional or contextual structure.</li>
+    <li><strong>Intruding delta waves during REM sleep are associated with tau, amyloid, and forgetting in aging <em>Nat Commun</em></strong> — Already reported on 2026-11-01.</li>
+  </ul>
+</div>
+
+</body>
+</html>

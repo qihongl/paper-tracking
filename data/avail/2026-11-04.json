@@ -1,0 +1,145 @@
+[
+ {
+  "title": "State space models naturally produce time cell and oscillatory behaviors and scale to abstract cognitive functions",
+  "DOI": "10.1038/s41467-026-79286-y",
+  "url": "https://doi.org/10.1038/s41467-026-79286-y",
+  "data_avail": "unknown",
+  "data_avail_evidence": "",
+  "data_avail_url": "",
+  "code_avail": "unknown",
+  "code_avail_evidence": "",
+  "code_avail_url": ""
+ },
+ {
+  "title": "Multi-scale place fields provide a predictive basis for hierarchical control",
+  "DOI": "10.64898/2026.10.28.762461",
+  "url": "https://doi.org/10.64898/2026.10.28.762461",
+  "data_avail": "unknown",
+  "data_avail_evidence": "",
+  "data_avail_url": "",
+  "code_avail": "unknown",
+  "code_avail_evidence": "",
+  "code_avail_url": ""
+ },
+ {
+  "title": "DAMI: Dual-Axis Memory Initialization for Enhanced Long-Context Retrieval in Gated Linear Attention",
+  "DOI": "10.48550/arXiv.2610.41994",
+  "url": "http://arxiv.org/abs/2610.41994",
+  "data_avail": "unknown",
+  "data_avail_evidence": "",
+  "data_avail_url": "",
+  "code_avail": "open_code",
+  "code_avail_evidence": "Our code is available at https://speedai.com/research/dami. (abstract statement; preprint repository-link heuristic)",
+  "code_avail_url": "https://speedai.com/research/dami"
+ },
+ {
+  "title": "Agent Memory as Rate-Limited Filtering: Explicit State Outlasts Long Context Beyond a Reader-Dependent Horizon",
+  "DOI": "10.48550/arXiv.2611.02361",
+  "url": "http://arxiv.org/abs/2611.02361",
+  "data_avail": "unknown",
+  "data_avail_evidence": "",
+  "data_avail_url": "",
+  "code_avail": "unknown",
+  "code_avail_evidence": "",
+  "code_avail_url": ""
+ },
+ {
+  "title": "When History Overrides Intent: Relational Schema Lock-In in Human-LLM Interaction",
+  "DOI": "10.48550/arXiv.2610.41367",
+  "url": "http://arxiv.org/abs/2610.41367",
+  "data_avail": "unknown",
+  "data_avail_evidence": "",
+  "data_avail_url": "",
+  "code_avail": "unknown",
+  "code_avail_evidence": "",
+  "code_avail_url": ""
+ },
+ {
+  "title": "Learning-dependent hippocampal-striatal reorganization during sequential decision-making in pigeons",
+  "DOI": "10.1523/JNEUROSCI.1360-26.2026",
+  "url": "https://doi.org/10.1523/JNEUROSCI.1360-26.2026",
+  "data_avail": "unknown",
+  "data_avail_evidence": "",
+  "data_avail_url": "",
+  "code_avail": "unknown",
+  "code_avail_evidence": "",
+  "code_avail_url": ""
+ },
+ {
+  "title": "Reward changes the use and structure of predictive spatial maps",
+  "DOI": "10.64898/2026.10.28.762439",
+  "url": "https://doi.org/10.64898/2026.10.28.762439",
+  "data_avail": "unknown",
+  "data_avail_evidence": "",
+  "data_avail_url": "",
+  "code_avail": "unknown",
+  "code_avail_evidence": "",
+  "code_avail_url": ""
+ },
+ {
+  "title": "Mental replay rescales the subjective duration of past events via alpha and theta oscillations",
+  "DOI": "10.64898/2026.10.25.761606",
+  "url": "https://doi.org/10.64898/2026.10.25.761606",
+  "data_avail": "unknown",
+  "data_avail_evidence": "",
+  "data_avail_url": "",
+  "code_avail": "unknown",
+  "code_avail_evidence": "",
+  "code_avail_url": ""
+ },
+ {
+  "title": "How goals shape naturalistic memories: bias in gaze and narrative recall",
+  "DOI": "10.64898/2026.10.28.762515",
+  "url": "https://doi.org/10.64898/2026.10.28.762515",
+  "data_avail": "unknown",
+  "data_avail_evidence": "",
+  "data_avail_url": "",
+  "code_avail": "unknown",
+  "code_avail_evidence": "",
+  "code_avail_url": ""
+ },
+ {
+  "title": "Coordinated Drift of Image Representations in Human EEG",
+  "DOI": "10.64898/2026.10.27.762314",
+  "url": "https://doi.org/10.64898/2026.10.27.762314",
+  "data_avail": "unknown",
+  "data_avail_evidence": "",
+  "data_avail_url": "",
+  "code_avail": "unknown",
+  "code_avail_evidence": "",
+  "code_avail_url": ""
+ },
+ {
+  "title": "The transformer as a candidate canonical cortical microcircuit",
+  "DOI": "10.64898/2026.11.01.763457",
+  "url": "https://doi.org/10.64898/2026.11.01.763457",
+  "data_avail": "unknown",
+  "data_avail_evidence": "",
+  "data_avail_url": "",
+  "code_avail": "unknown",
+  "code_avail_evidence": "",
+  "code_avail_url": ""
+ },
+ {
+  "title": "A Unified World Model in Human Posterior Parietal Cortex",
+  "DOI": "10.64898/2026.10.30.762936",
+  "url": "https://doi.org/10.64898/2026.10.30.762936",
+  "data_avail": "unknown",
+  "data_avail_evidence": "",
+  "data_avail_url": "",
+  "code_avail": "unknown",
+  "code_avail_evidence": "",
+  "code_avail_url": ""
+ },
+ {
+  "title": "Mapping hippocampal subfield heterogeneity across neurological disorders by normative modeling",
+  "DOI": "10.1038/s41467-026-79269-z",
+  "url": "https://doi.org/10.1038/s41467-026-79269-z",
+  "data_avail": "unknown",
+  "data_avail_evidence": "",
+  "data_avail_url": "",
+  "code_avail": "unknown",
+  "code_avail_evidence": "",
+  "code_avail_url": ""
+ }
+]
