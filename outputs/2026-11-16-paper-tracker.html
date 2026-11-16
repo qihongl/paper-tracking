@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker &mdash; 2026-11-16</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .summary-table .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .tag-lib { background: #d1fae5; color: #047857; }
+  .tag-avail { background: #e0f2fe; color: #075985; }
+  .tag-code { background: #f3e8ff; color: #6b21a8; }
+  a.tag-avail, a.tag-code { text-decoration: none; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+</style>
+</head>
+<body>
+
+<h1>&#129504; Daily Paper Tracker</h1>
+<div class="date">2026-11-16</div>
+
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://doi.org/10.48550/arXiv.2611.15925" target="_blank">ShadowBench: Exposing Lexical Anchoring and the Illusion of Forgetting in Large Language Models</a></td>
+        <td class="col-authors">Sujan Maharjan et al.</td>
+        <td class="col-finding">Removing entity names from the query costs >20% factual accuracy at every scale, frontier models included — what looks like forgetting is an addressing failure.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://doi.org/10.48550/arXiv.2611.14488" target="_blank">Is Your Robot's Memory Just a Clock? Temporal Shortcuts in Memory-Augmented VLA Policies</a></td>
+        <td class="col-authors">Zhang et al. (An)</td>
+        <td class="col-finding">A null event that changes nothing the task depends on is counted as work: memory-augmented policies use elapsed time as a proxy for progress.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1523/jneurosci.1263-25.2026" target="_blank">Levodopa boosts hippocampal activity and strengthens generalizable rule representations in prefrontal cortex during the inference of meaning</a></td>
+        <td class="col-authors">Mainetto et al. (Cools)</td>
+        <td class="col-finding">Levodopa strengthened abstract-rule representations in medial frontal cortex and inference signals in hippocampus — dopamine acting on the abstraction step, not on item encoding.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s42003-026-11310-9" target="_blank">Hippocampal somatostatin neurons gate context generalization during fear memory updating</a></td>
+        <td class="col-authors">Cano-Adamuz et al. (M&eacute;ndez)</td>
+        <td class="col-finding">Neutral-context fear is expressed as fragmented, non-updatable freezing; suppressing dentate gyrus somatostatin interneurons during updating selectively released it.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.64898/2026.11.11.765971" target="_blank">Nucleus reuniens gates selective hippocampal-prefrontal interactions during NREM sleep</a></td>
+        <td class="col-authors">Shao et al. (Gelinas)</td>
+        <td class="col-finding">The nucleus reuniens generates its own NREM ripples that phase-lock to hippocampal SWRs and prefrontal ripples — and hippocampal–prefrontal coupling happens mainly when they co-occur.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s41467-026-79372-1" target="_blank">Sensory cortical disinhibition underlies long-term fear memory in humans</a></td>
+        <td class="col-authors">Brown et al. (Li)</td>
+        <td class="col-finding">Occipital alpha desynchronisation predicts long-term memory strength, and forcing inhibition in early visual cortex selectively blocks consolidation while sparing acquisition.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://doi.org/10.31234/osf.io/v5w3f" target="_blank">Traveling back and forth through time: oscillatory brain patterns distinguish directional cued recall</a></td>
+        <td class="col-authors">Johnson et al.</td>
+        <td class="col-finding">With accuracy equated, gamma-band activity separates forward from backward cued recall — the direction of traversal has its own signature.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.1016/j.cognition.2026.106782" target="_blank">Probing spatiotemporal context reveals differences between true and false memories</a></td>
+        <td class="col-authors">Sherman</td>
+        <td class="col-finding">How reliably a person reports <em>when</em> and <em>where</em> a false memory occurred separates true from false memories — false memories carry a real but degraded context trace.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.1016/j.celrep.2026.118296" target="_blank">Retrosplenial cortex exhibits parallel directional codes and contributes to medial entorhinal spatial coding in 3D curved-surface navigation</a></td>
+        <td class="col-authors">Zhang et al. (Miao)</td>
+        <td class="col-finding">RSC carries two parallel head-direction codes on a 3D curved surface, and its output sharpens MEC positional coding — one region supplying the reference frame another uses.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s41593-026-02514-7" target="_blank">Information formatting in neuronal populations predicts differential functional contributions to behavior</a></td>
+        <td class="col-authors">Ruff et al. (Cohen)</td>
+        <td class="col-finding">MT and dlPFC encode the same two variables in different formats, and a model of that format correctly predicted that stimulation would bias choices in one area and produce winner-take-all outcomes in the other.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://doi.org/10.1126/sciadv.aeh0773" target="_blank">Symmetry as a common origin of hierarchical emergence and abstraction</a></td>
+        <td class="col-authors">Rosas</td>
+        <td class="col-finding">Group symmetry is offered as a sufficient mechanism for both nested emergent levels and the matching hierarchy of abstract beliefs an observer can hold about them.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://doi.org/10.64898/2026.11.11.765947" target="_blank">A Variational Principle for the Emergence of Neural Geometry Underlying Bayesian-Like Behavior</a></td>
+        <td class="col-authors">Serrano-Fernandez &amp; Parga</td>
+        <td class="col-finding">Balancing accuracy against representational smoothness predicts the shape of the neural coordinate — and a single shape parameter predicts the nonlinear part of behaviour.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-peri"></span>Peripheral</td>
+        <td class="col-title"><a href="https://doi.org/10.1523/jneurosci.1200-26.2026" target="_blank">The Noncanonical Hippocampus: Shared and Distinct Features of the CA2-FC-IG Hippocampal System</a></td>
+        <td class="col-authors">Farrell et al. (Moorman)</td>
+        <td class="col-finding">Transcriptomic and anatomical continuity argues that CA2, fasciola cinereum and indusium griseum form one cohesive hippocampal system, not three structures.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.48550/arXiv.2611.15925" target="_blank">ShadowBench: Exposing Lexical Anchoring and the Illusion of Forgetting in Large Language Models</a>
+    </div>
+    <div class="paper-meta">
+      Sujan Maharjan et al. &middot; arXiv cs.CL, 11 Nov 2026<span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Introduces ShadowBench, a shortcut-hardened benchmark for <em>latent entity association</em>: a Dual-Trait Association task in which the model must identify an entity from two co-occurring but unnamed traits, so no explicit name token is available to retrieve on. Evaluated across model scales from small open models up to GPT-5.4 and Claude-Sonnet-4.6, with the drop in performance on anchor removal as the dependent measure.</p>
+      <p><strong>Finding:</strong> A pervasive &ldquo;Shadow Gap&rdquo;: removing lexical anchors produces performance drops exceeding 20% at every scale tested. The authors read this as knowledge being <em>lexically anchored</em> — facts are stored, but are addressed by surface name tokens rather than reachable from descriptive content. The paper also reports that this dependency opens a specific vulnerability. For the lingering-memory work the operational consequence is sharp: any probe that varies the retrieval cue while holding the fact fixed is measuring cue-to-key addressing, not retention, so a null retention effect under paraphrase is uninformative about the store.</p>
+    </div>
+    <div class="flag">&#9888; Benchmark study — mechanism is inferred from behaviour, not from an internal read-out. &ldquo;Illusion of forgetting&rdquo; is a framing, not an independently validated process claim.</div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.48550/arXiv.2611.14488" target="_blank">Is Your Robot's Memory Just a Clock? Temporal Shortcuts in Memory-Augmented VLA Policies</a>
+    </div>
+    <div class="paper-meta">
+      Chubin Zhang et al. (Bo An) &middot; arXiv cs.LG, 10 Nov 2026<span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A behavioural dissection of memory-augmented vision&ndash;language&ndash;action policies on the counting tasks of RoboMME. The manipulation inserts a task-irrelevant null event (a brief pause, or a wrist fidget) that changes nothing the task depends on; the control withholds the same frames from memory, separating a memory failure from an interruption effect.</p>
+      <p><strong>Finding:</strong> The null event is counted as progress — &ldquo;phantom progress&rdquo; — cutting success from 47 to 16 of 50 on one task and 44 to 10 on the other. Withholding the frames restores performance, so the cause sits in memory rather than in the interruption. The diagnosed mechanism is a temporal shortcut: demonstrations run at a steady rate, so uniform frame sampling stamped with the time step makes clock time a sufficient statistic for what happened. The memory is indexed by <em>when</em>, not by <em>what</em> — the agent-side analogue of a position code that has swallowed the content it was supposed to address.</p>
+    </div>
+    <div class="flag">&#9888; Two counting tasks from a single benchmark family; the temporal-shortcut explanation is supported by the control but not by direct inspection of the memory read-out.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1523/jneurosci.1263-25.2026" target="_blank">Levodopa boosts hippocampal activity and strengthens generalizable rule representations in prefrontal cortex during the inference of meaning</a>
+    </div>
+    <div class="paper-meta">
+      Elena Mainetto et al. (Roshan Cools) &middot; Journal of Neuroscience, 11 Nov 2026<span class="tag tag-schema">Schema-Episodic</span><span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Seventy healthy young volunteers (47 female) received levodopa or placebo and learned new artificial word meanings by inferring and applying abstract affixation rules. A repetition-suppression procedure was combined with multivariate representational similarity analysis to separate the abstract rule required for compositional inference from the newly composed word-meaning representation, letting the two be localised independently.</p>
+      <p><strong>Finding:</strong> Levodopa modulated both inference-related signals in the hippocampal formation and abstract rule representations in medial frontal cortex. The dissociation is the interesting part: the manipulation moved the <em>rule</em> representation, i.e. the generalisable structure that permits a novel word to be composed, rather than the stored lexical item. Mechanistically this puts dopaminergic state upstream of schema abstraction — it changes what can be generalised over, which is the operation a schema-guided episodic model needs to get right before binding is worth anything.</p>
+    </div>
+    <div class="flag">&#9888; Systemic pharmacological manipulation; the hippocampal-versus-frontal attribution rests on RSA localisation rather than a circuit-level intervention.</div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s42003-026-11310-9" target="_blank">Hippocampal somatostatin neurons gate context generalization during fear memory updating</a>
+    </div>
+    <div class="paper-meta">
+      Nuria Cano-Adamuz et al. (Pablo M&eacute;ndez) &middot; Communications Biology, 13 Nov 2026<span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Mice of both sexes underwent contextual fear conditioning with pose-tracking and unsupervised behavioural decomposition, so that freezing could be resolved into distinct motifs rather than collapsed into a single rate. In vivo recordings tracked dentate gyrus somatostatin inhibitory neurons (SST INs) across conditioning, recall and updating; chemogenetic suppression and activation were applied specifically during the updating session.</p>
+      <p><strong>Finding:</strong> Fear in a neutral context appeared as <em>fragmented</em> freezing that resisted experience-dependent updating, in contrast to sustained and adaptable freezing in the threatening context. Recalling neutral-context fear was accompanied by elevated DG SST IN activity. Suppressing SST INs during updating selectively facilitated adaptation of neutral-context freezing, while activating them prevented generalisation of the update by restricting long-term fear reduction in contexts that differed from the updating context. A single inhibitory cell class therefore sets whether a context model is revised or preserved — an explicit generalisation knob sitting at the schema level rather than at encoding strength.</p>
+    </div>
+    
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.64898/2026.11.11.765971" target="_blank">Nucleus reuniens gates selective hippocampal-prefrontal interactions during NREM sleep</a>
+    </div>
+    <div class="paper-meta">
+      Shao, Ferrero Lopez, Kawano, et al. (Gelinas) &middot; bioRxiv (neuroscience), 13 Nov 2026<span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Simultaneous in vivo electrophysiology across hippocampus, nucleus reuniens (RE) and medial prefrontal cortex in rats across NREM sleep. Ripples were detected independently in all three structures, then coupling between hippocampal sharp-wave ripples and mPFC ripples was conditioned on the presence of an RE ripple.</p>
+      <p><strong>Finding:</strong> RE exhibits ripple-like activity (~120 Hz peak, ~45 ms) concentrated in NREM that recruits thalamic spiking and phase-locks to both hippocampal SWRs and mPFC ripples. Although ripples were detected independently in all three structures, hippocampal&ndash;prefrontal ripple coupling mainly involved co-occurring RE ripples. RE therefore behaves as a <em>timing gate</em> that decides which hippocampal events reach prefrontal cortex, rather than as a passive relay — a third-party router in the consolidation path, which is a different architectural claim from the standard two-node hippocampal&ndash;cortical dialogue.</p>
+    </div>
+    <div class="flag">&#9888; Preprint, not peer reviewed. Coupling is correlational — no causal manipulation of RE ripples is reported.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.31234/osf.io/v5w3f" target="_blank">Traveling back and forth through time: oscillatory brain patterns distinguish directional cued recall</a>
+    </div>
+    <div class="paper-meta">
+      J. D. Johnson et al. &middot; PsyArXiv (preprint), 13 Nov 2026<span class="tag tag-kv">KV-Networks</span><span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> List-learning with immediate cued recall in which the cue word required retrieving either the item that came <em>next</em> (forward) or the one that came <em>previously</em> (backward). Scalp EEG recorded in the interval before the recalled word had to be reported was analysed with multivariate pattern classification, isolating search and deliberation from output.</p>
+      <p><strong>Finding:</strong> Even with behavioural performance equated across retrieval direction, high-frequency (gamma-band) oscillatory activity distinguished forward from backward retrieval. The design is a clean test of an asymmetry that temporal-context and key-value models predict but rarely measure directly: the same stored item-to-item associations are traversed in two directions, and the two traversals are not the same process. Sitting the difference in gamma rather than in accuracy places it in the retrieval search itself, which is where a model with directional transition weights would put it.</p>
+    </div>
+    <div class="flag">&#9888; Preprint, not peer reviewed. Abstract reports the direction effect without an effect size; single paradigm.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s41467-026-79372-1" target="_blank">Sensory cortical disinhibition underlies long-term fear memory in humans</a>
+    </div>
+    <div class="paper-meta">
+      Joshua A. Brown et al. (Wen Li) &middot; Nature Communications, 14 Nov 2026<span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Human fear conditioning with high-definition alpha-frequency tACS over early visual cortex, simultaneous EEG-fMRI, and transformer-based neural decoding of memory traces, assessed at 15 min, 24 h and 7 days after conditioning. A causal arm used tACS to induce early visual cortical (V1/V2) inhibition.</p>
+      <p><strong>Finding:</strong> Spatiotemporal memory traces were decodable at all three delays, beginning 40&ndash;60 ms post-stimulus and distributed across visual cortex and limbic regions. Conditioning potentiated occipital alpha desynchronisation — a marker of visual cortical disinhibition — and this potentiation predicted the strength of the later memory trace. Inducing early visual cortical inhibition abolished the conditioning-potentiated desynchronisation and <em>selectively</em> disrupted consolidation and retention while leaving initial acquisition intact. That selectivity is the load-bearing result: early sensory cortex is not a passive feature analyser in this circuit but a necessary node for the long-term trace, and the marker is available at encoding.</p>
+    </div>
+    <div class="flag">&#9888; tACS spatial specificity is coarse relative to V1/V2; the disinhibition&ndash;memory link within the causal arm is still a correlational read-out.</div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1016/j.cognition.2026.106782" target="_blank">Probing spatiotemporal context reveals differences between true and false memories</a>
+    </div>
+    <div class="paper-meta">
+      Brynn E. Sherman &middot; Cognition, online 7 Nov 2026 (issue Feb 2027)<span class="tag tag-er">Encoding-Retrieval</span><span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> DRM false-memory paradigm with explicit probes of the spatiotemporal context of each recognised item — when and where it was studied — so that context report reliability across participants becomes the discriminating variable, alongside confidence.</p>
+      <p><strong>Finding:</strong> Context memory provided a probabilistic cue to whether a memory was true or false: the consistency with which people reported when or where a false memory occurred differed systematically between true and false memories, and confidence tracked the same structure. The result argues false memories are not purely semantic association but carry a genuine, degraded spatiotemporal trace. For an event-model account this is a constraint on how much of the binding has to survive for a memory to be verifiable — the context slot is populated in both cases, but with lower fidelity in the false one.</p>
+    </div>
+    <div class="flag">&#9888; Boundary case: Crossref <code>created</code> is 2026-11-07, one day before this run's window start; issue date is Feb 2027. Behavioural only, no neural measure.</div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1016/j.celrep.2026.118296" target="_blank">Retrosplenial cortex exhibits parallel directional codes and contributes to medial entorhinal spatial coding in 3D curved-surface navigation</a>
+    </div>
+    <div class="paper-meta">
+      Xuan Zhang et al. (Chenglin Miao) &middot; Cell Reports, 12 Nov 2026<span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Two-photon calcium imaging in freely moving mice in a cylindrical arena whose sidewall and top platform form a 3D curved surface, with and without light. RSC and MEC direction and position tuning were compared, RSC activity was inhibited, and MEC-projecting RSC neurons were identified and compared against the whole RSC population.</p>
+      <p><strong>Finding:</strong> RSC contained two directional representations: one whose preferred directions shift systematically around the sidewall yet stay coherent with top-platform tuning (and persist in darkness with reduced precision), and one whose preferred directions stay stable across sidewall positions. MEC had fewer and less stable direction-tuned cells but more precise positional coding, and MEC-projecting RSC neurons carried more precise directional and positional information than the RSC population. RSC inhibition selectively degraded MEC sidewall positional precision and cross-cylinder angular alignment in darkness. The division of labour is the point: the allocentric frame is supplied upstream and the downstream map inherits its precision.</p>
+    </div>
+    
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s41593-026-02514-7" target="_blank">Information formatting in neuronal populations predicts differential functional contributions to behavior</a>
+    </div>
+    <div class="paper-meta">
+      Douglas A. Ruff, Sol K. Markman, Jason Z. Kim, Marlene R. Cohen &middot; Nature Neuroscience, 10 Nov 2026<span class="tag tag-cross">Cross-cutting</span><a class="tag tag-code" href="https://github.com/solkm/formattingRNN" target="_blank">&#128187; code available</a>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Rhesus monkeys performed a task requiring integration of visual motion and reward while MT and dlPFC were recorded. Population-level <em>formatting</em> was quantified — whether motion and reward are represented separably or combined in a decision-aligned format — and a recurrent network trained to reproduce each area's formatting was used to predict the behavioural effect of stimulating each area, which was then tested.</p>
+      <p><strong>Finding:</strong> Both regions encoded both motion and reward, but MT represented them separably whereas dlPFC combined them in a decision-related format. The model predicted distinct stimulation effects, and these held: MT stimulation biased choices, dlPFC stimulation produced winner-take-all outcomes. The claim worth carrying is methodological as much as empirical — what distinguishes two areas is not the information they contain but the format, and format is causally readable. This is the strongest argument to date that decoding accuracy alone under-determines a region's computational role, which applies directly to how representational-geometry results are usually interpreted.</p>
+    </div>
+    
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1126/sciadv.aeh0773" target="_blank">Symmetry as a common origin of hierarchical emergence and abstraction</a>
+    </div>
+    <div class="paper-meta">
+      Fernando E. Rosas &middot; Science Advances, 13 Nov 2026<span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A theoretical construction combining information theory, group theory and statistical mechanics. Dynamics equivariant under a symmetry group are shown to generate multiple macroscopic levels ordered by the group's algebraic structure; the same symmetries then constrain the Bayesian beliefs of an observer with only partial access. Illustrated in Hopfield networks, Boolean models of gene regulation, Ehrenfest diffusion and epidemic models.</p>
+      <p><strong>Finding:</strong> Symmetries that create the hierarchy also shape a partially informed observer's beliefs, yielding a matching hierarchy of abstract beliefs updatable autonomously at different resolutions. The interesting move is sufficiency: symmetry alone is claimed to explain both why levels exist and why coarse-grained abstraction mirrors them, making otherwise intractable inference feasible. For representational-geometry work this supplies a normative reason for nested representational levels to appear — abstraction as a quotient by a symmetry group rather than as an empirical accident of training.</p>
+    </div>
+    <div class="flag">&#9888; Theory paper with illustrative models; no new neural data. The claim is sufficiency, not necessity.</div>
+  </div>
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.64898/2026.11.11.765947" target="_blank">A Variational Principle for the Emergence of Neural Geometry Underlying Bayesian-Like Behavior</a>
+    </div>
+    <div class="paper-meta">
+      L. Serrano-Fernandez, N. Parga &middot; bioRxiv (neuroscience), 13 Nov 2026<span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Proposes that learning trades task accuracy against representational smoothness under stimulus-dependent weighting, and derives the resulting distortions of a latent neural coordinate for bounded-uniform, Gaussian and bimodal stimulus ensembles. Tested in recurrent networks trained to reproduce time intervals, and against an empirical neural coordinate.</p>
+      <p><strong>Finding:</strong> The principle predicts edge distortions near the boundaries of bounded ensembles, global affine contraction for Gaussian ones, and warping toward high-probability regions for bimodal ones. Trained RNNs occupy three regimes as boundary distortion grows from unresolvable to range-spanning. A shape parameter fitted to the empirical neural coordinate predicted the nonlinear component of mean behaviour through an affine readout, with only behavioural gain and offset left free. Geometry here is what a smoothness&ndash;accuracy trade-off leaves behind, and it is sufficient to generate Bayesian-like bias without an explicit prior — a parsimonious alternative to reading those biases as inference.</p>
+    </div>
+    <div class="flag">&#9888; Preprint, not peer reviewed. The empirical anchor is a single neural coordinate; the behavioural prediction has two free parameters.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-peri">Peripheral</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1523/jneurosci.1200-26.2026" target="_blank">The Noncanonical Hippocampus: Shared and Distinct Features of the CA2-FC-IG Hippocampal System</a>
+    </div>
+    <div class="paper-meta">
+      Jordan S. Farrell et al. (David E. Moorman) &middot; Journal of Neuroscience, 11 Nov 2026<span class="tag tag-peri">Peripheral</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A review integrating molecular, anatomical, physiological and behavioural evidence for CA2, the fasciola cinereum (FC) and the indusium griseum (IG) — structures that conventional atlases draw as discontinuous — to ask whether they are subcomponents of a single larger structure or independent entities.</p>
+      <p><strong>Finding:</strong> Recent work reveals unexpectedly high overlap in gene expression and anatomical continuity across the three regions, and the authors conclude the CA2&ndash;FC&ndash;IG axis is best treated as a cohesive network unified by shared molecular and anatomical profile, with regional structural and functional differences layered on top. The practical consequence is that subfield boundaries in standard atlases may not correspond to functional units, which matters for any subfield-resolved analysis of the kind used in high-resolution fMRI work.</p>
+    </div>
+    
+  </div>
+</div>
+
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>Cholinergic blockade reveals a role for human hippocampal theta in memory encoding but not retrieval</strong> &mdash; eLife, 11 Nov 2026, <code>10.7554/eLife.108972</code> — Gedankien/.../Jacobs, scopolamine in intracranial patients: the week's best paper on its science (theta reflects an encoding state, not a retrieval requirement; dose-dependent loss of theta power, phase reset and encoding&ndash;retrieval reinstatement), but the version of record sits on a chain rooted in a <b>December-2025</b> reviewed preprint (v1 created 2025-12-04) with a May-2025 bioRxiv preprint. Per the standing policy on 2025-rooted eLife VoRs it is not counted as new work. Flagged here rather than silently dropped so it is not missed.</li>
+    <li><strong>The representational geometry of cognitive maps under cognitive control</strong> &mdash; Nature Communications, 10 Nov 2026, <code>10.1038/s41467-026-77621-x</code> — Park/.../Boorman. Version of record of a Feb-2023 bioRxiv preprint (<code>10.1101/2023.02.04.527142</code>) with an identical abstract; already surfaced and excluded on 2026-11-11. Not new work.</li>
+    <li><strong>Pattern Completion of Occluded Objects Transforms Retrieval into Learning</strong> &mdash; PsyArXiv <code>10.31234/osf.io/zg7tv_v3</code> — a v3 revision; v1 was posted 2026-06-25. Revision, not a new paper. (Substantively interesting: a non-semantic visual testing effect that disappears when pattern completion is no longer required.)</li>
+    <li><strong>Memory Consolidation Flattens the Temporal Shape of User Facts / Planning as Dynamics Relaxation / ENGRAM / HiMEM / A Spiking Neural Model of the Mental Lexicon</strong> &mdash; arXiv v2 revisions or v1 postings before the window: <code>2609.36457</code> (v1 29 Sep, v2 11 Nov — &ldquo;aspectual flattening&rdquo; in agent memory, well worth reading), <code>2609.13219</code> (v1 30 Aug), <code>2611.09472</code> (v1 6 Nov), <code>2611.09355</code> (v1 6 Nov), <code>2611.09402</code> (v1 6 Nov). Revisions and out-of-window postings are not treated as new papers.</li>
+    <li><strong>PACE: Keeping the Right Tokens in the KV Cache Is Not Enough; Representational drift in a code model</strong> &mdash; <code>arXiv:2611.10240</code> and <code>2611.09204</code>, both v1 on 6 Nov 2026 — outside this run's window (it opened 11-08). PACE is the more important of the two and should be picked up if it lands in a future pool: a planner-guided policy keeping &gt;99% of needed tokens resident still falls from 93% to 64% accuracy as the definition&ndash;use gap grows from 2K to 90K tokens, because what grows is the tokens' rotary-position distance to the query.</li>
+    <li><strong>The Gating Mechanism of KV Cache Eviction</strong> &mdash; <code>arXiv:2611.07605</code> — reported on 2026-11-11 (a learned KV gate converges to a no-op because softmax absorbs per-query constants).</li>
+    <li><strong>Nucleus reuniens, the 08-30 sighting</strong> &mdash; The 2026-08-30 report mentions the nucleus reuniens, but for a different paper (Golipour/.../Ito, <i>Nat Commun</i>: NR silencing abolishes CA1 goal coding). The bioRxiv RE-ripple paper above is new; the fragment collision was checked against the DOI before keeping it.</li>
+    <li><strong>MTL200: A surface-based probabilistic atlas of the medial temporal lobe</strong> &mdash; <i>Imaging Neuroscience</i>, <code>10.1162/IMAG.a.1447</code> — online 9 Nov 2026 but the Crossref record was created 2025-10-20, i.e. a year-old submission. Useful tool (200-participant surface-based ERC/PRC/PHC/TPC atlas) but not new work by first-appearance.</li>
+    <li><strong>Habit/skill sleep replay in dorsolateral striatum (UCL, Stephenson-Jones)</strong> &mdash; Surfaced again by a November 2026 Chinese press cycle; published in <i>Nature Neuroscience</i> in <b>July 2026</b>. Classic news-recycling trap.</li>
+    <li><strong>P2RX7-driven microglia in tauopathy (Neuron, 8 Nov); amygdala category cells (Nat Neurosci, 27 Oct); Chrm2<sup>+</sup> interneurons (Neuron, 19 Oct); object-concept primitives (Curr Biol, 9 Nov); Spens &amp; Burgess compressive RAG (Nat Commun)</strong> &mdash; Clinical/tau mechanism with no memory-mechanism claim; and four recycling cases already reported or previously excluded (the Nat Neurosci amygdala paper was a card on 2026-10-28, the Chrm2 paper on 2026-10-21, object-concept primitives is a Dec-2025 bioRxiv VoR, Spens &amp; Burgess was created 2026-06-25).</li>
+    <li><strong>Capturing Habits in Humans; Learning to Navigate a Changing World; Brain Initiative Roadmap: The Next Decade of NeuroAI</strong> &mdash; <i>J Neurosci</i>, 11 Nov 2026 — reviews and roadmaps without new data or a model to evaluate.</li>
+    <li><strong>DISCERN; When Agents Need to Consolidate Memories (RRR); MindMem; Time and Space dual-axis substrate</strong> &mdash; <code>arXiv:2611.15729</code>, <code>2611.15644</code>, <code>2611.16223</code>, <code>2611.16492</code> — agent-memory frameworks evaluated on synthetic enterprise/dialogue benchmarks. DISCERN's framing (retention and currency are saturated at 0.93&ndash;0.98; entity and time-state <em>resolution</em> is what fails) is worth knowing, but the evidence is a 310-query synthetic benchmark with no mechanism read-out.</li>
+    <li><strong>Serial Sampling from Memory Underlies Perceptual Decisions Unyoked from Actions</strong> &mdash; <i>JOCN</i>, <code>10.1162/jocn.a.2733</code> — human replication of decision postponement; perceptual decision-making rather than a memory-mechanism claim, and the Crossref record was created 2026-11-06, before the window.</li>
+    <li><strong>Neuron / TICS / Nature Human Behaviour / Nature Machine Intelligence items in the window</strong> &mdash; The Europe PMC journal sweep returned Neuron 7, TICS 3, Nat Hum Behav 4, Nat Mach Intell 0 records for 11-08&rarr;11-16. After title and abstract screening none carried a memory-mechanism claim (the TICS item is human&ndash;AI delegation; the Nat Hum Behav items are motor-memory training papers already in the 11-09/11-11 pool).</li>
+  </ul>
+</div>
+
+</body>
+</html>
