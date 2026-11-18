@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Paper Tracker — 2026-11-18</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f8f9fa; color: #1a1a1a; line-height: 1.6;
+    max-width: 800px; margin: 0 auto; padding: 32px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; color: #111; }
+  .date { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 32px;
+    font-size: 13px; background: #fff; border-radius: 6px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .summary-table th { text-align: left; padding: 10px 12px; background: #f1f5f9;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #555; border-bottom: 2px solid #e5e7eb; }
+  .summary-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9;
+    vertical-align: top; }
+  .summary-table tr:hover { background: #f8fafc; }
+  .summary-table .col-tag { width: 80px; white-space: nowrap; }
+  .summary-table .col-title { width: 40%; }
+  .summary-table .col-title a { color: #1d4ed8; text-decoration: none; font-weight: 500; }
+  .summary-table .col-title a:hover { text-decoration: underline; }
+  .summary-table .col-authors { width: 20%; font-size: 12px; color: #888; }
+  .summary-table .col-finding { width: 40%; font-size: 12px; color: #555; line-height: 1.4; }
+  .summary-table .tag-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-llm { background: #3b82f6; }
+  .dot-schema { background: #ec4899; }
+  .dot-kv { background: #10b981; }
+  .dot-er { background: #f59e0b; }
+  .dot-cross { background: #6366f1; }
+  .dot-peri { background: #6b7280; }
+  .section { margin-bottom: 32px; }
+  .section-header {
+    font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 6px 12px; display: inline-block; border-radius: 3px; margin-bottom: 12px;
+  }
+  .tag-llm { background: #dbeafe; color: #1e40af; }
+  .tag-schema { background: #fce7f3; color: #9d174d; }
+  .tag-kv { background: #d1fae5; color: #065f46; }
+  .tag-er { background: #fef3c7; color: #92400e; }
+  .tag-cross { background: #e0e7ff; color: #3730a3; }
+  .tag-peri { background: #f3f4f6; color: #374151; }
+  .tag-lib { background: #d1fae5; color: #047857; }
+  .tag-avail { background: #e0f2fe; color: #075985; }
+  .tag-code { background: #f3e8ff; color: #6b21a8; }
+  a.tag-avail, a.tag-code { text-decoration: none; }
+  .paper {
+    background: #fff; border-radius: 6px; padding: 18px 20px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+  }
+  .paper-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .paper-title a { color: #1d4ed8; text-decoration: none; }
+  .paper-title a:hover { text-decoration: underline; }
+  .paper-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .paper-meta .tag { display: inline-block; font-size: 11px; font-weight: 500;
+    padding: 1px 6px; border-radius: 3px; margin-left: 6px; }
+  .paper-body { font-size: 13px; color: #444; }
+  .paper-body strong { color: #222; }
+  .paper-body p { margin-bottom: 4px; }
+  .flag { font-size: 12px; color: #b91c1c; background: #fef2f2; padding: 2px 8px;
+    border-radius: 3px; display: inline-block; margin-top: 6px; }
+  .empty-section { font-size: 13px; color: #999; font-style: italic; padding: 8px 0; }
+  .excluded { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; }
+  .excluded h2 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #666; }
+  .excluded li { font-size: 13px; color: #888; margin-bottom: 4px; list-style: disc; margin-left: 20px; }
+</style>
+</head>
+<body>
+
+<h1>🧠 Daily Paper Tracker</h1>
+<div class="date">2026-11-18</div>
+
+<div class="summary-table">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-tag">Tag</th>
+        <th class="col-title">Title</th>
+        <th class="col-authors">Authors</th>
+        <th class="col-finding">Key Finding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2611.18089" target="_blank">Deep Latents, Long Memory: Latent persistence explains temporal correlations in transformer activations</a></td>
+        <td class="col-authors">Cagnetta &amp; Acevedo</td>
+        <td class="col-finding">A layer's activation autocorrelation decays more slowly with lag the deeper you go, and the persistence time of sparse-autoencoder features predicts that decay — abstraction measured as how long a latent code stays in context.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-llm"></span>LLM-Memory</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2611.20759" target="_blank">Instant Weight-Space Consolidation for Long-Term Memory in LLMs</a></td>
+        <td class="col-authors">Suri &amp; Manocha</td>
+        <td class="col-finding">A recurrent hypernetwork compiles session activations into a low-rank adapter in one forward pass, and pairing it with a verbatim episodic buffer beats every agentic memory baseline by 12–15 points exactly when the buffer fails.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s41562-026-02627-w" target="_blank">Causal role of human hippocampus in relational structure learning and inference</a></td>
+        <td class="col-authors">Pan, D'Ambrogio, … Rushworth</td>
+        <td class="col-finding">Hippocampal patterns carry the learned relational graph, and ultrasound stimulation of the hippocampus selectively abolished structure-based inference (d = −0.89), as predicted by network simulations of the same representations.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s41593-026-02503-w" target="_blank">Neotenic expansion of adult-born dentate granule cells reconfigures GABAergic inhibition to enhance social memory consolidation</a></td>
+        <td class="col-authors">Chung, Alipio, … Sahay</td>
+        <td class="col-finding">Only 4-week-old dentate granule cells recruit parvalbumin interneurons in CA3/CA2, raise feed-forward inhibition and lengthen sharp-wave ripples — converting added cells into separation of interfering memories.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-schema"></span>Schema-Episodic</td>
+        <td class="col-title"><a href="https://doi.org/10.1073/pnas.2536885123" target="_blank">Music illuminates sociocultural dimensions of autobiographical memory</a></td>
+        <td class="col-authors">Turnbull, Kubit, Jakubowski (Margulis)</td>
+        <td class="col-finding">Song-cued autobiographical memories are far more similar across listeners than the lyrics can explain, implicating shared sociocultural scripts keyed to genre and release date — schema at the population rather than individual level.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2611.17162" target="_blank">Symmetry in Time: A Representation Theory of Linear Recurrent Memory</a></td>
+        <td class="col-authors">Shikder, Dey, Minac (Muller)</td>
+        <td class="col-finding">Diagonal state-space recurrences commute, so the state records which inputs occurred but provably cannot record their order; adding quaternion blocks restores order tracking with five state numbers.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2611.22054" target="_blank">A single inference process underlies the behavior and neural circuits of working memory</a></td>
+        <td class="col-authors">Gong, Belledonne (Yildirim)</td>
+        <td class="col-finding">Casting working memory as variational inference makes capacity the number of inducing points shared by all items, and the algorithm maps analytically onto a recurrent circuit with centre–surround connectivity.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-kv"></span>KV-Networks</td>
+        <td class="col-title"><a href="https://arxiv.org/abs/2611.15100" target="_blank">Keep Images in Sight: Visual Position Re-Anchoring for Long-Context MLLMs</a></td>
+        <td class="col-authors">Xu, Zhao, … Liu</td>
+        <td class="col-finding">Keeping an image in the KV cache does not make it readable: where the image sits relative to the question gates access, and re-anchoring the cached rotary phases restores it in 97 of 100 model–task scores.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.1523/JNEUROSCI.1413-26.2026" target="_blank">Intervening contexts reshape hippocampal-cortical retrieval states and later source attribution</a></td>
+        <td class="col-authors">Hermiller &amp; Davachi</td>
+        <td class="col-finding">Re-encountering an object in a shifted context left immediate memory intact but biased later source errors toward the intervening context — what gets bound at retrieval is the context that is currently present.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s41467-026-79403-x" target="_blank">Posterior alpha/beta oscillations reflect oculomotor dynamics underlying subsequent memory effects</a></td>
+        <td class="col-authors">Wu, Popov, … Staudigl</td>
+        <td class="col-finding">Across four eye-tracking/EEG experiments, visual exploration rather than later memory modulated posterior alpha/beta, and experimentally decoupling eye movements separated the oscillation from memory — a deflationary result for encoding-state inference.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://www.biorxiv.org/content/10.64898/2026.11.11.765952v1" target="_blank">Direction of oscillatory networks in the human medial temporal lobe reverses across verbal working memory phases</a></td>
+        <td class="col-authors">Choi &amp; Han</td>
+        <td class="col-finding">Human MTL theta/gamma flow runs posterior→anterior during encoding and reverses to anterior→posterior at retrieval, a phase-level read/write switch that pattern similarity alone would miss.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-er"></span>Encoding-Retrieval</td>
+        <td class="col-title"><a href="https://doi.org/10.1007/s00429-026-03225-2" target="_blank">The role of prefrontal sharp wave ripple-like events in working memory and behavioral performance</a></td>
+        <td class="col-authors">Vahedi, Constantinidis (Daliri)</td>
+        <td class="col-finding">Prefrontal ripple-band events in monkeys appear only once the task demands memory and are phase-locked to delta, but better performance went with <em>lower</em> maintenance-period ripple power.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://doi.org/10.1016/j.cub.2026.10.063" target="_blank">A theory of generalized vector coding and subicular function</a></td>
+        <td class="col-authors">Wang &amp; Bicanski</td>
+        <td class="col-finding">One principle — signalling discontinuities of the experienced flow in a vector base — generates boundary vector, corner, and axis-tuned subicular codes and also predicts event-boundary signalling in population space.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s41467-026-79000-y" target="_blank">Theoretical frameworks for credit assignment via behavioral timescale synaptic plasticity</a></td>
+        <td class="col-authors">Cone, Clopath (Ponte Costa)</td>
+        <td class="col-finding">A generalized BTSP rule learns place-field maps and attractor memories, but its credit assignment slows with depth or CA3-like recurrence — so seconds-long plasticity alone cannot explain few-shot learning in deep networks.</td>
+      </tr>
+      <tr>
+        <td class="col-tag"><span class="tag-dot dot-cross"></span>Cross-cutting</td>
+        <td class="col-title"><a href="https://doi.org/10.1038/s41593-026-02505-8" target="_blank">Microglia mediate motor memory decay through activity-dependent phagocytosis of myelin sheaths</a></td>
+        <td class="col-authors">Hu, Luo, … Lang Wang</td>
+        <td class="col-finding">Motor memory decay is an active immune process: reduced engram activity lowers oligodendrocyte CD47, licensing microglial phagocytosis of the memory-associated myelin sheaths.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-header tag-llm">LLM-Memory</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2611.18089" target="_blank">Deep Latents, Long Memory: Latent persistence explains temporal correlations in transformer activations</a>
+    </div>
+    <div class="paper-meta">
+      Cagnetta &amp; Acevedo &middot; arXiv cs.LG, 2026-11-13 (preprint)
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Defines the autocorrelation function of a layer as the mean dot product between its activations at two context positions separated by a lag, then asks what shapes the tail of that curve. Tested first on synthetic sequences with controlled hierarchical latent structure, then on real text across several LLMs with sparse-autoencoder features standing in as latent variables, plus an ablation of the most persistent features.</p>
+      <p><strong>Finding:</strong> Slowly decaying autocorrelation tails grow with depth in both synthetic and natural data. In the synthetic case the growth is attributable to abstract latents that govern long stretches of input, and the persistence time of a latent code predicts the qualitative shape of the autocorrelation and accounts for most of the empirical measures. In real text, feature persistence correlates strongly with autocorrelation magnitude and persistence time increases with depth; ablating the persistent features reduces the autocorrelation.</p>
+      <p><strong>Why it matters:</strong> This supplies exactly the missing operational quantity for the current project — a lag-indexed decay curve that separates "carries a long context" from "carries an abstract code." Persistence time increasing with depth is the model-side analogue of a context drift whose timescale is set by the layer rather than by the input, and it makes "abstraction" a measurable slope rather than a metaphor.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2611.20759" target="_blank">Instant Weight-Space Consolidation for Long-Term Memory in LLMs</a>
+    </div>
+    <div class="paper-meta">
+      Suri &amp; Manocha &middot; arXiv cs.CL, 2026-11-16 (preprint)
+      <span class="tag tag-llm">LLM-Memory</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> CLAM pairs a recurrent hypernetwork that compiles a stream of session activations into a low-rank adapter in a single forward pass — no gradient steps, no generation calls — with a complementary episodic buffer that supplies verbatim detail at inference. A gated latent state carries knowledge across sessions at fixed size, so the parametric store does not grow. Evaluated on LoCoMo and LongMemEval-S with three open models of 2–7B parameters.</p>
+      <p><strong>Finding:</strong> CLAM leads all agentic memory baselines by 1–45 points and all gradient-based parametric methods by 10–45, while building its memory 3–151× faster in wall clock. The two channels are demonstrably complementary: the consolidated adapter adds 12–15 accuracy points on trials where the episodic buffer misses the gold evidence, and still adds 4–5 points with an oracle buffer.</p>
+      <p><strong>Why it matters:</strong> A working implementation of complementary learning systems in a transformer — a fast episodic store plus a slow, gradient-free parametric consolidation path — with the dissociation measured rather than asserted. The "adds points even with an oracle buffer" result is the clean statement that consolidation is not just a compression of retrieval.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-schema">Schema-Episodic</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s41562-026-02627-w" target="_blank">Causal role of human hippocampus in relational structure learning and inference</a>
+    </div>
+    <div class="paper-meta">
+      Pan, D'Ambrogio, Kingston, … Mahmoodi &amp; Rushworth &middot; Nature Human Behaviour, 2026-11-16
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <a class="tag tag-avail" href="https://doi.org/10.5281/zenodo.21979025" target="_blank">🗂 data available</a>
+      <a class="tag tag-code" href="https://doi.org/10.5281/zenodo.21979025" target="_blank">💻 code available</a>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Participants (N = 36) learned a relational structure and then had to infer untrained relations when the environment changed, with whole-brain fMRI and computational modelling. The fitted model was used to simulate the behavioural consequence of disrupting the hippocampal representation, and that prediction was tested with transcranial ultrasound stimulation of the hippocampus in a separate group (N = 20).</p>
+      <p><strong>Finding:</strong> Behaviour showed structure-based inference rather than item-wise learning, and whole-brain imaging identified consistent representations of the relational structure in hippocampus. Stimulation transiently disrupted structure-based inference as predicted (P &lt; 0.001, Cohen's d = −0.89, 95% CI −1.41 to −0.36).</p>
+      <p><strong>Why it matters:</strong> The inferential step in schema-based memory gets a causal handle. The design's strength is the model-to-perturbation loop: the predicted effect size is fixed before stimulation, which is what separates this from the usual lesion-by-correlation argument.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s41593-026-02503-w" target="_blank">Neotenic expansion of adult-born dentate granule cells reconfigures GABAergic inhibition to enhance social memory consolidation</a>
+    </div>
+    <div class="paper-meta">
+      Chung, Alipio, Ghosh, … Ahmed (Sahay) &middot; Nature Neuroscience, 2026-11-18
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <a class="tag tag-code" href="https://doi.org/10.5281/zenodo.22680988" target="_blank">💻 code available</a>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Genetically targeted, synchronous expansion of a single cohort of 4-week-old (immature) versus 8-week-old (mature) adult-born dentate granule cells in mice, combined with slice electrophysiology, in vivo LFP in dorsal CA1 and CA2, chemogenetic manipulation of interneuron populations, and a social-discrimination/interference paradigm.</p>
+      <p><strong>Finding:</strong> Only the immature cohort recruited fast-spiking parvalbumin interneurons in CA3 and CA2, increased feed-forward inhibition, reduced social memory interference and improved consolidation. Ripples in dorsal CA1 and CA2 increased in baseline power, amplitude and duration, with stronger rate modulation by social experience. Interneuron-targeted chemogenetics were necessary and sufficient for consolidation with and without the expansion, respectively.</p>
+      <p><strong>Why it matters:</strong> A concrete answer to what adult neurogenesis is <em>for</em> at the circuit level: added immature cells buy feed-forward inhibition, which lengthens and sharpens ripples. Interference reduction and ripple modulation are shown to be the same manipulation rather than two parallel stories.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1073/pnas.2536885123" target="_blank">Music illuminates sociocultural dimensions of autobiographical memory</a>
+    </div>
+    <div class="paper-meta">
+      Turnbull, Kubit, Jakubowski (Margulis) &middot; PNAS, 2026-11-16
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> 233 undergraduates freely described autobiographical memories evoked by short clips of familiar songs spanning three genres and two life periods; memory content was compared with NLP similarity measures. Two control groups reported memories evoked by keywords from the lyrics (n = 121) and by short narrative summaries of the lyrics (n = 129).</p>
+      <p><strong>Finding:</strong> Memories cued by songs from the same category were strikingly similar across listeners, varying with genre and release date. The lyric-keyword and lyric-summary controls did not reproduce the pattern, so within-category lyrical content cannot account for it.</p>
+      <p><strong>Why it matters:</strong> A clean demonstration that a schema can be a property of a cohort rather than of an individual — the shared prior is a life script indexed by cultural artefacts. For any naturalistic memory model, this is a between-subject covariance term that item-level encodings will not capture.</p>
+    </div>
+    <div class="flag">⚠ Memories are self-generated in free response with no verification of the events or their dates; the inferential step from content similarity to shared scripts is interpretive.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-kv">KV-Networks</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2611.17162" target="_blank">Symmetry in Time: A Representation Theory of Linear Recurrent Memory</a>
+    </div>
+    <div class="paper-meta">
+      Shikder, Dey, Minac (Muller) &middot; arXiv cs.LG / math.RT, 2026-11-12 (preprint)
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-llm">LLM-Memory</span>
+      <a class="tag tag-code" href="https://github.com/anifshikder/HyperSSM" target="_blank">💻 code available</a>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Formalizes the state update of a linear state-space model as a linear representation of the monoid of input sequences, then characterises exactly when an SSM can track a group at every sequence length. On that basis the authors introduce HyperSSM, which adds quaternion channels while retaining linear-time inference and parallel training.</p>
+      <p><strong>Finding:</strong> Diagonal recurrences multiply each state channel by a number, and those numbers commute, so the state records which inputs occurred but not their order; such SSMs can track only commutative groups. Any SSM that tracks a group must decompose into independent real, complex and quaternion blocks. HyperSSM solves S5 with 32 generators — where previous SSMs are at chance — using at most five state numbers, and generalizes to sequences 25× longer than training.</p>
+      <p><strong>Why it matters:</strong> A proof rather than an empirical complaint: serial order is not a matter of capacity or training but of whether the state transition can fail to commute. Any linear KV or gated-recurrence memory that wants to carry position has to be non-commutative, and the quaternion construction makes the required algebra explicit and interpretable (the learned weights recover gyroscope calibration and qubit-gate rotations).</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2611.22054" target="_blank">A single inference process underlies the behavior and neural circuits of working memory</a>
+    </div>
+    <div class="paper-meta">
+      Gong, Belledonne (Yildirim) &middot; arXiv q-bio.NC, 2026-11-17 (preprint)
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-cross">Cross-cutting</span>
+      <a class="tag tag-code" href="https://github.com/Daniel-Gong/MemGP-Code" target="_blank">💻 code available</a>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> MemGP is specified simultaneously at three levels: computationally, working memory is variational inference over a continuous function on feature space, balancing memory strength against a Gaussian-process prior; algorithmically, writing, storing and reading are posterior approximation with a finite set of inducing points; at the circuit level the algorithm is mapped analytically — with no training — onto a recurrent network.</p>
+      <p><strong>Finding:</strong> The model reproduces load-dependent precision loss, attentional benefits during maintenance, inter-item attraction and repulsion, and delay-dependent drift. The analytic map deduces centre–surround connectivity, a property long assumed rather than derived in attractor models, and yields a structured combination of persistent activity and synaptic weights for holding items.</p>
+      <p><strong>Why it matters:</strong> Capacity becomes the number of inducing points that all items share, which dissolves the slots-versus-resources debate into a parameter count and explains why precision and capacity trade off. Read as a memory architecture, it is a fixed-size key set with a normative rule for which keys to keep — the same object a KV memory needs, derived from first principles rather than fitted.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://arxiv.org/abs/2611.15100" target="_blank">Keep Images in Sight: Visual Position Re-Anchoring for Long-Context MLLMs</a>
+    </div>
+    <div class="paper-meta">
+      Xu, Zhao, Sun, … Liu &middot; arXiv cs.CV, 2026-11-11 (preprint)
+      <span class="tag tag-kv">KV-Networks</span>
+      <span class="tag tag-llm">LLM-Memory</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Systematically varies context length, redistributes a fixed text passage around an image, and changes the image's position without adding any text — isolating positional relation as a factor. The intervention, Visual Position Re-Anchoring, shifts the cached visual-key rotary phases toward a short-context reference before the question is processed, operating directly on the existing KV cache with no extra forward passes.</p>
+      <p><strong>Finding:</strong> The positional relation between an image and the question directly determines whether its details can be accessed; retaining the image in context is neither necessary nor sufficient for access. Static re-anchoring improved 97 of 100 model–task combinations across ten checkpoints and ten benchmarks, with greater attention to answer-bearing regions across six checkpoints.</p>
+      <p><strong>Why it matters:</strong> A retention/access dissociation inside the KV cache, and the position code is the gate. For the lingering-memory work this is a direct warning: an unchanged KV entry can become unreadable purely because of where it sits, so any "forgetting" measured by retrieval accuracy confounds decay with positional drift.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-er">Encoding-Retrieval</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1523/JNEUROSCI.1413-26.2026" target="_blank">Intervening contexts reshape hippocampal-cortical retrieval states and later source attribution</a>
+    </div>
+    <div class="paper-meta">
+      Hermiller &amp; Davachi &middot; Journal of Neuroscience, 2026-11-17
+      <span class="tag tag-er">Encoding-Retrieval</span>
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Two fMRI tasks (trial-based, controlled). Participants encoded objects against contextual backgrounds, then did an immediate retrieval test in which each object cue appeared against either the original background or a different one, and finally judged each object's original context on a neutral screen. Representational similarity analysis tracked encoding templates into the cue period and the final test.</p>
+      <p><strong>Finding:</strong> Shifted cueing reduced source accuracy and biased errors toward the intervening context, with no detectable difference in immediate recognition or associative memory — the manipulation changed attribution without changing item memory. Cue-period patterns were organised by the currently visible context, and on shifted trials were more similar to encoding templates for the cued than for the original context. Greater differentiation in posterior hippocampus, parahippocampal cortex and dorsal ACC predicted better later source memory; precuneus engagement and dACC alignment predicted individual source choices.</p>
+      <p><strong>Why it matters:</strong> Retrieval does not simply reinstate the encoded event; it rebinds the item to whatever context is present. That is a mechanism-level statement that the context tag is written at retrieval, which is precisely the assumption a temporal-context model makes when it lets the retrieved context drift.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s41467-026-79403-x" target="_blank">Posterior alpha/beta oscillations reflect oculomotor dynamics underlying subsequent memory effects</a>
+    </div>
+    <div class="paper-meta">
+      Wu, Popov, Beilner, … Staudigl &middot; Nature Communications, 2026-11-17
+      <span class="tag tag-er">Encoding-Retrieval</span>
+      <a class="tag tag-code" href="https://github.com/StaudiglLab/code4LowFreqEyeMovs" target="_blank">💻 code available</a>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Four experiments combining eye tracking with scalp EEG or intracranial EEG during free or constrained viewing, plus an experimental manipulation of eye movements and a saccade-parameter analysis to link oculomotor events to oscillation dynamics.</p>
+      <p><strong>Finding:</strong> The degree of visual exploration, not subsequent memory performance, was the consistent modulator of posterior alpha/beta power. Manipulating eye movements dissociated the alpha/beta reduction from memory, and saccade parameters predicted the oscillation; the accumulation of saccades over time reproduced the canonical post-stimulus alpha/beta pattern.</p>
+      <p><strong>Why it matters:</strong> A well-powered deflation of one of the most-used encoding markers. If alpha/beta desynchronisation is oculomotor, then "encoding state" estimates built on it inherit the eye-movement confound — which matters most in exactly the naturalistic paradigms where gaze is uncontrolled.</p>
+    </div>
+    <div class="flag">⚠ The four experiments are heterogeneous in modality and sample; the deflationary conclusion is stated more broadly than any single experiment establishes.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://www.biorxiv.org/content/10.64898/2026.11.11.765952v1" target="_blank">Direction of oscillatory networks in the human medial temporal lobe reverses across verbal working memory phases</a>
+    </div>
+    <div class="paper-meta">
+      Choi &amp; Han &middot; bioRxiv, 2026-11-13 (preprint, posted 13 Nov)
+      <span class="tag tag-er">Encoding-Retrieval</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Intracranial EEG together with single-unit spiking recorded from the human medial temporal lobe during a verbal Sternberg task, analysed for directional (lag- and phase-based) interactions along the posterior–anterior MTL axis and between hemispheres, separately for encoding, maintenance and retrieval.</p>
+      <p><strong>Finding:</strong> Theta and gamma interactions ran predominantly posterior→anterior during encoding and reversed to anterior→posterior during retrieval, while theta tracking working-memory load was stronger in left than right MTL and left MTL theta coordinated spike timing more tightly. Interhemispheric influence was predominantly left→right, with the same phase-dependent reversal along the MTL axis.</p>
+      <p><strong>Why it matters:</strong> Encoding and retrieval are separated by the <em>direction</em> of information flow, not only by which pattern is present. That is a concrete physiological implementation of a read/write mode switch, and it is invisible to the RSA-style analyses that dominate the retrieval literature.</p>
+    </div>
+    <div class="flag">⚠ Preprint, not peer reviewed; directionality is inferred from lag-based coupling, which is sensitive to volume conduction and reference choice.</div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1007/s00429-026-03225-2" target="_blank">The role of prefrontal sharp wave ripple-like events in working memory and behavioral performance</a>
+    </div>
+    <div class="paper-meta">
+      Vahedi, Constantinidis (Daliri) &middot; Brain Structure and Function, 2026-11-16
+      <span class="tag tag-er">Encoding-Retrieval</span>
+      <span class="tag tag-kv">KV-Networks</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Local field potentials from monkey prefrontal cortex during a delayed match-to-sample task, comparing a passive pre-training condition with the active post-training task, and within the task comparing sessions with low versus high behavioural performance. Ripple-band events were detected and aligned to spiking and to the ongoing delta rhythm.</p>
+      <p><strong>Finding:</strong> Ripple-triggered spiking rose post-training, peaking at the first stimulus, the delay and the second stimulus. Post-training ripple peak frequency was higher than in the passive condition during maintenance and retrieval, and higher-performing sessions showed <em>lower</em> ripple power during the maintenance period. Ripple-band amplitude was phase-coupled to delta.</p>
+      <p><strong>Why it matters:</strong> Cortical ripples behave like a memory-demand signal rather than a replay carrier, and the sign of the power–performance relation is the opposite of what hippocampal work reports. Either prefrontal ripples index something else (interference, or failed suppression) or the "more ripple is better" generalisation does not travel beyond the hippocampus.</p>
+    </div>
+    <div class="flag">⚠ Between-session correlational design with no ripple-specific perturbation, so the direction of the power–performance relationship cannot be attributed causally.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header tag-cross">Cross-cutting</div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1016/j.cub.2026.10.063" target="_blank">A theory of generalized vector coding and subicular function</a>
+    </div>
+    <div class="paper-meta">
+      Wang &amp; Bicanski &middot; Current Biology, 2026-11-17
+      <span class="tag tag-cross">Cross-cutting</span>
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A theoretical paper. Disco proposes that subicular activity signals discontinuities in the continuous flow of experience, coded in a vector base, and derives the resulting selectivity for the cell types that have so far been named only after their apparent stimulus: boundary vector cells, corner cells, axis-tuned cells.</p>
+      <p><strong>Finding:</strong> Geometric discontinuities — walls, drops, objects, holes, corners, curved surfaces — produce the corresponding responses from a single rule, which also makes predictions for 3D environments, natural scenes and mixed-modality coding. Discontinuity is not the same as "boundary": non-spatial discontinuities in behavioural state yield axis coding (activity along parallel maze arms), and tracking population activity signals event boundaries as discontinuities in neural space.</p>
+      <p><strong>Why it matters:</strong> It puts spatial coding and event segmentation under one operation. If an event boundary is a discontinuity in neural space, then the segmentation literature's boundaries and the subiculum's vector codes are the same computation viewed at two scales — a much stronger claim than the usual "boundaries are where the model resets".</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s41467-026-79000-y" target="_blank">Theoretical frameworks for credit assignment via behavioral timescale synaptic plasticity</a>
+    </div>
+    <div class="paper-meta">
+      Cone, Clopath (Ponte Costa) &middot; Nature Communications, 2026-11-14
+      <span class="tag tag-cross">Cross-cutting</span>
+      <span class="tag tag-schema">Schema-Episodic</span>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> Generalizes behavioural timescale synaptic plasticity into a framework (gBTSP) that can be applied to unsupervised and supervised objectives in both feedforward and recurrent networks, with a derivation of how plateau events reduce task error, then tests the rule on place-field formation, attractor memory, trajectory matching and delayed non-match-to-sample.</p>
+      <p><strong>Finding:</strong> Unsupervised gBTSP learns place-field maps in the feedforward case and attractor memories in the recurrent case; supervised gBTSP solves trajectory matching and DNMS. Crucially, the speed of credit assignment through gBTSP is limited by network depth or CA3-like recurrence, which the authors read as evidence that additional mechanisms are needed to explain BTSP-driven few-shot learning in naturalistic settings.</p>
+      <p><strong>Why it matters:</strong> A negative result stated as a theorem-shaped constraint. BTSP's seconds-long window is enough for a single place field but not for propagating an error through a deep network, which sharpens the question of what else must be doing the work when an animal learns a complex sequence in one trial.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">
+      <a href="https://doi.org/10.1038/s41593-026-02505-8" target="_blank">Microglia mediate motor memory decay through activity-dependent phagocytosis of myelin sheaths</a>
+    </div>
+    <div class="paper-meta">
+      Hu, Luo, Zhou, … Gu &amp; Lang Wang &middot; Nature Neuroscience, 2026-11-17
+      <span class="tag tag-cross">Cross-cutting</span>
+      <span class="tag tag-schema">Schema-Episodic</span>
+      <a class="tag tag-avail" href="https://doi.org/10.1038/s41593-026-02505-8" target="_blank">🗂 data available</a>
+    </div>
+    <div class="paper-body">
+      <p><strong>Approach:</strong> A mouse motor-learning paradigm with longitudinal tracking of engram reactivation and of the myelin sheaths associated with the memory, combined with oligodendrocyte-specific CD47 knockout and overexpression, microglial depletion, and separate assays of myelin versus synapse phagocytosis.</p>
+      <p><strong>Finding:</strong> Motor memory decay tracked the loss of memory-associated myelin sheaths. Reduced activity of motor memory engram cells lowered oligodendrocyte expression of the "don't eat me" signal CD47, facilitating microglial phagocytosis and driving myelin loss. CD47 knockout accelerated decay, overexpression slowed it, and depleting microglia prevented both the myelin decrease and the accelerated decay. Microglia phagocytosed myelin sheaths and synapses independently.</p>
+      <p><strong>Why it matters:</strong> Forgetting gets an active mechanism that is gated by engram activity — silence licenses erasure. That inverts the usual framing in which decay is passive and only consolidation is active, and it suggests a structural substrate (myelin) whose maintenance is itself activity-dependent.</p>
+    </div>
+  </div>
+</div>
+
+<div class="excluded">
+  <h2>Papers Scanned but Not Included</h2>
+  <ul>
+    <li><strong>Cholinergic blockade reveals a role for human hippocampal theta in memory encoding but not retrieval</strong> (Gedankien et al., eLife) — highest-scoring item in the pool, but the version of record of <code>10.7554/eLife.108972</code>, Crossref <code>created</code> 2025-12-04 with a May-2025 bioRxiv preprint; already excluded on 2026-11-16 under the 2025-rooted-VoR rule. The 2026-11-11 date is the issue date.</li>
+    <li><strong>A likelihood-based method for identifying replay from spike sequences</strong> (Huh et al., Nat Commun <code>74822-2</code>) — an aggregator listed it 2026-11-13, but Crossref <code>created</code> is 2026-07-04; the timestamp is an index refresh. Would otherwise have been the strongest replay-method paper of the week.</li>
+    <li><strong>Global coincident bursts of high frequency oscillations across the human cortex</strong> (Prathapagiri et al., Nat Commun <code>70633-7</code>) — Crossref <code>created</code> 2026-03-15; aggregator timestamp 2026-11-16.</li>
+    <li><strong>The representational geometry of cognitive maps under cognitive control</strong> (Nat Commun <code>77621-x</code>) — resurfaced in the Crossref sweep at a fresh 2026-11-10 date; it is the version of record of a February-2023 bioRxiv preprint already excluded on 2026-11-11.</li>
+    <li><strong>Human and Machine Annotations Predict Brain Responses to Naturalistic Movies Across Development</strong> (Huang et al., arXiv:2611.13637) — reported in the 2026-11-11 briefing; caught by the title grep.</li>
+    <li><strong>Nucleus reuniens gates selective hippocampal-prefrontal interactions during NREM sleep</strong> (bioRxiv <code>2026.11.11.765971</code>) — reported 2026-11-16.</li>
+    <li><strong>Is Your Robot's Memory Just a Clock?</strong> (arXiv:2611.14488) — reported 2026-11-16.</li>
+    <li><strong>The risk of KV cache compression</strong> (arXiv:2607.01520) — v2 posted 11-11; v1 is 1 July 2026, so this is a revision, not a new paper.</li>
+    <li><strong>How Finite Brains Generalize Without Bound: Spatial Memory as a Universal Computer</strong> (arXiv:2611.07920) — v2 posted 11-16; v1 5 Nov 2026, before the window, and a revision does not restart coverage.</li>
+    <li><strong>Sensory cortical disinhibition underlies long-term fear memory in humans</strong> (Brown et al., Nat Commun, 2026-11-14) — genuinely new and well designed (HD α-tACS + EEG-fMRI, memory traces at 40–60 ms and a causal stimulation test), cut only on the 15-paper budget.</li>
+    <li><strong>Linking distinct contextual memories across a wide time window</strong> (Babushkina &amp; Saidov, Learning &amp; Memory, 2026-11-12) — memory linking across hours to weeks with larger CA1/amygdala retrieval-activated populations, but the authors' own chance-normalised overlap measure was non-significant, leaving the linking claim resting on raw overlap.</li>
+    <li><strong>KV-LTM: Persistent Per-Session KV Caches as Long-Term Memory</strong> (arXiv:2611.21998) — a storage-sizing and evaluation-protocol design with no retention or retrieval claim that could be tested.</li>
+    <li><strong>MemInStream: Memorizing or Merely Recognizing?</strong> (arXiv:2611.15640) — a benchmark construction paper; the evidence-controlled validation protocol is useful but there is no substantive memory finding.</li>
+    <li><strong>Text Speeding Itself Up: Recency and Restraint in Session-Local Drafting</strong> (arXiv:2611.19455) — most-recent-match copying beats earliest-match by 0.09 speedup, but the setting is speculative decoding; a recency effect in a drafter says little about memory.</li>
+    <li><strong>Large Language Models as Nonlinear Dynamical Systems: The Three Clocks of Depth, Training, and Generation</strong> (arXiv:2611.21983) — a 200-paper dictionary of correspondences rather than a result.</li>
+    <li><strong>Chemogenetic hyperpolarization in the entorhinal cortex during sleep facilitates delta oscillations</strong> (iScience, 2026-11-05) — before the window and a single manipulation without a mechanistic readout of the consolidated content.</li>
+    <li><strong>Body in memory: the role of bodily self-consciousness in episodic memory</strong> (Phil Trans R Soc B, 2026-11-10) — high scorer on title terms, but a review with no new data or model.</li>
+    <li><strong>Sleep and Memory: Consolidation, Updating, and State-Dependent Control</strong> (Curr Neurol Neurosci Rep, 2026-11-12) — review.</li>
+    <li><strong>Newly learned items form long-term memory in severe Alzheimer's disease</strong> (Brain Communications) — PubMed lists 2026-10-21, outside the window.</li>
+    <li>Also scanned and dropped: the MTL200 atlas (Imaging Neuroscience, methodological); prefrontal/microglial pharmacology and acupuncture/ferroptosis items from the PubMed tail; agent-memory engineering (DISCERN, LEDGER, KVUse, RegimeCouncil, CAMR) with no retention-mechanism claim; KV compression and serving work (MiSTiQ, GaugeRoPE, OVAL, XM-Sparse, Gemma-4 KV sharing).</li>
+  </ul>
+</div>
+
+</body>
+</html>
